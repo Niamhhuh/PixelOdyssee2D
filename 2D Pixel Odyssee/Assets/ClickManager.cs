@@ -13,19 +13,7 @@ public class ClickManager : MonoBehaviour
         TryGettingItem(item);
     }
 
-    public IEnumerator MoveToPoint(Vector2 point)
-    { 
-        Vector2 positionDifference = point - (Vector2)player.position; // calculate position difference
-        while (positionDifference.magnitude > moveAccuracy)           // stop when we are near the point
-        {
-            player.Translate(moveSpeed * positionDifference.normalized * Time.deltaTime); // move in direction frame after frame
-            positionDifference = point - (Vector2)player.position;                       // recalculate position difference
-            yield return null; 
-        }
-        player.position = point;
-
-        yield return null;
-    }
+   
 
     private void TryGettingItem(ItemData item)
     {
