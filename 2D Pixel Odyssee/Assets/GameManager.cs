@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         }
         myObject.position = point;
 
+        if (myObject == FindObjectOfType<ClickManager>().player)
+            FindObjectOfType<ClickManager>().playerWalking = false;
         yield return null;
     }
 }
