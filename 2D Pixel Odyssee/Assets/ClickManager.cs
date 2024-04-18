@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-   float moveSpeed = 3.5f, moveAccuracy = 0.15f;
    public Transform player;
+   GameManager gameManager;
+   
+   private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
    public void GoToItem(ItemData item)
     {
-        StartCoroutine(MoveToPoint(item.goToPoint.position));
+        StartCoroutine(gameManager.MoveToPoint(player,item.goToPoint.position));
         TryGettingItem(item);
     }
 
