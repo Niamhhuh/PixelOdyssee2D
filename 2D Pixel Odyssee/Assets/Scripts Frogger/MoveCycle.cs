@@ -23,16 +23,16 @@ public class MoveCycle : MonoBehaviour
 
     private void Update()
     {
-        if (direction.x > 0 && (transform.position.x - size) > rightEdge.x)
+        if (direction.x > 0 && (transform.position.x + 5 - size) > rightEdge.x)
         {
             Vector3 position = transform.position;
-            position.x = leftEdge.x - size;
+            position.x = leftEdge.x + 5 - size;
             transform.position = position;  
         }
-        else if (direction.x < 0 && (transform.position.x + size) < leftEdge.x)
+        else if (direction.x < 0 && (transform.position.x - 5 + size) < leftEdge.x)
         {
             Vector3 position = transform.position;
-            position.x = rightEdge.x + size;
+            position.x = rightEdge.x - 5 + size;
             transform.position = position;  
         }
         else

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -10,9 +11,12 @@ public class Frogger : MonoBehaviour
     public Sprite idleSprite;
     public Sprite leapSprite;
     public Sprite deadSprite;
+    public Vector3 spawnPosition;
+    private float farthestRow;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spawnPosition = transform.position;
     }
     public float scrollSpeed = 3.0f;
     private void Update()
@@ -76,6 +80,12 @@ public class Frogger : MonoBehaviour
         }
         else
         {
+            if (destination.y > farthestRow)
+            {
+                farthestRow = destination.y;
+                FindAnyObjectByType<GameManager1>().AdvanceRow();
+            }
+
             StartCoroutine(Leap(destination));
         }
     }
@@ -101,13 +111,33 @@ public class Frogger : MonoBehaviour
         //spriteRenderer.sprite = idleSprite;
     }
 
-    private void Death()
+    public void Death()
     {
+        StopAllCoroutines();    
 
         transform.rotation = Quaternion.identity;
         spriteRenderer.sprite = deadSprite;
         enabled = false;
+        
+        //Invoke(nameof(Respawn), 1f);
+        
+        FindAnyObjectByType<GameManager1>().Died();
     }
+
+    public void Respawn()
+    {
+        StopAllCoroutines();
+
+        transform.rotation = Quaternion.identity;
+        transform.position = spawnPosition;
+        farthestRow = spawnPosition.y;
+        //spriteRenderer.sprite = idleSprite;
+        gameObject.SetActive(true);
+        enabled = true; 
+
+
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
