@@ -39,19 +39,19 @@ public class Frogger : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        //else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-            Move(Vector3.right);
+            //transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+            //Move(Vector3.right);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        //else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-            Move(Vector3.left);
+            //transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+            //Move(Vector3.left);
         }
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        Vector3 newPosition = transform.position + Vector3.up * scrollInput;
-        transform.position = newPosition;
+        //float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        //Vector3 newPosition = transform.position + Vector3.up * scrollInput;
+        //transform.position = newPosition;
     }
 
     private void Move(Vector3 direction)
@@ -97,7 +97,7 @@ public class Frogger : MonoBehaviour
         float elapsed = 0f;
         float duration = 0.125f;
 
-        //spriteRenderer.sprite = leapSprite;
+        spriteRenderer.sprite = leapSprite;
 
         while (elapsed < duration)
         {
@@ -108,7 +108,7 @@ public class Frogger : MonoBehaviour
         }
 
         transform.position = destination;
-        //spriteRenderer.sprite = idleSprite;
+        spriteRenderer.sprite = idleSprite;
     }
 
     public void Death()
@@ -131,7 +131,7 @@ public class Frogger : MonoBehaviour
         transform.rotation = Quaternion.identity;
         transform.position = spawnPosition;
         farthestRow = spawnPosition.y;
-        //spriteRenderer.sprite = idleSprite;
+        spriteRenderer.sprite = idleSprite;
         gameObject.SetActive(true);
         enabled = true; 
 
