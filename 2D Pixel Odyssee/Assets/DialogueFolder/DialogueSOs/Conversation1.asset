@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
+  m_Name: Conversation1
+  m_EditorClassIdentifier: 
+  actors: 000000000200000004000000
+  randomActorName: 
+  randomActorPortait: {fileID: 0}
+  dialogue:
+  - Hiya
+  - Hello, how are you?
+  optionText:
+  - Great
+  - Meh
+  - Horrible
+  option0: {fileID: 11400000, guid: 7f9789e923756bd47a86567324a0121d, type: 2}
+  option1: {fileID: 11400000, guid: c7e544d34ee69a446bfc741f0d7ca568, type: 2}
+  option2: {fileID: 11400000, guid: f49aad3a2df87c5478f2370368509caa, type: 2}
+  option3: {fileID: 0}
