@@ -7,8 +7,8 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float initialSpeed = 10;
     [SerializeField] private float speedIncrease = 0.25f;
-    //[SerializeField] private Text playerScore;
-    //[SerializeField] private Text AIScore;
+    [SerializeField] private Text playerScore;
+    [SerializeField] private Text AIScore;
 
     private Rigidbody2D rb;
     private int hitCounter;
@@ -16,7 +16,7 @@ public class BallMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Invoke("StartBall", 0.25f);
+        Invoke("StartBall", 2.0f);
     }
 
     private void FixedUpdate()
@@ -67,6 +67,20 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "AI")
         {
             PlayerBounce(collision.transform);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (transform.position.x > 0)
+        {
+            ResetBall();
+            playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
+        }
+        else if (transform.position.x < 0)
+        {
+            ResetBall();
+            AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
         }
     }
 }
