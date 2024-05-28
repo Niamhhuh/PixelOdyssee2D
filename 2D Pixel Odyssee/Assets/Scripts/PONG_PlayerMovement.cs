@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Pong_PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private bool isAI;
