@@ -16,6 +16,8 @@ public class GameManager1 : MonoBehaviour
     private int time;
 
     public GameObject gameOverMenu;
+
+    public GameObject gameWonMenu;
     private void Awake()
     {
         homes = FindObjectsOfType<Home>();
@@ -38,11 +40,16 @@ public class GameManager1 : MonoBehaviour
 
     private void NewLevel()
     {
-        for (int i = 0; i < homes.Length; i++)
+        /*for (int i = 0; i < homes.Length; i++)
         {
             homes[i].enabled = false;
         }
-        NewRound();
+        NewRound();*/
+        frogger.gameObject.SetActive(false);
+        gameWonMenu.gameObject.SetActive(true);
+
+        StopAllCoroutines();
+        StartCoroutine(PlayAgain());
     }
 
     private void NewRound() 
