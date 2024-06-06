@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ActorSO : ScriptableObject
 {
-    public string actorName;
-    public Sprite actorPortrait;
+    public string ActorName;
+    public Sprite ActorPortrait;
 }

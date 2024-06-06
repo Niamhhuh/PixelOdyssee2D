@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 115551173}
   m_Layer: 5
   m_Name: Option0
-  m_TagString: Untagged
+  m_TagString: OptionButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,12 +598,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 176503859}
+    m_SelectOnRight: {fileID: 115551173}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -628,7 +628,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 115551174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916948728}
+        m_TargetAssemblyTypeName: AdvancedDialogueManager, Assembly-CSharp
+        m_MethodName: Option
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &115551174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,8 +697,8 @@ GameObject:
   - component: {fileID: 176503860}
   - component: {fileID: 176503859}
   m_Layer: 5
-  m_Name: Option4
-  m_TagString: Untagged
+  m_Name: Option3
+  m_TagString: OptionButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -754,7 +766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 176503860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916948728}
+        m_TargetAssemblyTypeName: AdvancedDialogueManager, Assembly-CSharp
+        m_MethodName: Option
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &176503860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,8 +1309,8 @@ GameObject:
   - component: {fileID: 455596402}
   - component: {fileID: 455596401}
   m_Layer: 5
-  m_Name: Option2
-  m_TagString: Untagged
+  m_Name: Option1
+  m_TagString: OptionButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1354,7 +1378,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 455596402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916948728}
+        m_TargetAssemblyTypeName: AdvancedDialogueManager, Assembly-CSharp
+        m_MethodName: Option
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &455596402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,7 +2406,7 @@ GameObject:
   - component: {fileID: 1045205578}
   - component: {fileID: 1045205577}
   m_Layer: 5
-  m_Name: Options Panel
+  m_Name: OptionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2791,7 +2827,7 @@ GameObject:
   - component: {fileID: 1179790652}
   - component: {fileID: 1179790651}
   m_Layer: 5
-  m_Name: Dialogue Panel
+  m_Name: DialoguePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3345,8 +3381,8 @@ Transform:
   m_GameObject: {fileID: 1493373692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.43, y: -4, z: 10}
-  m_LocalScale: {x: 0.20660305, y: 0.21295434, z: 1}
+  m_LocalPosition: {x: -10.66, y: -1.37, z: 10}
+  m_LocalScale: {x: 0.20660305, y: 0.20689578, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1031002637}
@@ -3392,7 +3428,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c81d088f190b8a3409feb6cac4071e12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4daba74fe2471f84f8c86edb1d519f63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3448,18 +3484,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5408683, y: 12.271519}
+  m_Offset: {x: -0.5408683, y: 0.132308}
   m_SpriteTilingProperty:
-    border: {x: 2.1499999, y: 0.580172, z: 0.55, w: 0.860255}
-    pivot: {x: 0.5368188, y: 0.044791076}
-    oldSize: {x: 14.690001, y: 26.957993}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 13.13, y: 26.157822}
     newSize: {x: 14.690001, y: 26.957993}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.690001, y: 26.957993}
+  m_Size: {x: 14.690001, y: 26.339006}
   m_EdgeRadius: 0
 --- !u!114 &1493373697
 MonoBehaviour:
@@ -3661,7 +3697,7 @@ GameObject:
   - component: {fileID: 1741415644}
   - component: {fileID: 1741415643}
   m_Layer: 5
-  m_Name: Name Panel
+  m_Name: NamePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4331,7 +4367,7 @@ Transform:
   m_GameObject: {fileID: 1876431853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.05, y: -4, z: -10}
+  m_LocalPosition: {x: -5.2799997, y: -1.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4397,6 +4433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18562f0ad5c5914f85a972b634a35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actorSO:
+  - {fileID: 11400000, guid: 97af57a15d479b1459e558c61eea7d85, type: 2}
+  - {fileID: 11400000, guid: 91e1e0c623c716f4f972dbb7e9b1de34, type: 2}
+  - {fileID: 11400000, guid: d92d4c6b9364bb54ba2d4a49a54df0ff, type: 2}
+  typingSpeed: 0.02
 --- !u!1 &1927080086
 GameObject:
   m_ObjectHideFlags: 0
@@ -4410,8 +4451,8 @@ GameObject:
   - component: {fileID: 1927080089}
   - component: {fileID: 1927080088}
   m_Layer: 5
-  m_Name: Option3
-  m_TagString: Untagged
+  m_Name: Option2
+  m_TagString: OptionButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4479,7 +4520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1927080089}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916948728}
+        m_TargetAssemblyTypeName: AdvancedDialogueManager, Assembly-CSharp
+        m_MethodName: Option
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1927080089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4576,7 +4629,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: f84db09d9304e9e4ca79539089e1941a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c0b9a78d59b4b54bb78faf070f2a2a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
