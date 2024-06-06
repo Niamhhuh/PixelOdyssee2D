@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager1 : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class GameManager1 : MonoBehaviour
     public GameObject gameOverMenu;
 
     public GameObject gameWonMenu;
+
+    public Text livesText;
+
     private void Awake()
     {
         homes = FindObjectsOfType<Home>();
@@ -35,7 +40,12 @@ public class GameManager1 : MonoBehaviour
         gameOverMenu.SetActive(false);
         SetScore(0);
         SetLives(3);
-        NewLevel();
+        for (int i = 0; i < homes.Length; i++)
+        {
+            homes[i].enabled = false;
+        }
+        NewRound();
+        
     }
 
     private void NewLevel()
@@ -49,7 +59,7 @@ public class GameManager1 : MonoBehaviour
         gameWonMenu.gameObject.SetActive(true);
 
         StopAllCoroutines();
-        StartCoroutine(PlayAgain());
+        StartCoroutine(BackToHub());
     }
 
     private void NewRound() 
@@ -117,6 +127,20 @@ public class GameManager1 : MonoBehaviour
         NewGame();
     }
 
+    private IEnumerator BackToHub(){
+
+        bool BackToHub = false;
+        while (!BackToHub)
+        {
+            if (Input.GetKeyDown(KeyCode.Return)){
+                BackToHub = true;
+            }
+
+            yield return null;
+        }
+        SceneManager.LoadScene("TutorialRoom");
+    }
+
     public void AdvanceRow()
     {
         SetScore(score + 10);
@@ -163,5 +187,6 @@ public class GameManager1 : MonoBehaviour
     private void SetLives(int lives)
     {
         this.lives = lives; 
+        livesText.text = lives.ToString();
     }
 }
