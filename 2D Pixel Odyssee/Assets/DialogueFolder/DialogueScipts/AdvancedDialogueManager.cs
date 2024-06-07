@@ -73,12 +73,13 @@ public class AdvancedDialogueManager : MonoBehaviour
             //Continue dialogue
             else
                 PlayDialogue();
-               
         }
     }
 
     void PlayDialogue()
     {
+        Debug.Assert(currentConversation.actors.Length < stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
+
         //If it's a random NPC
         if (currentConversation.actors[stepNum] == DialogueActors.Random)
             SetActorInfo(false);
@@ -89,7 +90,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
         //Display Dialogue
         actor.text = currentSpeaker;
-        portrait.sprite = currentPortrait;
+        portrait.sprite = currentPortrait;                                                  //---------------------------------
 
         //If there is a branch...
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
@@ -129,17 +130,17 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             for (int i = 0; i < actorSO.Length; i++)
             {
-                if (actorSO[i].name == currentConversation.actors[stepNum].ToString())
+                if (actorSO[i].actorName == currentConversation.actors[stepNum].ToString())
                 {
-                    currentSpeaker = actorSO[i].ActorName;
-                    currentPortrait = actorSO[i].ActorPortrait;
+                    currentSpeaker = actorSO[i].actorName;
+                    currentPortrait = actorSO[i].actorPortrait;
                 }
             }
         }
         else
         {
             currentSpeaker = currentConversation.randomActorName;
-            currentPortrait = currentConversation.randomActorPortait;
+            currentPortrait = currentConversation.randomActorPortait;                           //---------------------------------
         }
     }
 
@@ -159,6 +160,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
         stepNum = 0;
 
+        PlayDialogue();
     }
 
     private IEnumerator TypewriterEffect(string line)
