@@ -36,7 +36,7 @@ public class HomingMissile : MonoBehaviour
             Instantiate(explosionEffect, transform.position, transform.rotation);
         }
 
-        // Zerstöre die Rakete
+        // Zerstoere die Rakete
         Destroy(gameObject);
     }
 }
