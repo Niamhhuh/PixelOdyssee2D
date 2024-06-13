@@ -7,7 +7,7 @@ public class MoveToMouse : MonoBehaviour
 {
     public static List<MoveToMouse> moveableObjects = new List<MoveToMouse>();
     public float speed = 5f;
-    private Vector3 target;
+    public Vector3 target;
     private bool selected;
 
     void Start()
