@@ -13,10 +13,12 @@ public class Frogger : MonoBehaviour
     public Sprite deadSprite;
     public Vector3 spawnPosition;
     private float farthestRow;
+    SoundManager soundManager;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
     public float scrollSpeed = 3.0f;
     private void Update()
@@ -25,19 +27,23 @@ public class Frogger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) {
             transform.rotation = Quaternion.Euler(0f , 0f, 0f);
             Move(Vector3.up);
+            soundManager.PlaySfx(soundManager.jump);
         }
 
         else if (Input.GetKeyDown(KeyCode.S)) {
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             Move(Vector3.down);
+            soundManager.PlaySfx(soundManager.jump);
         } 
         else if (Input.GetKeyDown(KeyCode.A)) {
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             Move(Vector3.left);
+            soundManager.PlaySfx(soundManager.jump);
         } 
         else if (Input.GetKeyDown(KeyCode.D)) {
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
+            soundManager.PlaySfx(soundManager.jump);
         }
         //else if (Input.GetKeyDown(KeyCode.Mouse1))
         {

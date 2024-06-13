@@ -14,7 +14,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip score;
     public AudioClip win;
 
-    private void Start()
+    
+    
+    
+    public void PlayMusic(AudioClip clip)
     {
         musicSource.clip = background;
         musicSource.Play();
@@ -22,7 +25,13 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySfx(AudioClip clip)
     {
-        SfxSource.PlayOneShot(clip);
+        SfxSource.clip = clip;
+        SfxSource.Play();
     }
 
+    public void StopMusic(AudioClip clip)
+    {
+        musicSource.Stop();
+    }
+    
 }
