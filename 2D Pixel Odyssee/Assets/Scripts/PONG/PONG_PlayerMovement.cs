@@ -15,12 +15,17 @@ public class Pong_PlayerMovement : MonoBehaviour
     private Vector2 playerMove;
     [SerializeField] private float speed = 4;
 
+    PSSoundManager PSSoundManager;
 //-------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------During Play
 //-------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        PSSoundManager = GameObject.FindGameObjectWithTag("SoundManagerPS").GetComponent<PSSoundManager>();
+
+        PSSoundManager.PlayMusicPS(PSSoundManager.MusicPainStation);
     }
 
     void Update()

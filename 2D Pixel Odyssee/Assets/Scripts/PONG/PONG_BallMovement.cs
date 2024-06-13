@@ -16,7 +16,7 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private int hitCounter;
-
+    PSSoundManager PSSoundManager;
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
 
@@ -25,6 +25,8 @@ public class BallMovement : MonoBehaviour
         Invoke("StartBall", 2.0f);
         aiScore = 0;
         plScore = 0;
+
+        PSSoundManager = GameObject.FindGameObjectWithTag("SoundManagerPS").GetComponent<PSSoundManager>();
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
@@ -69,7 +71,14 @@ public class BallMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "AI") {
             PlayerBounce(collision.transform);
+
+            PSSoundManager.PlaySfxPS(PSSoundManager.CollisionPlayer);
         }
+
+        //if (collision.gameObject.name == "Wall")
+        //{
+            //PSSoundManager.PlaySfxPS(PSSoundManager.CollisionWall);
+        //}
     }
 
     //--------------------enter deathzone---------------------------------------------------
@@ -78,16 +87,23 @@ public class BallMovement : MonoBehaviour
         if (transform.position.x > 0) {
             playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
             plScore++;
+
+            PSSoundManager.PlaySfxPS(PSSoundManager.PointPlayer);
         }
         else if (transform.position.x < 0) {
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
             aiScore++;
+            PSSoundManager.PlaySfxPS(PSSoundManager.PointEnemy);
         }
         
         if (aiScore == 3 || plScore == 3) //checks whether the game is finished
         {
             winPanel.SetActive(true);
             Destroy(gameObject);
+
+            PSSoundManager.StopMusicPS(PSSoundManager.MusicPainStation);
+            PSSoundManager.PlaySfxPS(PSSoundManager.PlayerWin);
+            //PSSoundManager.PlaySfxPS(PSSoundManager.PlayerLost);
         }
         else{
             ResetBall();
