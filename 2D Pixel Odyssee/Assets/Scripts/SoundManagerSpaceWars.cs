@@ -30,6 +30,10 @@ public class SWSoundManager : MonoBehaviour
         SWSfxSource.Play();
     }
 
+    public void StopSfxSW(AudioClip clip)
+    {
+        SWmusicSource.Stop();
+    }
     public void StopMusicSW(AudioClip clip)
     {
         SWmusicSource.Stop();

@@ -4,12 +4,18 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bulletPrefab; // Prefab des Geschosses
     public Transform firePoint; // Ausgangspunkt des Geschosses
+    SWSoundManager SWSoundManager;
 
+    private void Awake()
+    {
+        SWSoundManager = GameObject.FindGameObjectWithTag("SoundSpaceWar").GetComponent<SWSoundManager>();
+    }
     void Update()
     {
         // Schießen mit der Leertaste
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SWSoundManager.PlaySfxSW(SWSoundManager.ShootSW);
             FireBullet();
         }
     }

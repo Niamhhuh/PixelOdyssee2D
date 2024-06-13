@@ -10,9 +10,11 @@ public class HomingMissile : MonoBehaviour
     public float speed = 5f;
     public float rotateSpeed = 200f;
     public GameObject explosionEffect; // Prefab für den Explosionseffekt
+    SWSoundManager SWSoundManager;
 
     void Start()
     {
+        SWSoundManager = GameObject.FindGameObjectWithTag("SoundSpaceWar").GetComponent<SWSoundManager>();
         rb = GetComponent<Rigidbody2D>();
         //Find target
         //target = GameObject.FindGameObjectWithTag("BlackHole").transform;
@@ -36,6 +38,7 @@ public class HomingMissile : MonoBehaviour
             Instantiate(explosionEffect, transform.position, transform.rotation);
         }
 
+        SWSoundManager.PlaySfxSW(SWSoundManager.GotHitSW);
         // Zerstoere die Rakete
         Destroy(gameObject);
     }
