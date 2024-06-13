@@ -23,18 +23,15 @@ public class GameManager1 : MonoBehaviour
 
     public Text livesText;
 
-    SoundManager soundManager;
-
     private void Awake()
     {
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
-        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
 
     private void Start()
     {
-        soundManager.PlayMusic(soundManager.background);
+
         NewGame();  
     }
 
@@ -72,7 +69,6 @@ public class GameManager1 : MonoBehaviour
 
     private void Respawn()
     {
-        soundManager.PlayMusic(soundManager.background);
         frogger.Respawn();
         StopAllCoroutines();
         StartCoroutine(Timer(30));
@@ -98,20 +94,16 @@ public class GameManager1 : MonoBehaviour
 
         if (lives > 0)
         {
-            soundManager.StopMusic(soundManager.background);
-            soundManager.PlaySfx(soundManager.death);
             Invoke(nameof(Respawn), 1f);
         }
         else
         {
-            soundManager.PlaySfx(soundManager.gameOver);
             Invoke(nameof(GameOver), 1f);   
         }
     }
 
     private void GameOver()
     {
-        soundManager.StopMusic(soundManager.background);
         frogger.gameObject.SetActive(false);
         gameOverMenu.gameObject.SetActive(true);
 
@@ -163,15 +155,12 @@ public class GameManager1 : MonoBehaviour
 
         if (Cleared())
         {
-            soundManager.StopMusic(soundManager.background);
-            soundManager.PlaySfx(soundManager.win);
             SetScore(score + 1000);
             SetLives(lives + 1);
             Invoke (nameof(NewLevel), 1f);
         }
         else
         {
-            soundManager.PlaySfx(soundManager.score);
             Invoke (nameof(NewRound), 1f);
         }
     }
