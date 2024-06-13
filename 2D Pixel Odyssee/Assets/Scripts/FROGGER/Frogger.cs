@@ -81,6 +81,7 @@ public class Frogger : MonoBehaviour
             }
         if (obstacle != null && platform == null)
         {
+            
             transform.position = destination;
             Death();
         }
