@@ -11,12 +11,23 @@ public class PlayerMovement : MonoBehaviour
 
     private float angle = 0f;
     private float currentAttractionForce = 0f;
+    SWSoundManager SWSoundManager;
 
+    private void Start()
+    {
+        SWSoundManager = GameObject.FindGameObjectWithTag("SoundSpaceWar").GetComponent<SWSoundManager>();
+    }
     void Update()
     {
         // Rotation mit den Pfeiltasten
         float rotationInput = -Input.GetAxis("Horizontal"); // Negativer Wert für umgekehrte Richtung
         transform.Rotate(Vector3.forward, rotationInput * rotationSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.D))
+        {
+            SWSoundManager.PlaySfxSW(SWSoundManager.BoostSW);
+        }
+
 
         // Schießen mit der Leertaste
         if (Input.GetKeyDown(KeyCode.Space))
