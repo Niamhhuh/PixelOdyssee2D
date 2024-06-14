@@ -59,9 +59,9 @@ public class LoadScene : MonoBehaviour
     public void Steuerung() {           //START- und PAUSESCREEN --> oeffnet Steuerung als UI screen
     	steuerung.SetActive(!steuerung.activeSelf);
         allgemein.SetActive(true);
-        spacewar.SetActive(false);
-        frogger.SetActive(false);
-        pong.SetActive(false);
+        spacewar.SetActive(true);
+        frogger.SetActive(true);
+        pong.SetActive(true);   
     }
 
     public void Return() {

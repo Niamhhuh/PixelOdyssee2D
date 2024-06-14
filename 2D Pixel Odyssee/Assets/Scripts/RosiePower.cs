@@ -14,7 +14,7 @@ public class RosiePower : MonoBehaviour
     public int BoxPushedLeft; 
     public int BoxPushedRight;
     public int MaxPush;
-    public float speed = 5;
+    public float speed = 5f;
 
     public Vector3 pushvector;
 
@@ -75,7 +75,7 @@ public class RosiePower : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, pushvector, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, pushvector, speed * Time.deltaTime);
 
     }
 

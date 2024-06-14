@@ -44,7 +44,7 @@ public class NPCDialogue : MonoBehaviour
                 Flip();
             }
 
-            //advancedDialogueManager.InitiateDialogue(this);
+            advancedDialogueManager.InitiateDialogue(this);
             dialogueInitated = true;
         }
     }
@@ -56,7 +56,7 @@ public class NPCDialogue : MonoBehaviour
             //Speech Bubble Off
             //speechBubbleRenderer.enabled = false;
 
-            //advancedDialogueManager.TurnOffDialogue();
+            advancedDialogueManager.TurnOffDialogue();
             dialogueInitated = false;
         }
     }
