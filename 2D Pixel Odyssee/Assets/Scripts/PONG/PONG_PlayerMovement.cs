@@ -52,11 +52,11 @@ public class Pong_PlayerMovement : MonoBehaviour
 
     private void AIControl()
     {
-        if(ball.transform.position.y > transform.position.y + 1.25f)
+        if(ball != null && ball.transform.position.y > transform.position.y + 1.25f)
         {
             playerMove =new Vector2(0,1);
         }
-        else if(ball.transform.position.y < transform.position.y - 1.25f)
+        else if(ball != null &&  ball.transform.position.y < transform.position.y - 1.25f)
         {
             playerMove = new Vector2(0, -1);
         }

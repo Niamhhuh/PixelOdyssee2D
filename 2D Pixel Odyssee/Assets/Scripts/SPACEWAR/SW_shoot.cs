@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour
     }
     void Update()
     {
-        // Schießen mit der Leertaste
+        // Schiessen mit der Leertaste
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SWSoundManager.PlaySfxSW(SWSoundManager.ShootSW);
