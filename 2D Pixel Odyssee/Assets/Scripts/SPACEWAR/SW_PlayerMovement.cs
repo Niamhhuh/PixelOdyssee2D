@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         SWSoundManager = GameObject.FindGameObjectWithTag("SoundSpaceWar").GetComponent<SWSoundManager>();
+        SWSoundManager.PlayMusicSW(SWSoundManager.musicSW);
     }
     void Update()
     {
@@ -80,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         else if (enemy == null){
             speed = 0f;
             winPanel.SetActive(true);
+            //SWSoundManager.PlaySfxSW(SWSoundManager.winSW);
         }
     }
 //____________________________________________________________________________________________________________
