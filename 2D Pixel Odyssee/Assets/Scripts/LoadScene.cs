@@ -7,47 +7,47 @@ using UnityEngine.UI;
 public class LoadScene : MonoBehaviour
 {
 //_______________________________________________________________________________
-//______________This Manager is existent in every scene and______________________
-//_______________is not destroyed upon loading a new scene_______________________
+//______________This Manager is existent in every scene__________________________
 //_______________________________________________________________________________
 
     public GameObject credits = null;
 
-    public GameObject steuerung;
-    public GameObject allgemein;
-    public GameObject spacewar;
-    public GameObject frogger;
-    public GameObject pong;
+    public GameObject steuerung;        //dieser Block sind die Objekte zur Steuerung UI
+    public GameObject allgemein;        //.
+    public GameObject spacewar;         //.
+    public GameObject frogger;          //.
+    public GameObject pong;             //.
 
     public GameObject sceneloader;
     public SpriteRenderer spriteRenderer;
-    public GameObject pauseScreen;
+    public GameObject pauseScreen = null;
 
-//_______________________________________________________________________________
+    Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
+
+//________________________________________________s_______________________________
 //_______Pausescreen Activator below_____________________________________________
 
-   /* void Start() {
-        pauseScreen = GameObject.Find("Pausescreen");
-    }*/
-
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    void Update() {  
+        current_scene = SceneManager.GetActiveScene();
+        
+        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && pauseScreen != null) {
             pauseScreen.SetActive(!pauseScreen.activeSelf);
+            Debug.Log(current_scene.name);
         } 
     }
 
 //_______________________________________________________________________________
 //_______Buttons for menu to load scene below____________________________________
 
-    public void StartGame() {           //beginnt im Moment immer beim Tutorial
+    public void StartGame() {           //STARTSCREEN --> beginnt im Moment immer beim Tutorial
     	SceneManager.LoadScene("Z_Tutorial1");
     }
 
-    public void ArcadeReturn() {        //schickt den Spieler von den Arcades zurueck in die IRL Welt
+    public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
     	SceneManager.LoadScene("Z_Tutorial2");
     }
 
-    public void QuitGame() {            //STARTSCREEN -->Beemdet das Spiel komplett
+    public void QuitGame() {            //STARTSCREEN -->Beendet das Spiel komplett
     	Application.Quit();
     }
 
@@ -57,17 +57,24 @@ public class LoadScene : MonoBehaviour
     }
 
     public void Steuerung() {           //START- und PAUSESCREEN --> oeffnet Steuerung als UI screen
+        if (pauseScreen != null){
+            pauseScreen.SetActive(false);
+        }
+        
     	steuerung.SetActive(!steuerung.activeSelf);
         allgemein.SetActive(true);
         spacewar.SetActive(false);
         frogger.SetActive(false);
-        pong.SetActive(false);
+        pong.SetActive(false);   
     }
 
-    public void Return() {
+    public void Return() {              //CREDITS --> schliesst UI
+        if(pauseScreen != null) {
+            pauseScreen.SetActive(true);
+        }
         steuerung.SetActive(false);
         credits.SetActive(false);
-    }
+       }
 
     //------------steuerung button below------------------------------------
     public void AllgemeinButton() {
@@ -96,12 +103,17 @@ public class LoadScene : MonoBehaviour
     }
     //------------steuerung button above------------------------------------
 
-    void Fortsetzen() {       //PAUSESCREEN --> Schliesst den, vll ersetzen durch nochmal esc druecken?
+    public void Fortsetzen() {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
     	pauseScreen.SetActive(false);
     }
 
-    void SpielBeenden() {      //PAUSESCREEN --> fuehrt zum Startscreen
-    	SceneManager.LoadScene("Startscreen");
+    public void SpielBeenden() {        //PAUSESCREEN --> fuehrt zum Startscreen
+        pauseScreen.SetActive(false);
+    	SceneManager.LoadScene("Z_Start Screen");
+    }
+
+    public void Retry() {   	        //ARCADE --> laedt spiel neu
+        SceneManager.LoadScene(current_scene.name);
     }
 
 //____________________________________________________________________________
@@ -120,6 +132,9 @@ public class LoadScene : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial2"){
             SceneManager.LoadScene("Z_Tutorial1");
+        }
+        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial3"){
+            SceneManager.LoadScene("Z_DemoEnd");
         }
 
 //-----------------------ArcadeGames below------------------------------------

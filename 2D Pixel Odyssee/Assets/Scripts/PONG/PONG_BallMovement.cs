@@ -10,6 +10,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private Text playerScore;
     [SerializeField] private Text AIScore;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject losePanel;
 
     private int aiScore;
     private int plScore;
@@ -30,7 +31,9 @@ public class BallMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, initialSpeed + (speedIncrease * hitCounter));
+        if(this != null){
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, initialSpeed + (speedIncrease * hitCounter));
+        }
     }
 
     private void StartBall() {          //set inital speed
@@ -74,11 +77,6 @@ public class BallMovement : MonoBehaviour
 
             PSSoundManager.PlaySfxPS(PSSoundManager.CollisionPlayer);
         }
-
-        //if (collision.gameObject.name == "Wall")
-        //{
-            //PSSoundManager.PlaySfxPS(PSSoundManager.CollisionWall);
-        //}
     }
 
     //--------------------enter deathzone---------------------------------------------------
@@ -98,12 +96,17 @@ public class BallMovement : MonoBehaviour
         
         if (aiScore == 3 || plScore == 3) //checks whether the game is finished
         {
-            winPanel.SetActive(true);
             Destroy(gameObject);
-
             PSSoundManager.StopMusicPS(PSSoundManager.MusicPainStation);
-            PSSoundManager.PlaySfxPS(PSSoundManager.PlayerWin);
-            //PSSoundManager.PlaySfxPS(PSSoundManager.PlayerLost);
+
+            if(plScore == 3) {
+                winPanel.SetActive(true);
+                PSSoundManager.PlaySfxPS(PSSoundManager.PlayerWin);
+            }
+            else if(aiScore == 3) {
+                losePanel.SetActive(true);
+                PSSoundManager.PlaySfxPS(PSSoundManager.PlayerLost);
+            }
         }
         else{
             ResetBall();

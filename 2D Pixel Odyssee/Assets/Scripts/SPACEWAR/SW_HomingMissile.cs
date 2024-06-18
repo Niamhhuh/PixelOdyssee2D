@@ -9,8 +9,10 @@ public class HomingMissile : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 5f;
     public float rotateSpeed = 200f;
-    public GameObject explosionEffect; // Prefab für den Explosionseffekt
+    public GameObject explosionEffect; // Prefab fuer den Explosionseffekt
+
     SWSoundManager SWSoundManager;
+
 
     void Start()
     {
@@ -30,16 +32,16 @@ public class HomingMissile : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        // Instanziiere den Explosionseffekt
-        if (explosionEffect != null)
+        if (explosionEffect != null && col.CompareTag("Bullet"))    // Instanziiere den Explosionseffekt
         {
-            Instantiate(explosionEffect, transform.position, transform.rotation);
+            //Instantiate(explosionEffect, transform.position, transform.rotation);    --> does not work atm
+            SWSoundManager.PlaySfxSW(SWSoundManager.GotHitSW);
+
+            Destroy(gameObject);        // Zerstoere die Rakete
         }
 
-        SWSoundManager.PlaySfxSW(SWSoundManager.GotHitSW);
-        // Zerstoere die Rakete
-        Destroy(gameObject);
+        
     }
 }

@@ -78,7 +78,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     void PlayDialogue()
     {
-        Debug.Assert(currentConversation.actors.Length > stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
+        Debug.Assert(currentConversation.actors.Length < stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
 
         //If it's a random NPC
         if (currentConversation.actors[stepNum] == DialogueActors.Random)
@@ -149,10 +149,10 @@ public class AdvancedDialogueManager : MonoBehaviour
         foreach (GameObject button in optionButton)
             button.SetActive(false);
 
-        if (optionNum == 0)
+        if (optionNum == 0) 
             currentConversation = currentConversation.option0;
         if (optionNum == 1)
-            currentConversation = currentConversation.option1;
+            currentConversation = currentConversation.option1; 
         if (optionNum == 2)
             currentConversation = currentConversation.option2;
         if (optionNum == 3)
