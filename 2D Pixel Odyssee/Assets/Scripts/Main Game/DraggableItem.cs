@@ -9,6 +9,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Image image;
     [HideInInspector] public Transform parentAfterDrag;
+
+    SoundManagerHub SoundManagerHub;
+
+    public void Start()
+    {
+        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
        Debug.Log("Begin drag");
@@ -16,6 +24,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
+        SoundManagerHub.PlaySfxHub(SoundManagerHub.ItemPickUp);
     }
 
     public void OnDrag(PointerEventData eventData)

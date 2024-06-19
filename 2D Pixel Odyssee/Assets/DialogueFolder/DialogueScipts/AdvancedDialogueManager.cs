@@ -33,6 +33,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     private Coroutine typeWriterRoutine;
     private bool canContinueText = true;
 
+    SoundManagerHub SoundManagerHub;
+
 
 
     // Start is called before the first frame update
@@ -59,6 +61,8 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueText = GameObject.Find("DialogueText").GetComponent <TMP_Text>();
 
         dialogueCanvas.SetActive(false);
+
+        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
     }
 
     // Update is called once per frame
@@ -122,6 +126,8 @@ public class AdvancedDialogueManager : MonoBehaviour
        
         dialogueCanvas.SetActive(true);
         stepNum += 1;
+
+        SoundManagerHub.PlaySfxHub(SoundManagerHub.Dialog);
     }
 
     void SetActorInfo(bool recurringCharacter)

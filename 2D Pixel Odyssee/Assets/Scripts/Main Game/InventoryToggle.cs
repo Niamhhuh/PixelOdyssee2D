@@ -4,10 +4,14 @@ public class InventoryToggle : MonoBehaviour
 {
     public GameObject inventoryPanel;  // Reference to the inventory panel
 
+    SoundManagerHub SoundManagerHub;
+
     void Start()
     {
         // Ensure the inventory panel is hidden at the start
         inventoryPanel.SetActive(false);
+
+        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
     }
 
     void Update()
@@ -17,6 +21,7 @@ public class InventoryToggle : MonoBehaviour
         {
             // Toggle the active state of the inventory panel
             inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+            SoundManagerHub.PlaySfxHub(SoundManagerHub.OpenInventar);
         }
     }
 }

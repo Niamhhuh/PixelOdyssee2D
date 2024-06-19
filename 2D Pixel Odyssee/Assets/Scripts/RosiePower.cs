@@ -18,6 +18,8 @@ public class RosiePower : MonoBehaviour
 
     public Vector3 pushvector;
 
+    SoundManagerHub SoundManagerHub;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class RosiePower : MonoBehaviour
         BoxPushedLeft = 0;
         BoxPushedRight = 0;
         pushvector = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
     }
 
 
@@ -36,7 +39,7 @@ public class RosiePower : MonoBehaviour
         {
             Rosie = collision.gameObject.GetComponent<Transform>();
             MoveScript = collision.gameObject.GetComponent<MoveToMouse>();
-
+            SoundManagerHub.PlaySfxHub(SoundManagerHub.RosiePush);
 
             MoveScript.target = new Vector3(Rosie.transform.position.x, Rosie.transform.position.y, Rosie.transform.position.z);
             

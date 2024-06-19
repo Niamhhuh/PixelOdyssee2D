@@ -9,10 +9,12 @@ public class MoveToMouse : MonoBehaviour
     public float speed = 5f;
     public Vector3 target;
     private bool selected;
+    SoundManagerHub SoundManagerHub;
 
     void Awake()
     {
         moveableObjects.Clear();
+        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
     }
 
     void Start()
