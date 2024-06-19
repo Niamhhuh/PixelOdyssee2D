@@ -30,7 +30,7 @@ public class LoadScene : MonoBehaviour
     void Update() {  
         current_scene = SceneManager.GetActiveScene();
         
-        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && pauseScreen != null) {
+        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null) {
             pauseScreen.SetActive(!pauseScreen.activeSelf);
             Debug.Log(current_scene.name);
         } 
@@ -108,7 +108,11 @@ public class LoadScene : MonoBehaviour
     }
 
     public void SpielBeenden() {        //PAUSESCREEN --> fuehrt zum Startscreen
-        pauseScreen.SetActive(false);
+        if (pauseScreen != null)
+        {
+            pauseScreen.SetActive(false);
+        }
+        
     	SceneManager.LoadScene("Z_Start Screen");
     }
 
@@ -122,10 +126,6 @@ public class LoadScene : MonoBehaviour
 
     private void OnMouseOver(){
         this.spriteRenderer.enabled = true;
-
-        Color alpha = this.GetComponent<SpriteRenderer>().color;
-        alpha.a = 255f;
-        this.GetComponent<SpriteRenderer>().color = alpha;
 
         if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial1"){
             SceneManager.LoadScene("Z_Tutorial2");
@@ -152,9 +152,7 @@ public class LoadScene : MonoBehaviour
 
     private void OnMouseExit(){
         //arcade games
-        Color alpha = this.GetComponent<SpriteRenderer>().color;
-        alpha.a = 150f;
-        this.GetComponent<SpriteRenderer>().color = alpha;
+        this.spriteRenderer.enabled = false;     
 
         if (this.CompareTag("door")) {
             this.spriteRenderer.enabled = false;

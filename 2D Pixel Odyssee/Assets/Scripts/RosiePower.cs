@@ -52,34 +52,19 @@ public class RosiePower : MonoBehaviour
             }
             else if (transform.position.x < Rosie.transform.position.x && MaxPush > BoxPushedLeft)
             {
-                
+            
                 pushvector = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
                 transform.position = pushvector;
                 ++BoxPushedLeft;
                 --BoxPushedRight;
             }
             topush = false;
-
         }
-
     }
 
-    private void OnMouseOver()
-    {   
-        if (Input.GetMouseButtonDown(1))
-        {
+    private void OnMouseOver() {   
+        if (Input.GetMouseButtonDown(1)) {
             topush = true;
         }
-
     }
-
-    void Update()
-    {
-        //transform.position = Vector3.MoveTowards(transform.position, pushvector, speed * Time.deltaTime);
-
-    }
-
-
-
-
 }

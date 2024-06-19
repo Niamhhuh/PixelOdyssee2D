@@ -3,23 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToMouse : MonoBehaviour
+public class ProvMoveToMouse : MonoBehaviour
 {
-    public static List<MoveToMouse> moveableObjects = new List<MoveToMouse>();
+    public static List<ProvMoveToMouse> moveableObjects = new List<ProvMoveToMouse>();
     public float speed = 5f;
     public Vector3 target;
     private bool selected;
-
-    public Animation anim;  //Kimi added this for animation
 
     void Awake()
     {
         moveableObjects.Clear();
     }
-
+    
     void Start()
     {
-        anim = GetComponent<Animation>();
         moveableObjects.Add(this);
         target = transform.position;
     }
@@ -35,11 +32,6 @@ public class MoveToMouse : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        foreach (AnimationState state in anim)
-        {
-            state.speed = 0.5F;
-        }
-        
     }
 
     // Change to right mouse button (index 1)
@@ -50,8 +42,12 @@ public class MoveToMouse : MonoBehaviour
             selected = true;
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
 
-            foreach (MoveToMouse obj in moveableObjects)
+            foreach (ProvMoveToMouse obj in moveableObjects)
             {
+                if (obj == null)
+                {
+                    Debug.Log("null object is " + this);
+                }
                 if (obj != this)
                 {
                     obj.selected = false;
