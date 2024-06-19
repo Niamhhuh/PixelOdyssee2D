@@ -34,6 +34,13 @@ public class LoadScene : MonoBehaviour
             pauseScreen.SetActive(!pauseScreen.activeSelf);
             Debug.Log(current_scene.name);
         } 
+
+        if(current_scene.name == "Z_SteuerungPONG" && Input.GetKeyDown(KeyCode.Return)) {
+            SceneManager.LoadScene("ARC_Painstation");
+        }
+        if(current_scene.name == "Z_SteuerungSW" && Input.GetKeyDown(KeyCode.Return)) {
+            SceneManager.LoadScene("Spacewar-MiniGame");
+        }
     }
 
 //_______________________________________________________________________________
@@ -140,13 +147,13 @@ public class LoadScene : MonoBehaviour
 //-----------------------ArcadeGames below------------------------------------
 
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Space_War"){
-            SceneManager.LoadScene("Spacewar-MiniGame");
+            SceneManager.LoadScene("Z_SteuerungSW");
         }
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Frogger"){
             SceneManager.LoadScene("Frogger");
         }
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Pong"){
-            SceneManager.LoadScene("ARC_Painstation");
+            SceneManager.LoadScene("Z_SteuerungPONG");
         }
     }
 

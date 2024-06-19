@@ -29,6 +29,7 @@ public class GameManager1 : MonoBehaviour
 
     private void Awake()
     {
+        
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();

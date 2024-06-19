@@ -11,6 +11,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private Text AIScore;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject steuerung;
 
     private int aiScore;
     private int plScore;
@@ -23,7 +24,9 @@ public class BallMovement : MonoBehaviour
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        Invoke("StartBall", 2.0f);
+        if (steuerung == null) {
+            Invoke("StartBall", 2.0f);
+        }
         aiScore = 0;
         plScore = 0;
 

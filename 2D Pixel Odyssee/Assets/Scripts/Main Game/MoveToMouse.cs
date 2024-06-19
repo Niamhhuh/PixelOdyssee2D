@@ -10,8 +10,6 @@ public class MoveToMouse : MonoBehaviour
     public Vector3 target;
     private bool selected;
 
-    public Animation anim;  //Kimi added this for animation
-
     void Awake()
     {
         moveableObjects.Clear();
@@ -19,7 +17,6 @@ public class MoveToMouse : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animation>();
         moveableObjects.Add(this);
         target = transform.position;
     }
@@ -35,11 +32,6 @@ public class MoveToMouse : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        foreach (AnimationState state in anim)
-        {
-            state.speed = 0.5F;
-        }
-        
     }
 
     // Change to right mouse button (index 1)
