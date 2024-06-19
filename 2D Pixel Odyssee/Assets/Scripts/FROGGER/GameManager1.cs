@@ -21,6 +21,8 @@ public class GameManager1 : MonoBehaviour
 
     public GameObject gameWonMenu;
 
+    public GameObject gameStart;
+
     public Text livesText;
 
     SoundManager soundManager;
@@ -34,19 +36,25 @@ public class GameManager1 : MonoBehaviour
 
     private void Start()
     {
+        Play();
+        //NewGame();
         soundManager.PlayMusic(soundManager.background);
-        NewGame();  
+
     }
 
     private void NewGame()
     {
         gameOverMenu.SetActive(false);
+        frogger.gameObject.SetActive(true);
+        gameStart.SetActive(false);
+        soundManager.PlayMusic(soundManager.background);
         SetScore(0);
         SetLives(3);
         for (int i = 0; i < homes.Length; i++)
         {
             homes[i].enabled = false;
         }
+        //StartScreen();
         NewRound();
         
     }
@@ -116,6 +124,31 @@ public class GameManager1 : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(PlayAgain());
 
+    }
+
+    private void Play()
+    {
+        frogger.gameObject.SetActive(false);
+        gameStart.SetActive(true);
+
+        StopAllCoroutines();
+        StartCoroutine(StartScreen());
+    }
+    private IEnumerator StartScreen()
+    {
+        bool startScreen = false;  
+        while (!startScreen) 
+        { 
+            if (Input.GetKeyDown(KeyCode.Return)) 
+            
+            { 
+                startScreen = true;
+            }
+
+            yield return null;  
+        }
+        NewGame();  
+        
     }
 
     private IEnumerator PlayAgain()
