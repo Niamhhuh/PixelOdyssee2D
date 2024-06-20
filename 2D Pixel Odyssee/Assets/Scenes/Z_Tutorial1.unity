@@ -3999,6 +3999,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
+  animator: {fileID: 0}
+  distanceThreshold: 0.1
 --- !u!1 &818280952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,6 +5105,7 @@ GameObject:
   - component: {fileID: 1090178048}
   - component: {fileID: 1090178044}
   - component: {fileID: 1090178043}
+  - component: {fileID: 1090178049}
   m_Layer: 0
   m_Name: Rosie
   m_TagString: Player
@@ -5275,6 +5279,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
+  animator: {fileID: 1090178049}
+  distanceThreshold: 0.1
+--- !u!95 &1090178049
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090178041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94150ff1a42b0b74a9ed628a77de5330, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1121618428
 GameObject:
   m_ObjectHideFlags: 0

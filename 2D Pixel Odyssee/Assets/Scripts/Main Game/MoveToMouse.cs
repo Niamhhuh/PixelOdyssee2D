@@ -9,6 +9,12 @@ public class MoveToMouse : MonoBehaviour
     public float speed = 5f;
     public Vector3 target;
     private bool selected;
+
+    public Animation anim;  //Kimi added this for animation
+    public Animator animator; //Tom trying stuff for animation
+    public float distanceThreshold = 0.1f; //Tom and ChatGBT team up to make more trash
+    private bool targetSet = false; //Tom and ChatGBT team up to make more trash
+
     SoundManagerHub SoundManagerHub;
 
     void Awake()
@@ -19,6 +25,7 @@ public class MoveToMouse : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animation>();
         moveableObjects.Add(this);
         target = transform.position;
     }
@@ -28,12 +35,27 @@ public class MoveToMouse : MonoBehaviour
         // Change to right mouse button (index 1)
         if (Input.GetMouseButtonDown(1) && selected)
         {
+            speed = 5f;//Tom and ChatGBT team up to make more trash
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
             target.y = transform.position.y;
+
+            targetSet = true; ////Tom and ChatGBT team up to make more trash
+            animator.SetFloat("Speed", speed); //Tom effing around
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if (targetSet)      //Tom and ChatGBT team up to make more trash
+        {
+            float step = speed * Time.deltaTime;    //Tom and ChatGBT team up to make more trash
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, target) <= distanceThreshold)//Tom and ChatGBT team up to make more trash
+            {
+                Debug.Log("Ziel erreicht!");//Tom and ChatGBT team up to make more trash
+                targetSet = false;//Tom and ChatGBT team up to make more trash
+                animator.SetFloat("Speed", 0); ; //Tom and ChatGBT team up to make more trash
+            }
+        }
     }
 
     // Change to right mouse button (index 1)
