@@ -39,7 +39,7 @@ public class LoadScene : MonoBehaviour
             SceneManager.LoadScene("ARC_Painstation");
         }
         if(current_scene.name == "Z_SteuerungSW" && Input.GetKeyDown(KeyCode.Return)) {
-            SceneManager.LoadScene("Spacewar-MiniGame");
+            SceneManager.LoadScene("ARC_Spacewar-MiniGame");
         }
     }
 
@@ -150,7 +150,7 @@ public class LoadScene : MonoBehaviour
             SceneManager.LoadScene("Z_SteuerungSW");
         }
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Frogger"){
-            SceneManager.LoadScene("Frogger");
+            SceneManager.LoadScene("ARC_Frogger");
         }
         else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Pong"){
             SceneManager.LoadScene("Z_SteuerungPONG");
