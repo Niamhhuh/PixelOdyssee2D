@@ -75,7 +75,7 @@ public class GameManager1 : MonoBehaviour
     }
 
     private void NewRound() 
-    {
+    {  
         Respawn();
     }
 

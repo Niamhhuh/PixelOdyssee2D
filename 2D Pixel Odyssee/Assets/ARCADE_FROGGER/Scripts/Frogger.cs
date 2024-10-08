@@ -12,34 +12,36 @@ public class Frogger : MonoBehaviour
     public Sprite deadSprite;
     public Vector3 spawnPosition;
     private float farthestRow;
+    private bool noMove;
     SoundManager soundManager;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+        noMove = false; 
     }
     public float scrollSpeed = 3.0f;
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if (Input.GetKeyDown(KeyCode.W) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f , 0f, 0f);
             Move(Vector3.up);
             soundManager.PlaySfx(soundManager.jump);
         }
 
-        else if (Input.GetKeyDown(KeyCode.S)) {
+        else if (Input.GetKeyDown(KeyCode.S) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             Move(Vector3.down);
             soundManager.PlaySfx(soundManager.jump);
         } 
-        else if (Input.GetKeyDown(KeyCode.A)) {
+        else if (Input.GetKeyDown(KeyCode.A) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             Move(Vector3.left);
             soundManager.PlaySfx(soundManager.jump);
         } 
-        else if (Input.GetKeyDown(KeyCode.D)) {
+        else if (Input.GetKeyDown(KeyCode.D) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
             soundManager.PlaySfx(soundManager.jump);
@@ -110,9 +112,11 @@ public class Frogger : MonoBehaviour
             float t = elapsed / duration;
             transform.position = Vector3.Lerp(StartPosition, destination, t);
             elapsed += Time.deltaTime;
+            noMove = true;
             yield return null;
         }
 
+        noMove = false; 
         transform.position = destination;
         spriteRenderer.sprite = idleSprite;
     }
@@ -134,11 +138,12 @@ public class Frogger : MonoBehaviour
     {
         StopAllCoroutines();
 
+        transform.SetParent(null);
         transform.rotation = Quaternion.identity;
-        transform.position = spawnPosition;
         farthestRow = spawnPosition.y;
         spriteRenderer.sprite = idleSprite;
         gameObject.SetActive(true);
+        transform.position = spawnPosition;
         enabled = true; 
 
 
