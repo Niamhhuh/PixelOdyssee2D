@@ -51,7 +51,7 @@ public class MoveToMouse : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target) <= distanceThreshold)//Tom and ChatGBT team up to make more trash
             {
-                Debug.Log("Ziel erreicht!");//Tom and ChatGBT team up to make more trash
+                //Debug.Log("Ziel erreicht!");//Tom and ChatGBT team up to make more trash
                 targetSet = false;//Tom and ChatGBT team up to make more trash
                 animator.SetFloat("Speed", 0); ; //Tom and ChatGBT team up to make more trash
             }
