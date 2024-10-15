@@ -662,6 +662,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60110047}
   m_CullTransparentMesh: 1
+--- !u!1 &92581511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92581513}
+  - component: {fileID: 92581512}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: DataManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &92581512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92581511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &92581513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92581511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.494489, y: -0.9610976, z: 6.3988676}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101640941
 GameObject:
   m_ObjectHideFlags: 3
@@ -3991,6 +4035,7 @@ GameObject:
   - component: {fileID: 817111974}
   - component: {fileID: 817111973}
   - component: {fileID: 817111975}
+  - component: {fileID: 817111976}
   m_Layer: 0
   m_Name: Bebe
   m_TagString: Player
@@ -4127,6 +4172,27 @@ MonoBehaviour:
   anim: {fileID: 0}
   animator: {fileID: 0}
   distanceThreshold: 0.1
+--- !u!114 &817111976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817111970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ee0b1e0bfccd242b0ae22ccc860196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
+  Lock_State: 0
+  Traversed: 0
+  ObjectIndex: 0
+  Key_List: 0
+  Key_ID: 0
+  SourceRoom: 0
+  NewObject: 1
+  DMReference: {fileID: 0}
 --- !u!1 &818280952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5138,6 +5204,7 @@ GameObject:
   - component: {fileID: 1090178048}
   - component: {fileID: 1090178043}
   - component: {fileID: 1090178049}
+  - component: {fileID: 1090178050}
   m_Layer: 0
   m_Name: Rosie
   m_TagString: Player
@@ -5322,6 +5389,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1090178050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090178041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352aa923a8a7108439a6197a6dc26758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 3
+  Lock_State: 0
+  Position: 0
+  ObjectIndex: 0
+  List_ID: 0
+  Key_List: 0
+  Key_ID: 0
+  SourceRoom: 0
+  NewObject: 1
+  DMReference: {fileID: 0}
 --- !u!1 &1121618428
 GameObject:
   m_ObjectHideFlags: 0
@@ -7833,3 +7922,4 @@ SceneRoots:
   - {fileID: 1850608390}
   - {fileID: 1121618429}
   - {fileID: 1343214257}
+  - {fileID: 92581513}

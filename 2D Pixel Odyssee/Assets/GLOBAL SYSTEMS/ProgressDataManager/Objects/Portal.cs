@@ -2,23 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour
+public class Portal : ObjectScript
 {
     //Variables which are passed onto DataManager
-    public int Type_ID;			                                                    //ID of the Type, required to choose the list 
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int ID;                                                                  //ID of the Object, required to find it in the list
-    public int Lock_State;                                                          //check if this Object is Interaction_Locked/Limited
+    public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
     //public(Dialogue)			                                                    //Dialogue of this object
 
-    public bool Traversed;			                                                    //relevant to remember whether this door has been used already
+    public bool Traversed;                                                          //relevant to remember whether this door has been used already
 
     //Local Variables, not saved in the DataManager
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //public sprite Highlight;		                                               	//store the highlight sprite of this object
-    public int Key_List;			                                                //reference the List in which the Key is found
-    public int Key_ID;                                                              //reference the ID of the Key 
-    public int SourceRoom;                                                          //reference to the Room in which tis Object is instantiated
-    public bool NewObject = true;
-    public DataManager DMReference;
+    private int ObjectList_ID = 3;                                                  //ID which marks the List this Object is stored in          //used for UnlockMethods
+    private int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
+
+
+    private int SourceRoom;                                                          //reference to the Room in which tis Object is instantiated
+    private bool NewObject = true;                                                   //Mark the Object as new to add it to the DataManager
+
+    private DataManager DMReference;
+    private SequenceUnlock SeqUReference = null;                                     //
+    private UnlockScript UnSReference = null;                                        //
 
     //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
 
@@ -29,28 +35,33 @@ public class Portal : MonoBehaviour
     void Awake()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+        SeqUReference = this.GetComponent<SequenceUnlock>();
+        UnSReference = this.GetComponent<UnlockScript>();
+
+        int currentIndex = 0;                                                                               //remember the currently inspected Index
 
         foreach (DataManager.PortalObj StoredObj in DataManager.Portal_List)                                //Go through the Portal_List and cech PortalObj.
         {
             if (ID == StoredObj.Stored_ID)
             {
                 FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Traversed);                         //Fetch ObjectInformation from DataManager 
-                print("ID Found:" + ID);
+                ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
             }
+            currentIndex++;                                                                                 //Update the currently inspected Index
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddPortalObj(Type_ID, ID, Lock_State, Traversed);                                   //Call the AddPortalObj Method in DataManager, to add a new DataContainer.
-            print("ID Added:" + ID);
+            DMReference.AddPortalObj(ID, Lock_State, Traversed);                                            //Call the AddPortalObj Method in DataManager, to add a new DataContainer.
+            ObjectIndex = DataManager.Portal_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
     }
 
 
 
-    private void FetchData(int Stored_Lock_State, bool Stored_Traversed)                                    //Fetch the Variables Lock and Traversed from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
     {
         Lock_State = Stored_Lock_State;
         Traversed = Stored_Traversed;
@@ -58,9 +69,49 @@ public class Portal : MonoBehaviour
     }
 
 
-    //Object Functionality
+    private void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
+    {
+        DMReference.EditPortalObj(ObjectIndex, Lock_State, Traversed);
+    }
+
+
+    //UnLock Object Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //Unlock this Object with a Key (Item or ShovablePosition)
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void Unlock_Object()                                                                        //Call on Object Interaction to check for Unlock
+    {
+        if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use ItemUnlock
+        {
+            ItemUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            IUReference = (ItemUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
+            IUReference.CallItemUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+        }
+        if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
+        {
+            ShovableUnlock IUReference = null;                                                          //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            IUReference = (ShovableUnlock)UnSReference;                                                 //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
+            IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+        }
+    }
+
+
+    //Optional Initially Locked Functions
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //SequenceUnlock
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void ObjectSequenceUnlock()
+    {
+        SeqUReference.CallSequenceUnlock();             //Call Sequence Unlock Method in Sequence Unlock Script
+    }
 
 
     /*

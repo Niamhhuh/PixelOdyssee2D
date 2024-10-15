@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    public static List<CollectableObj> Collectable_List = new List<CollectableObj>();       //Create a List to store all relevant Variables of Collectable Items
-    public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects
-    public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines
-    public static List<AcquiredObj> Acquired_List = new List<AcquiredObj>();                //Create a List to store all relevant Variables of Inventory Items
-    public static bool [] Rooms_Loaded = new bool[10];                                  //Array which remembers if rooms have been loaded before.
+    public static List<CollectableObj> Collectable_List = new List<CollectableObj>();       //Create a List to store all relevant Variables of Collectable Items            //List_ID 1
+    public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects             //List_ID 2
+    public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
+    public static List<AcquiredObj> Acquired_List = new List<AcquiredObj>();                //Create a List to store all relevant Variables of Inventory Items              //Type... doesnt matter
+    public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
     private void Awake()
     {
@@ -28,32 +28,281 @@ public class DataManager : MonoBehaviour
     //Add Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public void AddCollectableObj(int newType_ID, int newID, int newLock_State, int newCollected)
+    public void AddCollectableObj( int newID, bool newLock_State, bool newCollected) 
     {
-        Collectable_List.Add(new CollectableObj { Stored_Type_ID = newType_ID, Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Collected = newCollected });
+        Collectable_List.Add(new CollectableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Collected = newCollected });
         //Debug.Log(Collectable_List.Count);
     }
 
 
-    public void AddShovableObj(int newType_ID, int newID, int newLock_State, int newPosition)
+    public void AddShovableObj( int newID, bool newLock_State, int newPosition)
     {
-        Shovable_List.Add(new ShovableObj { Stored_Type_ID = newType_ID, Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Position = newPosition });
-        //Debug.Log(Collectable_List.Count);
+        Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Position = newPosition });
+        //Debug.Log(Shovable_List.Count);
     }
 
 
-    public void AddPortalObj(int newType_ID, int newID, int newLock_State, bool newTraversed)
+    public void AddPortalObj( int newID, bool newLock_State, bool newTraversed)
     {
-        Portal_List.Add(new PortalObj { Stored_Type_ID = newType_ID, Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Traversed = newTraversed });
-        //Debug.Log(Collectable_List.Count);
+        Portal_List.Add(new PortalObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Traversed = newTraversed });
+        //Debug.Log(Portal_List.Count);
     }
 
 
-    public void AddAcquiredObj(int newType_ID, int newID, int newLock_State, int newSlot)
+    public void AddAcquiredObj( int newID, bool newLock_State, int newSlot)
     {
-        Acquired_List.Add(new AcquiredObj { Stored_Type_ID = newType_ID, Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Slot = newSlot });
-        //Debug.Log(Collectable_List.Count);
+        Acquired_List.Add(new AcquiredObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Slot = newSlot });
+        //Debug.Log(Acquired_List.Count);
     }
+
+
+    //Edit Object Methods
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void EditCollectableObj(int ObjectIndex, bool newLock_State, bool newCollected)
+    {
+        Collectable_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Collectable_List[ObjectIndex].Stored_Collected = newCollected;
+    }
+
+    public void EditShovableObj(int ObjectIndex, bool newLock_State, int newPosition)
+    {
+        Shovable_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Shovable_List[ObjectIndex].Stored_Position = newPosition;
+    }
+
+    public void EditPortalObj(int ObjectIndex, bool newLock_State, bool newTraversed)
+    {
+        Portal_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Portal_List[ObjectIndex].Stored_Traversed = newTraversed;
+    }
+
+    public void EditAcquiredObj(int ObjectIndex, bool newLock_State, int newSlot)
+    {
+        Acquired_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Acquired_List[ObjectIndex].Stored_Slot = newSlot;
+    }
+
+    //Unlock Methods
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //By Sequence
+    //Unlock Object in Object_List with Object_ID
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void UnlockbySequence (int List_ID, int Object_ID)
+    {
+        if(List_ID == 1)
+        {
+            SequenceSearchCollectable(Object_ID);
+        }
+        if (List_ID == 2)
+        {
+            SequenceSearchShovable(Object_ID);
+        }
+        if (List_ID == 3)
+        {
+            SequenceSearchPortal(Object_ID);
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void SequenceSearchCollectable (int Object_ID)
+    {
+        foreach (CollectableObj StoredObj in Collectable_List)              // Search through Collectable List and Unlock an Object
+        {
+            ChangeLockState(StoredObj, Object_ID);                          // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+            break;
+        }
+    }
+
+    private void SequenceSearchShovable(int Object_ID)
+    {
+        foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
+        {
+            ChangeLockState(StoredObj, Object_ID);                          // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+            break;
+        }
+    }
+
+    private void SequenceSearchPortal(int Object_ID)                         // Search through Portal List and Unlock an Object
+    {
+        foreach (PortalObj StoredObj in Portal_List)                     
+        {
+            ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+            break;
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void ChangeLockState (Obj Current_Object, int Key_ID)           // Compare Current select Object_ID with Target_ID and Change LockState on Match.
+    {
+        if (Key_ID == Current_Object.Stored_ID)
+        {
+            Current_Object.Stored_Lock_State = false;
+        }
+    }
+
+
+
+    //Template
+    /*
+    private void SequenceSearchPortal(int Object_ID)                         // Search through Portal List and Unlock an Object
+    {
+        foreach (PortalObj StoredObj in Portal_List)
+        {
+            if (Object_ID == StoredObj.Stored_ID)
+            {
+                StoredObj.Stored_Lock_State = false;
+                break;
+            }
+        }
+    }
+    */
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //By Shovable Position
+    //Check for Position of Object_ID -> pass back unlock or lock (can be locked again)
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    /*
+    public bool UnlockbyPosition (int Shovable_ID, int Shove_Position, int Unlock_Position, bool Lock_State)
+    {
+        bool Unlock_State = Lock_State;
+
+        foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
+        {
+            if(ComparePosition(StoredObj, Shovable_ID, Shove_Position, Unlock_Position) == false)
+            {
+                Unlock_State = false;
+            }
+            else { Unlock_State = true; }
+            break;
+        }
+
+        if (Unlock_State == false)
+        {
+            return false;
+        }
+        else { return true; }
+    }
+
+    private bool ComparePosition (ShovableObj StoredObj, int Shovable_ID, int Shove_Position, int Unlock_Position)
+    {
+        if (Shovable_ID == StoredObj.Stored_ID)
+        {
+            if (Shove_Position == Unlock_Position)
+            {
+                return false;
+            }
+            else { return true; }
+        }
+        return true;
+    }
+    */
+
+    public void UnlockbyPosition(int UnlockList_ID, int UnlockObject_Index, int Shovable_ID, int Unlock_Position)
+    {
+        foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
+        {
+            CompareObject(UnlockList_ID, UnlockObject_Index, StoredObj, Shovable_ID, StoredObj.Stored_Position, Unlock_Position);
+        }
+    }
+
+    private void CompareObject(int UnlockList_ID, int UnlockObject_Index, ShovableObj StoredObj, int Shovable_ID, int Stored_Shove_Position, int Unlock_Position)
+    {
+        if (Shovable_ID == StoredObj.Stored_ID)
+        {
+            ComparePosition(UnlockList_ID, UnlockObject_Index, Stored_Shove_Position, Unlock_Position);
+        }
+    }
+
+    private void ComparePosition(int UnlockList_ID, int UnlockObject_Index, int Stored_Shove_Position, int Unlock_Position)
+    {
+        if (Stored_Shove_Position == Unlock_Position)
+        {
+            switch(UnlockList_ID)
+            {
+                case 1:
+                    Collectable_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                case 2:
+                    Shovable_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                case 3:
+                    Portal_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        switch (UnlockList_ID)
+        {
+            case 1:
+                Collectable_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
+            case 2:
+                Shovable_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
+            case 3:
+                Portal_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //By Item
+    //Check for Object_ID -> pass back unlock or nothing (remains unlocked for rest of the game?)
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    public void UnlockbyItem(int UnlockList_ID, int UnlockObject_Index, int Acquired_ID)
+    {
+        foreach (AcquiredObj StoredObj in Acquired_List)                     // Search through Shovable List and Unlock an Object
+        {
+            CompareItem(UnlockList_ID, UnlockObject_Index, StoredObj, Acquired_ID);
+        }
+    }
+
+    private void CompareItem(int UnlockList_ID, int UnlockObject_Index, AcquiredObj StoredObj, int Acquired_ID)
+    {
+        if (Acquired_ID == StoredObj.Stored_ID)
+        {
+            ConfirmUnlock(UnlockList_ID, UnlockObject_Index);
+        }
+    }
+
+    private void ConfirmUnlock(int UnlockList_ID, int UnlockObject_Index)
+    {
+            switch (UnlockList_ID)
+            {
+                case 1:
+                    Collectable_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                case 2:
+                    Shovable_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                case 3:
+                    Portal_List[UnlockObject_Index].Stored_Lock_State = false;
+                    break;
+                default:
+                    break;
+            }
+    }
+
+
+
 
 
 
@@ -108,15 +357,14 @@ public class DataManager : MonoBehaviour
 
     public class Obj
     {
-        public int Stored_Type_ID;
         public int Stored_ID;
-        public int Stored_Lock_State;
+        public bool Stored_Lock_State;
         // public int Dialogue_Progress;
     }
     
     public class CollectableObj : Obj
     {
-        public int Stored_Collected;
+        public bool Stored_Collected;
     }
 
     public class AcquiredObj : Obj
