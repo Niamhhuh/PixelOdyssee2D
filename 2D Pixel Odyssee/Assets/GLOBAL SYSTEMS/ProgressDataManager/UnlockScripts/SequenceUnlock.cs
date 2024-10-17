@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SequenceUnlock : MonoBehaviour
 {
-    int OtherUnlockList_ID;
-    int OtherUnlockObject_ID;
+    public int OtherUnlockList_ID;
+    public int OtherUnlockObject_ID;
     public DataManager DMReference;
     public ObjectScript ObjReference = null;
 

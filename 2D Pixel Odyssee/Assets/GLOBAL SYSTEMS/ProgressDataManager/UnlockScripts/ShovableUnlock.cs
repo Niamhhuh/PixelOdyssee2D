@@ -14,7 +14,7 @@ public class ShovableUnlock : UnlockScript
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();                      //Find and Connect to DataManager
         ObjReference = this.GetComponent<ObjectScript>();                                                               //Fetch Object script from this Script (Collectable, Portal, Shovable...)
-        ObjReference.UnlockMethod = 1;                                                                                  //Set UnlockMethod in Object Script to 1 (Unlock by Shove_Position)
+        ObjReference.UnlockMethod = 2;                                                                                  //Set UnlockMethod in Object Script to 1 (Unlock by Shove_Position)
     }
 
     public void CallShovableUnlock(int UnlockList_ID, int UnlockObject_Index)                                           //Method is called in ObjectMainScript, takes Object_!!INDEX!! and Object_List

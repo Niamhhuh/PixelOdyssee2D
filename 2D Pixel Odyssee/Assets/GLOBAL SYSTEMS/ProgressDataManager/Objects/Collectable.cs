@@ -16,7 +16,7 @@ public class Collectable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //public SpriteRenderer Highlight;		                                               	//store the highlight sprite of this object
     private int ObjectList_ID = 1;                                                  //ID which marks the List this Object is stored in          //used for UnlockMethods
-    private int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
+    public int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
 
 
     private int SourceRoom;                                                         //reference to the Room in which tis Object is instantiated
@@ -124,7 +124,10 @@ public class Collectable : ObjectScript
 
     private void ObjectSequenceUnlock()
     {
-        SeqUReference.CallSequenceUnlock();                                                             //Call Sequence Unlock Method in Sequence Unlock Script
+        if (CanSequenceUnlock == true)
+        {
+            SeqUReference.CallSequenceUnlock();                                                             //Call Sequence Unlock Method in Sequence Unlock Script
+        }
     }
 
 
@@ -133,10 +136,15 @@ public class Collectable : ObjectScript
 
     private void OnMouseOver()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Unlock_Object();
+        }
         //this.Highlight.enabled = true;
         if (Input.GetMouseButtonDown(1) && Lock_State == false)
         {
             PickUp();
+            ObjectSequenceUnlock();
         }
     }
 
