@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: Example Conversation
   m_EditorClassIdentifier: 
-  actors: 020000000000000004000000
-  randomActorName: 
+  actors: 03000000000000000300000004000000
+  randomActorName: Capsule NPC
   randomActorPortait: {fileID: 0}
   dialogue:
-  - 'Silver: Meow I''m a cat'
-  - 'Rosie: Hello! I can see that. '
-  - 'Silver: What are you?'
+  - Random Actor example convo
+  - Rosie answer
+  - NPC Question
   optionText:
-  - I'm a Human
-  - I'm a cat too.
-  - I don't know what I am.
-  - I'm God.
-  option0: {fileID: 11400000, guid: d7edcad5ad3f65b4eb05791966985ab8, type: 2}
-  option1: {fileID: 11400000, guid: d699a0119b05327449c67e7227a008cc, type: 2}
-  option2: {fileID: 11400000}
-  option3: {fileID: 11400000, guid: e440222d997877e47a2002c0f8c6d0ab, type: 2}
+  - Option 0
+  - Option 1
+  - Option 2
+  - Option 3
+  option0: {fileID: 11400000, guid: 327acf1e82c42d34492cf93439a0271b, type: 2}
+  option1: {fileID: 11400000, guid: d3c73461011f88844994fa0c76a4d3f3, type: 2}
+  option2: {fileID: 11400000, guid: 534f9389de834984b8ac41b8cd75cf8a, type: 2}
+  option3: {fileID: 11400000, guid: 6c4bbb9c16155cc4c8e30f871ad47d84, type: 2}

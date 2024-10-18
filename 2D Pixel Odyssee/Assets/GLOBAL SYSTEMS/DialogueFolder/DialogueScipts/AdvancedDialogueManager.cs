@@ -82,7 +82,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     void PlayDialogue()
     {
-        Debug.Assert(currentConversation.actors.Length < stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
+        Debug.Assert(currentConversation.actors.Length > stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
 
         //If it's a random NPC
         if (currentConversation.actors[stepNum] == DialogueActors.Random)
@@ -110,7 +110,7 @@ public class AdvancedDialogueManager : MonoBehaviour
                 }
 
                 //Set the first button to be auto-selected
-                optionButton[0].GetComponent<Button>().Select();
+                //optionButton[0].GetComponent<Button>().Select();
             }
         }
 
