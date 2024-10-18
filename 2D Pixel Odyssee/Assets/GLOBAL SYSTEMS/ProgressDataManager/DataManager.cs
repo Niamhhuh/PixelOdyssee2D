@@ -52,8 +52,8 @@ public class DataManager : MonoBehaviour
     public void AddAcquiredObj( int newID, bool newLock_State, int newSlot)
     {
         Acquired_List.Add(new AcquiredObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Slot = newSlot });
-        print("Item Collected" + Acquired_List[0].Stored_ID);
-        Debug.Log(Acquired_List.Count);
+        //print("Item Collected" + Acquired_List[0].Stored_ID);
+        //Debug.Log(Acquired_List.Count);
     }
 
 

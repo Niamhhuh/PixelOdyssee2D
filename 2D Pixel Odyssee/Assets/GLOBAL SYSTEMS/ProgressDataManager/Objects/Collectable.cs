@@ -99,6 +99,7 @@ public class Collectable : ObjectScript
     {
         if (UnlockMethod == 1)                                                                           //If the Unlock Method is 1 use ItemUnlock
         {
+            //print("I'm called2");
             ItemUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
             IUReference = (ItemUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
             IUReference.CallItemUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
@@ -136,16 +137,20 @@ public class Collectable : ObjectScript
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
-            Unlock_Object();
+            //print("I'm called1");
+            Unlock_Object();                                                                                                                        //Try to Unlock the Object
+            FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
+
+            if (Lock_State == false)
+            {
+                PickUp();
+                ObjectSequenceUnlock();
+            }
+
         }
         //this.Highlight.enabled = true;
-        if (Input.GetMouseButtonDown(1) && Lock_State == false)
-        {
-            PickUp();
-            ObjectSequenceUnlock();
-        }
     }
 
     private void PickUp()                                                                              //Pick up the Item by adding it to the acquired List.

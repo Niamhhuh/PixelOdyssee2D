@@ -18,7 +18,7 @@ public class ItemUnlock : UnlockScript
 
     public void CallItemUnlock (int UnlockList_ID, int UnlockObject_Index)                                  //Method is called in ObjectMainScript, takes Object_!!INDEX!! and Object_List
     {
-        print("List:" + UnlockList_ID + "Index:" + UnlockObject_Index);
+        //print("List:" + UnlockList_ID + "Index:" + UnlockObject_Index + "Key:" + Key_Acquired_ID);
         DMReference.UnlockbyItem(UnlockList_ID, UnlockObject_Index, Key_Acquired_ID);                           //Call UnlockbyItem in DataManager, add required Key Item ID
     }
 }
