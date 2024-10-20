@@ -11,17 +11,29 @@ public class UiToMouse : MonoBehaviour
     public Canvas canvas;
     private Vector3 targetPosition;
     private bool movePlayer = false;
+    public bool AllowInput;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
+        AllowInput = true;
+    }
 
+    public void DisableInput()
+    {
+        AllowInput = false;
+    }
+
+    public void EnableInput()
+    {
+        AllowInput = true;
     }
 
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && AllowInput)
         {
 
             Vector3 mousePosition = Input.mousePosition;

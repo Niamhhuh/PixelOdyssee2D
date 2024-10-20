@@ -4322,6 +4322,7 @@ MonoBehaviour:
   player: {fileID: 681247200}
   playerSpeed: 5
   canvas: {fileID: 1204984833}
+  AllowInput: 0
 --- !u!114 &629527252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4629,10 +4630,6 @@ MonoBehaviour:
   RosieObj: {fileID: 2090316373}
   BeBeObj: {fileID: 1944771336}
   RosieActive: 0
-  AllowInput: 0
-  Movespeed: 5
-  TargetPosition: {x: 0, y: 0, z: 0}
-  DestinationMargin: 0.1
 --- !u!95 &681247196
 Animator:
   serializedVersion: 5
@@ -6617,8 +6614,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 681247195}
-          m_TargetAssemblyTypeName: CharacterScript, Assembly-CSharp
+        - m_Target: {fileID: 629527251}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
           m_Arguments:
@@ -6633,8 +6630,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 681247195}
-          m_TargetAssemblyTypeName: CharacterScript, Assembly-CSharp
+        - m_Target: {fileID: 629527251}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: EnableInput
           m_Mode: 1
           m_Arguments:
