@@ -8,12 +8,14 @@ public class CharacterScript : MonoBehaviour
 {
     public GameObject RosieObj;
     public GameObject BeBeObj;
+    public bool RosieActive;
+    public bool AllowInput;
 
     //public static GameObject Character;
-    
+
     public float Movespeed = 5f;
     public Vector3 TargetPosition;
-    public bool Mousepressed;
+    
 
     public float DestinationMargin = 0.1f; //Tom and ChatGBT team up to make more trash
     private bool MoveToPoint = false; //Tom and ChatGBT team up to make more trash
@@ -27,6 +29,8 @@ public class CharacterScript : MonoBehaviour
         //Chaanimation = GetComponent<Animation>();
         TargetPosition = transform.position;
         BeBeObj.SetActive(false);
+        RosieActive = true;
+        AllowInput = true;
 
         SoundManager = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
 
@@ -37,18 +41,26 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
+    public void DisableInput ()
+    {
+        AllowInput = false;
+    }
+
+    public void EnableInput()
+    {
+        AllowInput = true;
+    }
     public void SwitchCharacters()
     {
         if(RosieObj.activeSelf == true)
         {
-            print(this);
-            print("I am called1");
+            RosieActive = false;
             RosieObj.SetActive(false);
             BeBeObj.SetActive(true);
         }
         else
         {
-            print("I'm called2");
+            RosieActive = true;
             RosieObj.SetActive(true);
             BeBeObj.SetActive(false);
         }
@@ -57,7 +69,7 @@ public class CharacterScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && AllowInput)
         {
             TargetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             TargetPosition.z = transform.position.z;

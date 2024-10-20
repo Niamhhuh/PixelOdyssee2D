@@ -14,7 +14,7 @@ public class Shovable : ObjectScript
 
     //Local Variables, not saved in the DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //public sprite Highlight;		                                               	//store the highlight sprite of this object
+ 
     private int ObjectList_ID = 2;                                                  //ID which marks the List this Object is stored in          //used for UnlockMethods
     private int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
 
@@ -75,21 +75,18 @@ public class Shovable : ObjectScript
     }
 
 
-    //UnLock Object Functions
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
     //Unlock this Object with a Key (Item or ShovablePosition)
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     private void Unlock_Object()                                                                        //Call on Object Interaction to check for Unlock
     {
         if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use ItemUnlock
         {
-            ItemUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-            IUReference = (ItemUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
-            IUReference.CallItemUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            AcquireUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            IUReference = (AcquireUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
+            IUReference.CallAcquiredUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
         }
         if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
         {
@@ -100,10 +97,24 @@ public class Shovable : ObjectScript
     }
 
 
-    //Optional Initially Locked Functions
+    //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    private void OnMouseOver()  //This is the Main Function Controller
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //print("I'm called1");
+            Unlock_Object();                                                                                                                        //Try to Unlock the Object
+            FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Position);     //Fetch new State from DataManager
+
+            if (Lock_State == false)
+            {
+
+            }
+        }
+    }
 
     //SequenceUnlock
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,14 +125,7 @@ public class Shovable : ObjectScript
     }
 
 
-    /*
-    private void Update()
-    {
-        if(Activate == true)
-        {
-            DMReference.PrintCollectable();
-            Activate = false;
-        }
-    }
-    */
+    //Object Specific Functionality
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 }

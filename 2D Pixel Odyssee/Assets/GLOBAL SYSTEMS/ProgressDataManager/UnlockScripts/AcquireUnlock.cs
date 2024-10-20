@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemUnlock : UnlockScript
+public class AcquireUnlock : UnlockScript
 {
     public int Key_Acquired_ID;
 
@@ -16,9 +16,9 @@ public class ItemUnlock : UnlockScript
         ObjReference.UnlockMethod = 1;                                                                      //Set UnlockMethod in Object Script to 2 (Unlock by Item)
     }
 
-    public void CallItemUnlock (int UnlockList_ID, int UnlockObject_Index)                                  //Method is called in ObjectMainScript, takes Object_!!INDEX!! and Object_List
+    public void CallAcquiredUnlock (int UnlockList_ID, int UnlockObject_Index)                                  //Method is called in ObjectMainScript, takes Object_!!INDEX!! and Object_List
     {
         //print("List:" + UnlockList_ID + "Index:" + UnlockObject_Index + "Key:" + Key_Acquired_ID);
-        DMReference.UnlockbyItem(UnlockList_ID, UnlockObject_Index, Key_Acquired_ID);                           //Call UnlockbyItem in DataManager, add required Key Item ID
+        DMReference.UnlockbyAcquired(UnlockList_ID, UnlockObject_Index, Key_Acquired_ID);                           //Call UnlockbyItem in DataManager, add required Key Item ID
     }
 }
