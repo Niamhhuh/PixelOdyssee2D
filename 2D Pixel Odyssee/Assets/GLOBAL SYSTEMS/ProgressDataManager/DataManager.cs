@@ -239,21 +239,24 @@ public class DataManager : MonoBehaviour
                     break;
             }
             
-        }
-        switch (UnlockList_ID)
+        } else
         {
-            case 1:
-                Collectable_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            case 2:
-                Shovable_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            case 3:
-                Portal_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            default:
-                break;
+            switch (UnlockList_ID)
+            {
+                case 1:
+                    Collectable_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                case 2:
+                    Shovable_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                case 3:
+                    Portal_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                default:
+                    break;
+            }
         }
+        
     }
 
 
