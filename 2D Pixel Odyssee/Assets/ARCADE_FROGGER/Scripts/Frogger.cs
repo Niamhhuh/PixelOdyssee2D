@@ -12,7 +12,7 @@ public class Frogger : MonoBehaviour
     public Sprite deadSprite;
     public Vector3 spawnPosition;
     private float farthestRow;
-    private bool noMove;
+    public bool noMove;
     SoundManager soundManager;
     private void Awake()
     {
