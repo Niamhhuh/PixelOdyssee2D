@@ -19,8 +19,8 @@ public class NPCDialogue : MonoBehaviour
     void Start()
     {
         advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
-        //speechBubbleRenderer = GetComponent<SpriteRenderer>();
-        //speechBubbleRenderer.enabled = false;
+        speechBubbleRenderer = GetComponent<SpriteRenderer>();
+        speechBubbleRenderer.enabled = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -28,7 +28,7 @@ public class NPCDialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player" && !dialogueInitated)
         {
             //Speech Bubble On
-            //speechBubbleRenderer.enabled=true;
+            speechBubbleRenderer.enabled=true;
 
             //Find the player's transform
             player = collision.gameObject.GetComponent<Transform>();
@@ -53,7 +53,7 @@ public class NPCDialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //Speech Bubble Off
-            //speechBubbleRenderer.enabled = false;
+            speechBubbleRenderer.enabled = false;
 
             advancedDialogueManager.TurnOffDialogue();
             dialogueInitated = false;
