@@ -7,15 +7,14 @@ public class Acquired : ObjectScript
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int ID;                                                                  //ID of the Object, required to find it in the list
-    public bool Lock_State;                                 //Likely Redundant      //check if this Object is Interaction_Locked/Limited
     //public(Dialogue)			                                                    //Dialogue of this object
 
     public int Slot;                                                                //relevant to control the position in the Inventory
 
     //Local Variables, not saved in the DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //public sprite Highlight;		                                               	//store the highlight sprite of this object
-    private int ObjectList_ID = 4;                           //Likely Redundant     //ID which marks the List this Object is stored in          //used for UnlockMethods
+   
+    //private int ObjectList_ID = 4;                           //Likely Redundant     //ID which marks the List this Object is stored in          //used for UnlockMethods
     private int ObjectIndex;                                 //Likely Redundant     //Index of this Object in its list                          //used for UnlockMethods
 
 
@@ -23,8 +22,8 @@ public class Acquired : ObjectScript
     private bool NewObject = true;
 
     private DataManager DMReference;
-    private SequenceUnlock SeqUReference = null;                                     //
-    private UnlockScript UnSReference = null;                                        //
+    private SequenceUnlock SeqUReference = null;                                     //MIGHT BE DELETED
+    private UnlockScript UnSReference = null;                                        //MIGHT BE DELETED
 
     //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
 
@@ -44,7 +43,7 @@ public class Acquired : ObjectScript
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Slot);                              //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Slot);                              //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -53,7 +52,7 @@ public class Acquired : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddAcquiredObj(ID, Lock_State, Slot);                                               //Call the AddAcquiredObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddAcquiredObj(ID, Slot);                                               //Call the AddAcquiredObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Acquired_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
@@ -61,17 +60,15 @@ public class Acquired : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, int Stored_Slot)                                          //Fetch the Variables Lock and Slot from the DataManager
+    private void FetchData(int Stored_Slot)                                          //Fetch the Variables Lock and Slot from the DataManager
     {
-        Lock_State = Stored_Lock_State;
         Slot = Stored_Slot;
-        //print(StoredObj.Stored_Type_ID);
     }
 
 
     private void UpdateData()                                                                               //Pass Variables Lock and Slot to the DataManager
     {
-        DMReference.EditAcquiredObj(ObjectIndex, Lock_State, Slot);
+        DMReference.EditAcquiredObj(ObjectIndex, Slot);
     }
 
     //UnLock Object Functions
@@ -82,6 +79,7 @@ public class Acquired : ObjectScript
     //Unlock this Object with a Key (Item or ShovablePosition)
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    /*
     private void Unlock_Object()                                                                        //Call on Object Interaction to check for Unlock
     {
         if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use ItemUnlock
@@ -97,7 +95,7 @@ public class Acquired : ObjectScript
             IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
         }
     }
-
+    */ //DELETE LATER
 
     //Optional Initially Locked Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,21 +105,10 @@ public class Acquired : ObjectScript
     //SequenceUnlock
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    /*
     private void ObjectSequenceUnlock()
     {
         SeqUReference.CallSequenceUnlock();             //Call Sequence Unlock Method in Sequence Unlock Script
     }
-
-
-
-    /*
-    private void Update()
-    {
-        if(Activate == true)
-        {
-            DMReference.PrintCollectable();
-            Activate = false;
-        }
-    }
-    */
+    */ //DELETE LATER
 }

@@ -81,6 +81,7 @@ public class GameManager1 : MonoBehaviour
 
     private void Respawn()
     {
+        frogger.noMove = false; 
         frogger.Respawn();
         StopAllCoroutines();
         StartCoroutine(Timer(30));

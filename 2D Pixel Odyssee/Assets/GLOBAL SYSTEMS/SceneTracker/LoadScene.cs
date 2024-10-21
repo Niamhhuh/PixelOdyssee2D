@@ -30,7 +30,7 @@ public class LoadScene : MonoBehaviour
     void Update() {  
         current_scene = SceneManager.GetActiveScene();
         
-        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null) {
+        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false) {
             pauseScreen.SetActive(!pauseScreen.activeSelf);
             Debug.Log(current_scene.name);
         } 
@@ -134,25 +134,25 @@ public class LoadScene : MonoBehaviour
     private void OnMouseOver(){
         this.spriteRenderer.enabled = true;
 
-        if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial1"){
+        if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial1"){
             SceneManager.LoadScene("Z_Tutorial2");
         }
-        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial2"){
+        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial2"){
             SceneManager.LoadScene("Z_Tutorial1");
         }
-        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "door_tutorial3"){
+        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial3"){
             SceneManager.LoadScene("Z_DemoEnd");
         }
 
 //-----------------------ArcadeGames below------------------------------------
 
-        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Space_War"){
+        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Space_War"){
             SceneManager.LoadScene("Z_SteuerungSW");
         }
-        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Frogger"){
+        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Frogger"){
             SceneManager.LoadScene("ARC_Frogger");
         }
-        else if (Input.GetMouseButtonDown(1) && sceneloader.name == "Mini Pong"){
+        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Pong"){
             SceneManager.LoadScene("Z_SteuerungPONG");
         }
     }

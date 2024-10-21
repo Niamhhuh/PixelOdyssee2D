@@ -49,9 +49,10 @@ public class DataManager : MonoBehaviour
     }
 
 
-    public void AddAcquiredObj( int newID, bool newLock_State, int newSlot)
+    public void AddAcquiredObj( int newID, int newSlot)
     {
-        Acquired_List.Add(new AcquiredObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Slot = newSlot });
+        Acquired_List.Add(new AcquiredObj { Stored_ID = newID, Stored_Slot = newSlot });
+        //print("Item Collected" + Acquired_List[0].Stored_ID);
         //Debug.Log(Acquired_List.Count);
     }
 
@@ -78,9 +79,8 @@ public class DataManager : MonoBehaviour
         Portal_List[ObjectIndex].Stored_Traversed = newTraversed;
     }
 
-    public void EditAcquiredObj(int ObjectIndex, bool newLock_State, int newSlot)
+    public void EditAcquiredObj(int ObjectIndex, int newSlot)
     {
-        Acquired_List[ObjectIndex].Stored_Lock_State = newLock_State;
         Acquired_List[ObjectIndex].Stored_Slot = newSlot;
     }
 
@@ -115,7 +115,6 @@ public class DataManager : MonoBehaviour
         foreach (CollectableObj StoredObj in Collectable_List)              // Search through Collectable List and Unlock an Object
         {
             ChangeLockState(StoredObj, Object_ID);                          // Call Method to compare Current Object ID with Target ID and then edit Lock_State
-            break;
         }
     }
 
@@ -124,7 +123,6 @@ public class DataManager : MonoBehaviour
         foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
         {
             ChangeLockState(StoredObj, Object_ID);                          // Call Method to compare Current Object ID with Target ID and then edit Lock_State
-            break;
         }
     }
 
@@ -133,7 +131,6 @@ public class DataManager : MonoBehaviour
         foreach (PortalObj StoredObj in Portal_List)                     
         {
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
-            break;
         }
     }
 
@@ -242,21 +239,24 @@ public class DataManager : MonoBehaviour
                     break;
             }
             
-        }
-        switch (UnlockList_ID)
+        } else
         {
-            case 1:
-                Collectable_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            case 2:
-                Shovable_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            case 3:
-                Portal_List[UnlockObject_Index].Stored_Lock_State = true;
-                break;
-            default:
-                break;
+            switch (UnlockList_ID)
+            {
+                case 1:
+                    Collectable_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                case 2:
+                    Shovable_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                case 3:
+                    Portal_List[UnlockObject_Index].Stored_Lock_State = true;
+                    break;
+                default:
+                    break;
+            }
         }
+        
     }
 
 
@@ -267,15 +267,15 @@ public class DataManager : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    public void UnlockbyItem(int UnlockList_ID, int UnlockObject_Index, int Acquired_ID)
+    public void UnlockbyAcquired(int UnlockList_ID, int UnlockObject_Index, int Acquired_ID)
     {
         foreach (AcquiredObj StoredObj in Acquired_List)                     // Search through Shovable List and Unlock an Object
         {
-            CompareItem(UnlockList_ID, UnlockObject_Index, StoredObj, Acquired_ID);
+            CompareAcquired(UnlockList_ID, UnlockObject_Index, StoredObj, Acquired_ID);
         }
     }
 
-    private void CompareItem(int UnlockList_ID, int UnlockObject_Index, AcquiredObj StoredObj, int Acquired_ID)
+    private void CompareAcquired(int UnlockList_ID, int UnlockObject_Index, AcquiredObj StoredObj, int Acquired_ID)
     {
         if (Acquired_ID == StoredObj.Stored_ID)
         {
