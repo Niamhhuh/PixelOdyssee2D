@@ -30,15 +30,22 @@ public class Inventory : MonoBehaviour
     {
         if(Input.GetKeyDown("i"))
         {
-           if (InventoryObj.activeSelf == false)
-            {
-                CallInventory();
-            } else
-            {
-                CloseInventory();
-            }
+            print("I'm called");
+            ControllInventory();
         }
 
+    }
+
+    public void ControllInventory ()
+    {
+        if (InventoryObj.activeSelf == false)
+        {
+            CallInventory();
+        }
+        else
+        {
+            CloseInventory();
+        }
     }
 
     public void CallInventory ()

@@ -8,11 +8,12 @@ public class DataManager : MonoBehaviour
     public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects             //List_ID 2
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<AcquiredObj> Acquired_List = new List<AcquiredObj>();                //Create a List to store all relevant Variables of Inventory Items              //Type... doesnt matter
+    public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();    //Maybe Uneeded                              //Create a List to store all relevant Variables of Inventory Items              //Type... doesnt matter
     public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
     private void Awake()
     {
-        Rooms_Loaded[0] = false;                                                        //Archieve 
+        Rooms_Loaded[0] = false;                                                        //Archive 
         Rooms_Loaded[1] = false;                                                        //RaceArcade
         Rooms_Loaded[2] = false;                                                        //Exit
         Rooms_Loaded[3] = false;                                                        //SpaceWar 
@@ -144,65 +145,11 @@ public class DataManager : MonoBehaviour
         }
     }
 
-
-
-    //Template
-    /*
-    private void SequenceSearchPortal(int Object_ID)                         // Search through Portal List and Unlock an Object
-    {
-        foreach (PortalObj StoredObj in Portal_List)
-        {
-            if (Object_ID == StoredObj.Stored_ID)
-            {
-                StoredObj.Stored_Lock_State = false;
-                break;
-            }
-        }
-    }
-    */
-
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //By Shovable Position
     //Check for Position of Object_ID -> pass back unlock or lock (can be locked again)
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-    /*
-    public bool UnlockbyPosition (int Shovable_ID, int Shove_Position, int Unlock_Position, bool Lock_State)
-    {
-        bool Unlock_State = Lock_State;
-
-        foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
-        {
-            if(ComparePosition(StoredObj, Shovable_ID, Shove_Position, Unlock_Position) == false)
-            {
-                Unlock_State = false;
-            }
-            else { Unlock_State = true; }
-            break;
-        }
-
-        if (Unlock_State == false)
-        {
-            return false;
-        }
-        else { return true; }
-    }
-
-    private bool ComparePosition (ShovableObj StoredObj, int Shovable_ID, int Shove_Position, int Unlock_Position)
-    {
-        if (Shovable_ID == StoredObj.Stored_ID)
-        {
-            if (Shove_Position == Unlock_Position)
-            {
-                return false;
-            }
-            else { return true; }
-        }
-        return true;
-    }
-    */
 
     public void UnlockbyPosition(int UnlockList_ID, int UnlockObject_Index, int Shovable_ID, int Unlock_Position)
     {
@@ -266,7 +213,7 @@ public class DataManager : MonoBehaviour
     //Check for Object_ID -> pass back unlock or nothing (remains unlocked for rest of the game?)
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+    // This might become obsolete / be used for different Item Types.
     public void UnlockbyAcquired(int UnlockList_ID, int UnlockObject_Index, int Acquired_ID)
     {
         foreach (AcquiredObj StoredObj in Acquired_List)                     // Search through Shovable List and Unlock an Object
@@ -300,55 +247,6 @@ public class DataManager : MonoBehaviour
                     break;
             }
     }
-
-
-
-
-
-
-
-    /*
-        public void PrintCollectable()
-        {
-            Debug.Log(Collectable_List[0].Stored_Collected);
-        }
-    */
-
-
-
-    /*
-    public Collectable_List_Edit(ID, Collected, (Unlock_ID_List))
-    {
-        Search Collectable_Item_List for ID, change Collected to True.
-        (Optional: Unlock an Object any List)
-        Add ID to Acquired_Item_List        //On Use, remover Item from Acquired_Item_List
-                                            //Delete Source Object (Craft Parts or Loose Item).
-    }
-    */
-
-    /*
-    public Pushable_List_Edit (ID, Slide_Position) 
-    {
-        Search Slider_List for ID, change Slide_Position.
-        (Optional: Unlock an Object any List)
-    }
-    */
-
-    /*
-    public Portal_List_Edit (ID) 
-    {
-        Search Portal_List for ID.
-        (Optional: Unlock an Object any List)
-    }
-    */
-
-    /*
-    public Acquired_Item_List_Edit (ID, Slot_Position) 
-    {
-        Search Acquired_Item_List for ID, change Slot_Position.
-    }
-    */
-
 
 
     //Classes for Object DataTypes

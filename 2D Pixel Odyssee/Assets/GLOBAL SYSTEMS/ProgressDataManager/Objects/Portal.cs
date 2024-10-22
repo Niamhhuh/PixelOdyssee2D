@@ -6,25 +6,8 @@ public class Portal : ObjectScript
 {
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public int ID;                                                                  //ID of the Object, required to find it in the list
-    public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
-    //public(Dialogue)			                                                    //Dialogue of this object
 
     public bool Traversed;                                                          //relevant to remember whether this door has been used already
-
-    //Local Variables, not saved in the DataManager
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   
-    private int ObjectList_ID = 3;                                                  //ID which marks the List this Object is stored in          //used for UnlockMethods
-    private int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
-
-
-    private int SourceRoom;                                                          //reference to the Room in which tis Object is instantiated
-    private bool NewObject = true;                                                   //Mark the Object as new to add it to the DataManager
-
-    private DataManager DMReference;
-    private SequenceUnlock SeqUReference = null;                                     //
-    private UnlockScript UnSReference = null;                                        //
 
     //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
 
@@ -34,6 +17,7 @@ public class Portal : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Awake()
     {
+        ObjectList_ID = 3;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
@@ -75,28 +59,6 @@ public class Portal : ObjectScript
     }
 
 
-
-    //Unlock this Object with a Key (Item or ShovablePosition)
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    private void Unlock_Object()                                                                        //Call on Object Interaction to check for Unlock
-    {
-        if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use ItemUnlock
-        {
-            AcquireUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-            IUReference = (AcquireUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
-            IUReference.CallAcquiredUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-        }
-        if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
-        {
-            ShovableUnlock IUReference = null;                                                          //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-            IUReference = (ShovableUnlock)UnSReference;                                                 //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
-            IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-        }
-    }
-
-
     //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,14 +76,5 @@ public class Portal : ObjectScript
              
             }
         }
-    }
-
-
-    //SequenceUnlock
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    private void ObjectSequenceUnlock()
-    {
-        SeqUReference.CallSequenceUnlock();             //Call Sequence Unlock Method in Sequence Unlock Script
     }
 }
