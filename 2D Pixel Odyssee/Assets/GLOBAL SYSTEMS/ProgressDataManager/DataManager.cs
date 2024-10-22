@@ -8,7 +8,11 @@ public class DataManager : MonoBehaviour
     public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects             //List_ID 2
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<AcquiredObj> Acquired_List = new List<AcquiredObj>();                //Create a List to store all relevant Variables of Inventory Items              //Type... doesnt matter
-    public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();    //Maybe Uneeded                              //Create a List to store all relevant Variables of Inventory Items              //Type... doesnt matter
+
+    public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();        //Create a List to store the currently Highlighted Object           //should probably be an array
+
+    public static List<Shovable> ToShove = new List<Shovable>();                        //Create a List to store the Object that is being shoved            //should probably be an array
+
     public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
     private void Awake()
@@ -36,9 +40,9 @@ public class DataManager : MonoBehaviour
     }
 
 
-    public void AddShovableObj( int newID, bool newLock_State, int newPosition)
+    public void AddShovableObj( int newID, bool newLock_State, int newShove_Position)
     {
-        Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Position = newPosition });
+        Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Shove_Position = newShove_Position });
         //Debug.Log(Shovable_List.Count);
     }
 
@@ -68,10 +72,10 @@ public class DataManager : MonoBehaviour
         Collectable_List[ObjectIndex].Stored_Collected = newCollected;
     }
 
-    public void EditShovableObj(int ObjectIndex, bool newLock_State, int newPosition)
+    public void EditShovableObj(int ObjectIndex, bool newLock_State, int newShove_Position)
     {
         Shovable_List[ObjectIndex].Stored_Lock_State = newLock_State;
-        Shovable_List[ObjectIndex].Stored_Position = newPosition;
+        Shovable_List[ObjectIndex].Stored_Shove_Position = newShove_Position;
     }
 
     public void EditPortalObj(int ObjectIndex, bool newLock_State, bool newTraversed)
@@ -151,11 +155,11 @@ public class DataManager : MonoBehaviour
     //Check for Position of Object_ID -> pass back unlock or lock (can be locked again)
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void UnlockbyPosition(int UnlockList_ID, int UnlockObject_Index, int Shovable_ID, int Unlock_Position)
+    public void UnlockbyPosition(int UnlockList_ID, int UnlockObject_Index, int Shovable_ID, int Unlock_Shove_Position)
     {
         foreach (ShovableObj StoredObj in Shovable_List)                     // Search through Shovable List and Unlock an Object
         {
-            CompareObject(UnlockList_ID, UnlockObject_Index, StoredObj, Shovable_ID, StoredObj.Stored_Position, Unlock_Position);
+            CompareObject(UnlockList_ID, UnlockObject_Index, StoredObj, Shovable_ID, StoredObj.Stored_Shove_Position, Unlock_Shove_Position);
         }
     }
 
@@ -272,7 +276,7 @@ public class DataManager : MonoBehaviour
 
     public class ShovableObj : Obj
     {
-        public int Stored_Position;
+        public int Stored_Shove_Position;
     }
 
     public class PortalObj : Obj

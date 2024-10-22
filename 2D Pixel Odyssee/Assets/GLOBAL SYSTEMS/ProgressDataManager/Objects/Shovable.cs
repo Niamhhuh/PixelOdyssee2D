@@ -7,10 +7,9 @@ public class Shovable : ObjectScript
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public int Position;                                                            //relevant to remember the position in the room
-
-    //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
-
+    public int Shove_Position = 0;                                                            //relevant to remember the position in the room
+    public GameObject ShoveController;
+    public GameObject ShoveBox;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,13 +21,18 @@ public class Shovable : ObjectScript
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
 
+        
+        ShoveController = GameObject.FindGameObjectWithTag("ShoveControl");
+        ShoveBox = gameObject;
+        print(ShoveBox);
+
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
         foreach (DataManager.ShovableObj StoredObj in DataManager.Shovable_List)                            //Go through the Shovable_List and compare ShovableObj.
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Position);                          //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Shove_Position);                          //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -37,7 +41,7 @@ public class Shovable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddShovableObj(ID, Lock_State, Position);                                           //Call the AddShovableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddShovableObj(ID, Lock_State, Shove_Position);                                           //Call the AddShovableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Shovable_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
@@ -45,17 +49,17 @@ public class Shovable : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, int Stored_Position)                                     //Fetch the Variables Lock and Position from the DataManager
+    private void FetchData(bool Stored_Lock_State, int Stored_Shove_Position)                                     //Fetch the Variables Lock and Position from the DataManager
     {
         Lock_State = Stored_Lock_State;
-        Position = Stored_Position;
+        Shove_Position = Stored_Shove_Position;
         //print(StoredObj.Stored_Type_ID);
     }
 
 
     private void UpdateData()                                                                               //Pass Variables Lock and Position to the DataManager
     {
-        DMReference.EditShovableObj(ObjectIndex, Lock_State, Position);
+        DMReference.EditShovableObj(ObjectIndex, Lock_State, Shove_Position);
     }
 
 
@@ -63,23 +67,30 @@ public class Shovable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void OnMouseOver()  //This is the Main Function Controller
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (other.CompareTag("Player") && RequestInteract == true)
         {
-            //print("I'm called1");
+
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Position);     //Fetch new State from DataManager
+            FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);     //Fetch new State from DataManager
 
             if (Lock_State == false)
             {
-
+                ClearHighlight();
+                ObjectSequenceUnlock();
+                InitiateShove();
             }
         }
     }
 
+    private void InitiateShove()
+    {
+        DataManager.ToShove.Add(this);
+        ShoveController.SetActive(true);
+        //Activate the required Arrows 
+        ShoveController.transform.position = this.transform.position;
 
-    //Object Specific Functionality
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    }
 
 }

@@ -9,13 +9,6 @@ public class Collectable : ObjectScript
 
     public bool Collected;			                                                //relevant to control Item Spawn
 
-    //Local Variables, not saved in the DataManager
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-    //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
-
-
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -104,8 +97,7 @@ public class Collectable : ObjectScript
     {
         if (Lock_State == false)
         {
-            int InitialSlot = 0;
-            DMReference.AddAcquiredObj(ID, InitialSlot);                                      //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddAcquiredObj(ID, 0);                                      //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
             Collected = true;
             UpdateData();
             RemoveItem();

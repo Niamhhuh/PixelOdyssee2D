@@ -16,6 +16,7 @@ public class ObjectScript : MonoBehaviour
     //Interaction Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
     private SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
     private BoxCollider2D Object_Collider = null;            //Collider of the Object, which is expanded when the Object is marked for interaction
+    private Vector2 Original_Collider;                       //This Vector stores the initial size of the collider
 
     private ObjectScript ThisObject = null;                  //ObjectScript, which is added to the Currently_Highlighted List, check if object is selected
     private GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
@@ -48,6 +49,7 @@ public class ObjectScript : MonoBehaviour
         {
             ObjectSprite = this.GetComponent<SpriteRenderer>();
             Object_Collider = this.GetComponent<BoxCollider2D>();
+            Original_Collider = Object_Collider.size;
             HighlightonHover = this.transform.GetChild(0).gameObject;             //the first child must ALWAYS be the Highlight Object
             HighlightonHover.SetActive(false);
         }
@@ -63,7 +65,7 @@ public class ObjectScript : MonoBehaviour
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
             this.ObjectSprite.enabled = false;
-            Object_Collider.size = new Vector2(Object_Collider.size.x + 6, Object_Collider.size.y + 2);
+            Object_Collider.size = new Vector2(Object_Collider.size.x + 5, Object_Collider.size.y + 2);
         }
     }
 
@@ -113,7 +115,7 @@ public class ObjectScript : MonoBehaviour
             
             HighlightonHover.SetActive(false);
             this.ObjectSprite.enabled = true;
-            Object_Collider.size = new Vector2(Object_Collider.size.x - 6, Object_Collider.size.y - 2);
+            Object_Collider.size = Original_Collider;
         }
     }
 

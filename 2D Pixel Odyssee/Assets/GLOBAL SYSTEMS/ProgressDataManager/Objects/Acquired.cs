@@ -7,7 +7,6 @@ public class Acquired : MonoBehaviour
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int ID;				                                                    //ID of the Object, required to find it in the list
-    public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
 
     public int Slot;                                                                //relevant to control the position in the Inventory
 

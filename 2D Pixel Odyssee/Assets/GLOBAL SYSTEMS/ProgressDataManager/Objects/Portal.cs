@@ -7,10 +7,7 @@ public class Portal : ObjectScript
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public bool Traversed;                                                          //relevant to remember whether this door has been used already
-
-    //DataManager.Rooms_Loaded[SourceRoom] == false             use this for "Onetime Events"
-
+    public bool Traversed = false;                                                          //relevant to remember whether this door has been used already
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -62,18 +59,18 @@ public class Portal : ObjectScript
     //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    private void OnMouseOver()  //This is the Main Function Controller
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (other.CompareTag("Player") && RequestInteract == true)
         {
-            //print("I'm called1");
-            Unlock_Object();                                                                                                              //Try to Unlock the Object
+
+            Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Portal_List[ObjectIndex].Stored_Lock_State, DataManager.Portal_List[ObjectIndex].Stored_Traversed);     //Fetch new State from DataManager
 
             if (Lock_State == false)
             {
-             
+                ClearHighlight();
+                ObjectSequenceUnlock();
             }
         }
     }
