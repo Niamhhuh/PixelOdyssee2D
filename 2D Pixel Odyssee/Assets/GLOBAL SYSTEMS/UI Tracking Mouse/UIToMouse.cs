@@ -12,12 +12,14 @@ public class UiToMouse : MonoBehaviour
     public Vector3 targetPosition;
     private bool movePlayer = false;
     public bool AllowInput;
+    public bool InventoryActive;
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
         AllowInput = true;
+        InventoryActive = false;
     }
 
     public void DisableInput()
@@ -27,7 +29,10 @@ public class UiToMouse : MonoBehaviour
 
     public void EnableInput()
     {
-        AllowInput = true;
+        if(InventoryActive == false)
+        {
+            AllowInput = true;
+        } 
     }
 
     void Update()

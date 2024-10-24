@@ -18,9 +18,14 @@ public class Inventory : MonoBehaviour
 
     // Start is called before the first frame update
 
-    public GameObject InventoryObj;
+    private GameObject InventoryObj;
+    private DataManager DMReference;
+    private bool calledbyKey;
+
     void Start()
     {
+        calledbyKey = false;
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         InventoryObj = GameObject.FindGameObjectWithTag("Inventory");
         InventoryObj.SetActive(false);
     }
@@ -30,7 +35,7 @@ public class Inventory : MonoBehaviour
     {
         if(Input.GetKeyDown("i"))
         {
-            print("I'm called");
+            calledbyKey = true;
             ControllInventory();
         }
 
@@ -50,11 +55,26 @@ public class Inventory : MonoBehaviour
 
     public void CallInventory ()
     {
+        DMReference.MoveScript.InventoryActive = true;
+        DMReference.MoveScript.DisableInput();
+        calledbyKey = false;
         InventoryObj.SetActive(true);
     }
 
     public void CloseInventory()
     {
+        DMReference.MoveScript.InventoryActive = false;
+        if(calledbyKey == true)
+        {
+            DMReference.MoveScript.EnableInput();
+        }
+        calledbyKey = false;
         InventoryObj.SetActive(false);
+    }
+
+    public void InitiateCrafting()
+    {
+        //Check ID of Items in Slot 13 and 14
+        //If they are a vallid combo, place Item in Slot 15
     }
 }

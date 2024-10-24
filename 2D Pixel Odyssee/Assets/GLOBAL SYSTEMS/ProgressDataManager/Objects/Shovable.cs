@@ -96,7 +96,10 @@ public class Shovable : ObjectScript
         if (other.CompareTag("Player"))
         {
             ClearHighlight();
-            DataManager.ToShove.RemoveAt(0);
+            if(DataManager.ToShove.Count > 0)
+            {
+                DataManager.ToShove.RemoveAt(0);
+            }
             ShoveController.SetActive(false);
         }
     }
