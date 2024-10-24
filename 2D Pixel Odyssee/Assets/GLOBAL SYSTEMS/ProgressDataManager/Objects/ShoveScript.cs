@@ -15,7 +15,8 @@ public class ShoveScript : MonoBehaviour
         DataManager.ToShove[0].StartMove(StartPosition, TargetPosition);                            //Call Method in Shovable, which starts the Shove coroutine
 
         DataManager.ToShove[0].Shove_Position --;
-        DataManager.ToShove.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        DataManager.ToShove[0].UpdateData();
+        //DataManager.ToShove.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("ShoveControl").SetActive(false);                          //Deactivate the Shove Arrows
     }
 
@@ -26,7 +27,8 @@ public class ShoveScript : MonoBehaviour
 
         DataManager.ToShove[0].StartMove(StartPosition, TargetPosition);                            //Call Method in Shovable, which starts the Shove coroutine
         DataManager.ToShove[0].Shove_Position ++;
-        DataManager.ToShove.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        DataManager.ToShove[0].UpdateData();
+        //DataManager.ToShove.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("ShoveControl").SetActive(false);                          //Deactivate the Shove Arrows
     }
 }

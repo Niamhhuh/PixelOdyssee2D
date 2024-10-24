@@ -45,6 +45,8 @@ public class Shovable : ObjectScript
             ObjectIndex = DataManager.Shovable_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
+        PlaceShovable();                                                                                       //Place Shovable at the right position on load
+
     }
 
 
@@ -57,11 +59,17 @@ public class Shovable : ObjectScript
     }
 
 
-    private void UpdateData()                                                                               //Pass Variables Lock and Position to the DataManager
+    public void UpdateData()                                                                               //Pass Variables Lock and Position to the DataManager
     {
         DMReference.EditShovableObj(ObjectIndex, Lock_State, Shove_Position);
     }
 
+    //Shovable specific position on Load Method
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    private void PlaceShovable()                                                                               //Remove the Item when it is or was already collected
+    {
+        transform.position = new Vector3 (transform.position.x + 3 * Shove_Position, transform.position.y, transform.position.z);
+    }
 
     //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,10 +85,19 @@ public class Shovable : ObjectScript
 
             if (Lock_State == false)
             {
-                ClearHighlight();
                 ObjectSequenceUnlock();
                 InitiateShove();
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ClearHighlight();
+            DataManager.ToShove.RemoveAt(0);
+            ShoveController.SetActive(false);
         }
     }
 
@@ -101,8 +118,6 @@ public class Shovable : ObjectScript
 
     private IEnumerator Movex(Vector3 StartPosition, Vector3 TargetPosition)
     {
-        print(transform.position.x);
-        print(TargetPosition.x);
         float new_x = 0;
         while (Mathf.Abs(transform.position.x - TargetPosition.x) > 0.01f)
         {
@@ -117,7 +132,6 @@ public class Shovable : ObjectScript
         //add Animation transform.scale animation, requires another coroutine which playe
 
         DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input
-        
     }
 
 }

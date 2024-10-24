@@ -11,11 +11,11 @@ public class DataManager : MonoBehaviour
 
     public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();        //Create a List to store the currently Highlighted Object           //should probably be an array
 
-    public static List<Shovable> ToShove = new List<Shovable>();                        //Create a List to store the Object that is being shoved            //should probably be an array
+    public static List<Shovable> ToShove = new List<Shovable>();                            //Create a List to store the Object that is being shoved            //should probably be an array
 
     public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
-    public UiToMouse MoveScript;                                                            //provide easy access to Movescript
+    public UiToMouse MoveScript = null;                                                        //provide easy access to Movescript
 
     private void Awake()
     {
