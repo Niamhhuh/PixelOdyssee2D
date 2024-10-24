@@ -9,7 +9,7 @@ public class UiToMouse : MonoBehaviour
     public Transform player;
     public float playerSpeed = 5f;
     public Canvas canvas;
-    private Vector3 targetPosition;
+    public Vector3 targetPosition;
     private bool movePlayer = false;
     public bool AllowInput;
 

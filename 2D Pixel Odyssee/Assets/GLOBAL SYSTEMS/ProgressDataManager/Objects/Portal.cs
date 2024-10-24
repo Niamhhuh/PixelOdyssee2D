@@ -63,7 +63,7 @@ public class Portal : ObjectScript
     {
         if (other.CompareTag("Player") && RequestInteract == true)
         {
-
+            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Portal_List[ObjectIndex].Stored_Lock_State, DataManager.Portal_List[ObjectIndex].Stored_Traversed);     //Fetch new State from DataManager
 

@@ -65,7 +65,7 @@ public class ObjectScript : MonoBehaviour
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
             this.ObjectSprite.enabled = false;
-            Object_Collider.size = new Vector2(Object_Collider.size.x + 5, Object_Collider.size.y + 2);
+            Object_Collider.size = new Vector2(Object_Collider.size.x + 1, Object_Collider.size.y + 2);             //ATTENTION: MAYBE COLLIDER SIZE SHOULD BE MODULAR
         }
     }
 

@@ -15,8 +15,11 @@ public class DataManager : MonoBehaviour
 
     public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
+    public UiToMouse MoveScript;                                                            //provide easy access to Movescript
+
     private void Awake()
     {
+        MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         Rooms_Loaded[0] = false;                                                        //Archive 
         Rooms_Loaded[1] = false;                                                        //RaceArcade
         Rooms_Loaded[2] = false;                                                        //Exit

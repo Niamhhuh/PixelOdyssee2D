@@ -71,7 +71,7 @@ public class Shovable : ObjectScript
     {
         if (other.CompareTag("Player") && RequestInteract == true)
         {
-
+            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);     //Fetch new State from DataManager
 
@@ -91,6 +91,33 @@ public class Shovable : ObjectScript
         //Activate the required Arrows 
         ShoveController.transform.position = this.transform.position;
 
+    }
+
+
+    public void StartMove(Vector3 StartPosition, Vector3 TargetPosition)//, int Direction)
+    {
+        StartCoroutine(Movex(StartPosition, TargetPosition));
+    }
+
+    private IEnumerator Movex(Vector3 StartPosition, Vector3 TargetPosition)
+    {
+        print(transform.position.x);
+        print(TargetPosition.x);
+        float new_x = 0;
+        while (Mathf.Abs(transform.position.x - TargetPosition.x) > 0.01f)
+        {
+            new_x += Time.deltaTime;
+            transform.position = Vector3.Lerp(StartPosition, TargetPosition, Mathf.SmoothStep(0f,30f,new_x/3));
+            
+            yield return null;
+        }
+        
+        transform.position = TargetPosition;                                                                        //ensure the Object is at the right position in the end
+
+        //add Animation transform.scale animation, requires another coroutine which playe
+
+        DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input
+        
     }
 
 }

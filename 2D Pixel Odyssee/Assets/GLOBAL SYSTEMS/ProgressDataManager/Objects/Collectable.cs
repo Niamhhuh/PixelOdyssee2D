@@ -76,7 +76,8 @@ public class Collectable : ObjectScript
     {
         if (other.CompareTag("Player") && RequestInteract == true)
         {
-            
+
+            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
 
