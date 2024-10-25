@@ -50,7 +50,7 @@ public class Collectable : ObjectScript
     }
 
 
-    private void UpdateData()                                                                               //Pass Variables Lock and Collected to the DataManager
+    public void UpdateData()                                                                               //Pass Variables Lock and Collected to the DataManager
     {
         DMReference.EditCollectableObj(ObjectIndex, Lock_State, Collected);
     }

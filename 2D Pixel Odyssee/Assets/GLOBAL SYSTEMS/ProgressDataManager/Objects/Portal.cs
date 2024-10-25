@@ -50,7 +50,7 @@ public class Portal : ObjectScript
     }
 
 
-    private void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
+    public void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
     {
         DMReference.EditPortalObj(ObjectIndex, Lock_State, Traversed);
     }

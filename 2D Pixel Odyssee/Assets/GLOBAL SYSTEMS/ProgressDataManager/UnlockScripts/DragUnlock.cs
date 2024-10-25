@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class DragUnlock : MonoBehaviour, IDropHandler
+public class DragUnlock : MonoBehaviour
 {
     public int Key_ID;     //Change
 
@@ -16,13 +16,42 @@ public class DragUnlock : MonoBehaviour, IDropHandler
         ObjReference.UnlockMethod = 0;                                                                      //Set UnlockMethod in Object Script to 2 (Unlock by Item)
     }
 
-    public void OnDrop(PointerEventData eventData)
+    private void OnMouseOver()                                                                          
     {
-        if (eventData.pointerDrag != null )  //When Item is dropped, check if the Object is unlocked
+        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Key_ID)
         {
-            print("I'm called");
             ObjReference.Lock_State = false;
-            //DataManager.Draggable_List.RemoveAt(eventData.pointerDrag.GetComponent<Draggable>().ObjectIndex);
+            UpdateDragUnlock();
+            // Delete Item from Draggable List
+        }
+    }
+
+    private void UpdateDragUnlock()
+    {
+        switch (ObjReference.ObjectList_ID)
+        {
+            case 1:
+                Collectable CollectableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                CollectableObjectRef = (Collectable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                CollectableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 2:
+                Shovable ShovableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                ShovableObjectRef = (Shovable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                ShovableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 3:
+                Portal PortalObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                PortalObjectRef = (Portal)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                PortalObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 4:
+                Switchable SwitchObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                SwitchObjectRef = (Switchable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                SwitchObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            default:
+                break;
         }
     }
 }

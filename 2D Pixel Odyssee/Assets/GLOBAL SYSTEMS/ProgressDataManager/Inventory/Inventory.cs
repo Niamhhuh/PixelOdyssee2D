@@ -24,8 +24,9 @@ public class Inventory : MonoBehaviour
     private bool calledbyKey;
 
     public bool ItemDragged;
+    
     public bool TryDragUnlock;
-
+    public int DraggedItemID;
     void Start()
     {
         TryDragUnlock = false;
@@ -113,7 +114,6 @@ public class Inventory : MonoBehaviour
             ItemCollection.SetActive(false);
             InventoryObj.SetActive(false);
             TryDragUnlock = true;
-            //Set Inventory_Suspended 
         }
     }
 

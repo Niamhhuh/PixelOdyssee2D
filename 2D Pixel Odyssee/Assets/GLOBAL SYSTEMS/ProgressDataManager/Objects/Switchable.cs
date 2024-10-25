@@ -50,7 +50,7 @@ public class Switchable : ObjectScript
     }
 
 
-    private void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
+    public void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
     {
         DMReference.EditSwitchStateObj(ObjectIndex, Lock_State, SwitchState);
     }

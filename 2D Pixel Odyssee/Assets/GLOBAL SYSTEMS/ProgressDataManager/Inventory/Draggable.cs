@@ -123,6 +123,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     public void OnBeginDrag(PointerEventData eventData)
     {
         DMReference.InventoryRef.ItemDragged = true;
+        DMReference.InventoryRef.DraggedItemID = ID;
         transform.SetParent(GameObject.FindGameObjectWithTag("DragItem").GetComponent<Transform>());
         ControlInteract.blocksRaycasts = false;
         CurrentSlot.ResetOccupied();
@@ -134,8 +135,9 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         transform.SetParent(ParentObj);
         DraggablePosition.anchoredPosition = CurrentSlot.SlotPosition.anchoredPosition;                                                  //Move DraggableItem to center of SelectedSlot
         CurrentSlot.SetOccupied();
-
+        
         ControlInteract.blocksRaycasts = true;
+        DMReference.InventoryRef.DraggedItemID = 0;
 
         UpdateData();
 
