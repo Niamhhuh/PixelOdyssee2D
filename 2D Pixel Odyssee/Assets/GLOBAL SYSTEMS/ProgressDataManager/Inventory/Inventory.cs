@@ -24,11 +24,9 @@ public class Inventory : MonoBehaviour
     private bool calledbyKey;
 
     public bool ItemDragged;
-    public bool TryDragUnlock;
 
     void Start()
     {
-        TryDragUnlock = false;
         calledbyKey = false;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         InventoryObj = GameObject.FindGameObjectWithTag("Inventory");
@@ -112,7 +110,7 @@ public class Inventory : MonoBehaviour
             calledbyKey = false;
             ItemCollection.SetActive(false);
             InventoryObj.SetActive(false);
-            TryDragUnlock = true;
+            
             //Set Inventory_Suspended 
         }
     }
