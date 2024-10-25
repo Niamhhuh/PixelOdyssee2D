@@ -937,7 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030880671}
   - component: {fileID: 1030880670}
-  - component: {fileID: 1030880669}
+  - component: {fileID: 1030880672}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -945,14 +945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1030880669
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030880668}
-  m_Enabled: 1
 --- !u!20 &1030880670
 Camera:
   m_ObjectHideFlags: 0
@@ -1014,6 +1006,78 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030880672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030880668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!1 &1179525898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179525900}
+  - component: {fileID: 1179525899}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1179525899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179525898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a579fe41f298847eea4f69bf0a8cf0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGThemeScene1:
+    Guid:
+      Data1: -1680502974
+      Data2: 1177259843
+      Data3: 1235322775
+      Data4: -493090769
+    Path: event:/Titelmusik
+  BGThemeScene2:
+    Guid:
+      Data1: 465877033
+      Data2: 1322363960
+      Data3: 1788093313
+      Data4: -1762024205
+    Path: event:/Museumsmusik
+--- !u!4 &1179525900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179525898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2881,4 +2945,8 @@ SceneRoots:
   - {fileID: 1885320008}
   - {fileID: 625132721}
   - {fileID: 1397896375}
+<<<<<<< Updated upstream
   - {fileID: 1189653468}
+=======
+  - {fileID: 1179525900}
+>>>>>>> Stashed changes
