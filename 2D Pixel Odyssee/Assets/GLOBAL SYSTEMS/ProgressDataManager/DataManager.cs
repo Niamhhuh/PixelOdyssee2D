@@ -73,9 +73,9 @@ public class DataManager : MonoBehaviour
     }
 
 
-    public void AddSwitchStateObj(int newID, bool newSwitchState)
+    public void AddSwitchStateObj(int newID, bool newLock_State, bool newSwitchState)
     {
-        SwitchState_List.Add(new SwitchStateObj { Stored_ID = newID, Stored_SwitchState = newSwitchState });
+        SwitchState_List.Add(new SwitchStateObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_SwitchState = newSwitchState });
     }
 
     public void AddDraggableObj(int newID, int newSlot)
@@ -105,8 +105,9 @@ public class DataManager : MonoBehaviour
         Portal_List[ObjectIndex].Stored_Traversed = newTraversed;
     }
 
-    public void EditSwitchStateObj(int ObjectIndex, bool newSwitchState)
+    public void EditSwitchStateObj(int ObjectIndex, bool newLock_State, bool newSwitchState)
     {
+        SwitchState_List[ObjectIndex].Stored_Lock_State = newLock_State;
         SwitchState_List[ObjectIndex].Stored_SwitchState = newSwitchState;
     }
 
