@@ -5659,7 +5659,6 @@ GameObject:
   - component: {fileID: 742752271}
   - component: {fileID: 742752273}
   - component: {fileID: 742752272}
-  - component: {fileID: 742752275}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5775,20 +5774,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &742752275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742752270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
 --- !u!1 &817111970
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,64 +7336,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &1002169214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1002169215}
-  - component: {fileID: 1002169216}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1002169215
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002169214}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1015318557}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1002169216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002169214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a579fe41f298847eea4f69bf0a8cf0af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGThemeScene1:
-    Guid:
-      Data1: -1680502974
-      Data2: 1177259843
-      Data3: 1235322775
-      Data4: -493090769
-    Path: event:/Titelmusik
-  BGThemeScene2:
-    Guid:
-      Data1: 465877033
-      Data2: 1322363960
-      Data3: 1788093313
-      Data4: -1762024205
-    Path: event:/Museumsmusik
 --- !u!1 &1002612390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,7 +7606,6 @@ Transform:
   m_Children:
   - {fileID: 302881815}
   - {fileID: 1207570934}
-  - {fileID: 1002169215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1015318558
