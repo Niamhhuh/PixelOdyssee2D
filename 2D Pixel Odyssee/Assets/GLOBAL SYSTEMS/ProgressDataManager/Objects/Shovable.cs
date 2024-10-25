@@ -24,7 +24,6 @@ public class Shovable : ObjectScript
         
         ShoveController = GameObject.FindGameObjectWithTag("ShoveControl");
         ShoveBox = gameObject;
-        print(ShoveBox);
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 

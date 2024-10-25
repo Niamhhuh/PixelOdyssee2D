@@ -126,20 +126,20 @@ public class ObjectScript : MonoBehaviour
     //Unlock this Object with a Key (Item or ShovablePosition)
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void Unlock_Object()                                                                        //Call on Object Interaction to check for Unlock
+    public void Unlock_Object()                                                                         //Call on Object Interaction to check for Unlock
     {
-        if (UnlockMethod == 1)                                                                           //If the Unlock Method is 1 use ItemUnlock
+        if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use SwitchUnlock
         {
             //print("I'm called2");
-            AcquireUnlock IUReference = null;                                                              //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
-            IUReference = (AcquireUnlock)UnSReference;                                                     //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
-            IUReference.CallAcquiredUnlock(ObjectList_ID, ObjectIndex);                                     //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            SwitchStateUnlock IUReference = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+            IUReference = (SwitchStateUnlock)UnSReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+            IUReference.CallSwitchStateUnlock(ObjectList_ID, ObjectIndex);                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
         }
-        if (UnlockMethod == 2)                                                                           //If the Unlock Method is 2 use ShovableUnlock
+        if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
         {
             ShovableUnlock IUReference = null;                                                          //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
             IUReference = (ShovableUnlock)UnSReference;                                                 //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
-            IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
+            IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Call Shovable Unlock Initiator in Shovable Unlock Script, pass this Object's List and Index
         }
     }
 

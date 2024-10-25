@@ -94,11 +94,11 @@ public class Collectable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void PickUp()                                                                              //Pick up the Item by adding it to the acquired List.
+    private void PickUp()                                                                              //Pick up the Item by adding it to the Draggable List.
     {
         if (Lock_State == false)
         {
-            DMReference.AddAcquiredObj(ID, 0);                                      //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
             Collected = true;
             UpdateData();
             RemoveItem();

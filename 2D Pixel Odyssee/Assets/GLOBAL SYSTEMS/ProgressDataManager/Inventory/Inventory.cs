@@ -9,24 +9,29 @@ public class Inventory : MonoBehaviour
     //Open Inventory
     //Activate a Canvas and disable Movement and Interaction GameInputs
 
-    //Fetch Current Items and their Positions from Acquired Items
+    //Fetch Current Items and their Positions from Draggable Items
     //Place Items as Draggable Objects in Inventory Slots
 
 
     //Craft New Item
-    //Combine 2 Items to instantiate new Object, add new Object to Acquired List, remove the 2 used Objects from that List
+    //Combine 2 Items to instantiate new Object, add new Object to Draggable List, remove the 2 used Objects from that List
 
     // Start is called before the first frame update
 
     private GameObject InventoryObj;
+    private GameObject ItemCollection;
     private DataManager DMReference;
     private bool calledbyKey;
+
+    public bool ItemDragged;
 
     void Start()
     {
         calledbyKey = false;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         InventoryObj = GameObject.FindGameObjectWithTag("Inventory");
+        ItemCollection = GameObject.FindGameObjectWithTag("ItemCollection");
+        ItemCollection.SetActive(false);
         InventoryObj.SetActive(false);
     }
 
@@ -58,6 +63,21 @@ public class Inventory : MonoBehaviour
         DMReference.MoveScript.InventoryActive = true;
         DMReference.MoveScript.DisableInput();
         calledbyKey = false;
+
+
+        foreach (Draggable Item in DataManager.Item_List)
+        {
+            Item.TakeSlot();
+        }
+
+        //Assign Unkown Slots
+        foreach (Draggable Item in DataManager.Item_List)
+        {
+            Item.SearchSlot();
+        }
+
+
+        ItemCollection.SetActive(true);
         InventoryObj.SetActive(true);
     }
 
@@ -69,7 +89,30 @@ public class Inventory : MonoBehaviour
             DMReference.MoveScript.EnableInput();
         }
         calledbyKey = false;
+        ItemCollection.SetActive(false);
         InventoryObj.SetActive(false);
+    }
+
+
+    public void FetchItems()
+    {
+        //Check DataManager DraggableObj List
+        //Activate the right ChildObj
+    }
+
+
+    public void DragItemFromInventory()                             //Call from Inventory Background
+    {
+        if(ItemDragged)
+        {
+            DMReference.MoveScript.InventoryActive = false;
+            DMReference.MoveScript.EnableInput();
+            calledbyKey = false;
+            ItemCollection.SetActive(false);
+            InventoryObj.SetActive(false);
+            
+            //Set Inventory_Suspended 
+        }
     }
 
     public void InitiateCrafting()
