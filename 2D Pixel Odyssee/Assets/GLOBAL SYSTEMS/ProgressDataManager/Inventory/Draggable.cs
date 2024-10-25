@@ -134,7 +134,11 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         transform.SetParent(ParentObj);
         DraggablePosition.anchoredPosition = CurrentSlot.SlotPosition.anchoredPosition;                                                  //Move DraggableItem to center of SelectedSlot
         CurrentSlot.SetOccupied();
+
         ControlInteract.blocksRaycasts = true;
+
         UpdateData();
+
+        //Add alternate version when inventory is closed while dragged
     }
 }
