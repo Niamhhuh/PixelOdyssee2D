@@ -8,6 +8,8 @@ public class Switchable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public bool SwitchState;                                                                                //relevant to remember whether this Switch is active or inactive
+    
+    public GameObject SwitchObject;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -70,8 +72,34 @@ public class Switchable : ObjectScript
             if (Lock_State == false)
             {
                 ClearHighlight();
+                FlipSwitch();
                 ObjectSequenceUnlock();
             }
         }
+    }
+
+
+    //Object Specific Functionality
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private void FlipSwitch()                                                                              //Pick up the Item by adding it to the Draggable List.
+    {    
+        if (SwitchState == false)
+        {
+            ObjectSprite.enabled = false;
+            ObjectSprite = transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();     //the alternate Object is Child 2                   (Child 1 reserved for Standard Highlight)            
+            ObjectSprite.enabled = true;
+            HighlightonHover = gameObject.transform.GetChild(2).gameObject;                     //the alternate Highlight Object is Child 3         (Child 1 reserved for Standard Highlight) 
+            SwitchState = true;
+        } else
+        {
+            ObjectSprite.enabled = false;
+            ObjectSprite = transform.GetComponent<SpriteRenderer>();                            //the standard Object                                          
+            ObjectSprite.enabled = true;
+            HighlightonHover = gameObject.transform.GetChild(0).gameObject;                     //the standard Highlight Object is Child 1          
+            SwitchState = false;
+        }
+        UpdateData();
     }
 }

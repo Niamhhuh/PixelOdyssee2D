@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : ObjectScript
 {
@@ -8,6 +9,8 @@ public class Portal : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public bool Traversed = false;                                                          //relevant to remember whether this door has been used already
+
+    public int LoadScene_ID;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,9 +72,29 @@ public class Portal : ObjectScript
 
             if (Lock_State == false)
             {
+                SwitchScene();
                 ClearHighlight();
                 ObjectSequenceUnlock();
             }
+            else
+            {
+                ClearHighlight();
+                StartCoroutine(FlashRed());
+            }
+        }
+    }
+
+    //Object Specific Functionality
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private void SwitchScene()                                                                              //Pick up the Item by adding it to the Draggable List.
+    {
+        if (LoadScene_ID >= 0 && LoadScene_ID < SceneManager.sceneCountInBuildSettings)
+        {
+            Traversed = true;
+            UpdateData();
+            SceneManager.LoadScene(LoadScene_ID);
         }
     }
 }

@@ -14,12 +14,13 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public bool NewObject = true;
 
     //Interaction Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
-    private SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
+    public SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
     private BoxCollider2D Object_Collider = null;            //Collider of the Object, which is expanded when the Object is marked for interaction
     private Vector2 Original_Collider;                       //This Vector stores the initial size of the collider
+    private Color originalColor;
 
     private ObjectScript ThisObject = null;                  //ObjectScript, which is added to the Currently_Highlighted List, check if object is selected
-    private GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
+    public GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
 
     [HideInInspector] public bool RequestInteract = false;                     //Request is set true, when the Object is clicked and reset, when another object is clicked. 
     [HideInInspector] public bool AlreadyActive = false;                       //AlreadyActive marks an Object as already highlighted, preventing it from expanding its collider multiple times
@@ -42,15 +43,16 @@ public class ObjectScript : MonoBehaviour
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void Start()                                            
+    private void Start()
     {
         ThisObject = this.GetComponent<ObjectScript>();
         if (!isBackground)
         {
             ObjectSprite = this.GetComponent<SpriteRenderer>();
+            originalColor = ObjectSprite.color;
             Object_Collider = this.GetComponent<BoxCollider2D>();
             Original_Collider = Object_Collider.size;
-            HighlightonHover = this.transform.GetChild(0).gameObject;             //the first child must ALWAYS be the Highlight Object
+            HighlightonHover = this.transform.GetChild(0).gameObject;                                   //the first child must ALWAYS be the Highlight Object
             HighlightonHover.SetActive(false);
         }
     }
@@ -60,7 +62,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if(!isBackground && !AlreadyActive && DMReference.MoveScript.InventoryActive == false)
+        if (!isBackground && !AlreadyActive && DMReference.MoveScript.InventoryActive == false)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
@@ -71,23 +73,23 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseExit()                                                                          //When the Cursor Exits an Object, clear the Highlight and Mark
     {
-        if(!RequestInteract)
+        if (!RequestInteract)
         {
             ClearHighlight();
-        } 
+        }
     }
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RequestInteract = true; //Keep going here!
+            RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
         }
     }
 
-    private void CompareNewInput ()                                                                     //This Method ensures, that only 1 Object is highlighted at a time (Exculding +1 Hover Highlight)
+    private void CompareNewInput()                                                                     //This Method ensures, that only 1 Object is highlighted at a time (Exculding +1 Hover Highlight)
     {
         if (DataManager.Highlighted_Current.Count > 1)                                                  //Check if there is an Object in Highlighted List already
         {
@@ -95,7 +97,7 @@ public class ObjectScript : MonoBehaviour
             {
                 DataManager.Highlighted_Current[0].ClearHighlight();                                    //On mis match, Clear the old Object's highlight
             }
-            else 
+            else
             {
                 DataManager.Highlighted_Current.RemoveAt(1);                                            //On a match, clear the added object, for it is a double
             }
@@ -112,7 +114,7 @@ public class ObjectScript : MonoBehaviour
         if (!isBackground)                                                                              //This part of the method disables the Highlight Object, activates the standard Sprite and resets the collider to its original size.
         {
             AlreadyActive = false;
-            
+
             HighlightonHover.SetActive(false);
             this.ObjectSprite.enabled = true;
             Object_Collider.size = Original_Collider;
@@ -155,4 +157,16 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+
+    public IEnumerator FlashRed()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null; 
+        }
+        ObjectSprite.color = originalColor; 
+    }
 }

@@ -87,6 +87,11 @@ public class Shovable : ObjectScript
                 ObjectSequenceUnlock();
                 InitiateShove();
             }
+            else
+            {
+                ClearHighlight();
+                StartCoroutine(FlashRed());
+            }
         }
     }
 
