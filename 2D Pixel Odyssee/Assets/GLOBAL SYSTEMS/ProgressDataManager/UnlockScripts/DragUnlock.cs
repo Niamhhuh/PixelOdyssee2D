@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class DragUnlock : MonoBehaviour
 {
-    public int Key_ID;     //Change
+    public int Key_ID;
 
     public DataManager DMReference;
     public ObjectScript ObjReference = null;
@@ -22,6 +22,7 @@ public class DragUnlock : MonoBehaviour
         {
             ObjReference.Lock_State = false;
             UpdateDragUnlock();
+            DataManager.Item_List[DMReference.InventoryRef.DraggedItemID-1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
             // Delete Item from Draggable List
         }
     }

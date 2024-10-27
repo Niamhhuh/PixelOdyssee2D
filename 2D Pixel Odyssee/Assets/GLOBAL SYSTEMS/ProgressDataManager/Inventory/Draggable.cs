@@ -19,8 +19,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     public SlotScript CurrentSlot;
     private Transform ParentObj;
 
+    public bool Available = false;
     public int ObjectIndex;                                                                                //Index of this Object in its list                          //used for UnlockMethods
-    private bool NewObject = true;
 
     private DataManager DMReference;
 
@@ -36,35 +36,23 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManage
 
-        int currentIndex = 0;                                                                               //remember the currently inspected Index
+    }
 
+
+    public void FetchData()                                                                                 //Fetch the Variables Lock and Slot from the DataManager
+    {
+        int currentIndex = 0;
         foreach (DataManager.DraggableObj StoredObj in DataManager.Draggable_List)                          //Go through the Draggable_List and check DraggableObj.
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Slot);                                                           //Fetch ObjectInformation from DataManager 
+                Slot = StoredObj.Stored_Slot;                                                               //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
-                NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
             }
             currentIndex++;                                                                                 //Update the currently inspected Index
         }
-
-        if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
-        {
-            DMReference.AddDraggableObj(ID, Slot);                                                           //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
-            ObjectIndex = DataManager.Draggable_List.Count - 1;                                              //When an Object is added, it is added to the end of the list, making its Index I-1.
-        }
-
     }
-
-
-
-    private void FetchData(int Stored_Slot)                                                                 //Fetch the Variables Lock and Slot from the DataManager
-    {
-        Slot = Stored_Slot;
-    }
-
 
     private void UpdateData()                                                                               //Pass Variables Lock and Slot to the DataManager
     {
@@ -73,7 +61,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     //Draggable Item specific Search Slot on Load
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-    public void TakeSlot()
+    public void TakeSlot()                                                                                       //when an Item already has an assigned Slot, Place it there
     {
         if(Slot != 0)
         {
@@ -84,9 +72,9 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         }
     }
 
-    public void SearchSlot()
+    public void SearchSlot()                                                                                    //when an Item doesn't have a Slot yet or was last placed into Slot 12/13, assign a Slot
     {
-        if (Slot == 0)
+        if (Slot == 0 || Slot == 15)
         {
             SearchSlotArray();                                                                                  //when Slot = 0, assign a Slot
         } 
@@ -117,30 +105,97 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     }
     public void OnDrag(PointerEventData eventData)
     {
-        DraggablePosition.anchoredPosition += eventData.delta / canvasStats.scaleFactor;
+        DraggablePosition.anchoredPosition += eventData.delta / canvasStats.scaleFactor;                            //On Drag, attack Item to mouse Position                  
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        DMReference.InventoryRef.ItemDragged = true;
-        DMReference.InventoryRef.DraggedItemID = ID;
-        transform.SetParent(GameObject.FindGameObjectWithTag("DragItem").GetComponent<Transform>());
-        ControlInteract.blocksRaycasts = false;
-        CurrentSlot.ResetOccupied();
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        DMReference.InventoryRef.ItemDragged = false;
-        transform.SetParent(ParentObj);
-        DraggablePosition.anchoredPosition = CurrentSlot.SlotPosition.anchoredPosition;                                                  //Move DraggableItem to center of SelectedSlot
-        CurrentSlot.SetOccupied();
+        DMReference.InventoryRef.ItemDragged = true;                                                                //Mark that an Item is being dragged (required for drag Item from inventory)
+        DMReference.InventoryRef.DraggedItemID = ID;                                                                //Remember the ID of the dragged Item (required for DragUnlock)
         
-        ControlInteract.blocksRaycasts = true;
-        DMReference.InventoryRef.DraggedItemID = 0;
+        transform.SetParent(GameObject.FindGameObjectWithTag("DragItem").GetComponent<Transform>());                //Change parent of Dragged Item to keep it active when inventory is closed for DragUnlock
+        ControlInteract.blocksRaycasts = false;                                                                     //Item doesn't Block Raycast on Drag -> allows interaction with Objects and Slots
+        if (CurrentSlot != null)
+        {
+            CurrentSlot.ResetOccupied();                                                                            //Set the Last occupied Slot as Unoccupied
+        }
+        if (CurrentSlot.SlotID == 13)                                                                               //Reset ID Stored for CraftSlot1
+        {
+            DMReference.InventoryRef.InputKey1 = 0;
+        }
 
-        UpdateData();
-
-        //Add alternate version when inventory is closed while dragged
+        if (CurrentSlot.SlotID == 14)                                                                               //Reset ID Stored for CraftSlot2
+        {
+            DMReference.InventoryRef.InputKey2 = 0;
+        }
     }
+
+    public void OnEndDrag(PointerEventData eventData)                                                               //On Drag End, the Item first recieves the CurrentSlot Script and ID
+    {
+        DMReference.InventoryRef.ItemDragged = false;                                                               //Mark that an Item is no longer dragged
+        transform.SetParent(ParentObj);                                                                             //Parent Item back to the Item Collection
+        if(CurrentSlot != null)                                                                             
+        {
+            DraggablePosition.anchoredPosition = CurrentSlot.SlotPosition.anchoredPosition;                         //Move DraggableItem to center of SelectedSlot
+            CurrentSlot.SetOccupied();                                                                              //Set new Slot as occupied
+        }
+
+        //CRITICAL SECTION
+
+        if (CurrentSlot != null && CurrentSlot.SlotID == 13)                                                                                //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot1
+        {
+            DMReference.InventoryRef.InputKey1 = ID;
+            print(DMReference.InventoryRef.InputKey1);
+        }
+
+        if (CurrentSlot != null && CurrentSlot.SlotID == 14)                                                                               //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot2
+        {
+            DMReference.InventoryRef.InputKey2 = ID;
+            print(DMReference.InventoryRef.InputKey2);
+        }
+
+        if (DataManager.Slot_Array[12].SlotOccupied == true && DataManager.Slot_Array[13].SlotOccupied == true)     //Initiate Crafting
+        {
+            DMReference.InventoryRef.InitiateCrafting();
+        }
+
+        //CRITICAL SECTION
+
+        ControlInteract.blocksRaycasts = true;                                                                      //Set Block Raycast true, to make the Item Interactable again (can be dragged out of Slot again)
+        DMReference.InventoryRef.DraggedItemID = 0;                                                                 //Reset Dragged Item ID !!!!!!(0 is an unused ID)!!!!!!!
+
+        if (DMReference.InventoryRef.TryDragUnlock == false && ObjectIndex != -1)                                                        //If the Item is not Dragged from the inventory to attempt DragUnlock
+        {
+            UpdateData();                                                                                           //Update its Position in the DataManager. On DragUnlock, it doesnt Remember its Positon and will be reset to its original Slot
+        }
+        DMReference.InventoryRef.TryDragUnlock = false;                                                             //Reset TryDragUnlock for next Inventory Call
+                                                                                        
+
+    }
+
+    public void RemoveOnUse()
+    {
+        //Detach the Item from it's Slot
+        CurrentSlot = null;                                                                                         //Detach the current Slot Script
+        Available = false;                                                                                          //Set this Item as no longer available
+        
+        //Adjust Index of all Draggable Objects above this one.
+        UpdateItemIndex();                                                                                          //Update the DraggableObj Index of other Items
+
+        //Remove the Item from DraggableObj List
+        DataManager.Draggable_List.RemoveAt(ObjectIndex);                                                           //Remove this Item's referenceObject from the DraggableObj List -> it will no longer be loaded
+        ObjectIndex = -1;                                                                                           //Set this ObjectIndex to an Invalid Value 
+    }
+
+    private void UpdateItemIndex()                                                                                  //Update ObjectIndex of Items with higher Index, on remove their true index will be reduced by 1
+    {
+        foreach (Draggable Item in DataManager.Item_List)                                                           
+        {
+            if (Item.ObjectIndex > ObjectIndex)                                                                     //find Item with higher Index
+            {
+                Item.ObjectIndex--;                                                                                 //reduce Index reference by 1
+            }
+        }
+    }
+
 }

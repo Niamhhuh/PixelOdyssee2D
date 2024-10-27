@@ -6,41 +6,52 @@ using UnityEngine.EventSystems;
 public class SlotScript : MonoBehaviour, IDropHandler
 {
     public int SlotID;
-    public bool SlotOccupied;
+    public bool SlotOccupied;                                                                               //Store whether the SLot is occupied or not
 
     public RectTransform SlotPosition;
-    DataManager DMReference;
+    //DataManager DMReference;
 
     void Awake()
     {
-        SlotOccupied = false;
-        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
-       
-        
-        if(DataManager.Slot_Array[SlotID - 1] != this)                                                      //If the Slot is not already in the Slot_Array of the DataManager, it adds itself
+        //DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+        SlotOccupied = false;                                                                               //On Wake, every Slot is unoccupied
+        if (SlotID == 15)                                                                                   //Except for the Craft Result Slot, which is always Locked
+        {
+            SlotOccupied = true;
+        }
+
+        if (DataManager.Slot_Array[SlotID - 1] != this)                                                     //If the Slot is not already in the Slot_Array of the DataManager, it adds itself
         {                                                                                                   //!!!!ATTENTION: this might break. This MUST be executed befor Items search the Slot Array!!!!!! (Check Script Execution Order or add Sequence System)
             DataManager.Slot_Array[SlotID - 1] = this;
         }
         
-        SlotOccupied = DataManager.Slot_Array[SlotID - 1].SlotOccupied;  
         SlotPosition = GetComponent<RectTransform>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null && SlotOccupied == false)                                          //When Item is dropped, check if the Slot is free
+        if (eventData.pointerDrag != null && SlotOccupied == false)                                          //When Item is dropped, check if the Slot is free
         {
-            eventData.pointerDrag.GetComponent<Draggable>().Slot = SlotID;                                   //Pass current SlotNumber to DraggableItem
-            eventData.pointerDrag.GetComponent<Draggable>().CurrentSlot = this;                              //Pass current SlotScript to DraggableItem
+            eventData.pointerDrag.GetComponent<Draggable>().Slot = SlotID;                                  //Pass current SlotNumber to DraggableItem
+
+            if (SlotID == 13 || SlotID == 14 || SlotID == 15)                                                                //If the Item is Placed onto Slot 13/14 (Crafting Slots) it is assigned Slot 0 to be mixed back into the Inventory.
+            {
+                eventData.pointerDrag.GetComponent<Draggable>().Slot = 0;
+            }
+
+            eventData.pointerDrag.GetComponent<Draggable>().CurrentSlot = this;                             //Pass current SlotScript to DraggableItem
         }
     }
-    public void SetOccupied()
+    public void SetOccupied()                                                                               //Set the Slot to occupied
     {
         SlotOccupied = true;
     }
 
-    public void ResetOccupied()
+    public void ResetOccupied()                                                                             //Set the Slot to unoccuipied
     {
-        SlotOccupied = false;
+        if(SlotID != 15)                                                                                    //If the Slot isn't Slot 15(CraftResult) it is set unoccupied when an Item is removed from it.
+        {
+            SlotOccupied = false;
+        }
     }
 }

@@ -99,7 +99,10 @@ public class Shovable : ObjectScript
             {
                 DataManager.ToShove.RemoveAt(0);
             }
-            ShoveController.SetActive(false);
+            if(ShoveController != null)
+            {
+                ShoveController.SetActive(false);
+            }
         }
     }
 

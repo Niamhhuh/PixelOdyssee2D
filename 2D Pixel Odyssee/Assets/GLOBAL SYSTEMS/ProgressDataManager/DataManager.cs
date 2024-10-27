@@ -11,6 +11,7 @@ public class DataManager : MonoBehaviour
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
+    public static List<CraftRecipe> Recipe_List = new List<CraftRecipe>();
 
     public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();        //Create a List to store the currently Highlighted Object           //should probably be an array
 
@@ -26,6 +27,8 @@ public class DataManager : MonoBehaviour
     private void Awake()
     {
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
+        Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
+        //print("a" + Item_List[0].ID + "b" + Item_List[1].ID + "c" + Item_List[2].ID + "d" + Item_List[3].ID + "e" + Item_List[4].ID + "f" + Item_List[5].ID + "g" + Item_List[6].ID + "h" + Item_List[7].ID + "i" + Item_List[8].ID + "j" + Item_List[9].ID + "k" + Item_List[10].ID + "l" + Item_List[11].ID + "m" + Item_List[12].ID);
 
         InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
         MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
@@ -113,7 +116,10 @@ public class DataManager : MonoBehaviour
 
     public void EditDraggableObj(int ObjectIndex, int newSlot)
     {
-        Draggable_List[ObjectIndex].Stored_Slot = newSlot;
+        if(Draggable_List.Count > 0)
+        {
+            Draggable_List[ObjectIndex].Stored_Slot = newSlot;
+        }
     }
 
     //Unlock Methods
