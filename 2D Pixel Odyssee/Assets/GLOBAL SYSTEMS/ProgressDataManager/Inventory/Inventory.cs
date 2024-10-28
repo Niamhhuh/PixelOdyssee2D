@@ -167,6 +167,7 @@ public class Inventory : MonoBehaviour
                 DataManager.Slot_Array[13].ResetOccupied();                                                 //Open Craft Slot 2 (14)
                 InputKey1 = 0;                                                                              //Reset Craft Slot 1 Item_ID
                 InputKey2 = 0;                                                                              //Reset Craft Slot 2 Item_ID
+                DataManager.Inventory_Fillstate++;                                                          
                 Craft_Success = true;                                                                       //Mark Crafting as Successful
                 break;                                                                                      //End 
             }

@@ -101,9 +101,14 @@ public class Collectable : ObjectScript
 
     private void PickUp()                                                                              //Pick up the Item by adding it to the Draggable List.
     {
+        if(DataManager.Inventory_Fillstate < 12)
+        {
+            DataManager.Inventory_Fillstate++;
+            //print(DataManager.Inventory_Fillstate);
             DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
             Collected = true;
             UpdateData();
             RemoveItem();
+        }
     }
 }

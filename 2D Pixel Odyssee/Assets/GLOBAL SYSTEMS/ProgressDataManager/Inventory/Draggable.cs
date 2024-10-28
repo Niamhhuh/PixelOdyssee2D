@@ -145,13 +145,13 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         if (CurrentSlot != null && CurrentSlot.SlotID == 13)                                                                                //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot1
         {
             DMReference.InventoryRef.InputKey1 = ID;
-            print(DMReference.InventoryRef.InputKey1);
+            //print(DMReference.InventoryRef.InputKey1);
         }
 
         if (CurrentSlot != null && CurrentSlot.SlotID == 14)                                                                               //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot2
         {
             DMReference.InventoryRef.InputKey2 = ID;
-            print(DMReference.InventoryRef.InputKey2);
+            //print(DMReference.InventoryRef.InputKey2);
         }
 
         if (DataManager.Slot_Array[12].SlotOccupied == true && DataManager.Slot_Array[13].SlotOccupied == true)     //Initiate Crafting
@@ -185,6 +185,9 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         //Remove the Item from DraggableObj List
         DataManager.Draggable_List.RemoveAt(ObjectIndex);                                                           //Remove this Item's referenceObject from the DraggableObj List -> it will no longer be loaded
         ObjectIndex = -1;                                                                                           //Set this ObjectIndex to an Invalid Value 
+
+        DataManager.Inventory_Fillstate--;
+        //print(DataManager.Inventory_Fillstate);
     }
 
     private void UpdateItemIndex()                                                                                  //Update ObjectIndex of Items with higher Index, on remove their true index will be reduced by 1

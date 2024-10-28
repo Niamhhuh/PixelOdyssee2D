@@ -23,6 +23,7 @@ public class DataManager : MonoBehaviour
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
     public Inventory InventoryRef = null;
+    public static int Inventory_Fillstate = 0;
 
     private void Awake()
     {
