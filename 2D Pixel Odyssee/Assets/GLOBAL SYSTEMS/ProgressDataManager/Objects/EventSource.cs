@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectable : ObjectScript
+public class EventSource : ObjectScript
 {
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public bool Collected;			                                                //relevant to control Item Spawn
+    public bool Event_Passed;			                                                //relevant to control Item Spawn
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     void Awake()
     {
-        ObjectList_ID = 1;
+        ObjectList_ID = 5;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
-        
+
         UnSReference = this.GetComponent<UnlockScript>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
-        foreach (DataManager.CollectableObj StoredObj in DataManager.Collectable_List)                      //Go through the Collectable_List and check CollectableObj.
+        foreach (DataManager.EventObj StoredObj in DataManager.EventSource_List)                      //Go through the EventSource_List and check EventObj.
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Collected);                         //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Event_Passed);                         //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -34,33 +34,33 @@ public class Collectable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddCollectableObj(ID, Lock_State, Collected);                                       //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
-            ObjectIndex = DataManager.Collectable_List.Count - 1;                                           //When an Object is added, it is added to the end of the list. 
+            DMReference.AddEventObj(ID, Lock_State, Event_Passed);                                       //Call the AddEventObj Method in DataManager, to add a new DataContainer.
+            ObjectIndex = DataManager.EventSource_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
         }
 
-        RemoveItem();                                                                                       //Remove Items if they have been collected already
+        RemoveEvent();                                                                                       //Remove Event if it has been interacted with already
     }
 
 
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
     {
         Lock_State = Stored_Lock_State;
-        Collected = Stored_Collected;
+        Event_Passed = Stored_Event_Passed;
     }
 
 
-    public void UpdateData()                                                                               //Pass Variables Lock and Collected to the DataManager
+    public void UpdateData()                                                                               //Pass Variables Lock and Event_Passed to the DataManager
     {
-        DMReference.EditCollectableObj(ObjectIndex, Lock_State, Collected);
+        DMReference.EditEventObj(ObjectIndex, Lock_State, Event_Passed);
     }
 
 
-    //Collectable Item specific delete on Load Funtion
+    //EventSource Item specific delete on Load Funtion
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void RemoveItem()                                                                               //Remove the Item when it is or was already collected
+    private void RemoveEvent()                                                                               //Remove the Event when it is or has been interacted with
     {
-        if (Collected == true)
+        if (Event_Passed == true)
         {
             Destroy(gameObject);
         }
@@ -76,21 +76,15 @@ public class Collectable : ObjectScript
     {
         if (other.CompareTag("Player") && RequestInteract == true)
         {
-
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
+            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
 
             if (Lock_State == false)
             {
                 ClearHighlight();
-                PickUp();
+                EventInteract();
                 ObjectSequenceUnlock();
-            }
-            else
-            {
-                ClearHighlight();
-                StartCoroutine(FlashRed());
             }
         }
     }
@@ -99,16 +93,10 @@ public class Collectable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void PickUp()                                                                              //Pick up the Item by adding it to the Draggable List.
+    private void EventInteract()                                                                                                                    //Interact with the Event to end it.
     {
-        if(DataManager.Inventory_Fillstate < 12)
-        {
-            DataManager.Inventory_Fillstate++;
-            //print(DataManager.Inventory_Fillstate);
-            DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
-            Collected = true;
+            Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
             UpdateData();
-            RemoveItem();
-        }
+            RemoveEvent();
     }
 }
