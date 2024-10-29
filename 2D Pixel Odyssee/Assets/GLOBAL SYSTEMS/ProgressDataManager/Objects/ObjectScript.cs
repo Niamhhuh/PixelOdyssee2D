@@ -13,6 +13,8 @@ public class ObjectScript : MonoBehaviour
 
     [HideInInspector] public bool NewObject = true;
 
+    public CharacterScript CurrentCharacter;
+
     //Interaction Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
     public SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
     private BoxCollider2D Object_Collider = null;            //Collider of the Object, which is expanded when the Object is marked for interaction
@@ -48,6 +50,7 @@ public class ObjectScript : MonoBehaviour
         ThisObject = this.GetComponent<ObjectScript>();
         if (!isBackground)
         {
+            CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
             ObjectSprite = this.GetComponent<SpriteRenderer>();
             originalColor = ObjectSprite.color;
             Object_Collider = this.GetComponent<BoxCollider2D>();

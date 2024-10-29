@@ -77,7 +77,7 @@ public class Shovable : ObjectScript
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
+        if (other.CompareTag("Player") && RequestInteract == true && CurrentCharacter.RosieActive == true)
         {
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             Unlock_Object();                                                                                                                        //Try to Unlock the Object
