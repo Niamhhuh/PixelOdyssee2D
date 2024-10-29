@@ -13,6 +13,7 @@ public class UiToMouse : MonoBehaviour
     private bool movePlayer = false;
     public bool AllowInput;
     public bool InventoryActive;
+    private Animator playerAnimator;
 
     void Start()
     {
@@ -20,6 +21,8 @@ public class UiToMouse : MonoBehaviour
         targetPosition = player.position;
         AllowInput = true;
         InventoryActive = false;
+
+        playerAnimator = player.GetComponent<Animator>();
     }
 
     public void DisableInput()
@@ -54,6 +57,18 @@ public class UiToMouse : MonoBehaviour
 
             movePlayer = true;
 
+            playerAnimator.SetBool("isWalking", true);
+
+            if(targetPosition.x < player.position.x)
+            {
+                playerAnimator.SetInteger("Direction", -1); //left
+            }
+
+            else
+            {
+                playerAnimator.SetInteger("Direction", 1); //right
+            }
+
             GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
         }
 
@@ -64,6 +79,9 @@ public class UiToMouse : MonoBehaviour
             if (player.position == targetPosition)
             {
                 movePlayer = false;
+
+                playerAnimator.SetBool("isWalking", false);
+                playerAnimator.SetInteger("Direction", 0); //idle
                 GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
             }
         }
