@@ -68,13 +68,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogueActivated && Input.GetButtonDown("Interact") && canContinueText)
+        if(dialogueActivated && Input.GetMouseButtonDown(1) && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
             if (stepNum >= currentConversation.actors.Length)
                 TurnOffDialogue();
 
-            //Continue dialogue
+            //Continue dialogue1
             else
                 PlayDialogue();
         }
