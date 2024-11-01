@@ -13,6 +13,10 @@ public class UiToMouse : MonoBehaviour
     private bool movePlayer = false;
     public bool AllowInput;
     public bool InventoryActive;
+    private Animator playerAnimator;
+
+    private Animator pointerAnimator; // Animator für MovePointer
+    private Image pointerImage; // Image-Komponente des MovePointers
 
     void Start()
     {
@@ -20,6 +24,12 @@ public class UiToMouse : MonoBehaviour
         targetPosition = player.position;
         AllowInput = true;
         InventoryActive = false;
+
+        playerAnimator = player.GetChild(0).GetComponent<Animator>();
+
+        GameObject movePointer = GameObject.Find("MovePointer");
+        pointerAnimator = movePointer.GetComponent<Animator>();
+        pointerImage = movePointer.GetComponent<Image>();
     }
 
     public void DisableInput()
@@ -54,7 +64,25 @@ public class UiToMouse : MonoBehaviour
 
             movePlayer = true;
 
-            GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
+            playerAnimator.SetBool("isWalking", true);
+
+            if(targetPosition.x < player.position.x)
+            {
+                playerAnimator.SetInteger("Direction", -1); //left
+            }
+
+            else
+            {
+                playerAnimator.SetInteger("Direction", 1); //right
+            }
+
+
+            pointerImage.enabled = true;
+            pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
+            
+            
+            //GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
+            //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = true;
         }
 
         if (movePlayer)
@@ -64,7 +92,14 @@ public class UiToMouse : MonoBehaviour
             if (player.position == targetPosition)
             {
                 movePlayer = false;
-                GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
+
+                playerAnimator.SetBool("isWalking", false);
+                playerAnimator.SetInteger("Direction", 0); //idle
+
+                pointerImage.enabled = false;
+                
+                //GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
+                //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = false;
             }
         }
 

@@ -8,6 +8,7 @@ public class DataManager : MonoBehaviour
     public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects             //List_ID 2
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<SwitchStateObj> SwitchState_List = new List<SwitchStateObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 4
+    public static List<EventObj> EventSource_List = new List<EventObj>();       //Create a List to store all relevant Variables of Switches                                 //List_ID 5
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
@@ -87,6 +88,11 @@ public class DataManager : MonoBehaviour
         Draggable_List.Add(new DraggableObj { Stored_ID = newID, Stored_Slot = newSlot });
     }
 
+    public void AddEventObj(int newID, bool newLock_State, bool newEvent_Passed)
+    {
+        EventSource_List.Add(new EventObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Event_Passed = newEvent_Passed });
+    }
+
     //Edit Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -117,10 +123,16 @@ public class DataManager : MonoBehaviour
 
     public void EditDraggableObj(int ObjectIndex, int newSlot)
     {
-        if(Draggable_List.Count > 0)
+        if (Draggable_List.Count > 0)
         {
             Draggable_List[ObjectIndex].Stored_Slot = newSlot;
         }
+    }
+
+    public void EditEventObj(int ObjectIndex, bool newLock_State, bool newEvent_Passed)
+    {
+        EventSource_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        EventSource_List[ObjectIndex].Stored_Event_Passed = newEvent_Passed;
     }
 
     //Unlock Methods
@@ -148,6 +160,10 @@ public class DataManager : MonoBehaviour
         if (List_ID == 4)
         {
             SequenceSearchSwitchState(Object_ID);
+        }
+        if (List_ID == 5)
+        {
+            SequenceSearchEventSource(Object_ID);
         }
     }
 
@@ -178,6 +194,14 @@ public class DataManager : MonoBehaviour
     }
 
     private void SequenceSearchSwitchState(int Object_ID)                         // Search through Portal List and Unlock an Object
+    {
+        foreach (SwitchStateObj StoredObj in SwitchState_List)
+        {
+            ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+        }
+    }
+
+    private void SequenceSearchEventSource(int Object_ID)                         // Search through Portal List and Unlock an Object
     {
         foreach (SwitchStateObj StoredObj in SwitchState_List)
         {
@@ -235,7 +259,6 @@ public class DataManager : MonoBehaviour
     //Check for State of a Switch and Unlock/Lock
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    // This might become obsolete / be used for different Item Types.
     public void UnlockbySwitchState(int UnlockList_ID, int UnlockObject_Index, int Switch_ID, bool Unlock_SwitchState)
     {
         foreach (SwitchStateObj StoredObj in SwitchState_List)                     // Search through SwitchState List and Unlock an Object
@@ -282,6 +305,9 @@ public class DataManager : MonoBehaviour
             case 4:
                 SwitchState_List[UnlockObject_Index].Stored_Lock_State = false;
                 break;
+            case 5:
+                EventSource_List[UnlockObject_Index].Stored_Lock_State = false;
+                break;
             default:
                 break;
         }
@@ -304,6 +330,9 @@ public class DataManager : MonoBehaviour
                 break;
             case 4:
                 SwitchState_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
+            case 5:
+                EventSource_List[UnlockObject_Index].Stored_Lock_State = true;
                 break;
             default:
                 break;
@@ -348,6 +377,6 @@ public class DataManager : MonoBehaviour
     }
     public class EventObj : Obj
     {
-        public int Event_Progress;
+        public bool Stored_Event_Passed;
     }
 }
