@@ -81,6 +81,7 @@ public class Shovable : ObjectScript
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
         FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);     //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
 
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows

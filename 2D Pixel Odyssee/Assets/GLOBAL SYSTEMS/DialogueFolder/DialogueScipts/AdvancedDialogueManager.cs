@@ -109,7 +109,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
             ContinueButton.SetActive(false);                                                //Deactivate the Continue Dialogue Button when an Option Branch is triggered
-            DMReference.MoveScript.LockInteract = false;
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());
             for (int i = 0;i < currentConversation.optionText.Length; i++)
             {
                 if (currentConversation.optionText[i] == null)
@@ -176,6 +176,8 @@ public class AdvancedDialogueManager : MonoBehaviour
             currentConversation = currentConversation.option3;
 
         stepNum = 0;
+        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
 
         PlayDialogue();
     }
@@ -231,7 +233,8 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void TurnOffDialogue()
     {
-        DMReference.MoveScript.LockInteract = false;
+        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
         stepNum = 0;
 
         dialogueActivated = false;

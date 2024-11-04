@@ -78,6 +78,7 @@ public class EventSource : ObjectScript
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
         FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
 
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows

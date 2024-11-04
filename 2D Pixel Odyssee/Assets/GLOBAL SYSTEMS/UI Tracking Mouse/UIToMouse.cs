@@ -118,10 +118,28 @@ public class UiToMouse : MonoBehaviour
 
     }
 
+    public void Activate_CallEnableInput()
+    {
+        StartCoroutine(CallEnableInput());
+    }
+
     public IEnumerator CallEnableInput()
     {
         //print("hi");
         yield return new WaitForEndOfFrame();
         EnableInput();
+    }
+
+    public void Activate_CallEnableInteract()
+    {
+        StartCoroutine(CallEnableInput());
+    }
+
+
+    public IEnumerator CallEnableInteract()
+    {
+        //print("hi");
+        yield return new WaitForEndOfFrame();
+        EnableInteract();
     }
 }

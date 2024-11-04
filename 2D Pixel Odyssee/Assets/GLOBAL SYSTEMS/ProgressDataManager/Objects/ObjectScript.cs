@@ -93,7 +93,6 @@ public class ObjectScript : MonoBehaviour
     {
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
-            //if (DMReference.MoveScript.LockInteract == false) { print("Yey!");  }
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
