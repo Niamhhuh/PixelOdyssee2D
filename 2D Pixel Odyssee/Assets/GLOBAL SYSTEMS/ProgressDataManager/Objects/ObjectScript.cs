@@ -42,7 +42,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public int ObjectList_ID;                                                      //ID which marks the List this Object is stored in          //used for UnlockMethods
     [HideInInspector] public int ObjectIndex;                                                        //Index of this Object in its list                          //used for UnlockMethods
 
-    [HideInInspector] public DataManager DMReference;                                                 //
+    public DataManager DMReference = null;                                                 //
     [HideInInspector] public SequenceUnlock SeqUReference = null;                                     //
     [HideInInspector] public UnlockScript UnSReference = null;                                        //
 
@@ -53,9 +53,10 @@ public class ObjectScript : MonoBehaviour
     private void Start()
     {
         ThisObject = this.GetComponent<ObjectScript>();
+        CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+        PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         if (!isBackground)
         {
-            CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
             ObjectSprite = this.GetComponent<SpriteRenderer>();
             originalColor = ObjectSprite.color;
             Object_Collider = this.GetComponent<BoxCollider2D>();
@@ -63,7 +64,6 @@ public class ObjectScript : MonoBehaviour
             HighlightonHover = this.transform.GetChild(0).gameObject;                                   //the first child must ALWAYS be the Highlight Object
             HighlightonHover.SetActive(false);
             InteractionController = GameObject.FindGameObjectWithTag("InteractionController");
-            PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         }
     }
 
@@ -72,7 +72,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if (!isBackground && !AlreadyActive && DMReference.MoveScript.InventoryActive == false)
+        if (PointerScript.InventoryActive == false && !isBackground && !AlreadyActive)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
@@ -91,8 +91,9 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
-        if (Input.GetMouseButtonDown(0))
+        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
+            //if (DMReference.MoveScript.LockInteract == false) { print("Yey!");  }
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();

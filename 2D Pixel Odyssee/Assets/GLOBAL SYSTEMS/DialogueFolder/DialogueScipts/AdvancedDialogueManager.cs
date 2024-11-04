@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class AdvancedDialogueManager : MonoBehaviour
 {
+
+    private DataManager DMReference;
     //NPC DIALOGUE we are currently stepping through
     private AdvancedDialogueSO currentConversation;
     private int stepNum;
@@ -27,6 +29,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     private TMP_Text[] optionButtonText;
     private GameObject optionsPanel;
 
+    private GameObject ContinueButton;          //Store Button which is used to continue Dialogue
+
     //TYPEWRITER EFFECT
     [SerializeField]
     private float typingSpeed = 0.02f;
@@ -40,10 +44,14 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+
         //FIND BUTTONS
         optionButton = GameObject.FindGameObjectsWithTag("OptionButton");
         optionsPanel = GameObject.Find("OptionPanel");
         optionsPanel.SetActive(false);
+
+        ContinueButton = GameObject.FindGameObjectWithTag("ContinueDialogueButton");
 
         //FIND THE TMP TEXT ON THE BUTTONS
         optionButtonText = new TMP_Text[optionButton.Length];
@@ -66,9 +74,9 @@ public class AdvancedDialogueManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ContinueDialogue()
     {
-        if(dialogueActivated && Input.GetMouseButtonDown(1) && canContinueText)
+        if(dialogueActivated && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
             if (stepNum >= currentConversation.actors.Length)
@@ -96,10 +104,12 @@ public class AdvancedDialogueManager : MonoBehaviour
         
         actor.text = currentSpeaker;
         portrait.sprite = currentPortrait;                                                  //---------------------------------
-
+        ContinueButton.SetActive(true);
         //If there is a branch...
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
+            ContinueButton.SetActive(false);                                                //Deactivate the Continue Dialogue Button when an Option Branch is triggered
+            DMReference.MoveScript.LockInteract = false;
             for (int i = 0;i < currentConversation.optionText.Length; i++)
             {
                 if (currentConversation.optionText[i] == null)
@@ -207,13 +217,21 @@ public class AdvancedDialogueManager : MonoBehaviour
     public void InitiateDialogue(NPCDialogue npcDialogue)
     {
         //the array we are currently stepping through
-        currentConversation = npcDialogue.conversation[0];
-        
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>().RosieActive == true)
+        {
+            currentConversation = npcDialogue.conversation[0];
+        }
+        else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
+        {
+            currentConversation = npcDialogue.conversation[1];
+        }
+        //currentConversation = npcDialogue.conversation[1];
         dialogueActivated = true;
     }
 
     public void TurnOffDialogue()
     {
+        DMReference.MoveScript.LockInteract = false;
         stepNum = 0;
 
         dialogueActivated = false;
