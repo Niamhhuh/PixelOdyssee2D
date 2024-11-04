@@ -147,10 +147,8 @@ public class ObjectScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)
         {
-            if (DataManager.ToInteract.Count > 0)
-            {
-                DataManager.ToInteract.RemoveAt(0);
-            }
+            DataManager.ToInteract.RemoveAt(0);
+
             if (InteractionController != null)
             {
                 InteractionController.SetActive(false);

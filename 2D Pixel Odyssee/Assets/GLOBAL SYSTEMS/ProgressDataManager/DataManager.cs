@@ -27,7 +27,16 @@ public class DataManager : MonoBehaviour
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
     public Inventory InventoryRef = null;
     public static int Inventory_Fillstate = 0;
-
+    
+    public ObjectScript CurrentToInteract;
+    public bool Ax = false;
+    void Update ()
+    {
+        if(Ax == true)
+        {
+            CurrentToInteract = ToInteract[0];
+        }
+    }
     private void Awake()
     {
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());

@@ -97,18 +97,28 @@ public class Shovable : ObjectScript
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)                                                          //This Function Overwrites ObjectScript.OnTriggerExit2D and therefor must reimplement the standard Funtion to deactivate the Interaction Buttons
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)    //If the player leaves the Collider and ther is an Object in the To InteractList, which is this Object
         {
-            ClearHighlight();
-            if(DataManager.ToShove.Count > 0)
+            DataManager.ToInteract.RemoveAt(0);                                                                     //Clear Object from ToInteract List
+
+            if (InteractionController != null)                                                                      //If the Interaction Buttons are available
             {
-                DataManager.ToShove.RemoveAt(0);
+                InteractionController.SetActive(false);                                                             //Disable them 
             }
-            if(ShoveController != null)
+        }
+
+        if (other.CompareTag("Player"))                                                                     //This Part handles the toggle of the Shove Buttons
+        {
+            ClearHighlight();                                                                               //Clear Highlight when moving away
+            if(DataManager.ToShove.Count > 0)                                                               //If the Object is in the ToShove List
             {
-                ShoveController.SetActive(false);
+                DataManager.ToShove.RemoveAt(0);                                                            //Remove it
+            }
+            if(ShoveController != null)                                                                     //If the ShoveButtons are available
+            {
+                ShoveController.SetActive(false);                                                           //Disable them
             }
         }
     }
