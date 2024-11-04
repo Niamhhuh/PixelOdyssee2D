@@ -16,8 +16,9 @@ public class EventSource : ObjectScript
     {
         ObjectList_ID = 5;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
-
+        SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
+        ObjReference = this.GetComponent<EventSource>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -72,20 +73,24 @@ public class EventSource : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Call_Interact()
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
-        {
-            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
 
-            if (Lock_State == false)
-            {
-                ClearHighlight();
-                EventInteract();
-                ObjectSequenceUnlock();
-            }
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+        if (Lock_State == false)
+        {
+            ClearHighlight();
+            EventInteract();
+            ObjectSequenceUnlock();
+        } else
+        {
+            ClearHighlight();
+            StartCoroutine(FlashRed());
         }
     }
 

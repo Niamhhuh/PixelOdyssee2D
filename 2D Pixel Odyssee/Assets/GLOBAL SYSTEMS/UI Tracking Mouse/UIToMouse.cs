@@ -104,4 +104,11 @@ public class UiToMouse : MonoBehaviour
         }
 
     }
+
+    public IEnumerator CallEnableInput()
+    {
+        //print("hi");
+        yield return new WaitForEndOfFrame();
+        EnableInput();
+    }
 }

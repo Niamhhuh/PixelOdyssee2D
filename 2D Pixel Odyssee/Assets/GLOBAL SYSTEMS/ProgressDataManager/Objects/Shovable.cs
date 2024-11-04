@@ -21,8 +21,9 @@ public class Shovable : ObjectScript
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
+        ObjReference = this.GetComponent<Shovable>();
 
-        
+
         ShoveController = GameObject.FindGameObjectWithTag("ShoveControl");
         ShoveBox = gameObject;
 
@@ -75,24 +76,23 @@ public class Shovable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Call_Interact()
     {
-        if (other.CompareTag("Player") && RequestInteract == true && CurrentCharacter.RosieActive == true)
-        {
-            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);     //Fetch new State from DataManager
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);     //Fetch new State from DataManager
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
 
-            if (Lock_State == false)
-            {
-                ObjectSequenceUnlock();
-                InitiateShove();
-            }
-            else
-            {
-                ClearHighlight();
-                StartCoroutine(FlashRed());
-            }
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+        if (Lock_State == false && CurrentCharacter.RosieActive == true)
+        {
+            ObjectSequenceUnlock();
+            InitiateShove();
+        } else
+        {
+            ClearHighlight();
+            StartCoroutine(FlashRed());
         }
     }
 
@@ -118,7 +118,6 @@ public class Shovable : ObjectScript
         ShoveController.SetActive(true);
         //Activate the required Arrows 
         ShoveController.transform.position = this.transform.position;
-
     }
 
 

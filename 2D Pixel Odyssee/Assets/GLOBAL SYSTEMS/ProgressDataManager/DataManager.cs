@@ -8,13 +8,15 @@ public class DataManager : MonoBehaviour
     public static List<ShovableObj> Shovable_List = new List<ShovableObj>();                //Create a List to store all relevant Variables of Pushable Objects             //List_ID 2
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<SwitchStateObj> SwitchState_List = new List<SwitchStateObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 4
-    public static List<EventObj> EventSource_List = new List<EventObj>();       //Create a List to store all relevant Variables of Switches                                 //List_ID 5
+    public static List<EventObj> EventSource_List = new List<EventObj>();                   //Create a List to store all relevant Variables of Switches                     //List_ID 5
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
     public static List<CraftRecipe> Recipe_List = new List<CraftRecipe>();
 
     public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();        //Create a List to store the currently Highlighted Object           //should probably be an array
+
+    public static List<ObjectScript> ToInteract = new List<ObjectScript>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
 
     public static List<Shovable> ToShove = new List<Shovable>();                            //Create a List to store the Object that is being shoved            //should probably be an array
 

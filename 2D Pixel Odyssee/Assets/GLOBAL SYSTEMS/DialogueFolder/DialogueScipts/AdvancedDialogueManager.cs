@@ -93,6 +93,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             SetActorInfo(true);
 
         //Display Dialogue
+        
         actor.text = currentSpeaker;
         portrait.sprite = currentPortrait;                                                  //---------------------------------
 
