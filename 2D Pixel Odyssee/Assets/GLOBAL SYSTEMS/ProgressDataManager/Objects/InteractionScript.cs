@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class InteractionScript : MonoBehaviour
 {
-    //Turn ObjectScript into Specific Object
-
+    private UiToMouse PointerScript;
+    private void Start()
+    {
+        PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+    }
     //Call Dialouge
     public void TriggerDialogue()
     {
-        //DataManager.ToInteract[0].ObjectList_ID;
+        DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+        //GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>().DisableInput();
     }
 
 
@@ -20,6 +28,7 @@ public class InteractionScript : MonoBehaviour
     {
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
         {
+            //Turn ObjectScript into Specific Object
             case 1:
                 //print("I'm called2");
                 Collectable ColReference = null;                                                    //Create a Reference Variable, which will be used to access the Collectable.Call_Interact Method

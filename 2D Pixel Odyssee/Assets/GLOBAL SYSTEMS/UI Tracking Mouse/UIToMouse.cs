@@ -18,12 +18,15 @@ public class UiToMouse : MonoBehaviour
     private Animator pointerAnimator; // Animator für MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
 
+    public bool LockInteract;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
         AllowInput = true;
         InventoryActive = false;
+        LockInteract = false;
 
         playerAnimator = player.GetChild(0).GetComponent<Animator>();
 
@@ -43,6 +46,16 @@ public class UiToMouse : MonoBehaviour
         {
             AllowInput = true;
         } 
+    }
+
+    public void DisableInteract()
+    {
+        LockInteract = true;
+    }
+
+    public void EnableInteract()
+    {
+        LockInteract = false;
     }
 
     void Update()
