@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7161360015665035854
+--- !u!114 &-5952207992336298276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/TitelScreen.bank
+  m_Name: bank:/Museumsmusik.bank
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
-  Name: TitelScreen
-  StudioPath: bank:/TitelScreen
-  lastModified: 638663183727458434
+  Path: PixelOdyssee 4.0/Build/Desktop/Museumsmusik.bank
+  Name: Museumsmusik
+  StudioPath: bank:/Museumsmusik
+  lastModified: 638663186398332315
   FileSizes:
   - Name: Desktop
-    Value: 833664
+    Value: 306144
   Exists: 1
---- !u!114 &-6038483131713631721
+--- !u!114 &-5354746149302427933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,24 +29,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Titelmusik
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: event:/Titelmusik
-  Guid:
-    Data1: -1680502974
-    Data2: 1177259843
-    Data3: 1235322775
-    Data4: -493090769
-  Banks:
-  - {fileID: -7161360015665035854}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 64000
+  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638663186398321723
+  FileSizes:
+  - Name: Desktop
+    Value: 968
+  Exists: 1
 --- !u!114 &-4954778324174251081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +67,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1400
---- !u!114 &-4701398376752015910
+--- !u!114 &-4824090157932881707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,23 +77,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Museumsmusik
+  m_Name: event:/Titelmusik
   m_EditorClassIdentifier: 
-  Path: event:/Museumsmusik
+  Path: event:/Titelmusik
   Guid:
-    Data1: 465877033
-    Data2: 1322363960
-    Data3: 1788093313
-    Data4: -1762024205
+    Data1: -1680502974
+    Data2: 1177259843
+    Data3: 1235322775
+    Data4: -493090769
   Banks:
-  - {fileID: -1042054437389257153}
+  - {fileID: 7223014010110137597}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 22628
+  Length: 64000
 --- !u!114 &-4271999435631700737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +109,7 @@ MonoBehaviour:
   Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
   Name: TitelScreen
   StudioPath: bank:/TitelScreen
-  lastModified: 638661421313341958
+  lastModified: 638663186398409076
   FileSizes:
   - Name: Desktop
     Value: 833664
@@ -148,7 +141,35 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 64000
---- !u!114 &-1042054437389257153
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -5354746149302427933}
+  - {fileID: 138131579459745782}
+  - {fileID: -5952207992336298276}
+  - {fileID: 7223014010110137597}
+  EditorEvents:
+  - {fileID: 2647784102219449500}
+  - {fileID: 7436224759940029081}
+  - {fileID: -4824090157932881707}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 138131579459745782}
+  StringsBanks:
+  - {fileID: -5354746149302427933}
+  cacheTime: 638663186398409076
+  cacheVersion: 131620
+--- !u!114 &138131579459745782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,17 +179,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Museumsmusik.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Museumsmusik.bank
-  Name: Museumsmusik
-  StudioPath: bank:/Museumsmusik
-  lastModified: 638663183727338749
+  Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638663186398317873
   FileSizes:
   - Name: Desktop
-    Value: 306144
+    Value: 43648
   Exists: 1
---- !u!114 &-708193340241719245
+--- !u!114 &2647784102219449500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +208,7 @@ MonoBehaviour:
     Data3: 952760222
     Data4: -1298576804
   Banks:
-  - {fileID: 2895235861269499029}
+  - {fileID: 138131579459745782}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -195,74 +216,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1400
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 1959999209780115807}
-  - {fileID: 2895235861269499029}
-  - {fileID: -1042054437389257153}
-  - {fileID: -7161360015665035854}
-  EditorEvents:
-  - {fileID: -708193340241719245}
-  - {fileID: -4701398376752015910}
-  - {fileID: -6038483131713631721}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 2895235861269499029}
-  StringsBanks:
-  - {fileID: 1959999209780115807}
-  cacheTime: 638663183727458434
-  cacheVersion: 131620
---- !u!114 &1959999209780115807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638663183727318807
-  FileSizes:
-  - Name: Desktop
-    Value: 968
-  Exists: 1
---- !u!114 &2895235861269499029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638663183727308830
-  FileSizes:
-  - Name: Desktop
-    Value: 43648
-  Exists: 1
 --- !u!114 &3005042942263910029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +231,7 @@ MonoBehaviour:
   Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638661421313188416
+  lastModified: 638663186398321723
   FileSizes:
   - Name: Desktop
     Value: 968
@@ -298,7 +251,7 @@ MonoBehaviour:
   Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638661421313178426
+  lastModified: 638663186398317873
   FileSizes:
   - Name: Desktop
     Value: 43648
@@ -318,11 +271,58 @@ MonoBehaviour:
   Path: PixelOdyssee 4.0/Build/Desktop/Museumsmusik.bank
   Name: Museumsmusik
   StudioPath: bank:/Museumsmusik
-  lastModified: 638661421313220964
+  lastModified: 638663186398332315
   FileSizes:
   - Name: Desktop
     Value: 306144
   Exists: 1
+--- !u!114 &7223014010110137597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TitelScreen.bank
+  m_EditorClassIdentifier: 
+  Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
+  Name: TitelScreen
+  StudioPath: bank:/TitelScreen
+  lastModified: 638663186398409076
+  FileSizes:
+  - Name: Desktop
+    Value: 833664
+  Exists: 1
+--- !u!114 &7436224759940029081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Museumsmusik
+  m_EditorClassIdentifier: 
+  Path: event:/Museumsmusik
+  Guid:
+    Data1: 465877033
+    Data2: 1322363960
+    Data3: 1788093313
+    Data4: -1762024205
+  Banks:
+  - {fileID: -5952207992336298276}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22628
 --- !u!114 &9153618962330428993
 MonoBehaviour:
   m_ObjectHideFlags: 0
