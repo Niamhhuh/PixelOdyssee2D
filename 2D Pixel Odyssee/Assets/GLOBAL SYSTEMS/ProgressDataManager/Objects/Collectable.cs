@@ -16,8 +16,9 @@ public class Collectable : ObjectScript
     {
         ObjectList_ID = 1;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
-        
+        SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
+        ObjReference = this.GetComponent<Collectable>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -72,26 +73,24 @@ public class Collectable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Call_Interact()
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+        if (Lock_State == false)
         {
-
-            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
-
-            if (Lock_State == false)
-            {
-                ClearHighlight();
-                PickUp();
-                ObjectSequenceUnlock();
-            }
-            else
-            {
-                ClearHighlight();
-                StartCoroutine(FlashRed());
-            }
+            ClearHighlight();
+            PickUp();
+            ObjectSequenceUnlock();
+        }else
+        {
+            ClearHighlight();
+            StartCoroutine(FlashRed());
         }
     }
 

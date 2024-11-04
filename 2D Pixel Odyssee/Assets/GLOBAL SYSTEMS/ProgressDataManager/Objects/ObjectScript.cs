@@ -23,11 +23,16 @@ public class ObjectScript : MonoBehaviour
 
     private ObjectScript ThisObject = null;                  //ObjectScript, which is added to the Currently_Highlighted List, check if object is selected
     public GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
+    public UiToMouse PointerScript = null;
+
 
     [HideInInspector] public bool RequestInteract = false;                     //Request is set true, when the Object is clicked and reset, when another object is clicked. 
     [HideInInspector] public bool AlreadyActive = false;                       //AlreadyActive marks an Object as already highlighted, preventing it from expanding its collider multiple times
     public bool isBackground;                                //isBackground is set true on the background, disabling all functions for it
 
+
+    public GameObject InteractionController = null;                       //
+    public ObjectScript ObjReference = null;
 
     //Lock/Unlock Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
     [Range(0, 2)] public int UnlockMethod = 0;               //Pass Unlock Method from attached Unlock Script to Object Script
@@ -57,6 +62,8 @@ public class ObjectScript : MonoBehaviour
             Original_Collider = Object_Collider.size;
             HighlightonHover = this.transform.GetChild(0).gameObject;                                   //the first child must ALWAYS be the Highlight Object
             HighlightonHover.SetActive(false);
+            InteractionController = GameObject.FindGameObjectWithTag("InteractionController");
+            PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         }
     }
 
@@ -124,6 +131,33 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)                                                     //Initiate Interact on Trigger Enter
+    {
+        if (other.CompareTag("Player") && RequestInteract == true)
+        {
+            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+            DataManager.ToInteract.Add(this);
+            InteractionController.SetActive(true);
+            //Activate the required Arrows 
+            InteractionController.transform.position = this.transform.position;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)
+        {
+            if (DataManager.ToInteract.Count > 0)
+            {
+                DataManager.ToInteract.RemoveAt(0);
+            }
+            if (InteractionController != null)
+            {
+                InteractionController.SetActive(false);
+            }
+        }
+    }
+    
     //Unlock Manager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,3 +207,4 @@ public class ObjectScript : MonoBehaviour
         ObjectSprite.color = originalColor; 
     }
 }
+

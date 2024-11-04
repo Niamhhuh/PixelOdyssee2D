@@ -15,6 +15,9 @@ public class UiToMouse : MonoBehaviour
     public bool InventoryActive;
     private Animator playerAnimator;
 
+    private Animator pointerAnimator; // Animator für MovePointer
+    private Image pointerImage; // Image-Komponente des MovePointers
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -22,7 +25,11 @@ public class UiToMouse : MonoBehaviour
         AllowInput = true;
         InventoryActive = false;
 
-        playerAnimator = player.GetComponent<Animator>();
+        playerAnimator = player.GetChild(0).GetComponent<Animator>();
+
+        GameObject movePointer = GameObject.Find("MovePointer");
+        pointerAnimator = movePointer.GetComponent<Animator>();
+        pointerImage = movePointer.GetComponent<Image>();
     }
 
     public void DisableInput()
@@ -69,7 +76,13 @@ public class UiToMouse : MonoBehaviour
                 playerAnimator.SetInteger("Direction", 1); //right
             }
 
-            GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
+
+            pointerImage.enabled = true;
+            pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
+            
+            
+            //GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
+            //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = true;
         }
 
         if (movePlayer)
@@ -82,9 +95,20 @@ public class UiToMouse : MonoBehaviour
 
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetInteger("Direction", 0); //idle
-                GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
+
+                pointerImage.enabled = false;
+                
+                //GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
+                //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = false;
             }
         }
 
+    }
+
+    public IEnumerator CallEnableInput()
+    {
+        //print("hi");
+        yield return new WaitForEndOfFrame();
+        EnableInput();
     }
 }

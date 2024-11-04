@@ -20,6 +20,7 @@ public class Switchable : ObjectScript
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
+        ObjReference = this.GetComponent<Switchable>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -61,20 +62,24 @@ public class Switchable : ObjectScript
     //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Call_Interact()
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
-        {
-            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.SwitchState_List[ObjectIndex].Stored_Lock_State, DataManager.SwitchState_List[ObjectIndex].Stored_SwitchState);   //Fetch new State from DataManager
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        FetchData(DataManager.SwitchState_List[ObjectIndex].Stored_Lock_State, DataManager.SwitchState_List[ObjectIndex].Stored_SwitchState);   //Fetch new State from DataManager
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
 
-            if (Lock_State == false)
-            {
-                ClearHighlight();
-                FlipSwitch();
-                ObjectSequenceUnlock();
-            }
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+        if (Lock_State == false)
+        {
+            ClearHighlight();
+            FlipSwitch();
+            ObjectSequenceUnlock();
+        } else
+        {
+            ClearHighlight();
+            StartCoroutine(FlashRed());
         }
     }
 
