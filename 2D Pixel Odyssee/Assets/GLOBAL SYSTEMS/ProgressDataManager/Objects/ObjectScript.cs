@@ -12,6 +12,7 @@ public class ObjectScript : MonoBehaviour
     //public(Dialogue)			                                                    //Dialogue of this object
 
     [HideInInspector] public bool NewObject = true;
+    [HideInInspector] public bool IsTriggerableObj = false;
 
     public CharacterScript CurrentCharacter;
 
@@ -52,10 +53,14 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Start()
     {
+        if(gameObject.GetComponent<Triggerable>() != null )
+        {
+            IsTriggerableObj = true;
+        }
         ThisObject = this.GetComponent<ObjectScript>();
         CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
-        if (!isBackground)
+        if (!isBackground && !IsTriggerableObj)
         {
             ObjectSprite = this.GetComponent<SpriteRenderer>();
             originalColor = ObjectSprite.color;
@@ -72,7 +77,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if (PointerScript.InventoryActive == false && !isBackground && !AlreadyActive)
+        if (PointerScript.InventoryActive == false && !isBackground && !AlreadyActive && !IsTriggerableObj)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
@@ -121,7 +126,7 @@ public class ObjectScript : MonoBehaviour
         {
             DataManager.Highlighted_Current.RemoveAt(0);
         }
-        if (!isBackground)                                                                              //This part of the method disables the Highlight Object, activates the standard Sprite and resets the collider to its original size.
+        if (!isBackground && !IsTriggerableObj)                                                                              //This part of the method disables the Highlight Object, activates the standard Sprite and resets the collider to its original size.
         {
             AlreadyActive = false;
 
@@ -148,7 +153,6 @@ public class ObjectScript : MonoBehaviour
         if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)
         {
             DataManager.ToInteract.RemoveAt(0);
-
             if (InteractionController != null)
             {
                 InteractionController.SetActive(false);
