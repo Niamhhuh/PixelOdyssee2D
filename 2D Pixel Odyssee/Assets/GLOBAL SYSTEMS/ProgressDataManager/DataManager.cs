@@ -184,7 +184,6 @@ public class DataManager : MonoBehaviour
         if (List_ID == 6)
         {
             SequenceSearchTriggerable(Object_ID);
-            TriggerActivate(Object_ID);
         }
     }
 
@@ -244,17 +243,6 @@ public class DataManager : MonoBehaviour
         if (Target_ID == Current_Object.Stored_ID)
         {
             Current_Object.Stored_Lock_State = false;
-        }
-    }
-
-    private void TriggerActivate(int Target_ID)                                //Activate the Trigger
-    {
-        foreach (GameObject TriggerObj in TriggeredObjects_List)
-        {
-            if (TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
-            {
-                TriggerObj.SetActive(true);
-            }
         }
     }
 
@@ -383,6 +371,22 @@ public class DataManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Activate Trigger
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void TriggerActivate(int Target_ID)                                //Activate the Trigger
+    {
+        foreach (GameObject TriggerObj in TriggeredObjects_List)
+        {
+            if (TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
+            {
+                TriggerObj.SetActive(true);
+            }
         }
     }
 
