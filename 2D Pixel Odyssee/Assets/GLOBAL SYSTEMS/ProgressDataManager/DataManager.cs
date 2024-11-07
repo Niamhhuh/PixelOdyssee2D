@@ -50,6 +50,7 @@ public class DataManager : MonoBehaviour
         Rooms_Loaded[8] = false;                                                        //Indie
         Rooms_Loaded[9] = false;                                                        //BossRoom
 
+
         //Get every Slot
 
         //Get every Item
