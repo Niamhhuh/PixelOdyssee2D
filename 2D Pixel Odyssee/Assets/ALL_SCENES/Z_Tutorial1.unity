@@ -4829,7 +4829,6 @@ MonoBehaviour:
   Lock_State: 0
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -5121,140 +5120,6 @@ MonoBehaviour:
   SlotID: 10
   SlotOccupied: 0
   SlotPosition: {fileID: 0}
---- !u!1 &609360701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 609360702}
-  - component: {fileID: 609360704}
-  - component: {fileID: 609360703}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &609360702
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609360701}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 999680594}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &609360703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609360701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Button
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &609360704
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609360701}
-  m_CullTransparentMesh: 1
 --- !u!1001 &616640664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6412,7 +6277,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0b9721755b6a2041bd6bd3121aac80e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7193,7 +7058,7 @@ SpriteRenderer:
   m_SortingLayerID: -1180937057
   m_SortingLayer: -1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 6bbaf90858a8ed2409cafb0017374d1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82023ba33e2292c44aa29dfacf98dcc2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7240,7 +7105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 43.921394, y: 12.309999}
+    oldSize: {x: 45.12, y: 12.778126}
     newSize: {x: 43.921394, y: 12.309999}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7265,7 +7130,6 @@ MonoBehaviour:
   Lock_State: 0
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -7611,7 +7475,6 @@ MonoBehaviour:
   Lock_State: 1
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -8880,6 +8743,7 @@ GameObject:
   - component: {fileID: 999680596}
   - component: {fileID: 999680595}
   - component: {fileID: 999680598}
+  - component: {fileID: 999680599}
   m_Layer: 5
   m_Name: SwitchCharacter
   m_TagString: Untagged
@@ -8898,8 +8762,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 609360702}
+  m_Children: []
   m_Father: {fileID: 1186721922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -9018,6 +8881,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 999680599}
+          m_TargetAssemblyTypeName: SwapImageButton, Assembly-CSharp
+          m_MethodName: SwapImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -9050,6 +8925,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &999680599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999680593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252c465a93bfb7143b4df172e9486f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentImage: {fileID: 0}
+  RosieImage: {fileID: 21300000, guid: 0cdac3037c1ca3e4d8d0977e204c3212, type: 3}
+  BebeImage: {fileID: 21300000, guid: c162e45755d98134e94e7766c7df531a, type: 3}
 --- !u!1 &1002612390
 GameObject:
   m_ObjectHideFlags: 0
@@ -9379,7 +9269,6 @@ MonoBehaviour:
   Lock_State: 1
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -11191,7 +11080,6 @@ MonoBehaviour:
   Lock_State: 0
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -11244,7 +11132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.71, y: 1.57}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11294,8 +11182,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.58431375, g: 0.16470589, b: 0.57254905, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 76422e87257485d49ac126ff05cdbf0f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12160,7 +12048,7 @@ GameObject:
   - component: {fileID: 1389260249}
   - component: {fileID: 1389260250}
   m_Layer: 0
-  m_Name: Arcade
+  m_Name: Automat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12223,7 +12111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e961736831784c4ba2e09c554f32b9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba4ac625f549cde4a85af86ca92d0e4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12270,7 +12158,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.79, y: 6.47}
+    oldSize: {x: 3.59, y: 6.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -12295,7 +12183,6 @@ MonoBehaviour:
   Lock_State: 1
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -15667,14 +15554,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.16278034, b: 0.5734777, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2dd391e89cef0a941834a49a70f12949, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16549,7 +16436,6 @@ MonoBehaviour:
   Lock_State: 1
   NewObject: 1
   IsTriggerableObj: 0
-  CurrentCharacter: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
@@ -16977,6 +16863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveScript: {fileID: 0}
   InventoryRef: {fileID: 0}
+  CurrentCharacter: {fileID: 0}
 --- !u!4 &2138996121
 Transform:
   m_ObjectHideFlags: 0

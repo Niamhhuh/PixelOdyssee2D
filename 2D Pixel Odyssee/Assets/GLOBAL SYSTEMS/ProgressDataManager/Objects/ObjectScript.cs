@@ -14,7 +14,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public bool NewObject = true;
     [HideInInspector] public bool IsTriggerableObj = false;
 
-    public CharacterScript CurrentCharacter;
+    //public CharacterScript CurrentCharacter;
 
     //Interaction Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
     public SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
@@ -58,7 +58,7 @@ public class ObjectScript : MonoBehaviour
             IsTriggerableObj = true;
         }
         ThisObject = this.GetComponent<ObjectScript>();
-        CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+        //CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         if (!isBackground && !IsTriggerableObj)
         {

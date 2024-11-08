@@ -29,6 +29,8 @@ public class DataManager : MonoBehaviour
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
     public Inventory InventoryRef = null;
+    public CharacterScript CurrentCharacter = null;
+
     public static int Inventory_Fillstate = 0;
 
     private void Awake()
@@ -39,6 +41,8 @@ public class DataManager : MonoBehaviour
 
         InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
         MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+
         Rooms_Loaded[0] = false;                                                        //Archive 
         Rooms_Loaded[1] = false;                                                        //RaceArcade
         Rooms_Loaded[2] = false;                                                        //Exit
