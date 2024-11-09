@@ -75,9 +75,9 @@ public class Portal : ObjectScript
 
         if (Lock_State == false)
         {
-            SwitchScene();
             ClearHighlight();
             ObjectSequenceUnlock();
+            SwitchScene();
         } else
         {
             ClearHighlight();

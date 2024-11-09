@@ -123,6 +123,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Fortsetzen()
     {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         pauseScreen.SetActive(false);
     }
 
