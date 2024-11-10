@@ -1538,7 +1538,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: AllgemeinButton
         m_Mode: 1
         m_Arguments:
@@ -3565,7 +3565,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ArcadeReturn
         m_Mode: 1
         m_Arguments:
@@ -3983,7 +3983,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: PongButton
         m_Mode: 1
         m_Arguments:
@@ -4276,6 +4276,7 @@ MonoBehaviour:
   sceneloader: {fileID: 0}
   spriteRenderer: {fileID: 0}
   pauseScreen: {fileID: 2072004071}
+  PointerScript: {fileID: 0}
 --- !u!114 &1496941634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4470,7 +4471,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: FroggerButton
         m_Mode: 1
         m_Arguments:
@@ -4807,7 +4808,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Fortsetzen
         m_Mode: 1
         m_Arguments:
@@ -5431,7 +5432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496941633}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
@@ -5959,7 +5960,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SpacewarButton
         m_Mode: 1
         m_Arguments:
@@ -6090,7 +6091,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496941633}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: Steuerung
         m_Mode: 1

@@ -113,6 +113,7 @@ public class Triggerable : ObjectScript
     public void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
     {
         Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
         UpdateData();
 
         //If Force_Dialogue -> Trigger Dialogue

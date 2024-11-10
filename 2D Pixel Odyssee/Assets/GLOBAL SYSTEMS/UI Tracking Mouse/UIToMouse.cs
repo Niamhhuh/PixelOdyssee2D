@@ -14,6 +14,7 @@ public class UiToMouse : MonoBehaviour
     
     public bool InventoryActive;
     private Animator playerAnimator;
+    private Animator playerAnimator2;
 
     private Animator pointerAnimator; // Animator für MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
@@ -32,6 +33,7 @@ public class UiToMouse : MonoBehaviour
         LockInteract = false;
 
         playerAnimator = player.GetChild(0).GetComponent<Animator>();
+        playerAnimator2 = player.GetChild(1).GetComponent<Animator>();
 
         GameObject movePointer = GameObject.Find("MovePointer");
         pointerAnimator = movePointer.GetComponent<Animator>();
@@ -84,15 +86,18 @@ public class UiToMouse : MonoBehaviour
             movePlayer = true;
 
             playerAnimator.SetBool("isWalking", true);
+            playerAnimator2.SetBool("isWalking", true);
 
             if(targetPosition.x < player.position.x)
             {
                 playerAnimator.SetInteger("Direction", -1); //left
+                playerAnimator2.SetInteger("Direction", -1);
             }
 
             else
             {
                 playerAnimator.SetInteger("Direction", 1); //right
+                playerAnimator2.SetInteger("Direction", 1);
             }
 
 
@@ -114,6 +119,9 @@ public class UiToMouse : MonoBehaviour
 
                 playerAnimator.SetBool("isWalking", false);
                 playerAnimator.SetInteger("Direction", 0); //idle
+
+                playerAnimator2.SetBool("isWalking", false);
+                playerAnimator2.SetInteger("Direction", 0);
 
                 pointerImage.enabled = false;
                 
