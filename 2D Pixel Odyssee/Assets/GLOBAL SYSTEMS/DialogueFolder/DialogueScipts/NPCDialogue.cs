@@ -11,6 +11,7 @@ public class NPCDialogue : MonoBehaviour
     //private SpriteRenderer speechBubbleRenderer;
 
     [HideInInspector] public AdvancedDialogueManager advancedDialogueManager;
+    [HideInInspector] public GameObject DialogueHolder;                                 //store this gameObject to pass to Advanced Dialogue to check for Trigger
 
     private bool dialogueInitated;
 
@@ -19,6 +20,7 @@ public class NPCDialogue : MonoBehaviour
     void Start()
     {
         advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
+        DialogueHolder = gameObject;
         //speechBubbleRenderer = GetComponent<SpriteRenderer>();
         //speechBubbleRenderer.enabled = false;
     }

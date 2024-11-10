@@ -6,7 +6,7 @@ public class SequenceUnlock : MonoBehaviour
 {
     public int OtherUnlockList_ID;
     public int OtherUnlockObject_ID;
-    public DataManager DMReference;
+    public DataManager DMReference = null;
     public ObjectScript ObjReference = null;
 
     void Awake()

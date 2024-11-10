@@ -75,12 +75,15 @@ public class Portal : ObjectScript
 
         if (Lock_State == false)
         {
-            SwitchScene();
             ClearHighlight();
             ObjectSequenceUnlock();
-        } else
+            PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
+            SwitchScene();
+        }
+        else
         {
             ClearHighlight();
+            //PassTriggerActivate(2);
             StartCoroutine(FlashRed());
         }
     }

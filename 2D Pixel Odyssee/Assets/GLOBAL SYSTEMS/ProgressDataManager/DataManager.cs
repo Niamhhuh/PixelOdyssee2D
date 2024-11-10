@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<SwitchStateObj> SwitchState_List = new List<SwitchStateObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 4
     public static List<EventObj> EventSource_List = new List<EventObj>();                   //Create a List to store all relevant Variables of Switches                     //List_ID 5
+    public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();             //Create a List to store all relevant Variables of Switches                     //List_ID 6
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
@@ -20,23 +21,18 @@ public class DataManager : MonoBehaviour
 
     public static List<Shovable> ToShove = new List<Shovable>();                            //Create a List to store the Object that is being shoved            //should probably be an array
 
-    public static SlotScript[] Slot_Array = new SlotScript[15];              
+    public static SlotScript[] Slot_Array = new SlotScript[15];
 
-    public static bool [] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
+    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();                   //Create a List to store all relevant Variables of Switches                     //List_ID 5
+
+    public static bool[] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
     public Inventory InventoryRef = null;
+    public CharacterScript CurrentCharacter = null;
+
     public static int Inventory_Fillstate = 0;
-    
-    public ObjectScript CurrentToInteract;
-    public bool Ax = false;
-    void Update ()
-    {
-        if(Ax == true)
-        {
-            CurrentToInteract = ToInteract[0];
-        }
-    }
+
     private void Awake()
     {
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
@@ -45,6 +41,8 @@ public class DataManager : MonoBehaviour
 
         InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
         MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+
         Rooms_Loaded[0] = false;                                                        //Archive 
         Rooms_Loaded[1] = false;                                                        //RaceArcade
         Rooms_Loaded[2] = false;                                                        //Exit
@@ -55,6 +53,7 @@ public class DataManager : MonoBehaviour
         Rooms_Loaded[7] = false;                                                        //SensationInteraction
         Rooms_Loaded[8] = false;                                                        //Indie
         Rooms_Loaded[9] = false;                                                        //BossRoom
+
 
         //Get every Slot
 
@@ -68,21 +67,21 @@ public class DataManager : MonoBehaviour
     //Add Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public void AddCollectableObj( int newID, bool newLock_State, bool newCollected) 
+    public void AddCollectableObj(int newID, bool newLock_State, bool newCollected)
     {
         Collectable_List.Add(new CollectableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Collected = newCollected });
         //Debug.Log(Collectable_List.Count);
     }
 
 
-    public void AddShovableObj( int newID, bool newLock_State, int newShove_Position)
+    public void AddShovableObj(int newID, bool newLock_State, int newShove_Position)
     {
         Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Shove_Position = newShove_Position });
         //Debug.Log(Shovable_List.Count);
     }
 
 
-    public void AddPortalObj( int newID, bool newLock_State, bool newTraversed)
+    public void AddPortalObj(int newID, bool newLock_State, bool newTraversed)
     {
         Portal_List.Add(new PortalObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Traversed = newTraversed });
         //Debug.Log(Portal_List.Count);
@@ -102,6 +101,11 @@ public class DataManager : MonoBehaviour
     public void AddEventObj(int newID, bool newLock_State, bool newEvent_Passed)
     {
         EventSource_List.Add(new EventObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Event_Passed = newEvent_Passed });
+    }
+
+    public void AddTriggerableObj(int newID, bool newLock_State, bool newTrigger_Passed, GameObject newTrigger)
+    {
+        Triggerable_List.Add(new TriggerableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Trigger_Passed = newTrigger_Passed, Stored_Trigger = newTrigger });
     }
 
     //Edit Object Methods
@@ -146,6 +150,12 @@ public class DataManager : MonoBehaviour
         EventSource_List[ObjectIndex].Stored_Event_Passed = newEvent_Passed;
     }
 
+    public void EditTriggerableObj(int ObjectIndex, bool newLock_State, bool newTrigger_Passed)
+    {
+        Triggerable_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Triggerable_List[ObjectIndex].Stored_Trigger_Passed = newTrigger_Passed;
+    }
+
     //Unlock Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -154,9 +164,9 @@ public class DataManager : MonoBehaviour
     //By Sequence
     //Unlock Object in Object_List with Object_ID
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public void UnlockbySequence (int List_ID, int Object_ID)
+    public void UnlockbySequence(int List_ID, int Object_ID)
     {
-        if(List_ID == 1)
+        if (List_ID == 1)
         {
             SequenceSearchCollectable(Object_ID);
         }
@@ -176,11 +186,15 @@ public class DataManager : MonoBehaviour
         {
             SequenceSearchEventSource(Object_ID);
         }
+        if (List_ID == 6)
+        {
+            SequenceSearchTriggerable(Object_ID);
+        }
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void SequenceSearchCollectable (int Object_ID)
+    private void SequenceSearchCollectable(int Object_ID)
     {
         foreach (CollectableObj StoredObj in Collectable_List)              // Search through Collectable List and Unlock an Object
         {
@@ -198,7 +212,7 @@ public class DataManager : MonoBehaviour
 
     private void SequenceSearchPortal(int Object_ID)                         // Search through Portal List and Unlock an Object
     {
-        foreach (PortalObj StoredObj in Portal_List)                     
+        foreach (PortalObj StoredObj in Portal_List)
         {
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
         }
@@ -219,9 +233,17 @@ public class DataManager : MonoBehaviour
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
         }
     }
+    private void SequenceSearchTriggerable(int Object_ID)                         // Search through Portal List and Unlock an Object
+    {
+        foreach (TriggerableObj StoredObj in Triggerable_List)
+        {
+            ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+        }
+    }
+
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    private void ChangeLockState (Obj Current_Object, int Target_ID)           // Compare Current select Object_ID with Target_ID and Change LockState on Match.
+    private void ChangeLockState(Obj Current_Object, int Target_ID)           // Compare Current select Object_ID with Target_ID and Change LockState on Match.
     {
         if (Target_ID == Current_Object.Stored_ID)
         {
@@ -257,11 +279,12 @@ public class DataManager : MonoBehaviour
         {
             UnLockObjects(UnlockList_ID, UnlockObject_Index);
 
-        } else
+        }
+        else
         {
             LockObjects(UnlockList_ID, UnlockObject_Index);
         }
-        
+
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -277,7 +300,7 @@ public class DataManager : MonoBehaviour
             CompareSwitchObj(UnlockList_ID, UnlockObject_Index, StoredObj, Switch_ID, StoredObj.Stored_SwitchState, Unlock_SwitchState);
         }
     }
-    private void CompareSwitchObj(int UnlockList_ID, int UnlockObject_Index, SwitchStateObj StoredObj, int Switch_ID, bool Stored_SwitchState , bool Unlock_SwitchState)
+    private void CompareSwitchObj(int UnlockList_ID, int UnlockObject_Index, SwitchStateObj StoredObj, int Switch_ID, bool Stored_SwitchState, bool Unlock_SwitchState)
     {
         if (Switch_ID == StoredObj.Stored_ID)
         {
@@ -294,7 +317,7 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            LockObjects(UnlockList_ID,  UnlockObject_Index);
+            LockObjects(UnlockList_ID, UnlockObject_Index);
         }
     }
 
@@ -318,6 +341,9 @@ public class DataManager : MonoBehaviour
                 break;
             case 5:
                 EventSource_List[UnlockObject_Index].Stored_Lock_State = false;
+                break;
+            case 6:
+                Triggerable_List[UnlockObject_Index].Stored_Lock_State = false;
                 break;
             default:
                 break;
@@ -345,8 +371,28 @@ public class DataManager : MonoBehaviour
             case 5:
                 EventSource_List[UnlockObject_Index].Stored_Lock_State = true;
                 break;
+            case 6:
+                Triggerable_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
             default:
                 break;
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Activate Trigger
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void TriggerActivate(int Target_ID)                                //Activate the Trigger
+    {
+        foreach (GameObject TriggerObj in TriggeredObjects_List)
+        {
+            if (TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
+            {
+                if(TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)
+                TriggerObj.SetActive(true);
+            }
         }
     }
 
@@ -361,7 +407,7 @@ public class DataManager : MonoBehaviour
         public bool Stored_Lock_State;
         // public int Dialogue_Progress;
     }
-    
+
     public class CollectableObj : Obj
     {
         public bool Stored_Collected;
@@ -389,5 +435,10 @@ public class DataManager : MonoBehaviour
     public class EventObj : Obj
     {
         public bool Stored_Event_Passed;
+    }
+    public class TriggerableObj : Obj
+    {
+        public bool Stored_Trigger_Passed;
+        public GameObject Stored_Trigger;
     }
 }

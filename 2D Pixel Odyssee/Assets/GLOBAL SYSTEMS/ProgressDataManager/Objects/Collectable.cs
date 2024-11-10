@@ -86,9 +86,11 @@ public class Collectable : ObjectScript
         if (Lock_State == false)
         {
             ClearHighlight();
-            PickUp();
+            PassTriggerActivate(1);
             ObjectSequenceUnlock();
-        }else
+            PickUp();
+        }
+        else
         {
             ClearHighlight();
             StartCoroutine(FlashRed());

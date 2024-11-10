@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadScene : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
 //_______________________________________________________________________________
 //______________This Manager is existent in every scene__________________________
@@ -22,16 +22,27 @@ public class LoadScene : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject pauseScreen = null;
 
+    public UiToMouse PointerScript = null;
+
     Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
 
-//________________________________________________s_______________________________
-//_______Pausescreen Activator below_____________________________________________
+    //________________________________________________s_______________________________
+    //_______Pausescreen Activator below_____________________________________________
+
+    private void Start()
+    {
+        PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+    }
 
     void Update() {  
         current_scene = SceneManager.GetActiveScene();
         
-        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false) {
+        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
+        {
+            PointerScript.AllowInput = !PointerScript.AllowInput;
+            PointerScript.LockInteract = !PointerScript.LockInteract;
             pauseScreen.SetActive(!pauseScreen.activeSelf);
+
             Debug.Log(current_scene.name);
         } 
 
@@ -110,8 +121,11 @@ public class LoadScene : MonoBehaviour
     }
     //------------steuerung button above------------------------------------
 
-    public void Fortsetzen() {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
-    	pauseScreen.SetActive(false);
+    public void Fortsetzen()
+    {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
+        pauseScreen.SetActive(false);
     }
 
     public void SpielBeenden() {        //PAUSESCREEN --> fuehrt zum Startscreen
