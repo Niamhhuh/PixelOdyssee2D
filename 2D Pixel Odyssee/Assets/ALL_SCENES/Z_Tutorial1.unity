@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 37965403}
   - component: {fileID: 37965402}
   - component: {fileID: 37965405}
+  - component: {fileID: 37965406}
   m_Layer: 0
   m_Name: Bilderrahmen
   m_TagString: Untagged
@@ -567,6 +568,23 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   Collected: 0
+--- !u!114 &37965406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37965401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: afe8edd58c38ae149aa908470cbcdc2f, type: 2}
+  - {fileID: 11400000, guid: a9982aa0121fec74c9f8e858791f03cc, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &41316222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1708,7 @@ GameObject:
   - component: {fileID: 155341761}
   - component: {fileID: 155341760}
   - component: {fileID: 155341763}
+  - component: {fileID: 155341764}
   m_Layer: 0
   m_Name: Schraubenschluessel
   m_TagString: Untagged
@@ -1844,6 +1863,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.77, y: 1.23}
   m_EdgeRadius: 0
+--- !u!114 &155341764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155341759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 795b3ac71d2ea314f80269318548c5a4, type: 2}
+  - {fileID: 11400000, guid: 4cc6473c5ea31eb49b8a6fb3376ce3e1, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &161054580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6918,6 +6954,154 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &726444200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726444204}
+  - component: {fileID: 726444203}
+  - component: {fileID: 726444202}
+  - component: {fileID: 726444201}
+  m_Layer: 0
+  m_Name: Mauseloch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &726444201
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &726444202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 6fff39c4683f6ec4da80b04b0e98e61e, type: 2}
+  - {fileID: 11400000, guid: 0732ebadbc153b648955440416842363, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+--- !u!212 &726444203
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &726444204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.34, y: -2.32, z: 0}
+  m_LocalScale: {x: 0.8063, y: 0.8201, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &729345645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8030,6 +8214,7 @@ GameObject:
   - component: {fileID: 909085706}
   - component: {fileID: 909085705}
   - component: {fileID: 909085708}
+  - component: {fileID: 909085709}
   m_Layer: 0
   m_Name: Katzenfutter
   m_TagString: Untagged
@@ -8184,6 +8369,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.14, y: 1.48}
   m_EdgeRadius: 0
+--- !u!114 &909085709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909085704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: a959c9b7a10d24d499854c0a677722dd, type: 2}
+  - {fileID: 11400000, guid: e670c210a5587f443b2049491856baf9, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &928262591
 GameObject:
   m_ObjectHideFlags: 0
@@ -11464,8 +11666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 8d245c03a3e5334479aeef3f4ecdd7a8, type: 2}
-  - {fileID: 11400000, guid: f91a4ce05979eea488b3f464c2b399c3, type: 2}
+  - {fileID: 11400000, guid: 5cb00094658f1044f835027210ad30e6, type: 2}
+  - {fileID: 11400000, guid: c9981177dada31f42a0ab12dff06f670, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!1 &1302912236
@@ -11828,6 +12030,7 @@ GameObject:
   - component: {fileID: 1314770202}
   - component: {fileID: 1314770201}
   - component: {fileID: 1314770204}
+  - component: {fileID: 1314770205}
   m_Layer: 0
   m_Name: "T\xFCr"
   m_TagString: Untagged
@@ -11983,6 +12186,22 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 2
+--- !u!114 &1314770205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314770200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: c68d76defdf967f4f999509cb8848d53, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &1338595793
 GameObject:
   m_ObjectHideFlags: 0
@@ -12475,7 +12694,7 @@ Transform:
   m_GameObject: {fileID: 1389260243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -0.78150004, z: 0}
+  m_LocalPosition: {x: 8, y: -0.7815, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15001,6 +15220,7 @@ GameObject:
   - component: {fileID: 1787484206}
   - component: {fileID: 1787484205}
   - component: {fileID: 1787484208}
+  - component: {fileID: 1787484209}
   m_Layer: 0
   m_Name: Lineal
   m_TagString: Untagged
@@ -15155,6 +15375,23 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   Collected: 0
+--- !u!114 &1787484209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787484204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: c8d87f5524bb8934aadb50c94edfd2db, type: 2}
+  - {fileID: 11400000, guid: ed7c96c86fe63334b80b4187d325ed89, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &1803448252
 GameObject:
   m_ObjectHideFlags: 0
@@ -17404,6 +17641,7 @@ SceneRoots:
   - {fileID: 1186721922}
   - {fileID: 1204984834}
   - {fileID: 26426887}
+  - {fileID: 726444204}
   - {fileID: 1294134385}
   - {fileID: 155341762}
   - {fileID: 909085707}
