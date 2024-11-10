@@ -79,7 +79,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         if(dialogueActivated && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
-            if (stepNum >= currentConversation.actors.Length)
+            if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) { CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); } // Call Trigger when Dialogue has been concluded
                 if(CurrentNPC.DialogueHolder.GetComponent<Triggerable>() != null && CurrentNPC.DialogueHolder.GetComponent<Triggerable>().ForceDialogue == true) 
@@ -94,6 +94,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
             //Continue dialogue1
             else
+                if(currentConversation != null)
                 PlayDialogue();
         }
     }
@@ -230,13 +231,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         CurrentNPC = npcDialogue;
         //the array we are currently stepping through
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0)
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
         {
             currentConversation = npcDialogue.conversation[0];
         }
         else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
-            if(npcDialogue.conversation.Length > 1)
+            if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];
         }
         //currentConversation = npcDialogue.conversation[1];
@@ -259,8 +260,9 @@ public class AdvancedDialogueManager : MonoBehaviour
         stepNum = 0;
 
         dialogueActivated = false;
-        optionsPanel.SetActive(false);
-        dialogueCanvas.SetActive(false);
+        currentConversation = null;
+        if (optionsPanel != null) { optionsPanel.SetActive(false); }
+        if (dialogueCanvas != null) { dialogueCanvas.SetActive(false); }
     }
 }
 
