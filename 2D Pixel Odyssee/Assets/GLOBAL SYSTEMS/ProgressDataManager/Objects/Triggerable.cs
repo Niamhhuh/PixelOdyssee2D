@@ -8,8 +8,8 @@ public class Triggerable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
-    public bool TriggerDialogue;			                                            //relevant to Trigger Dialogue on Interact
-
+    public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
+    
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -70,11 +70,11 @@ public class Triggerable : ObjectScript
 
     //EventSource Item specific delete on Load Funtion
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void RemoveTrigger()                                                                               //Remove the Event when it is or has been interacted with
+    public void RemoveTrigger()                                                                               //Remove the Event when it is or has been interacted with
     {
         if (Trigger_Passed == true)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -86,7 +86,7 @@ public class Triggerable : ObjectScript
 
     public void OnMouseOver()
     {
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) && Trigger_Passed == false)
         {
             //Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);  //Fetch new State from DataManager
@@ -99,8 +99,9 @@ public class Triggerable : ObjectScript
             if (Lock_State == false)
             {
                 ClearHighlight();
-                TriggerInteract();
+                PassTriggerActivate(1);
                 ObjectSequenceUnlock();
+                TriggerInteract();
             } 
         }
     }
@@ -109,10 +110,24 @@ public class Triggerable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
+    public void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
     {
-            Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
-            UpdateData();
+        Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        UpdateData();
+
+        //If Force_Dialogue -> Trigger Dialogue
+        //Remove Trigger when StepNum = Dialogue Length.
+        //
+        if(ForceDialogue == true)
+        {
+            DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
+            DMReference.MoveScript.DisableInteract();                               //Disable Interact 
+            DMReference.MoveScript.InTriggerDialogue = true;
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+        }
+        else 
+        {
             RemoveTrigger();
+        }
     }
 }

@@ -89,10 +89,13 @@ public class Shovable : ObjectScript
         if (Lock_State == false && DMReference.CurrentCharacter.RosieActive == true)
         {
             ObjectSequenceUnlock();
+            //PassTriggerActivate(1); This was moved to line 155 (Movex) to execute after the shove is completed
             InitiateShove();
-        } else
+        }
+        else
         {
             ClearHighlight();
+            //PassTriggerActivate(2);
             StartCoroutine(FlashRed());
         }
     }
@@ -149,7 +152,7 @@ public class Shovable : ObjectScript
         }
         
         transform.position = TargetPosition;                                                                        //ensure the Object is at the right position in the end
-
+        PassTriggerActivate(1);
         //add Animation transform.scale animation, requires another coroutine which playe
 
         DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input

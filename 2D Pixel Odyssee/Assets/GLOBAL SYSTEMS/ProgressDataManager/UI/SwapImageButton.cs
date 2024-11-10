@@ -34,7 +34,6 @@ public class SwapImageButton : MonoBehaviour
     {
         if (DMReference.CurrentCharacter.RosieActive == true && BebeImage != null)
         {
-            print("Hi");
             CurrentImage.sprite = RosieImage;
         }
 

@@ -86,11 +86,13 @@ public class EventSource : ObjectScript
         if (Lock_State == false)
         {
             ClearHighlight();
+            PassTriggerActivate(1);
+            ObjectSequenceUnlock(); 
             EventInteract();
-            ObjectSequenceUnlock();
         } else
         {
             ClearHighlight();
+            //PassTriggerActivate(2);
             StartCoroutine(FlashRed());
         }
     }

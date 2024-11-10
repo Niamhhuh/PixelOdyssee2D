@@ -77,10 +77,13 @@ public class Portal : ObjectScript
         {
             ClearHighlight();
             ObjectSequenceUnlock();
+            PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
             SwitchScene();
-        } else
+        }
+        else
         {
             ClearHighlight();
+            //PassTriggerActivate(2);
             StartCoroutine(FlashRed());
         }
     }

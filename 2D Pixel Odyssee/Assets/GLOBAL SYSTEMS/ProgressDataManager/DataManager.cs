@@ -390,6 +390,7 @@ public class DataManager : MonoBehaviour
         {
             if (TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
             {
+                if(TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)
                 TriggerObj.SetActive(true);
             }
         }

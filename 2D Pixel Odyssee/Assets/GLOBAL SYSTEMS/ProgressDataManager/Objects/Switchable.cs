@@ -75,11 +75,13 @@ public class Switchable : ObjectScript
         if (Lock_State == false)
         {
             ClearHighlight();
-            FlipSwitch();
+            PassTriggerActivate(1);                                                                     //Call Activate Trigger -> checks if ActivateTrigger is attached, then continues (1 = Trigger acitvated by interaction)
             ObjectSequenceUnlock();
+            FlipSwitch();
         } else
         {
             ClearHighlight();
+            PassTriggerActivate(2);                                                                     //Call Activate Trigger -> checks if ActivateTrigger is attached, then continues (2 = Trigger acitvated by Object locked)
             StartCoroutine(FlashRed());
         }
     }

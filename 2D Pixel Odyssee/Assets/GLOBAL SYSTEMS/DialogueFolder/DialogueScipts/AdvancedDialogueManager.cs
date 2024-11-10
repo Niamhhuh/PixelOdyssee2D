@@ -39,7 +39,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     SoundManagerHub SoundManagerHub;
 
-
+    NPCDialogue CurrentNPC = null;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +80,17 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             //Cancel dialogue if there are no lines of dialogue remaining
             if (stepNum >= currentConversation.actors.Length)
+            {
+                if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) { CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); } // Call Trigger when Dialogue has been concluded
+                if(CurrentNPC.DialogueHolder.GetComponent<Triggerable>() != null && CurrentNPC.DialogueHolder.GetComponent<Triggerable>().ForceDialogue == true) 
+                {
+                    DMReference.MoveScript.InTriggerDialogue = false;
+                    DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+                    DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
+                    CurrentNPC.DialogueHolder.GetComponent<Triggerable>().RemoveTrigger(); 
+                }
                 TurnOffDialogue();
+            }
 
             //Continue dialogue1
             else
@@ -218,13 +228,15 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void InitiateDialogue(NPCDialogue npcDialogue)
     {
+        CurrentNPC = npcDialogue;
         //the array we are currently stepping through
-        if(GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>().RosieActive == true)
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>().RosieActive == true && npcDialogue.conversation[0] != null)
         {
             currentConversation = npcDialogue.conversation[0];
         }
         else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
+            if(npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];
         }
         //currentConversation = npcDialogue.conversation[1];

@@ -58,7 +58,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Start()
     {
-        if(gameObject.GetComponent<Triggerable>() != null )
+        if (gameObject.GetComponent<Triggerable>() != null)
         {
             IsFullTrigger = true;
         }
@@ -131,7 +131,7 @@ public class ObjectScript : MonoBehaviour
         {
             DataManager.Highlighted_Current.RemoveAt(0);
         }
-        if (!isBackground && !IsFullTrigger)                                                                              //This part of the method disables the Highlight Object, activates the standard Sprite and resets the collider to its original size.
+        if (!isBackground && !IsFullTrigger)                                                            //This part of the method disables the Highlight Object, activates the standard Sprite and resets the collider to its original size.
         {
             AlreadyActive = false;
 
@@ -165,7 +165,7 @@ public class ObjectScript : MonoBehaviour
             InteractionController.transform.position = this.transform.position;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)
@@ -177,7 +177,7 @@ public class ObjectScript : MonoBehaviour
             }
         }
     }
-    
+
     //Unlock Manager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -222,9 +222,17 @@ public class ObjectScript : MonoBehaviour
         {
             ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
             elapsedTime += Time.deltaTime;
-            yield return null; 
+            yield return null;
         }
-        ObjectSprite.color = originalColor; 
+        ObjectSprite.color = originalColor;
+        PassTriggerActivate(2);
     }
+
+
+    public void PassTriggerActivate(int TriggerType)
+    {
+        if (gameObject.GetComponent<ActivateTrigger>() != null) { gameObject.GetComponent<ActivateTrigger>().CallTriggerActivation(TriggerType); }
+    }
+
 }
 

@@ -11,20 +11,22 @@ public class UiToMouse : MonoBehaviour
     public Canvas canvas;
     public Vector3 targetPosition;
     private bool movePlayer = false;
-    public bool AllowInput;
+    
     public bool InventoryActive;
     private Animator playerAnimator;
 
     private Animator pointerAnimator; // Animator für MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
 
+    public bool AllowInput;
     public bool LockInteract;
+    public bool InTriggerDialogue = false;                      //Input && Interact can't be enabled during triggered dialogue.
 
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
-        AllowInput = true;
+        
         InventoryActive = false;
         LockInteract = false;
 
@@ -37,12 +39,15 @@ public class UiToMouse : MonoBehaviour
 
     public void DisableInput()
     {
-        AllowInput = false;
+        if(!InTriggerDialogue)
+        {
+            AllowInput = false;
+        }
     }
 
     public void EnableInput()
     {
-        if(InventoryActive == false)
+        if(InventoryActive == false && !InTriggerDialogue)
         {
             AllowInput = true;
         } 
