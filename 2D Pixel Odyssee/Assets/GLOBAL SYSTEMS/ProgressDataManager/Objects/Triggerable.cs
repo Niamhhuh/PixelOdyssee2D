@@ -123,6 +123,7 @@ public class Triggerable : ObjectScript
             DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
             DMReference.MoveScript.DisableInteract();                               //Disable Interact 
             DMReference.MoveScript.InTriggerDialogue = true;
+            GetComponent<NPCDialogue>().advancedDialogueManager.ForceDialogue(GetComponent<NPCDialogue>());
             GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
         else 

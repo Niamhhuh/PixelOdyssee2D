@@ -230,16 +230,25 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         CurrentNPC = npcDialogue;
         //the array we are currently stepping through
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>().RosieActive == true && npcDialogue.conversation[0] != null)
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0)
         {
             currentConversation = npcDialogue.conversation[0];
         }
         else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
-            if(npcDialogue.conversation[1] != null)
+            if(npcDialogue.conversation.Length > 1)
             currentConversation = npcDialogue.conversation[1];
         }
         //currentConversation = npcDialogue.conversation[1];
+        dialogueActivated = true;
+    }
+
+    public void ForceDialogue(NPCDialogue npcDialogue)
+    {
+        CurrentNPC = npcDialogue;
+
+        currentConversation = npcDialogue.conversation[0];
+
         dialogueActivated = true;
     }
 

@@ -24,6 +24,7 @@ public class UiToMouse : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
         
