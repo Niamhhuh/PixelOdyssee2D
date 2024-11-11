@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!114 &-5952207992336298276
+=======
+--- !u!114 &-5162923445943417660
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,6 +24,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 306144
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &-5354746149302427933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,6 +45,8 @@ MonoBehaviour:
   - Name: Desktop
     Value: 968
   Exists: 1
+=======
+>>>>>>> Stashed changes
 --- !u!114 &-4954778324174251081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +66,11 @@ MonoBehaviour:
     Data3: 952760222
     Data4: -1298576804
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 4066815065557978162}
+=======
+  - {fileID: 5934341144232261348}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -67,6 +78,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1400
+<<<<<<< Updated upstream
 --- !u!114 &-4824090157932881707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +126,8 @@ MonoBehaviour:
   - Name: Desktop
     Value: 833664
   Exists: 1
+=======
+>>>>>>> Stashed changes
 --- !u!114 &-2734594143739943401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +147,11 @@ MonoBehaviour:
     Data3: 1235322775
     Data4: -493090769
   Banks:
+<<<<<<< Updated upstream
   - {fileID: -4271999435631700737}
+=======
+  - {fileID: 8575492119701495901}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -141,6 +159,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 64000
+--- !u!114 &-779772743386304877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638661424228066533
+  FileSizes:
+  - Name: Desktop
+    Value: 968
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,22 +192,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< Updated upstream
   - {fileID: -5354746149302427933}
   - {fileID: 138131579459745782}
   - {fileID: -5952207992336298276}
   - {fileID: 7223014010110137597}
+=======
+  - {fileID: -779772743386304877}
+  - {fileID: 5934341144232261348}
+  - {fileID: -5162923445943417660}
+  - {fileID: 8575492119701495901}
+>>>>>>> Stashed changes
   EditorEvents:
   - {fileID: 2647784102219449500}
   - {fileID: 7436224759940029081}
   - {fileID: -4824090157932881707}
   EditorParameters: []
   MasterBanks:
+<<<<<<< Updated upstream
   - {fileID: 138131579459745782}
   StringsBanks:
   - {fileID: -5354746149302427933}
   cacheTime: 638661424228185318
   cacheVersion: 131620
 --- !u!114 &138131579459745782
+=======
+  - {fileID: 5934341144232261348}
+  StringsBanks:
+  - {fileID: -779772743386304877}
+  cacheTime: 638661424228185318
+  cacheVersion: 131620
+--- !u!114 &5934341144232261348
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,6 +243,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 43648
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &2647784102219449500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +332,9 @@ MonoBehaviour:
     Value: 306144
   Exists: 1
 --- !u!114 &7223014010110137597
+=======
+--- !u!114 &8575492119701495901
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,6 +354,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 833664
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &7436224759940029081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +382,8 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22628
+=======
+>>>>>>> Stashed changes
 --- !u!114 &9153618962330428993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +403,11 @@ MonoBehaviour:
     Data3: 1788093313
     Data4: -1762024205
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 6115067047652194053}
+=======
+  - {fileID: -5162923445943417660}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
