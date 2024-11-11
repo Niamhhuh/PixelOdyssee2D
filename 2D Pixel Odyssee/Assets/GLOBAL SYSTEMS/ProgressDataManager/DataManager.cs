@@ -59,8 +59,9 @@ public class DataManager : MonoBehaviour
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
-        if (TutorialStarted == false)
+        if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
         {
+
             MoveScript.AllowInput = false;
             GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
             GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
