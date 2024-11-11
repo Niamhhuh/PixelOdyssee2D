@@ -67,12 +67,6 @@ public class Inventory : MonoBehaviour
 
     public void CallInventory ()
     {
-        // Sound einfügen
-        /*
-         * 
-         * 
-         */
-
         DMReference.MoveScript.InventoryActive = true;
         DMReference.MoveScript.DisableInput();
         calledbyKey = false;
@@ -106,12 +100,6 @@ public class Inventory : MonoBehaviour
 
     public void CloseInventory()
     {
-        // Sound einfügen
-        /*
-         * 
-         * 
-         */
-
         DMReference.MoveScript.InventoryActive = false;
         if(calledbyKey == true)
         {
