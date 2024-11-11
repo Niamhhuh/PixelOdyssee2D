@@ -2,24 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] EventReference TitelScreen;
-    // Start is called before the first frame update
+    [SerializeField] private EventReference titelScreenTheme;
+    [SerializeField] private EventReference gameSceneTheme;
+
+    private EventInstance currentThemeInstance;
+
     void Start()
     {
-        playTitelScreen();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        PlayThemeForCurrentScene();
     }
 
-    public void playTitelScreen()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        RuntimeManager.PlayOneShot(TitelScreen);
+        StopCurrentTheme();
+        PlayThemeForCurrentScene();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayThemeForCurrentScene()
     {
-        
+        EventReference themeToPlay = new EventReference(); // Default initialisierung
+
+        if (SceneManager.GetActiveScene().name == "z_Start Screen")
+        {
+            themeToPlay = titelScreenTheme;
+        }
+        else if (SceneManager.GetActiveScene().name == "Z_Tutorial1")
+        {
+            themeToPlay = gameSceneTheme;
+        }
+
+        // Überprüfe, ob ein gültiges Theme gefunden wurde
+        if (!string.IsNullOrEmpty(themeToPlay.Path))
+        {
+            currentThemeInstance = RuntimeManager.CreateInstance(themeToPlay);
+            currentThemeInstance.start();
+        }
+        else
+        {
+            Debug.LogWarning("Kein gültiges Theme für die aktuelle Szene gefunden.");
+        }
+    }
+
+    private void StopCurrentTheme()
+    {
+        if (currentThemeInstance.isValid())
+        {
+            currentThemeInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            currentThemeInstance.release();
+            currentThemeInstance = default; // Setze auf null
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        StopCurrentTheme();
     }
 }
+
