@@ -294,9 +294,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779234868}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802104843}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802104843}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchCharacters
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisableInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087723135395178390, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableInput
+      objectReference: {fileID: 0}
     - target: {fileID: 4129548286246301650, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
       propertyPath: m_Name
       value: UiCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298362664859116696, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802104843}
+    - target: {fileID: 8298362664859116696, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802104843}
+    - target: {fileID: 8298362664859116696, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisableInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298362664859116696, guid: 3eac7acb5bd34714fbb4e8890229f15b, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableInput
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -787,11 +827,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   Lock_State: 0
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
   CannotInteract: 0
   CannotTalk: 0
   NewObject: 1
   IsFullTrigger: 0
-  ObjectSprite: {fileID: 0}
   HighlightonHover: {fileID: 0}
   PointerScript: {fileID: 0}
   RequestInteract: 0
@@ -2478,6 +2521,28 @@ Transform:
   - {fileID: 153651273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779234868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4565654644743911724, guid: c037565c5de16cb448c55583175297a0, type: 3}
+  m_PrefabInstance: {fileID: 931425379}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f9dc600016d704a970f371b2a4a9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &802104843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8866514268509611770, guid: 94a0966215c58c34a9600bf345c36bfe, type: 3}
+  m_PrefabInstance: {fileID: 1356127310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb1a518a92ec7142a63ef0661332e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823331888
 GameObject:
   m_ObjectHideFlags: 0
