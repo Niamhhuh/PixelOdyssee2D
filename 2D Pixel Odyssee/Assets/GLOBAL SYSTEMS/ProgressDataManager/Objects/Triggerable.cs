@@ -9,6 +9,7 @@ public class Triggerable : ObjectScript
 
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
     public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
+    public bool StartLock;                                                                                                                                                                      //HERE
     
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,12 +39,9 @@ public class Triggerable : ObjectScript
         {
             DMReference.AddTriggerableObj(ID, Lock_State, Trigger_Passed, this.gameObject);                 //Call the AddTriggerableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Triggerable_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
-        }
-
-        if (NewObject == true)
-        {
             DataManager.TriggeredObjects_List.Add(gameObject);
         }
+
 
         if (Lock_State == true)
         {
@@ -74,6 +72,8 @@ public class Triggerable : ObjectScript
     {
         if (Trigger_Passed == true)
         {
+            DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
+            DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
             gameObject.SetActive(false);
         }
     }

@@ -21,13 +21,28 @@ public class ActivateTrigger : MonoBehaviour
         switch (TriggerType)
         {
             case 1:
-                if (InteractionTriggered == true) { DMReference.TriggerActivate(Trigger_ID); }
+                if (InteractionTriggered == true) 
+                { 
+                    DMReference.TriggerActivate(Trigger_ID);
+                    DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
+                    DMReference.MoveScript.DisableInteract();                               //Disable Interact 
+                }
                 break;
             case 2:
-                if (LockTriggered == true) { DMReference.TriggerActivate(Trigger_ID); }
+                if (LockTriggered == true) 
+                { 
+                    DMReference.TriggerActivate(Trigger_ID);
+                    DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
+                    DMReference.MoveScript.DisableInteract();                               //Disable Interact 
+                }
                 break;
             case 3:
-                if (DialogueTriggered == true) { DMReference.TriggerActivate(Trigger_ID); }
+                if (DialogueTriggered == true) 
+                { 
+                    DMReference.TriggerActivate(Trigger_ID);
+                    DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
+                    DMReference.MoveScript.DisableInteract();                               //Disable Interact 
+                }
                 break;
             default:
                 break;

@@ -8,6 +8,7 @@ public class EventSource : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public bool Event_Passed;			                                                //relevant to control Item Spawn
+    public bool Talk_Event;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -101,10 +102,11 @@ public class EventSource : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void EventInteract()                                                                                                                    //Interact with the Event to end it.
+    public void EventInteract()                                                                                                                    //Interact with the Event to end it.
     {
-            Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
-            UpdateData();
-            RemoveEvent();
+        ClearHighlight();
+        Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        UpdateData();
+        RemoveEvent();
     }
 }

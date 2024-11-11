@@ -76,28 +76,48 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        if(dialogueActivated && canContinueText)
+        if (dialogueActivated && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
             if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) { CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); } // Call Trigger when Dialogue has been concluded
-                if(CurrentNPC.DialogueHolder.GetComponent<Triggerable>() != null && CurrentNPC.DialogueHolder.GetComponent<Triggerable>().ForceDialogue == true) 
-                {
-                    DMReference.MoveScript.InTriggerDialogue = false;
-                    DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
-                    DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
-                    CurrentNPC.DialogueHolder.GetComponent<Triggerable>().RemoveTrigger(); 
-                }
+
+                EndTriggerDialogue();
+
+                EndEventDialogue();
+
                 TurnOffDialogue();
             }
 
             //Continue dialogue1
             else
-                if(currentConversation != null)
+                if (currentConversation != null)
                 PlayDialogue();
         }
     }
+
+    void EndTriggerDialogue()
+    {
+        if (CurrentNPC.DialogueHolder.GetComponent<Triggerable>() != null && CurrentNPC.DialogueHolder.GetComponent<Triggerable>().ForceDialogue == true)
+        {
+            DMReference.MoveScript.InTriggerDialogue = false;
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
+            CurrentNPC.DialogueHolder.GetComponent<Triggerable>().RemoveTrigger();
+        }
+    }
+
+    void EndEventDialogue()
+    {
+        if (CurrentNPC.DialogueHolder.GetComponent<EventSource>() != null && CurrentNPC.DialogueHolder.GetComponent<EventSource>().Talk_Event == true)
+        {
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
+            CurrentNPC.DialogueHolder.GetComponent<EventSource>().EventInteract();
+        }
+    }
+
 
     void PlayDialogue()
     {
@@ -239,6 +259,23 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];
+        }
+        //currentConversation = npcDialogue.conversation[1];
+        dialogueActivated = true;
+    }
+
+    public void ObjectLockedDialogue(NPCDialogue npcDialogue)
+    {
+        CurrentNPC = npcDialogue;
+        //the array we are currently stepping through
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
+        {
+            currentConversation = npcDialogue.conversation[2];
+        }
+        else                                                                  //add a selector to choose conversation[2] when Rosie talks, conversation[3] when BeBe talks
+        {
+            if (npcDialogue.conversation.Length > 3 && npcDialogue.conversation[3] != null)
+                currentConversation = npcDialogue.conversation[3];
         }
         //currentConversation = npcDialogue.conversation[1];
         dialogueActivated = true;

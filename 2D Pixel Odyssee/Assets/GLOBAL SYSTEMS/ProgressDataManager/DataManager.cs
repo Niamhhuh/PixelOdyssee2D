@@ -23,15 +23,17 @@ public class DataManager : MonoBehaviour
 
     public static SlotScript[] Slot_Array = new SlotScript[15];
 
-    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();                   //Create a List to store all relevant Variables of Switches                     //List_ID 5
+    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all relevant Variables of Switches                     //List_ID 5
 
-    public static bool[] Rooms_Loaded = new bool[10];                                      //Array which remembers if rooms have been loaded before.
+    public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
     public Inventory InventoryRef = null;
     public CharacterScript CurrentCharacter = null;
 
     public static int Inventory_Fillstate = 0;
+
+    public static bool TutorialStarted;
 
     private void Awake()
     {
@@ -53,14 +55,17 @@ public class DataManager : MonoBehaviour
         Rooms_Loaded[7] = false;                                                        //SensationInteraction
         Rooms_Loaded[8] = false;                                                        //Indie
         Rooms_Loaded[9] = false;                                                        //BossRoom
+    }
 
-
-        //Get every Slot
-
-        //Get every Item
-
-
-        //Assign Known Slots
+    private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
+    {
+        if (TutorialStarted == false)
+        {
+            MoveScript.AllowInput = false;
+            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
+            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
+            TutorialStarted = true;
+        }
     }
 
 
