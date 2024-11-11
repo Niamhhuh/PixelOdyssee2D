@@ -258,6 +258,18 @@ public class ObjectScript : MonoBehaviour
         PassTriggerActivate(2);
     }
 
+    public IEnumerator FlashGreen()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            ObjectSprite.color = Color.Lerp(Color.green, originalColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectSprite.color = originalColor;
+    }
+
 
     public void PassTriggerActivate(int TriggerType)
     {

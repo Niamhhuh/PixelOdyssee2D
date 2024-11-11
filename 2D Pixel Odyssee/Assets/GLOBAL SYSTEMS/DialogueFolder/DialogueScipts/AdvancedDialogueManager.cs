@@ -292,8 +292,11 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void TurnOffDialogue()
     {
-        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
-        DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
+        if(DMReference.MoveScript != null)
+        {
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
+        }
         stepNum = 0;
 
         dialogueActivated = false;

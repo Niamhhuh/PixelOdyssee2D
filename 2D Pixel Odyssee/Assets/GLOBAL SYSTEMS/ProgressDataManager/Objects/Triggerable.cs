@@ -9,7 +9,7 @@ public class Triggerable : ObjectScript
 
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
     public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
-    public bool StartLock;                                                                                                                                                                      //HERE
+                                                                                                                                                                         //HERE
     
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,7 +86,9 @@ public class Triggerable : ObjectScript
 
     public void OnMouseOver()
     {
-        if(Input.GetMouseButtonUp(0) && Trigger_Passed == false)
+        DMReference.MoveScript.DisableInput();                                                //Enable Input when Trigger is cleared
+        DMReference.MoveScript.DisableInteract();                                             //Enable Interact when Trigger is cleared
+        if (Input.GetMouseButtonUp(0) && Trigger_Passed == false)
         {
             //Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);  //Fetch new State from DataManager
