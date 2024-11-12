@@ -11,6 +11,8 @@ public class ObjectScript : MonoBehaviour
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
     //public(Dialogue)			                                                    //Dialogue of this object
 
+    private bool InteractFired = false;
+
     private Sprite BaseSprite;
     private Sprite BaseHighlightSprite;
 
@@ -129,7 +131,7 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
-        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
+        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))             
         {
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
@@ -171,7 +173,7 @@ public class ObjectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)                                                     //Initiate Interact on Trigger Enter
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
+        if (!isBackground && other.CompareTag("Player") && RequestInteract == true)
         {
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
@@ -188,7 +190,6 @@ public class ObjectScript : MonoBehaviour
             {
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                //Disable Interact Button 
             }
-
 
             InteractionController.transform.position = this.transform.position;
         }
@@ -253,8 +254,11 @@ public class ObjectScript : MonoBehaviour
             yield return null;
         }
         ObjectSprite.color = originalColor;
-        GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
-        GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+        if(GetComponent<NPCDialogue>() != null)
+        {
+            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+        }
         PassTriggerActivate(2);
     }
 

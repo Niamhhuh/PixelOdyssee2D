@@ -23,6 +23,8 @@ TagManager:
   - DragItem
   - InteractionController
   - Activator
+  - DialogueManager
+  - Asteroid
   layers:
   - Default
   - TransparentFX
@@ -33,11 +35,11 @@ TagManager:
   - Barrier
   - Obstacle
   - Platform
-  - 
-  - 
-  - 
-  - 
-  - 
+  - AsteroidPlayer
+  - Bullet
+  - Asteroid
+  - Boundary
+  - IgnoreCollisions
   - 
   - 
   - 
