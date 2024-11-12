@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Asteroid_Player : MonoBehaviour
 {
-   public float thrustSpeed = 1.0f;
-   public float turnSpeed = 1.0f;
+    public Bullet bulletPrefab;
 
-   private Rigidbody2D _rigidbody;
-   private bool _thrusting;
-   private float _turnDirection;
+    public float thrustSpeed = 1.0f;
+    
+    public float turnSpeed = 1.0f;
+    
+    private Rigidbody2D _rigidbody;
+    
+    private bool _thrusting;
+    
+    private float _turnDirection;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+
     private void Update()
     {
         _thrusting = (Input.GetKey(KeyCode.W));
@@ -30,6 +36,11 @@ public class Asteroid_Player : MonoBehaviour
         { 
             _turnDirection = 0.0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
     }
 
     private void FixedUpdate()
@@ -44,5 +55,24 @@ public class Asteroid_Player : MonoBehaviour
         }
 
     }
-        
+
+    private void Shoot()
+    {
+        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+        bullet.Project(this.transform.up);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.tag == "Asteroid")
+        {
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = 0.0f;
+
+            this.gameObject.SetActive(false);
+
+            FindObjectOfType<Asteroid_GameManager>().PlayerDied();
+        }
+    }
+
 }
