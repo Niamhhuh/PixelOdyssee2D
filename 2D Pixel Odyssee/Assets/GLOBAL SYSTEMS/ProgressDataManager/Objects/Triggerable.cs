@@ -72,8 +72,11 @@ public class Triggerable : ObjectScript
     {
         if (Trigger_Passed == true)
         {
-            DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
-            DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+            if(DMReference.MoveScript != null)
+            {
+                DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
+                DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+            }
             gameObject.SetActive(false);
         }
     }

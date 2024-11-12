@@ -9,7 +9,7 @@ public class DataManager : MonoBehaviour
     public static List<PortalObj> Portal_List = new List<PortalObj>();                      //Create a List to store all relevant Variables of Doors and Arcade Machines    //List_ID 3
     public static List<SwitchStateObj> SwitchState_List = new List<SwitchStateObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 4
     public static List<EventObj> EventSource_List = new List<EventObj>();                   //Create a List to store all relevant Variables of Switches                     //List_ID 5
-    public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();             //Create a List to store all relevant Variables of Switches                     //List_ID 6
+    public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();             //Create a List to store all relevant Variables of Switches               //List_ID 6
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
@@ -67,6 +67,7 @@ public class DataManager : MonoBehaviour
             GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
             TutorialStarted = true;
         }
+        TutorialStarted = true;
     }
 
 
