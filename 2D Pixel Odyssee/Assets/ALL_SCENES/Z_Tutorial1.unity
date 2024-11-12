@@ -2716,18 +2716,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titelScreenTheme:
     Guid:
-      Data1: -1680502974
-      Data2: 1177259843
-      Data3: 1235322775
-      Data4: -493090769
-    Path: event:/Titelmusik
+      Data1: 133663479
+      Data2: 1156746778
+      Data3: 325557380
+      Data4: -212038971
+    Path: event:/Titelscreen
   gameSceneTheme:
     Guid:
-      Data1: 465877033
-      Data2: 1322363960
-      Data3: 1788093313
-      Data4: -1762024205
-    Path: event:/Museumsmusik
+      Data1: 104792809
+      Data2: 1157933089
+      Data3: 306001310
+      Data4: -231437342
+    Path: event:/Museumsmusik Loop
 --- !u!4 &505942138
 Transform:
   m_ObjectHideFlags: 0
@@ -3390,8 +3390,8 @@ GameObject:
   m_Component:
   - component: {fileID: 742752274}
   - component: {fileID: 742752271}
-  - component: {fileID: 742752273}
   - component: {fileID: 742752272}
+  - component: {fileID: 742752275}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3484,14 +3484,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!81 &742752273
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742752270}
-  m_Enabled: 1
 --- !u!4 &742752274
 Transform:
   m_ObjectHideFlags: 0
@@ -3507,6 +3499,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742752275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742752270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &746903312
 GameObject:
   m_ObjectHideFlags: 0

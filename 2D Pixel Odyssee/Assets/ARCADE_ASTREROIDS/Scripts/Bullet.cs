@@ -4,6 +4,8 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
 
+    public float maxLifetime = 10.0f;
+
     public float speed = 500.0f;
 
     private void Awake()
@@ -13,7 +15,9 @@ public class Bullet : MonoBehaviour
 
     public void Project(Vector2 direction)
     {
-        _rigidbody.velocity = (direction * this.speed);
+        _rigidbody.AddForce(direction * this.speed);
+
+        Destroy(this.gameObject, this.maxLifetime);
     }
 
 }
