@@ -31,7 +31,10 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        if(GameObject.FindGameObjectWithTag("Pointer") != null)
+        {
+            PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        }
     }
 
     void Update() {  
