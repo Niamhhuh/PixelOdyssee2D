@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7594168622507773228
+--- !u!114 &-5314344506084642545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,86 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Titelmusik
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TitelScreen.bank
   m_EditorClassIdentifier: 
-  Path: event:/Titelmusik
-  Guid:
-    Data1: -1680502974
-    Data2: 1177259843
-    Data3: 1235322775
-    Data4: -493090769
-  Banks:
-  - {fileID: 8030494028849788037}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 64000
---- !u!114 &-2083947403521305041
+  Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
+  Name: TitelScreen
+  StudioPath: bank:/TitelScreen
+  lastModified: 638670181913792851
+  FileSizes:
+  - Name: Desktop
+    Value: 833664
+  Exists: 1
+--- !u!114 &-4356242599418845201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638670181913742835
+  FileSizes:
+  - Name: Desktop
+    Value: 43648
+  Exists: 1
+--- !u!114 &-2738345215126786698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638670181913742835
+  FileSizes:
+  - Name: Desktop
+    Value: 968
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -2738345215126786698}
+  - {fileID: -4356242599418845201}
+  - {fileID: 5857169949540748486}
+  - {fileID: -5314344506084642545}
+  EditorEvents:
+  - {fileID: 4379965937612255923}
+  - {fileID: 6367053234275548862}
+  - {fileID: 5186589875347060887}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -4356242599418845201}
+  StringsBanks:
+  - {fileID: -2738345215126786698}
+  cacheTime: 638670181913792851
+  cacheVersion: 131620
+--- !u!114 &4379965937612255923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +107,7 @@ MonoBehaviour:
     Data3: 952760222
     Data4: -1298576804
   Banks:
-  - {fileID: 8634017097029442939}
+  - {fileID: -4356242599418845201}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -54,7 +115,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1400
---- !u!114 &-196268448920221736
+--- !u!114 &5186589875347060887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,46 +124,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Titelmusik
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638663183727318807
-  FileSizes:
-  - Name: Desktop
-    Value: 968
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -196268448920221736}
-  - {fileID: 8634017097029442939}
-  - {fileID: 803382272182944139}
-  - {fileID: 8030494028849788037}
-  EditorEvents:
-  - {fileID: -2083947403521305041}
-  - {fileID: 7597988916589305815}
-  - {fileID: -7594168622507773228}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 8634017097029442939}
-  StringsBanks:
-  - {fileID: -196268448920221736}
-  cacheTime: 638663183727458434
-  cacheVersion: 131620
---- !u!114 &803382272182944139
+  Path: event:/Titelmusik
+  Guid:
+    Data1: -1680502974
+    Data2: 1177259843
+    Data3: 1235322775
+    Data4: -493090769
+  Banks:
+  - {fileID: -5314344506084642545}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 64000
+--- !u!114 &5857169949540748486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,12 +157,12 @@ MonoBehaviour:
   Path: PixelOdyssee 4.0/Build/Desktop/Museumsmusik.bank
   Name: Museumsmusik
   StudioPath: bank:/Museumsmusik
-  lastModified: 638663183727338749
+  lastModified: 638670181913752836
   FileSizes:
   - Name: Desktop
     Value: 306144
   Exists: 1
---- !u!114 &7597988916589305815
+--- !u!114 &6367053234275548862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +181,7 @@ MonoBehaviour:
     Data3: 1788093313
     Data4: -1762024205
   Banks:
-  - {fileID: 803382272182944139}
+  - {fileID: 5857169949540748486}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -149,43 +189,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22628
---- !u!114 &8030494028849788037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/TitelScreen.bank
-  m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
-  Name: TitelScreen
-  StudioPath: bank:/TitelScreen
-  lastModified: 638663183727458434
-  FileSizes:
-  - Name: Desktop
-    Value: 833664
-  Exists: 1
---- !u!114 &8634017097029442939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638663183727308830
-  FileSizes:
-  - Name: Desktop
-    Value: 43648
-  Exists: 1
