@@ -311,6 +311,7 @@ public enum DialogueActors
     Rosie,
     Bebe,
     Silver,
+    RosieShocked,
     Random,
     Branch,
 };

@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 83077152}
   - component: {fileID: 83077151}
   - component: {fileID: 83077150}
+  - component: {fileID: 83077154}
   m_Layer: 0
   m_Name: TeilA
   m_TagString: Untagged
@@ -603,7 +604,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &83077153
@@ -622,6 +623,23 @@ Transform:
   - {fileID: 594592078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83077154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83077149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 379f9e9ea77db974b8dd2173f3e3f3f4, type: 2}
+  - {fileID: 11400000, guid: 586150a0be7900840bea7f455a512b02, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1001 &84277253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,6 +709,7 @@ GameObject:
   - component: {fileID: 93303105}
   - component: {fileID: 93303104}
   - component: {fileID: 93303103}
+  - component: {fileID: 93303107}
   m_Layer: 0
   m_Name: "T\xFCrB"
   m_TagString: Untagged
@@ -849,6 +868,23 @@ Transform:
   - {fileID: 1421205882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93303107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93303102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 0875d6a2aa72081429b88ccc604a0936, type: 2}
+  - {fileID: 11400000, guid: 0091f28ef3384244b995792cf269e408, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &153651272
 GameObject:
   m_ObjectHideFlags: 3
@@ -1020,7 +1056,7 @@ SpriteRenderer:
   m_Size: {x: 44.79105, y: 12.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &165207870
@@ -2505,7 +2541,7 @@ SpriteRenderer:
   m_Size: {x: 2.36, y: 8.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &641345094
@@ -2784,6 +2820,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5138714153846924125, guid: aa075010f9eac634b8fe7b54cce438c3, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823211812339058537, guid: aa075010f9eac634b8fe7b54cce438c3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a7edca7357ee1c842abc7508f0551fe3, type: 2}
+    - target: {fileID: 5823211812339058537, guid: aa075010f9eac634b8fe7b54cce438c3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -536471739013139545, guid: a7edca7357ee1c842abc7508f0551fe3, type: 2}
+    - target: {fileID: 5823211812339058537, guid: aa075010f9eac634b8fe7b54cce438c3, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7176902835344183230, guid: aa075010f9eac634b8fe7b54cce438c3, type: 3}
@@ -3462,6 +3510,7 @@ GameObject:
   - component: {fileID: 1214143699}
   - component: {fileID: 1214143698}
   - component: {fileID: 1214143697}
+  - component: {fileID: 1214143701}
   m_Layer: 0
   m_Name: CrazyTaxi
   m_TagString: Untagged
@@ -3620,6 +3669,23 @@ Transform:
   - {fileID: 1849662768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214143701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214143696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 45c2a1bc051bf944fa6592201a375c8b, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1001 &1292186328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5803,6 +5869,7 @@ GameObject:
   - component: {fileID: 1944748002}
   - component: {fileID: 1944748001}
   - component: {fileID: 1944748000}
+  - component: {fileID: 1944748004}
   m_Layer: 0
   m_Name: DoubleAutomat
   m_TagString: Untagged
@@ -5961,6 +6028,23 @@ Transform:
   - {fileID: 1137772213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944748004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944747999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
+  - {fileID: 11400000, guid: 7f76dd6e25505744a92135bb06666d53, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &1958099369
 GameObject:
   m_ObjectHideFlags: 0
@@ -6343,6 +6427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978186875}
   - component: {fileID: 1978186876}
+  - component: {fileID: 1978186877}
   m_Layer: 0
   m_Name: Highlight
   m_TagString: Untagged
@@ -6417,6 +6502,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1978186877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978186874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
+  - {fileID: 11400000, guid: 2d19c89cfd451c24da2e727ee441e798, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &1982580784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6637,6 +6739,7 @@ GameObject:
   - component: {fileID: 2038256701}
   - component: {fileID: 2038256702}
   - component: {fileID: 2038256703}
+  - component: {fileID: 2038256704}
   m_Layer: 0
   m_Name: Wagen
   m_TagString: Untagged
@@ -6813,6 +6916,23 @@ MonoBehaviour:
   OtherUnlockObject_ID: 7
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+--- !u!114 &2038256704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038256698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 679ea84105498524e9abfc81b0cedf5c, type: 2}
+  - {fileID: 11400000, guid: b40954d83ef024442993c532962af3a0, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1001 &2048098116
 PrefabInstance:
   m_ObjectHideFlags: 0
