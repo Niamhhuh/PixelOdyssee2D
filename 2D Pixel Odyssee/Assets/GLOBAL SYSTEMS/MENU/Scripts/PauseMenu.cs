@@ -31,7 +31,10 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        if(GameObject.FindGameObjectWithTag("Pointer") != null)
+        {
+            PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        }
     }
 
     void Update() {  
@@ -39,8 +42,11 @@ public class PauseMenu : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
         {
-            PointerScript.AllowInput = !PointerScript.AllowInput;
-            PointerScript.LockInteract = !PointerScript.LockInteract;
+            if(PointerScript != null)
+            {
+                PointerScript.AllowInput = !PointerScript.AllowInput;
+                PointerScript.LockInteract = !PointerScript.LockInteract;
+            }
             pauseScreen.SetActive(!pauseScreen.activeSelf);
 
             Debug.Log(current_scene.name);
@@ -123,8 +129,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Fortsetzen()
     {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
-        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
-        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
+        if (PointerScript != null)
+        {
+            PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+            PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
+        }
         pauseScreen.SetActive(false);
     }
 

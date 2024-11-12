@@ -32,24 +32,34 @@ public class DragUnlock : MonoBehaviour
         switch (ObjReference.ObjectList_ID)
         {
             case 1:
+                ObjReference.ToggleSprites();
                 Collectable CollectableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 CollectableObjectRef = (Collectable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 CollectableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             case 2:
+                ObjReference.ToggleSprites();
                 Shovable ShovableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 ShovableObjectRef = (Shovable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 ShovableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             case 3:
+                ObjReference.ToggleSprites();
                 Portal PortalObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 PortalObjectRef = (Portal)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 PortalObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             case 4:
+                ObjReference.ToggleSprites();
                 Switchable SwitchObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 SwitchObjectRef = (Switchable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 SwitchObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 5:
+                ObjReference.ToggleSprites();
+                EventSource EventObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                EventObjectRef = (EventSource)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                EventObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             default:
                 break;

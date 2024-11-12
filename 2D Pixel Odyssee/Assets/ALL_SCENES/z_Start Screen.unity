@@ -1828,7 +1828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.814373, y: -127.999954}
+  m_AnchoredPosition: {x: 58.814373, y: -131.3}
   m_SizeDelta: {x: 150.3787, y: 63.4259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575775168
@@ -2032,6 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598016849}
   - component: {fileID: 1598016848}
+  - component: {fileID: 1598016850}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2051,13 +2052,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f78888d15a6a460993f087bc45e3e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TitelScreen:
+  titelScreenTheme:
     Guid:
       Data1: -1680502974
       Data2: 1177259843
       Data3: 1235322775
       Data4: -493090769
     Path: event:/Titelmusik
+  gameSceneTheme:
+    Guid:
+      Data1: 465877033
+      Data2: 1322363960
+      Data3: 1788093313
+      Data4: -1762024205
+    Path: event:/Museumsmusik
 --- !u!4 &1598016849
 Transform:
   m_ObjectHideFlags: 0
@@ -2073,6 +2081,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598016850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598016847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1635720956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0384e07d0f857314aad33195b8ee0c13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ed9954da02e0a84d8f721556f5d2637, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

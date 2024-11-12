@@ -9,6 +9,7 @@ public class Triggerable : ObjectScript
 
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
     public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
+                                                                                                                                                                         //HERE
     
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,12 +39,9 @@ public class Triggerable : ObjectScript
         {
             DMReference.AddTriggerableObj(ID, Lock_State, Trigger_Passed, this.gameObject);                 //Call the AddTriggerableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Triggerable_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
-        }
-
-        if (NewObject == true)
-        {
             DataManager.TriggeredObjects_List.Add(gameObject);
         }
+
 
         if (Lock_State == true)
         {
@@ -74,6 +72,11 @@ public class Triggerable : ObjectScript
     {
         if (Trigger_Passed == true)
         {
+            if(DMReference.MoveScript != null)
+            {
+                DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
+                DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+            }
             gameObject.SetActive(false);
         }
     }
@@ -86,7 +89,9 @@ public class Triggerable : ObjectScript
 
     public void OnMouseOver()
     {
-        if(Input.GetMouseButtonUp(0) && Trigger_Passed == false)
+        DMReference.MoveScript.DisableInput();                                                //Enable Input when Trigger is cleared
+        DMReference.MoveScript.DisableInteract();                                             //Enable Interact when Trigger is cleared
+        if (Input.GetMouseButtonUp(0) && Trigger_Passed == false)
         {
             //Unlock_Object();                                                                                                                        //Try to Unlock the Object
             FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);  //Fetch new State from DataManager
@@ -113,6 +118,7 @@ public class Triggerable : ObjectScript
     public void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
     {
         Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
         UpdateData();
 
         //If Force_Dialogue -> Trigger Dialogue

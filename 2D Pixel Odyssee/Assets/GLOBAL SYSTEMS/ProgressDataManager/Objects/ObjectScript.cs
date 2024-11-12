@@ -11,6 +11,16 @@ public class ObjectScript : MonoBehaviour
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
     //public(Dialogue)			                                                    //Dialogue of this object
 
+    private bool InteractFired = false;
+
+    private Sprite BaseSprite;
+    private Sprite BaseHighlightSprite;
+
+    public Sprite LockSprite;                                                       //LockedObject Spirite
+    public Sprite LockHighlightSprite;                                              //SpriteRenderer of Object, which is disabled on Highlight
+
+    [HideInInspector] public SpriteRenderer ObjectSprite = null;                    //SpriteRenderer of Object, which is disabled on Highlight
+    [HideInInspector] public SpriteRenderer HighlightObjectSprite = null;           //SpriteRenderer of Object, which is disabled on Highlight
 
     //Interaction Toggle Variables --------------------------------------------------------------------------------------------------------------------------------------------
     public bool CannotInteract;
@@ -22,7 +32,6 @@ public class ObjectScript : MonoBehaviour
     //public CharacterScript CurrentCharacter;
 
     //Interaction Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
-    [HideInInspector] public SpriteRenderer ObjectSprite = null;              //SpriteRenderer of Object, which is disabled on Highlight
     private BoxCollider2D Object_Collider = null;                             //Collider of the Object, which is expanded when the Object is marked for interaction
     private Vector2 Original_Collider;                                        //This Vector stores the initial size of the collider
     private Color originalColor;
@@ -53,6 +62,8 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
 
+
+
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -72,8 +83,27 @@ public class ObjectScript : MonoBehaviour
             Object_Collider = this.GetComponent<BoxCollider2D>();
             Original_Collider = Object_Collider.size;
             HighlightonHover = this.transform.GetChild(0).gameObject;                                   //the first child must ALWAYS be the Highlight Object
+            HighlightObjectSprite = HighlightonHover.GetComponent<SpriteRenderer>();
             HighlightonHover.SetActive(false);
             InteractionController = GameObject.FindGameObjectWithTag("InteractionController");
+
+            BaseSprite = ObjectSprite.sprite;
+            BaseHighlightSprite = HighlightObjectSprite.sprite;
+        }
+
+        ToggleSprites();
+    }
+
+    public void ToggleSprites()
+    {
+        if(Lock_State == true)
+        {
+            if(LockSprite != null) { ObjectSprite.sprite = LockSprite; }
+            if (LockHighlightSprite != null) { HighlightObjectSprite.sprite = LockHighlightSprite; }
+        }else
+        {
+            if (BaseSprite != null) { ObjectSprite.sprite = BaseSprite; }
+            if (BaseHighlightSprite != null) { HighlightObjectSprite.sprite = BaseHighlightSprite; }
         }
     }
 
@@ -101,7 +131,7 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
-        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
+        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))             
         {
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
@@ -143,7 +173,7 @@ public class ObjectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)                                                     //Initiate Interact on Trigger Enter
     {
-        if (other.CompareTag("Player") && RequestInteract == true)
+        if (!isBackground && other.CompareTag("Player") && RequestInteract == true)
         {
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
@@ -160,7 +190,6 @@ public class ObjectScript : MonoBehaviour
             {
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                //Disable Interact Button 
             }
-
 
             InteractionController.transform.position = this.transform.position;
         }
@@ -225,7 +254,24 @@ public class ObjectScript : MonoBehaviour
             yield return null;
         }
         ObjectSprite.color = originalColor;
+        if(GetComponent<NPCDialogue>() != null)
+        {
+            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+        }
         PassTriggerActivate(2);
+    }
+
+    public IEnumerator FlashGreen()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            ObjectSprite.color = Color.Lerp(Color.green, originalColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectSprite.color = originalColor;
     }
 
 
