@@ -7,7 +7,11 @@ public class Asteroid_GameManager : MonoBehaviour
 {
     public Asteroid_Player player;
     public ParticleSystem explosion;
-    public TextMeshProUGUI scoreText; // Use TextMeshProUGUI instead of Text
+
+    public TextMeshProUGUI scoreText;
+
+    public GameObject loseCanvas;
+    public GameObject scoreCanvas;
 
     public float respawnTime = 3.0f;
     public float respawnInvulnerabilityTime = 3.0f;
@@ -17,8 +21,9 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Initialize the score display at the start of the game
         UpdateScoreText();
+        loseCanvas.SetActive(false);
+        scoreCanvas.SetActive(true);
     }
 
     public void AsteroidDestroyed(Asteroid asteroid)
@@ -79,6 +84,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over");
+       loseCanvas.SetActive(true);
+       scoreCanvas.SetActive(false);
     }
 }

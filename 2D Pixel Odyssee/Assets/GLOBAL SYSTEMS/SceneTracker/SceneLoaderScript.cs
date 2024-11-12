@@ -27,4 +27,9 @@ public class SceneLoaderScript : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadArcade()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
