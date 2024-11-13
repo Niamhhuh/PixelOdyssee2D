@@ -35,6 +35,11 @@ public class DataManager : MonoBehaviour
 
     public static bool TutorialStarted;
 
+    public static bool FroggerCleared = false;
+
+    public GameObject Reward = null;
+
+
     private void Awake()
     {
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
@@ -68,6 +73,12 @@ public class DataManager : MonoBehaviour
             TutorialStarted = true;
         }
         TutorialStarted = true;
+
+        if(Reward != null)
+        {
+            Reward.SetActive(false);
+            RewardFrogger();
+        }
     }
 
 
@@ -400,6 +411,19 @@ public class DataManager : MonoBehaviour
                 if(TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)
                 TriggerObj.SetActive(true);
             }
+        }
+    }
+
+
+    //Classes for Object DataTypes
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void RewardFrogger()                                //Activate the Trigger
+    {
+        if(FroggerCleared == true)
+        {
+            Reward.SetActive(true);
         }
     }
 

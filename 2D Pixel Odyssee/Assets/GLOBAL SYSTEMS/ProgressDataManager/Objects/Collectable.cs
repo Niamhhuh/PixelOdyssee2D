@@ -22,6 +22,11 @@ public class Collectable : ObjectScript
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
+        if (IsReward == true)
+        {
+            DMReference.Reward = gameObject;
+        }
+
         foreach (DataManager.CollectableObj StoredObj in DataManager.Collectable_List)                      //Go through the Collectable_List and check CollectableObj.
         {
             if (ID == StoredObj.Stored_ID)
@@ -41,7 +46,6 @@ public class Collectable : ObjectScript
 
         RemoveItem();                                                                                       //Remove Items if they have been collected already
     }
-
 
 
     private void FetchData(bool Stored_Lock_State, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager

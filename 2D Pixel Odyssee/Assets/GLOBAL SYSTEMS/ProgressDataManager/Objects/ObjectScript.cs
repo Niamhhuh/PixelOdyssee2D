@@ -11,7 +11,7 @@ public class ObjectScript : MonoBehaviour
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
     //public(Dialogue)			                                                    //Dialogue of this object
 
-    private bool InteractFired = false;
+   // private bool InteractFired = false;
 
     private Sprite BaseSprite;
     private Sprite BaseHighlightSprite;
@@ -61,6 +61,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public SequenceUnlock SeqUReference = null;              //Store the Sequence Unlock
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
+    public bool IsReward;
 
 
 
@@ -91,7 +92,7 @@ public class ObjectScript : MonoBehaviour
             BaseHighlightSprite = HighlightObjectSprite.sprite;
         }
 
-        ToggleSprites();
+            ToggleSprites();
     }
 
     public void ToggleSprites()
