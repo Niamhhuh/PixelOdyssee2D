@@ -271,6 +271,8 @@ GameObject:
   - component: {fileID: 36294352}
   - component: {fileID: 36294354}
   - component: {fileID: 36294355}
+  - component: {fileID: 36294358}
+  - component: {fileID: 36294357}
   - component: {fileID: 36294356}
   m_Layer: 0
   m_Name: Luftschacht
@@ -419,16 +421,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 36294350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908a1766a66ab3b4d9e6e60f88432b85, type: 3}
+  m_Script: {fileID: 11500000, guid: caab4003e3af2234cae8caac8a94abd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  Key_ID: 3
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
+--- !u!114 &36294357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36294350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieUnlockDialogue: {fileID: 0}
+  BeBeUnlockDialogue: {fileID: 11400000, guid: 795da8e47fbd536499a22cee0ca40d5c, type: 2}
+  ObjectDialogue: {fileID: 36294355}
+  ThisObject: {fileID: 36294358}
+--- !u!114 &36294358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36294350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cdef112f2b4b845bafb171150a8fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 15
   Lock_State: 1
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 0
+  CannotInteract: 1
   CannotTalk: 0
   NewObject: 1
   IsFullTrigger: 0
@@ -447,8 +480,8 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
-  Event_Passed: 0
-  Talk_Event: 0
+  UnlockDialogueScript: {fileID: 0}
+  Collected: 0
 --- !u!1 &37775793
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +765,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
 --- !u!61 &75412645
@@ -851,6 +885,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!61 &83077151
 BoxCollider2D:
@@ -1097,6 +1132,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 4
 --- !u!61 &93303104
@@ -1584,6 +1620,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
 --- !u!1001 &168616261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2623,6 +2660,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 7
 --- !u!212 &477116163
@@ -3983,6 +4021,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 1
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!61 &972280117
 BoxCollider2D:
@@ -4390,6 +4429,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 6
 --- !u!212 &1214143699
@@ -4635,6 +4675,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 1
 --- !u!61 &1311026773
@@ -5164,8 +5205,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+      - m_Target: {fileID: 1959199745}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
         m_Arguments:
@@ -5688,6 +5729,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1637344979
@@ -6266,6 +6308,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 4
 --- !u!212 &1749132621
@@ -6906,8 +6949,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424.14996, y: -21.00003}
-  m_SizeDelta: {x: 731.59, y: 82.2885}
+  m_AnchoredPosition: {x: -424.41, y: -22.024517}
+  m_SizeDelta: {x: 746.45, y: 80.2396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829226492
 MonoBehaviour:
@@ -7270,6 +7313,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 3
 --- !u!212 &1944748002
@@ -8168,6 +8212,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Shove_Position: 0
   Max_Shove: 2
   ShoveController: {fileID: 0}
@@ -8489,10 +8534,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 823331889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: 99}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -959.2, y: -1.3}
+  m_SizeDelta: {x: 1920, y: 1078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131853138
 MonoBehaviour:

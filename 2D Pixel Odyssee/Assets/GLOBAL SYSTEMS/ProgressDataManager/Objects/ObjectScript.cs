@@ -63,7 +63,7 @@ public class ObjectScript : MonoBehaviour
 
     public bool IsReward;
 
-
+    [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
 
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,6 +91,10 @@ public class ObjectScript : MonoBehaviour
             BaseSprite = ObjectSprite.sprite;
             BaseHighlightSprite = HighlightObjectSprite.sprite;
         }
+
+        if(gameObject.GetComponent<UnlockedDialogue>() != null) {
+            UnlockDialogueScript = GetComponent<UnlockedDialogue>();
+        } 
 
             ToggleSprites();
     }
@@ -178,6 +182,9 @@ public class ObjectScript : MonoBehaviour
         {
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
+
+            if(UnlockDialogueScript != null) {UnlockDialogueScript.ModifyDialogue();}
+             
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
             InteractionController.transform.GetChild(1).gameObject.SetActive(true);                     //Enable Interact Button 
