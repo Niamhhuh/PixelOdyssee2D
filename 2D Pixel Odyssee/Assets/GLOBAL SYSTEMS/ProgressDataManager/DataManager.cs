@@ -404,9 +404,10 @@ public class DataManager : MonoBehaviour
 
     public void TriggerActivate(int Target_ID)                                //Activate the Trigger
     {
+        print(TriggeredObjects_List.Count);
         foreach (GameObject TriggerObj in TriggeredObjects_List)
         {
-            if (TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
+            if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
             {
                 if(TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)
                 TriggerObj.SetActive(true);
