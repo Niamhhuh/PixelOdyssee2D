@@ -68,8 +68,9 @@ public class ObjectScript : MonoBehaviour
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void Start()
+    private void Awake()
     {
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         if (gameObject.GetComponent<Triggerable>() != null)
         {
             IsFullTrigger = true;
@@ -138,6 +139,11 @@ public class ObjectScript : MonoBehaviour
     {
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))             
         {
+            if(DataManager.ToShove.Count < 1)
+            {
+                DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
+                DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
+            }
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();

@@ -7,19 +7,22 @@ public class UnlockedDialogue : MonoBehaviour
     public AdvancedDialogueSO RosieUnlockDialogue;
     public AdvancedDialogueSO BeBeUnlockDialogue;
 
-    public NPCDialogue ObjectDialogue;
-    public Collectable ThisObject;
+    NPCDialogue ObjectDialogue = null;
+    ObjectScript AccessObjectScript = null;
 
-    void start () {
+    void Start () 
+    {
 
-        //ThisObject = gameObject.GetComponent<Collectable>();
-        //ObjectDialogue = gameObject.GetComponent<NPCDialogue>();
+        AccessObjectScript = gameObject.GetComponent<ObjectScript>();
+        ObjectDialogue = gameObject.GetComponent<NPCDialogue>();
         
     } 
 
-    public void ModifyDialogue () {
+    public void ModifyDialogue () 
+    {
 
-        if(ThisObject.Lock_State == false) {
+        if(AccessObjectScript.Lock_State == false) 
+        {
             if(RosieUnlockDialogue != null) {ObjectDialogue.conversation[0] = RosieUnlockDialogue;}
             if(BeBeUnlockDialogue != null) {ObjectDialogue.conversation[1] = BeBeUnlockDialogue;}
         }

@@ -13,10 +13,10 @@ public class EventSource : ObjectScript
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    void Awake()
+    void Start()
     {
         ObjectList_ID = 5;
-        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+        //DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
         ObjReference = this.GetComponent<EventSource>();
