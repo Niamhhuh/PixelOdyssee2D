@@ -64,6 +64,11 @@ public class EventSource : ObjectScript
     {
         if (Event_Passed == true)
         {
+            if (DMReference.MoveScript != null)
+            {
+                DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
+                DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+            }
             Destroy(gameObject);
         }
     }
