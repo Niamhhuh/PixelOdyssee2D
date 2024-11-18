@@ -32,7 +32,6 @@ public class CharacterScript : MonoBehaviour
         RosieActive = true;
         //AllowInput = true;
 
-        SoundManager = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
 
         var cinemachine = FindObjectOfType<CinemachineVirtualCamera>();
         if (cinemachine != null)

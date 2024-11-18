@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1843460018615252671
+--- !u!1 &3076828759694516893
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,62 +8,68 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6049043949195739475}
-  - component: {fileID: 2118838231043451576}
-  - component: {fileID: 8685578595654878648}
+  - component: {fileID: 7023382581338002216}
+  - component: {fileID: 4101633162761365739}
+  - component: {fileID: 8073399518806327084}
   m_Layer: 0
-  m_Name: EventManager
-  m_TagString: Untagged
+  m_Name: AudioManager
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6049043949195739475
+--- !u!4 &7023382581338002216
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843460018615252671}
+  m_GameObject: {fileID: 3076828759694516893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.152521, y: 0.6341642, z: -0.07862477}
+  m_LocalPosition: {x: 14.140054, y: 8.019884, z: -0.049488775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2118838231043451576
+--- !u!114 &4101633162761365739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843460018615252671}
+  m_GameObject: {fileID: 3076828759694516893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa536e28ace547afb0d80e3911a8d11, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f78888d15a6a460993f087bc45e3e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: {fileID: 0}
-  steuerung: {fileID: 0}
-  allgemein: {fileID: 0}
-  spacewar: {fileID: 0}
-  frogger: {fileID: 0}
-  pong: {fileID: 0}
-  sceneloader: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  pauseScreen: {fileID: 0}
-  PointerScript: {fileID: 0}
---- !u!114 &8685578595654878648
+  titelScreenTheme:
+    Guid:
+      Data1: -1680502974
+      Data2: 1177259843
+      Data3: 1235322775
+      Data4: -493090769
+    Path: event:/Titelmusik
+  gameSceneTheme:
+    Guid:
+      Data1: 465877033
+      Data2: 1322363960
+      Data3: 1788093313
+      Data4: -1762024205
+    Path: event:/Museumsmusik
+--- !u!114 &8073399518806327084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843460018615252671}
+  m_GameObject: {fileID: 3076828759694516893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca79895887c222c44975a4807af0e6a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}

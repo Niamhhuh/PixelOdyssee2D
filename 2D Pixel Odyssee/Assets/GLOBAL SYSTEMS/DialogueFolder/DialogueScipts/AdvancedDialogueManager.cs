@@ -70,7 +70,6 @@ public class AdvancedDialogueManager : MonoBehaviour
 
         dialogueCanvas.SetActive(false);
 
-        SoundManagerHub = GameObject.FindGameObjectWithTag("SoundManagerHub").GetComponent<SoundManagerHub>();
     }
 
     // Update is called once per frame
