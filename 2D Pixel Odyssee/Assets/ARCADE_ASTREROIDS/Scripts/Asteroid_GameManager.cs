@@ -9,6 +9,7 @@ public class Asteroid_GameManager : MonoBehaviour
     public ParticleSystem explosion;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI playerLives;
 
     public GameObject loseCanvas;
     public GameObject scoreCanvas;
@@ -22,6 +23,7 @@ public class Asteroid_GameManager : MonoBehaviour
     private void Start()
     {
         UpdateScoreText();
+        UpdatePlayerLives();
         loseCanvas.SetActive(false);
         scoreCanvas.SetActive(true);
     }
@@ -53,6 +55,11 @@ public class Asteroid_GameManager : MonoBehaviour
         scoreText.text = "Score: " + this.score;
     }
 
+    private void UpdatePlayerLives()
+    {
+        playerLives.text = "Lives: " + this.lives;
+    }
+
     public void PlayerDied()
     {
         this.explosion.transform.position = this.player.transform.position;
@@ -67,6 +74,8 @@ public class Asteroid_GameManager : MonoBehaviour
         {
             Invoke(nameof(Respawn), this.respawnTime);
         }
+
+        UpdatePlayerLives();
     }
 
     public void Respawn()

@@ -10,7 +10,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     public float spawnRate = 2.0f;
 
-    public int spawnAmount = 1;
+    public int spawnAmount = 2;
     public float spawnDistance = 10.0f;
     private void Start()
     {
