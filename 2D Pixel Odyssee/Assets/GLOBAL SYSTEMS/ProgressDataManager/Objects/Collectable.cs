@@ -105,7 +105,7 @@ public class Collectable : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    private void PickUp()                                                                              //Pick up the Item by adding it to the Draggable List.
+    private void PickUp()                                                            //Pick up the Item by adding it to the Draggable List.
     {
         if(DataManager.Inventory_Fillstate < 12)
         {
