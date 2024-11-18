@@ -13,10 +13,10 @@ public class EventSource : ObjectScript
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    void Awake()
+    void Start()
     {
         ObjectList_ID = 5;
-        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+        //DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
         ObjReference = this.GetComponent<EventSource>();
@@ -64,6 +64,11 @@ public class EventSource : ObjectScript
     {
         if (Event_Passed == true)
         {
+            if (DMReference.MoveScript != null)
+            {
+                DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
+                DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+            }
             Destroy(gameObject);
         }
     }

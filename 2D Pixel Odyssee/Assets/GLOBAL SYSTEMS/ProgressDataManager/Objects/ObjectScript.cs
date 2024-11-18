@@ -63,13 +63,14 @@ public class ObjectScript : MonoBehaviour
 
     public bool IsReward;
 
-
+    [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
 
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    private void Start()
+    private void Awake()
     {
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         if (gameObject.GetComponent<Triggerable>() != null)
         {
             IsFullTrigger = true;
@@ -91,6 +92,10 @@ public class ObjectScript : MonoBehaviour
             BaseSprite = ObjectSprite.sprite;
             BaseHighlightSprite = HighlightObjectSprite.sprite;
         }
+
+        if(gameObject.GetComponent<UnlockedDialogue>() != null) {
+            UnlockDialogueScript = GetComponent<UnlockedDialogue>();
+        } 
 
             ToggleSprites();
     }
@@ -134,6 +139,11 @@ public class ObjectScript : MonoBehaviour
     {
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))             
         {
+            if(DataManager.ToShove.Count < 1)
+            {
+                DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
+                DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
+            }
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
@@ -178,6 +188,9 @@ public class ObjectScript : MonoBehaviour
         {
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
+
+            if(UnlockDialogueScript != null) {UnlockDialogueScript.ModifyDialogue();}
+             
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
             InteractionController.transform.GetChild(1).gameObject.SetActive(true);                     //Enable Interact Button 

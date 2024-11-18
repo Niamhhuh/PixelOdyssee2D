@@ -46,9 +46,12 @@ public class DataManager : MonoBehaviour
         Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
         //print("a" + Item_List[0].ID + "b" + Item_List[1].ID + "c" + Item_List[2].ID + "d" + Item_List[3].ID + "e" + Item_List[4].ID + "f" + Item_List[5].ID + "g" + Item_List[6].ID + "h" + Item_List[7].ID + "i" + Item_List[8].ID + "j" + Item_List[9].ID + "k" + Item_List[10].ID + "l" + Item_List[11].ID + "m" + Item_List[12].ID);
 
-        InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
-        MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
-        CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+        if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
+        {
+            InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
+            MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+            CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+        }
 
         Rooms_Loaded[0] = false;                                                        //Archive 
         Rooms_Loaded[1] = false;                                                        //RaceArcade
@@ -404,7 +407,6 @@ public class DataManager : MonoBehaviour
 
     public void TriggerActivate(int Target_ID)                                //Activate the Trigger
     {
-        print(TriggeredObjects_List.Count);
         foreach (GameObject TriggerObj in TriggeredObjects_List)
         {
             if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)

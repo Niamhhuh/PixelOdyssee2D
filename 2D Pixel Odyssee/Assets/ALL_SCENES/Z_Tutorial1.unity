@@ -205,7 +205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5a9cae9e3d7efab4b9e4de508b78166e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -455,7 +455,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: cebffa0a063566045a7d401f42107c5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -572,7 +572,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ff0ad567eef64d9428771afe3a3e22a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -637,6 +637,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!114 &37965406
 MonoBehaviour:
@@ -728,7 +729,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f391d11c6a937cc4092d4fc18b6fa2c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -888,6 +889,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &84551952
@@ -1188,6 +1190,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &118851850
@@ -1442,6 +1445,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!212 &155341761
 SpriteRenderer:
@@ -1483,7 +1487,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: cebffa0a063566045a7d401f42107c5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1895,6 +1899,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &229766354
@@ -2186,7 +2191,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 28ec4a425e3788b4abdba37beda73f6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2257,6 +2262,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 1
 --- !u!114 &238666831
@@ -2546,7 +2552,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2f935e093419701458414e0a85799303, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2927,7 +2933,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 06a7235a142282742a028325505c10da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3284,6 +3290,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!1 &727329076
 GameObject:
@@ -3638,7 +3645,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 372e0c5eb500b1549b570d6abfe8bb00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3874,7 +3881,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ff0ad567eef64d9428771afe3a3e22a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3960,7 +3967,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1180937057
   m_SortingLayer: -1
-  m_SortingOrder: -2
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: b28d666fe4c3845899138ff7914acde2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4054,6 +4061,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
 --- !u!1 &839941272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +4500,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!212 &909085706
 SpriteRenderer:
@@ -4533,7 +4542,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1283d4184d937d043bc9dc7375a95f10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4683,6 +4692,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &969682070
@@ -4906,7 +4916,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: d8bd63dea4cc33a4cb5c7feaa188acd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4990,7 +5000,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 8cf69be2cdc90784eaa9151f733b6723, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5120,7 +5130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1283d4184d937d043bc9dc7375a95f10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5519,10 +5529,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1926399228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 98}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -959.9, y: 0.5}
+  m_SizeDelta: {x: 1920, y: 1078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247776586
 MonoBehaviour:
@@ -5619,6 +5629,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!61 &1294134383
 BoxCollider2D:
@@ -5921,6 +5932,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 2
 --- !u!114 &1314770205
@@ -6270,6 +6282,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Shove_Position: 0
   Max_Shove: 2
   ShoveController: {fileID: 0}
@@ -6383,6 +6396,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1548022565
@@ -6701,8 +6715,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -424.14996, y: -21.00003}
-  m_SizeDelta: {x: 731.59, y: 82.2885}
+  m_AnchoredPosition: {x: -424.23, y: -22.5048}
+  m_SizeDelta: {x: 746.81, y: 77.7743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602379346
 MonoBehaviour:
@@ -6871,6 +6885,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
 --- !u!61 &1620534621
@@ -7094,6 +7109,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1657887428
@@ -7498,7 +7514,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 372e0c5eb500b1549b570d6abfe8bb00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7563,6 +7579,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Collected: 0
 --- !u!114 &1787484209
 MonoBehaviour:
@@ -8127,6 +8144,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   IsReward: 0
+  UnlockDialogueScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &2077931041
