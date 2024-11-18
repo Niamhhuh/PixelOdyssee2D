@@ -168,7 +168,6 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueCanvas.SetActive(true);
         stepNum += 1;
 
-        SoundManagerHub.PlaySfxHub(SoundManagerHub.Dialog);
     }
 
     void SetActorInfo(bool recurringCharacter)

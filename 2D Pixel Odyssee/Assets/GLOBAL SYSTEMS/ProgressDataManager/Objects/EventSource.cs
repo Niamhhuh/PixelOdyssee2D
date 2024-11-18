@@ -66,8 +66,8 @@ public class EventSource : ObjectScript
         {
             if (DMReference.MoveScript != null)
             {
-                DMReference.MoveScript.Activate_CallEnableInput();                                                //Enable Input when Trigger is cleared
-                DMReference.MoveScript.Activate_CallEnableInteract();                                             //Enable Interact when Trigger is cleared
+                PointerScript.StartCoroutine(PointerScript.CallEnableInput());                                                //Enable Input when Trigger is cleared
+                PointerScript.StartCoroutine(PointerScript.CallEnableInteract());                                             //Enable Interact when Trigger is cleared
             }
             Destroy(gameObject);
         }
