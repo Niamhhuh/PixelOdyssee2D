@@ -12,6 +12,7 @@ public class Asteroid_GameManager : MonoBehaviour
     public TextMeshProUGUI playerLives;
 
     public GameObject loseCanvas;
+    public GameObject winCanvas; // Add a UI canvas for the win state
     public GameObject scoreCanvas;
 
     public float respawnTime = 3.0f;
@@ -20,11 +21,15 @@ public class Asteroid_GameManager : MonoBehaviour
     public int lives = 3;
     public int score = 0;
 
+    // Win state variables
+    public int winScoreThreshold = 500; // Define the score threshold to win
+
     private void Start()
     {
         UpdateScoreText();
         UpdatePlayerLives();
         loseCanvas.SetActive(false);
+        winCanvas.SetActive(false); 
         scoreCanvas.SetActive(true);
     }
 
@@ -48,6 +53,9 @@ public class Asteroid_GameManager : MonoBehaviour
 
         // Update the score display
         UpdateScoreText();
+
+        // Check if the player has won
+        CheckForWin();
     }
 
     private void UpdateScoreText()
@@ -93,7 +101,44 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void GameOver()
     {
-       loseCanvas.SetActive(true);
-       scoreCanvas.SetActive(false);
+        loseCanvas.SetActive(true);
+        scoreCanvas.SetActive(false);
+    }
+
+    // New method to check if the player has won
+    private void CheckForWin()
+    {
+        if (score >= winScoreThreshold)
+        {
+            WinGame();
+        }
+    }
+
+    // Method to trigger the win state
+    private void WinGame()
+    {
+        winCanvas.SetActive(true);  // Show the win screen
+        scoreCanvas.SetActive(false); // Hide the score screen
+        Time.timeScale = 0; // Optionally stop the game or pause
+        // You can add more functionality here, such as stopping asteroids, animations, etc.
+    }
+
+    // Optionally, create methods to restart the game or quit after winning
+    public void RestartGame()
+    {
+        Time.timeScale = 1; // Unpause the game
+        // Reset the game state, scores, lives, etc.
+        lives = 3;
+        score = 0;
+        UpdatePlayerLives();
+        UpdateScoreText();
+        winCanvas.SetActive(false);
+        loseCanvas.SetActive(false);
+        scoreCanvas.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(); // Quit the application (works in build)
     }
 }

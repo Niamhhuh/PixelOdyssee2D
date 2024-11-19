@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Asteroid_Player : MonoBehaviour
 {
     public Bullet bulletPrefab;
+    public TextMeshProUGUI panicTeleportText;
 
     public float thrustSpeed = 1.0f;
     public float turnSpeed = 1.0f;
@@ -14,6 +16,9 @@ public class Asteroid_Player : MonoBehaviour
     private float _turnDirection;
 
     private Transform boundaryTop, boundaryBottom, boundaryLeft, boundaryRight;
+
+    private float panicTeleportCooldown = 20.0f; // Cooldown in seconds
+    private float currentCooldownTime = 0.0f; // Time remaining for cooldown
 
     private void Awake()
     {
@@ -27,6 +32,8 @@ public class Asteroid_Player : MonoBehaviour
         boundaryBottom = GameObject.Find("BoundaryBottom").transform;
         boundaryLeft = GameObject.Find("BoundaryLeft").transform;
         boundaryRight = GameObject.Find("BoundaryRight").transform;
+
+        UpdatePanicTeleportText();
     }
 
     private void Update()
@@ -53,10 +60,17 @@ public class Asteroid_Player : MonoBehaviour
             Shoot();
         }
 
-        // Handle panic teleport
-        if (Input.GetKeyDown(KeyCode.Q))
+        // Handle Panic Teleport with cooldown check
+        if (Input.GetKeyDown(KeyCode.Q) && currentCooldownTime <= 0.0f)
         {
             PanicTeleport();
+        }
+
+        // Update cooldown timer
+        if (currentCooldownTime > 0.0f)
+        {
+            currentCooldownTime -= Time.deltaTime;
+            UpdatePanicTeleportText(); // Update the UI with remaining cooldown time
         }
     }
 
@@ -90,10 +104,31 @@ public class Asteroid_Player : MonoBehaviour
         // Set the player's position to the new random location
         transform.position = new Vector3(randomX, randomY, transform.position.z);
 
-        // Optionally reset velocity
-        // _rigidbody.velocity = Vector2.zero;
+        // Reset velocity to avoid drifting after teleport
+        //_rigidbody.velocity = Vector2.zero;
         //_rigidbody.angularVelocity = 0.0f;
 
+        // Start the cooldown timer
+        currentCooldownTime = panicTeleportCooldown;
+
+        // Update the UI
+        UpdatePanicTeleportText();
+
+        Debug.Log("Teleported to: " + transform.position);
+    }
+
+    private void UpdatePanicTeleportText()
+    {
+        if (currentCooldownTime > 0.0f)
+        {
+            panicTeleportText.text = "Teleport: USED";
+            panicTeleportText.color = Color.red;
+        }
+        else
+        {
+            panicTeleportText.text = "Teleport: READY";
+            panicTeleportText.color = Color.green;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
