@@ -262,7 +262,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueActivated = true;
     }
 
-    public void ObjectLockedDialogue(NPCDialogue npcDialogue)
+    public void ObjectLockedDialogue(NPCDialogue npcDialogue)                               //This Method fetches the Dialogue, which is played when the Object is interacted with, but locked 
     {
         CurrentNPC = npcDialogue;
         //the array we are currently stepping through

@@ -405,14 +405,23 @@ public class DataManager : MonoBehaviour
     //Activate Trigger
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void TriggerActivate(int Target_ID)                                //Activate the Trigger
+    public void TriggerActivate(int Target_ID)                               //Activate the Trigger
     {
-        foreach (GameObject TriggerObj in TriggeredObjects_List)
+        foreach (GameObject TriggerObj in TriggeredObjects_List)             //Search through List of Trigger Objects
         {
-            if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)
+            TriggerActivateFunction(TriggerObj, Target_ID);                 //Call the Function of this Loop
+        }
+    }
+
+    private void TriggerActivateFunction(GameObject TriggerObj, int Target_ID)
+    {
+        if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)   //If the Trigger is found 
+        {
+            if (TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)              //If the Trigger hasn't been activated before
             {
-                if(TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)
-                TriggerObj.SetActive(true);
+                TriggerObj.SetActive(true);                                                 //Activate the Trigger
+                MoveScript.DisableInput();                                                  //Disable Pointer Inpput 
+                MoveScript.DisableInteract();                                               //Disable Pointer Interact 
             }
         }
     }

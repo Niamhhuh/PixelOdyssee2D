@@ -25,6 +25,14 @@ public class DragUnlock : MonoBehaviour
             DataManager.Item_List[DMReference.InventoryRef.DraggedItemID-1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
             // Delete Item from Draggable List
         }
+
+        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Key_ID)    //When the Item does not Unlock.
+        {
+            //Call Failed_Unlock_Comment
+            //Pass Dialogue to DataManager.CommentSpriteX
+            //Trigger DataManager.CommentSpriteX.Typewrite_effect
+        }
+
     }
 
     private void UpdateDragUnlock()

@@ -268,12 +268,14 @@ public class ObjectScript : MonoBehaviour
             yield return null;
         }
         ObjectSprite.color = originalColor;
+        
         if(GetComponent<NPCDialogue>() != null)
         {
-            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
-            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());  
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();                                 
         }
-        PassTriggerActivate(2);
+        
+        PassTriggerActivate(2);                                                                             //Activate a Trigger if connected
     }
 
     public IEnumerator FlashGreen()

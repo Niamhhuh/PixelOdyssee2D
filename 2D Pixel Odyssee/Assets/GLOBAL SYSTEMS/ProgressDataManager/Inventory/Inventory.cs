@@ -100,6 +100,8 @@ public class Inventory : MonoBehaviour
 
     public void CloseInventory()
     {
+        StartCoroutine(DMReference.MoveScript.CallEnableInput());
+        StartCoroutine(DMReference.MoveScript.CallEnableInteract());
         DMReference.MoveScript.InventoryActive = false;
         if(calledbyKey == true)
         {
