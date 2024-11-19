@@ -128,8 +128,11 @@ public class Shovable : ObjectScript
 
     private void InitiateShove()
     {
-        DataManager.ToShove.Add(this);
-        ShoveController.SetActive(true);
+        DataManager.ToShove.Add(this);                                                                      //add this object to the ToShove List, to make it accessible for the Shove Buttons
+        ShoveController.SetActive(true);                                                                    //Activate ShoveButtons 
+
+        ShoveController.GetComponent<ShoveScript>().ControlButtons();                                       //Control which Buttons appear
+
         //Activate the required Arrows 
         ShoveController.transform.position = this.transform.position;
     }

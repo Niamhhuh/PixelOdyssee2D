@@ -22,6 +22,11 @@ namespace FMODUnity
 #endif
         private static List<StudioListener> listeners = new List<StudioListener>();
 
+        private void Start()
+        {
+            attenuationObject = GameObject.FindGameObjectWithTag("AudioManager");
+        }
+
         public static int ListenerCount
         {
             get

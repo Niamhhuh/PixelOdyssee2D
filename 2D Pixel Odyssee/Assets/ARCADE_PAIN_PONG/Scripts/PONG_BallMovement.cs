@@ -18,7 +18,7 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private int hitCounter;
-    PSSoundManager PSSoundManager;
+    
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
 
@@ -29,8 +29,6 @@ public class BallMovement : MonoBehaviour
         }
         aiScore = 0;
         plScore = 0;
-
-        PSSoundManager = GameObject.FindGameObjectWithTag("SoundManagerPS").GetComponent<PSSoundManager>();
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
@@ -78,7 +76,6 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "AI") {
             PlayerBounce(collision.transform);
 
-            PSSoundManager.PlaySfxPS(PSSoundManager.CollisionPlayer);
         }
     }
 
@@ -89,26 +86,26 @@ public class BallMovement : MonoBehaviour
             playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
             plScore++;
 
-            PSSoundManager.PlaySfxPS(PSSoundManager.PointPlayer);
+            
         }
         else if (transform.position.x < 0) {
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
             aiScore++;
-            PSSoundManager.PlaySfxPS(PSSoundManager.PointEnemy);
+            
         }
         
         if (aiScore == 3 || plScore == 3) //checks whether the game is finished
         {
             Destroy(gameObject);
-            PSSoundManager.StopMusicPS(PSSoundManager.MusicPainStation);
+            
 
             if(plScore == 3) {
                 winPanel.SetActive(true);
-                PSSoundManager.PlaySfxPS(PSSoundManager.PlayerWin);
+                
             }
             else if(aiScore == 3) {
                 losePanel.SetActive(true);
-                PSSoundManager.PlaySfxPS(PSSoundManager.PlayerLost);
+                
             }
         }
         else{

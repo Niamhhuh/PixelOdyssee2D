@@ -6,7 +6,34 @@ public class ShoveScript : MonoBehaviour
 {
     Vector3 StartPosition;
     Vector3 TargetPosition;
-    
+
+    GameObject LeftButton;
+    GameObject RightButton;
+
+    private void Start()
+    {
+        LeftButton = GameObject.FindGameObjectWithTag("ShoveButtonLeft");
+        RightButton = GameObject.FindGameObjectWithTag("ShoveButtonRight");
+    }
+
+    public void ControlButtons()
+    {
+        LeftButton.SetActive(true);
+        RightButton.SetActive(true);
+
+        //Control Left Button
+        if (-DataManager.ToShove[0].Max_Shove >= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/lesser than the negative Max Shove Position
+        {
+            LeftButton.SetActive(false);                           //deactivate the Left Shove Button
+        }
+
+        //Control Right Button
+        if (DataManager.ToShove[0].Max_Shove <= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/greater than the positive Max Shove Position
+        {
+            RightButton.SetActive(false);                          //deactivate the Right Shove Button
+        }
+    }
+
     public void ShoveLeft ()
     {
         if(-DataManager.ToShove[0].Max_Shove < DataManager.ToShove[0].Shove_Position)

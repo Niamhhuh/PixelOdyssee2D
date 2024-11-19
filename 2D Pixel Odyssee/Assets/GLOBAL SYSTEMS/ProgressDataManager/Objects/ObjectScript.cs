@@ -78,13 +78,13 @@ public class ObjectScript : MonoBehaviour
         ThisObject = this.GetComponent<ObjectScript>();
         //CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
-        if (!isBackground && !IsFullTrigger)
+        if (!isBackground && !IsFullTrigger)                                                                //These Variables are only set on Objects that are neither Background nor Triggers
         {
-            ObjectSprite = this.GetComponent<SpriteRenderer>();
+            ObjectSprite = this.GetComponent<SpriteRenderer>();                                         
             originalColor = ObjectSprite.color;
             Object_Collider = this.GetComponent<BoxCollider2D>();
             Original_Collider = Object_Collider.size;
-            HighlightonHover = this.transform.GetChild(0).gameObject;                                   //the first child must ALWAYS be the Highlight Object
+            HighlightonHover = this.transform.GetChild(0).gameObject;                                       //the first child must ALWAYS be the Highlight Object
             HighlightObjectSprite = HighlightonHover.GetComponent<SpriteRenderer>();
             HighlightonHover.SetActive(false);
             InteractionController = GameObject.FindGameObjectWithTag("InteractionController");

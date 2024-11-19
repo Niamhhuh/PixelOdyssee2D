@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         {
             themeToPlay = gameSceneTheme;
         }
-        /*
+        
         // Überprüfe, ob ein gültiges Theme gefunden wurde
         if (!string.IsNullOrEmpty(themeToPlay.Path))
         {
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Kein gültiges Theme für die aktuelle Szene gefunden.");
         }
-        */
+        
     }
 
     private void StopCurrentTheme()
