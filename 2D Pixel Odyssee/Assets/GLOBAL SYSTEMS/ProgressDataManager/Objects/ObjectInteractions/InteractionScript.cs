@@ -13,14 +13,12 @@ public class InteractionScript : MonoBehaviour
     //Call Dialouge
     public void TriggerDialogue()
     {
+        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
         {
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
-        
-
-        PointerScript.Activate_CallEnableInput();
-        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());         //Enable Interact Again
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
         //GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>().DisableInput();

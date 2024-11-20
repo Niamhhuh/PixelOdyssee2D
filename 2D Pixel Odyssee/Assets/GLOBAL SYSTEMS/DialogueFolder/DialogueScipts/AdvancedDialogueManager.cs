@@ -10,7 +10,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     private DataManager DMReference;
     //NPC DIALOGUE we are currently stepping through
     private AdvancedDialogueSO currentConversation;
-    private int stepNum;
+    private int stepNum = 0;
     private bool dialogueActivated;
 
     //UI REFERENCES
@@ -40,6 +40,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     SoundManagerHub SoundManagerHub;
 
     NPCDialogue CurrentNPC = null;
+
+    private bool StopTypeWriter; 
 
     // Start is called before the first frame update
     void Start()
@@ -211,7 +213,28 @@ public class AdvancedDialogueManager : MonoBehaviour
         PlayDialogue();
     }
 
-    private IEnumerator TypewriterEffect(string line)
+    /*
+                 if (Input.GetButtonDown("Interact"))
+            {
+                dialogueText.text = line;
+                break;
+            }
+     */
+
+    public void SkipDialogue()
+    {
+        print(stepNum);
+        StopTypeWriter = true;
+
+        if(stepNum > 0)
+        {
+            dialogueText.text = currentConversation.dialogue[stepNum - 1];
+        }
+        
+        canContinueText = true;
+    }
+
+        private IEnumerator TypewriterEffect(string line)
     {
         dialogueText.text = "";
         canContinueText = false;
@@ -219,14 +242,14 @@ public class AdvancedDialogueManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         foreach(char letter in line.ToCharArray())
         {
-            if (Input.GetButtonDown("Interact"))
+            if (StopTypeWriter)
             {
-                dialogueText.text = line;
+                StopTypeWriter = false;
                 break;
             }
 
             //Check to see if we are working with rich text tags
-            if(letter == '<' || addingRichTextTag)
+            if (letter == '<' || addingRichTextTag)
             {
                 addingRichTextTag = true;
                 dialogueText.text += letter;
