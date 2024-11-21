@@ -43,7 +43,7 @@ public class EventSource : ObjectScript
         RemoveEvent();                                                                                       //Remove Event if it has been interacted with already
     }
 
-
+    
 
     private void FetchData(bool Stored_Lock_State, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
     {
