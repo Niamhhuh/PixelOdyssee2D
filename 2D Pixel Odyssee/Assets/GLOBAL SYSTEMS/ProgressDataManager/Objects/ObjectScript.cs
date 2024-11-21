@@ -96,8 +96,6 @@ public class ObjectScript : MonoBehaviour
         if(gameObject.GetComponent<UnlockedDialogue>() != null) {
             UnlockDialogueScript = GetComponent<UnlockedDialogue>();
         } 
-
-            ToggleSprites();
     }
 
     public void ToggleSprites()
@@ -106,7 +104,9 @@ public class ObjectScript : MonoBehaviour
         {
             if(LockSprite != null) { ObjectSprite.sprite = LockSprite; }
             if (LockHighlightSprite != null) { HighlightObjectSprite.sprite = LockHighlightSprite; }
-        }else
+        }
+
+        if (Lock_State == false)
         {
             if (BaseSprite != null) { ObjectSprite.sprite = BaseSprite; }
             if (BaseHighlightSprite != null) { HighlightObjectSprite.sprite = BaseHighlightSprite; }

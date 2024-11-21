@@ -47,7 +47,7 @@ public class Shovable : ObjectScript
         }
 
         PlaceShovable();                                                                                       //Place Shovable at the right position on load
-
+        ToggleSprites();
     }
 
 

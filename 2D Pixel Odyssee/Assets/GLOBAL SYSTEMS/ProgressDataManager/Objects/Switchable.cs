@@ -39,7 +39,8 @@ public class Switchable : ObjectScript
             DMReference.AddSwitchStateObj(ID, Lock_State, SwitchState);                                     //Call the AddSwitchStateObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.SwitchState_List.Count - 1;                                           //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
-
+        FlipSwitch();
+        ToggleSprites();
     }
 
 

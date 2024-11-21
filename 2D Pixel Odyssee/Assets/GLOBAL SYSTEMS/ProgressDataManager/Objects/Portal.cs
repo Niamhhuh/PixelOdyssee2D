@@ -42,6 +42,7 @@ public class Portal : ObjectScript
             ObjectIndex = DataManager.Portal_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
+        ToggleSprites();
     }
 
 

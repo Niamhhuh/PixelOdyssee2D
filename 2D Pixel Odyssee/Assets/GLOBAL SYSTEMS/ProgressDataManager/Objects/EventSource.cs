@@ -40,6 +40,7 @@ public class EventSource : ObjectScript
             ObjectIndex = DataManager.EventSource_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
         }
 
+        ToggleSprites();
         RemoveEvent();                                                                                       //Remove Event if it has been interacted with already
     }
 

@@ -44,6 +44,7 @@ public class Collectable : ObjectScript
             ObjectIndex = DataManager.Collectable_List.Count - 1;                                           //When an Object is added, it is added to the end of the list. 
         }
 
+        ToggleSprites();
         RemoveItem();                                                                                       //Remove Items if they have been collected already
     }
 
