@@ -35,7 +35,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     [SerializeField]
     private float typingSpeed = 0.02f;
     private Coroutine typeWriterRoutine;
-    private bool canContinueText = true;
+    public bool canContinueText = true;
 
     SoundManagerHub SoundManagerHub;
 
@@ -141,7 +141,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
             ContinueButton.SetActive(false);                                                //Deactivate the Continue Dialogue Button when an Option Branch is triggered
-            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());
+            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());                                                                                 //Thist looks weird look out for it latr
             for (int i = 0;i < currentConversation.optionText.Length; i++)
             {
                 if (currentConversation.optionText[i] == null)
@@ -161,9 +161,11 @@ public class AdvancedDialogueManager : MonoBehaviour
         if(typeWriterRoutine != null)
             StopCoroutine(typeWriterRoutine);
 
-        
-        if(stepNum < currentConversation.dialogue.Length)
+
+        if (stepNum < currentConversation.dialogue.Length)
+        {
             typeWriterRoutine = StartCoroutine(TypewriterEffect(dialogueText.text = currentConversation.dialogue[stepNum]));
+        }
         else
             optionsPanel.SetActive(true);
        
@@ -223,15 +225,12 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void SkipDialogue()
     {
-        print(stepNum);
         StopTypeWriter = true;
 
         if(stepNum > 0)
         {
             dialogueText.text = currentConversation.dialogue[stepNum - 1];
         }
-        
-        canContinueText = true;
     }
 
         private IEnumerator TypewriterEffect(string line)
@@ -245,6 +244,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             if (StopTypeWriter)
             {
                 StopTypeWriter = false;
+                canContinueText = true;
                 break;
             }
 
@@ -285,6 +285,8 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueActivated = true;
     }
 
+
+
     public void ObjectLockedDialogue(NPCDialogue npcDialogue)                               //This Method fetches the Dialogue, which is played when the Object is interacted with, but locked 
     {
         CurrentNPC = npcDialogue;
@@ -301,6 +303,8 @@ public class AdvancedDialogueManager : MonoBehaviour
         //currentConversation = npcDialogue.conversation[1];
         dialogueActivated = true;
     }
+
+
 
     public void ForceDialogue(NPCDialogue npcDialogue)
     {
@@ -319,9 +323,10 @@ public class AdvancedDialogueManager : MonoBehaviour
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
         }
         stepNum = 0;
-
+        StopTypeWriter = false;
         dialogueActivated = false;
         currentConversation = null;
+        typeWriterRoutine = null;
         if (optionsPanel != null) { optionsPanel.SetActive(false); }
         if (dialogueCanvas != null) { dialogueCanvas.SetActive(false); }
     }
