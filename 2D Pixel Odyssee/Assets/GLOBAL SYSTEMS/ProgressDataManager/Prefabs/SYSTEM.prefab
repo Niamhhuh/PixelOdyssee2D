@@ -4552,7 +4552,7 @@ GameObject:
   - component: {fileID: 5570743386655033066}
   m_Layer: 5
   m_Name: DialoguePanel
-  m_TagString: Untagged
+  m_TagString: DialoguePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4878,7 +4878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 892.7, y: -140}
+  m_AnchoredPosition: {x: 881, y: -144}
   m_SizeDelta: {x: -1650, y: -170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6815294266810652550
@@ -5508,6 +5508,7 @@ MonoBehaviour:
   AllowInput: 1
   LockInteract: 0
   InTriggerDialogue: 0
+  OverObject: 0
 --- !u!95 &8381888926129671113
 Animator:
   serializedVersion: 5

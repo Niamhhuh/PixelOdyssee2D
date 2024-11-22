@@ -23,9 +23,11 @@ public class UiToMouse : MonoBehaviour
     public bool LockInteract;
     public bool InTriggerDialogue = false;                      //Input && Interact can't be enabled during triggered dialogue.
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
         

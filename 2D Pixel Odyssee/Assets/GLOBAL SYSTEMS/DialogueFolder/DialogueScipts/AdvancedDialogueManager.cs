@@ -82,7 +82,10 @@ public class AdvancedDialogueManager : MonoBehaviour
             //Cancel dialogue if there are no lines of dialogue remaining
             if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
-                if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) { CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); } // Call Trigger when Dialogue has been concluded
+                if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) 
+                { 
+                    CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
+                } 
 
                 EndTriggerDialogue();
 
