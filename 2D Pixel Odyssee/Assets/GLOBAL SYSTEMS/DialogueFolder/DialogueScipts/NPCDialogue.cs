@@ -25,7 +25,7 @@ public class NPCDialogue : MonoBehaviour
         //speechBubbleRenderer.enabled = false;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)      //Change this
     {
         if (collision.gameObject.tag == "Player" && !dialogueInitated)
         {
@@ -45,8 +45,15 @@ public class NPCDialogue : MonoBehaviour
                 Flip();
             }
             */
-            advancedDialogueManager.InitiateDialogue(this);
             dialogueInitated = true;
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(0) && !dialogueInitated)
+        {
+            advancedDialogueManager.InitiateDialogue(this);
         }
     }
 
