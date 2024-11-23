@@ -123,7 +123,7 @@ public class ObjectScript : MonoBehaviour
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
             this.ObjectSprite.enabled = false;
-            Object_Collider.size = new Vector2(Object_Collider.size.x + 1, Object_Collider.size.y + 2);             //ATTENTION: MAYBE COLLIDER SIZE SHOULD BE MODULAR
+            //Object_Collider.size = new Vector2(Object_Collider.size.x + 1, Object_Collider.size.y + 2);             //ATTENTION: MAYBE COLLIDER SIZE SHOULD BE MODULAR
         }
     }
 
@@ -178,7 +178,7 @@ public class ObjectScript : MonoBehaviour
 
             HighlightonHover.SetActive(false);
             this.ObjectSprite.enabled = true;
-            Object_Collider.size = Original_Collider;
+            //Object_Collider.size = Original_Collider;
         }
     }
 
