@@ -10,4 +10,11 @@ public class LockOnHover : MonoBehaviour
     {
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
     }
+
+    private void OnMouseOver()
+    {
+        print("Hi");
+        PointerScript.DisableInput();
+        PointerScript.DisableInteract();
+    }
 }
