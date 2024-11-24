@@ -1226,7 +1226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &620113826688547456
 Transform:
   m_ObjectHideFlags: 0
@@ -4550,6 +4550,7 @@ GameObject:
   - component: {fileID: 7268959676268638881}
   - component: {fileID: 8372376189776293489}
   - component: {fileID: 4325148896100781835}
+  - component: {fileID: 5478484212187162105}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: DialoguePanel
@@ -4620,6 +4621,18 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &4325148896100781835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538572883770133920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40cbe19c7e1f6242b1f0d75f2c4114c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5478484212187162105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5534,7 +5547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5774828563302901146}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6653,6 +6666,8 @@ MonoBehaviour:
   RosieObj: {fileID: 7031242695563879073}
   BeBeObj: {fileID: 1730469805451481761}
   RosieActive: 0
+  RosieComment: {fileID: 0}
+  BebeComment: {fileID: 0}
 --- !u!1 &6492482501577216744
 GameObject:
   m_ObjectHideFlags: 0
@@ -6702,6 +6717,10 @@ MonoBehaviour:
   InventoryRef: {fileID: 0}
   CurrentCharacter: {fileID: 0}
   Reward: {fileID: 0}
+  RosieComment: {fileID: 0}
+  BebeComment: {fileID: 0}
+  CommentSpriteRosie: {fileID: 0}
+  CommentSpriteBebe: {fileID: 0}
 --- !u!114 &4412528231336751651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8102,7 +8121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -82.713745, y: -106.68}
+  m_AnchoredPosition: {x: -82.71387, y: -106.67999}
   m_SizeDelta: {x: -165.4275, y: -213.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6606354523106878569

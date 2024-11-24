@@ -603,6 +603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -627,6 +629,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!114 &37965406
 MonoBehaviour:
@@ -780,6 +784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -804,6 +810,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &84551952
@@ -1081,6 +1089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1105,6 +1115,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &118851850
@@ -1336,6 +1348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1360,6 +1374,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!212 &155341761
 SpriteRenderer:
@@ -1640,6 +1656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1664,6 +1682,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &229766354
@@ -2003,6 +2023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2027,6 +2049,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 1
 --- !u!114 &238666831
@@ -2621,6 +2645,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2645,6 +2671,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!1 &742752270
 GameObject:
@@ -3184,6 +3212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3208,6 +3238,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
 --- !u!1 &909085704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3266,6 +3300,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!212 &909085706
 SpriteRenderer:
@@ -3434,6 +3470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3458,6 +3496,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &969682070
@@ -3972,6 +4012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3996,6 +4038,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!61 &1294134383
 BoxCollider2D:
@@ -4140,7 +4184,6 @@ GameObject:
   - component: {fileID: 1314770201}
   - component: {fileID: 1314770204}
   - component: {fileID: 1314770205}
-  - component: {fileID: 1314770206}
   m_Layer: 0
   m_Name: "T\xFCr"
   m_TagString: Untagged
@@ -4275,6 +4318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Lock_State: 1
+  Unlock_by_Item: 1
+  Item_Key_ID: 1
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4299,6 +4344,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 2
 --- !u!114 &1314770205
@@ -4318,38 +4365,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00fbb54e1b24f244db2bd1699825c97d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
---- !u!114 &1314770206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314770200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caab4003e3af2234cae8caac8a94abd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key_ID: 1
-  DMReference: {fileID: 0}
-  ObjReference: {fileID: 0}
---- !u!1 &1350946507 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4538572883770133920, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-  m_PrefabInstance: {fileID: 1975642233}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1350946512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350946507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40cbe19c7e1f6242b1f0d75f2c4114c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1389260243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,7 +4377,6 @@ GameObject:
   - component: {fileID: 1389260247}
   - component: {fileID: 1389260248}
   - component: {fileID: 1389260249}
-  - component: {fileID: 1389260250}
   - component: {fileID: 1389260251}
   - component: {fileID: 1389260252}
   m_Layer: 0
@@ -4499,6 +4513,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Lock_State: 1
+  Unlock_by_Item: 1
+  Item_Key_ID: 2
   LockSprite: {fileID: 21300000, guid: 2f935e093419701458414e0a85799303, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: ac750c6603f869e4b8937368fe658ec7, type: 3}
   ObjectSprite: {fileID: 0}
@@ -4523,25 +4539,12 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Shove_Position: 0
   Max_Shove: 2
   ShoveController: {fileID: 0}
   ShoveBox: {fileID: 0}
---- !u!114 &1389260250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389260243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caab4003e3af2234cae8caac8a94abd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key_ID: 2
-  DMReference: {fileID: 0}
-  ObjReference: {fileID: 0}
 --- !u!114 &1389260251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4613,6 +4616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4637,6 +4642,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1548022565
@@ -4838,6 +4845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4862,6 +4871,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
 --- !u!61 &1620534621
@@ -5062,6 +5073,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5086,6 +5099,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1657887428
@@ -5400,6 +5415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   Lock_State: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5424,6 +5441,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Collected: 0
 --- !u!114 &1787484209
 MonoBehaviour:
@@ -5624,10 +5643,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4538572883770133920, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1350946512}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
 --- !u!1 &1992057998
 GameObject:
@@ -5751,6 +5767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   Lock_State: 1
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5775,6 +5793,8 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &2077931041
@@ -6017,14 +6037,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 198469140156348209, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365018078915616246, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1889211018484794432, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1168.6057
@@ -6065,33 +6077,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3994949326511393628, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Name
       value: PAUSESCREEN
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444725712717394558, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149306027186486395, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7105925175021780997, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7169044469766519301, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096156881879833252, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

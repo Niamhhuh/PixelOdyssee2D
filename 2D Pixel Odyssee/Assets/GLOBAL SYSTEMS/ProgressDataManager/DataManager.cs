@@ -39,6 +39,11 @@ public class DataManager : MonoBehaviour
 
     public GameObject Reward = null;
 
+    [HideInInspector] public GameObject RosieComment = null;
+    [HideInInspector] public GameObject BebeComment = null;
+
+    public Sprite CommentSpriteRosie;
+    public Sprite CommentSpriteBebe;
 
     private void Awake()
     {
@@ -63,6 +68,12 @@ public class DataManager : MonoBehaviour
         Rooms_Loaded[7] = false;                                                        //SensationInteraction
         Rooms_Loaded[8] = false;                                                        //Indie
         Rooms_Loaded[9] = false;                                                        //BossRoom
+
+        RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
+        BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
+
+        CommentSpriteRosie = RosieComment.GetComponent<Sprite>();
+        CommentSpriteBebe = BebeComment.GetComponent<Sprite>();
     }
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
