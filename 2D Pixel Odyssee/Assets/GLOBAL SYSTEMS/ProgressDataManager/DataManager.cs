@@ -428,7 +428,7 @@ public class DataManager : MonoBehaviour
     {
         if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)   //If the Trigger is found 
         {
-            if (TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)              //If the Trigger hasn't been activated before
+            if (!TriggerObj.GetComponent<Triggerable>().Trigger_Passed)              //If the Trigger hasn't been activated before
             {
                 TriggerObj.SetActive(true);                                                 //Activate the Trigger
                 MoveScript.DisableInput();                                                  //Disable Pointer Inpput 
