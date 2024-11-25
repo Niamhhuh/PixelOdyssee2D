@@ -6,7 +6,6 @@ public class NPCDialogue : MonoBehaviour
 {
     public AdvancedDialogueSO[] conversation;
 
-
     private Transform player;
     //private SpriteRenderer speechBubbleRenderer;
 
@@ -19,6 +18,7 @@ public class NPCDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
         DialogueHolder = gameObject;
         //speechBubbleRenderer = GetComponent<SpriteRenderer>();
@@ -51,7 +51,7 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0) && !dialogueInitated)
+        if(Input.GetMouseButtonDown(0))
         {
             advancedDialogueManager.InitiateDialogue(this);
         }

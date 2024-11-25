@@ -9,9 +9,12 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int ID;				                                                    //ID of the Object, required to find it in the list
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
+    public bool Unlock_by_Item;                                                         //check if this Object is Interaction_Locked/Limited
+    public int Item_Key_ID;                                                         //ID of the Key
+    
     //public(Dialogue)			                                                    //Dialogue of this object
 
-   // private bool InteractFired = false;
+    // private bool InteractFired = false;
 
     private Sprite BaseSprite;
     private Sprite BaseHighlightSprite;
@@ -65,6 +68,9 @@ public class ObjectScript : MonoBehaviour
 
     [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
 
+    public Sprite ObjectCommentRosie;
+    public Sprite ObjectCommentBebe;
+
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -76,11 +82,18 @@ public class ObjectScript : MonoBehaviour
             IsFullTrigger = true;
         }
         ThisObject = this.GetComponent<ObjectScript>();
+
+        if (!Unlock_by_Item)
+        {
+            Item_Key_ID = -10;                                                                              //if the Object is not Unlocked by an Item, set the KeyID to an unused ID
+            UnlockMethod = 0;
+        }
+
         //CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         if (!isBackground && !IsFullTrigger)                                                                //These Variables are only set on Objects that are neither Background nor Triggers
         {
-            ObjectSprite = this.GetComponent<SpriteRenderer>();                                         
+            ObjectSprite = this.GetComponent<SpriteRenderer>();
             originalColor = ObjectSprite.color;
             Object_Collider = this.GetComponent<BoxCollider2D>();
             Original_Collider = Object_Collider.size;
@@ -93,16 +106,17 @@ public class ObjectScript : MonoBehaviour
             BaseHighlightSprite = HighlightObjectSprite.sprite;
         }
 
-        if(gameObject.GetComponent<UnlockedDialogue>() != null) {
+        if (gameObject.GetComponent<UnlockedDialogue>() != null)
+        {
             UnlockDialogueScript = GetComponent<UnlockedDialogue>();
-        } 
+        }
     }
 
     public void ToggleSprites()
     {
-        if(Lock_State == true)
+        if (Lock_State == true)
         {
-            if(LockSprite != null) { ObjectSprite.sprite = LockSprite; }
+            if (LockSprite != null) { ObjectSprite.sprite = LockSprite; }
             if (LockHighlightSprite != null) { HighlightObjectSprite.sprite = LockHighlightSprite; }
         }
 
@@ -137,9 +151,9 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
-        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))             
+        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
-            if(DataManager.ToShove.Count < 1)
+            if (DataManager.ToShove.Count < 1)
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
@@ -148,6 +162,43 @@ public class ObjectScript : MonoBehaviour
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
         }
+
+
+
+        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
+        {
+            Lock_State = false;
+            UpdateDragUnlock();
+            DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
+            // Delete Item from Draggable List
+        }
+
+        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
+        {
+
+            if (DMReference.CurrentCharacter.RosieActive == true)
+            {
+                if(DMReference.RosieComment != null)
+                {
+                    DMReference.RosieComment.SetActive(true);
+                    DMReference.CommentSpriteRosie = ObjectCommentRosie;                                        //Set comment for this specific Object
+                    //Add Typewriter Effect / pass a Text
+                    StartCoroutine(ControlCommentRosie());
+                }  
+            }
+
+            if (DMReference.CurrentCharacter.RosieActive == false)
+            {
+                if(DMReference.BebeComment != null)
+                {
+                    DMReference.BebeComment.SetActive(true);
+                    DMReference.CommentSpriteBebe = ObjectCommentRosie;                                         //Set comment for this specific Object
+                    //Add Typewriter Effect / pass a Text
+                    StartCoroutine(ControlCommentBebe());
+                }
+            }
+        }
+
     }
 
     private void CompareNewInput()                                                                     //This Method ensures, that only 1 Object is highlighted at a time (Exculding +1 Hover Highlight)
@@ -189,8 +240,8 @@ public class ObjectScript : MonoBehaviour
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
 
-            if(UnlockDialogueScript != null) {UnlockDialogueScript.ModifyDialogue();}
-             
+            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }
+
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
             InteractionController.transform.GetChild(1).gameObject.SetActive(true);                     //Enable Interact Button 
@@ -268,16 +319,20 @@ public class ObjectScript : MonoBehaviour
             yield return null;
         }
         ObjectSprite.color = originalColor;
-        
-        if(GetComponent<NPCDialogue>() != null)
+
+        if (GetComponent<NPCDialogue>() != null)
         {
             print(gameObject.name);
-            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());  
-            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();                                 
+            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
-        
+
         PassTriggerActivate(2);                                                                             //Activate a Trigger if connected
     }
+
+
+
+
 
     public IEnumerator FlashGreen()
     {
@@ -292,9 +347,78 @@ public class ObjectScript : MonoBehaviour
     }
 
 
+    public IEnumerator ControlCommentRosie()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        DMReference.RosieComment.SetActive(false);
+    }
+
+
+    public IEnumerator ControlCommentBebe()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        DMReference.BebeComment.SetActive(false);
+    }
+
+
+
     public void PassTriggerActivate(int TriggerType)
     {
         if (gameObject.GetComponent<ActivateTrigger>() != null) { gameObject.GetComponent<ActivateTrigger>().CallTriggerActivation(TriggerType); }
+    }
+
+
+
+
+
+
+    private void UpdateDragUnlock()
+    {
+        switch (ObjReference.ObjectList_ID)
+        {
+            case 1:
+                ObjReference.ToggleSprites();
+                Collectable CollectableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                CollectableObjectRef = (Collectable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                CollectableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 2:
+                ObjReference.ToggleSprites();
+                Shovable ShovableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                ShovableObjectRef = (Shovable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                ShovableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 3:
+                ObjReference.ToggleSprites();
+                Portal PortalObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                PortalObjectRef = (Portal)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                PortalObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 4:
+                ObjReference.ToggleSprites();
+                Switchable SwitchObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                SwitchObjectRef = (Switchable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                SwitchObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 5:
+                ObjReference.ToggleSprites();
+                EventSource EventObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                EventObjectRef = (EventSource)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                EventObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            default:
+                break;
+        }
     }
 
 }

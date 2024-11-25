@@ -39,6 +39,11 @@ public class DataManager : MonoBehaviour
 
     public GameObject Reward = null;
 
+    [HideInInspector] public GameObject RosieComment = null;
+    [HideInInspector] public GameObject BebeComment = null;
+
+    public Sprite CommentSpriteRosie;
+    public Sprite CommentSpriteBebe;
 
     private void Awake()
     {
@@ -63,6 +68,12 @@ public class DataManager : MonoBehaviour
         Rooms_Loaded[7] = false;                                                        //SensationInteraction
         Rooms_Loaded[8] = false;                                                        //Indie
         Rooms_Loaded[9] = false;                                                        //BossRoom
+
+        RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
+        BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
+
+        CommentSpriteRosie = RosieComment.GetComponent<Sprite>();
+        CommentSpriteBebe = BebeComment.GetComponent<Sprite>();
     }
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
@@ -417,7 +428,7 @@ public class DataManager : MonoBehaviour
     {
         if (TriggerObj != null && TriggerObj.GetComponent<Triggerable>().ID == Target_ID)   //If the Trigger is found 
         {
-            if (TriggerObj.GetComponent<Triggerable>().Trigger_Passed != true)              //If the Trigger hasn't been activated before
+            if (!TriggerObj.GetComponent<Triggerable>().Trigger_Passed)              //If the Trigger hasn't been activated before
             {
                 TriggerObj.SetActive(true);                                                 //Activate the Trigger
                 MoveScript.DisableInput();                                                  //Disable Pointer Inpput 

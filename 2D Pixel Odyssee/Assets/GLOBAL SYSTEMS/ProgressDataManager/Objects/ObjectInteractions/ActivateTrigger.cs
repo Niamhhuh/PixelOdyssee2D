@@ -37,7 +37,8 @@ public class ActivateTrigger : MonoBehaviour
                 break;
             case 3:
                 if (DialogueTriggered == true) 
-                { 
+                {
+                    
                     DMReference.TriggerActivate(Trigger_ID);        //Call Trigger activate in DataManager -> on success, this also diables Pointer Interact + Input
 
                 }

@@ -34,14 +34,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     //TYPEWRITER EFFECT
     [SerializeField]
     private float typingSpeed = 0.02f;
-    private Coroutine typeWriterRoutine;
+    public Coroutine typeWriterRoutine;
     public bool canContinueText = true;
-
-    SoundManagerHub SoundManagerHub;
 
     NPCDialogue CurrentNPC = null;
 
-    private bool StopTypeWriter; 
+    private bool StopTypeWriter;
+    private bool WriterIsRunning;
 
     // Start is called before the first frame update
     void Start()
@@ -83,7 +82,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) 
-                { 
+                {
                     CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
                 } 
 
@@ -165,7 +164,9 @@ public class AdvancedDialogueManager : MonoBehaviour
 
         //Keep routine from running multiple times at the same time
         if(typeWriterRoutine != null)
+        {
             StopCoroutine(typeWriterRoutine);
+        }
 
 
         if (stepNum < currentConversation.dialogue.Length)
@@ -236,8 +237,9 @@ public class AdvancedDialogueManager : MonoBehaviour
         }
     }
 
-        private IEnumerator TypewriterEffect(string line)
+        public IEnumerator TypewriterEffect(string line)
     {
+        WriterIsRunning = true;
         dialogueText.text = "";
         canContinueText = false;
         bool addingRichTextTag = false;
@@ -246,8 +248,9 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             if (StopTypeWriter)
             {
-                StopTypeWriter = false;
                 canContinueText = true;
+                WriterIsRunning = false;
+                StopTypeWriter = false;
                 break;
             }
 
@@ -268,20 +271,28 @@ public class AdvancedDialogueManager : MonoBehaviour
             }
             
         }
+        WriterIsRunning = false;
         canContinueText = true;
     }
 
     public void InitiateDialogue(NPCDialogue npcDialogue)
     {
         CurrentNPC = npcDialogue;
+        if (WriterIsRunning)
+        {
+            StopTypeWriter = true;
+            dialogueText.text = "";
+        }
+
         //the array we are currently stepping through
         if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
         {
             currentConversation = npcDialogue.conversation[0];
         }
+
         else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
-            if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
+            if(npcDialogue.conversation.Length > 0 && npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];
         }
         //currentConversation = npcDialogue.conversation[1];
@@ -294,13 +305,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         CurrentNPC = npcDialogue;
         //the array we are currently stepping through
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[2] != null)
         {
             currentConversation = npcDialogue.conversation[2];
         }
         else                                                                  //add a selector to choose conversation[2] when Rosie talks, conversation[3] when BeBe talks
         {
-            if (npcDialogue.conversation.Length > 3 && npcDialogue.conversation[3] != null)
+            if (npcDialogue.conversation.Length > 0 && npcDialogue.conversation[3] != null)
                 currentConversation = npcDialogue.conversation[3];
         }
         //currentConversation = npcDialogue.conversation[1];
@@ -325,6 +336,11 @@ public class AdvancedDialogueManager : MonoBehaviour
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
         }
+        if (WriterIsRunning)
+        {
+            StopTypeWriter = true;
+        }
+        dialogueText.text = "";
         stepNum = 0;
         StopTypeWriter = false;
         dialogueActivated = false;
