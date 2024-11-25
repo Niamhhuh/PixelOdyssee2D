@@ -51,6 +51,8 @@ public class Asteroid : MonoBehaviour
         // Check if collided with a bullet
         if (collision.gameObject.tag == "Bullet")
         {
+            Destroy(collision.gameObject); // Ensure the bullet is destroyed immediately
+
             if ((this.size * 0.5f) > this.minSize)
             {
                 // Create two smaller asteroids
@@ -63,6 +65,7 @@ public class Asteroid : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 
     private void CreateSplit()
     {
