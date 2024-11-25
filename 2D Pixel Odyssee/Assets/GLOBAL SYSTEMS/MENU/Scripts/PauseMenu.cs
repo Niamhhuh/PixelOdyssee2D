@@ -18,8 +18,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject frogger;          //.
     public GameObject pong;             //.
 
-    public GameObject sceneloader;
-    public SpriteRenderer spriteRenderer;
+    //public GameObject sceneloader;
+    //public SpriteRenderer spriteRenderer;
     public GameObject pauseScreen = null;
 
     public UiToMouse PointerScript = null;
@@ -47,6 +47,17 @@ public class PauseMenu : MonoBehaviour
                 PointerScript.AllowInput = !PointerScript.AllowInput;
                 PointerScript.LockInteract = !PointerScript.LockInteract;
             }
+
+            if(pauseScreen.activeSelf)
+            {
+                Time.timeScale = 1f;
+            }
+
+            if (!pauseScreen.activeSelf)
+            {
+                Time.timeScale = 0f;
+            }
+
             pauseScreen.SetActive(!pauseScreen.activeSelf);
 
             Debug.Log(current_scene.name);
@@ -134,6 +145,7 @@ public class PauseMenu : MonoBehaviour
             PointerScript.StartCoroutine(PointerScript.CallEnableInput());
             PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         }
+        Time.timeScale = 1f;
         pauseScreen.SetActive(false);
     }
 
@@ -142,14 +154,16 @@ public class PauseMenu : MonoBehaviour
         {
             pauseScreen.SetActive(false);
         }
-        
-    	SceneManager.LoadScene("Z_Start Screen");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Z_Start Screen");
     }
 
     public void Retry() {   	        //ARCADE --> laedt spiel neu
+        Time.timeScale = 1f;
         SceneManager.LoadScene(current_scene.name);
     }
 
+    /*
 //____________________________________________________________________________
 //______________________Function interact with scene loader___________________
 //-----------------------Doors below------------------------------------------
@@ -188,4 +202,5 @@ public class PauseMenu : MonoBehaviour
             this.spriteRenderer.enabled = false;
         } 
     }
+    */
 }

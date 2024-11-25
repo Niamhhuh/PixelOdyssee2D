@@ -248,7 +248,6 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             if (StopTypeWriter)
             {
-                print("Stopped");
                 canContinueText = true;
                 WriterIsRunning = false;
                 StopTypeWriter = false;
