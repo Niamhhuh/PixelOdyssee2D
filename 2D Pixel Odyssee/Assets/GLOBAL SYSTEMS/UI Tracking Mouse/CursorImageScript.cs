@@ -8,6 +8,11 @@ public class CursorImageScript : MonoBehaviour
     public Texture2D CursorHighlightTexture;
     public Vector2 CursorPoint;
 
+    private Sprite SwapButtonA;
+    private Sprite SwapButtonB;
+    private Sprite HighlightSwapButtonA;
+    private Sprite HighlightSwapButtonB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,4 +30,9 @@ public class CursorImageScript : MonoBehaviour
             Cursor.SetCursor(CursorTexture, CursorPoint, CursorMode.Auto);
         }
     }
+
+
+    
+
+
 }

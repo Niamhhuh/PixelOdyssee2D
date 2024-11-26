@@ -10,6 +10,9 @@ public class SwapImageButton : MonoBehaviour
     public Sprite RosieImage;       //Rosie Seleted Image
     public Sprite BebeImage;        //Bebe Selected Image
 
+    public Sprite HighlightSwapButtonRosie;
+    public Sprite HighlightSwapButtonBebe;
+
     DataManager DMReference;
 
     void Start()
@@ -29,7 +32,7 @@ public class SwapImageButton : MonoBehaviour
 
     }
 
-    // Method to swap the image on button click
+    // Method to swap the image on button click or Hover Exit(Clear Highlight)
     public void SwapImage()
     {
         if (DMReference.CurrentCharacter.RosieActive == true && BebeImage != null)
@@ -40,6 +43,22 @@ public class SwapImageButton : MonoBehaviour
         if (DMReference.CurrentCharacter.RosieActive == false && BebeImage != null)
         {
             CurrentImage.sprite = BebeImage;
+        }
+
+        //DMReference.FlickerSwitchChaButton();
+    }
+
+    //Call in Inspector on Pointer Enter
+    public void HighlightImage()
+    {
+        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == true && RosieImage != null)
+        {
+            CurrentImage.sprite = HighlightSwapButtonRosie;
+        }
+
+        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == false && RosieImage != null)
+        {
+            CurrentImage.sprite = HighlightSwapButtonBebe;
         }
     }
 }

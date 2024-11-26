@@ -28,6 +28,9 @@ public class DataManager : MonoBehaviour
     public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
+
+    public GameObject SwitchChaButton;
+
     public Inventory InventoryRef = null;
     public CharacterScript CurrentCharacter = null;
 
@@ -56,6 +59,7 @@ public class DataManager : MonoBehaviour
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
             MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
+            SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");
         }
 
         Rooms_Loaded[0] = false;                                                        //Archive 
@@ -436,6 +440,18 @@ public class DataManager : MonoBehaviour
             }
         }
     }
+
+
+
+    //
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void FlickerSwitchChaButton()
+    {
+       //add a Method to Flicker the Button use Coroutine.
+    }
+
 
 
     //Classes for Object DataTypes
