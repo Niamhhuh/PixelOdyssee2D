@@ -38,6 +38,7 @@ public class ObjectScript : MonoBehaviour
     private BoxCollider2D Object_Collider = null;                             //Collider of the Object, which is expanded when the Object is marked for interaction
     private Vector2 Original_Collider;                                        //This Vector stores the initial size of the collider
     private Color originalColor;
+    private Color originalHighlightColor;
 
     private ObjectScript ThisObject = null;                                   //ObjectScript, which is added to the Currently_Highlighted List, check if object is selected
     [HideInInspector] public GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
@@ -99,6 +100,7 @@ public class ObjectScript : MonoBehaviour
             Original_Collider = Object_Collider.size;
             HighlightonHover = this.transform.GetChild(0).gameObject;                                       //the first child must ALWAYS be the Highlight Object
             HighlightObjectSprite = HighlightonHover.GetComponent<SpriteRenderer>();
+            originalHighlightColor = HighlightObjectSprite.color;
             HighlightonHover.SetActive(false);
             InteractionController = GameObject.FindGameObjectWithTag("InteractionController");
 
@@ -165,6 +167,8 @@ public class ObjectScript : MonoBehaviour
 
 
 
+        // Unlock by Item Drag Success
+        //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
         {
             Lock_State = false;
@@ -173,9 +177,12 @@ public class ObjectScript : MonoBehaviour
             // Delete Item from Draggable List
         }
 
+
+        // Unlock by Item Drag Fail
+        //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
         {
-
+            StartCoroutine(UnlockFlashRed());
             if (DMReference.CurrentCharacter.RosieActive == true)
             {
                 if(DMReference.RosieComment != null)
@@ -315,10 +322,12 @@ public class ObjectScript : MonoBehaviour
         while (elapsedTime < 1)
         {
             ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
+            HighlightObjectSprite.color = Color.Lerp(Color.red, originalHighlightColor, elapsedTime / 1);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         ObjectSprite.color = originalColor;
+        HighlightObjectSprite.color = originalHighlightColor;
 
         if (GetComponent<NPCDialogue>() != null)
         {
@@ -330,7 +339,20 @@ public class ObjectScript : MonoBehaviour
     }
 
 
-
+    //Flash Red for Drag Unlock Fail
+    public IEnumerator UnlockFlashRed()                                                                     
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 1)
+        {
+            ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
+            HighlightObjectSprite.color = Color.Lerp(Color.red, originalHighlightColor, elapsedTime / 1);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectSprite.color = originalColor;
+        HighlightObjectSprite.color = originalHighlightColor;
+    }
 
 
     public IEnumerator FlashGreen()
