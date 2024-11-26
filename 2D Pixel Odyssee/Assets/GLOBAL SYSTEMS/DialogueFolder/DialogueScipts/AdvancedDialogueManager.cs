@@ -292,7 +292,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
         else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
-            if(npcDialogue.conversation.Length > 0 && npcDialogue.conversation[1] != null)
+            if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];
         }
         //currentConversation = npcDialogue.conversation[1];
@@ -305,13 +305,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         CurrentNPC = npcDialogue;
         //the array we are currently stepping through
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[2] != null)
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
         {
             currentConversation = npcDialogue.conversation[2];
         }
         else                                                                  //add a selector to choose conversation[2] when Rosie talks, conversation[3] when BeBe talks
         {
-            if (npcDialogue.conversation.Length > 0 && npcDialogue.conversation[3] != null)
+            if (npcDialogue.conversation.Length > 3 && npcDialogue.conversation[3] != null)
                 currentConversation = npcDialogue.conversation[3];
         }
         //currentConversation = npcDialogue.conversation[1];

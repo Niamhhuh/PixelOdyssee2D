@@ -322,7 +322,6 @@ public class ObjectScript : MonoBehaviour
 
         if (GetComponent<NPCDialogue>() != null)
         {
-            print(gameObject.name);
             GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
             GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
