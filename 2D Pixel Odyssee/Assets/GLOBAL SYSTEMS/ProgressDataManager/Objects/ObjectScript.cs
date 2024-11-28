@@ -129,6 +129,7 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+
     //Interaction Manager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -138,6 +139,9 @@ public class ObjectScript : MonoBehaviour
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
+
+            DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+
             this.ObjectSprite.enabled = false;
             //Object_Collider.size = new Vector2(Object_Collider.size.x + 1, Object_Collider.size.y + 2);             //ATTENTION: MAYBE COLLIDER SIZE SHOULD BE MODULAR
         }
@@ -145,6 +149,8 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseExit()                                                                          //When the Cursor Exits an Object, clear the Highlight and Mark
     {
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                                    //Deactivate ObjectNamePanel
+
         if (!RequestInteract)
         {
             ClearHighlight();
@@ -153,6 +159,8 @@ public class ObjectScript : MonoBehaviour
 
     private void OnMouseOver()                                                                          //When the Object is clicked, it remains marked and is added to the Highlighted List in DataManager
     {
+        DMReference.DisplayObjectNameScript.SetDisplayPosition();                                       //SetNamePanelPosition
+
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
             if (DataManager.ToShove.Count < 1)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {                                 
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,6 +98,21 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     //Functions
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //DMReference.DisplayObjectNameScript.SetDisplayPosition();
+    //DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);
+    //DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);
+        DMReference.DisplayObjectNameScript.SetDisplayPosition();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {

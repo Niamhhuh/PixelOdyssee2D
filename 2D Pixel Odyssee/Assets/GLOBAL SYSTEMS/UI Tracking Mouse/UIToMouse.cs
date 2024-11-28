@@ -22,6 +22,7 @@ public class UiToMouse : MonoBehaviour
     public bool AllowInput;
     public bool LockInteract;
     public bool InTriggerDialogue = false;                      //Input && Interact can't be enabled during triggered dialogue.
+    public Vector3 PermanentmousePosition;
 
 
     void Start()
@@ -70,6 +71,7 @@ public class UiToMouse : MonoBehaviour
 
     void Update()
     {
+        PermanentmousePosition = Input.mousePosition;
 
         if (Input.GetMouseButtonDown(0) && AllowInput)
         {
