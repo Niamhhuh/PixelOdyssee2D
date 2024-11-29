@@ -21,7 +21,7 @@ public class DataManager : MonoBehaviour
 
     public static List<Shovable> ToShove = new List<Shovable>();                            //Create a List to store the Object that is being shoved            //should probably be an array
 
-    public static SlotScript[] Slot_Array = new SlotScript[15];
+    public static SlotScript[] Slot_Array = new SlotScript[11];
 
     public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all relevant Variables of Switches                     //List_ID 5
 
@@ -50,11 +50,16 @@ public class DataManager : MonoBehaviour
     public Sprite CommentSpriteRosie;
     public Sprite CommentSpriteBebe;
 
+
+    //MiniMap
+    public static int currentRoom = 0;                                          //set this in Portal
+
+
     private void Awake()
     {
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
         Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
-        //print("a" + Item_List[0].ID + "b" + Item_List[1].ID + "c" + Item_List[2].ID + "d" + Item_List[3].ID + "e" + Item_List[4].ID + "f" + Item_List[5].ID + "g" + Item_List[6].ID + "h" + Item_List[7].ID + "i" + Item_List[8].ID + "j" + Item_List[9].ID + "k" + Item_List[10].ID + "l" + Item_List[11].ID + "m" + Item_List[12].ID);
+        
 
         if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
         {
@@ -81,10 +86,15 @@ public class DataManager : MonoBehaviour
 
         CommentSpriteRosie = RosieComment.GetComponent<Sprite>();
         CommentSpriteBebe = BebeComment.GetComponent<Sprite>();
+
+
+
+
     }
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
+
         if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
         {
 

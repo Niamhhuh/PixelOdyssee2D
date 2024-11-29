@@ -74,7 +74,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
     public void SearchSlot()                                                                                    //when an Item doesn't have a Slot yet or was last placed into Slot 12/13, assign a Slot
     {
-        if (Slot == 0 || Slot == 15)
+        if (Slot == 0 || Slot == 11)
         {
             SearchSlotArray();                                                                                  //when Slot = 0, assign a Slot
         } 
@@ -134,12 +134,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         {
             CurrentSlot.ResetOccupied();                                                                            //Set the Last occupied Slot as Unoccupied
         }
-        if (CurrentSlot.SlotID == 13)                                                                               //Reset ID Stored for CraftSlot1
+        if (CurrentSlot.SlotID == 9)                                                                               //Reset ID Stored for CraftSlot1
         {
             DMReference.InventoryRef.InputKey1 = 0;
         }
 
-        if (CurrentSlot.SlotID == 14)                                                                               //Reset ID Stored for CraftSlot2
+        if (CurrentSlot.SlotID == 10)                                                                               //Reset ID Stored for CraftSlot2
         {
             DMReference.InventoryRef.InputKey2 = 0;
         }
@@ -157,19 +157,19 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
         //CRITICAL SECTION
 
-        if (CurrentSlot != null && CurrentSlot.SlotID == 13)                                                                                //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot1
+        if (CurrentSlot != null && CurrentSlot.SlotID == 9)                                                                                //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot1
         {
             DMReference.InventoryRef.InputKey1 = ID;
             //print(DMReference.InventoryRef.InputKey1);
         }
 
-        if (CurrentSlot != null && CurrentSlot.SlotID == 14)                                                                               //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot2
+        if (CurrentSlot != null && CurrentSlot.SlotID == 10)                                                                               //Pass ID to Inventory, Inventory remembers ID of Item on CraftSlot2
         {
             DMReference.InventoryRef.InputKey2 = ID;
             //print(DMReference.InventoryRef.InputKey2);
         }
 
-        if (DataManager.Slot_Array[12].SlotOccupied == true && DataManager.Slot_Array[13].SlotOccupied == true)     //Initiate Crafting
+        if (DataManager.Slot_Array[8].SlotOccupied == true && DataManager.Slot_Array[9].SlotOccupied == true)     //Initiate Crafting
         {
             DMReference.InventoryRef.InitiateCrafting();
         }

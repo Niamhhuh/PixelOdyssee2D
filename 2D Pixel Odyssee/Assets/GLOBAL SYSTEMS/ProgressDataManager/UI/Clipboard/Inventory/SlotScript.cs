@@ -15,7 +15,7 @@ public class SlotScript : MonoBehaviour, IDropHandler
     {
         //DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         SlotOccupied = false;                                                                               //On Wake, every Slot is unoccupied
-        if (SlotID == 15)                                                                                   //Except for the Craft Result Slot, which is always Locked
+        if (SlotID == 11)                                                                                   //Except for the Craft Result Slot, which is always Locked
         {
             SlotOccupied = true;
         }
@@ -34,7 +34,7 @@ public class SlotScript : MonoBehaviour, IDropHandler
         {
             eventData.pointerDrag.GetComponent<Draggable>().Slot = SlotID;                                  //Pass current SlotNumber to DraggableItem
 
-            if (SlotID == 13 || SlotID == 14 || SlotID == 15)                                                                //If the Item is Placed onto Slot 13/14 (Crafting Slots) it is assigned Slot 0 to be mixed back into the Inventory.
+            if (SlotID == 9 || SlotID == 10 || SlotID == 11)                                               //If the Item is Placed onto Slot 9/10 (Crafting Slots) it is assigned Slot 0 to be mixed back into the Inventory.
             {
                 eventData.pointerDrag.GetComponent<Draggable>().Slot = 0;
             }
@@ -49,7 +49,7 @@ public class SlotScript : MonoBehaviour, IDropHandler
 
     public void ResetOccupied()                                                                             //Set the Slot to unoccuipied
     {
-        if(SlotID != 15)                                                                                    //If the Slot isn't Slot 15(CraftResult) it is set unoccupied when an Item is removed from it.
+        if(SlotID != 11)                                                                                    //If the Slot isn't Slot 11(CraftResult) it is set unoccupied when an Item is removed from it.
         {
             SlotOccupied = false;
         }

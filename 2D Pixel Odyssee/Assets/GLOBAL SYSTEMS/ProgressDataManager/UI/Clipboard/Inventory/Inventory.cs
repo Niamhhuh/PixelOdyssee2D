@@ -91,8 +91,8 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        DataManager.Slot_Array[13 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
-        DataManager.Slot_Array[14 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
+        DataManager.Slot_Array[9 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
+        DataManager.Slot_Array[10 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
 
         ItemCollection.SetActive(true);
         InventoryObj.SetActive(true);
@@ -165,9 +165,9 @@ public class Inventory : MonoBehaviour
                 DataManager.Item_List[Recipe.KeyID_B - 1].RemoveOnUse();                                    //Remove Part_Item 2 from Draggable and Slot etc.
                 DataManager.Item_List[Recipe.KeyID_A - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 1 
                 DataManager.Item_List[Recipe.KeyID_B - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 2
-                DataManager.Slot_Array[12].ResetOccupied();                                                 //Open Craft Slot 1 (13)
-                DataManager.Slot_Array[13].ResetOccupied();                                                 //Open Craft Slot 2 (14)
-                InputKey1 = 0;                                                                              //Reset Craft Slot 1 Item_ID
+                DataManager.Slot_Array[8].ResetOccupied();                                                  //Open Craft Slot 1 (9)
+                DataManager.Slot_Array[9].ResetOccupied();                                                  //Open Craft Slot 2 (10)
+                InputKey1 = 0;                                                                               //Reset Craft Slot 1 Item_ID
                 InputKey2 = 0;                                                                              //Reset Craft Slot 2 Item_ID
                 DataManager.Inventory_Fillstate++;                                                          
                 Craft_Success = true;                                                                       //Mark Crafting as Successful
@@ -178,8 +178,8 @@ public class Inventory : MonoBehaviour
         {
             DataManager.Item_List[InputKey1 - 1].SearchSlot();                                              //Find new Slot for Part_Item 1 
             DataManager.Item_List[InputKey2 - 1].SearchSlot();                                              //Find new Slot for Part_Item 2
-            DataManager.Slot_Array[12].ResetOccupied();                                                     //Open Craft Slot 1 (13)
-            DataManager.Slot_Array[13].ResetOccupied();                                                     //Open Craft Slot 2 (14)
+            DataManager.Slot_Array[8].ResetOccupied();                                                     //Open Craft Slot 1 (9)
+            DataManager.Slot_Array[9].ResetOccupied();                                                     //Open Craft Slot 2 (10)
         }
     }
 }

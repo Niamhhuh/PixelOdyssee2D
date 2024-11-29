@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DisplayName : MonoBehaviour
 {
-    //Sprite NameBox;                         //Background for the displayed Object_Name
+    //Image NameBox;                         //Background for the displayed Object_Name
     TMP_Text Displayed_Name;                //Container for the Object_Name
     RectTransform Display_Position;
     UiToMouse MouseScript;
@@ -15,6 +16,8 @@ public class DisplayName : MonoBehaviour
         Displayed_Name = transform.GetChild(0).GetComponent<TMP_Text>();
         Display_Position = GetComponent<RectTransform>();
         MouseScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+
+        gameObject.SetActive(false);
     }
 
     public void SetDisplayPosition()                                    //Called in Object while Mouse hovers over Object - Set Display Position
@@ -33,4 +36,6 @@ public class DisplayName : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
 }
