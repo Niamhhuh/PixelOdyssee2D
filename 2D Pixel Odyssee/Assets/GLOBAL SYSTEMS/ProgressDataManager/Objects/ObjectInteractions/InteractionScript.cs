@@ -17,6 +17,7 @@ public class InteractionScript : MonoBehaviour
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
         {
+            DataManager.ToInteract[0].TalkedtoObject();
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.canContinueText = true;
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }

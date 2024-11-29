@@ -118,73 +118,93 @@ public class DataManager : MonoBehaviour
     //Add Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public void AddCollectableObj(int newID, bool newLock_State, bool newCollected)
+    public void AddCollectableObj(int newID, bool newLock_State, bool newAlreadyTalked, bool newCollected)
     {
-        Collectable_List.Add(new CollectableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Collected = newCollected });
+        Collectable_List.Add(new CollectableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Collected = newCollected });
         //Debug.Log(Collectable_List.Count);
     }
 
 
-    public void AddShovableObj(int newID, bool newLock_State, int newShove_Position)
+    public void AddShovableObj(int newID, bool newLock_State, bool newAlreadyTalked, int newShove_Position)
     {
-        Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Shove_Position = newShove_Position });
+        Shovable_List.Add(new ShovableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Shove_Position = newShove_Position });
         //Debug.Log(Shovable_List.Count);
     }
 
 
-    public void AddPortalObj(int newID, bool newLock_State, bool newTraversed)
+    public void AddPortalObj(int newID, bool newLock_State, bool newAlreadyTalked, bool newTraversed)
     {
-        Portal_List.Add(new PortalObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Traversed = newTraversed });
+        Portal_List.Add(new PortalObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Traversed = newTraversed });
         //Debug.Log(Portal_List.Count);
     }
 
 
-    public void AddSwitchStateObj(int newID, bool newLock_State, bool newSwitchState)
+    public void AddSwitchStateObj(int newID, bool newLock_State, bool newAlreadyTalked, bool newSwitchState)
     {
-        SwitchState_List.Add(new SwitchStateObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_SwitchState = newSwitchState });
+        SwitchState_List.Add(new SwitchStateObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_SwitchState = newSwitchState });
     }
+
+    public void AddEventObj(int newID, bool newLock_State, bool newAlreadyTalked, bool newEvent_Passed)
+    {
+        EventSource_List.Add(new EventObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Event_Passed = newEvent_Passed });
+    }
+
+    public void AddTriggerableObj(int newID, bool newLock_State, bool newAlreadyTalked, bool newTrigger_Passed, GameObject newTrigger)
+    {
+        Triggerable_List.Add(new TriggerableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Trigger_Passed = newTrigger_Passed, Stored_Trigger = newTrigger });
+    }
+
 
     public void AddDraggableObj(int newID, int newSlot)
     {
         Draggable_List.Add(new DraggableObj { Stored_ID = newID, Stored_Slot = newSlot });
     }
 
-    public void AddEventObj(int newID, bool newLock_State, bool newEvent_Passed)
-    {
-        EventSource_List.Add(new EventObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Event_Passed = newEvent_Passed });
-    }
-
-    public void AddTriggerableObj(int newID, bool newLock_State, bool newTrigger_Passed, GameObject newTrigger)
-    {
-        Triggerable_List.Add(new TriggerableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_Trigger_Passed = newTrigger_Passed, Stored_Trigger = newTrigger });
-    }
-
     //Edit Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void EditCollectableObj(int ObjectIndex, bool newLock_State, bool newCollected)
+    //Stored_AlreadyInteracted
+    public void EditCollectableObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, bool newCollected)
     {
         Collectable_List[ObjectIndex].Stored_Lock_State = newLock_State;
         Collectable_List[ObjectIndex].Stored_Collected = newCollected;
+        Collectable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
 
-    public void EditShovableObj(int ObjectIndex, bool newLock_State, int newShove_Position)
+    public void EditShovableObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, int newShove_Position)
     {
         Shovable_List[ObjectIndex].Stored_Lock_State = newLock_State;
         Shovable_List[ObjectIndex].Stored_Shove_Position = newShove_Position;
+        Shovable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
 
-    public void EditPortalObj(int ObjectIndex, bool newLock_State, bool newTraversed)
+    public void EditPortalObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, bool newTraversed)
     {
         Portal_List[ObjectIndex].Stored_Lock_State = newLock_State;
         Portal_List[ObjectIndex].Stored_Traversed = newTraversed;
+        Portal_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
 
-    public void EditSwitchStateObj(int ObjectIndex, bool newLock_State, bool newSwitchState)
+    public void EditSwitchStateObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, bool newSwitchState)
     {
         SwitchState_List[ObjectIndex].Stored_Lock_State = newLock_State;
         SwitchState_List[ObjectIndex].Stored_SwitchState = newSwitchState;
+        SwitchState_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
+    }
+
+    public void EditEventObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, bool newEvent_Passed)
+    {
+        EventSource_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        EventSource_List[ObjectIndex].Stored_Event_Passed = newEvent_Passed;
+        EventSource_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
+    }
+
+    public void EditTriggerableObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked, bool newTrigger_Passed)
+    {
+        Triggerable_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Triggerable_List[ObjectIndex].Stored_Trigger_Passed = newTrigger_Passed;
+        Triggerable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
 
     public void EditDraggableObj(int ObjectIndex, int newSlot)
@@ -193,18 +213,6 @@ public class DataManager : MonoBehaviour
         {
             Draggable_List[ObjectIndex].Stored_Slot = newSlot;
         }
-    }
-
-    public void EditEventObj(int ObjectIndex, bool newLock_State, bool newEvent_Passed)
-    {
-        EventSource_List[ObjectIndex].Stored_Lock_State = newLock_State;
-        EventSource_List[ObjectIndex].Stored_Event_Passed = newEvent_Passed;
-    }
-
-    public void EditTriggerableObj(int ObjectIndex, bool newLock_State, bool newTrigger_Passed)
-    {
-        Triggerable_List[ObjectIndex].Stored_Lock_State = newLock_State;
-        Triggerable_List[ObjectIndex].Stored_Trigger_Passed = newTrigger_Passed;
     }
 
     //Unlock Methods
@@ -490,6 +498,7 @@ public class DataManager : MonoBehaviour
     {
         public int Stored_ID;
         public bool Stored_Lock_State;
+        public bool Stored_AlreadyTalked;
         // public int Dialogue_Progress;
     }
 

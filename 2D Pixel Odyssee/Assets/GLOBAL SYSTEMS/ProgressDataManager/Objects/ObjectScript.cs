@@ -8,8 +8,9 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int ID;				                                                    //ID of the Object, required to find it in the list
+    public bool AlreadyTalked;
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
-    public bool Unlock_by_Item;                                                         //check if this Object is Interaction_Locked/Limited
+    public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
     
     //public(Dialogue)			                                                    //Dialogue of this object
@@ -266,7 +267,7 @@ public class ObjectScript : MonoBehaviour
                 InteractionController.transform.GetChild(0).gameObject.SetActive(false);                //Disable Dialogue Button 
             }
 
-            if (CannotInteract == true)
+            if (CannotInteract == true || !AlreadyTalked)
             {
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                //Disable Interact Button 
             }
@@ -322,6 +323,64 @@ public class ObjectScript : MonoBehaviour
             SeqUReference.CallSequenceUnlock();                                                             //Call Sequence Unlock Method in Sequence Unlock Script
         }
     }
+
+
+    //Talked
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void TalkedtoObject()
+    {
+        if (!AlreadyTalked)
+        {
+            AlreadyTalked = true;
+
+            switch (ObjReference.ObjectList_ID)
+            {
+                case 1:
+                    Collectable CollectableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    CollectableObjectRef = (Collectable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    CollectableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                case 2:
+                    Shovable ShovableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    ShovableObjectRef = (Shovable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    ShovableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                case 3:
+                    Portal PortalObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    PortalObjectRef = (Portal)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    PortalObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                case 4:
+                    Switchable SwitchObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    SwitchObjectRef = (Switchable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    SwitchObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                case 5:
+                    EventSource EventObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    EventObjectRef = (EventSource)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    EventObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                case 6:
+                    Triggerable TriggerObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                    TriggerObjectRef = (Triggerable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                    TriggerObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+
+
 
 
     public IEnumerator FlashRed()

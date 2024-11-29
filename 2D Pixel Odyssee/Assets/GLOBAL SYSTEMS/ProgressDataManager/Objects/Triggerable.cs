@@ -37,7 +37,7 @@ public class Triggerable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddTriggerableObj(ID, Lock_State, Trigger_Passed, this.gameObject);                 //Call the AddTriggerableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddTriggerableObj(ID, Lock_State, AlreadyTalked, Trigger_Passed, this.gameObject);                 //Call the AddTriggerableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Triggerable_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
             DataManager.TriggeredObjects_List.Add(gameObject);
         }
@@ -62,7 +62,7 @@ public class Triggerable : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Event_Passed to the DataManager
     {
-        DMReference.EditTriggerableObj(ObjectIndex, Lock_State, Trigger_Passed);
+        DMReference.EditTriggerableObj(ObjectIndex, Lock_State, AlreadyTalked, Trigger_Passed);
     }
 
 

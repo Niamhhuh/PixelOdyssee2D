@@ -38,7 +38,7 @@ public class Portal : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddPortalObj(ID, Lock_State, Traversed);                                            //Call the AddPortalObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddPortalObj(ID, Lock_State, AlreadyTalked, Traversed);                                            //Call the AddPortalObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Portal_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
@@ -57,7 +57,7 @@ public class Portal : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
     {
-        DMReference.EditPortalObj(ObjectIndex, Lock_State, Traversed);
+        DMReference.EditPortalObj(ObjectIndex, Lock_State, AlreadyTalked, Traversed);
     }
 
 

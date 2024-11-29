@@ -40,7 +40,7 @@ public class Collectable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddCollectableObj(ID, Lock_State, Collected);                                       //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddCollectableObj(ID, Lock_State, AlreadyTalked, Collected);                                       //Call the AddCollectableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Collectable_List.Count - 1;                                           //When an Object is added, it is added to the end of the list. 
         }
 
@@ -58,7 +58,7 @@ public class Collectable : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Collected to the DataManager
     {
-        DMReference.EditCollectableObj(ObjectIndex, Lock_State, Collected);
+        DMReference.EditCollectableObj(ObjectIndex, Lock_State, AlreadyTalked, Collected);
     }
 
 

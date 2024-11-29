@@ -36,7 +36,7 @@ public class EventSource : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddEventObj(ID, Lock_State, Event_Passed);                                       //Call the AddEventObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddEventObj(ID, Lock_State, AlreadyTalked, Event_Passed);                                       //Call the AddEventObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.EventSource_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
         }
 
@@ -55,7 +55,7 @@ public class EventSource : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Event_Passed to the DataManager
     {
-        DMReference.EditEventObj(ObjectIndex, Lock_State, Event_Passed);
+        DMReference.EditEventObj(ObjectIndex, Lock_State, AlreadyTalked, Event_Passed);
     }
 
 

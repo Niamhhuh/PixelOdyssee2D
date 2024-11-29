@@ -36,7 +36,7 @@ public class Switchable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddSwitchStateObj(ID, Lock_State, SwitchState);                                     //Call the AddSwitchStateObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddSwitchStateObj(ID, Lock_State, AlreadyTalked, SwitchState);                                     //Call the AddSwitchStateObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.SwitchState_List.Count - 1;                                           //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
         FlipSwitch();
@@ -55,7 +55,7 @@ public class Switchable : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Traversed to the DataManager
     {
-        DMReference.EditSwitchStateObj(ObjectIndex, Lock_State, SwitchState);
+        DMReference.EditSwitchStateObj(ObjectIndex, Lock_State, AlreadyTalked, SwitchState);
     }
 
 

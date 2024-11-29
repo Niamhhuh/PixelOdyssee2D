@@ -42,7 +42,7 @@ public class Shovable : ObjectScript
         }
         if (NewObject == true)                                                                              //If required, pass ObjectInformation to DataManager.
         {
-            DMReference.AddShovableObj(ID, Lock_State, Shove_Position);                                           //Call the AddShovableObj Method in DataManager, to add a new DataContainer.
+            DMReference.AddShovableObj(ID, Lock_State, AlreadyTalked, Shove_Position);                                           //Call the AddShovableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Shovable_List.Count - 1;                                                  //When an Object is added, it is added to the end of the list, making its Index I-1.
         }
 
@@ -62,7 +62,7 @@ public class Shovable : ObjectScript
 
     public void UpdateData()                                                                               //Pass Variables Lock and Position to the DataManager
     {
-        DMReference.EditShovableObj(ObjectIndex, Lock_State, Shove_Position);
+        DMReference.EditShovableObj(ObjectIndex, Lock_State, AlreadyTalked, Shove_Position);
     }
 
     //Shovable specific position on Load Method
