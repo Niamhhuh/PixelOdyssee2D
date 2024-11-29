@@ -26,7 +26,7 @@ public class Clipboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.I))
         {
             if(!DMReference.MoveScript.ClipboardActive || !InventoryScript.InventoryObj.activeSelf)
             {
@@ -39,7 +39,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.M))
         {
             if (!DMReference.MoveScript.ClipboardActive || !MapScript.MapObj.activeSelf)
             {
@@ -52,7 +52,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Y))         // apparently Unity doesnt track your keyboard language...
         {
             if (!DMReference.MoveScript.ClipboardActive || !GoalScript.GoalListObj.activeSelf)
             {
@@ -65,7 +65,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.C))
         {
             if (!DMReference.MoveScript.ClipboardActive || !CodeScript.CodeListObj.activeSelf)
             {
