@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class DataManager : MonoBehaviour
 
 
     //MiniMap
-    public static int currentRoom = 0;                                          //set this in Portal
+    public int currentRoom = 0;                                          //set this in Portal
 
 
     private void Awake()
@@ -94,6 +95,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
+        currentRoom = SceneManager.GetActiveScene().buildIndex;
 
         if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
         {

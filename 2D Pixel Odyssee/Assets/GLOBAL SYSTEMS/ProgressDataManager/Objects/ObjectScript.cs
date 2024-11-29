@@ -135,7 +135,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if (PointerScript.InventoryActive == false && !isBackground && !AlreadyActive && !IsFullTrigger)
+        if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);

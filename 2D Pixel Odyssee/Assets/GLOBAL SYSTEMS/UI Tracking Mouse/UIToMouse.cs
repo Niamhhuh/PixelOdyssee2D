@@ -12,7 +12,7 @@ public class UiToMouse : MonoBehaviour
     public Vector3 targetPosition;
     private bool movePlayer = false;
     
-    public bool InventoryActive;
+    public bool ClipboardActive;
     private Animator playerAnimator;
     private Animator playerAnimator2;
 
@@ -31,8 +31,8 @@ public class UiToMouse : MonoBehaviour
 
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
-        
-        InventoryActive = false;
+
+        ClipboardActive = false;
         LockInteract = false;
 
         playerAnimator = player.GetChild(0).GetComponent<Animator>();
@@ -53,7 +53,7 @@ public class UiToMouse : MonoBehaviour
 
     public void EnableInput()
     {
-        if(InventoryActive == false && !InTriggerDialogue)
+        if(ClipboardActive == false && !InTriggerDialogue)
         {
             AllowInput = true;
         } 

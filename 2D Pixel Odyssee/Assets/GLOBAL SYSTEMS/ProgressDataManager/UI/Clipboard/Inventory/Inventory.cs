@@ -18,10 +18,10 @@ public class Inventory : MonoBehaviour
 
     // Start is called before the first frame update
 
-    private GameObject InventoryObj;
+    public GameObject InventoryObj;
     private GameObject ItemCollection;
     private DataManager DMReference;
-    private bool calledbyKey;
+    public bool calledbyKey;
 
     public bool ItemDragged;
     
@@ -42,17 +42,6 @@ public class Inventory : MonoBehaviour
         InventoryObj.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown("i"))
-        {
-            calledbyKey = true;
-            ControllInventory();
-        }
-
-    }
-
     public void ControllInventory ()
     {
         if (InventoryObj.activeSelf == false)
@@ -67,7 +56,7 @@ public class Inventory : MonoBehaviour
 
     public void CallInventory ()
     {
-        DMReference.MoveScript.InventoryActive = true;
+        DMReference.MoveScript.ClipboardActive = true;
         DMReference.MoveScript.DisableInput();
         calledbyKey = false;
 
@@ -102,7 +91,7 @@ public class Inventory : MonoBehaviour
     {
         StartCoroutine(DMReference.MoveScript.CallEnableInput());
         StartCoroutine(DMReference.MoveScript.CallEnableInteract());
-        DMReference.MoveScript.InventoryActive = false;
+        DMReference.MoveScript.ClipboardActive = false;
         if(calledbyKey == true)
         {
             DMReference.MoveScript.EnableInput();
@@ -134,7 +123,7 @@ public class Inventory : MonoBehaviour
     {
         if(ItemDragged)
         {
-            DMReference.MoveScript.InventoryActive = false;
+            DMReference.MoveScript.ClipboardActive = false;
             DMReference.MoveScript.EnableInput();
             calledbyKey = false;
             ItemCollection.SetActive(false);

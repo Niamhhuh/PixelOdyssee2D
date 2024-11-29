@@ -10,7 +10,7 @@ public class TutorialToggleButtons : MonoBehaviour
     private void Awake()
     {
         SwitchButton = GameObject.Find("SwitchCharacter");
-        InventoryButton = GameObject.Find("Open Inventory");
+        InventoryButton = GameObject.Find("OpenClipboard");
     }
 
     public void DisableInventoryButton()
