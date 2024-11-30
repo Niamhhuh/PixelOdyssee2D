@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class DataManager : MonoBehaviour
 {
     public static List<CollectableObj> Collectable_List = new List<CollectableObj>();       //Create a List to store all relevant Variables of Collectable Items            //List_ID 1
@@ -48,9 +48,11 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public GameObject RosieComment = null;
     [HideInInspector] public GameObject BebeComment = null;
 
-    public Sprite CommentSpriteRosie;
-    public Sprite CommentSpriteBebe;
+    public TMP_Text ObjectCommentRosie;
+    public TMP_Text ObjectCommentBebe;
 
+    //public Comment ObjectCommentRosie;
+    //public Comment ObjectCommentBebe;
 
     //MiniMap
     public int currentRoom = 0;                                          //set this in Portal
@@ -85,8 +87,8 @@ public class DataManager : MonoBehaviour
         RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
 
-        CommentSpriteRosie = RosieComment.GetComponent<Sprite>();
-        CommentSpriteBebe = BebeComment.GetComponent<Sprite>();
+        ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
+        ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
 
 
 

@@ -70,8 +70,7 @@ public class ObjectScript : MonoBehaviour
 
     [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
 
-    public Sprite ObjectCommentRosie;
-    public Sprite ObjectCommentBebe;
+    public Comment ObjectComment;
 
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,10 +193,10 @@ public class ObjectScript : MonoBehaviour
             StartCoroutine(UnlockFlashRed());
             if (DMReference.CurrentCharacter.RosieActive == true)
             {
-                if(DMReference.RosieComment != null)
+                if(DMReference.RosieComment != null && ObjectComment != null)
                 {
                     DMReference.RosieComment.SetActive(true);
-                    DMReference.CommentSpriteRosie = ObjectCommentRosie;                                        //Set comment for this specific Object
+                    DMReference.ObjectCommentRosie.text = ObjectComment.CommentText[0];                                        //Set comment for this specific Object
                     //Add Typewriter Effect / pass a Text
                     StartCoroutine(ControlCommentRosie());
                 }  
@@ -205,10 +204,10 @@ public class ObjectScript : MonoBehaviour
 
             if (DMReference.CurrentCharacter.RosieActive == false)
             {
-                if(DMReference.BebeComment != null)
+                if(DMReference.BebeComment != null && ObjectComment != null)
                 {
                     DMReference.BebeComment.SetActive(true);
-                    DMReference.CommentSpriteBebe = ObjectCommentRosie;                                         //Set comment for this specific Object
+                    DMReference.ObjectCommentBebe.text = ObjectComment.CommentText[1];                                         //Set comment for this specific Object
                     //Add Typewriter Effect / pass a Text
                     StartCoroutine(ControlCommentBebe());
                 }
