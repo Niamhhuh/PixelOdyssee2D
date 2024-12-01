@@ -145,7 +145,7 @@ public class Inventory : MonoBehaviour
             if ((InputKey1 == Recipe.KeyID_A && InputKey2 == Recipe.KeyID_B) || (InputKey1 == Recipe.KeyID_B && InputKey2 == Recipe.KeyID_A))
             {
                 //Craft the Item
-                DMReference.AddDraggableObj(Recipe.Crafted_Item_ID, 15);                                    //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
+                DMReference.AddDraggableObj(Recipe.Crafted_Item_ID, 11);                                    //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
                 DataManager.Item_List[Recipe.Crafted_Item_ID - 1].FetchData();                              //Fetch Crafted_Item Data from DataManager (Index and Slot)
                 DataManager.Item_List[Recipe.Crafted_Item_ID - 1].TakeSlot();                               //Place Crafted_Item into its Starting Slot(15)
                 DataManager.Item_List[Recipe.Crafted_Item_ID - 1].Available = true;                         //Set Crafted_Item as Available

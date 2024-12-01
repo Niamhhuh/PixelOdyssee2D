@@ -30,6 +30,7 @@ public class ResetTheGame : MonoBehaviour
         DataManager.ToInteract.Clear();
 
         DataManager.ToShove.Clear();
+        DataManager.RewardList.Clear();
 
         //DataManager.Slot_Array.Clear();
 
@@ -46,8 +47,6 @@ public class ResetTheGame : MonoBehaviour
         DataManager.TutorialStarted = false;
 
         DataManager.FroggerCleared = false;
-
-        DMReference.Reward = null;
 
     }
 }

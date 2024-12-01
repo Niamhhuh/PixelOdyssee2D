@@ -27,7 +27,7 @@ public class EventSource : ObjectScript
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Event_Passed);                         //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_AlreadyTalked, StoredObj.Stored_Event_Passed);                         //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -46,9 +46,10 @@ public class EventSource : ObjectScript
 
     
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
     {
         Lock_State = Stored_Lock_State;
+        AlreadyTalked = Stored_AlreadyTalked;
         Event_Passed = Stored_Event_Passed;
     }
 
@@ -83,7 +84,7 @@ public class EventSource : ObjectScript
     public void Call_Interact()
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
         
 
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List

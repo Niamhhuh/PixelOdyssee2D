@@ -33,7 +33,7 @@ public class Shovable : ObjectScript
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Shove_Position);                          //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_AlreadyTalked, StoredObj.Stored_Shove_Position);                          //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -52,9 +52,10 @@ public class Shovable : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, int Stored_Shove_Position)                                     //Fetch the Variables Lock and Position from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, int Stored_Shove_Position)                                     //Fetch the Variables Lock and Position from the DataManager
     {
         Lock_State = Stored_Lock_State;
+        AlreadyTalked = Stored_AlreadyTalked;
         Shove_Position = Stored_Shove_Position;
         //print(StoredObj.Stored_Type_ID);
     }
@@ -79,7 +80,7 @@ public class Shovable : ObjectScript
     public void Call_Interact()                                                                                                                 
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);      //Fetch new State from DataManager
+        FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);      //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
 

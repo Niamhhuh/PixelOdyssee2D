@@ -7,7 +7,12 @@ public class Collectable : ObjectScript
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    Transform Collectables;
+
     public bool Collected;			                                                //relevant to control Item Spawn
+    private bool alreadyAdded;
+
+    public int RewardPosition;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -20,18 +25,15 @@ public class Collectable : ObjectScript
         UnSReference = this.GetComponent<UnlockScript>();
         ObjReference = this.GetComponent<Collectable>();
 
-        int currentIndex = 0;                                                                               //remember the currently inspected Index
+        Collectables = transform.parent;
 
-        if (IsReward == true)
-        {
-            DMReference.Reward = gameObject;
-        }
+        int currentIndex = 0;                                                                               //remember the currently inspected Index
 
         foreach (DataManager.CollectableObj StoredObj in DataManager.Collectable_List)                      //Go through the Collectable_List and check CollectableObj.
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Collected);                         //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_AlreadyTalked, StoredObj.Stored_Collected);                         //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -46,12 +48,31 @@ public class Collectable : ObjectScript
 
         ToggleSprites();
         RemoveItem();                                                                                       //Remove Items if they have been collected already
+
+        if (IsReward && Collectables != null)                                                                           //determine Index of Child
+        {
+            for (int i = 0; i < Collectables.childCount; i++)
+            {
+                if (Collectables.GetChild(i) == transform)
+                {
+
+                    RewardPosition = i;
+                    break; 
+                }
+            }
+        }
+
+
+        if (IsReward == true && Lock_State == true)                                                         //Handle Reward Case
+        {
+           TryAddReward();
+        }
     }
 
-
-    private void FetchData(bool Stored_Lock_State, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
     {
         Lock_State = Stored_Lock_State;
+        AlreadyTalked = Stored_AlreadyTalked;
         Collected = Stored_Collected;
     }
 
@@ -81,7 +102,7 @@ public class Collectable : ObjectScript
     public void Call_Interact()
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
+        FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Collectable_List[ObjectIndex].Stored_Collected);     //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
 
@@ -116,6 +137,25 @@ public class Collectable : ObjectScript
             Collected = true;
             UpdateData();
             RemoveItem();
+        }
+    }
+
+
+    private void TryAddReward()
+    {
+        gameObject.SetActive(false);
+        foreach (Collectable StoredObjScript in DataManager.RewardList)                      //Go through the Collectable_List and check CollectableObj.
+        {
+            if (StoredObjScript.ID == ID)
+            {
+                alreadyAdded = true;
+                break;
+            }
+        }
+
+        if (!alreadyAdded)
+        {
+            DataManager.RewardList.Add(CoreObject.GetComponent<Collectable>());
         }
     }
 }

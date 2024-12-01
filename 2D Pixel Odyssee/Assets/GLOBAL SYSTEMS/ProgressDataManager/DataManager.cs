@@ -41,9 +41,13 @@ public class DataManager : MonoBehaviour
 
     public static bool TutorialStarted;
 
+
+
     public static bool FroggerCleared = false;
 
-    public GameObject Reward = null;
+    public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
+
+
 
     [HideInInspector] public GameObject RosieComment = null;
     [HideInInspector] public GameObject BebeComment = null;
@@ -108,12 +112,6 @@ public class DataManager : MonoBehaviour
             TutorialStarted = true;
         }
         TutorialStarted = true;
-
-        if(Reward != null)
-        {
-            Reward.SetActive(false);
-            RewardFrogger();
-        }
     }
 
 
@@ -483,12 +481,30 @@ public class DataManager : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    public void ActivateReward(int Reward_ID) 
+    {
+        print(RewardList.Count);
+        foreach (Collectable StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
+        {
+            GrantReward(StoredObjScript, Reward_ID);
+        }
+    }                                
+
+    private void GrantReward(Collectable StoredObjScript, int Reward_ID)
+    {
+        if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+        {
+            StoredObjScript.Lock_State = false;                   //Unlock the COllectable
+            StoredObjScript.UpdateData();                         //Update the CollectableData
+            GameObject.FindGameObjectWithTag("Collectables").transform.GetChild(StoredObjScript.RewardPosition).gameObject.SetActive(true);
+        }
+    }
+
+
+
     public void RewardFrogger()                                //Activate the Trigger
     {
-        if(FroggerCleared == true)
-        {
-            Reward.SetActive(true);
-        }
+        //
     }
 
 

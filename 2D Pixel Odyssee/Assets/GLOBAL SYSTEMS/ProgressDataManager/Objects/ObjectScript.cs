@@ -43,6 +43,7 @@ public class ObjectScript : MonoBehaviour
 
     private ObjectScript ThisObject = null;                                   //ObjectScript, which is added to the Currently_Highlighted List, check if object is selected
     [HideInInspector] public GameObject HighlightonHover = null;              //Child Object, which contains the Highlighted Sprite of the Object
+    [HideInInspector] public GameObject CoreObject = null;
     [HideInInspector] public UiToMouse PointerScript = null;
 
 
@@ -69,6 +70,7 @@ public class ObjectScript : MonoBehaviour
     public bool IsReward;
 
     [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
+    [HideInInspector] public GrantRewardScript GrantReward_Script = null;
 
     public Comment ObjectComment;
 
@@ -77,6 +79,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Awake()
     {
+        CoreObject = this.gameObject;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         if (gameObject.GetComponent<Triggerable>() != null)
         {
@@ -111,6 +114,11 @@ public class ObjectScript : MonoBehaviour
         if (gameObject.GetComponent<UnlockedDialogue>() != null)
         {
             UnlockDialogueScript = GetComponent<UnlockedDialogue>();
+        }
+
+        if (gameObject.GetComponent<GrantRewardScript>() != null)
+        {
+            GrantReward_Script = gameObject.GetComponent<GrantRewardScript>();
         }
     }
 
@@ -181,6 +189,7 @@ public class ObjectScript : MonoBehaviour
         {
             Lock_State = false;
             UpdateDragUnlock();
+            if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
             DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
             // Delete Item from Draggable List
         }
@@ -190,7 +199,10 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
         {
-            StartCoroutine(UnlockFlashRed());
+            if(!isBackground && !IsFullTrigger)
+            {
+                StartCoroutine(UnlockFlashRed());
+            }
             if (DMReference.CurrentCharacter.RosieActive == true)
             {
                 if(DMReference.RosieComment != null && ObjectComment != null)
@@ -255,7 +267,7 @@ public class ObjectScript : MonoBehaviour
             DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
 
-            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }
+            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
 
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
@@ -333,41 +345,7 @@ public class ObjectScript : MonoBehaviour
         {
             AlreadyTalked = true;
 
-            switch (ObjReference.ObjectList_ID)
-            {
-                case 1:
-                    Collectable CollectableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    CollectableObjectRef = (Collectable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    CollectableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                case 2:
-                    Shovable ShovableObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    ShovableObjectRef = (Shovable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    ShovableObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                case 3:
-                    Portal PortalObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    PortalObjectRef = (Portal)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    PortalObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                case 4:
-                    Switchable SwitchObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    SwitchObjectRef = (Switchable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    SwitchObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                case 5:
-                    EventSource EventObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    EventObjectRef = (EventSource)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    EventObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                case 6:
-                    Triggerable TriggerObjectRef = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
-                    TriggerObjectRef = (Triggerable)ObjReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
-                    TriggerObjectRef.UpdateData();                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
-                    break;
-                default:
-                    break;
-            }
+            UpdateDragUnlock();
 
 
         }

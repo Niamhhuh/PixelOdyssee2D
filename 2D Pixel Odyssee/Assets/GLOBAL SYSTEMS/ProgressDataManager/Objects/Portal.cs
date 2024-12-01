@@ -29,7 +29,7 @@ public class Portal : ObjectScript
         {
             if (ID == StoredObj.Stored_ID)
             {
-                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_Traversed);                         //Fetch ObjectInformation from DataManager 
+                FetchData(StoredObj.Stored_Lock_State, StoredObj.Stored_AlreadyTalked, StoredObj.Stored_Traversed);                         //Fetch ObjectInformation from DataManager 
                 ObjectIndex = currentIndex;                                                                 //Fetch the Index of the found Object
                 NewObject = false;                                                                          //Confirm the Object is already available in DataManager
                 break;
@@ -47,9 +47,10 @@ public class Portal : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
+    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
     {
         Lock_State = Stored_Lock_State;
+        AlreadyTalked = Stored_AlreadyTalked;
         Traversed = Stored_Traversed;
         //print(StoredObj.Stored_Type_ID);
     }
@@ -67,7 +68,7 @@ public class Portal : ObjectScript
     public void Call_Interact()
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        FetchData(DataManager.Portal_List[ObjectIndex].Stored_Lock_State, DataManager.Portal_List[ObjectIndex].Stored_Traversed);     //Fetch new State from DataManager
+        FetchData(DataManager.Portal_List[ObjectIndex].Stored_Lock_State, DataManager.Portal_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Portal_List[ObjectIndex].Stored_Traversed);     //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
 
