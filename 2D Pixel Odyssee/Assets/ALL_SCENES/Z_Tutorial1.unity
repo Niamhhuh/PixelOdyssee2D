@@ -669,8 +669,8 @@ GameObject:
   - component: {fileID: 84551955}
   - component: {fileID: 84551954}
   - component: {fileID: 84551953}
-  - component: {fileID: 84551952}
   - component: {fileID: 84551951}
+  - component: {fileID: 84551959}
   m_Layer: 5
   m_Name: Tutorial 7
   m_TagString: Untagged
@@ -724,35 +724,6 @@ MonoBehaviour:
   ObjectComment: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
---- !u!114 &84551952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84551950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 84551951}
-          m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
-          m_MethodName: TriggerInteract
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &84551953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +845,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &84551959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84551950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &101640941
 GameObject:
   m_ObjectHideFlags: 3
@@ -977,6 +989,7 @@ GameObject:
   - component: {fileID: 118851851}
   - component: {fileID: 118851850}
   - component: {fileID: 118851849}
+  - component: {fileID: 118851856}
   m_Layer: 5
   m_Name: Tutorial 3
   m_TagString: Untagged
@@ -1151,6 +1164,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &118851856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118851848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &126056012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 438498189039487100, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
@@ -1378,6 +1432,7 @@ GameObject:
   - component: {fileID: 229766354}
   - component: {fileID: 229766353}
   - component: {fileID: 229766360}
+  - component: {fileID: 229766361}
   m_Layer: 5
   m_Name: Tutorial 1
   m_TagString: Untagged
@@ -1568,6 +1623,47 @@ MonoBehaviour:
   InteractionTriggered: 1
   LockTriggered: 0
   DialogueTriggered: 0
+--- !u!114 &229766361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229766352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &364583316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,7 +2375,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 71d7dda890f1a4a48914a9f448d88605, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 827b0973c1a67884e98d701eb68ec1ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2694,12 +2790,12 @@ SpriteRenderer:
   m_SortingLayerID: -1180937057
   m_SortingLayer: -1
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: c969d33c026a2f844a8c3b203a108751, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13ee500c210f0e64fa25ae08726ed126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 44.79105, y: 12.51}
+  m_Size: {x: 45.12, y: 12.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2742,7 +2838,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 45.12, y: 12.77}
-    newSize: {x: 44.79105, y: 12.51}
+    newSize: {x: 45.12, y: 12.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3016,6 +3112,7 @@ GameObject:
   - component: {fileID: 969682071}
   - component: {fileID: 969682070}
   - component: {fileID: 969682069}
+  - component: {fileID: 969682076}
   m_Layer: 5
   m_Name: Tutorial 4
   m_TagString: Untagged
@@ -3190,6 +3287,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &969682076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969682068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &977010332
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,8 +3481,8 @@ MonoBehaviour:
   Lock_State: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
-  LockSprite: {fileID: 21300000, guid: 6963143c10e38d34eaffd8beeef43918, type: 3}
-  LockHighlightSprite: {fileID: 21300000, guid: 2cdebb353ae14024d9dff484206744fc, type: 3}
+  LockSprite: {fileID: 21300000, guid: 8e083a4e01da9ba46a23a68f6fed52a6, type: 3}
+  LockHighlightSprite: {fileID: 21300000, guid: 71d7dda890f1a4a48914a9f448d88605, type: 3}
   ObjectSprite: {fileID: 0}
   HighlightObjectSprite: {fileID: 0}
   CannotInteract: 0
@@ -3408,7 +3546,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.85, y: 1.05}
+    oldSize: {x: 1.12, y: 1.13}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3458,7 +3596,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8e083a4e01da9ba46a23a68f6fed52a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b321e1b3bd25af64e8d2cfa5713979e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3608,7 +3746,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a25ab5be3107634b82247856d717215, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3220d2868c8e5aa4aa3afbbd4894f53b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3882,7 +4020,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8dbc38eca54348c4b86bbbee45480d0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f585e81d92a4ff448d1e712910c21a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3890,7 +4028,7 @@ SpriteRenderer:
   m_Size: {x: 3.82, y: 6.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1389260248
@@ -4048,6 +4186,7 @@ GameObject:
   - component: {fileID: 1548022566}
   - component: {fileID: 1548022565}
   - component: {fileID: 1548022564}
+  - component: {fileID: 1548022571}
   m_Layer: 5
   m_Name: Tutorial 2
   m_TagString: Untagged
@@ -4222,6 +4361,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1548022571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548022563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1620534617
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,6 +4660,7 @@ GameObject:
   - component: {fileID: 1657887429}
   - component: {fileID: 1657887427}
   - component: {fileID: 1657887435}
+  - component: {fileID: 1657887436}
   m_Layer: 5
   m_Name: Tutorial 6
   m_TagString: Untagged
@@ -4670,6 +4851,47 @@ MonoBehaviour:
   InteractionTriggered: 1
   LockTriggered: 0
   DialogueTriggered: 0
+--- !u!114 &1657887436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657887426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1787484204
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,8 +5630,8 @@ GameObject:
   - component: {fileID: 2077931043}
   - component: {fileID: 2077931042}
   - component: {fileID: 2077931048}
-  - component: {fileID: 2077931041}
   - component: {fileID: 2077931040}
+  - component: {fileID: 2077931049}
   m_Layer: 5
   m_Name: Tutorial 5
   m_TagString: Untagged
@@ -5463,35 +5685,6 @@ MonoBehaviour:
   ObjectComment: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
---- !u!114 &2077931041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077931039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 946100933}
-          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
-          m_MethodName: DisableInput
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &2077931042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,6 +5822,47 @@ MonoBehaviour:
   InteractionTriggered: 1
   LockTriggered: 0
   DialogueTriggered: 0
+--- !u!114 &2077931049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077931039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 946100933}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2082201356
 GameObject:
   m_ObjectHideFlags: 0

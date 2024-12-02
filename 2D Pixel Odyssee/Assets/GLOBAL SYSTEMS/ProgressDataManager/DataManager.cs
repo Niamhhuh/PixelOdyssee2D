@@ -492,11 +492,13 @@ public class DataManager : MonoBehaviour
 
     private void GrantReward(Collectable StoredObjScript, int Reward_ID)
     {
+        GameObject ActivateObject;
         if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
         {
-            StoredObjScript.Lock_State = false;                   //Unlock the COllectable
-            StoredObjScript.UpdateData();                         //Update the CollectableData
-            GameObject.FindGameObjectWithTag("Collectables").transform.GetChild(StoredObjScript.RewardPosition).gameObject.SetActive(true);
+            ActivateObject = GameObject.FindGameObjectWithTag("Collectables").transform.GetChild(StoredObjScript.RewardPosition).gameObject;
+            ActivateObject.SetActive(true);
+            ActivateObject.GetComponent<Collectable>().Lock_State = false;                   //Unlock the Collectable
+            ActivateObject.GetComponent<Collectable>().UpdateData();                         //Update the CollectableData
         }
     }
 

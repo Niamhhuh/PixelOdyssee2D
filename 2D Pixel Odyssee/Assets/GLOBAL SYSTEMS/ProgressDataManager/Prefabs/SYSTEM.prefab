@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 5392696259278888707}
   - component: {fileID: 154631187001807796}
   m_Layer: 5
-  m_Name: "Kombinierter Schl\xFCssel"
+  m_Name: "Schl\xFCssel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5d3e133b4c6accc4796a9311ad3e9843, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a80ee0a5e59c6464d808932123e992e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6963143c10e38d34eaffd8beeef43918, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b321e1b3bd25af64e8d2cfa5713979e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8272,6 +8272,8 @@ MonoBehaviour:
   canvas: {fileID: 2293735370883113980}
   targetPosition: {x: 0, y: 0, z: 0}
   ClipboardActive: 0
+  playerAnimator: {fileID: 0}
+  playerAnimator2: {fileID: 0}
   AllowInput: 1
   LockInteract: 0
   InTriggerDialogue: 0
@@ -10362,7 +10364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cf991308bb6d8e843ab03a885f1a71ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
