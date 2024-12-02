@@ -22,6 +22,8 @@ public class UiToMouse : MonoBehaviour
     public bool AllowInput;
     public bool LockInteract;
     public bool InTriggerDialogue = false;                      //Input && Interact can't be enabled during triggered dialogue.
+
+    private int lastDirection = 1;
     public Vector3 PermanentmousePosition;
 
 
@@ -88,29 +90,31 @@ public class UiToMouse : MonoBehaviour
             targetPosition = new Vector3(worldPosition.x, player.position.y, player.position.z);
 
             movePlayer = true;
+            //playerAnimator.SetBool("isWalking", true);
+            //playerAnimator2.SetBool("isWalking", true);
 
-            playerAnimator.SetBool("isWalking", true);
-            playerAnimator2.SetBool("isWalking", true);
-
-            if(targetPosition.x < player.position.x)
+            if (targetPosition.x < player.position.x)
             {
-                playerAnimator.SetInteger("Direction", -1); //left
-                playerAnimator2.SetInteger("Direction", -1);
+                //playerAnimator.SetInteger("Direction", -1); //left
+                //playerAnimator2.SetInteger("Direction", -1);
+                lastDirection = -1;
             }
 
             else
             {
-                playerAnimator.SetInteger("Direction", 1); //right
-                playerAnimator2.SetInteger("Direction", 1);
+                //playerAnimator.SetInteger("Direction", 1); //right
+                //playerAnimator2.SetInteger("Direction", 1);
+                lastDirection = 1;
             }
 
 
+            playerAnimator.SetBool("isWalking", true);
+            playerAnimator.SetInteger("LastDirection", lastDirection);
+            playerAnimator2.SetBool("isWalking", true);
+            playerAnimator2.SetInteger("LastDirection", lastDirection);
+
             pointerImage.enabled = true;
             pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
-            
-            
-            //GameObject.Find("MovePointer").GetComponent<Image>().enabled = true;
-            //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = true;
         }
 
         if (movePlayer)
@@ -122,18 +126,48 @@ public class UiToMouse : MonoBehaviour
                 movePlayer = false;
 
                 playerAnimator.SetBool("isWalking", false);
-                playerAnimator.SetInteger("Direction", 0); //idle
+                playerAnimator.SetInteger("LastDirection", lastDirection); //idle
 
                 playerAnimator2.SetBool("isWalking", false);
-                playerAnimator2.SetInteger("Direction", 0);
+                playerAnimator2.SetInteger("LastDirection", lastDirection);
 
                 pointerImage.enabled = false;
-                
+
                 //GameObject.Find("MovePointer").GetComponent<Image>().enabled = false;
                 //GameObject.Find("MovePointer").GetComponent<Animator>().enabled = false;
             }
         }
 
+    }
+
+    public void SwitchCharacter(Transform newPlayer)
+    {
+        playerAnimator.SetBool("isWalking", false);
+
+        playerAnimator2.SetBool("isWalking", false);
+
+
+        player = newPlayer;
+        playerAnimator = player.GetChild(0).GetComponent<Animator>();
+        playerAnimator2 = player.GetChild(1).GetComponent<Animator>();
+
+        if (movePlayer)
+        {
+            playerAnimator.SetBool("isWalking", true);
+            playerAnimator2.SetBool("isWalking", true);
+
+
+            playerAnimator.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
+            playerAnimator2.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
+        }
+        else
+        {
+            playerAnimator.SetBool("isWalking", false);
+            playerAnimator.SetInteger("LastDirection", lastDirection);
+
+            playerAnimator2.SetBool("isWalking", false);
+            playerAnimator2.SetInteger("LastDirection", lastDirection);
+        }
     }
 
     public void Activate_CallEnableInput()

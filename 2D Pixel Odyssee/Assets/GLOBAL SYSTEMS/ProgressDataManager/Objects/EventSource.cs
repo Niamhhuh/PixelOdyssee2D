@@ -9,6 +9,7 @@ public class EventSource : ObjectScript
 
     public bool Event_Passed;			                                                //relevant to control Item Spawn
     public bool Talk_Event;
+    public bool ForcedInteraction;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,26 +84,58 @@ public class EventSource : ObjectScript
 
     public void Call_Interact()
     {
-        Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
-        
-
-        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
-        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
-
-        if (Lock_State == false)
+        if(!ForcedInteraction)
         {
-            ClearHighlight();
-            PassTriggerActivate(1);
-            ObjectSequenceUnlock(); 
-            EventInteract();
-        } else
-        {
-            ClearHighlight();
-            //PassTriggerActivate(2);
-            StartCoroutine(FlashRed());
+            Unlock_Object();                                                                                                                        //Try to Unlock the Object
+            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+
+
+            DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+            GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+            if (Lock_State == false)
+            {
+                ClearHighlight();
+                PassTriggerActivate(1);
+                ObjectSequenceUnlock();
+                EventInteract();
+            }
+            else
+            {
+                ClearHighlight();
+                //PassTriggerActivate(2);
+                StartCoroutine(FlashRed());
+            }
         }
     }
+
+    public void OnMouseOver()
+    {
+        if(ForcedInteraction )
+        {
+            Unlock_Object();                                                                                                                        //Try to Unlock the Object
+            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+
+
+            DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+            GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+            if (Lock_State == false)
+            {
+                ClearHighlight();
+                PassTriggerActivate(1);
+                ObjectSequenceUnlock();
+                EventInteract();
+            }
+            else
+            {
+                ClearHighlight();
+                //PassTriggerActivate(2);
+                StartCoroutine(FlashRed());
+            }
+        }
+    }
+
 
     //Object Specific Functionality
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
