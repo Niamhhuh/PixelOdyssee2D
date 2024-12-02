@@ -20,9 +20,9 @@ public class PauseMenu : MonoBehaviour
 
     //public GameObject sceneloader;
     //public SpriteRenderer spriteRenderer;
-    public GameObject pauseScreen = null;
+    public GameObject pauseScreen = null;   
 
-    public UiToMouse PointerScript = null;
+    public UiToMouse PointerScript = null;  
 
     Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
 
@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
         {
-            if(PointerScript != null)
+            if(PointerScript != null && PointerScript.InTriggerDialogue == false)
             {
                 PointerScript.AllowInput = !PointerScript.AllowInput;
                 PointerScript.LockInteract = !PointerScript.LockInteract;

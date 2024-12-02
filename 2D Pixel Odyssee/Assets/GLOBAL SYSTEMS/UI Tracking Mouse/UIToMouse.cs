@@ -45,10 +45,7 @@ public class UiToMouse : MonoBehaviour
 
     public void DisableInput()
     {
-        if(!InTriggerDialogue)
-        {
-            AllowInput = false;
-        }
+        AllowInput = false;
     }
 
     public void EnableInput()
@@ -66,7 +63,10 @@ public class UiToMouse : MonoBehaviour
 
     public void EnableInteract()
     {
-        LockInteract = false;
+        if (!InTriggerDialogue)
+        {
+            LockInteract = false;
+        }
     }
 
     void Update()
