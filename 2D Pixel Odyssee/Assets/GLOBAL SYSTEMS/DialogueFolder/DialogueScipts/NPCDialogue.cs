@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
 {
+    DataManager DMReference;
+
     public AdvancedDialogueSO[] conversation;
 
     private Transform player;
@@ -13,12 +15,12 @@ public class NPCDialogue : MonoBehaviour
     [HideInInspector] public GameObject DialogueHolder;                                 //store this gameObject to pass to Advanced Dialogue to check for Trigger
 
     private bool dialogueInitated;
-
+    private bool WasClicked;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
         DialogueHolder = gameObject;
         //speechBubbleRenderer = GetComponent<SpriteRenderer>();
@@ -27,7 +29,7 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)      //Change this
     {
-        if (collision.gameObject.tag == "Player" && !dialogueInitated)
+        if (collision.gameObject.tag == "Player" && !dialogueInitated && WasClicked)
         {
             //Speech Bubble On
           //  speechBubbleRenderer.enabled=true;
@@ -51,21 +53,24 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract)
         {
             advancedDialogueManager.InitiateDialogue(this);
+            WasClicked = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && WasClicked)
         {
             //Speech Bubble Off
             //speechBubbleRenderer.enabled = false;
 
-            advancedDialogueManager.TurnOffDialogue();
+            advancedDialogueManager.TurnOffDialogue(gameObject.name);
             dialogueInitated = false;
+
+            WasClicked = false;
         }
     }
 

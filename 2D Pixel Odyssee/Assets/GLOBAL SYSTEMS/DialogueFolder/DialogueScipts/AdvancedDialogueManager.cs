@@ -42,6 +42,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     private bool StopTypeWriter;
     private bool WriterIsRunning;
 
+    static int A;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
+        print("Dialog:" + dialogueActivated + "CanContinue:" + canContinueText);
         if (dialogueActivated && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
@@ -90,7 +93,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
                 EndEventDialogue();
 
-                TurnOffDialogue();
+                TurnOffDialogue(gameObject.name);
             }
 
             //Continue dialogue1
@@ -329,8 +332,9 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueActivated = true;
     }
 
-    public void TurnOffDialogue()
+    public void TurnOffDialogue(string Caller)
     {
+        print(Caller);
         if(DMReference.MoveScript != null)
         {
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
