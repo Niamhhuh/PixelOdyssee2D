@@ -13,6 +13,8 @@ public class CharacterScript : MonoBehaviour
 
     [HideInInspector] public GameObject RosieComment = null;
     [HideInInspector] public GameObject BebeComment = null;
+    UiToMouse uitomouse;
+    private Transform newPlayer;
 
     //public bool AllowInput;
 
@@ -33,6 +35,8 @@ public class CharacterScript : MonoBehaviour
     {
         RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
+
+        uitomouse = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
 
         RosieComment.SetActive(false);
         BebeComment.SetActive(false);
@@ -56,12 +60,16 @@ public class CharacterScript : MonoBehaviour
             RosieActive = false;
             RosieObj.SetActive(false);
             BeBeObj.SetActive(true);
+            newPlayer = BeBeObj.transform;
+            uitomouse.SwitchCharacter(newPlayer);
         }
         else
         {
             RosieActive = true;
             RosieObj.SetActive(true);
             BeBeObj.SetActive(false);
+            newPlayer = RosieObj.transform;
+            uitomouse.SwitchCharacter(newPlayer);
         }
         
     }

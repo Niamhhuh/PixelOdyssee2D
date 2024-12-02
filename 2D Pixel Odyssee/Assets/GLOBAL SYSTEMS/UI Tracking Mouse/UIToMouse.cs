@@ -37,8 +37,9 @@ public class UiToMouse : MonoBehaviour
         ClipboardActive = false;
         LockInteract = false;
 
-        playerAnimator = player.GetChild(0).GetComponent<Animator>();
-        playerAnimator2 = player.GetChild(1).GetComponent<Animator>();
+        playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
+        playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
+
 
         GameObject movePointer = GameObject.Find("MovePointer");
         pointerAnimator = movePointer.GetComponent<Animator>();
@@ -148,8 +149,6 @@ public class UiToMouse : MonoBehaviour
 
 
         player = newPlayer;
-        playerAnimator = player.GetChild(0).GetComponent<Animator>();
-        playerAnimator2 = player.GetChild(1).GetComponent<Animator>();
 
         if (movePlayer)
         {

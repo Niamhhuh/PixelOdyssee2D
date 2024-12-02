@@ -24,24 +24,23 @@ public class Frogger : MonoBehaviour
     public float scrollSpeed = 3.0f;
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.W) && noMove == false) {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f , 0f, 0f);
             Move(Vector3.up);
             soundManager.PlaySfx(soundManager.jump);
         }
 
-        else if (Input.GetKeyDown(KeyCode.S) && noMove == false) {
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             Move(Vector3.down);
             soundManager.PlaySfx(soundManager.jump);
         } 
-        else if (Input.GetKeyDown(KeyCode.A) && noMove == false) {
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             Move(Vector3.left);
             soundManager.PlaySfx(soundManager.jump);
         } 
-        else if (Input.GetKeyDown(KeyCode.D) && noMove == false) {
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
             soundManager.PlaySfx(soundManager.jump);
