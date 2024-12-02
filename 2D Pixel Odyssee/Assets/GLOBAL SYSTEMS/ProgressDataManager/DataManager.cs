@@ -24,7 +24,7 @@ public class DataManager : MonoBehaviour
 
     public static SlotScript[] Slot_Array = new SlotScript[11];
 
-    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all relevant Variables of Switches                     //List_ID 5
+    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all Triggers
 
     public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
@@ -46,7 +46,7 @@ public class DataManager : MonoBehaviour
     public static bool FroggerCleared = false;
 
     public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
-
+    public List<GameObject> RewardObjects = new List<GameObject>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
 
 
     [HideInInspector] public GameObject RosieComment = null;
@@ -61,6 +61,30 @@ public class DataManager : MonoBehaviour
     //MiniMap
     public int currentRoom = 0;                                          //set this in Portal
 
+    public List<GameObject> SpawnList = new List<GameObject>();          //Create a List to store all SpawnPoints in a Scene 
+    public static int SpawnID;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+
+    private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
+    {
+        currentRoom = SceneManager.GetActiveScene().buildIndex;
+
+        if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
+        {
+
+            MoveScript.AllowInput = false;
+            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
+            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
+            TutorialStarted = true;
+        }
+        TutorialStarted = true;
+
+        if(SpawnID == 0) { SpawnID = 1; }
+        foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("Spawn"))
+        {
+            SpawnList.Add(Obj);
+        }
+        SpawnPlayer();
+    }
 
     private void Awake()
     {
@@ -71,10 +95,11 @@ public class DataManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
         {
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
-            MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+            
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
             SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");
             DisplayObjectNameScript = GameObject.FindGameObjectWithTag("ObjectNameDisplay").GetComponent<DisplayName>();
+            MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         }
 
         Rooms_Loaded[0] = false;                                                        //Archive 
@@ -93,27 +118,23 @@ public class DataManager : MonoBehaviour
 
         ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
         ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
-
-
-
-
     }
 
-    private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
+
+    //Set Player to Right Position
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void SpawnPlayer()
     {
-        currentRoom = SceneManager.GetActiveScene().buildIndex;
-
-        if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
+        foreach(GameObject Spawn in SpawnList)
         {
-
-            MoveScript.AllowInput = false;
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
-            TutorialStarted = true;
+            if(Spawn.GetComponent<SpawnObjectScript>().ID == SpawnID) 
+            {
+                MoveScript.player.position = new Vector3(Spawn.GetComponent<Transform>().position.x, MoveScript.player.position.y, MoveScript.player.position.z);
+            }
         }
-        TutorialStarted = true;
     }
-
 
     //Add Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -483,22 +504,29 @@ public class DataManager : MonoBehaviour
 
     public void ActivateReward(int Reward_ID) 
     {
+
         print(RewardList.Count);
+        GrantInRoomReward(Reward_ID);
         foreach (Collectable StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
-            GrantReward(StoredObjScript, Reward_ID);
+            if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+            {
+                StoredObjScript.Lock_State = false;                   //Unlock the Collectable
+                StoredObjScript.UpdateData();                         //Update the CollectableData   
+            }
         }
     }                                
 
-    private void GrantReward(Collectable StoredObjScript, int Reward_ID)
+    private void GrantInRoomReward(int Reward_ID)                          // Use this only when the Object is in the same Room
     {
-        GameObject ActivateObject;
-        if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+        foreach (GameObject StoredObj in RewardObjects)                      //Go through the Collectable_List and check CollectableObj.
         {
-            ActivateObject = GameObject.FindGameObjectWithTag("Collectables").transform.GetChild(StoredObjScript.RewardPosition).gameObject;
-            ActivateObject.SetActive(true);
-            ActivateObject.GetComponent<Collectable>().Lock_State = false;                   //Unlock the Collectable
-            ActivateObject.GetComponent<Collectable>().UpdateData();                         //Update the CollectableData
+            if(StoredObj.GetComponent<Collectable>().ID == Reward_ID)
+            {
+                StoredObj.SetActive(true);
+                StoredObj.GetComponent<Collectable>().Lock_State = false;                   //Unlock the Collectable
+                StoredObj.GetComponent<Collectable>().UpdateData();                         //Update the CollectableData   
+            }
         }
     }
 

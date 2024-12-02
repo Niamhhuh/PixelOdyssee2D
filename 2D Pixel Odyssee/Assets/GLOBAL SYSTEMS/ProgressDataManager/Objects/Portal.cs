@@ -11,6 +11,7 @@ public class Portal : ObjectScript
     public bool Traversed = false;                                                          //relevant to remember whether this door has been used already
 
     public int LoadScene_ID;
+    public int SpawnPointID;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,6 +101,7 @@ public class Portal : ObjectScript
         {
             Traversed = true;
             UpdateData();
+            DataManager.SpawnID = SpawnPointID;
             SceneManager.LoadScene(LoadScene_ID);
         }
     }

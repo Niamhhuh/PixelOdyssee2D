@@ -131,6 +131,7 @@ public class Collectable : ObjectScript
     {
         if(DataManager.Inventory_Fillstate < 12)
         {
+            SuccessfulInteract();
             DataManager.Inventory_Fillstate++;
             //print(DataManager.Inventory_Fillstate);
             DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
@@ -143,7 +144,7 @@ public class Collectable : ObjectScript
 
     private void TryAddReward()
     {
-        gameObject.SetActive(false);
+        DMReference.RewardObjects.Add(gameObject);
         foreach (Collectable StoredObjScript in DataManager.RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
             if (StoredObjScript.ID == ID)
@@ -157,5 +158,6 @@ public class Collectable : ObjectScript
         {
             DataManager.RewardList.Add(CoreObject.GetComponent<Collectable>());
         }
+        gameObject.SetActive(false);
     }
 }

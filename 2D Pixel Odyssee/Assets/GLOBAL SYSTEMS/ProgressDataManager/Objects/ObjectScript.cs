@@ -354,7 +354,10 @@ public class ObjectScript : MonoBehaviour
 
 
 
-
+    public void SuccessfulInteract()
+    {
+        if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
+    }
 
 
 
