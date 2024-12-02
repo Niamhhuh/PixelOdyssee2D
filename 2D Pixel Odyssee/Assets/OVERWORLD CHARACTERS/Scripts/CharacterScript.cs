@@ -38,6 +38,9 @@ public class CharacterScript : MonoBehaviour
 
         uitomouse = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
 
+        uitomouse.playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
+        uitomouse.playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
+
         RosieComment.SetActive(false);
         BebeComment.SetActive(false);
         //Chaanimation = GetComponent<Animation>();
@@ -60,16 +63,14 @@ public class CharacterScript : MonoBehaviour
             RosieActive = false;
             RosieObj.SetActive(false);
             BeBeObj.SetActive(true);
-            newPlayer = BeBeObj.transform;
-            uitomouse.SwitchCharacter(newPlayer);
+            uitomouse.SwitchCharacter();
         }
         else
         {
             RosieActive = true;
             RosieObj.SetActive(true);
             BeBeObj.SetActive(false);
-            newPlayer = RosieObj.transform;
-            uitomouse.SwitchCharacter(newPlayer);
+            uitomouse.SwitchCharacter();
         }
         
     }

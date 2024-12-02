@@ -13,8 +13,8 @@ public class UiToMouse : MonoBehaviour
     private bool movePlayer = false;
     
     public bool ClipboardActive;
-    private Animator playerAnimator;
-    private Animator playerAnimator2;
+    public Animator playerAnimator;
+    public Animator playerAnimator2;
 
     private Animator pointerAnimator; // Animator für MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
@@ -36,9 +36,6 @@ public class UiToMouse : MonoBehaviour
 
         ClipboardActive = false;
         LockInteract = false;
-
-        playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
-        playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
 
 
         GameObject movePointer = GameObject.Find("MovePointer");
@@ -108,11 +105,17 @@ public class UiToMouse : MonoBehaviour
                 lastDirection = 1;
             }
 
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetBool("isWalking", true);
+                playerAnimator.SetInteger("LastDirection", lastDirection);
+            }
 
-            playerAnimator.SetBool("isWalking", true);
-            playerAnimator.SetInteger("LastDirection", lastDirection);
+            if(playerAnimator2 != null)
+            {
             playerAnimator2.SetBool("isWalking", true);
             playerAnimator2.SetInteger("LastDirection", lastDirection);
+            }
 
             pointerImage.enabled = true;
             pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
@@ -125,12 +128,18 @@ public class UiToMouse : MonoBehaviour
             if (player.position == targetPosition)
             {
                 movePlayer = false;
+                
+                if (playerAnimator != null)
+                {
+                    playerAnimator.SetBool("isWalking", false);
+                    playerAnimator.SetInteger("LastDirection", lastDirection); //idle
+                }
 
-                playerAnimator.SetBool("isWalking", false);
-                playerAnimator.SetInteger("LastDirection", lastDirection); //idle
-
-                playerAnimator2.SetBool("isWalking", false);
-                playerAnimator2.SetInteger("LastDirection", lastDirection);
+                if (playerAnimator2 != null)
+                {
+                    playerAnimator2.SetBool("isWalking", false);
+                    playerAnimator2.SetInteger("LastDirection", lastDirection);
+                }
 
                 pointerImage.enabled = false;
 
@@ -141,31 +150,45 @@ public class UiToMouse : MonoBehaviour
 
     }
 
-    public void SwitchCharacter(Transform newPlayer)
+    public void SwitchCharacter()
     {
-        playerAnimator.SetBool("isWalking", false);
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetBool("isWalking", false);
+        }
 
-        playerAnimator2.SetBool("isWalking", false);
-
-
-        player = newPlayer;
+        if (playerAnimator2 != null)
+        {
+            playerAnimator2.SetBool("isWalking", false);
+        }
 
         if (movePlayer)
         {
-            playerAnimator.SetBool("isWalking", true);
-            playerAnimator2.SetBool("isWalking", true);
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetBool("isWalking", true);
+                playerAnimator.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
+            }
 
-
-            playerAnimator.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
-            playerAnimator2.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
+            if (playerAnimator2 != null)
+            {
+                playerAnimator2.SetBool("isWalking", true);
+                playerAnimator2.SetInteger("LastDirection", targetPosition.x < player.position.x ? -1 : 1);
+            }
         }
         else
         {
-            playerAnimator.SetBool("isWalking", false);
-            playerAnimator.SetInteger("LastDirection", lastDirection);
+            if (playerAnimator != null)
+            {
+                playerAnimator.SetBool("isWalking", false);
+                playerAnimator.SetInteger("LastDirection", lastDirection);
+            }
 
-            playerAnimator2.SetBool("isWalking", false);
-            playerAnimator2.SetInteger("LastDirection", lastDirection);
+            if (playerAnimator2 != null)
+            {
+                playerAnimator2.SetBool("isWalking", false);
+                playerAnimator2.SetInteger("LastDirection", lastDirection);
+            }
         }
     }
 
