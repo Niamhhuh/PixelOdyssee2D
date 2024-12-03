@@ -10,9 +10,12 @@ public class ObjectScript : MonoBehaviour
     public int ID;				                                                    //ID of the Object, required to find it in the list
     public bool AlreadyTalked;
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
+    public bool ForcedInteraction;                                                  
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
     
+
+
     //public(Dialogue)			                                                    //Dialogue of this object
 
     // private bool InteractFired = false;
@@ -175,6 +178,9 @@ public class ObjectScript : MonoBehaviour
     {
         DMReference.DisplayObjectNameScript.SetDisplayPosition();                                       //SetNamePanelPosition
 
+
+        // Call InteractButtons
+        //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
             if (DataManager.ToShove.Count < 1)
@@ -268,9 +274,21 @@ public class ObjectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)                                                     //Initiate Interact on Trigger Enter
     {
-        if (!isBackground && other.CompareTag("Player") && RequestInteract == true)
+        if (!isBackground && other.CompareTag("Player") && RequestInteract == true && !ForcedInteraction)
         {
             CallInteractionButtons();
+        }
+
+        if (!isBackground && other.CompareTag("Player") && RequestInteract == true && ForcedInteraction)
+        {
+            DataManager.ToInteract.Add(this);
+
+            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+            InteractionController.SetActive(true);
+            InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+            InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+            InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
         }
     }
 

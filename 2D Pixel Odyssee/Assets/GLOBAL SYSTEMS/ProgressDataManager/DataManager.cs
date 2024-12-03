@@ -34,21 +34,34 @@ public class DataManager : MonoBehaviour
     public CursorImageScript CursorScript = null;
     public DisplayName DisplayObjectNameScript = null;
 
-    public GameObject SwitchChaButton;
-
     public Inventory InventoryRef = null;
     public CharacterScript CurrentCharacter = null;
 
     public static int Inventory_Fillstate = 0;
 
-    public static bool TutorialStarted;
+    //Tutorial Mechanics
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    public GameObject SwitchChaButton = null;                                               //Button for Character Swap
+    public GameObject ClipboardButton = null;                                               //Button for Clipboard
 
+    public static bool DisableClipboard = true;
+    public static bool DisableCharacterSwap = true;
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static bool FroggerCleared = false;
 
     public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
     public List<GameObject> RewardObjects = new List<GameObject>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
+
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
     [HideInInspector] public GameObject RosieComment = null;
@@ -57,10 +70,9 @@ public class DataManager : MonoBehaviour
     public TMP_Text ObjectCommentRosie;
     public TMP_Text ObjectCommentBebe;
 
-    //public Comment ObjectCommentRosie;
-    //public Comment ObjectCommentBebe;
+    //MiniMap + SpawnSystem
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //MiniMap
     public int currentRoom = 0;                                          //set this in Portal
 
     public List<GameObject> SpawnList = new List<GameObject>();          //Create a List to store all SpawnPoints in a Scene 
@@ -68,19 +80,15 @@ public class DataManager : MonoBehaviour
     public static int LastRoom;                                              //ID of the selected SpawnPointObject. Set in used Portal 
     public static bool NewGame = true;
 
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
         currentRoom = SceneManager.GetActiveScene().buildIndex;
-
-        if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
-        {
-
-            MoveScript.AllowInput = false;
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
-            TutorialStarted = true;
-        }
-        TutorialStarted = true;
 
         if(SpawnID == 0) { SpawnID = 1; }
         foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("Spawn"))
@@ -111,7 +119,10 @@ public class DataManager : MonoBehaviour
         {
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
-            SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");
+
+            SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");                                                //SwitchCharacterButton 
+            ClipboardButton = GameObject.FindGameObjectWithTag("ClipboardButton");                                                      //ClipboardButton 
+
             DisplayObjectNameScript = GameObject.FindGameObjectWithTag("ObjectNameDisplay").GetComponent<DisplayName>();
             MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             CursorScript = GameObject.FindGameObjectWithTag("DataManager").GetComponent<CursorImageScript>();
@@ -135,6 +146,62 @@ public class DataManager : MonoBehaviour
         {
             ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
             ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
+        }
+
+        UpdateUI();
+    }
+
+
+
+    //Control UI Buttons
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void DisableCharacterSwapButton()                                //Disable CharacterSwap
+    {
+        DisableCharacterSwap = true;
+        UpdateUI();
+    }
+
+    public void EnableCharacterSwapButton()                                 //Enable CharacterSwap
+    {
+        DisableCharacterSwap = false;
+        UpdateUI();
+    }
+
+    public void DisableClipboardButton()                                    //Disable Clipboard
+    {
+        DisableClipboard = true;
+        UpdateUI();
+    }
+
+    public void EnableClipboardButton()                                     //Enable Clipboard
+    {
+        DisableClipboard = false;
+        UpdateUI();
+    }
+
+    public void UpdateUI()                                                  //Control UI
+    {
+        //Control Character Swap Button
+        if (DisableCharacterSwap)
+        {
+            SwitchChaButton.SetActive(false);
+        }
+        else
+        {
+            SwitchChaButton.SetActive(true);
+        }
+
+
+        //Control Clipboard Button
+        if (DisableClipboard)
+        {
+            ClipboardButton.SetActive(false);
+        }
+        else
+        {
+            ClipboardButton.SetActive(true);
         }
     }
 
@@ -163,6 +230,8 @@ public class DataManager : MonoBehaviour
             }
         }
     }
+
+
 
     //Add Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

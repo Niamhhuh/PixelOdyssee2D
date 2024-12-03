@@ -9,7 +9,6 @@ public class EventSource : ObjectScript
 
     public bool Event_Passed;			                                                //relevant to control Item Spawn
     public bool Talk_Event;
-    public bool ForcedInteraction;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,55 +83,25 @@ public class EventSource : ObjectScript
 
     public void Call_Interact()
     {
-        if(!ForcedInteraction)
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+
+
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+        GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+
+        if (Lock_State == false)
         {
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
-
-
-            DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
-            GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
-
-            if (Lock_State == false)
-            {
-                ClearHighlight();
-                PassTriggerActivate(1);
-                ObjectSequenceUnlock();
-                EventInteract();
-            }
-            else
-            {
-                ClearHighlight();
-                //PassTriggerActivate(2);
-                StartCoroutine(FlashRed());
-            }
+            ClearHighlight();
+            PassTriggerActivate(1);
+            ObjectSequenceUnlock();
+            EventInteract();
         }
-    }
-
-    public void OnMouseOver()
-    {
-        if(ForcedInteraction )
+        else
         {
-            Unlock_Object();                                                                                                                        //Try to Unlock the Object
-            FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
-
-
-            DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
-            GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
-
-            if (Lock_State == false)
-            {
-                ClearHighlight();
-                PassTriggerActivate(1);
-                ObjectSequenceUnlock();
-                EventInteract();
-            }
-            else
-            {
-                ClearHighlight();
-                //PassTriggerActivate(2);
-                StartCoroutine(FlashRed());
-            }
+            ClearHighlight();
+            //PassTriggerActivate(2);
+            StartCoroutine(FlashRed());
         }
     }
 
