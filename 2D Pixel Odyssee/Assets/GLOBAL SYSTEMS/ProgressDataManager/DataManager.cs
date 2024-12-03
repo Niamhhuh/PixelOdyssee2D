@@ -88,6 +88,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
         Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
         
@@ -127,12 +128,19 @@ public class DataManager : MonoBehaviour
 
     private void SpawnPlayer()
     {
+        bool SpawnFound = false;
         foreach(GameObject Spawn in SpawnList)
         {
             if(Spawn.GetComponent<SpawnObjectScript>().ID == SpawnID) 
             {
                 MoveScript.player.position = new Vector3(Spawn.GetComponent<Transform>().position.x, MoveScript.player.position.y, MoveScript.player.position.z);
+                SpawnFound = true;
             }
+        }
+        if(!SpawnFound)
+        {
+            SpawnID = 1;
+            SpawnPlayer();
         }
     }
 

@@ -78,7 +78,6 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        print("Dialog:" + dialogueActivated + "CanContinue:" + canContinueText);
         if (dialogueActivated && canContinueText)
         {
             //Cancel dialogue if there are no lines of dialogue remaining
@@ -334,7 +333,6 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void TurnOffDialogue(string Caller)
     {
-        print(Caller);
         if(DMReference.MoveScript != null)
         {
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again

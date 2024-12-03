@@ -264,27 +264,32 @@ public class ObjectScript : MonoBehaviour
     {
         if (!isBackground && other.CompareTag("Player") && RequestInteract == true)
         {
-            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-            DataManager.ToInteract.Add(this);
-
-            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
-
-            InteractionController.SetActive(true);
-            InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
-            InteractionController.transform.GetChild(1).gameObject.SetActive(true);                     //Enable Interact Button 
-
-            if (CannotTalk == true)
-            {
-                InteractionController.transform.GetChild(0).gameObject.SetActive(false);                //Disable Dialogue Button 
-            }
-
-            if (CannotInteract == true || !AlreadyTalked)
-            {
-                InteractionController.transform.GetChild(1).gameObject.SetActive(false);                //Disable Interact Button 
-            }
-
-            InteractionController.transform.position = this.transform.position;
+            CallInteractionButtons();
         }
+    }
+
+    public void CallInteractionButtons()
+    {
+        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+        DataManager.ToInteract.Add(this);
+
+        if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+        InteractionController.SetActive(true);
+        InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
+        InteractionController.transform.GetChild(1).gameObject.SetActive(true);                     //Enable Interact Button 
+
+        if (CannotTalk == true)
+        {
+            InteractionController.transform.GetChild(0).gameObject.SetActive(false);                //Disable Dialogue Button 
+        }
+
+        if (CannotInteract == true || !AlreadyTalked)
+        {
+            InteractionController.transform.GetChild(1).gameObject.SetActive(false);                //Disable Interact Button 
+        }
+
+        InteractionController.transform.position = this.transform.position;
     }
 
     private void OnTriggerExit2D(Collider2D other)
