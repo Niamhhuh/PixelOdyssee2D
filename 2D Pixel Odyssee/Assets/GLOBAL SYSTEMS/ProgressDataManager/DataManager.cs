@@ -30,6 +30,8 @@ public class DataManager : MonoBehaviour
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
 
+
+    public CursorImageScript CursorScript = null;
     public DisplayName DisplayObjectNameScript = null;
 
     public GameObject SwitchChaButton;
@@ -96,11 +98,11 @@ public class DataManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
         {
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
-            
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
             SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");
             DisplayObjectNameScript = GameObject.FindGameObjectWithTag("ObjectNameDisplay").GetComponent<DisplayName>();
             MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+            CursorScript = GameObject.FindGameObjectWithTag("DataManager").GetComponent<CursorImageScript>();
         }
 
         Rooms_Loaded[0] = false;                                                        //Archive 

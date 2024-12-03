@@ -9983,6 +9983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveScript: {fileID: 0}
+  CursorScript: {fileID: 0}
   DisplayObjectNameScript: {fileID: 0}
   SwitchChaButton: {fileID: 0}
   InventoryRef: {fileID: 0}
@@ -10008,7 +10009,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CursorTexture: {fileID: 2800000, guid: 6a315ee0ac43a6d4eb358be45e8eb791, type: 3}
   CursorHighlightTexture: {fileID: 2800000, guid: 2166bb6244342954b83a5260c9cad04a, type: 3}
+  transparentCursor: {fileID: 2800000, guid: 7207a776a36b4b34d8d5ce56a7b577a8, type: 3}
   CursorPoint: {x: 0, y: 0}
+  Transparent: 0
 --- !u!1 &6576325417162425969
 GameObject:
   m_ObjectHideFlags: 0

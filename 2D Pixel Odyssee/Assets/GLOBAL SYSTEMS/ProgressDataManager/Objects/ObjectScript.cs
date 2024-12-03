@@ -143,12 +143,18 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
+        if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger)
+        {
+            DMReference.CursorScript.DeactivateCursorSprite();
+            DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+        }
+
         if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
 
-            DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+        
 
             this.ObjectSprite.enabled = false;
             //Object_Collider.size = new Vector2(Object_Collider.size.x + 1, Object_Collider.size.y + 2);             //ATTENTION: MAYBE COLLIDER SIZE SHOULD BE MODULAR
@@ -158,7 +164,7 @@ public class ObjectScript : MonoBehaviour
     private void OnMouseExit()                                                                          //When the Cursor Exits an Object, clear the Highlight and Mark
     {
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                                    //Deactivate ObjectNamePanel
-
+        DMReference.CursorScript.ActivateCursorSprite();
         if (!RequestInteract)
         {
             ClearHighlight();

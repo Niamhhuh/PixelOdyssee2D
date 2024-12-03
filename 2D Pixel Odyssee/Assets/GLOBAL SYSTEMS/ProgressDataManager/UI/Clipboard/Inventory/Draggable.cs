@@ -105,13 +105,15 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);
-        DMReference.DisplayObjectNameScript.SetDisplayPosition();
+        DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate the Object Name Panel
+        DMReference.DisplayObjectNameScript.SetDisplayPosition();                                                   //Set the Position of the Object Name Panel
+        DMReference.CursorScript.DeactivateCursorSprite();                                                          //Make the Cursor Transparent
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                                                //Deactivate the Object Name Panel
+        DMReference.CursorScript.ActivateCursorSprite();                                                            //Make the Cursor Opaque
     }
 
     public void OnPointerDown(PointerEventData eventData)
