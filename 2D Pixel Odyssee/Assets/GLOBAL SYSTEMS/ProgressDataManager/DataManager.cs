@@ -65,6 +65,8 @@ public class DataManager : MonoBehaviour
 
     public List<GameObject> SpawnList = new List<GameObject>();          //Create a List to store all SpawnPoints in a Scene 
     public static int SpawnID;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+    public static int LastRoom;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+    public static bool NewGame = true;
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
@@ -90,6 +92,16 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            NewGame = false;
+        }
+
+        if (NewGame)
+        {
+            LastRoom = 1;
+        }
+
         Time.timeScale = 1;
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
         Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
@@ -119,8 +131,11 @@ public class DataManager : MonoBehaviour
         RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
 
-        ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
-        ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
+        if(CurrentCharacter != null)
+        {
+            ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
+            ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
+        }
     }
 
 
@@ -130,19 +145,22 @@ public class DataManager : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        bool SpawnFound = false;
-        foreach(GameObject Spawn in SpawnList)
+        if(SpawnList.Count > 0)
         {
-            if(Spawn.GetComponent<SpawnObjectScript>().ID == SpawnID) 
+            bool SpawnFound = false;
+            foreach (GameObject Spawn in SpawnList)
             {
-                MoveScript.player.position = new Vector3(Spawn.GetComponent<Transform>().position.x, MoveScript.player.position.y, MoveScript.player.position.z);
-                SpawnFound = true;
+                if (Spawn.GetComponent<SpawnObjectScript>().ID == SpawnID)
+                {
+                    MoveScript.player.position = new Vector3(Spawn.GetComponent<Transform>().position.x, MoveScript.player.position.y, MoveScript.player.position.z);
+                    SpawnFound = true;
+                }
             }
-        }
-        if(!SpawnFound)
-        {
-            SpawnID = 1;
-            SpawnPlayer();
+            if (!SpawnFound)
+            {
+                SpawnID = 1;
+                SpawnPlayer();
+            }
         }
     }
 
