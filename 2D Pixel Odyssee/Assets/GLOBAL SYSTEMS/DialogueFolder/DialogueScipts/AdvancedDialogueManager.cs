@@ -245,7 +245,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         dialogueText.text = "";
         canContinueText = false;
         bool addingRichTextTag = false;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         foreach(char letter in line.ToCharArray())
         {
             if (StopTypeWriter)
