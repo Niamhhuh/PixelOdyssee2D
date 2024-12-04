@@ -2214,8 +2214,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 82.67981, y: 173.52019}
-  m_SizeDelta: {x: -543.8571, y: -378.8968}
+  m_AnchoredPosition: {x: 96.14719, y: 172.5}
+  m_SizeDelta: {x: -467.70563, y: -375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &192600504900216212
 CanvasRenderer:
@@ -5254,11 +5254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18562f0ad5c5914f85a972b634a35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentConversation: {fileID: 0}
+  stepNum: 0
   actorSO:
   - {fileID: 11400000, guid: 97af57a15d479b1459e558c61eea7d85, type: 2}
   - {fileID: 11400000, guid: 91e1e0c623c716f4f972dbb7e9b1de34, type: 2}
   - {fileID: 11400000, guid: d92d4c6b9364bb54ba2d4a49a54df0ff, type: 2}
-  typingSpeed: 0.02
+  typingSpeed: 0.015
   canContinueText: 1
 --- !u!1 &3804833606036629595
 GameObject:
@@ -6890,7 +6892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -17.797485, y: -224.74365}
+  m_AnchoredPosition: {x: -17.797363, y: -224.74365}
   m_SizeDelta: {x: 416.3677, y: -517.5721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7268959676268638881
@@ -6915,7 +6917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9990,6 +9992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggeredObjects_List: []
   MoveScript: {fileID: 0}
   CursorScript: {fileID: 0}
   DisplayObjectNameScript: {fileID: 0}
@@ -11924,7 +11927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: 6}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4891503226475372736
@@ -12020,7 +12023,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -55.524048, w: 0}
+  m_margin: {x: -80, y: 0, z: -80, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12136,7 +12139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.6174316, y: 0.7792053}
+  m_AnchoredPosition: {x: -6.6174316, y: 0.7791748}
   m_SizeDelta: {x: -13.2351, y: -256.2056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6606354523106878569
@@ -12247,6 +12250,10 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -13279,6 +13286,10 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:

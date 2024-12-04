@@ -53,7 +53,7 @@ public class Triggerable : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Trigger_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
+    public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Trigger_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
     {
         Lock_State = Stored_Lock_State;
         AlreadyTalked = Stored_AlreadyTalked;
@@ -105,8 +105,6 @@ public class Triggerable : ObjectScript
             if (Lock_State == false)
             {
                 ClearHighlight();
-                PassTriggerActivate(1);
-                ObjectSequenceUnlock();
                 TriggerInteract();
             } 
         }
@@ -120,6 +118,7 @@ public class Triggerable : ObjectScript
     {
         Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
         PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
+        ObjectSequenceUnlock();
         UpdateData();
 
         //If Force_Dialogue -> Trigger Dialogue
@@ -130,8 +129,13 @@ public class Triggerable : ObjectScript
             DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
             DMReference.MoveScript.DisableInteract();                               //Disable Interact 
             DMReference.MoveScript.InTriggerDialogue = true;
-            GetComponent<NPCDialogue>().advancedDialogueManager.ForceDialogue(GetComponent<NPCDialogue>());
+            GetComponent<NPCDialogue>().advancedDialogueManager.ForceDialogue(gameObject.GetComponent<NPCDialogue>());
             GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+
+            if (DMReference.DialogueManager.dialogueCanvas.activeSelf)
+            {
+                DMReference.DialogueManager.dialogueCanvas.SetActive(true);
+            }
         }
         else 
         {

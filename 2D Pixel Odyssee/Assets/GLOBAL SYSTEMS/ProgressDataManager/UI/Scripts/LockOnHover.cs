@@ -13,7 +13,6 @@ public class LockOnHover : MonoBehaviour
 
     private void OnMouseOver()
     {
-        print("Hi");
         PointerScript.DisableInput();
         PointerScript.DisableInteract();
     }

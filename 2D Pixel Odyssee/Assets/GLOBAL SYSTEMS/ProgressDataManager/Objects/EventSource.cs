@@ -44,9 +44,9 @@ public class EventSource : ObjectScript
         RemoveEvent();                                                                                       //Remove Event if it has been interacted with already
     }
 
-    
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
+
+    public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Event_Passed)                                  //Fetch the Variables Lock and Event_Passed from the DataManager
     {
         Lock_State = Stored_Lock_State;
         AlreadyTalked = Stored_AlreadyTalked;
@@ -83,15 +83,21 @@ public class EventSource : ObjectScript
 
     public void Call_Interact()
     {
-        Unlock_Object();                                                                                                                        //Try to Unlock the Object
         FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+        Unlock_Object();                                                                                                                        //Try to Unlock the Object
+        
+        
+        if(DataManager.EventSource_List[ObjectIndex].Stored_ID == ID) { print("match"); print(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State); print(DataManager.EventSource_List.Count);}
 
+        Lock_State = DataManager.EventSource_List[ObjectIndex].Stored_Lock_State;
+        print(Lock_State);
 
-        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+        DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
 
         if (Lock_State == false)
         {
+            gameObject.GetComponent<Collider2D>().enabled = false;
             ClearHighlight();
             PassTriggerActivate(1);
             ObjectSequenceUnlock();
