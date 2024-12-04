@@ -2090,8 +2090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: c68d76defdf967f4f999509cb8848d53, type: 2}
-  - {fileID: 11400000, guid: 00fbb54e1b24f244db2bd1699825c97d, type: 2}
+  - {fileID: 11400000, guid: 5949f1b29d34872479022a04285ea34a, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!114 &372535036
@@ -2325,7 +2324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 2096f4ac621db7847bd8207ad65944bc, type: 2}
+  - {fileID: 11400000, guid: b6bdc44f3d7f19b4788d9a50b9daf887, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!114 &460389317
@@ -2833,8 +2832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6fff39c4683f6ec4da80b04b0e98e61e, type: 2}
-  - {fileID: 11400000, guid: 0732ebadbc153b648955440416842363, type: 2}
+  - {fileID: 11400000, guid: 39018fe8e326f304da439eb0ac2b6f7e, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!212 &726444203
@@ -4496,8 +4494,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 5cb00094658f1044f835027210ad30e6, type: 2}
-  - {fileID: 11400000, guid: c9981177dada31f42a0ab12dff06f670, type: 2}
+  - {fileID: 11400000, guid: 6fff39c4683f6ec4da80b04b0e98e61e, type: 2}
+  - {fileID: 11400000, guid: 0732ebadbc153b648955440416842363, type: 2}
+  - {fileID: 11400000, guid: 3c7d7d36999120346ad22cf8b56ca5b4, type: 2}
+  - {fileID: 11400000, guid: c6b9afdad909bd64080c91bcbf14543d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!1 &1314770200
@@ -4713,6 +4713,7 @@ GameObject:
   - component: {fileID: 1341279234}
   - component: {fileID: 1341279233}
   - component: {fileID: 1341279232}
+  - component: {fileID: 1341279237}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -4892,12 +4893,29 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9.984001, y: 3.562715, z: 0}
-  m_LocalScale: {x: 0.69437, y: 0.69437, z: 0.81689996}
+  m_LocalScale: {x: 0.8169, y: 0.8169, z: 0.8169}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676291777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341279237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341279231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 0b324068116871947829d5d7d324d03e, type: 2}
+  - {fileID: 11400000, guid: cc9fd57171adeae4f82afa4df950f5b0, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &1341721845
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,7 +5003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a4f6c26217ab59489eaecb5e62a037f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5458,7 +5476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 2096f4ac621db7847bd8207ad65944bc, type: 2}
+  - {fileID: 11400000, guid: 0b324068116871947829d5d7d324d03e, type: 2}
+  - {fileID: 11400000, guid: cc9fd57171adeae4f82afa4df950f5b0, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
 --- !u!1 &1548022563
@@ -7213,8 +7232,8 @@ GameObject:
   - component: {fileID: 2010492949}
   - component: {fileID: 2010492948}
   - component: {fileID: 2010492947}
-  - component: {fileID: 2010492946}
   - component: {fileID: 2010492945}
+  - component: {fileID: 2010492950}
   m_Layer: 0
   m_Name: Automat
   m_TagString: Untagged
@@ -7252,24 +7271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Reward_ID: 1
---- !u!114 &2010492946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010492943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - {fileID: 11400000, guid: 38a88e0e8eafe4a41ba135ab9a5b23a1, type: 2}
-  - {fileID: 11400000, guid: c7e5c656caa2a0e48ad88cda1a88a806, type: 2}
-  - {fileID: 11400000, guid: 233df0f676b1e9844ad5c2db1afef5bb, type: 2}
-  advancedDialogueManager: {fileID: 0}
-  DialogueHolder: {fileID: 0}
 --- !u!114 &2010492947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7416,6 +7417,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2010492950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010492943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 233df0f676b1e9844ad5c2db1afef5bb, type: 2}
+  - {fileID: 11400000, guid: c7e5c656caa2a0e48ad88cda1a88a806, type: 2}
+  - {fileID: 11400000, guid: 38a88e0e8eafe4a41ba135ab9a5b23a1, type: 2}
+  - {fileID: 11400000, guid: 2dd5e73a148c6844fa691c33053ab830, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
 --- !u!1 &2050538817
 GameObject:
   m_ObjectHideFlags: 0
