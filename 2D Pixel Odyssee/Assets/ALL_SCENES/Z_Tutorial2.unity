@@ -304,6 +304,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 1
   Item_Key_ID: 3
   LockSprite: {fileID: 0}
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trigger_ID: 11
+  Trigger_ID: 12
   CharacterBound: 0
   Rosie: 0
   Bebe: 0
@@ -586,10 +587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 10
+  ID: 11
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -718,6 +720,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -942,6 +945,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -1327,7 +1331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 77fdbced41f3f55488279063de9535f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1486,6 +1490,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -1774,6 +1779,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -2040,6 +2046,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -3371,6 +3378,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -3488,7 +3496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: cf991308bb6d8e843ab03a885f1a71ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3508,14 +3516,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972280114}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.54, y: -0.32000017, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.1752347, w: 0.9845267}
+  m_LocalPosition: {x: 3.91, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163715415}
   m_Father: {fileID: 157635187}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20.185}
 --- !u!1 &978511625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,10 +3580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 9
+  ID: 10
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -4129,6 +4138,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -4316,6 +4326,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -4536,6 +4547,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 1
   Item_Key_ID: 9
   LockSprite: {fileID: 0}
@@ -5093,10 +5105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 11
+  ID: 12
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -5495,6 +5508,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -6017,6 +6031,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -6325,6 +6340,7 @@ MonoBehaviour:
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}

@@ -10,7 +10,8 @@ public class ObjectScript : MonoBehaviour
     public int ID;				                                                    //ID of the Object, required to find it in the list
     public bool AlreadyTalked;
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
-    public bool ForcedInteraction;                                                  
+    public bool ForcedInteraction;
+    public bool TriggeronUnlock;
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
     
@@ -52,7 +53,9 @@ public class ObjectScript : MonoBehaviour
 
     [HideInInspector] public bool RequestInteract = false;                     //Request is set true, when the Object is clicked and reset, when another object is clicked. 
     [HideInInspector] public bool AlreadyActive = false;                       //AlreadyActive marks an Object as already highlighted, preventing it from expanding its collider multiple times
+    //private bool PlayerDetected = false;
     public bool isBackground;                                                  //isBackground is set true on the background, disabling all functions for it
+
 
 
     [HideInInspector] public GameObject InteractionController = null;          //Store Interaction Buttons
@@ -205,7 +208,22 @@ public class ObjectScript : MonoBehaviour
             UpdateDragUnlock();
             if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
             DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
-            // Delete Item from Draggable List
+                                                                                             // Delete Item from Draggable List
+
+
+
+            if (!isBackground && TriggeronUnlock)
+            {
+                DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                DataManager.ToInteract.Add(this);
+
+                if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+                InteractionController.SetActive(true);
+                InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+                InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+                InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+            }
         }
 
 
@@ -278,6 +296,11 @@ public class ObjectScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)                                                     //Initiate Interact on Trigger Enter
     {
+        if (!isBackground && other.CompareTag("Player"))
+        {
+            //PlayerDetected = true;
+        }
+
         if (!isBackground && other.CompareTag("Player") && RequestInteract == true && !ForcedInteraction)
         {
             CallInteractionButtons();
@@ -325,6 +348,7 @@ public class ObjectScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)
         {
+            //PlayerDetected = false;
             DataManager.ToInteract.RemoveAt(0);
             if (InteractionController != null)
             {

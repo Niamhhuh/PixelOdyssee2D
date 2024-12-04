@@ -34,7 +34,7 @@ public class ResetTheGame : MonoBehaviour
 
         //DataManager.Slot_Array.Clear();
 
-        DataManager.TriggeredObjects_List.Clear();
+        //DataManager.TriggeredObjects_List.Clear();
 
         DataManager.Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 

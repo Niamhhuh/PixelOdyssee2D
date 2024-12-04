@@ -39,9 +39,9 @@ public class Triggerable : ObjectScript
         {
             DMReference.AddTriggerableObj(ID, Lock_State, AlreadyTalked, Trigger_Passed, this.gameObject);                 //Call the AddTriggerableObj Method in DataManager, to add a new DataContainer.
             ObjectIndex = DataManager.Triggerable_List.Count - 1;                                        //When an Object is added, it is added to the end of the list. 
-            DataManager.TriggeredObjects_List.Add(gameObject);
         }
 
+        DMReference.TriggeredObjects_List.Add(gameObject);      //Always add a fresh GameObject on Scene Load
 
         if (Lock_State == true)
         {

@@ -24,7 +24,7 @@ public class DataManager : MonoBehaviour
 
     public static SlotScript[] Slot_Array = new SlotScript[11];
 
-    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all Triggers
+    public List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all Triggers
 
     public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
@@ -578,6 +578,10 @@ public class DataManager : MonoBehaviour
                 TriggerObj.SetActive(true);                                                 //Activate the Trigger
                 MoveScript.DisableInput();                                                  //Disable Pointer Inpput 
                 MoveScript.DisableInteract();                                               //Disable Pointer Interact 
+                if(TriggerObj.GetComponent<Triggerable>().ForceDialogue)
+                {
+                    TriggerObj.GetComponent<Triggerable>().TriggerInteract();               //Immediatly Activate Trigger
+                }
             }
         }
     }
@@ -601,8 +605,6 @@ public class DataManager : MonoBehaviour
 
     public void ActivateReward(int Reward_ID) 
     {
-
-        print(RewardList.Count);
         GrantInRoomReward(Reward_ID);
         foreach (Collectable StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
