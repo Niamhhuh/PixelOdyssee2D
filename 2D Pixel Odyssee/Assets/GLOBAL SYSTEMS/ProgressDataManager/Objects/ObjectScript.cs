@@ -70,6 +70,8 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public SequenceUnlock SeqUReference = null;              //Store the Sequence Unlock
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
+    [HideInInspector] public ActivateTrigger TriggerScript = null;
+
     public bool IsReward;
 
     [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
@@ -240,6 +242,8 @@ public class ObjectScript : MonoBehaviour
 
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------------------
+
     private void CompareNewInput()                                                                     //This Method ensures, that only 1 Object is highlighted at a time (Exculding +1 Hover Highlight)
     {
         if (DataManager.Highlighted_Current.Count > 1)                                                  //Check if there is an Object in Highlighted List already
@@ -281,6 +285,7 @@ public class ObjectScript : MonoBehaviour
 
         if (!isBackground && other.CompareTag("Player") && RequestInteract == true && ForcedInteraction)
         {
+            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
             DataManager.ToInteract.Add(this);
 
             if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
@@ -468,10 +473,13 @@ public class ObjectScript : MonoBehaviour
     }
 
 
-
+    
     public void PassTriggerActivate(int TriggerType)
     {
-        if (gameObject.GetComponent<ActivateTrigger>() != null) { gameObject.GetComponent<ActivateTrigger>().CallTriggerActivation(TriggerType); }
+        if (TriggerScript != null) 
+        {
+            TriggerScript.CallTriggerActivation(TriggerType); 
+        }
     }
 
 

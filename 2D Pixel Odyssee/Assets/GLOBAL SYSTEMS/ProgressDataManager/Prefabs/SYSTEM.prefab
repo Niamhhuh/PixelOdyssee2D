@@ -918,31 +918,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7897939742928058842}
-          m_TargetAssemblyTypeName: CharacterScript, Assembly-CSharp
-          m_MethodName: SwitchCharacters
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 6431784380247863816}
-          m_TargetAssemblyTypeName: SwapImageButton, Assembly-CSharp
-          m_MethodName: SwapImage
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -1013,6 +989,34 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 6431784380247863816}
           m_TargetAssemblyTypeName: SwapImageButton, Assembly-CSharp
+          m_MethodName: SwapImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7897939742928058842}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: SwitchCharacters
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6431784380247863816}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: SwapImage
           m_Mode: 1
           m_Arguments:
@@ -3931,19 +3935,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8283363910267130835}
-          m_TargetAssemblyTypeName: Clipboard, Assembly-CSharp
-          m_MethodName: CallClipboard
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -3991,6 +3983,22 @@ MonoBehaviour:
         - m_Target: {fileID: 7473731243639272027}
           m_TargetAssemblyTypeName: HighlightClipboardButton, Assembly-CSharp
           m_MethodName: ClearHighlight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8283363910267130835}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: CallClipboard
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9880,7 +9888,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 6.1729627}
+  m_Offset: {x: 0.40803647, y: 6.172962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9891,7 +9899,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6, y: 38.420322}
+  m_Size: {x: 12.324741, y: 38.420322}
   m_EdgeRadius: 0
 --- !u!50 &8173569982408254099
 Rigidbody2D:
