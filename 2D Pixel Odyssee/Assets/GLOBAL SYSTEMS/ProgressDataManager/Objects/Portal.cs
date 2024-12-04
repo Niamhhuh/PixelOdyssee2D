@@ -48,7 +48,7 @@ public class Portal : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
+    public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
     {
         Lock_State = Stored_Lock_State;
         AlreadyTalked = Stored_AlreadyTalked;

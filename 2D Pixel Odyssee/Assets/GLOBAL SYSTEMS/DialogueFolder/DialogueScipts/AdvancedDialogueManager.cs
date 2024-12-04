@@ -9,12 +9,12 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     private DataManager DMReference;
     //NPC DIALOGUE we are currently stepping through
-    private AdvancedDialogueSO currentConversation;
-    private int stepNum = 0;
+    public AdvancedDialogueSO currentConversation;
+    public int stepNum = 0;
     private bool dialogueActivated;
 
     //UI REFERENCES
-    private GameObject dialogueCanvas;
+    [HideInInspector] public GameObject dialogueCanvas;
     private TMP_Text actor;
     private Image portrait;
     private TMP_Text dialogueText;
@@ -41,8 +41,6 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     private bool StopTypeWriter;
     private bool WriterIsRunning;
-
-    static int A;
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +78,14 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         if (dialogueActivated && canContinueText)
         {
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //Cancel dialogue if there are no lines of dialogue remaining
             if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
+                //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) 
                 {
                     CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
@@ -92,7 +95,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
                 EndEventDialogue();
 
-                TurnOffDialogue(gameObject.name);
+                TurnOffDialogue();
             }
 
             //Continue dialogue1
@@ -127,7 +130,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     void PlayDialogue()
     {
         Debug.Assert(currentConversation.actors.Length > stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
-
+        
         //If it's a random NPC
         if (currentConversation.actors[stepNum] == DialogueActors.Random)
             SetActorInfo(false);
@@ -141,6 +144,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         actor.text = currentSpeaker;
         portrait.sprite = currentPortrait;                                                  //---------------------------------
         ContinueButton.SetActive(true);
+
         //If there is a branch...
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
@@ -152,7 +156,9 @@ public class AdvancedDialogueManager : MonoBehaviour
             for (int i = 0;i < currentConversation.optionText.Length; i++)
             {
                 if (currentConversation.optionText[i] == null)
+                {
                     optionButton[i].SetActive(false);
+                }
                 else
                 {
                     optionButtonText[i].text = currentConversation.optionText[i];
@@ -176,7 +182,10 @@ public class AdvancedDialogueManager : MonoBehaviour
             typeWriterRoutine = StartCoroutine(TypewriterEffect(dialogueText.text = currentConversation.dialogue[stepNum]));
         }
         else
+        {
             optionsPanel.SetActive(true);
+        }
+            
        
         dialogueCanvas.SetActive(true);
         stepNum += 1;
@@ -329,9 +338,11 @@ public class AdvancedDialogueManager : MonoBehaviour
         currentConversation = npcDialogue.conversation[0];
 
         dialogueActivated = true;
+
+        stepNum = 0;
     }
 
-    public void TurnOffDialogue(string Caller)
+    public void TurnOffDialogue()
     {
         if(DMReference.MoveScript != null)
         {

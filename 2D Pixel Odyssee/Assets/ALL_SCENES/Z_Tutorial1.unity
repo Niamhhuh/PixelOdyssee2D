@@ -824,7 +824,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -836,7 +836,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -848,7 +848,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 438019245}
+        - m_Target: {fileID: 5843165638069767377}
           m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
           m_MethodName: EnableCharacterSwapButton
           m_Mode: 1
@@ -860,17 +860,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &146715096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7897939742928058842, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-  m_PrefabInstance: {fileID: 1975642233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f9dc600016d704a970f371b2a4a9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &155875480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1585,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -1608,7 +1597,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -1698,7 +1687,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -1710,7 +1699,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -1738,7 +1727,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: EnableInput
           m_Mode: 1
@@ -1750,7 +1739,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: EnableInteract
           m_Mode: 1
@@ -1778,7 +1767,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 146715096}
+        - m_Target: {fileID: 7897939741665612195}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: SwitchCharacters
           m_Mode: 1
@@ -1814,7 +1803,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 438019245}
+        - m_Target: {fileID: 5843165638069767377}
           m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
           m_MethodName: EnableCharacterSwapButton
           m_Mode: 1
@@ -1957,6 +1946,7 @@ GameObject:
   - component: {fileID: 372535035}
   - component: {fileID: 372535033}
   - component: {fileID: 372535037}
+  - component: {fileID: 372535039}
   m_Layer: 0
   m_Name: BebeAus
   m_TagString: Untagged
@@ -2107,8 +2097,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   AlreadyTalked: 0
-  Lock_State: 1
-  ForcedInteraction: 1
+  Lock_State: 0
+  ForcedInteraction: 0
   TriggeronUnlock: 0
   Unlock_by_Item: 1
   Item_Key_ID: 1
@@ -2161,17 +2151,22 @@ MonoBehaviour:
   InteractionTriggered: 1
   LockTriggered: 0
   DialogueTriggered: 0
---- !u!114 &438019245 stripped
+--- !u!114 &372535039
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5843165636127827112, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-  m_PrefabInstance: {fileID: 1975642233}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 372535030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OtherUnlockList_ID: 6
+  OtherUnlockObject_ID: 11
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
 --- !u!1 &439592617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2264,7 @@ GameObject:
   - component: {fileID: 460389317}
   - component: {fileID: 460389316}
   - component: {fileID: 460389315}
+  - component: {fileID: 460389319}
   m_Layer: 0
   m_Name: BeBeWach
   m_TagString: Untagged
@@ -2421,6 +2417,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &460389319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460389313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OtherUnlockList_ID: 5
+  OtherUnlockObject_ID: 3
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
 --- !u!1 &547006477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,17 +3817,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &946100933 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5736366869950914053, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-  m_PrefabInstance: {fileID: 1975642233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb1a518a92ec7142a63ef0661332e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969682068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,7 +4028,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -4039,7 +4040,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -5260,7 +5261,7 @@ GameObject:
   - component: {fileID: 1464840966}
   - component: {fileID: 1464840967}
   m_Layer: 0
-  m_Name: Box
+  m_Name: Box2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5691,7 +5692,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -5703,7 +5704,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -5832,7 +5833,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -5844,7 +5845,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 946100933}
+        - m_Target: {fileID: 5736366871372871292}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -6417,7 +6418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1772208906
 Transform:
   m_ObjectHideFlags: 0
@@ -6981,22 +6982,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1915379331319260994, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.7791748
-      objectReference: {fileID: 0}
-    - target: {fileID: 2401637966139354933, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2401637966139354933, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2992588993333434418, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_TagString
-      value: ClipboardButton
-      objectReference: {fileID: 0}
     - target: {fileID: 3936147526621032354, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7028,23 +7013,11 @@ PrefabInstance:
     - target: {fileID: 4608394381111430612, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4899836804342728855, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: typingSpeed
-      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 5774828563302901146, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_Name
       value: SYSTEM
       objectReference: {fileID: 0}
-    - target: {fileID: 6685310013266549446, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_margin.x
-      value: -80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685310013266549446, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_margin.z
-      value: -80
-      objectReference: {fileID: 0}
     - target: {fileID: 6687809554465576547, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7059,30 +7032,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6687809554465576547, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873047434640822916, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -467.70563
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873047434640822916, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873047434640822916, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 96.14719
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873047434640822916, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 172.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310026493375568653, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -17.797363
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372376189776293489, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8663867097056879031, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
@@ -7565,6 +7514,28 @@ Transform:
   - {fileID: 969682075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5736366871372871292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5736366869950914053, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 1975642233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb1a518a92ec7142a63ef0661332e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5843165638069767377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5843165636127827112, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 1975642233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7855790134596259122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7622,6 +7593,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+--- !u!114 &7897939741665612195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7897939742928058842, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 1975642233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f9dc600016d704a970f371b2a4a9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class SequenceUnlock : MonoBehaviour
     void Awake()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
-        ObjReference = this.GetComponent<ObjectScript>();
+        ObjReference = gameObject.GetComponent<ObjectScript>();
         ObjReference.CanSequenceUnlock = true;
     }
 

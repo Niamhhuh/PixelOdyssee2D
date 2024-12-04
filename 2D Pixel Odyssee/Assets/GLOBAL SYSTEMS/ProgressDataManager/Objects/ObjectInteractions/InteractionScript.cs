@@ -63,6 +63,11 @@ public class InteractionScript : MonoBehaviour
                 EventReference = (EventSource)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
                 EventReference.Call_Interact();                                                      //Call EventSource.Call_Interact
                 break;
+            case 6:
+                Triggerable TriggerReference = null;                                                   //Create a Reference Variable, which will be used to access the EventSource.Call_Interact Method
+                TriggerReference = (Triggerable)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
+                TriggerReference.TriggerInteract();                                                      //Call EventSource.Call_Interact
+                break;
         }
     }
 }

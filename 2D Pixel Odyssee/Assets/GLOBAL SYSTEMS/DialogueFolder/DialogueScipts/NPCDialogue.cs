@@ -53,7 +53,7 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract)
+        if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract && DataManager.ToInteract.Count < 1)
         {
             advancedDialogueManager.InitiateDialogue(this);
             WasClicked = true;
@@ -67,7 +67,7 @@ public class NPCDialogue : MonoBehaviour
             //Speech Bubble Off
             //speechBubbleRenderer.enabled = false;
 
-            advancedDialogueManager.TurnOffDialogue(gameObject.name);
+            advancedDialogueManager.TurnOffDialogue();
             dialogueInitated = false;
 
             WasClicked = false;

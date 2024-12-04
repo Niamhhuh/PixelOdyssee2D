@@ -39,6 +39,8 @@ public class DataManager : MonoBehaviour
 
     public static int Inventory_Fillstate = 0;
 
+    public AdvancedDialogueManager DialogueManager = null;
+
     //Tutorial Mechanics
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -126,6 +128,7 @@ public class DataManager : MonoBehaviour
             DisplayObjectNameScript = GameObject.FindGameObjectWithTag("ObjectNameDisplay").GetComponent<DisplayName>();
             MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             CursorScript = GameObject.FindGameObjectWithTag("DataManager").GetComponent<CursorImageScript>();
+            DialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         }
 
         Rooms_Loaded[0] = false;                                                        //Archive 
@@ -405,7 +408,7 @@ public class DataManager : MonoBehaviour
 
     private void SequenceSearchEventSource(int Object_ID)                         // Search through Portal List and Unlock an Object
     {
-        foreach (SwitchStateObj StoredObj in SwitchState_List)
+        foreach (EventObj StoredObj in EventSource_List)
         {
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
         }
@@ -580,6 +583,8 @@ public class DataManager : MonoBehaviour
                 MoveScript.DisableInteract();                                               //Disable Pointer Interact 
                 if(TriggerObj.GetComponent<Triggerable>().ForceDialogue)
                 {
+                    TriggerObj.GetComponent<Triggerable>().Lock_State = false;
+                    TriggerObj.GetComponent<Triggerable>().UpdateData();
                     TriggerObj.GetComponent<Triggerable>().TriggerInteract();               //Immediatly Activate Trigger
                 }
             }
