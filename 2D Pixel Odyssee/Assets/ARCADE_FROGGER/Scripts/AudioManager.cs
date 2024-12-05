@@ -26,19 +26,19 @@ public class AudioManager : MonoBehaviour
 
     private void PlayThemeForCurrentScene()
     {
-        EventReference themeToPlay = new EventReference(); // Default initialisierung
+        EventReference themeToPlay = default; // Default initialisierung
 
         if (SceneManager.GetActiveScene().name == "z_Start Screen")
         {
             themeToPlay = titelScreenTheme;
         }
-        else if (SceneManager.GetActiveScene().name == "Z_Tutorial1")
+        else if (SceneManager.GetActiveScene().name == "Z_Tutorial1" || SceneManager.GetActiveScene().name == "Z_Tutorial2")
         {
             themeToPlay = gameSceneTheme;
         }
-        
+
         // Überprüfe, ob ein gültiges Theme gefunden wurde
-        if (!string.IsNullOrEmpty(themeToPlay.Path))
+        if (!themeToPlay.IsNull)
         {
             currentThemeInstance = RuntimeManager.CreateInstance(themeToPlay);
             currentThemeInstance.start();
@@ -47,7 +47,6 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Kein gültiges Theme für die aktuelle Szene gefunden.");
         }
-        
     }
 
     private void StopCurrentTheme()
@@ -66,4 +65,3 @@ public class AudioManager : MonoBehaviour
         StopCurrentTheme();
     }
 }
-

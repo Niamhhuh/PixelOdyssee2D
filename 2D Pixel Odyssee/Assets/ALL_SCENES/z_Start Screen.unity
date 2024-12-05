@@ -1776,6 +1776,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: gameSceneTheme.Path
+      value: event:/Depot Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: titelScreenTheme.Path
+      value: event:/Titelscreen Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: gameSceneTheme.Guid.Data1
+      value: -1389875791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: gameSceneTheme.Guid.Data2
+      value: 1203534326
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: gameSceneTheme.Guid.Data3
+      value: 825692847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: gameSceneTheme.Guid.Data4
+      value: -1145034477
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: titelScreenTheme.Guid.Data1
+      value: 250868438
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: titelScreenTheme.Guid.Data2
+      value: 1339535541
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: titelScreenTheme.Guid.Data3
+      value: -801345379
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: titelScreenTheme.Guid.Data4
+      value: 1897745755
+      objectReference: {fileID: 0}
     - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.140054
@@ -2568,12 +2608,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggeredObjects_List: []
   MoveScript: {fileID: 0}
   CursorScript: {fileID: 0}
   DisplayObjectNameScript: {fileID: 0}
-  SwitchChaButton: {fileID: 0}
   InventoryRef: {fileID: 0}
   CurrentCharacter: {fileID: 0}
+  DialogueManager: {fileID: 0}
+  SwitchChaButton: {fileID: 0}
+  ClipboardButton: {fileID: 0}
   RewardObjects: []
   RosieComment: {fileID: 0}
   BebeComment: {fileID: 0}
