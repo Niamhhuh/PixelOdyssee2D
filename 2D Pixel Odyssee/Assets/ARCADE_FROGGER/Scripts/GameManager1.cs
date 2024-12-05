@@ -25,6 +25,9 @@ public class GameManager1 : MonoBehaviour
 
     public Text livesText;
 
+    public Text timerText;
+
+
     SoundManager soundManager;
 
     private void Awake()
@@ -95,7 +98,7 @@ public class GameManager1 : MonoBehaviour
         while (time > 0) 
         { 
             yield return new WaitForSeconds(1);
-
+            timerText.text = time.ToString();
             time --;
         }
 
@@ -231,7 +234,7 @@ public class GameManager1 : MonoBehaviour
     }
     private void SetLives(int lives)
     {
-        this.lives = lives; 
+        this.lives = lives;
         livesText.text = lives.ToString();
     }
 }
