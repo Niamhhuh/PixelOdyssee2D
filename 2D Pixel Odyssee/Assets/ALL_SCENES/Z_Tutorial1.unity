@@ -525,6 +525,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: afe8edd58c38ae149aa908470cbcdc2f, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &101640941
 GameObject:
   m_ObjectHideFlags: 3
@@ -872,6 +873,7 @@ GameObject:
   - component: {fileID: 155875484}
   - component: {fileID: 155875483}
   - component: {fileID: 155875482}
+  - component: {fileID: 155875485}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -895,8 +897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.99997, y: -163.99973}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 122.7, y: -129.7}
+  m_SizeDelta: {x: 108.0619, y: 68.2398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155875482
 MonoBehaviour:
@@ -927,6 +929,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 155875485}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: HighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 155875485}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: UnHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &155875483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a4f6c26217ab59489eaecb5e62a037f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -965,6 +999,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155875480}
   m_CullTransparentMesh: 1
+--- !u!114 &155875485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155875480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdac0fedde46c24d85bdcfcdcfe9ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwapImage: {fileID: 21300000, guid: 1318b638f36acf14bbec044b2d9b6aa1, type: 3}
 --- !u!1 &162106377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1995,7 @@ GameObject:
   - component: {fileID: 372535037}
   - component: {fileID: 372535039}
   m_Layer: 0
-  m_Name: BebeAus
+  m_Name: Bebe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2083,6 +2130,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5949f1b29d34872479022a04285ea34a, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!114 &372535036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2097,7 +2145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   Unlock_by_Item: 1
@@ -2323,6 +2371,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b6bdc44f3d7f19b4788d9a50b9daf887, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!114 &460389317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,6 +2896,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39018fe8e326f304da439eb0ac2b6f7e, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!212 &726444203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3325,6 +3375,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2096f4ac621db7847bd8207ad65944bc, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!114 &835025094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3618,6 +3669,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a959c9b7a10d24d499854c0a677722dd, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &910320655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,6 +3817,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0732ebadbc153b648955440416842363, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!212 &910320660
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4501,6 +4554,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c6b9afdad909bd64080c91bcbf14543d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1314770200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4701,6 +4755,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00fbb54e1b24f244db2bd1699825c97d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1341279231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,8 +4948,8 @@ Transform:
   m_GameObject: {fileID: 1341279231}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.984001, y: 3.562715, z: 0}
-  m_LocalScale: {x: 0.8169, y: 0.8169, z: 0.8169}
+  m_LocalPosition: {x: 9.984, y: 3.5627, z: 0}
+  m_LocalScale: {x: 0.6789252, y: 0.6789252, z: 0.6789252}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676291777}
@@ -4917,6 +4972,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc9fd57171adeae4f82afa4df950f5b0, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1341721845
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,6 +4985,7 @@ GameObject:
   - component: {fileID: 1341721849}
   - component: {fileID: 1341721848}
   - component: {fileID: 1341721847}
+  - component: {fileID: 1341721850}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -4952,8 +5009,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.99997, y: -164.00002}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -74.8, y: 126.4}
+  m_SizeDelta: {x: 108.0619, y: 68.2398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341721847
 MonoBehaviour:
@@ -4975,6 +5032,38 @@ MonoBehaviour:
         - m_Target: {fileID: 969682069}
           m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
           m_MethodName: TriggerInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1341721850}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: HighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1341721850}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: UnHighlightButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5022,6 +5111,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341721845}
   m_CullTransparentMesh: 1
+--- !u!114 &1341721850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341721845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdac0fedde46c24d85bdcfcdcfe9ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwapImage: {fileID: 21300000, guid: 1318b638f36acf14bbec044b2d9b6aa1, type: 3}
 --- !u!1 &1389260243
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,9 +5344,10 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 38a88e0e8eafe4a41ba135ab9a5b23a1, type: 2}
   - {fileID: 11400000, guid: c7e5c656caa2a0e48ad88cda1a88a806, type: 2}
-  - {fileID: 11400000, guid: 233df0f676b1e9844ad5c2db1afef5bb, type: 2}
+  - {fileID: 11400000, guid: 7dcf6251bc44ef346b92eaab1ebac194, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1464840960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,7 +5364,7 @@ GameObject:
   - component: {fileID: 1464840966}
   - component: {fileID: 1464840967}
   m_Layer: 0
-  m_Name: Box2
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5365,7 +5468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   AlreadyTalked: 0
-  Lock_State: 1
+  Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
   Unlock_by_Item: 0
@@ -5481,6 +5584,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc9fd57171adeae4f82afa4df950f5b0, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1548022563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,6 +6096,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2096f4ac621db7847bd8207ad65944bc, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!114 &1620534620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6418,7 +6523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1772208906
 Transform:
   m_ObjectHideFlags: 0
@@ -6769,6 +6874,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed7c96c86fe63334b80b4187d325ed89, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &1870179548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,6 +6971,7 @@ GameObject:
   - component: {fileID: 1959547218}
   - component: {fileID: 1959547217}
   - component: {fileID: 1959547216}
+  - component: {fileID: 1959547219}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -6888,8 +6995,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.99997, y: -164.00002}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 122.7, y: -129.7}
+  m_SizeDelta: {x: 108.0619, y: 68.2398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959547216
 MonoBehaviour:
@@ -6920,6 +7027,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1959547219}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: HighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1959547219}
+          m_TargetAssemblyTypeName: StandardButtonHighlight, Assembly-CSharp
+          m_MethodName: UnHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1959547217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6940,7 +7079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a4f6c26217ab59489eaecb5e62a037f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6958,6 +7097,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959547214}
   m_CullTransparentMesh: 1
+--- !u!114 &1959547219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959547214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdac0fedde46c24d85bdcfcdcfe9ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwapImage: {fileID: 21300000, guid: 1318b638f36acf14bbec044b2d9b6aa1, type: 3}
 --- !u!1001 &1975642233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7382,9 +7534,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 233df0f676b1e9844ad5c2db1afef5bb, type: 2}
   - {fileID: 11400000, guid: c7e5c656caa2a0e48ad88cda1a88a806, type: 2}
   - {fileID: 11400000, guid: 38a88e0e8eafe4a41ba135ab9a5b23a1, type: 2}
-  - {fileID: 11400000, guid: 2dd5e73a148c6844fa691c33053ab830, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  WasClicked: 0
 --- !u!1 &2050538817
 GameObject:
   m_ObjectHideFlags: 0

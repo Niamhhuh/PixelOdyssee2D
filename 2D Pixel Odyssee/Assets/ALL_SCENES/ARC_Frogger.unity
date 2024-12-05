@@ -394,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &222050456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,6 +2505,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1118060104}
+        m_TargetAssemblyTypeName: GrantRewardScript, Assembly-CSharp
+        m_MethodName: GrantReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &930549857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,6 +2978,7 @@ GameObject:
   - component: {fileID: 1118060102}
   - component: {fileID: 1118060101}
   - component: {fileID: 1118060103}
+  - component: {fileID: 1118060104}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3016,6 +3029,97 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca79895887c222c44975a4807af0e6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1118060104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118060100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a8ec6174bde8445b3ae22096b79951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reward_ID: 4
+--- !u!1 &1123488653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123488656}
+  - component: {fileID: 1123488655}
+  - component: {fileID: 1123488654}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: DataManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1123488654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123488653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916c59e16696ed340a3c137db724c1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorTexture: {fileID: 2800000, guid: 6a315ee0ac43a6d4eb358be45e8eb791, type: 3}
+  CursorHighlightTexture: {fileID: 2800000, guid: 2166bb6244342954b83a5260c9cad04a, type: 3}
+  transparentCursor: {fileID: 2800000, guid: 7207a776a36b4b34d8d5ce56a7b577a8, type: 3}
+  CursorPoint: {x: 0, y: 0}
+  Transparent: 0
+--- !u!114 &1123488655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123488653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggeredObjects_List: []
+  MoveScript: {fileID: 0}
+  CursorScript: {fileID: 0}
+  DisplayObjectNameScript: {fileID: 0}
+  InventoryRef: {fileID: 0}
+  CurrentCharacter: {fileID: 0}
+  DialogueManager: {fileID: 0}
+  SwitchChaButton: {fileID: 0}
+  ClipboardButton: {fileID: 0}
+  RewardObjects: []
+  RosieComment: {fileID: 0}
+  BebeComment: {fileID: 0}
+  ObjectCommentRosie: {fileID: 0}
+  ObjectCommentBebe: {fileID: 0}
+  currentRoom: 0
+  SpawnList: []
+--- !u!4 &1123488656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123488653}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.494489, y: -0.9610976, z: 6.3988676}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128757112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,8 +4372,6 @@ MonoBehaviour:
   spacewar: {fileID: 438990250}
   frogger: {fileID: 140219585}
   pong: {fileID: 304634457}
-  sceneloader: {fileID: 0}
-  spriteRenderer: {fileID: 0}
   pauseScreen: {fileID: 2072004071}
   PointerScript: {fileID: 0}
 --- !u!114 &1496941634
@@ -6280,7 +6382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2097206125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7121,6 +7223,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1128757115}
   - {fileID: 939786070}
+  - {fileID: 1123488656}
   - {fileID: 1118060102}
   - {fileID: 222050459}
   - {fileID: 947144019}

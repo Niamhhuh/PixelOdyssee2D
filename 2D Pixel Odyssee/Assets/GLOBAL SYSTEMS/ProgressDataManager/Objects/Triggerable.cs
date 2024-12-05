@@ -129,13 +129,15 @@ public class Triggerable : ObjectScript
             DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
             DMReference.MoveScript.DisableInteract();                               //Disable Interact 
             DMReference.MoveScript.InTriggerDialogue = true;
+            GetComponent<NPCDialogue>().advancedDialogueManager.TurnOffDialogue();
             GetComponent<NPCDialogue>().advancedDialogueManager.ForceDialogue(gameObject.GetComponent<NPCDialogue>());
             GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
-
-            if (DMReference.DialogueManager.dialogueCanvas.activeSelf)
+            /*
+            if (!DMReference.DialogueManager.dialogueCanvas.activeSelf)
             {
                 DMReference.DialogueManager.dialogueCanvas.SetActive(true);
             }
+            */
         }
         else 
         {

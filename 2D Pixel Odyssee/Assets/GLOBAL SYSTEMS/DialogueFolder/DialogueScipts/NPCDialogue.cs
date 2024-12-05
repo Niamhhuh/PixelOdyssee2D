@@ -15,7 +15,7 @@ public class NPCDialogue : MonoBehaviour
     [HideInInspector] public GameObject DialogueHolder;                                 //store this gameObject to pass to Advanced Dialogue to check for Trigger
 
     private bool dialogueInitated;
-    private bool WasClicked;
+    public bool WasClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -66,8 +66,9 @@ public class NPCDialogue : MonoBehaviour
         {
             //Speech Bubble Off
             //speechBubbleRenderer.enabled = false;
-
+            
             advancedDialogueManager.TurnOffDialogue();
+                                                                                        //advanced Dialogue is nulled!!!!!!!!!
             dialogueInitated = false;
 
             WasClicked = false;

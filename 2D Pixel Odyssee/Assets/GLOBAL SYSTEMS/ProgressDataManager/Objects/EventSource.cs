@@ -83,23 +83,20 @@ public class EventSource : ObjectScript
 
     public void Call_Interact()
     {
-        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
-        
-        
-        if(DataManager.EventSource_List[ObjectIndex].Stored_ID == ID) { print("match"); print(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State); print(DataManager.EventSource_List.Count);}
+        FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
+
 
         Lock_State = DataManager.EventSource_List[ObjectIndex].Stored_Lock_State;
-        print(Lock_State);
 
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
 
         if (Lock_State == false)
         {
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;                                     //disable Collider to Trigger TurnOffDialogue in AdvancedDialogueManager early -> would otherwise remove Forced Dialogue from line 99!!!!
             ClearHighlight();
-            PassTriggerActivate(1);
+            PassTriggerActivate(1); 
             ObjectSequenceUnlock();
             EventInteract();
         }

@@ -49,19 +49,6 @@ public class Collectable : ObjectScript
         ToggleSprites();
         RemoveItem();                                                                                       //Remove Items if they have been collected already
 
-        if (IsReward && Collectables != null)                                                                           //determine Index of Child
-        {
-            for (int i = 0; i < Collectables.childCount; i++)
-            {
-                if (Collectables.GetChild(i) == transform)
-                {
-
-                    RewardPosition = i;
-                    break; 
-                }
-            }
-        }
-
 
         if (IsReward == true && Lock_State == true)                                                         //Handle Reward Case
         {

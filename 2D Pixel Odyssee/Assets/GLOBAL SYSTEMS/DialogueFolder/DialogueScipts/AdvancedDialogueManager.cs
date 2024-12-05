@@ -10,7 +10,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     private DataManager DMReference;
     //NPC DIALOGUE we are currently stepping through
     public AdvancedDialogueSO currentConversation;
-    public int stepNum = 0;
+    private int stepNum = 0;
     private bool dialogueActivated;
 
     //UI REFERENCES
@@ -39,7 +39,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     NPCDialogue CurrentNPC = null;
 
-    private bool StopTypeWriter;
+    public bool StopTypeWriter;
     private bool WriterIsRunning;
 
     // Start is called before the first frame update
@@ -76,6 +76,13 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
+        if (currentConversation.name == "Rosie")
+        {
+            print(currentConversation);
+            print("Nooo");
+            print(dialogueActivated);
+            print(canContinueText);
+        }
         if (dialogueActivated && canContinueText)
         {
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -133,11 +140,12 @@ public class AdvancedDialogueManager : MonoBehaviour
         
         //If it's a random NPC
         if (currentConversation.actors[stepNum] == DialogueActors.Random)
+        {
             SetActorInfo(false);
-
-        //If it's a recurring Character
-        else
+        }else//If it's a recurring Character
+        {
             SetActorInfo(true);
+        }
 
         //Display Dialogue
         
@@ -176,7 +184,8 @@ public class AdvancedDialogueManager : MonoBehaviour
             StopCoroutine(typeWriterRoutine);
         }
 
-
+        StopTypeWriter = false;
+        
         if (stepNum < currentConversation.dialogue.Length)
         {
             typeWriterRoutine = StartCoroutine(TypewriterEffect(dialogueText.text = currentConversation.dialogue[stepNum]));
@@ -333,18 +342,21 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void ForceDialogue(NPCDialogue npcDialogue)
     {
+        TurnOffDialogue();
         CurrentNPC = npcDialogue;
 
         currentConversation = npcDialogue.conversation[0];
-
+        canContinueText = true;
         dialogueActivated = true;
-
-        stepNum = 0;
     }
 
     public void TurnOffDialogue()
     {
-        if(DMReference.MoveScript != null)
+        if (typeWriterRoutine != null)
+        {
+            StopCoroutine(typeWriterRoutine);
+        }
+        if (DMReference.MoveScript != null)
         {
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
