@@ -426,6 +426,11 @@ public class ObjectScript : MonoBehaviour
     public IEnumerator FlashRed()
     {
         float elapsedTime = 0f;
+        if (GetComponent<NPCDialogue>() != null)
+        {
+            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(gameObject.GetComponent<NPCDialogue>());
+            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
+        }
         while (elapsedTime < 1)
         {
             ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
@@ -435,12 +440,6 @@ public class ObjectScript : MonoBehaviour
         }
         ObjectSprite.color = originalColor;
         HighlightObjectSprite.color = originalHighlightColor;
-
-        if (GetComponent<NPCDialogue>() != null)
-        {
-            GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(GetComponent<NPCDialogue>());
-            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
-        }
 
         PassTriggerActivate(2);                                                                             //Activate a Trigger if connected
     }

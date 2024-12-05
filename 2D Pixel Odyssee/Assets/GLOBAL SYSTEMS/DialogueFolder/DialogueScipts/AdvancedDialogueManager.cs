@@ -76,7 +76,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        if (currentConversation.name == "Rosie")
+        if (currentConversation != null && currentConversation.name == "Rosie")
         {
             print(currentConversation);
             print("Nooo");
