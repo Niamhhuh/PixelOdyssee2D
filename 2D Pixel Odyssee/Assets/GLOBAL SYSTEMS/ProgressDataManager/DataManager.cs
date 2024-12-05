@@ -24,29 +24,46 @@ public class DataManager : MonoBehaviour
 
     public static SlotScript[] Slot_Array = new SlotScript[11];
 
-    public static List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all relevant Variables of Switches                     //List_ID 5
+    public List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all Triggers
 
     public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
 
-    public DisplayName DisplayObjectNameScript = null;
 
-    public GameObject SwitchChaButton;
+    public CursorImageScript CursorScript = null;
+    public DisplayName DisplayObjectNameScript = null;
 
     public Inventory InventoryRef = null;
     public CharacterScript CurrentCharacter = null;
 
     public static int Inventory_Fillstate = 0;
 
-    public static bool TutorialStarted;
+    public AdvancedDialogueManager DialogueManager = null;
 
+    //Tutorial Mechanics
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    public GameObject SwitchChaButton = null;                                               //Button for Character Swap
+    public GameObject ClipboardButton = null;                                               //Button for Clipboard
+
+    public static bool DisableClipboard = true;
+    public static bool DisableCharacterSwap = true;
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static bool FroggerCleared = false;
 
     public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
+    public List<GameObject> RewardObjects = new List<GameObject>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
 
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
     [HideInInspector] public GameObject RosieComment = null;
@@ -55,15 +72,47 @@ public class DataManager : MonoBehaviour
     public TMP_Text ObjectCommentRosie;
     public TMP_Text ObjectCommentBebe;
 
-    //public Comment ObjectCommentRosie;
-    //public Comment ObjectCommentBebe;
+    //MiniMap + SpawnSystem
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //MiniMap
     public int currentRoom = 0;                                          //set this in Portal
 
+    public List<GameObject> SpawnList = new List<GameObject>();          //Create a List to store all SpawnPoints in a Scene 
+    public static int SpawnID;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+    public static int LastRoom;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+    public static bool NewGame = true;
+
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
+    {
+        currentRoom = SceneManager.GetActiveScene().buildIndex;
+
+        if(SpawnID == 0) { SpawnID = 1; }
+        foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("Spawn"))
+        {
+            SpawnList.Add(Obj);
+        }
+        SpawnPlayer();
+    }
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            NewGame = false;
+        }
+
+        if (NewGame)
+        {
+            LastRoom = 1;
+        }
+
+        Time.timeScale = 1;
         Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
         Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
         
@@ -71,10 +120,15 @@ public class DataManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
         {
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
-            MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
-            SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");
+
+            SwitchChaButton = GameObject.FindGameObjectWithTag("SwitchCharacterButton");                                                //SwitchCharacterButton 
+            ClipboardButton = GameObject.FindGameObjectWithTag("ClipboardButton");                                                      //ClipboardButton 
+
             DisplayObjectNameScript = GameObject.FindGameObjectWithTag("ObjectNameDisplay").GetComponent<DisplayName>();
+            MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+            CursorScript = GameObject.FindGameObjectWithTag("DataManager").GetComponent<CursorImageScript>();
+            DialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         }
 
         Rooms_Loaded[0] = false;                                                        //Archive 
@@ -91,28 +145,107 @@ public class DataManager : MonoBehaviour
         RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
 
-        ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
-        ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
-
-
-
-
-    }
-
-    private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
-    {
-        currentRoom = SceneManager.GetActiveScene().buildIndex;
-
-        if (TutorialStarted == false && GameObject.FindObjectOfType<TutorialToggleButtons>() != null)
+        if(CurrentCharacter != null)
         {
-
-            MoveScript.AllowInput = false;
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableInventoryButton();
-            GameObject.FindObjectOfType<TutorialToggleButtons>().GetComponent<TutorialToggleButtons>().DisableSwitchButton();
-            TutorialStarted = true;
+            ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
+            ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
         }
-        TutorialStarted = true;
+
+        UpdateUI();
     }
+
+
+
+    //Control UI Buttons
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void DisableCharacterSwapButton()                                //Disable CharacterSwap
+    {
+        DisableCharacterSwap = true;
+        UpdateUI();
+    }
+
+    public void EnableCharacterSwapButton()                                 //Enable CharacterSwap
+    {
+        DisableCharacterSwap = false;
+        UpdateUI();
+    }
+
+    public void DisableClipboardButton()                                    //Disable Clipboard
+    {
+        DisableClipboard = true;
+        UpdateUI();
+    }
+
+    public void EnableClipboardButton()                                     //Enable Clipboard
+    {
+        DisableClipboard = false;
+        UpdateUI();
+    }
+
+    public void UpdateUI()                                                  //Control UI
+    {
+        //Control Character Swap Button
+        if (DisableCharacterSwap)
+        {
+            if(SwitchChaButton != false)
+            {
+                SwitchChaButton.SetActive(false);
+            }
+        }
+        else
+        {
+            if(SwitchChaButton != false)
+            {
+                SwitchChaButton.SetActive(true);
+            }
+        }
+
+
+        //Control Clipboard Button
+        if (DisableClipboard)
+        {
+            if (ClipboardButton != false)
+            {
+                ClipboardButton.SetActive(false);
+            }
+        }
+        else
+        {
+            if (ClipboardButton!= false)
+            {
+                ClipboardButton.SetActive(true);
+            }
+        }
+    }
+
+
+    //Set Player to Right Position
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    private void SpawnPlayer()
+    {
+        if(SpawnList.Count > 0)
+        {
+            bool SpawnFound = false;
+            foreach (GameObject Spawn in SpawnList)
+            {
+                if (Spawn.GetComponent<SpawnObjectScript>().ID == SpawnID)
+                {
+                    MoveScript.player.position = new Vector3(Spawn.GetComponent<Transform>().position.x, MoveScript.player.position.y, MoveScript.player.position.z);
+                    SpawnFound = true;
+                }
+            }
+            if (!SpawnFound)
+            {
+                SpawnID = 1;
+                SpawnPlayer();
+            }
+        }
+    }
+
 
 
     //Add Object Methods
@@ -287,7 +420,7 @@ public class DataManager : MonoBehaviour
 
     private void SequenceSearchEventSource(int Object_ID)                         // Search through Portal List and Unlock an Object
     {
-        foreach (SwitchStateObj StoredObj in SwitchState_List)
+        foreach (EventObj StoredObj in EventSource_List)
         {
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
         }
@@ -460,6 +593,12 @@ public class DataManager : MonoBehaviour
                 TriggerObj.SetActive(true);                                                 //Activate the Trigger
                 MoveScript.DisableInput();                                                  //Disable Pointer Inpput 
                 MoveScript.DisableInteract();                                               //Disable Pointer Interact 
+                if(TriggerObj.GetComponent<Triggerable>().ForceDialogue)
+                {
+                    TriggerObj.GetComponent<Triggerable>().Lock_State = false;
+                    TriggerObj.GetComponent<Triggerable>().UpdateData();
+                    TriggerObj.GetComponent<Triggerable>().TriggerInteract();               //Immediatly Activate Trigger
+                }
             }
         }
     }
@@ -483,20 +622,27 @@ public class DataManager : MonoBehaviour
 
     public void ActivateReward(int Reward_ID) 
     {
-        print(RewardList.Count);
+        GrantInRoomReward(Reward_ID);
         foreach (Collectable StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
-            GrantReward(StoredObjScript, Reward_ID);
+            if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+            {
+                StoredObjScript.Lock_State = false;                   //Unlock the Collectable
+                StoredObjScript.UpdateData();                         //Update the CollectableData   
+            }
         }
     }                                
 
-    private void GrantReward(Collectable StoredObjScript, int Reward_ID)
+    private void GrantInRoomReward(int Reward_ID)                          // Use this only when the Object is in the same Room
     {
-        if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+        foreach (GameObject StoredObj in RewardObjects)                      //Go through the Collectable_List and check CollectableObj.
         {
-            StoredObjScript.Lock_State = false;                   //Unlock the COllectable
-            StoredObjScript.UpdateData();                         //Update the CollectableData
-            GameObject.FindGameObjectWithTag("Collectables").transform.GetChild(StoredObjScript.RewardPosition).gameObject.SetActive(true);
+            if(StoredObj.GetComponent<Collectable>().ID == Reward_ID)
+            {
+                StoredObj.SetActive(true);
+                StoredObj.GetComponent<Collectable>().Lock_State = false;                   //Unlock the Collectable
+                StoredObj.GetComponent<Collectable>().UpdateData();                         //Update the CollectableData   
+            }
         }
     }
 

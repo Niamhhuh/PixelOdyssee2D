@@ -11,6 +11,7 @@ public class Portal : ObjectScript
     public bool Traversed = false;                                                          //relevant to remember whether this door has been used already
 
     public int LoadScene_ID;
+    public int SpawnPointID;
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ public class Portal : ObjectScript
 
 
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
+    public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Traversed)                                   //Fetch the Variables Lock and Traversed from the DataManager
     {
         Lock_State = Stored_Lock_State;
         AlreadyTalked = Stored_AlreadyTalked;
@@ -100,6 +101,7 @@ public class Portal : ObjectScript
         {
             Traversed = true;
             UpdateData();
+            DataManager.SpawnID = SpawnPointID;
             SceneManager.LoadScene(LoadScene_ID);
         }
     }

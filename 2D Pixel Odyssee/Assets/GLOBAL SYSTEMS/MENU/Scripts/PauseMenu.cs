@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Pointer") != null)
+        if (GameObject.FindGameObjectWithTag("Pointer") != null)
         {
             PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         }
@@ -75,7 +75,7 @@ public class PauseMenu : MonoBehaviour
 //_______Buttons for menu to load scene below____________________________________
 
     public void StartGame() {           //STARTSCREEN --> beginnt im Moment immer beim Tutorial
-    	SceneManager.LoadScene("Z_Tutorial1");
+    	SceneManager.LoadScene(DataManager.LastRoom);
     }
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt

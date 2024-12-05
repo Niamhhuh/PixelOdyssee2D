@@ -38,8 +38,13 @@ public class CharacterScript : MonoBehaviour
 
         uitomouse = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
 
-        uitomouse.playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
-        uitomouse.playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
+
+        if (uitomouse != null )
+        {
+            uitomouse.playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
+            uitomouse.playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
+        }
+
 
         RosieComment.SetActive(false);
         BebeComment.SetActive(false);

@@ -49,19 +49,6 @@ public class Collectable : ObjectScript
         ToggleSprites();
         RemoveItem();                                                                                       //Remove Items if they have been collected already
 
-        if (IsReward && Collectables != null)                                                                           //determine Index of Child
-        {
-            for (int i = 0; i < Collectables.childCount; i++)
-            {
-                if (Collectables.GetChild(i) == transform)
-                {
-
-                    RewardPosition = i;
-                    break; 
-                }
-            }
-        }
-
 
         if (IsReward == true && Lock_State == true)                                                         //Handle Reward Case
         {
@@ -69,7 +56,7 @@ public class Collectable : ObjectScript
         }
     }
 
-    private void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
+    public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
     {
         Lock_State = Stored_Lock_State;
         AlreadyTalked = Stored_AlreadyTalked;
@@ -131,6 +118,7 @@ public class Collectable : ObjectScript
     {
         if(DataManager.Inventory_Fillstate < 12)
         {
+            SuccessfulInteract();
             DataManager.Inventory_Fillstate++;
             //print(DataManager.Inventory_Fillstate);
             DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
@@ -143,7 +131,7 @@ public class Collectable : ObjectScript
 
     private void TryAddReward()
     {
-        gameObject.SetActive(false);
+        DMReference.RewardObjects.Add(gameObject);
         foreach (Collectable StoredObjScript in DataManager.RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
             if (StoredObjScript.ID == ID)
@@ -157,5 +145,6 @@ public class Collectable : ObjectScript
         {
             DataManager.RewardList.Add(CoreObject.GetComponent<Collectable>());
         }
+        gameObject.SetActive(false);
     }
 }

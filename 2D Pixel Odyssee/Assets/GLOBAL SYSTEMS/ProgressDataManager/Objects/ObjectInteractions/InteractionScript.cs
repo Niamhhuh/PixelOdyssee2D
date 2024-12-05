@@ -13,6 +13,7 @@ public class InteractionScript : MonoBehaviour
     //Call Dialouge
     public void TriggerDialogue()
     {
+        GameObject TempObject;
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
@@ -21,8 +22,10 @@ public class InteractionScript : MonoBehaviour
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.canContinueText = true;
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
+        TempObject = DataManager.ToInteract[0].CoreObject;
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
+        TempObject.GetComponent<ObjectScript>().CallInteractionButtons();
         //GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>().DisableInput();
     }
 
@@ -59,6 +62,11 @@ public class InteractionScript : MonoBehaviour
                 EventSource EventReference = null;                                                   //Create a Reference Variable, which will be used to access the EventSource.Call_Interact Method
                 EventReference = (EventSource)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
                 EventReference.Call_Interact();                                                      //Call EventSource.Call_Interact
+                break;
+            case 6:
+                Triggerable TriggerReference = null;                                                   //Create a Reference Variable, which will be used to access the EventSource.Call_Interact Method
+                TriggerReference = (Triggerable)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
+                TriggerReference.TriggerInteract();                                                      //Call EventSource.Call_Interact
                 break;
         }
     }

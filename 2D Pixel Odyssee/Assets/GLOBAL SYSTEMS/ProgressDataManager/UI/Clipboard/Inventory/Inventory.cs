@@ -56,6 +56,9 @@ public class Inventory : MonoBehaviour
 
     public void CallInventory ()
     {
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                                //When opening the Inventory, clear the Object Name Panel to avoid carry over
+        DMReference.CursorScript.ActivateCursorSprite();                                            //When opening the Inventory, Reset the Cursor to avoid carry over
+
         DMReference.MoveScript.ClipboardActive = true;
         DMReference.MoveScript.DisableInput();
         calledbyKey = false;
@@ -89,10 +92,14 @@ public class Inventory : MonoBehaviour
 
     public void CloseInventory()
     {
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                                //When closing the Inventory, clear the Object Name Panel to avoid carry over
+        DMReference.CursorScript.ActivateCursorSprite();                                            //When closing the Inventory, Reset the Cursor to avoid carry over
+
         StartCoroutine(DMReference.MoveScript.CallEnableInput());
         StartCoroutine(DMReference.MoveScript.CallEnableInteract());
         DMReference.MoveScript.ClipboardActive = false;
-        if(calledbyKey == true)
+        
+        if (calledbyKey == true)
         {
             DMReference.MoveScript.EnableInput();
         }
