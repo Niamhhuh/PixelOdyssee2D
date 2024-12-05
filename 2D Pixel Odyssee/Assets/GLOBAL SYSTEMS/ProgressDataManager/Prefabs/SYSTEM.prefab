@@ -3378,7 +3378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 18
+  ID: 11
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -5255,13 +5255,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentConversation: {fileID: 0}
-  stepNum: 0
+  dialogueCanvas: {fileID: 0}
   actorSO:
   - {fileID: 11400000, guid: 97af57a15d479b1459e558c61eea7d85, type: 2}
   - {fileID: 11400000, guid: 91e1e0c623c716f4f972dbb7e9b1de34, type: 2}
   - {fileID: 11400000, guid: d92d4c6b9364bb54ba2d4a49a54df0ff, type: 2}
   typingSpeed: 0.015
   canContinueText: 1
+  StopTypeWriter: 0
 --- !u!1 &3804833606036629595
 GameObject:
   m_ObjectHideFlags: 0
@@ -9998,6 +9999,7 @@ MonoBehaviour:
   DisplayObjectNameScript: {fileID: 0}
   InventoryRef: {fileID: 0}
   CurrentCharacter: {fileID: 0}
+  DialogueManager: {fileID: 0}
   SwitchChaButton: {fileID: 0}
   ClipboardButton: {fileID: 0}
   RewardObjects: []
@@ -10539,7 +10541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16470589, g: 0.58431375, b: 0.3716737, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
