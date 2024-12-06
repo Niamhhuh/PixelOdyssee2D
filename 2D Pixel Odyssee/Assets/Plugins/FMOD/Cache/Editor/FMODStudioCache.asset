@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5314344506084642545
+--- !u!114 &-5765941558853311760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,37 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/TitelScreen.bank
+  m_Name: bank:/Titelscreen Musik.bank
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/TitelScreen.bank
-  Name: TitelScreen
-  StudioPath: bank:/TitelScreen
-  lastModified: 638688441448956924
+  Path: ../../../../Desktop/Pixel Odyssee 3.0/Build/Desktop/Titelscreen Musik.bank
+  Name: Titelscreen Musik
+  StudioPath: bank:/Titelscreen Musik
+  lastModified: 638690250522442241
   FileSizes:
   - Name: Desktop
-    Value: 833664
+    Value: 833792
   Exists: 1
---- !u!114 &-4356242599418845201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638688441448881435
-  FileSizes:
-  - Name: Desktop
-    Value: 43648
-  Exists: 1
---- !u!114 &-2738345215126786698
+--- !u!114 &-4918119833436964149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,13 +32,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Master.strings.bank
+  Path: ../../../../Desktop/Pixel Odyssee 3.0/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638688441448896748
+  lastModified: 638690250522236691
   FileSizes:
   - Name: Desktop
-    Value: 968
+    Value: 922
+  Exists: 1
+--- !u!114 &-873731072308343550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Titelscreen Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Titelscreen Theme
+  Guid:
+    Data1: 250868438
+    Data2: 1339535541
+    Data3: -801345379
+    Data4: 1897745755
+  Banks:
+  - {fileID: -5765941558853311760}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &-101516224436982316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Desktop/Pixel Odyssee 3.0/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638690250522053263
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -73,22 +100,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -2738345215126786698}
-  - {fileID: -4356242599418845201}
-  - {fileID: 5857169949540748486}
-  - {fileID: -5314344506084642545}
+  - {fileID: -4918119833436964149}
+  - {fileID: 6025729276609071475}
+  - {fileID: -101516224436982316}
+  - {fileID: -5765941558853311760}
   EditorEvents:
-  - {fileID: 4379965937612255923}
-  - {fileID: 6367053234275548862}
-  - {fileID: 5186589875347060887}
+  - {fileID: 2511025817240810612}
+  - {fileID: -873731072308343550}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4356242599418845201}
+  - {fileID: -101516224436982316}
   StringsBanks:
-  - {fileID: -2738345215126786698}
-  cacheTime: 638688441448956924
+  - {fileID: -4918119833436964149}
+  cacheTime: 638690250522442241
   cacheVersion: 131620
---- !u!114 &4379965937612255923
+--- !u!114 &2511025817240810612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,51 +124,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Footsteps Rosie
+  m_Name: event:/Depot Theme
   m_EditorClassIdentifier: 
-  Path: event:/Footsteps Rosie
+  Path: event:/Depot Theme
   Guid:
-    Data1: -1718364566
-    Data2: 1302432516
-    Data3: 952760222
-    Data4: -1298576804
+    Data1: -1389875791
+    Data2: 1203534326
+    Data3: 825692847
+    Data4: -1145034477
   Banks:
-  - {fileID: -4356242599418845201}
-  IsStream: 0
+  - {fileID: 6025729276609071475}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1400
---- !u!114 &5186589875347060887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Titelmusik
-  m_EditorClassIdentifier: 
-  Path: event:/Titelmusik
-  Guid:
-    Data1: -1680502974
-    Data2: 1177259843
-    Data3: 1235322775
-    Data4: -493090769
-  Banks:
-  - {fileID: -5314344506084642545}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 64000
---- !u!114 &5857169949540748486
+  Length: 316238
+--- !u!114 &6025729276609071475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,40 +151,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Museumsmusik.bank
+  m_Name: bank:/Depot Musik.bank
   m_EditorClassIdentifier: 
-  Path: PixelOdyssee 4.0/Build/Desktop/Museumsmusik.bank
-  Name: Museumsmusik
-  StudioPath: bank:/Museumsmusik
-  lastModified: 638688441448921852
+  Path: ../../../../Desktop/Pixel Odyssee 3.0/Build/Desktop/Depot Musik.bank
+  Name: Depot Musik
+  StudioPath: bank:/Depot Musik
+  lastModified: 638690250521902897
   FileSizes:
   - Name: Desktop
-    Value: 306144
+    Value: 4327840
   Exists: 1
---- !u!114 &6367053234275548862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Museumsmusik
-  m_EditorClassIdentifier: 
-  Path: event:/Museumsmusik
-  Guid:
-    Data1: 465877033
-    Data2: 1322363960
-    Data3: 1788093313
-    Data4: -1762024205
-  Banks:
-  - {fileID: 5857169949540748486}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 22628

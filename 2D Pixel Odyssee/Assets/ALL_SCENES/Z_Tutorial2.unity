@@ -1103,7 +1103,7 @@ Transform:
   m_GameObject: {fileID: 93303102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.25, y: -1.23, z: -1}
+  m_LocalPosition: {x: -6.19, y: -1.23, z: -1}
   m_LocalScale: {x: -0.8761, y: 0.8761, z: 0.8761}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1576,12 +1576,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 77fdbced41f3f55488279063de9535f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02ddebe8bec3de24bb9acf0d8371a7bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.13, y: 1.14}
+  m_Size: {x: 0.84, y: 0.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3284,7 +3284,7 @@ GameObject:
   - component: {fileID: 477116161}
   - component: {fileID: 477116165}
   m_Layer: 0
-  m_Name: HangOn
+  m_Name: Asteroids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3994,50 +3994,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 775084120351225945, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 23.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 2979276551400935035, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: pong
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: credits
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: frogger
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: spacewar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: allgemein
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: steuerung
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550092794746802131, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: pauseScreen
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594377662171897761, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594377662171897761, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 3936147526621032354, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4090,50 +4046,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: gameSceneTheme.Path
-      value: event:/Depot Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: titelScreenTheme.Path
-      value: event:/Titelscreen Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data1
-      value: -1389875791
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data2
-      value: 1203534326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data3
-      value: 825692847
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data4
-      value: -1145034477
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data1
-      value: 250868438
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data2
-      value: 1339535541
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data3
-      value: -801345379
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416841251700577590, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data4
-      value: 1897745755
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372376189776293489, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cf3955fd5f5d6e24bb9f47db41f03ee5, type: 3}
     - target: {fileID: 8663867097056879031, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5130,7 +5042,7 @@ GameObject:
   - component: {fileID: 972280116}
   - component: {fileID: 972280115}
   m_Layer: 0
-  m_Name: ??
+  m_Name: "Schl\xFCsselteil B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5238,7 +5150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.04, y: 1.03}
+    oldSize: {x: 0.84, y: 0.83}
     newSize: {x: 1.04, y: 1.03}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5288,7 +5200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: cf991308bb6d8e843ab03a885f1a71ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6893ef390491f3e43b7b4b7d92a2fa1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5308,7 +5220,7 @@ Transform:
   m_GameObject: {fileID: 972280114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1752347, w: 0.9845267}
-  m_LocalPosition: {x: 3.91, y: 0.6, z: 0}
+  m_LocalPosition: {x: 4.13, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6373,7 +6285,7 @@ GameObject:
   - component: {fileID: 1214143697}
   - component: {fileID: 1214143701}
   m_Layer: 0
-  m_Name: CrazyTaxi
+  m_Name: Frogger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9639,7 +9551,7 @@ GameObject:
   - component: {fileID: 1944748000}
   - component: {fileID: 1944748004}
   m_Layer: 0
-  m_Name: DoubleAutomat
+  m_Name: Pong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10322,7 +10234,7 @@ Transform:
   m_GameObject: {fileID: 2038256698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.41, y: -1.16, z: -1}
+  m_LocalPosition: {x: 3.14, y: -1.16, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

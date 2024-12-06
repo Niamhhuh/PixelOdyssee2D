@@ -75,7 +75,12 @@ public class PauseMenu : MonoBehaviour
 //_______Buttons for menu to load scene below____________________________________
 
     public void StartGame() {           //STARTSCREEN --> beginnt im Moment immer beim Tutorial
-    	SceneManager.LoadScene(DataManager.LastRoom);
+        if (DataManager.Inventory_Fillstate == 0) {     //NEUUUUUUU -> 06.12.2024 -> stellt sicher, dass nach reset erste Szene geladen wird
+            SceneManager.LoadScene("Z_Tutorial1");
+        }
+        else{
+            SceneManager.LoadScene(DataManager.LastRoom);
+        }
     }
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
