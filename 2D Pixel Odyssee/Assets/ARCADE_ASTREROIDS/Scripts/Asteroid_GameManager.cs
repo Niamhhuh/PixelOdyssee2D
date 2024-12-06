@@ -22,7 +22,7 @@ public class Asteroid_GameManager : MonoBehaviour
     public int score = 0;
 
     // Win state variables
-    public int winScoreThreshold = 500; // Define the score threshold to win
+    public int winScoreThreshold = 2000; // Define the score threshold to win
 
     private void Start()
     {

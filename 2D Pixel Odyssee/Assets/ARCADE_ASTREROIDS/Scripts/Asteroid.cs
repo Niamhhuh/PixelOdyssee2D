@@ -41,9 +41,10 @@ public class Asteroid : MonoBehaviour
     public void SetTrajectory(Vector2 direction)
     {
         _rigidbody.AddForce(direction * this.speed);
-
-        // Destroy the asteroid after its lifetime expires
-        Destroy(this.gameObject, this.maxLifetime);
+        
+        //-------------------------------------------------------------------------------------------------------------------
+        // Destroy the asteroid after its lifetime expires  --------->> Kimi set this to comment 'cause asteroids kept disappearing
+        //Destroy(this.gameObject, this.maxLifetime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,6 +63,13 @@ public class Asteroid : MonoBehaviour
 
             // Notify the game manager and destroy this asteroid
             FindObjectOfType<Asteroid_GameManager>().AsteroidDestroyed(this);
+            Destroy(this.gameObject);
+        }
+        //-------------------------------------------------------------------------------------------------------------------
+        // Check if collided with deathzone  ------>> added by Kimi as a replacement for the asteroids disappearing
+        if (collision.gameObject.tag == "deathzone")
+        {
+            // Notify the game manager and destroy this asteroid
             Destroy(this.gameObject);
         }
     }

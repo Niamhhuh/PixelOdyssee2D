@@ -2684,6 +2684,7 @@ GameObject:
   - component: {fileID: 1885320008}
   - component: {fileID: 1885320007}
   - component: {fileID: 1885320009}
+  - component: {fileID: 1885320010}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2754,6 +2755,23 @@ MonoBehaviour:
   ObjectCommentBebe: {fileID: 0}
   currentRoom: 0
   SpawnList: []
+--- !u!114 &1885320010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885320006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916c59e16696ed340a3c137db724c1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorTexture: {fileID: 2800000, guid: 6a315ee0ac43a6d4eb358be45e8eb791, type: 3}
+  CursorHighlightTexture: {fileID: 2800000, guid: 2166bb6244342954b83a5260c9cad04a, type: 3}
+  transparentCursor: {fileID: 2800000, guid: 7207a776a36b4b34d8d5ce56a7b577a8, type: 3}
+  CursorPoint: {x: 0, y: 0}
+  Transparent: 0
 --- !u!1 &1963090161
 GameObject:
   m_ObjectHideFlags: 0

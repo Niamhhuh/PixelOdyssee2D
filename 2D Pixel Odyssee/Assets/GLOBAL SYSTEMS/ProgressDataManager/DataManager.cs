@@ -150,7 +150,6 @@ public class DataManager : MonoBehaviour
             ObjectCommentRosie = RosieComment.GetComponent<TMP_Text>();
             ObjectCommentBebe = BebeComment.GetComponent<TMP_Text>();
         }
-
         UpdateUI();
     }
 
