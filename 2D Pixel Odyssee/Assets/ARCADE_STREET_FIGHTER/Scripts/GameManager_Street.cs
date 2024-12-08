@@ -11,10 +11,14 @@ public class GameManager_Street : MonoBehaviour
 	public BeatScroller theBS;
 
 	public static GameManager_Street instance;
+
+    public Animator rosieAnimator;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        GameObject Rosie = GameObject.Find("Rosie");
+        rosieAnimator = Rosie.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class GameManager_Street : MonoBehaviour
         		theBS.hasStarted = true;
 
         		theMusic.Play();
+                rosieAnimator.Play("Rosie_Idle_Street");
         	}
         }
     }
