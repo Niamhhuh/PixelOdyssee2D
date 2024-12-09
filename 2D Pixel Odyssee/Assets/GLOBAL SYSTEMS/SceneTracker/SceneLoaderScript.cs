@@ -10,6 +10,12 @@ public class SceneLoaderScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(3);
     }
+
+    public void LoadStreet(){
+        Time.timeScale = 1;
+        SceneManager.LoadScene(8);
+    }
+    
     public void LoadFrogger()
     {
         Time.timeScale = 1;
