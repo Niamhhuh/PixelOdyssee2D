@@ -81,11 +81,19 @@ public class ObjectScript : MonoBehaviour
 
     public Comment ObjectComment;
 
+
+
+
+    //Expand Effect
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    private Vector3 ObjectSize;
+
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Awake()
     {
+        ObjectSize = gameObject.transform.localScale;
         CoreObject = this.gameObject;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         if (gameObject.GetComponent<Triggerable>() != null)
@@ -150,7 +158,7 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger)
+        if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger && !DMReference.DialogueManager.InDialogue)
         {
             DMReference.CursorScript.DeactivateCursorSprite();
             DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
@@ -195,6 +203,10 @@ public class ObjectScript : MonoBehaviour
             RequestInteract = true;
             DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
+            if(!isBackground && !IsFullTrigger)
+            {
+                StartCoroutine(ExpandAndContract());
+            }
         }
 
 
@@ -428,7 +440,6 @@ public class ObjectScript : MonoBehaviour
         {
             GetComponent<NPCDialogue>().InLockResponse = true;
             GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(gameObject.GetComponent<NPCDialogue>());
-            GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
         float elapsedTime = 0f;
         while (elapsedTime < 1)
@@ -462,17 +473,47 @@ public class ObjectScript : MonoBehaviour
     }
 
 
-    public IEnumerator FlashGreen()
+    /*
+     public float ExpandFactor = 1.5f; // Factor by which the object expands
+    public float ExpandDuration = 0.3f; // Duration for the expansion and contraction
+    private Vector3 ObjectSize;
+
+     */
+
+    private IEnumerator ExpandAndContract()
     {
-        float elapsedTime = 0f;
-        while (elapsedTime < 1)
+        
+        float ExpandDuration = 0.08f; // Duration for the expansion and contraction
+        float ContractDuration = 0.15f; // Duration for the expansion and contraction
+
+        Vector3 ExpandSize = ObjectSize * 1.3f;
+        Vector3 ContractSize = ObjectSize * 0.9f;
+        
+        float timeElapsed = 0f;
+        
+        while (timeElapsed < ExpandDuration)
         {
-            ObjectSprite.color = Color.Lerp(Color.green, originalColor, elapsedTime / 1);
-            elapsedTime += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(ObjectSize, ExpandSize, timeElapsed / ExpandDuration);
+            Object_Collider.size = Vector3.Lerp(Original_Collider, ContractSize, timeElapsed / ExpandDuration);
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
-        ObjectSprite.color = originalColor;
+
+        transform.localScale = ExpandSize; // Ensure it reaches the exact target scale
+
+        timeElapsed = 0f;
+        while (timeElapsed < ContractDuration)
+        {
+            transform.localScale = Vector3.Lerp(ExpandSize, ObjectSize, timeElapsed / ContractDuration);
+            Object_Collider.size = Vector3.Lerp(ContractSize, Original_Collider, timeElapsed / ExpandDuration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = ObjectSize; // Ensure it reaches the original scale
+        Object_Collider.size = Original_Collider;
     }
+
 
 
     public IEnumerator ControlCommentRosie()

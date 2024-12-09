@@ -13,6 +13,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     private int stepNum = 0;
     private bool dialogueActivated;
 
+    public bool InDialogue;
+
     //UI REFERENCES
     [HideInInspector] public GameObject dialogueCanvas;
     private TMP_Text actor;
@@ -78,6 +80,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         if (dialogueActivated && canContinueText)
         {
+            InDialogue = true;
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //Cancel dialogue if there are no lines of dialogue remaining
@@ -400,6 +403,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         stepNum = 0;
         StopTypeWriter = false;
         dialogueActivated = false;
+        InDialogue = false;
         currentConversation = null;
         typeWriterRoutine = null;
         if (optionsPanel != null) { optionsPanel.SetActive(false); }
