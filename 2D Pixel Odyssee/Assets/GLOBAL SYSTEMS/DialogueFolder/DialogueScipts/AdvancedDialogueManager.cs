@@ -76,13 +76,6 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        if (currentConversation != null && currentConversation.name == "Rosie")
-        {
-            print(currentConversation);
-            print("Nooo");
-            print(dialogueActivated);
-            print(canContinueText);
-        }
         if (dialogueActivated && canContinueText)
         {
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -308,9 +301,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
         {
             currentConversation = npcDialogue.conversation[0];
-        }
-
-        else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
+        }else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
         {
             if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
             currentConversation = npcDialogue.conversation[1];

@@ -55,6 +55,7 @@ public class NPCDialogue : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract && DataManager.ToInteract.Count < 1)
         {
+            print("Initiated");
             advancedDialogueManager.InitiateDialogue(this);
             WasClicked = true;
         }
