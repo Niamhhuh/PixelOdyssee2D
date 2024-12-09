@@ -188,14 +188,14 @@ public class DataManager : MonoBehaviour
         //Control Character Swap Button
         if (DisableCharacterSwap)
         {
-            if(SwitchChaButton != false)
+            if(SwitchChaButton != null)
             {
                 SwitchChaButton.SetActive(false);
             }
         }
         else
         {
-            if(SwitchChaButton != false)
+            if(SwitchChaButton != null)
             {
                 SwitchChaButton.SetActive(true);
             }
@@ -205,14 +205,14 @@ public class DataManager : MonoBehaviour
         //Control Clipboard Button
         if (DisableClipboard)
         {
-            if (ClipboardButton != false)
+            if (ClipboardButton != null)
             {
                 ClipboardButton.SetActive(false);
             }
         }
         else
         {
-            if (ClipboardButton!= false)
+            if (ClipboardButton!= null)
             {
                 ClipboardButton.SetActive(true);
             }

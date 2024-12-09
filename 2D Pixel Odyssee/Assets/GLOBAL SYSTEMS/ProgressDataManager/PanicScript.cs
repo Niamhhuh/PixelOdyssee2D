@@ -11,14 +11,11 @@ public class PanicScript : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
     }
 
-    public void UnlockCharacter()
+    private void Update()
     {
-        DMReference.MoveScript.InTriggerDialogue = false;
-        DMReference.MoveScript.EnableInput();
-        DMReference.MoveScript.EnableInteract();
+        print(DataManager.DisableClipboard);
 
-        DataManager.DisableClipboard = false;
-        DataManager.DisableCharacterSwap = false;
+        print(DataManager.DisableCharacterSwap);
         DMReference.UpdateUI();
     }
 }
