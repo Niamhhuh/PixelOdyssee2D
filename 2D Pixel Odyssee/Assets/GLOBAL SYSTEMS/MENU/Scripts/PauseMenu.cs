@@ -60,7 +60,6 @@ public class PauseMenu : MonoBehaviour
 
             pauseScreen.SetActive(!pauseScreen.activeSelf);
 
-            Debug.Log(current_scene.name);
         } 
 
         if(current_scene.name == "Z_SteuerungPONG" && Input.GetKeyDown(KeyCode.Return)) {

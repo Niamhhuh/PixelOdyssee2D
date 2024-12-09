@@ -14,7 +14,6 @@ public class ObjectScript : MonoBehaviour
     public bool TriggeronUnlock;
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
-    
 
 
     //public(Dialogue)			                                                    //Dialogue of this object
@@ -425,12 +424,13 @@ public class ObjectScript : MonoBehaviour
 
     public IEnumerator FlashRed()
     {
-        float elapsedTime = 0f;
         if (GetComponent<NPCDialogue>() != null)
         {
+            GetComponent<NPCDialogue>().InLockResponse = true;
             GetComponent<NPCDialogue>().advancedDialogueManager.ObjectLockedDialogue(gameObject.GetComponent<NPCDialogue>());
             GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
         }
+        float elapsedTime = 0f;
         while (elapsedTime < 1)
         {
             ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
@@ -442,6 +442,7 @@ public class ObjectScript : MonoBehaviour
         HighlightObjectSprite.color = originalHighlightColor;
 
         PassTriggerActivate(2);                                                                             //Activate a Trigger if connected
+        GetComponent<NPCDialogue>().InLockResponse = false;
     }
 
 
