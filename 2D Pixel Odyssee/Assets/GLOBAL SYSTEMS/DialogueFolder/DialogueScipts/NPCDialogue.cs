@@ -13,6 +13,7 @@ public class NPCDialogue : MonoBehaviour
 
     [HideInInspector] public AdvancedDialogueManager advancedDialogueManager;
     [HideInInspector] public GameObject DialogueHolder;                                 //store this gameObject to pass to Advanced Dialogue to check for Trigger
+    [HideInInspector] public bool InLockResponse;
 
     private bool dialogueInitated;
     public bool WasClicked;
@@ -53,8 +54,9 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract && DataManager.ToInteract.Count < 1)
+        if(Input.GetMouseButtonDown(0) && !DMReference.MoveScript.LockInteract && DataManager.ToInteract.Count < 1 && !InLockResponse)
         {
+            //print("Initiated");
             advancedDialogueManager.InitiateDialogue(this);
             WasClicked = true;
         }

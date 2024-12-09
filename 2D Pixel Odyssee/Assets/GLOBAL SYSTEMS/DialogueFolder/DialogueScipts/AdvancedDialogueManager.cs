@@ -76,13 +76,6 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        if (currentConversation != null && currentConversation.name == "Rosie")
-        {
-            print(currentConversation);
-            print("Nooo");
-            print(dialogueActivated);
-            print(canContinueText);
-        }
         if (dialogueActivated && canContinueText)
         {
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -305,37 +298,75 @@ public class AdvancedDialogueManager : MonoBehaviour
         }
 
         //the array we are currently stepping through
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
-        {
-            currentConversation = npcDialogue.conversation[0];
-        }
-
-        else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
-        {
-            if(npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
-            currentConversation = npcDialogue.conversation[1];
-        }
+        SetStandardDialogue(CurrentNPC);
         //currentConversation = npcDialogue.conversation[1];
         dialogueActivated = true;
     }
 
 
+    private void SetStandardDialogue(NPCDialogue npcDialogue)
+    {
+        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
+        {
+            currentConversation = npcDialogue.conversation[0];
+        }
+        else                                                                  //add a selector to choose conversation[0] when Rosie talks, conversation[1] when BeBe talks
+        {
+            if (npcDialogue.conversation.Length > 1 && npcDialogue.conversation[1] != null)
+                currentConversation = npcDialogue.conversation[1];
+        }
+    }
+
+
+    //Dialogue Triggered when the Object is locked
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public void ObjectLockedDialogue(NPCDialogue npcDialogue)                               //This Method fetches the Dialogue, which is played when the Object is interacted with, but locked 
     {
+        TurnOffDialogue();
+        
         CurrentNPC = npcDialogue;
+        
+        if (WriterIsRunning)
+        {
+            StopTypeWriter = true;
+            dialogueText.text = "";
+        }
+       
         //the array we are currently stepping through
         if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
         {
             currentConversation = npcDialogue.conversation[2];
+            if(currentConversation == null)
+            {
+                print("I get this!");
+                currentConversation = npcDialogue.conversation[0];
+            }
         }
         else                                                                  //add a selector to choose conversation[2] when Rosie talks, conversation[3] when BeBe talks
         {
             if (npcDialogue.conversation.Length > 3 && npcDialogue.conversation[3] != null)
+            {
                 currentConversation = npcDialogue.conversation[3];
+                if (currentConversation == null)
+                {
+                    currentConversation = npcDialogue.conversation[1];
+                }
+            }
         }
         //currentConversation = npcDialogue.conversation[1];
+        
+        if(currentConversation == null)
+        {
+            SetStandardDialogue(CurrentNPC);
+        }
+
+        canContinueText = true;
         dialogueActivated = true;
+        
+        ContinueDialogue();
     }
 
 
