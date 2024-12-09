@@ -44,8 +44,8 @@ public class ResetTheGame : MonoBehaviour
 
         DataManager.Inventory_Fillstate = 0;
 
-        DataManager.DisableCharacterSwap = false;
-        DataManager.DisableClipboard = false;
+        DataManager.DisableCharacterSwap = true;
+        DataManager.DisableClipboard = true;
 
         DataManager.FroggerCleared = false;
 

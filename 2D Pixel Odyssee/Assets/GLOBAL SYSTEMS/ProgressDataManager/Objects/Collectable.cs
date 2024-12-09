@@ -124,6 +124,7 @@ public class Collectable : ObjectScript
             DMReference.AddDraggableObj(ID, 0);                                      //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
             Collected = true;
             UpdateData();
+            DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
             RemoveItem();
         }
     }
