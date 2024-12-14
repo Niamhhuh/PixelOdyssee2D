@@ -61,8 +61,8 @@ public class GameManager_Street : MonoBehaviour
         restart = false;
         startPlaying = true;
         theBS.hasStarted = true;
-        SetLives(3);
-        SetLivesEnemy(9);
+        SetLives(1);
+        SetLivesEnemy(27);
         theMusic.Play();
         rosieAnimator.Play("Rosie_Idle_Street");
         
@@ -137,7 +137,7 @@ public class GameManager_Street : MonoBehaviour
     public void NoteHit(){
     	Debug.Log("NoteHit");
         SetLivesEnemy(livesEnemy - 1);
-        if(livesEnemy <= 2){
+        if(livesEnemy == 0){
             startPlaying = false;
             Invoke(nameof(StreetWon), 1f);
         }

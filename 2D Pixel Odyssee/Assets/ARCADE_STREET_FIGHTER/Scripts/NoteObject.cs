@@ -9,11 +9,20 @@ public class NoteObject : MonoBehaviour
     public bool hasBeenHit;
     public KeyCode keyToPress;
 
+    public SpriteRenderer spriteRenderer;
+    public List<Sprite> arrowSprites;
+    public List<KeyCode> arrowKeys;
+
+    public float randomizationChance = 0.4f;
+
+    private bool hasBeenRandomized = false; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        canBePressed = false;
+        hasBeenHit = false;
     }
 
     // Update is called once per frame
@@ -33,6 +42,10 @@ public class NoteObject : MonoBehaviour
     if(other.tag == "Activator"){
     	canBePressed = true;
     }
+    else if (other.tag == "RandomizerZone" && !hasBeenRandomized){
+
+        TryRandomizeArrows();
+    }
 }
 
     private void OnTriggerExit2D(Collider2D other){
@@ -44,4 +57,19 @@ public class NoteObject : MonoBehaviour
         hasBeenHit = false;
     }
 }
+    void TryRandomizeArrows(){
+        hasBeenRandomized = true;
+
+        float roll = Random.Range(0f, 1f);
+        if (roll <= randomizationChance){
+            RandomizeArrow();
+        }
+    }
+
+    void RandomizeArrow(){
+        int randomIndex = Random.Range(0, arrowSprites.Count);
+        spriteRenderer.sprite = arrowSprites[randomIndex];
+        keyToPress = arrowKeys[randomIndex];
+    }
+
 }

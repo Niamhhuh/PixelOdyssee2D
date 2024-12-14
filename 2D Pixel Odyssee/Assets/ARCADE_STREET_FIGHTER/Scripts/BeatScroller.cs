@@ -21,7 +21,7 @@ public class BeatScroller : MonoBehaviour
         	}*/
         }
         else {
-        	transform.position -= new Vector3(beatTempo * -Time.deltaTime, 0f, 0f);
+        	transform.position += Vector3.right * beatTempo * Time.deltaTime;
         }
     }
 }
