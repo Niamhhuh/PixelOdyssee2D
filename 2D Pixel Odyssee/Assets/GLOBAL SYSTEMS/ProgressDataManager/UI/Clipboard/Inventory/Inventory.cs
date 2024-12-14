@@ -63,14 +63,14 @@ public class Inventory : MonoBehaviour
         DMReference.MoveScript.DisableInput();
         calledbyKey = false;
 
-        FetchItems();
+        FetchItems();                                                                               //Grab Items
 
-        foreach (Draggable Item in DataManager.Item_List)
+        foreach (Draggable Item in DataManager.Item_List)                                           //Call Item Functions for all found Items
         {
-            if (Item.Available == true)
+            if (Item.Available == true)                                                             //If the Item is available
             {
-                Item.FetchData();
-                Item.TakeSlot();
+                Item.FetchData();                                                                   //Refresh Item Data 
+                Item.TakeSlot();                                                                    //Position the Item
             }
         }
 
@@ -79,15 +79,15 @@ public class Inventory : MonoBehaviour
         {
             if(Item.Available == true)
             {
-                Item.SearchSlot();
+                Item.SearchSlot();                                                                  //Search for an empty Slot 
             }
         }
 
-        DataManager.Slot_Array[9 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
-        DataManager.Slot_Array[10 - 1].GetComponent<SlotScript>().ResetOccupied();                      //Set the Crafting Slots as unoccupied on Inventory Load
+        DataManager.Slot_Array[9 - 1].GetComponent<SlotScript>().ResetOccupied();                   //Set the Crafting Slots as unoccupied on Inventory Load
+        DataManager.Slot_Array[10 - 1].GetComponent<SlotScript>().ResetOccupied();                  //Set the Crafting Slots as unoccupied on Inventory Load
 
-        ItemCollection.SetActive(true);
-        InventoryObj.SetActive(true);
+        ItemCollection.SetActive(true);                                                             //Make Items Visible
+        InventoryObj.SetActive(true);                                                               //Make Inventory Visible
     }
 
     public void CloseInventory()
@@ -111,17 +111,17 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void FetchItems()
+    public void FetchItems()                                                                    //Activate all collected, active Items
     {
-        foreach (Draggable Item in DataManager.Item_List)
+        foreach (Draggable Item in DataManager.Item_List)                                       //Deactivate all Items
         {
             Item.gameObject.SetActive(false);
         }
 
-        foreach (DataManager.DraggableObj Collected in DataManager.Draggable_List)
+        foreach (DataManager.DraggableObj Collected in DataManager.Draggable_List)              //Search through the Draggable List, to which Items are added, when they have been collected
         {
-            DataManager.Item_List[Collected.Stored_ID - 1].Available = true;
-            DataManager.Item_List[Collected.Stored_ID - 1].gameObject.SetActive(true);
+            DataManager.Item_List[Collected.Stored_ID - 1].Available = true;                    //For each Item in the Draggable List, access the All_Item_List (which is sorted by ID, check DataManager Awake) -> Set the Item with the matching ID as available
+            DataManager.Item_List[Collected.Stored_ID - 1].gameObject.SetActive(true);          //Activate the Item
         }
     }
 

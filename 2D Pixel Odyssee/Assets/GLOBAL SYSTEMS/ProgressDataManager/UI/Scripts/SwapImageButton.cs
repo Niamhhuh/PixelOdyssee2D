@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class SwapImageButton : MonoBehaviour
 {
-    public Image CurrentImage;      //Current Image used by the Button
+    public Image CurrentImage;                      //Current Image used by the Button
 
-    public Sprite RosieImage;       //Rosie Seleted Image
-    public Sprite BebeImage;        //Bebe Selected Image
+    public Sprite RosieImage;                       //Rosie Seleted Image
+    public Sprite BebeImage;                        //Bebe Selected Image
 
     public Sprite HighlightSwapButtonRosie;
     public Sprite HighlightSwapButtonBebe;

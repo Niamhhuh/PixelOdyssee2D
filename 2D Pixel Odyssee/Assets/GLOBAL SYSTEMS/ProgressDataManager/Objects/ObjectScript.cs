@@ -15,7 +15,6 @@ public class ObjectScript : MonoBehaviour
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
 
-
     //public(Dialogue)			                                                    //Dialogue of this object
 
     // private bool InteractFired = false;
@@ -87,6 +86,21 @@ public class ObjectScript : MonoBehaviour
     //Expand Effect
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private Vector3 ObjectSize;
+
+
+
+    //Trigger Goal (Add Goal to List or Complete Goal)
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    [HideInInspector] public bool TriggerGoal;                                      //Set True automatically from ControlGoal Script attached to the Object
+    [HideInInspector] public ControlGoal ControlGoalScript = null;                                      //
+
+
+
+
+
+
+
 
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -398,7 +412,7 @@ public class ObjectScript : MonoBehaviour
 
     //SequenceUnlock
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public void ObjectSequenceUnlock()
     {
         if (CanSequenceUnlock == true)
@@ -411,23 +425,51 @@ public class ObjectScript : MonoBehaviour
 
     //Talked
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public void TalkedtoObject()
     {
         if (!AlreadyTalked)
         {
             FetchAllData();
             AlreadyTalked = true;
+
+            Dialogue_Trigger_EditGoal();
+
             UpdateAllData();
         }
     }
 
 
-
-
     public void SuccessfulInteract()
     {
         if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
+        Interact_Trigger_EditGoal();
+    }
+
+
+    //Trigger Goal Edit (Add Goal or Complete Goal)
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void Dialogue_Trigger_EditGoal()
+    {
+        if (TriggerGoal == true)
+        {
+            if (ControlGoalScript.Dialogue_Triggered == true)
+            {
+                ControlGoalScript.EditGoal();
+            }
+        }
+    }
+
+    public void Interact_Trigger_EditGoal()
+    {
+        if (TriggerGoal)
+        {
+            if (ControlGoalScript.Interaction_Triggered == true)
+            {
+                ControlGoalScript.EditGoal();
+            }
+        }
     }
 
 

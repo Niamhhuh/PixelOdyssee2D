@@ -13,8 +13,11 @@ public class DataManager : MonoBehaviour
     public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();             //Create a List to store all relevant Variables of Switches               //List_ID 6
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
-    public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //ID... doesnt matter
+    public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //Intialized on Awake, the List Object are Sorted by ID
     public static List<CraftRecipe> Recipe_List = new List<CraftRecipe>();
+
+    public static List<ActiveGoal> ActiveGoal_List = new List<ActiveGoal>();                //Create a List to store all relevant Variables of currently Active Goals                 
+    public static List<GoalObject> GoalObject_List;                                         //Create a List to store all Goals                                              //Intialized on Awake, the List Object are Sorted by ID
 
     public static List<ObjectScript> Highlighted_Current = new List<ObjectScript>();        //Create a List to store the currently Highlighted Object           //should probably be an array
 
@@ -79,7 +82,7 @@ public class DataManager : MonoBehaviour
 
     public List<GameObject> SpawnList = new List<GameObject>();          //Create a List to store all SpawnPoints in a Scene 
     public static int SpawnID;                                              //ID of the selected SpawnPointObject. Set in used Portal 
-    public static int LastRoom;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+    public static int LastRoom;                                             //ID of the Last Room the Player was in
     public static bool NewGame = true;
 
 
@@ -92,12 +95,12 @@ public class DataManager : MonoBehaviour
     {
         currentRoom = SceneManager.GetActiveScene().buildIndex;
 
-        if(SpawnID == 0) { SpawnID = 1; }
-        foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("Spawn"))
+        if(SpawnID == 0) { SpawnID = 1; }                                                                                           //Set Spawn to 1 if no Spawner has been set previously
+        foreach (GameObject Obj in GameObject.FindGameObjectsWithTag("Spawn"))                                                      //Search Spawners in the Room
         {
-            SpawnList.Add(Obj);
+            SpawnList.Add(Obj);                                                                                                     //Remember Spawners for this load
         }
-        SpawnPlayer();
+        SpawnPlayer();                                                                                                              //Position the Player
     }
 
     private void Awake()
@@ -113,11 +116,23 @@ public class DataManager : MonoBehaviour
         }
 
         Time.timeScale = 1;
-        Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());
-        Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));
-        
 
-        if(GameObject.FindGameObjectWithTag("UiCanvas") != null)
+        //Fetch and Sort all Items
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        Item_List = new List<Draggable>(FindObjectsOfType<Draggable>());                    //Fetch all Items into a List
+        Item_List.Sort((Item1, Item2) => Item1.ID.CompareTo(Item2.ID));                     //Sort the Items by their ID to quicken access later                    
+
+
+        //Fetch and Sort all Goals
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------
+        GoalObject_List = new List<GoalObject>(FindObjectsOfType<GoalObject>());            //Fetch all Items into a List
+        GoalObject_List.Sort((Goal1, Goal2) => Goal1.ID.CompareTo(Goal2.ID));               //Sort the Items by their ID to quicken access later     
+
+
+
+        if (GameObject.FindGameObjectWithTag("UiCanvas") != null)
         {
             InventoryRef = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Inventory>();
             CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
@@ -183,7 +198,7 @@ public class DataManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void UpdateUI()                                                  //Control UI
+    public void UpdateUI()                                                  //Control UI Elements
     {
         //Control Character Swap Button
         if (DisableCharacterSwap)
@@ -292,6 +307,18 @@ public class DataManager : MonoBehaviour
         Draggable_List.Add(new DraggableObj { Stored_ID = newID, Stored_Slot = newSlot });
     }
 
+
+
+
+    //Add Active Goals
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void AddGoalObj(int newID, bool newCompleted)
+    {
+        ActiveGoal_List.Add(new ActiveGoal { Stored_ID = newID, Stored_Completed = newCompleted });
+    }
+
+
     //Edit Object Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -346,6 +373,18 @@ public class DataManager : MonoBehaviour
             Draggable_List[ObjectIndex].Stored_Slot = newSlot;
         }
     }
+
+
+
+    //Edit Goal
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    /*
+    public void EditGoalObj(int ObjectIndex, bool newCompleted)
+    {
+            ActiveGoal_List[ObjectIndex].Stored_Completed = newCompleted;
+    } 
+     */
+
 
     //Unlock Methods
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -697,5 +736,13 @@ public class DataManager : MonoBehaviour
     {
         public bool Stored_Trigger_Passed;
         public GameObject Stored_Trigger;
+    }
+
+
+    public class ActiveGoal
+    {
+        public int Stored_ID;
+        public bool Stored_Completed;
+
     }
 }

@@ -72,7 +72,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         }
     }
 
-    public void SearchSlot()                                                                                    //when an Item doesn't have a Slot yet or was last placed into Slot 12/13, assign a Slot
+    public void SearchSlot()                                                                                    //when an Item doesn't have a Slot yet or was last placed into Slot 9/10, assign a Slot
     {
         if (Slot == 0 || Slot == 11)
         {

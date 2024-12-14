@@ -34,6 +34,8 @@ public class InteractionScript : MonoBehaviour
 
     public void TriggerInteraction ()
     {
+        //ToInteract[0].
+
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
         {
             //Turn ObjectScript into Specific Object
