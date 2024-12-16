@@ -292,9 +292,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6de108f2f808f3146a55df774b3a7c95, type: 2}
+  - {fileID: 11400000, guid: 03bb55d681655564ebeb81bd257c62d8, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!212 &829623745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -377,6 +379,8 @@ MonoBehaviour:
   ID: 0
   AlreadyTalked: 0
   Lock_State: 0
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   LockSprite: {fileID: 0}
@@ -402,10 +406,13 @@ MonoBehaviour:
   DMReference: {fileID: 0}
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
   IsReward: 0
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
 --- !u!222 &2812374907419995
@@ -1927,12 +1934,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8cfc36fead3d949a8cca6c49ce0ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggeredObjects_List: []
   MoveScript: {fileID: 0}
   CursorScript: {fileID: 0}
   DisplayObjectNameScript: {fileID: 0}
-  SwitchChaButton: {fileID: 0}
   InventoryRef: {fileID: 0}
   CurrentCharacter: {fileID: 0}
+  DialogueManager: {fileID: 0}
+  SwitchChaButton: {fileID: 0}
+  ClipboardButton: {fileID: 0}
   RewardObjects: []
   RosieComment: {fileID: 0}
   BebeComment: {fileID: 0}
@@ -3540,12 +3550,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18562f0ad5c5914f85a972b634a35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentConversation: {fileID: 0}
+  InDialogue: 0
+  dialogueCanvas: {fileID: 0}
   actorSO:
   - {fileID: 11400000, guid: 97af57a15d479b1459e558c61eea7d85, type: 2}
   - {fileID: 11400000, guid: 91e1e0c623c716f4f972dbb7e9b1de34, type: 2}
   - {fileID: 11400000, guid: d92d4c6b9364bb54ba2d4a49a54df0ff, type: 2}
   typingSpeed: 0.02
   canContinueText: 1
+  StopTypeWriter: 0
 --- !u!1 &2151230269455459305
 GameObject:
   m_ObjectHideFlags: 0
@@ -12419,7 +12433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8590288663911651927
 GameObject:
   m_ObjectHideFlags: 0
