@@ -27,7 +27,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     public ActorSO[] actorSO;
 
     //BUTTON REFERENCES
-    private GameObject[] optionButton;
+    private GameObject[] optionButton = new GameObject[4];
     private TMP_Text[] optionButtonText;
     private GameObject optionsPanel;
 
@@ -50,8 +50,15 @@ public class AdvancedDialogueManager : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
 
         //FIND BUTTONS
-        optionButton = GameObject.FindGameObjectsWithTag("OptionButton");
+        //optionButton = GameObject.FindGameObjectsWithTag("OptionButton");
+        
         optionsPanel = GameObject.Find("OptionPanel");
+
+        optionButton[0] = optionsPanel.transform.GetChild(0).gameObject;
+        optionButton[1] = optionsPanel.transform.GetChild(1).gameObject;
+        optionButton[2] = optionsPanel.transform.GetChild(2).gameObject;
+        optionButton[3] = optionsPanel.transform.GetChild(3).gameObject;
+
         optionsPanel.SetActive(false);
 
         ContinueButton = GameObject.FindGameObjectWithTag("ContinueDialogueButton");

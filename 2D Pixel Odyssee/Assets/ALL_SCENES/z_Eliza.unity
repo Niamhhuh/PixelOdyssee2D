@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313959049}
   - component: {fileID: 313959048}
-  - component: {fileID: 313959047}
+  - component: {fileID: 313959050}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -140,14 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &313959047
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313959046}
-  m_Enabled: 1
 --- !u!20 &313959048
 Camera:
   m_ObjectHideFlags: 0
@@ -214,6 +206,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &313959050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313959046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &829623742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2440,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2837,7 +2843,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5991,18 +5997,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titelScreenTheme:
     Guid:
-      Data1: -1680502974
-      Data2: 1177259843
-      Data3: 1235322775
-      Data4: -493090769
-    Path: event:/Titelmusik
+      Data1: 250868438
+      Data2: 1339535541
+      Data3: -801345379
+      Data4: 1897745755
+    Path: event:/Titelscreen Theme
   gameSceneTheme:
     Guid:
-      Data1: 465877033
-      Data2: 1322363960
-      Data3: 1788093313
-      Data4: -1762024205
-    Path: event:/Museumsmusik
+      Data1: -1389875791
+      Data2: 1203534326
+      Data3: 825692847
+      Data4: -1145034477
+    Path: event:/Depot Theme
 --- !u!225 &4098707016891588987
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9452,8 +9458,8 @@ RectTransform:
   m_LocalScale: {x: 0.6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7049105944904738423}
   - {fileID: 7532054415133295617}
+  - {fileID: 7049105944904738423}
   - {fileID: 209669843304840640}
   - {fileID: 6507644312252596198}
   m_Father: {fileID: 506960976297362074}
