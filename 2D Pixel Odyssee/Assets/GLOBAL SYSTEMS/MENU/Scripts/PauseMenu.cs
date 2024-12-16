@@ -40,25 +40,9 @@ public class PauseMenu : MonoBehaviour
     void Update() {  
         current_scene = SceneManager.GetActiveScene();
         
-        if (Input.GetKeyDown(KeyCode.Escape) && current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(PointerScript != null && PointerScript.InTriggerDialogue == false)
-            {
-                PointerScript.AllowInput = !PointerScript.AllowInput;
-                PointerScript.LockInteract = !PointerScript.LockInteract;
-            }
-
-            if(pauseScreen.activeSelf)
-            {
-                Time.timeScale = 1f;
-            }
-
-            if (!pauseScreen.activeSelf)
-            {
-                Time.timeScale = 0f;
-            }
-
-            pauseScreen.SetActive(!pauseScreen.activeSelf);
+            CallPause();
 
         } 
 
@@ -69,6 +53,31 @@ public class PauseMenu : MonoBehaviour
             SceneManager.LoadScene("ARC_Spacewar-MiniGame");
         }
     }
+
+    public void CallPause()
+    {
+        if(current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
+        {
+            if (PointerScript != null && PointerScript.InTriggerDialogue == false)
+            {
+                PointerScript.AllowInput = !PointerScript.AllowInput;
+                PointerScript.LockInteract = !PointerScript.LockInteract;
+            }
+
+            if (pauseScreen.activeSelf)
+            {
+                Time.timeScale = 1f;
+            }
+
+            if (!pauseScreen.activeSelf)
+            {
+                Time.timeScale = 0f;
+            }
+
+            pauseScreen.SetActive(!pauseScreen.activeSelf);
+        }
+    }
+
 
 //_______________________________________________________________________________
 //_______Buttons for menu to load scene below____________________________________
