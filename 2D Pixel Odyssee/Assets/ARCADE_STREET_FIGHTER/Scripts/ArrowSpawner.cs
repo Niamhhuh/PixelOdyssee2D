@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArrowSpawner : MonoBehaviour
 {
@@ -15,20 +16,28 @@ public class ArrowSpawner : MonoBehaviour
     public BeatScroller theBS;
     public bool startSpawn;
     public Transform arrowSpawner;
-    public bool isSpawning = true; // Toggle spawning on/off
+    public bool isSpawning = false; // Toggle spawning on/off
 
-    private bool isCoroutineRunning = false;
+    //private bool isCoroutineRunning = false;
+
+    public int currentWave = 0;
+    public int totalWaves = 3;
+    private int arrowsPerWave = 9;
+    private int arrowsSpawnedInWave = 0;
+
+    public Text waveText;
+    public GameObject wavePopup;
+
     
     void Update()
     {
-    	if (theBS.hasStarted && !isCoroutineRunning){
-
-    		StartCoroutine(SpawnArrows());
+    	if (theBS.hasStarted && !isSpawning){
+    		StartCoroutine(SpawnWaves());
     	}
         
     }
 
-    private IEnumerator SpawnArrows()
+    /*private IEnumerator SpawnArrows()
     {
     	isCoroutineRunning = true;
         while (isSpawning)
@@ -37,6 +46,24 @@ public class ArrowSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);	
         }
         isCoroutineRunning = false;
+    }*/
+
+    private IEnumerator SpawnWaves(){
+    	isSpawning = true;
+
+    	while(currentWave < totalWaves){
+    		currentWave++;
+    		arrowsSpawnedInWave = 0;
+    		yield return StartCoroutine(ShowWavePopup());
+
+    		while (arrowsSpawnedInWave < arrowsPerWave){
+    			SpawnArrow();
+    			arrowsSpawnedInWave++;
+    			yield return new WaitForSeconds(spawnInterval);
+    		}
+    		yield return new WaitForSeconds(7f);
+    	}
+    	isSpawning = false;
     }
 
     private void SpawnArrow()
@@ -59,5 +86,12 @@ public class ArrowSpawner : MonoBehaviour
             noteObject.arrowSprites = arrowSprites;
             noteObject.arrowKeys = arrowKeys;
         }
+    }
+
+    private IEnumerator ShowWavePopup(){
+    	wavePopup.SetActive(true);
+    	waveText.text = "Wave " + currentWave.ToString();
+    	yield return new WaitForSeconds(2f);
+    	wavePopup.SetActive(false);
     }
 }
