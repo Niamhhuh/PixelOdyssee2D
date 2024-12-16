@@ -27,6 +27,7 @@ public class ArrowSpawner : MonoBehaviour
 
     public Text waveText;
     public GameObject wavePopup;
+    public GameManager_Street GMref;
 
     
     void Update()
@@ -62,6 +63,10 @@ public class ArrowSpawner : MonoBehaviour
     			yield return new WaitForSeconds(spawnInterval);
     		}
     		yield return new WaitForSeconds(7f);
+    		if(currentWave == 3 && arrowsSpawnedInWave == 9){
+
+    			GMref.EndofGame();
+    		}
     	}
     	isSpawning = false;
     }
