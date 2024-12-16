@@ -529,6 +529,17 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &46438269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6104256536471430032, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+  m_PrefabInstance: {fileID: 7855790134596259122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa536e28ace547afb0d80e3911a8d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &53116855
 GameObject:
   m_ObjectHideFlags: 0
@@ -11583,6 +11594,22 @@ PrefabInstance:
     - target: {fileID: 6687809554465576547, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838040283367626222, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 46438269}
+    - target: {fileID: 7838040283367626222, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838040283367626222, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838040283367626222, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8663867097056879031, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_LocalPosition.x
