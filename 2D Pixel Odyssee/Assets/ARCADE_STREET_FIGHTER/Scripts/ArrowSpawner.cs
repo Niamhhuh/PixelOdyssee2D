@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ArrowSpawner : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ArrowSpawner : MonoBehaviour
     public float spawnYMax = 4f; // Maximum Y position
     public float spawnXOffset = 10f; // Spawn position offset off-screen
     public BeatScroller theBS;
+    public NoteObject theNO;
+    public GameManager_Street theGM;
     public bool startSpawn;
     public Transform arrowSpawner;
     public bool isSpawning = false; // Toggle spawning on/off
@@ -24,10 +27,13 @@ public class ArrowSpawner : MonoBehaviour
     public int totalWaves = 3;
     private int arrowsPerWave = 9;
     private int arrowsSpawnedInWave = 0;
+    public int round = 0;
 
-    public Text waveText;
+    public TextMeshProUGUI waveText;
     public GameObject wavePopup;
     public GameManager_Street GMref;
+    public TextMeshProUGUI roundText;
+    public GameObject roundPopop;
 
     
     void Update()
@@ -62,11 +68,19 @@ public class ArrowSpawner : MonoBehaviour
     			arrowsSpawnedInWave++;
     			yield return new WaitForSeconds(spawnInterval);
     		}
-    		yield return new WaitForSeconds(7f);
-    		if(currentWave == 3 && arrowsSpawnedInWave == 9){
+    		if(currentWave == totalWaves && arrowsSpawnedInWave == 9){
 
     			GMref.EndofGame();
     		}
+    		yield return new WaitForSeconds(7f);
+    		
+    		if (currentWave == totalWaves && theNO.round2){
+    			currentWave = 0;
+    			theGM.allowInput = true;	
+    			yield return StartCoroutine(ShowRoundPopup());	
+    		}
+    		
+    		
     	}
     	isSpawning = false;
     }
@@ -98,5 +112,12 @@ public class ArrowSpawner : MonoBehaviour
     	waveText.text = "Wave " + currentWave.ToString();
     	yield return new WaitForSeconds(2f);
     	wavePopup.SetActive(false);
+    }
+
+    private IEnumerator ShowRoundPopup(){
+    	roundPopop.SetActive(true);
+    	roundText.text = "Round 2";
+    	yield return new WaitForSeconds(2f);
+    	roundPopop.SetActive(false);
     }
 }
