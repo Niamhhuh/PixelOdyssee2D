@@ -29,9 +29,13 @@ public class GameManager_Street : MonoBehaviour
 
     public GameObject gameStartStreet;
 
+    public NoteObject theNO;
+
     public Text livesTextStreet;
 
     public Text livesTextEnemyStreet;
+
+    public bool allowInput = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -136,8 +140,17 @@ public class GameManager_Street : MonoBehaviour
 
     public void NoteHit(){
     	Debug.Log("NoteHit");
-        SetLivesEnemy(livesEnemy - 1);
-        if(livesEnemy == 0){
+        if(allowInput){
+            SetLivesEnemy(livesEnemy - 1);
+        }
+        if(livesEnemy == 0 && !theNO.round2){
+            allowInput = false;
+            SetLives(2);
+            SetLivesEnemy(27);
+            theNO.round2 = true;
+            
+        }
+        else if (livesEnemy == 0 && theNO.round2){
             startPlaying = false;
             Invoke(nameof(StreetWon), 1f);
         }
