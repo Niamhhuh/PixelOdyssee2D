@@ -17,6 +17,8 @@ public class NoteObject : MonoBehaviour
 
     private bool hasBeenRandomized = false; 
 
+    public bool round2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class NoteObject : MonoBehaviour
     if(other.tag == "Activator"){
     	canBePressed = true;
     }
-    else if (other.tag == "RandomizerZone" && !hasBeenRandomized){
+    else if (other.tag == "RandomizerZone" && !hasBeenRandomized && round2){
 
         TryRandomizeArrows();
     }
