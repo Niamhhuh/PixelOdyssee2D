@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class GoalScroll : MonoBehaviour
 {
-    public static int CurrentScroll = 0;
-    public static int MaxScroll = 0;
     public DataManager DMReference;
     public GameObject GoalListContainer;
-    public static Vector2 ContainerStartPosition = new Vector2(1000,10);
 
     // Start is called before the first frame update
     void Start()
@@ -16,9 +13,9 @@ public class GoalScroll : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         GoalListContainer = GameObject.FindGameObjectWithTag("GoalListContainer");                          //Find the List of Goals
 
-        if(ContainerStartPosition.x == 1000 && ContainerStartPosition.y == 10)
+        if(DataManager.ContainerStartPosition.x == 1000 && DataManager.ContainerStartPosition.y == 10)
         {
-            ContainerStartPosition = GoalListContainer.transform.position;
+            DataManager.ContainerStartPosition = GoalListContainer.transform.position;
         }
     }
 
@@ -26,9 +23,9 @@ public class GoalScroll : MonoBehaviour
     public void Down()
     {
         IncreaseScrollRange();
-        if (CurrentScroll < MaxScroll)
+        if (DataManager.CurrentScroll < DataManager.MaxScroll)
         {
-            CurrentScroll++;
+            DataManager.CurrentScroll++;
             GoalListContainer.transform.position = new Vector2(GoalListContainer.transform.position.x, GoalListContainer.transform.position.y + 90);          //adjust by Slot Shift -38 y per Slot
         }
     }
@@ -36,9 +33,9 @@ public class GoalScroll : MonoBehaviour
     public void Up()
     {
         IncreaseScrollRange();
-        if (CurrentScroll > 0)
+        if (DataManager.CurrentScroll > 0)
         {
-            CurrentScroll--;
+            DataManager.CurrentScroll--;
             GoalListContainer.transform.position = new Vector2(GoalListContainer.transform.position.x, GoalListContainer.transform.position.y - 90);          //adjust by Slot Shift -38 y per Slot
         }
     }
@@ -47,7 +44,7 @@ public class GoalScroll : MonoBehaviour
     {
         if(DataManager.ActiveGoal_List.Count > 6)
         {
-            MaxScroll = DataManager.ActiveGoal_List.Count - 6;
+            DataManager.MaxScroll = DataManager.ActiveGoal_List.Count - 6;
         }
     }
 
