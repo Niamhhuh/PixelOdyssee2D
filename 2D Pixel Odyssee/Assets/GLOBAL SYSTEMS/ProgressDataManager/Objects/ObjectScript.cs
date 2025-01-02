@@ -227,7 +227,7 @@ public class ObjectScript : MonoBehaviour
 
         // Unlock by Item Drag Success
         //----------------------------------------------------------------------------------------------------------------------------------------------------
-        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
+        if (Input.GetMouseButtonDown(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
         {
             FetchAllData();
             Lock_State = false;
@@ -529,13 +529,14 @@ public class ObjectScript : MonoBehaviour
         float ContractDuration = 0.15f; // Duration for the expansion and contraction
 
         Vector3 ExpandSize = ObjectSize * 1.3f;
-        Vector3 ContractSize = ObjectSize * 0.9f;
+        Vector3 ContractSize = Original_Collider / 1.3f;
         
         float timeElapsed = 0f;
         
         while (timeElapsed < ExpandDuration)
         {
             transform.localScale = Vector3.Lerp(ObjectSize, ExpandSize, timeElapsed / ExpandDuration);
+
             Object_Collider.size = Vector3.Lerp(Original_Collider, ContractSize, timeElapsed / ExpandDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
@@ -547,6 +548,7 @@ public class ObjectScript : MonoBehaviour
         while (timeElapsed < ContractDuration)
         {
             transform.localScale = Vector3.Lerp(ExpandSize, ObjectSize, timeElapsed / ContractDuration);
+            
             Object_Collider.size = Vector3.Lerp(ContractSize, Original_Collider, timeElapsed / ExpandDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
