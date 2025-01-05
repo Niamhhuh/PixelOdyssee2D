@@ -102,6 +102,7 @@ public class Portal : ObjectScript
             Traversed = true;
             UpdateData();
             DataManager.SpawnID = SpawnPointID;
+            DataManager.LastRoom = LoadScene_ID;
             SceneManager.LoadScene(LoadScene_ID);
         }
     }

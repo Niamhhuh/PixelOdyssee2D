@@ -416,7 +416,37 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (optionsPanel != null) { optionsPanel.SetActive(false); }
         if (dialogueCanvas != null) { dialogueCanvas.SetActive(false); }
     }
+
+
+    public void AutomaticDialogueID()
+    {
+        //This Method assigns an ID to the current NPC Dialogue, or fetches it, if it already exists.
+        //Function:
+        //The Method is called on Dialogue Initiation
+        //First it generates the current ID by checking conditions:
+
+        //Is this a Branch -> Take active ID, add A B C D
+        //Is Bebe or Rosie Active -> R / B
+        //Is this the Standard Dialogue, Locked Dialogue or EnyInteraction-Response Dialogue -> S / L / D
+        //What is the Object Type (A - F)
+        //add Object ID
+
+        //The Generated ID is checked for
+        //Check the RoomDialogueList in the DataManager for its ID (There is a Dialogue List for each room, to improve Runtime Performance)
+        //If the ID is found, it passes it to the Object.
+        //If no ID is found, a new one is generated the following way:
+        //If this is a branch:
+        //Take previous DialogueID add passed "A B C D" to the string (A B C D is passed in Option)
+        //If this is a new Dialogue generate a new Dialogue ID: ObjectType(A - F) + ObjectID
+        //If this is a new Dialogue which replaces exhausted Dialogue, add a Z to the ID (Check for this when fetching from ReplaceDialogue List)
+        //If this is a new Dialogue passed by an event, add an X to the ID
+    }
+
+
+
 }
+
+
 
 public enum DialogueActors
 {

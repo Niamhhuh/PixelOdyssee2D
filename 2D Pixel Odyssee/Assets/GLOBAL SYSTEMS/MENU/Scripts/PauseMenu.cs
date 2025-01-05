@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-//_______________________________________________________________________________
-//______________This Manager is existent in every scene__________________________
-//_______________________________________________________________________________
+    //_______________________________________________________________________________
+    //______________This Manager is existent in every scene__________________________
+    //_______________________________________________________________________________
+
+    private DataManager DMReference;
 
     public GameObject credits = null;
 
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Pointer") != null)
         {
             PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+            DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
     }
 
@@ -83,8 +86,8 @@ public class PauseMenu : MonoBehaviour
 //_______Buttons for menu to load scene below____________________________________
 
     public void StartGame() {           //STARTSCREEN --> beginnt im Moment immer beim Tutorial
-        if (DataManager.Inventory_Fillstate == 0) {     //NEUUUUUUU -> 06.12.2024 -> stellt sicher, dass nach reset erste Szene geladen wird
-            SceneManager.LoadScene("Z_Tutorial1");
+        if (DataManager.LastRoom == 0) {     //NEUUUUUUU -> 06.12.2024 -> stellt sicher, dass nach reset erste Szene geladen wird
+            SceneManager.LoadScene("Z1_Tutorial1");
         }
         else{
             SceneManager.LoadScene(DataManager.LastRoom);
@@ -92,7 +95,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
-    	SceneManager.LoadScene("Z_Tutorial2");
+    	SceneManager.LoadScene("Z2_Tutorial2");
     }
 
     public void QuitGame() {            //STARTSCREEN -->Beendet das Spiel komplett
