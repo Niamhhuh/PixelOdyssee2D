@@ -16,7 +16,7 @@ public class NPCDialogue : MonoBehaviour
     [HideInInspector] public bool InLockResponse;
 
     private bool dialogueInitated;
-    public bool WasClicked;
+    [HideInInspector] public bool WasClicked;
 
     // Start is called before the first frame update
     void Start()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +44,8 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public bool StopTypeWriter;
     private bool WriterIsRunning;
+
+    private bool DialogueID_found = false;
 
     // Start is called before the first frame update
     void Start()
@@ -173,7 +176,8 @@ public class AdvancedDialogueManager : MonoBehaviour
                 else
                 {
                     optionButtonText[i].text = currentConversation.optionText[i];
-                    optionButton[i].SetActive(true);
+                    //optionButton[i].SetActive(true);                                        //Attach Option Selection Method
+                    ControlOptionButtons(i);
                 }
 
                 //Set the first button to be auto-selected
@@ -201,6 +205,38 @@ public class AdvancedDialogueManager : MonoBehaviour
        
         dialogueCanvas.SetActive(true);
         stepNum += 1;
+
+    }
+
+    private void ControlOptionButtons(int i)                                                    //Control Button Activation                                     //PART OF DIALOGUE ENHANCMENT
+    {
+        if(currentConversation.UnlockableOptions)                                               //Activate Select Buttons
+        {
+            foreach(int DialogueID in DataManager.ProgressDialogueList)
+            {
+                if (i == 0 && DialogueID == currentConversation.KeyOption1)
+                {
+                    optionButton[0].SetActive(true);
+                }
+
+                if (i == 1 && DialogueID == currentConversation.KeyOption2)
+                {
+                    optionButton[1].SetActive(true);
+                }
+
+                if (i == 2 && DialogueID == currentConversation.KeyOption3)
+                {
+                    optionButton[2].SetActive(true);
+                }
+
+                if (i == 3 && DialogueID == currentConversation.KeyOption3)
+                {
+                    optionButton[3].SetActive(true);
+                }
+            }
+        } else {                                                                                //Activate all Buttons when it is a generic selection
+            optionButton[i].SetActive(true);                                                            
+        }
 
     }
 
@@ -406,6 +442,28 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             StopTypeWriter = true;
         }
+
+        if(currentConversation != null && currentConversation.actors.Length <= stepNum)                                                //if the Dialogue was progressed through                                     //PART OF DIALOGUE ENHANCMENT
+        {  
+            if(currentConversation.ProgressDialogue)                                                    //check if it is "ProgressDialogue"
+            {
+                foreach(int DialogueID in DataManager.ProgressDialogueList)
+                {
+                    if(DialogueID == currentConversation.DialogueID)
+                    {
+                        DialogueID_found = true;
+                        break;
+                    }
+                }
+                if(!DialogueID_found)
+                {
+                    DataManager.ProgressDialogueList.Add(currentConversation.DialogueID);                   //if so, save it's ID in the Progress List
+                }
+
+                print("DialogueComplete" + DataManager.ProgressDialogueList[0]);
+            }
+        }
+
         dialogueText.text = "";
         stepNum = 0;
         StopTypeWriter = false;
@@ -416,32 +474,6 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (optionsPanel != null) { optionsPanel.SetActive(false); }
         if (dialogueCanvas != null) { dialogueCanvas.SetActive(false); }
     }
-
-
-    public void AutomaticDialogueID()
-    {
-        //This Method assigns an ID to the current NPC Dialogue, or fetches it, if it already exists.
-        //Function:
-        //The Method is called on Dialogue Initiation
-        //First it generates the current ID by checking conditions:
-
-        //Is this a Branch -> Take active ID, add A B C D
-        //Is Bebe or Rosie Active -> R / B
-        //Is this the Standard Dialogue, Locked Dialogue or EnyInteraction-Response Dialogue -> S / L / D
-        //What is the Object Type (A - F)
-        //add Object ID
-
-        //The Generated ID is checked for
-        //Check the RoomDialogueList in the DataManager for its ID (There is a Dialogue List for each room, to improve Runtime Performance)
-        //If the ID is found, it passes it to the Object.
-        //If no ID is found, a new one is generated the following way:
-        //If this is a branch:
-        //Take previous DialogueID add passed "A B C D" to the string (A B C D is passed in Option)
-        //If this is a new Dialogue generate a new Dialogue ID: ObjectType(A - F) + ObjectID
-        //If this is a new Dialogue which replaces exhausted Dialogue, add a Z to the ID (Check for this when fetching from ReplaceDialogue List)
-        //If this is a new Dialogue passed by an event, add an X to the ID
-    }
-
 
 
 }

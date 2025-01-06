@@ -75,13 +75,15 @@ public class ObjectScript : MonoBehaviour
 
     public bool IsReward;
 
-    [HideInInspector] public UnlockedDialogue UnlockDialogueScript = null;
+    [HideInInspector] public LockedDialogue LockedDialogueScript = null;
     [HideInInspector] public GrantRewardScript GrantReward_Script = null;
 
     public Comment ObjectComment;
 
 
-
+    //Connect Transformative Dialogue System
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    TransformativeDialogueScript TransformDialogueScript;
 
     //Expand Effect
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,14 +142,19 @@ public class ObjectScript : MonoBehaviour
             BaseHighlightSprite = HighlightObjectSprite.sprite;
         }
 
-        if (gameObject.GetComponent<UnlockedDialogue>() != null)
+        if (gameObject.GetComponent<LockedDialogue>() != null)                                              //Attach LockedDialogue 
         {
-            UnlockDialogueScript = GetComponent<UnlockedDialogue>();
+            LockedDialogueScript = GetComponent<LockedDialogue>();
         }
 
-        if (gameObject.GetComponent<GrantRewardScript>() != null)
+        if (gameObject.GetComponent<GrantRewardScript>() != null)                                           //Attach GrantRewardScript
         {
             GrantReward_Script = gameObject.GetComponent<GrantRewardScript>();
+        }
+
+        if (gameObject.GetComponent<TransformativeDialogueScript>() != null)                                //Attach Transform Dialogue
+        {
+            TransformDialogueScript = gameObject.GetComponent<TransformativeDialogueScript>();
         }
     }
 
@@ -243,7 +250,7 @@ public class ObjectScript : MonoBehaviour
                 DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
                 DataManager.ToInteract.Add(this);
 
-                if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+                //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
 
                 InteractionController.SetActive(true);
                 InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
@@ -338,7 +345,8 @@ public class ObjectScript : MonoBehaviour
 
             DataManager.ToInteract.Add(this);
 
-            if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+            if(TransformDialogueScript != null) { TransformDialogueScript.TransformeDialogue(); }
+            if (LockedDialogueScript != null) { LockedDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
@@ -352,7 +360,8 @@ public class ObjectScript : MonoBehaviour
         DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
         DataManager.ToInteract.Add(this);
 
-        if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+        if (TransformDialogueScript != null) { TransformDialogueScript.TransformeDialogue(); }
+        if (LockedDialogueScript != null) { LockedDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnlockedDialogue : MonoBehaviour
+public class LockedDialogue : MonoBehaviour
 {
-    public AdvancedDialogueSO RosieUnlockDialogue;
-    public AdvancedDialogueSO BeBeUnlockDialogue;
+    public AdvancedDialogueSO RosieLockDialogue;
+    public AdvancedDialogueSO BeBeLockDialogue;
 
     NPCDialogue ObjectDialogue = null;
     ObjectScript AccessObjectScript = null;
@@ -21,10 +21,10 @@ public class UnlockedDialogue : MonoBehaviour
     public void ModifyDialogue () 
     {
 
-        if(AccessObjectScript.Lock_State == false) 
+        if(AccessObjectScript.Lock_State == true) 
         {
-            if(RosieUnlockDialogue != null) {ObjectDialogue.conversation[0] = RosieUnlockDialogue;}
-            if(BeBeUnlockDialogue != null) {ObjectDialogue.conversation[1] = BeBeUnlockDialogue;}
+            if(RosieLockDialogue != null) {ObjectDialogue.conversation[0] = RosieLockDialogue;}
+            if(BeBeLockDialogue != null) {ObjectDialogue.conversation[1] = BeBeLockDialogue;}
         }
 
     }

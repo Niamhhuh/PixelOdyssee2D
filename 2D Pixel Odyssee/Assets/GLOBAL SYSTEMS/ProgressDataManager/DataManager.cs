@@ -100,10 +100,12 @@ public class DataManager : MonoBehaviour
 
 
 
-    //DialogueContainer Lists
+    //ProgressDialogue List
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Upon being finished, Dialogue which is marked as ProgressDialogue adds its ID to this List 
+    //Objects then check for the required ID and adapt accordingly
 
-    
+    public static List<int> ProgressDialogueList = new List<int>();
 
 
 
@@ -769,12 +771,12 @@ public class DataManager : MonoBehaviour
 
     }
 
-
+/*
     public class DialogueContainer
     {
         public int Stored_ID;
         public bool Exhausted;
     }
-
+*/
 
 }
