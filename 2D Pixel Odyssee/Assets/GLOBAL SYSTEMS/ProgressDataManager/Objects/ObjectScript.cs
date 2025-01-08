@@ -209,13 +209,17 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
-            if (DataManager.ToShove.Count < 1)
+            if (DataManager.ToShove.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
             }
-            RequestInteract = true;
-            DataManager.Highlighted_Current.Add(ThisObject); //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
+
+            DMReference.DisplayObjectNameScript.DeactivateNameDisplay();                        //Deactivate the NamePanel
+            DMReference.CursorScript.ActivateCursorSprite();                                    //Reactivate the Standard Cursor
+            
+            RequestInteract = true;                                                             //Remember that this Object requests an Interaction
+            DataManager.Highlighted_Current.Add(ThisObject);                                    //Access List in MoveScript, Set RequestInteract false, ClearHighlight, Remove Object
             CompareNewInput();
             if(!isBackground && !IsFullTrigger)
             {
