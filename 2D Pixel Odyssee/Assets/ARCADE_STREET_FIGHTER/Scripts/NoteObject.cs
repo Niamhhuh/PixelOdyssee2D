@@ -26,7 +26,6 @@ public class NoteObject : MonoBehaviour
         canBePressed = false;
         hasBeenHit = false;
     }
-
     // Update is called once per frame
     void Update()
     {

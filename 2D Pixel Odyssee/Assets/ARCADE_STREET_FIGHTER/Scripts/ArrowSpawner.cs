@@ -34,6 +34,7 @@ public class ArrowSpawner : MonoBehaviour
     public GameManager_Street GMref;
     public TextMeshProUGUI roundText;
     public GameObject roundPopop;
+    public GameObject sourceObject;
 
     
     void Update()
@@ -101,10 +102,16 @@ public class ArrowSpawner : MonoBehaviour
         if (noteObject != null && spriteRenderer != null)
         {
             spriteRenderer.sprite = arrowSprites[randomIndex];
-            noteObject.keyToPress = arrowKeys[randomIndex];
-            noteObject.arrowSprites = arrowSprites;
-            noteObject.arrowKeys = arrowKeys;
+            noteObject.keyToPress = arrowKeys[randomIndex];   
+
+            ListProvider listProvider = sourceObject.GetComponent<ListProvider>();
+            if (listProvider != null)
+        {
+            noteObject.arrowSprites = new List<Sprite>(listProvider.newArrowSprites);
+            noteObject.arrowKeys = new List<KeyCode>(listProvider.newArrowKeys);
         }
+        }
+        
     }
 
     private IEnumerator ShowWavePopup(){
