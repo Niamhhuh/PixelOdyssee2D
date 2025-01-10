@@ -601,6 +601,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0d869aa488ac314c9ea1d6ba1b23956, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!114 &75412644
 MonoBehaviour:
@@ -649,6 +650,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
 --- !u!61 &75412645
@@ -778,6 +781,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 1
   SpawnPointID: 2
@@ -911,6 +916,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a408a37bacc093849b819d5479dc98f3, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1 &112567040
 GameObject:
@@ -1004,6 +1010,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &112567044
@@ -1549,6 +1557,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
 --- !u!1 &183416645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2089,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &244141381
@@ -3156,6 +3168,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &471593905
@@ -3401,6 +3415,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 7
   SpawnPointID: 1
@@ -3489,6 +3505,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d19c89cfd451c24da2e727ee441e798, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1 &512239808
 GameObject:
@@ -4972,6 +4989,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7f92ee81bc702b34bbd4e1eb9c975266, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!114 &972280116
 MonoBehaviour:
@@ -5020,6 +5038,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
 --- !u!61 &972280117
@@ -5226,6 +5246,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &978511629
@@ -6291,6 +6313,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 6
   SpawnPointID: 2
@@ -6379,6 +6403,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 45c2a1bc051bf944fa6592201a375c8b, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1 &1220758357
 GameObject:
@@ -6599,6 +6624,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4cc6473c5ea31eb49b8a6fb3376ce3e1, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!114 &1221554450
 MonoBehaviour:
@@ -6647,6 +6673,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
 --- !u!61 &1221554451
@@ -7210,6 +7238,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 4
   SpawnPointID: 0
@@ -7343,6 +7373,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0091f28ef3384244b995792cf269e408, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1 &1358256488
 GameObject:
@@ -7437,6 +7468,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1358256491
@@ -7957,6 +7990,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
 --- !u!61 &1485404910
@@ -8104,6 +8139,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 795da8e47fbd536499a22cee0ca40d5c, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1001 &1581906368
 PrefabInstance:
@@ -8231,6 +8267,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1637344979
@@ -8867,6 +8905,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90e8def32335e4b47801b597d89ca027, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!114 &1749132620
 MonoBehaviour:
@@ -8915,6 +8954,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 4
   SpawnPointID: 0
@@ -9257,6 +9298,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
 --- !u!114 &1765036444
@@ -9869,6 +9912,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Traversed: 0
   LoadScene_ID: 3
   SpawnPointID: 3
@@ -9957,6 +10002,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7f76dd6e25505744a92135bb06666d53, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1 &1978186874
 GameObject:
@@ -10509,6 +10555,8 @@ MonoBehaviour:
   UnlockDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
   Shove_Position: 0
   Max_Shove: 2
   ShoveController: {fileID: 0}
@@ -10591,6 +10639,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b40954d83ef024442993c532962af3a0, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
+  InLockResponse: 0
   WasClicked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
