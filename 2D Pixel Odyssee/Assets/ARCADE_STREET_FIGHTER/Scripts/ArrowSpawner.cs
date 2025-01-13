@@ -35,8 +35,14 @@ public class ArrowSpawner : MonoBehaviour
     public TextMeshProUGUI roundText;
     public GameObject roundPopop;
     public GameObject sourceObject;
+    public TriggerAnimation animator;
+    //public GameObject SilverHp1;
+    //public GameObject SilverHp2;
 
-    
+
+    void Awake(){
+        animator = GameObject.Find("Round1").GetComponent<TriggerAnimation>();
+    }
     void Update()
     {
     	if (theBS.hasStarted && !isSpawning){
@@ -73,7 +79,7 @@ public class ArrowSpawner : MonoBehaviour
 
     			GMref.EndofGame();
     		}
-    		yield return new WaitForSeconds(7f);
+    		yield return new WaitForSeconds(9f);
     		
     		if (currentWave == totalWaves && theNO.round2){
     			currentWave = 0;
@@ -122,9 +128,7 @@ public class ArrowSpawner : MonoBehaviour
     }
 
     private IEnumerator ShowRoundPopup(){
-    	roundPopop.SetActive(true);
-    	roundText.text = "Round 2";
+    	animator.PlayScaleAnimationRound2();
     	yield return new WaitForSeconds(2f);
-    	roundPopop.SetActive(false);
     }
 }
