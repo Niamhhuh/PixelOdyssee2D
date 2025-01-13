@@ -231,7 +231,7 @@ public class ObjectScript : MonoBehaviour
 
         // Unlock by Item Drag Success
         //----------------------------------------------------------------------------------------------------------------------------------------------------
-        if (Input.GetMouseButtonDown(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
+        if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
         {
             FetchAllData();
             Lock_State = false;
