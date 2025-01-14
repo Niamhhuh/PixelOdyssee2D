@@ -192,7 +192,9 @@ public class GameManager_Street : MonoBehaviour
             theNO.round2 = true;
             Hp.SetActive(true);
             SilverHp1.SetActive(false);
-            silverAnimator.Play("Silver_Crossing_Arms");    
+            silverAnimator.Play("Silver_Crossing_Arms");
+            silverAnimator.SetBool("Stage2", true);
+
         }
         else if (livesEnemy == 0 && theNO.round2){
             startPlaying = false;
