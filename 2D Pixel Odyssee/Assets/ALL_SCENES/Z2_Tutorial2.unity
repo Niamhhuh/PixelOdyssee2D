@@ -7960,8 +7960,8 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
-  Unlock_by_Item: 0
-  Item_Key_ID: 0
+  Unlock_by_Item: 1
+  Item_Key_ID: 11
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -8189,9 +8189,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3479110917007307251, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Name
       value: PAUSESCREEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560216119896282768, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

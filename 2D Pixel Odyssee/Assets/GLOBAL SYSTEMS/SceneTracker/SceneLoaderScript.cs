@@ -19,13 +19,13 @@ public class SceneLoaderScript : MonoBehaviour
     public void LoadFrogger()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
 
     public void LoadAstroid()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 
     public void LoadMenu()

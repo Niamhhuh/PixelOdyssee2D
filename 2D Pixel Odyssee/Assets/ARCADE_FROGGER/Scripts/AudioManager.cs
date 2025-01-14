@@ -28,11 +28,11 @@ public class AudioManager : MonoBehaviour
     {
         EventReference themeToPlay = default; // Default initialisierung
 
-        if (SceneManager.GetActiveScene().name == "z_Start Screen")
+        if (SceneManager.GetActiveScene().name == "z_Start Screen" || SceneManager.GetActiveScene().name == "ARC_Asteroids" || SceneManager.GetActiveScene().name == "ARC_Frogger" || SceneManager.GetActiveScene().name == "ARC_Painstation") 
         {
             themeToPlay = titelScreenTheme;
         }
-        else if (SceneManager.GetActiveScene().name == "Z_Tutorial1" || SceneManager.GetActiveScene().name == "Z_Tutorial2"  || SceneManager.GetActiveScene().name == "Z_DemoEnd" || SceneManager.GetActiveScene().name == "ARC_Frogger" || SceneManager.GetActiveScene().name == "ACR_Asteroids" || SceneManager.GetActiveScene().name == "ACR_Streetfighter"|| SceneManager.GetActiveScene().name == "ARC_Painstation" || SceneManager.GetActiveScene().name == "Z_SteuerungPONG" || SceneManager.GetActiveScene().name == "z_Eliza"  )
+        else if (SceneManager.GetActiveScene().name == "Z1_Tutorial1" || SceneManager.GetActiveScene().name == "Z2_Tutorial2"  || SceneManager.GetActiveScene().name == "Z_DemoEnd" ||  SceneManager.GetActiveScene().name == "z_Eliza")
         {
             themeToPlay = gameSceneTheme;
         }
