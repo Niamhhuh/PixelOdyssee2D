@@ -8,6 +8,7 @@ public class NoteObject : MonoBehaviour
 	public bool canBePressed;
     public bool hasBeenHit;
     public KeyCode keyToPress;
+    public Animator silverAnimator;
 
     public SpriteRenderer spriteRenderer;
     public List<Sprite> arrowSprites;
@@ -22,6 +23,8 @@ public class NoteObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject Silver = GameObject.Find("Silver");
+        silverAnimator = Silver.GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         canBePressed = false;
         hasBeenHit = false;
@@ -68,6 +71,7 @@ public class NoteObject : MonoBehaviour
     }
 
     void RandomizeArrow(){
+        silverAnimator.SetTrigger("SnappingFingers");
         int randomIndex = Random.Range(0, arrowSprites.Count);
         spriteRenderer.sprite = arrowSprites[randomIndex];
         keyToPress = arrowKeys[randomIndex];

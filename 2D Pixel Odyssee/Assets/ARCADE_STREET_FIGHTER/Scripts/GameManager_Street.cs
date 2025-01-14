@@ -21,6 +21,10 @@ public class GameManager_Street : MonoBehaviour
 
     public Animator silverAnimator;
 
+    public Animator MissAnim;
+
+    public Animator HitAnim;
+
     private int lives;
 
     private int livesEnemy;
@@ -30,6 +34,8 @@ public class GameManager_Street : MonoBehaviour
     public GameObject gameWonMenuStreet;
 
     public GameObject gameStartStreet;
+
+    public GameObject VSScreen;
 
     public NoteObject theNO;
 
@@ -46,6 +52,10 @@ public class GameManager_Street : MonoBehaviour
     public GameObject SilverHp1;
 
     public GameObject SilverHp2;
+
+    public GameObject Miss;
+
+    public GameObject Hit;
 
     public bool allowInput = true;
     // Start is called before the first frame update
@@ -70,16 +80,23 @@ public class GameManager_Street : MonoBehaviour
         if(!startPlaying){
         	if(Input.GetKeyDown(KeyCode.Return)){
                 if(restart == true){
-                    NewGame();
+                    StartCoroutine(VS());
                 }
         	}
         }
     }
+    private IEnumerator VS(){
 
-    private void NewGame()
-    {   
+        VSScreen.SetActive(true);
         gameOverMenuStreet.SetActive(false);
         gameStartStreet.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        NewGame();
+    }
+    private void NewGame()
+    {   
+        
+        VSScreen.SetActive(false);
         restart = false;
         animator.PlayScaleAnimationRound1();
         print(animator);
@@ -163,6 +180,8 @@ public class GameManager_Street : MonoBehaviour
 
     public void NoteHit(){
     	Debug.Log("NoteHit");
+        HitAnim.SetTrigger("HitAnim");
+        rosieAnimator.SetTrigger("RosieHit");
         if(allowInput){
             SetLivesEnemy(livesEnemy - 1);
         }
@@ -173,7 +192,7 @@ public class GameManager_Street : MonoBehaviour
             theNO.round2 = true;
             Hp.SetActive(true);
             SilverHp1.SetActive(false);
-            
+            silverAnimator.Play("Silver_Crossing_Arms");    
         }
         else if (livesEnemy == 0 && theNO.round2){
             startPlaying = false;
@@ -188,11 +207,13 @@ public class GameManager_Street : MonoBehaviour
     public void NoteMissed(){
     	Debug.Log("NoteMissed");
         Hp.SetActive(false);
+        MissAnim.SetTrigger("MissAnim");
+        rosieAnimator.SetTrigger("RosieMiss");
         SetLives(lives - 1);
         if(lives == 0){
             startPlaying = false;
             Hp2.SetActive(false);
-            rosieAnimator.Play("Rosie_Lose_Animation");
+            rosieAnimator.SetTrigger("Rosie_Lose_Animation");
             silverAnimator.Play("Silver_Winning_Animation");
             Invoke(nameof(StreetDeath), 2f);
         }

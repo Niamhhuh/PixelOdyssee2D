@@ -10,7 +10,7 @@ public class ArrowSpawner : MonoBehaviour
     public List<Sprite> arrowSprites; // Sprites for different arrow types
     public List<KeyCode> arrowKeys; // Matching keys for the arrow types
 
-    public float spawnInterval = 1f; // Time between spawns
+    public float spawnInterval = 0.5f; // Time between spawns //previously 1 with 120BPM
     public float spawnYMin = -4f; // Minimum Y position
     public float spawnYMax = 4f; // Maximum Y position
     public float spawnXOffset = 10f; // Spawn position offset off-screen
@@ -68,18 +68,18 @@ public class ArrowSpawner : MonoBehaviour
     	while(currentWave < totalWaves){
     		currentWave++;
     		arrowsSpawnedInWave = 0;
-    		yield return StartCoroutine(ShowWavePopup());
+    		//yield return StartCoroutine(ShowWavePopup());
 
     		while (arrowsSpawnedInWave < arrowsPerWave){
     			SpawnArrow();
     			arrowsSpawnedInWave++;
-    			yield return new WaitForSeconds(spawnInterval);
+    			yield return new WaitForSeconds(0.5f);  //previously ...(spawnInterval);
     		}
     		if(currentWave == totalWaves && arrowsSpawnedInWave == 9){
 
     			GMref.EndofGame();
     		}
-    		yield return new WaitForSeconds(9f);
+    		yield return new WaitForSeconds(5f);   //previously 9 with 120BPM
     		
     		if (currentWave == totalWaves && theNO.round2){
     			currentWave = 0;
