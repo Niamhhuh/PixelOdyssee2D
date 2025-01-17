@@ -49,12 +49,12 @@ public class PauseMenu : MonoBehaviour
 
         } 
 
-        if(current_scene.name == "Z_SteuerungPONG" && Input.GetKeyDown(KeyCode.Return)) {
+        /*if(current_scene.name == "Z_SteuerungPONG" && Input.GetKeyDown(KeyCode.Return)) {
             SceneManager.LoadScene("ARC_Painstation");
         }
         if(current_scene.name == "Z_SteuerungSW" && Input.GetKeyDown(KeyCode.Return)) {
             SceneManager.LoadScene("ARC_Spacewar-MiniGame");
-        }
+        }*/
     }
 
     public void CallPause()

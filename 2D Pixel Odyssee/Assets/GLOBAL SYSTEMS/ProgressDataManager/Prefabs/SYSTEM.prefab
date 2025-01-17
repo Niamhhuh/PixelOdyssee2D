@@ -5950,7 +5950,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d92d4c6b9364bb54ba2d4a49a54df0ff, type: 2}
   typingSpeed: 0.015
   canContinueText: 1
-  StopTypeWriter: 0
+  StopTypeWriter: 1
 --- !u!1 &3804833606036629595
 GameObject:
   m_ObjectHideFlags: 0
@@ -7402,6 +7402,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2448903423067530472}
+          m_TargetAssemblyTypeName: DisplayName, Assembly-CSharp
+          m_MethodName: DeactivateNameDisplay
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4412528231336751651}
+          m_TargetAssemblyTypeName: CursorImageScript, Assembly-CSharp
+          m_MethodName: ActivateCursorSprite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -8693,6 +8717,30 @@ MonoBehaviour:
         - m_Target: {fileID: 5736366869950914053}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2448903423067530472}
+          m_TargetAssemblyTypeName: DisplayName, Assembly-CSharp
+          m_MethodName: DeactivateNameDisplay
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4412528231336751651}
+          m_TargetAssemblyTypeName: CursorImageScript, Assembly-CSharp
+          m_MethodName: ActivateCursorSprite
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10171,14 +10219,14 @@ RectTransform:
   m_GameObject: {fileID: 6070386585206310641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3767606565386094925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -747.5, y: 398.1}
+  m_AnchoredPosition: {x: -766, y: 407}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4332144656500860064
@@ -10209,8 +10257,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 890d3070faed41b4abdf68c5dd695b83, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10238,7 +10286,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10248,8 +10296,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 4e70b63432f576e47ba205b69b09e627, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 72512e1d0b5d32640833bf47c6e27d02, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -12510,14 +12558,14 @@ RectTransform:
   m_GameObject: {fileID: 7634059093356143601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1.0058823, z: 1.0058823}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8310026493375568653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 248.8, y: 247.3}
+  m_AnchoredPosition: {x: 260, y: 270}
   m_SizeDelta: {x: 460.9228, y: 475.313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5864415249190792623

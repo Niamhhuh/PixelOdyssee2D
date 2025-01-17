@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8485206184444531532
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2745505423363349819}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: -4.8, z: -0.81718117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -103,9 +103,14 @@ MonoBehaviour:
   hasBeenHit: 0
   keyToPress: 274
   spriteRenderer: {fileID: 0}
-  arrowSprites: []
-  arrowKeys: 
+  arrowSprites:
+  - {fileID: 21300000, guid: 4f519922a94be4655bd8a05d1d6adea7, type: 3}
+  - {fileID: 21300000, guid: 747ed4263e50a4ec19a53a76d701e90e, type: 3}
+  - {fileID: 21300000, guid: 5445250e001474ac3936e7c930a584b6, type: 3}
+  - {fileID: 21300000, guid: d0800bbcfe543465ba153f6e86447d90, type: 3}
+  arrowKeys: 13010000140100001201000011010000
   randomizationChance: 0.4
+  round2: 0
 --- !u!61 &2082729243700583903
 BoxCollider2D:
   m_ObjectHideFlags: 0

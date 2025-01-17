@@ -10,7 +10,7 @@ public class ArrowSpawner : MonoBehaviour
     public List<Sprite> arrowSprites; // Sprites for different arrow types
     public List<KeyCode> arrowKeys; // Matching keys for the arrow types
 
-    public float spawnInterval = 1f; // Time between spawns
+    public float spawnInterval = 0.5f; // Time between spawns //previously 1 with 120BPM
     public float spawnYMin = -4f; // Minimum Y position
     public float spawnYMax = 4f; // Maximum Y position
     public float spawnXOffset = 10f; // Spawn position offset off-screen
@@ -34,8 +34,15 @@ public class ArrowSpawner : MonoBehaviour
     public GameManager_Street GMref;
     public TextMeshProUGUI roundText;
     public GameObject roundPopop;
+    public GameObject sourceObject;
+    public TriggerAnimation animator;
+    //public GameObject SilverHp1;
+    //public GameObject SilverHp2;
 
-    
+
+    void Awake(){
+        animator = GameObject.Find("Round1").GetComponent<TriggerAnimation>();
+    }
     void Update()
     {
     	if (theBS.hasStarted && !isSpawning){
@@ -61,18 +68,18 @@ public class ArrowSpawner : MonoBehaviour
     	while(currentWave < totalWaves){
     		currentWave++;
     		arrowsSpawnedInWave = 0;
-    		yield return StartCoroutine(ShowWavePopup());
+    		//yield return StartCoroutine(ShowWavePopup());
 
     		while (arrowsSpawnedInWave < arrowsPerWave){
     			SpawnArrow();
     			arrowsSpawnedInWave++;
-    			yield return new WaitForSeconds(spawnInterval);
+    			yield return new WaitForSeconds(0.5f);  //previously ...(spawnInterval);
     		}
     		if(currentWave == totalWaves && arrowsSpawnedInWave == 9){
 
     			GMref.EndofGame();
     		}
-    		yield return new WaitForSeconds(7f);
+    		yield return new WaitForSeconds(5f);   //previously 9 with 120BPM
     		
     		if (currentWave == totalWaves && theNO.round2){
     			currentWave = 0;
@@ -101,10 +108,16 @@ public class ArrowSpawner : MonoBehaviour
         if (noteObject != null && spriteRenderer != null)
         {
             spriteRenderer.sprite = arrowSprites[randomIndex];
-            noteObject.keyToPress = arrowKeys[randomIndex];
-            noteObject.arrowSprites = arrowSprites;
-            noteObject.arrowKeys = arrowKeys;
+            noteObject.keyToPress = arrowKeys[randomIndex];   
+
+            ListProvider listProvider = sourceObject.GetComponent<ListProvider>();
+            if (listProvider != null)
+        {
+            noteObject.arrowSprites = new List<Sprite>(listProvider.newArrowSprites);
+            noteObject.arrowKeys = new List<KeyCode>(listProvider.newArrowKeys);
         }
+        }
+        
     }
 
     private IEnumerator ShowWavePopup(){
@@ -115,9 +128,7 @@ public class ArrowSpawner : MonoBehaviour
     }
 
     private IEnumerator ShowRoundPopup(){
-    	roundPopop.SetActive(true);
-    	roundText.text = "Round 2";
+    	animator.PlayScaleAnimationRound2();
     	yield return new WaitForSeconds(2f);
-    	roundPopop.SetActive(false);
     }
 }

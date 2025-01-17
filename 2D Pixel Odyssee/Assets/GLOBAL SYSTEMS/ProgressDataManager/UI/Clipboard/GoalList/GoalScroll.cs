@@ -12,6 +12,7 @@ public class GoalScroll : MonoBehaviour
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         GoalListContainer = GameObject.FindGameObjectWithTag("GoalListContainer");                          //Find the List of Goals
+        print(GoalListContainer);
 
         if(DataManager.ContainerStartPosition.x == 1000 && DataManager.ContainerStartPosition.y == 10)
         {

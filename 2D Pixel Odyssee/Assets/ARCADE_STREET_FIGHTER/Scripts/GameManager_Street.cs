@@ -19,6 +19,12 @@ public class GameManager_Street : MonoBehaviour
 
     public Animator rosieAnimator;
 
+    public Animator silverAnimator;
+
+    public Animator MissAnim;
+
+    public Animator HitAnim;
+
     private int lives;
 
     private int livesEnemy;
@@ -29,19 +35,41 @@ public class GameManager_Street : MonoBehaviour
 
     public GameObject gameStartStreet;
 
+    public GameObject VSScreen;
+
     public NoteObject theNO;
 
     public Text livesTextStreet;
 
     public Text livesTextEnemyStreet;
 
+    public TriggerAnimation animator;
+
+    public GameObject Hp;
+
+    public GameObject Hp2;
+
+    public GameObject SilverHp1;
+
+    public GameObject SilverHp2;
+
+    public GameObject Miss;
+
+    public GameObject Hit;
+
     public bool allowInput = true;
     // Start is called before the first frame update
+    void Awake(){
+        animator = GameObject.Find("Round1").GetComponent<TriggerAnimation>();
+    }
+
     void Start()
     {
         instance = this;
         GameObject Rosie = GameObject.Find("Rosie");
         rosieAnimator = Rosie.GetComponent<Animator>();
+        GameObject Silver = GameObject.Find("Silver");
+        silverAnimator = Silver.GetComponent<Animator>();
         gameStartStreet.SetActive(true);
         restart = true;
     }
@@ -52,23 +80,35 @@ public class GameManager_Street : MonoBehaviour
         if(!startPlaying){
         	if(Input.GetKeyDown(KeyCode.Return)){
                 if(restart == true){
-                    NewGame();
+                    StartCoroutine(VS());
                 }
         	}
         }
     }
+    private IEnumerator VS(){
 
-    private void NewGame()
-    {   
+        VSScreen.SetActive(true);
         gameOverMenuStreet.SetActive(false);
         gameStartStreet.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        NewGame();
+    }
+    private void NewGame()
+    {   
+        
+        VSScreen.SetActive(false);
         restart = false;
+        animator.PlayScaleAnimationRound1();
+        print(animator);
         startPlaying = true;
         theBS.hasStarted = true;
         SetLives(2);
         SetLivesEnemy(27);
-        theMusic.Play();
         rosieAnimator.Play("Rosie_Idle_Street");
+        theMusic.Play();
+        
+        
+
         
         //StartScreen();
         
@@ -140,6 +180,8 @@ public class GameManager_Street : MonoBehaviour
 
     public void NoteHit(){
     	Debug.Log("NoteHit");
+        HitAnim.SetTrigger("HitAnim");
+        rosieAnimator.SetTrigger("RosieHit");
         if(allowInput){
             SetLivesEnemy(livesEnemy - 1);
         }
@@ -148,21 +190,34 @@ public class GameManager_Street : MonoBehaviour
             SetLives(2);
             SetLivesEnemy(27);
             theNO.round2 = true;
-            
+            Hp.SetActive(true);
+            SilverHp1.SetActive(false);
+            silverAnimator.Play("Silver_Crossing_Arms");
+            silverAnimator.SetBool("Stage2", true);
+
         }
         else if (livesEnemy == 0 && theNO.round2){
             startPlaying = false;
-            Invoke(nameof(StreetWon), 1f);
+            SilverHp2.SetActive(false);
+            rosieAnimator.Play("Rosie_Win_Animation");
+            silverAnimator.Play("Silver_Losing_Animation");
+            Invoke(nameof(StreetWon), 3f);
         }
 
     }
 
     public void NoteMissed(){
     	Debug.Log("NoteMissed");
+        Hp.SetActive(false);
+        MissAnim.SetTrigger("MissAnim");
+        rosieAnimator.SetTrigger("RosieMiss");
         SetLives(lives - 1);
         if(lives == 0){
             startPlaying = false;
-            Invoke(nameof(StreetDeath), 1f);
+            Hp2.SetActive(false);
+            rosieAnimator.SetTrigger("Rosie_Lose_Animation");
+            silverAnimator.Play("Silver_Winning_Animation");
+            Invoke(nameof(StreetDeath), 2f);
         }
     }
 

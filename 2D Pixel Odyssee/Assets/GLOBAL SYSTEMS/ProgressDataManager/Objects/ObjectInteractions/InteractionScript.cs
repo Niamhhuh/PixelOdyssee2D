@@ -6,14 +6,18 @@ using UnityEngine;
 public class InteractionScript : MonoBehaviour
 {
     private UiToMouse PointerScript;
+    private DataManager DMReference;
     private void Start()
     {
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
+        
     }
     //Call Dialouge
     public void TriggerDialogue()
     {
         GameObject TempObject;
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
@@ -35,7 +39,7 @@ public class InteractionScript : MonoBehaviour
     public void TriggerInteraction ()
     {
         //ToInteract[0].
-
+        DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
         {
             //Turn ObjectScript into Specific Object
