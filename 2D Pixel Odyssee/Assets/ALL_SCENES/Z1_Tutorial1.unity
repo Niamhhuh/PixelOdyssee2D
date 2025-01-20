@@ -503,7 +503,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -3067,13 +3067,16 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 0
+  isEvent_Portal: 1
+  EventScene_ID: 8
+  SpawnPointID: 1
 --- !u!114 &372535037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,7 +3084,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372535030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
   m_Name: 
@@ -3311,7 +3314,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -4646,7 +4649,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 1
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -4961,7 +4964,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -5180,7 +5183,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -5296,7 +5299,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -5515,7 +5518,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 1
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -5705,7 +5708,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -6550,7 +6553,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -6986,7 +6989,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -7094,13 +7097,16 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &1341279234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7563,7 +7569,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 11400000, guid: a7844885a174559488245f67b7cc9e28, type: 2}
   TriggerGoal: 0
@@ -8086,13 +8092,16 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &1464840965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8361,7 +8370,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -8621,7 +8630,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -8967,7 +8976,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -9427,7 +9436,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -9604,7 +9613,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -10718,7 +10727,7 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
@@ -11960,13 +11969,16 @@ MonoBehaviour:
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
   IsReward: 0
-  UnlockDialogueScript: {fileID: 0}
+  LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
   Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &2010492948
 BoxCollider2D:
   m_ObjectHideFlags: 0

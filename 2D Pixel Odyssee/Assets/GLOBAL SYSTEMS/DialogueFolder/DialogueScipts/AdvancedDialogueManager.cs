@@ -15,6 +15,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     private bool dialogueActivated;
 
     public bool InDialogue;
+    private bool InBranch = false;
 
     //UI REFERENCES
     [HideInInspector] public GameObject dialogueCanvas;
@@ -163,7 +164,8 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
             ContinueButton.SetActive(false);                                                //Deactivate the Continue Dialogue Button when an Option Branch is triggered
-           
+
+            InBranch = true;
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again                                                                               //Thist looks weird look out for it latr
             
@@ -204,6 +206,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             
        
         dialogueCanvas.SetActive(true);
+        
         stepNum += 1;
 
     }
@@ -262,6 +265,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void Option(int optionNum)
     {
+        stepNum = 0;
         foreach (GameObject button in optionButton)
             button.SetActive(false);
 
@@ -273,8 +277,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             currentConversation = currentConversation.option2;
         if (optionNum == 3)
             currentConversation = currentConversation.option3;
-
-        stepNum = 0;
+        InBranch = false;
         PlayDialogue();
     }
 
@@ -290,8 +293,9 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         StopTypeWriter = true;
 
-        if(stepNum > 0)
+        if (stepNum > 0 && !InBranch)
         {
+            print(stepNum);
             dialogueText.text = currentConversation.dialogue[stepNum - 1];
         }
     }

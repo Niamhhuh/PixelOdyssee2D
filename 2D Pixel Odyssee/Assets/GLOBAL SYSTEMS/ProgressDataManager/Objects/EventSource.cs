@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventSource : ObjectScript
 {
@@ -9,6 +10,9 @@ public class EventSource : ObjectScript
 
     public bool Event_Passed;			                                                //relevant to control Item Spawn
     public bool Talk_Event;
+    public bool isEvent_Portal;                                                         //Set true, if this Event triggers a Scene Swap!
+    public int EventScene_ID = 0;                                                       //Set Target Scene
+    public int SpawnPointID;                                                            //Set Spawnpoint
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -96,6 +100,11 @@ public class EventSource : ObjectScript
         {
             gameObject.GetComponent<Collider2D>().enabled = false;                                     //disable Collider to Trigger TurnOffDialogue in AdvancedDialogueManager early -> would otherwise remove Forced Dialogue from line 99!!!!
             ClearHighlight();
+            if(isEvent_Portal)                                                                         //This prevents the Player from clicking anything while being send to the next scene.
+            {
+                DMReference.MoveScript.DisableInput();
+                DMReference.MoveScript.DisableInteract();
+            }
             PassTriggerActivate(1); 
             ObjectSequenceUnlock();
             EventInteract();
@@ -118,6 +127,20 @@ public class EventSource : ObjectScript
         ClearHighlight();
         Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
         UpdateData();
-        RemoveEvent();
+        if(isEvent_Portal) 
+        { 
+            SwitchScene(); 
+        } else RemoveEvent();
+    }
+
+
+    private void SwitchScene()                                                                              //Pick up the Item by adding it to the Draggable List.
+    {
+        if (EventScene_ID >= 0 && EventScene_ID < SceneManager.sceneCountInBuildSettings)
+        {
+            DataManager.SpawnID = SpawnPointID;
+            DataManager.LastRoom = EventScene_ID;
+            SceneManager.LoadScene(EventScene_ID);
+        }
     }
 }
