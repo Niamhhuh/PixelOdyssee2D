@@ -15,16 +15,18 @@ public class PauseMenu : MonoBehaviour
     public GameObject credits = null;
 
     public GameObject steuerung;        //dieser Block sind die Objekte zur Steuerung UI
-    public GameObject allgemein;        //.
-    public GameObject spacewar;         //.
-    public GameObject frogger;          //.
-    public GameObject pong;             //.
+                                        // public GameObject allgemein;        //.
+                                        //public GameObject spacewar;         //.
+                                        //   public GameObject frogger;          //.
+                                        //    public GameObject pong;             //.
 
     //public GameObject sceneloader;
     //public SpriteRenderer spriteRenderer;
     public GameObject pauseScreen = null;   
 
-    public UiToMouse PointerScript = null;  
+    public UiToMouse PointerScript = null;
+
+    public bool InPause = false;
 
     Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
 
@@ -61,6 +63,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
         {
+            InPause = !InPause;
             if (PointerScript != null && PointerScript.InTriggerDialogue == false)
             {
                 PointerScript.AllowInput = !PointerScript.AllowInput;
@@ -113,10 +116,10 @@ public class PauseMenu : MonoBehaviour
         }
         
     	steuerung.SetActive(!steuerung.activeSelf);
-        allgemein.SetActive(true);
-        spacewar.SetActive(false);
-        frogger.SetActive(false);
-        pong.SetActive(false);   
+        //allgemein.SetActive(true);
+        //spacewar.SetActive(false);
+        //frogger.SetActive(false);
+        //pong.SetActive(false);   
     }
 
     public void Return() {              //CREDITS --> schliesst UI
@@ -129,28 +132,28 @@ public class PauseMenu : MonoBehaviour
 
     //------------steuerung button below------------------------------------
     public void AllgemeinButton() {
-        allgemein.SetActive(true);
-        spacewar.SetActive(false);
-        frogger.SetActive(false);
-        pong.SetActive(false);
+        //allgemein.SetActive(true);
+        //spacewar.SetActive(false);
+        //frogger.SetActive(false);
+        //pong.SetActive(false);
     }
     public void SpacewarButton() {
-        allgemein.SetActive(false);
-        spacewar.SetActive(true);
-        frogger.SetActive(false);
-        pong.SetActive(false);
+        //allgemein.SetActive(false);
+        //spacewar.SetActive(true);
+        //frogger.SetActive(false);
+        //pong.SetActive(false);
     }
     public void FroggerButton() {
-        allgemein.SetActive(false);
-        spacewar.SetActive(false);
-        frogger.SetActive(true);
-        pong.SetActive(false);
+        // allgemein.SetActive(false);
+        // spacewar.SetActive(false);
+        // frogger.SetActive(true);
+        //   pong.SetActive(false);
     }
     public void PongButton() {
-        allgemein.SetActive(false);
-        spacewar.SetActive(false);
-        frogger.SetActive(false);
-        pong.SetActive(true);
+        //  allgemein.SetActive(false);
+        //  spacewar.SetActive(false);
+        //  frogger.SetActive(false);
+        //  pong.SetActive(true);
     }
     //------------steuerung button above------------------------------------
 
@@ -161,6 +164,7 @@ public class PauseMenu : MonoBehaviour
             PointerScript.StartCoroutine(PointerScript.CallEnableInput());
             PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         }
+        InPause = false;
         Time.timeScale = 1f;
         pauseScreen.SetActive(false);
     }

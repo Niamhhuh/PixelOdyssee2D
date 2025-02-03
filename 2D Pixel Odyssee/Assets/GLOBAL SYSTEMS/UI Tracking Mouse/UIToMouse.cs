@@ -26,6 +26,7 @@ public class UiToMouse : MonoBehaviour
     private int lastDirection = 1;
     public Vector3 PermanentmousePosition;
 
+    private PauseMenu PauseScript;
 
     void Start()
     {
@@ -41,6 +42,8 @@ public class UiToMouse : MonoBehaviour
         GameObject movePointer = GameObject.Find("MovePointer");
         pointerAnimator = movePointer.GetComponent<Animator>();
         pointerImage = movePointer.GetComponent<Image>();
+
+        PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
     }
 
     public void DisableInput()
@@ -73,7 +76,7 @@ public class UiToMouse : MonoBehaviour
     {
         PermanentmousePosition = Input.mousePosition;
 
-        if (Input.GetMouseButtonDown(0) && AllowInput)
+        if (Input.GetMouseButtonDown(0) && AllowInput && !PauseScript.InPause)
         {
 
             Vector3 mousePosition = Input.mousePosition;

@@ -120,8 +120,20 @@ public class Inventory : MonoBehaviour
 
         foreach (DataManager.DraggableObj Collected in DataManager.Draggable_List)              //Search through the Draggable List, to which Items are added, when they have been collected
         {
-            DataManager.Item_List[Collected.Stored_ID - 1].Available = true;                    //For each Item in the Draggable List, access the All_Item_List (which is sorted by ID, check DataManager Awake) -> Set the Item with the matching ID as available
-            DataManager.Item_List[Collected.Stored_ID - 1].gameObject.SetActive(true);          //Activate the Item
+            
+            
+            foreach (Draggable Item in DataManager.Item_List)                                       //Activate Collected Items
+            {
+                if(Collected.Stored_ID == Item.ID )
+                {
+                    Item.Available = true;                                                          //For each Item in the Draggable List, access the All_Item_List 
+                    Item.gameObject.SetActive(true);                                                //Activate the Item
+                }
+            }
+
+            //Obsolete
+            //  DataManager.Item_List[Collected.Stored_ID - 1].Available = true;                    //For each Item in the Draggable List, access the All_Item_List (which is sorted by ID, check DataManager Awake) -> Set the Item with the matching ID as available
+            //  DataManager.Item_List[Collected.Stored_ID - 1].gameObject.SetActive(true);          //Activate the Item
         }
     }
 

@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 5392696259278888707}
   - component: {fileID: 154631187001807796}
   m_Layer: 5
-  m_Name: "Schl\xFCssel"
+  m_Name: "Farbfolien H\xE4lfte B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 8
+  ID: 32
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1990144143339739842}
   - component: {fileID: 3226178772414150165}
   m_Layer: 5
-  m_Name: TEST
+  m_Name: Arcade Chip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 14
+  ID: 51
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 2398109937472558726}
   - component: {fileID: 7245781421315076454}
   m_Layer: 5
-  m_Name: XX
+  m_Name: "Farbfolien H\xE4lfte A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 7
+  ID: 31
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 5595646053509617045}
   - component: {fileID: 6098121393589021246}
   m_Layer: 5
-  m_Name: '?'
+  m_Name: Speicherkarte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b321e1b3bd25af64e8d2cfa5713979e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa4624de238513141b6e3159fd49fd1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2313,7 +2313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 13
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -2470,6 +2470,7 @@ RectTransform:
   m_LocalScale: {x: 0.41666666, y: 0.41666666, z: 0.41666666}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8915159756764004781}
   - {fileID: 2401637966139354933}
   m_Father: {fileID: 3767606565386094925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2499,7 +2500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.88235295, g: 0.9411765, b: 0.88235295, a: 0.88235295}
+  m_Color: {r: 0.88235295, g: 0.9411765, b: 0.88235295, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -2641,7 +2642,7 @@ GameObject:
   - component: {fileID: 4620293513553220677}
   - component: {fileID: 3160877419483320103}
   m_Layer: 5
-  m_Name: Katzenfutter Dose
+  m_Name: "W\xFCrfelbecher"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2716,7 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 11
+  ID: 34
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -3090,7 +3091,7 @@ GameObject:
   - component: {fileID: 5896432763682490292}
   - component: {fileID: 5491366744297795301}
   m_Layer: 5
-  m_Name: "Schraubenschl\xFCssel"
+  m_Name: "Schl\xFCsselteil B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3143,7 +3144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b000036a59628c49945777d82db73f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b321e1b3bd25af64e8d2cfa5713979e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3165,7 +3166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 5
+  ID: 21
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -3419,7 +3420,7 @@ GameObject:
   - component: {fileID: 5983177495990059572}
   - component: {fileID: 122070775312909684}
   m_Layer: 5
-  m_Name: Item5 (7)
+  m_Name: Froschfigur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3494,7 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 12
+  ID: 35
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -3791,7 +3792,7 @@ GameObject:
   - component: {fileID: 4071292062716864533}
   - component: {fileID: 7220889039686533736}
   m_Layer: 5
-  m_Name: Katzenfutter
+  m_Name: Seifendose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3866,7 +3867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 11
+  ID: 71
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -5804,7 +5805,7 @@ GameObject:
   - component: {fileID: 51891627592135952}
   - component: {fileID: 2138211944722991928}
   m_Layer: 5
-  m_Name: Item5 (5)
+  m_Name: Scherbe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5879,7 +5880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 10
+  ID: 33
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -6176,7 +6177,7 @@ GameObject:
   - component: {fileID: 2787091294979755386}
   - component: {fileID: 1513558085832198447}
   m_Layer: 5
-  m_Name: Lineal
+  m_Name: "Schraubenschl\xFCssel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6229,7 +6230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 39ad8c3823f1b2a479c56f6a65e54a97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35f0e6f655870db4397abe5f827ce290, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6251,7 +6252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 12
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -6283,7 +6284,7 @@ GameObject:
   - component: {fileID: 6303797581276174383}
   - component: {fileID: 4765731534028846145}
   m_Layer: 5
-  m_Name: TEST
+  m_Name: Powerglove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6358,7 +6359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 13
+  ID: 41
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -7872,7 +7873,7 @@ GameObject:
   - component: {fileID: 5284558976966471770}
   - component: {fileID: 2806357007403096485}
   m_Layer: 5
-  m_Name: Item5 (12)
+  m_Name: Lichtgewehr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7947,7 +7948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 17
+  ID: 62
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -8950,6 +8951,94 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &5333434759711695446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8915159756764004781}
+  - component: {fileID: 1908554414763035051}
+  - component: {fileID: 7343818995648561870}
+  - component: {fileID: 2231371637315694028}
+  m_Layer: 5
+  m_Name: BackPanel
+  m_TagString: NamePanelPlate
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8915159756764004781
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333434759711695446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7873047434640822916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1908554414763035051
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333434759711695446}
+  m_CullTransparentMesh: 1
+--- !u!114 &7343818995648561870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333434759711695446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.88235295, g: 0.9411765, b: 0.88235295, a: 0.88235295}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2231371637315694028
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333434759711695446}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &5340954612496069353
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,7 +10685,7 @@ GameObject:
   - component: {fileID: 2128412361308294059}
   - component: {fileID: 6956973626980371646}
   m_Layer: 5
-  m_Name: Speicherkarte
+  m_Name: Brechzange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10649,7 +10738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa4624de238513141b6e3159fd49fd1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 744965bf085aef1449fc4cb9a558f6d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10671,7 +10760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 1
+  ID: 11
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -11811,7 +11900,7 @@ GameObject:
   - component: {fileID: 4703574562383539481}
   - component: {fileID: 5341267245898026624}
   m_Layer: 5
-  m_Name: "Schl\xFCsselteil B"
+  m_Name: Katzenfutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11864,7 +11953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56911de482b4bcc4a9f35bf9ec66c7b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1283d4184d937d043bc9dc7375a95f10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11886,7 +11975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 4
+  ID: 14
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -11918,7 +12007,7 @@ GameObject:
   - component: {fileID: 7765096100099936185}
   - component: {fileID: 2821537946608152134}
   m_Layer: 5
-  m_Name: Item5 (11)
+  m_Name: Rasseln
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11993,7 +12082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 16
+  ID: 61
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -12980,7 +13069,7 @@ GameObject:
   - component: {fileID: 5098327630663409688}
   - component: {fileID: 5068849541258318829}
   m_Layer: 5
-  m_Name: X
+  m_Name: "Schl\xFCsselteil A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13033,7 +13122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9e941fc7c17141446b836327bc56e088, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62d9af62da351144687491bf89e074e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13055,7 +13144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 6
+  ID: 22
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -13246,7 +13335,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4891503226475372736
 CanvasRenderer:
@@ -14397,7 +14486,7 @@ GameObject:
   - component: {fileID: 7993680817523431366}
   - component: {fileID: 6210750613600656494}
   m_Layer: 5
-  m_Name: TEST
+  m_Name: Schere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14472,7 +14561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 15
+  ID: 52
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}

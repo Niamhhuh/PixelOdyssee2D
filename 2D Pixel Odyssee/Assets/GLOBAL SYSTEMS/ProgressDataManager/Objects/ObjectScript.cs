@@ -80,6 +80,7 @@ public class ObjectScript : MonoBehaviour
 
     public Comment ObjectComment;
 
+    private PauseMenu PauseScript;
 
     //Connect Transformative Dialogue System
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -126,6 +127,9 @@ public class ObjectScript : MonoBehaviour
 
         //CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+
+        PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
+
         if (!isBackground && !IsFullTrigger)                                                                //These Variables are only set on Objects that are neither Background nor Triggers
         {
             ObjectSprite = this.GetComponent<SpriteRenderer>();
@@ -179,13 +183,13 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void OnMouseEnter()                                                                         //When the Cursor enters an Object, Highlight it, mark it as Highlighted
     {
-        if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger && !DMReference.DialogueManager.InDialogue)
+        if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger && !DMReference.DialogueManager.InDialogue && !PauseScript.InPause)
         {
             DMReference.CursorScript.DeactivateCursorSprite();
             DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
         }
 
-        if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger)
+        if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger && !PauseScript.InPause)
         {
             AlreadyActive = true;
             HighlightonHover.SetActive(true);
