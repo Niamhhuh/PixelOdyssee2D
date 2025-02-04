@@ -9,6 +9,7 @@ public class Clipboard : MonoBehaviour
     MapScript MapScript;
     GoalListScript GoalScript;
     CodeListScript CodeScript;
+    PauseMenu PauseScript;
 
     static int CurrentTab = 1;
 
@@ -21,12 +22,13 @@ public class Clipboard : MonoBehaviour
         MapScript = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<MapScript>();
         GoalScript = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<GoalListScript>();
         CodeScript = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<CodeListScript>();
+        PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.I) && !PauseScript.InPause)
         {
             if(!DMReference.MoveScript.ClipboardActive || !InventoryScript.InventoryObj.activeSelf)
             {
@@ -39,7 +41,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.M) && !PauseScript.InPause)
         {
             if (!DMReference.MoveScript.ClipboardActive || !MapScript.MapObj.activeSelf)
             {
@@ -52,7 +54,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Y))         // apparently Unity doesnt track your keyboard language...
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Y) && !PauseScript.InPause)         // apparently Unity doesnt track your keyboard language...
         {
             if (!DMReference.MoveScript.ClipboardActive || !GoalScript.GoalListObj.activeSelf)
             {
@@ -65,7 +67,7 @@ public class Clipboard : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.C) && !PauseScript.InPause)
         {
             if (!DMReference.MoveScript.ClipboardActive || !CodeScript.CodeListObj.activeSelf)
             {
@@ -83,7 +85,7 @@ public class Clipboard : MonoBehaviour
 
     public void CallClipboard()                 // this is called via X or the UI Button
     {
-        if (!DMReference.MoveScript.ClipboardActive)
+        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause)
         {
             switch (CurrentTab)
             {

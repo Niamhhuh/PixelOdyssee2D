@@ -165,14 +165,40 @@ public class Inventory : MonoBehaviour
             {
                 //Craft the Item
                 DMReference.AddDraggableObj(Recipe.Crafted_Item_ID, 11);                                    //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
-                DataManager.Item_List[Recipe.Crafted_Item_ID - 1].FetchData();                              //Fetch Crafted_Item Data from DataManager (Index and Slot)
-                DataManager.Item_List[Recipe.Crafted_Item_ID - 1].TakeSlot();                               //Place Crafted_Item into its Starting Slot(15)
-                DataManager.Item_List[Recipe.Crafted_Item_ID - 1].Available = true;                         //Set Crafted_Item as Available
-                DataManager.Item_List[Recipe.Crafted_Item_ID - 1].gameObject.SetActive(true);               //Make Crafted_Item visible
-                DataManager.Item_List[Recipe.KeyID_A - 1].RemoveOnUse();                                    //Remove Part_Item 1 from Draggable and Slot etc.
-                DataManager.Item_List[Recipe.KeyID_B - 1].RemoveOnUse();                                    //Remove Part_Item 2 from Draggable and Slot etc.
-                DataManager.Item_List[Recipe.KeyID_A - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 1 
-                DataManager.Item_List[Recipe.KeyID_B - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 2
+                
+
+                foreach (Draggable Item in DataManager.Item_List)                                           //Remove Part_Items 
+                {
+                    if (Recipe.Crafted_Item_ID == Item.ID)
+                    {
+                        Item.FetchData();
+                        Item.TakeSlot();
+                        Item.Available = true;
+                        Item.gameObject.SetActive(true);
+                    }
+
+                    if (Recipe.KeyID_A == Item.ID)
+                    {
+                        Item.RemoveOnUse();
+                        Item.gameObject.SetActive(false);
+                    }
+
+                    if (Recipe.KeyID_B == Item.ID)
+                    {
+                        Item.RemoveOnUse();
+                        Item.gameObject.SetActive(false);
+                    }
+                }
+
+                //DataManager.Item_List[Recipe.Crafted_Item_ID - 1].FetchData();                              //Fetch Crafted_Item Data from DataManager (Index and Slot)
+                //DataManager.Item_List[Recipe.Crafted_Item_ID - 1].TakeSlot();                               //Place Crafted_Item into its Starting Slot(15)
+                //DataManager.Item_List[Recipe.Crafted_Item_ID - 1].Available = true;                         //Set Crafted_Item as Available
+                //DataManager.Item_List[Recipe.Crafted_Item_ID - 1].gameObject.SetActive(true);               //Make Crafted_Item visible
+                //DataManager.Item_List[Recipe.KeyID_A - 1].RemoveOnUse();                                    //Remove Part_Item 1 from Draggable and Slot etc.
+                //DataManager.Item_List[Recipe.KeyID_B - 1].RemoveOnUse();                                    //Remove Part_Item 2 from Draggable and Slot etc.
+                //DataManager.Item_List[Recipe.KeyID_A - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 1 
+                //DataManager.Item_List[Recipe.KeyID_B - 1].gameObject.SetActive(false);                      //Deactivate Part_Item 2
+
                 DataManager.Slot_Array[8].ResetOccupied();                                                  //Open Craft Slot 1 (9)
                 DataManager.Slot_Array[9].ResetOccupied();                                                  //Open Craft Slot 2 (10)
                 InputKey1 = 0;                                                                               //Reset Craft Slot 1 Item_ID
@@ -182,10 +208,25 @@ public class Inventory : MonoBehaviour
                 break;                                                                                      //End 
             }
         }
+
         if(Craft_Success == false)                                                                          //If no item was crafted
         {
-            DataManager.Item_List[InputKey1 - 1].SearchSlot();                                              //Find new Slot for Part_Item 1 
-            DataManager.Item_List[InputKey2 - 1].SearchSlot();                                              //Find new Slot for Part_Item 2
+
+            foreach (Draggable Item in DataManager.Item_List)                                           //Remove Part_Items 
+            {
+                if (InputKey1 == Item.ID)
+                {
+                    Item.SearchSlot();
+                }
+
+                if (InputKey2 == Item.ID)
+                {
+                    Item.SearchSlot();
+                }
+            }
+
+            //DataManager.Item_List[InputKey1 - 1].SearchSlot();                                              //Find new Slot for Part_Item 1 
+            //DataManager.Item_List[InputKey2 - 1].SearchSlot();                                              //Find new Slot for Part_Item 2
             DataManager.Slot_Array[8].ResetOccupied();                                                     //Open Craft Slot 1 (9)
             DataManager.Slot_Array[9].ResetOccupied();                                                     //Open Craft Slot 2 (10)
         }

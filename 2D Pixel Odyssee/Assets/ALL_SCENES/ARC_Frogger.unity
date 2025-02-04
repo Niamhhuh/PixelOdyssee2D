@@ -2804,7 +2804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a8ec6174bde8445b3ae22096b79951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Reward_ID: 4
+  Reward_ID: 22
 --- !u!1 &1123488653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,12 +4136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: {fileID: 0}
   steuerung: {fileID: 1454934899}
-  allgemein: {fileID: 0}
-  spacewar: {fileID: 0}
-  frogger: {fileID: 0}
-  pong: {fileID: 0}
   pauseScreen: {fileID: 2072004071}
   PointerScript: {fileID: 0}
+  InPause: 0
 --- !u!114 &1496941634
 MonoBehaviour:
   m_ObjectHideFlags: 0
