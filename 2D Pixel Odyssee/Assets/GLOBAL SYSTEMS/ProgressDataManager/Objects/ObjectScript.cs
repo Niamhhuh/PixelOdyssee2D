@@ -396,6 +396,8 @@ public class ObjectScript : MonoBehaviour
             DataManager.ToInteract.RemoveAt(0);
             if (InteractionController != null)
             {
+                DMReference.MoveScript.EnableInput();
+                DMReference.MoveScript.EnableInteract();
                 InteractionController.SetActive(false);
             }
         }
@@ -512,7 +514,10 @@ public class ObjectScript : MonoBehaviour
         HighlightObjectSprite.color = originalHighlightColor;
 
         PassTriggerActivate(2);                                                                             //Activate a Trigger if connected
-        GetComponent<NPCDialogue>().InLockResponse = false;
+        if (GetComponent<NPCDialogue>() != null)
+        {
+            GetComponent<NPCDialogue>().InLockResponse = false;
+        }
     }
 
 
@@ -553,8 +558,8 @@ public class ObjectScript : MonoBehaviour
         while (timeElapsed < ExpandDuration)
         {
             transform.localScale = Vector3.Lerp(ObjectSize, ExpandSize, timeElapsed / ExpandDuration);
-
-            Object_Collider.size = Vector3.Lerp(Original_Collider, ContractSize, timeElapsed / ExpandDuration);
+            DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
+            //Object_Collider.size = Vector3.Lerp(Original_Collider, -ContractSize, timeElapsed / ExpandDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -565,14 +570,15 @@ public class ObjectScript : MonoBehaviour
         while (timeElapsed < ContractDuration)
         {
             transform.localScale = Vector3.Lerp(ExpandSize, ObjectSize, timeElapsed / ContractDuration);
+
+            //Object_Collider.size = Vector3.Lerp(ContractSize, -Original_Collider, timeElapsed / ExpandDuration);
             
-            Object_Collider.size = Vector3.Lerp(ContractSize, Original_Collider, timeElapsed / ExpandDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-
+        DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
         transform.localScale = ObjectSize; // Ensure it reaches the original scale
-        Object_Collider.size = Original_Collider;
+       // Object_Collider.size = Original_Collider;
     }
 
 

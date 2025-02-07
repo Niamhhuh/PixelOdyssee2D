@@ -658,7 +658,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1736179872}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInput
           m_Mode: 1
@@ -670,7 +670,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1736179872}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: DisableInteract
           m_Mode: 1
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ee0b1e0bfccd242b0ae22ccc860196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 21
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
@@ -2935,6 +2935,7 @@ GameObject:
   - component: {fileID: 477116162}
   - component: {fileID: 477116161}
   - component: {fileID: 477116165}
+  - component: {fileID: 477116166}
   m_Layer: 0
   m_Name: Asteroids
   m_TagString: Untagged
@@ -3037,7 +3038,7 @@ MonoBehaviour:
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
-  LoadScene_ID: 7
+  LoadScene_ID: 13
   SpawnPointID: 1
 --- !u!212 &477116163
 SpriteRenderer:
@@ -3126,6 +3127,24 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &477116166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477116160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969295ae5a7204944a63a2da4c75c941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoredObjectDialogue: {fileID: 0}
+  StepArray:
+  - ConditoinArray: 
+  TransformDialogue:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &521264663
 GameObject:
   m_ObjectHideFlags: 0
@@ -6209,7 +6228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ee0b1e0bfccd242b0ae22ccc860196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 22
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
@@ -6247,7 +6266,7 @@ MonoBehaviour:
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
-  LoadScene_ID: 4
+  LoadScene_ID: 3
   SpawnPointID: 0
 --- !u!61 &1311026773
 BoxCollider2D:
@@ -6441,7 +6460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 21
   AlreadyTalked: 0
-  Lock_State: 1
+  Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
   Unlock_by_Item: 0

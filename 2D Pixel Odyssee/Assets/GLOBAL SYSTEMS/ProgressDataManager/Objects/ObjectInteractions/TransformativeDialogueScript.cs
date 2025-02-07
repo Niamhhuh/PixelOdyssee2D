@@ -50,7 +50,7 @@ public class TransformativeDialogueScript : MonoBehaviour
 
 
 
-    private void CycleDialogueConditions(int i)                                 //Step through Conctions
+    private void CycleDialogueConditions(int i)                                 //Step through Conditions
     {
         for (int o = 0; o < StepArray[i].ConditoinArray.Length; o++)
         {
