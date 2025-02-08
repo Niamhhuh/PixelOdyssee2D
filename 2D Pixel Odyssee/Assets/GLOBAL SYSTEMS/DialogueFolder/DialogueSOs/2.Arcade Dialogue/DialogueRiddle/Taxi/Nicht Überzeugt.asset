@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
+  UnlockableOptions: 1
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
-  KeyOption4: 0
-  actors: 06000000
+  KeyOption4: 1
+  actors: 0600000007000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
@@ -27,7 +27,9 @@ MonoBehaviour:
   optionText:
   - Wer bist du?
   - "Was wei\xDFt du \xFCber SEGA?"
+  - "Was wei\xDFt du \xFCber Rally?"
+  - Willst du ein Rennen fahren?
   option0: {fileID: 11400000, guid: eb2bb4dac95b9314a84b2fd16ed65001, type: 2}
-  option1: {fileID: 11400000, guid: cacbd0fcfa213ab478ee3e58d2f4bc5e, type: 2}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
+  option1: {fileID: 11400000, guid: d5134f5585ea1ba4f895e984b31a95cb, type: 2}
+  option2: {fileID: 11400000, guid: 7f1e728a95782c04fb13d81c49a97569, type: 2}
+  option3: {fileID: 11400000, guid: 416439e176e8fd1439dc13fd10d9dd38, type: 2}

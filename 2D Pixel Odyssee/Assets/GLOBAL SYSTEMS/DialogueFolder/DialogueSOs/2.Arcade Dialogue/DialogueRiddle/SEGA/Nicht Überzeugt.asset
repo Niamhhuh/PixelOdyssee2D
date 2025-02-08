@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
+  UnlockableOptions: 1
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
-  KeyOption4: 0
-  actors: 06000000
+  KeyOption4: 1
+  actors: 0600000007000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
@@ -27,7 +27,9 @@ MonoBehaviour:
   optionText:
   - Wer bist du?
   - "Was wei\xDFt du \xFCber Crazy Taxi?"
-  option0: {fileID: 11400000, guid: eb2bb4dac95b9314a84b2fd16ed65001, type: 2}
-  option1: {fileID: 11400000, guid: cacbd0fcfa213ab478ee3e58d2f4bc5e, type: 2}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
+  - "Was wei\xDFt du \xFCber Rally?"
+  - Willst du ein Rennen fahren?
+  option0: {fileID: 11400000, guid: e588eff0aeaa957428a52a5bd99317f0, type: 2}
+  option1: {fileID: 11400000, guid: 31bd9cdbd43974041aa2b883fd945be3, type: 2}
+  option2: {fileID: 11400000, guid: bf7480b63cd4eda499a02cb65344d700, type: 2}
+  option3: {fileID: 11400000, guid: 78d8460191143164491e3488be0be221, type: 2}

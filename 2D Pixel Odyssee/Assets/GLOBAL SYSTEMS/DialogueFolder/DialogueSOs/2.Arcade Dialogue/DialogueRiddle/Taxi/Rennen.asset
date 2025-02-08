@@ -10,30 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: "M\xFCnze"
+  m_Name: Rennen
   m_EditorClassIdentifier: 
-  ProgressDialogue: 1
-  DialogueID: 1
+  ProgressDialogue: 0
+  DialogueID: 0
   UnlockableOptions: 0
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
   KeyOption4: 0
-  actors: 01000000060000000600000006000000
+  actors: 0100000006000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
-  - "Gibst du uns unsere M\xFCnze zur\xFCck?"
-  - "Na sicher doch! Du musst mir daf\xFCr nur einen winzigen Gefallen tun. Ich will
-    nicht mehr als Einziger an meinen Wettrennen teilnehmen. "
-  - "Wenn du die anderen Maschinen \xFCberzeugst, daran teilzunehmen, geb ich euch
-    die M\xFCnze. "
-  - "Wenn du Infos braucht, um sie zu \xFCberzeugen, fragt einfach rum. Wir kennen
-    uns hier alle untereinander wie Br\xFCder."
-  optionText:
-  - Wer bist du?
-  - Warum stehst du hier?
-  - "Gibst du unsere M\xFCnze zur\xFCck?"
+  - Willst du an einem Rennen teilnehmen?
+  - "Siehst du nicht, wie viel ich hier zu tun hab? Meine Zeit l\xE4uft noch ab,
+    wenn ich weiter mit dir quatsche!"
+  optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
   option2: {fileID: 0}

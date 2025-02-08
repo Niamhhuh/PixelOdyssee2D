@@ -11,8 +11,8 @@ public class AdvancedDialogueManager : MonoBehaviour
     private DataManager DMReference;
     //NPC DIALOGUE we are currently stepping through
     public AdvancedDialogueSO currentConversation;
-    private int stepNum = 0;
-    private bool dialogueActivated;
+    public int stepNum = 0;
+    public bool dialogueActivated;
 
     public bool InDialogue;
     private bool InBranch = false;
@@ -99,7 +99,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             {
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            
+
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) 
                 {
                     CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
@@ -217,22 +217,22 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             foreach(int DialogueID in DataManager.ProgressDialogueList)
             {
-                if (i == 0 && DialogueID == currentConversation.KeyOption1)
+                if (i == 0 && DialogueID == currentConversation.KeyOption1 || i == 0 && currentConversation.KeyOption1 == 0)
                 {
                     optionButton[0].SetActive(true);
                 }
 
-                if (i == 1 && DialogueID == currentConversation.KeyOption2)
+                if (i == 1 && DialogueID == currentConversation.KeyOption2 || i == 1 && currentConversation.KeyOption2 == 0)
                 {
                     optionButton[1].SetActive(true);
                 }
 
-                if (i == 2 && DialogueID == currentConversation.KeyOption3)
+                if (i == 2 && DialogueID == currentConversation.KeyOption3 || i == 2 && currentConversation.KeyOption3 == 0)
                 {
                     optionButton[2].SetActive(true);
                 }
 
-                if (i == 3 && DialogueID == currentConversation.KeyOption3)
+                if (i == 3 && DialogueID == currentConversation.KeyOption4 || i == 3 && currentConversation.KeyOption4 == 0)
                 {
                     optionButton[3].SetActive(true);
                 }
@@ -292,10 +292,12 @@ public class AdvancedDialogueManager : MonoBehaviour
     public void SkipDialogue()
     {
         StopTypeWriter = true;
-
         if (stepNum > 0 && !InBranch)
         {
-            print(stepNum);
+            dialogueText.text = currentConversation.dialogue[stepNum - 1];
+        }
+        if (stepNum > 0 && InBranch)
+        {
             dialogueText.text = currentConversation.dialogue[stepNum - 1];
         }
     }
@@ -475,6 +477,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         InDialogue = false;
         currentConversation = null;
         typeWriterRoutine = null;
+        //InBranch = false;
         if (optionsPanel != null) { optionsPanel.SetActive(false); }
         if (dialogueCanvas != null) { dialogueCanvas.SetActive(false); }
     }

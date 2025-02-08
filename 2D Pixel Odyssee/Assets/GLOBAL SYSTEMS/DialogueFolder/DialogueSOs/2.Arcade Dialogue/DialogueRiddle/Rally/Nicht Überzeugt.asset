@@ -14,20 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
+  UnlockableOptions: 1
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
-  KeyOption4: 0
-  actors: 06000000
+  KeyOption4: 1
+  actors: 0600000007000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
   - H-Hallo?
   optionText:
   - Wer bist du?
+  - "Was wei\xDFt du \xFCber Crazy Taxi?"
   - "Was wei\xDFt du \xFCber SEGA?"
+  - Willst du ein Rennen fahren?
   option0: {fileID: 11400000, guid: eb2bb4dac95b9314a84b2fd16ed65001, type: 2}
   option1: {fileID: 11400000, guid: cacbd0fcfa213ab478ee3e58d2f4bc5e, type: 2}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
+  option2: {fileID: 11400000, guid: b6e9f672a801c0848a3b4b9e517c9017, type: 2}
+  option3: {fileID: 11400000, guid: 19aca591035d1cc4c96ada71560ff888, type: 2}

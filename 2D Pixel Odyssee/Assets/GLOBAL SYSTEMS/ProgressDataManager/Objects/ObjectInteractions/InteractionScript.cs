@@ -7,6 +7,9 @@ public class InteractionScript : MonoBehaviour
 {
     private UiToMouse PointerScript;
     private DataManager DMReference;
+
+    GameObject TempObject;
+
     private void Start()
     {
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
@@ -16,12 +19,18 @@ public class InteractionScript : MonoBehaviour
     //Call Dialouge
     public void TriggerDialogue()
     {
-        GameObject TempObject;
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
-        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
-        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
+        //PointerScript.StartCoroutine(PointerScript.CallEnableInput());
+        //PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
         {
+
+            //DMReference.DialogueManager.dialogueActivated = true;
+            if(TempObject != null && DataManager.ToInteract[0].CoreObject == TempObject)
+            {
+                DMReference.DialogueManager.InitiateDialogue(TempObject.GetComponent<NPCDialogue>());
+            }
+            
             DataManager.ToInteract[0].TalkedtoObject();
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.canContinueText = true;
             DataManager.ToInteract[0].GetComponent<NPCDialogue>().advancedDialogueManager.ContinueDialogue();
@@ -34,9 +43,9 @@ public class InteractionScript : MonoBehaviour
     }
 
 
-    //Call Interaction
+        //Call Interaction
 
-    public void TriggerInteraction ()
+        public void TriggerInteraction ()
     {
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
