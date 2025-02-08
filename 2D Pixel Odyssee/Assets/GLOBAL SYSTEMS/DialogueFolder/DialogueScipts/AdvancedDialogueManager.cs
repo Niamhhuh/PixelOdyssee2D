@@ -163,7 +163,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         //If there is a branch...
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
-            ContinueButton.SetActive(false);                                                //Deactivate the Continue Dialogue Button when an Option Branch is triggered
+            ContinueButton.SetActive(false);                                                            //Deactivate the Continue Dialogue Button when an Option Branch is triggered
 
             InBranch = true;
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
@@ -206,8 +206,11 @@ public class AdvancedDialogueManager : MonoBehaviour
             
        
         dialogueCanvas.SetActive(true);
-        
-        stepNum += 1;
+
+        if(!InBranch)
+        {
+            stepNum += 1;
+        }
 
     }
 
@@ -217,22 +220,22 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             foreach(int DialogueID in DataManager.ProgressDialogueList)
             {
-                if (i == 0 && DialogueID == currentConversation.KeyOption1 || i == 0 && currentConversation.KeyOption1 == 0)
+                if (i == 0 && DialogueID == currentConversation.KeyOption1)
                 {
                     optionButton[0].SetActive(true);
                 }
 
-                if (i == 1 && DialogueID == currentConversation.KeyOption2 || i == 1 && currentConversation.KeyOption2 == 0)
+                if (i == 1 && DialogueID == currentConversation.KeyOption2)
                 {
                     optionButton[1].SetActive(true);
                 }
 
-                if (i == 2 && DialogueID == currentConversation.KeyOption3 || i == 2 && currentConversation.KeyOption3 == 0)
+                if (i == 2 && DialogueID == currentConversation.KeyOption3)
                 {
                     optionButton[2].SetActive(true);
                 }
 
-                if (i == 3 && DialogueID == currentConversation.KeyOption4 || i == 3 && currentConversation.KeyOption4 == 0)
+                if (i == 3 && DialogueID == currentConversation.KeyOption4)
                 {
                     optionButton[3].SetActive(true);
                 }
@@ -296,13 +299,15 @@ public class AdvancedDialogueManager : MonoBehaviour
         {
             dialogueText.text = currentConversation.dialogue[stepNum - 1];
         }
+
         if (stepNum > 0 && InBranch)
         {
             dialogueText.text = currentConversation.dialogue[stepNum - 1];
         }
+
     }
 
-        public IEnumerator TypewriterEffect(string line)
+    public IEnumerator TypewriterEffect(string line)
     {
         WriterIsRunning = true;
         dialogueText.text = "";
@@ -393,7 +398,6 @@ public class AdvancedDialogueManager : MonoBehaviour
             currentConversation = npcDialogue.conversation[2];
             if(currentConversation == null)
             {
-                print("I get this!");
                 currentConversation = npcDialogue.conversation[0];
             }
         }
@@ -474,6 +478,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         stepNum = 0;
         StopTypeWriter = false;
         dialogueActivated = false;
+        InBranch = false;
         InDialogue = false;
         currentConversation = null;
         typeWriterRoutine = null;

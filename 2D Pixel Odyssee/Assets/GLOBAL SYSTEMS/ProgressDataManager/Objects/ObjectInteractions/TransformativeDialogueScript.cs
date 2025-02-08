@@ -31,6 +31,7 @@ public class TransformativeDialogueScript : MonoBehaviour
     void Start()
     {
         StoredObjectDialogue = gameObject.GetComponent<NPCDialogue>();          //
+        DataManager.ProgressDialogueList.Add(0);                                //Add 0 as "standard ID"
     }
 
 
