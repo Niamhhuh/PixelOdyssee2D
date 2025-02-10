@@ -14,6 +14,8 @@ public class AdvancedDialogueSO : ScriptableObject
     public int KeyOption3;
     public int KeyOption4;
 
+    public bool CallTrigger;
+
     public DialogueActors[] actors;
 
     [Tooltip("Only needed if Random is selected as the actor name")]

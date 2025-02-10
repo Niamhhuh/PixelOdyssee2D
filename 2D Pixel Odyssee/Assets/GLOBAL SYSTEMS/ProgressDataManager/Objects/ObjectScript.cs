@@ -72,6 +72,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
     [HideInInspector] public ActivateTrigger TriggerScript = null;
+    [HideInInspector] public DialogueTriggeredInteraction DialogueInteractionScript = null;
 
     public bool IsReward;
 
@@ -84,7 +85,7 @@ public class ObjectScript : MonoBehaviour
 
     //Connect Transformative Dialogue System
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    TransformativeDialogueScript TransformDialogueScript;
+    public TransformativeDialogueScript TransformDialogueScript;
 
     //Expand Effect
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -353,8 +354,17 @@ public class ObjectScript : MonoBehaviour
 
             DataManager.ToInteract.Add(this);
 
-            if(TransformDialogueScript != null) { TransformDialogueScript.TransformeDialogue(); }
-            if (LockedDialogueScript != null) { LockedDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique LockedObject Dialogue is available
+            /*
+            if(TransformDialogueScript != null) 
+            { 
+                TransformDialogueScript.TransformeDialogue(); 
+            }
+            */
+
+            if (LockedDialogueScript != null)
+            {
+                LockedDialogueScript.ModifyDialogue(); 
+            }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
             InteractionController.SetActive(true);
             InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
@@ -363,13 +373,31 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+    public void DialogueInteraction()
+    {
+        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+
+        DataManager.ToInteract.Add(this);
+        InteractionController.SetActive(true);
+        InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+        InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+        InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+    }
+
     public void CallInteractionButtons()
     {
         DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
         DataManager.ToInteract.Add(this);
 
-        if (TransformDialogueScript != null) { TransformDialogueScript.TransformeDialogue(); }
-        if (LockedDialogueScript != null) { LockedDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique LockedObject Dialogue is available
+        if (TransformDialogueScript != null) 
+        { 
+            TransformDialogueScript.TransformeDialogue(); 
+        }
+
+        if (LockedDialogueScript != null) 
+        { 
+            LockedDialogueScript.ModifyDialogue(); 
+        }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 

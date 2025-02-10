@@ -127,6 +127,7 @@ public class DataManager : MonoBehaviour
             SpawnList.Add(Obj);                                                                                                     //Remember Spawners for this load
         }
         SpawnPlayer();                                                                                                              //Position the Player
+        ProgressDialogueList.Add(0);                                //Add 0 as "standard ID"
     }
 
     private void Awake()

@@ -89,6 +89,10 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
+        foreach (int number in DataManager.ProgressDialogueList)
+        {
+            Debug.Log(number);
+        }
         if (dialogueActivated && canContinueText)
         {
             InDialogue = true;
@@ -100,10 +104,15 @@ public class AdvancedDialogueManager : MonoBehaviour
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null) 
+                if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null && currentConversation.CallTrigger) 
                 {
                     CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
-                } 
+                }
+
+                if (CurrentNPC.DialogueHolder.GetComponent<DialogueTriggeredInteraction>() != null && currentConversation.CallTrigger)
+                {
+                    CurrentNPC.DialogueHolder.GetComponent<DialogueTriggeredInteraction>().TriggerObjectInteraction(); // Call Interaction when Dialogue has been concluded
+                }
 
                 EndTriggerDialogue();
 
@@ -216,7 +225,8 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     private void ControlOptionButtons(int i)                                                    //Control Button Activation                                     //PART OF DIALOGUE ENHANCMENT
     {
-        if(currentConversation.UnlockableOptions)                                               //Activate Select Buttons
+        optionButton[i].SetActive(false);
+        if (currentConversation.UnlockableOptions)                                               //Activate Select Buttons
         {
             foreach(int DialogueID in DataManager.ProgressDialogueList)
             {

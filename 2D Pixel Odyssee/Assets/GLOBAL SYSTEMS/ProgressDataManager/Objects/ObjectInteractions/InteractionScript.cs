@@ -7,6 +7,7 @@ public class InteractionScript : MonoBehaviour
 {
     private UiToMouse PointerScript;
     private DataManager DMReference;
+    [HideInInspector] public AdvancedDialogueManager advancedDialogueManager;
 
     GameObject TempObject;
 
@@ -14,7 +15,7 @@ public class InteractionScript : MonoBehaviour
     {
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
-        
+        advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
     }
     //Call Dialouge
     public void TriggerDialogue()
@@ -24,9 +25,15 @@ public class InteractionScript : MonoBehaviour
         //PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
         {
+            advancedDialogueManager.InitiateDialogue(DataManager.ToInteract[0].GetComponent<NPCDialogue>());
 
             //DMReference.DialogueManager.dialogueActivated = true;
-            if(TempObject != null && DataManager.ToInteract[0].CoreObject == TempObject)
+            if (DataManager.ToInteract[0].TransformDialogueScript != null)
+            {
+                DataManager.ToInteract[0].TransformDialogueScript.TransformeDialogue();
+            }
+
+            if (TempObject != null && DataManager.ToInteract[0].CoreObject == TempObject)
             {
                 DMReference.DialogueManager.InitiateDialogue(TempObject.GetComponent<NPCDialogue>());
             }

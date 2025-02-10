@@ -124,6 +124,7 @@ public class EventSource : ObjectScript
 
     public void EventInteract()                                                                                                                    //Interact with the Event to end it.
     {
+        SuccessfulInteract();
         ClearHighlight();
         Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
         UpdateData();

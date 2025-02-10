@@ -633,10 +633,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -883,10 +885,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -1014,10 +1018,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
@@ -1155,6 +1161,90 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!1 &94140544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94140545}
+  - component: {fileID: 94140546}
+  m_Layer: 0
+  m_Name: Highlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94140545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94140544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2123787369}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &94140546
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94140544}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 827571322f008ad4997860d50d24f1b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.36, y: 8.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &153651272
 GameObject:
   m_ObjectHideFlags: 3
@@ -1534,10 +1624,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
 --- !u!1 &183416645
@@ -2878,10 +2970,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -3027,10 +3121,12 @@ GameObject:
   m_Component:
   - component: {fileID: 477116164}
   - component: {fileID: 477116163}
-  - component: {fileID: 477116162}
   - component: {fileID: 477116161}
+  - component: {fileID: 477116168}
   - component: {fileID: 477116165}
   - component: {fileID: 477116166}
+  - component: {fileID: 477116167}
+  - component: {fileID: 477116169}
   m_Layer: 0
   m_Name: Asteroids
   m_TagString: Untagged
@@ -3083,58 +3179,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7003002, y: 3.1344619}
   m_EdgeRadius: 0
---- !u!114 &477116162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477116160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ee0b1e0bfccd242b0ae22ccc860196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 9
-  AlreadyTalked: 0
-  Lock_State: 0
-  ForcedInteraction: 0
-  TriggeronUnlock: 0
-  Unlock_by_Item: 0
-  Item_Key_ID: 0
-  LockSprite: {fileID: 0}
-  LockHighlightSprite: {fileID: 0}
-  ObjectSprite: {fileID: 0}
-  HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 0
-  CannotTalk: 0
-  NewObject: 1
-  IsFullTrigger: 0
-  HighlightonHover: {fileID: 0}
-  CoreObject: {fileID: 0}
-  PointerScript: {fileID: 0}
-  RequestInteract: 0
-  AlreadyActive: 0
-  isBackground: 0
-  InteractionController: {fileID: 0}
-  ObjReference: {fileID: 0}
-  UnlockMethod: 0
-  CanSequenceUnlock: 0
-  ObjectList_ID: 0
-  ObjectIndex: 0
-  DMReference: {fileID: 0}
-  SeqUReference: {fileID: 0}
-  UnSReference: {fileID: 0}
-  TriggerScript: {fileID: 0}
-  IsReward: 0
-  LockedDialogueScript: {fileID: 0}
-  GrantReward_Script: {fileID: 0}
-  ObjectComment: {fileID: 0}
-  TriggerGoal: 0
-  ControlGoalScript: {fileID: 0}
-  Traversed: 0
-  LoadScene_ID: 13
-  SpawnPointID: 1
 --- !u!212 &477116163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3237,9 +3281,93 @@ MonoBehaviour:
   StoredObjectDialogue: {fileID: 0}
   StepArray:
   - ConditoinArray: 00000000
+  - ConditoinArray: 04000000070000000a000000
   TransformDialogue:
   - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
   - {fileID: 11400000, guid: da02ed42330b5914b9243792278d155f, type: 2}
+  - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
+  - {fileID: 11400000, guid: 36df2894ce4829f418b94e9a3cfad866, type: 2}
+--- !u!114 &477116167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477116160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908a1766a66ab3b4d9e6e60f88432b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 105
+  AlreadyTalked: 0
+  Lock_State: 0
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 1
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Event_Passed: 0
+  Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
+--- !u!114 &477116168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477116160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598c43defe58bb64da525be1683fd8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &477116169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477116160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a8ec6174bde8445b3ae22096b79951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reward_ID: 22
 --- !u!1 &521264663
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,10 +4360,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Collected: 0
@@ -4440,10 +4570,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -5282,10 +5414,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
@@ -5393,9 +5527,12 @@ MonoBehaviour:
   StoredObjectDialogue: {fileID: 0}
   StepArray:
   - ConditoinArray: 00000000
+  - ConditoinArray: 04000000
   TransformDialogue:
   - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
   - {fileID: 11400000, guid: 36d01157e5ffc1046a0943bf39778e9e, type: 2}
+  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 137033423614643448109f440974029f, type: 2}
 --- !u!1 &1220758357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,10 +6438,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
@@ -6531,10 +6670,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -7137,10 +7278,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Collected: 0
@@ -7321,7 +7464,7 @@ Transform:
   m_GameObject: {fileID: 1569264806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1752347, w: 0.9845267}
-  m_LocalPosition: {x: 7.37, y: -0.31, z: 0}
+  m_LocalPosition: {x: -8.12, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7389,10 +7532,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 1
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Collected: 0
@@ -7624,10 +7769,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -7993,9 +8140,12 @@ MonoBehaviour:
   StoredObjectDialogue: {fileID: 0}
   StepArray:
   - ConditoinArray: 00000000
+  - ConditoinArray: 0a000000
   TransformDialogue:
   - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
   - {fileID: 11400000, guid: e579575d9d9269c4096f1615d8123a0a, type: 2}
+  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 14f6bfada4db27347887f1c805897faf, type: 2}
 --- !u!114 &1640649159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8058,10 +8208,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
@@ -8394,10 +8546,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
@@ -8738,10 +8892,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -8897,7 +9053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1798289780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9009,10 +9165,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Event_Passed: 0
@@ -9035,9 +9193,12 @@ MonoBehaviour:
   StoredObjectDialogue: {fileID: 0}
   StepArray:
   - ConditoinArray: 00000000
+  - ConditoinArray: 07000000
   TransformDialogue:
   - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
   - {fileID: 11400000, guid: 63329c10548108544b4a65e143196bb7, type: 2}
+  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 0acd2dece8b2f374aabf9539b725f73c, type: 2}
 --- !u!114 &1798289784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10198,10 +10359,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Shove_Position: 0
@@ -10288,6 +10451,214 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!1 &2123787364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123787369}
+  - component: {fileID: 2123787368}
+  - component: {fileID: 2123787367}
+  - component: {fileID: 2123787366}
+  - component: {fileID: 2123787365}
+  m_Layer: 0
+  m_Name: HangOn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2123787365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123787364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908a1766a66ab3b4d9e6e60f88432b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 116
+  AlreadyTalked: 0
+  Lock_State: 0
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 1
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Event_Passed: 0
+  Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
+--- !u!114 &2123787366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123787364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
+  - {fileID: 11400000, guid: 36df2894ce4829f418b94e9a3cfad866, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
+--- !u!61 &2123787367
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123787364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.01402998, y: 1.7677691}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.57, y: 6.68}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.7003002, y: 3.1344619}
+  m_EdgeRadius: 0
+--- !u!212 &2123787368
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123787364}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 50f591f86c16e184f87376d14ab530d4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2123787369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123787364}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.43, y: -0.93, z: -0.5}
+  m_LocalScale: {x: 0.68077344, y: 0.68077344, z: 0.68077344}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 94140545}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10303,6 +10674,7 @@ SceneRoots:
   - {fileID: 1944748003}
   - {fileID: 1214143700}
   - {fileID: 477116164}
+  - {fileID: 2123787369}
   - {fileID: 1749132622}
   - {fileID: 1485404912}
   - {fileID: 631678531}

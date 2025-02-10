@@ -14,19 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
-  KeyOption1: 0
-  KeyOption2: 0
+  UnlockableOptions: 1
+  KeyOption1: 8
+  KeyOption2: 2
   KeyOption3: 0
   KeyOption4: 0
-  actors: 0100000006000000
+  actors: 010000000600000007000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
   - Wer bist du?
   - Retro Gamer munkeln ich sei das BESTE Rennspiel, das jemals existiert hat!! SEGA!
-  optionText: []
-  option0: {fileID: 0}
-  option1: {fileID: 0}
-  option2: {fileID: 0}
+  optionText:
+  - Angst vor HangOn?
+  - Verschiedenes Terrain...
+  - Du bist im Vorteil!
+  option0: {fileID: 11400000, guid: d795d994d1e6b6e439d81843cb8ce9cb, type: 2}
+  option1: {fileID: 11400000, guid: 52e63c30a038e094891d099b85351abb, type: 2}
+  option2: {fileID: 11400000, guid: d6753801fd50ed045abee17424f04914, type: 2}
   option3: {fileID: 0}

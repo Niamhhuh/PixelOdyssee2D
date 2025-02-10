@@ -14,20 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
-  KeyOption1: 0
+  UnlockableOptions: 1
+  KeyOption1: 9
   KeyOption2: 0
-  KeyOption3: 0
+  KeyOption3: 5
   KeyOption4: 0
-  actors: 0100000006000000
+  actors: 010000000600000007000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
   - Willst du an einem Rennen teilnehmen?
   - "Siehst du nicht, wie viel ich hier zu tun hab? Meine Zeit l\xE4uft noch ab,
     wenn ich weiter mit dir quatsche!"
-  optionText: []
-  option0: {fileID: 0}
-  option1: {fileID: 0}
-  option2: {fileID: 0}
+  optionText:
+  - "G\xF6nn dir eine Pause!"
+  - Ich kann zahlen!
+  - Es gibt Preisgeld!
+  option0: {fileID: 11400000, guid: 1a8a8b8c7af44f740afc935aff3d01b6, type: 2}
+  option1: {fileID: 11400000, guid: a4b29b47ca54af54f99977e58f2823d1, type: 2}
+  option2: {fileID: 11400000, guid: 3c82d8cbc81636441beef7d8d135cdd6, type: 2}
   option3: {fileID: 0}
