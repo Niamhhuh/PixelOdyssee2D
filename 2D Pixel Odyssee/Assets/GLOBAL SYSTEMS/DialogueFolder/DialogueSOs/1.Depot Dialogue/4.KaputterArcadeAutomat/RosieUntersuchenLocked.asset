@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: "RosieVerschiebenOhneSchraubenSchl\xFCssel"
+  m_Name: RosieUntersuchenLocked
   m_EditorClassIdentifier: 
-  actors: 0000000006000000
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 00000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 8a5bd9627857e514693d01d404ece6a8, type: 3}
   dialogue:
-  - "Dieser Automat steht hier schon seit einer Weile. F\xE4llt dem Museum wohl schwer,
-    sich von seinen Maschinen verabschieden zu m\xFCssen."
-  - "Ich frag mich ob noch eine Speicherkarte drin ist? H\xE4tte ich blo\xDF ein
-    Werkzeug\u2026"
+  - "\u201CLass uns die Maschine anketten, damit er uns auch ja nicht wegl\xE4uft.\u201D
+    Hahaha! Der Chef macht sich zu viele Sorgen."
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

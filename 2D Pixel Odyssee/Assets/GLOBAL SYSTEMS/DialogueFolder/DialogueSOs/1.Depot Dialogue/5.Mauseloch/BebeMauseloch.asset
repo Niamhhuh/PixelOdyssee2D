@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: BebeMauseloch
   m_EditorClassIdentifier: 
-  actors: 06000000
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 090000000000000007000000
   randomActorName: Bebe
   randomActorPortait: {fileID: 21300000, guid: fb89ba033eefbcb4db2be0b1492db905, type: 3}
   dialogue:
   - "So dunkel\u2026seh ich da etwas gl\xE4nzendes?"
+  - "Du hast also kein eingebautes Nachtsichtger\xE4t?"
+  - Kein was?
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

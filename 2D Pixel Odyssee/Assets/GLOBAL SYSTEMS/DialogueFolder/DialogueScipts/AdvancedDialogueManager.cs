@@ -504,6 +504,10 @@ public enum DialogueActors
     RosieShocked,
     RosieThinking,
     RosieHappy,
+    BebeChill,
+    BebeNeutral,
+    BebeWorry,
+    BebeSurprise,
     Random,
     Branch,
 };

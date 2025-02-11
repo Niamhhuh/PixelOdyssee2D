@@ -3151,7 +3151,7 @@ GameObject:
   - component: {fileID: 477116167}
   - component: {fileID: 477116169}
   m_Layer: 0
-  m_Name: Asteroids
+  m_Name: HangOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4741,6 +4741,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1320114952}
+          m_TargetAssemblyTypeName: Clipboard, Assembly-CSharp
+          m_MethodName: ClipboardInventory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &999582715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5391,7 +5403,7 @@ GameObject:
   - component: {fileID: 1214143701}
   - component: {fileID: 1214143702}
   m_Layer: 0
-  m_Name: Frogger
+  m_Name: Crazy Taxi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5465,7 +5477,7 @@ MonoBehaviour:
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 0
+  CannotInteract: 1
   CannotTalk: 0
   NewObject: 1
   IsFullTrigger: 0
@@ -6472,7 +6484,7 @@ MonoBehaviour:
   ForcedInteraction: 0
   TriggeronUnlock: 0
   Unlock_by_Item: 1
-  Item_Key_ID: 8
+  Item_Key_ID: 23
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6640,6 +6652,17 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &1320114952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8283363910267130835, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 631678531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ce96f4f33b78d4a8ac8b1728b00fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358256488
 GameObject:
   m_ObjectHideFlags: 0
@@ -7559,6 +7582,7 @@ GameObject:
   - component: {fileID: 1569264810}
   - component: {fileID: 1569264809}
   - component: {fileID: 1569264808}
+  - component: {fileID: 1569264812}
   m_Layer: 0
   m_Name: "Schl\xFCsselteil A"
   m_TagString: Untagged
@@ -7596,6 +7620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversation:
   - {fileID: 11400000, guid: 7f92ee81bc702b34bbd4e1eb9c975266, type: 2}
+  - {fileID: 11400000, guid: c894fd4e221877f46bb2a4a671d4c4af, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -7750,6 +7775,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1569264812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569264806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger_ID: 25
+  CharacterBound: 0
+  Rosie: 0
+  Bebe: 0
+  InteractionTriggered: 1
+  LockTriggered: 0
+  DialogueTriggered: 0
 --- !u!1001 &1581906368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10362,7 +10406,6 @@ GameObject:
   - component: {fileID: 2038256699}
   - component: {fileID: 2038256701}
   - component: {fileID: 2038256702}
-  - component: {fileID: 2038256703}
   - component: {fileID: 2038256704}
   m_Layer: 0
   m_Name: Wagen
@@ -10432,7 +10475,7 @@ Transform:
   m_GameObject: {fileID: 2038256698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6405, y: -1.288, z: -1}
+  m_LocalPosition: {x: 3.6405, y: -1.19, z: -1}
   m_LocalScale: {x: 0.8071185, y: 0.8071185, z: 0.8071185}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10451,7 +10494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352aa923a8a7108439a6197a6dc26758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 21
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
@@ -10539,22 +10582,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9205742, y: 3.030066}
   m_EdgeRadius: 0
---- !u!114 &2038256703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038256698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OtherUnlockList_ID: 1
-  OtherUnlockObject_ID: 7
-  DMReference: {fileID: 0}
-  ObjReference: {fileID: 0}
 --- !u!114 &2038256704
 MonoBehaviour:
   m_ObjectHideFlags: 0
