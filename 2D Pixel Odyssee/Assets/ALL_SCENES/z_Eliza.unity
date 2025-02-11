@@ -578,10 +578,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -1068,10 +1070,12 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
@@ -3291,6 +3295,7 @@ MonoBehaviour:
   LockInteract: 0
   InTriggerDialogue: 0
   PermanentmousePosition: {x: 0, y: 0, z: 0}
+  InCatScene: 0
 --- !u!1 &1294862416289080371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,6 +4715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentConversation: {fileID: 0}
+  stepNum: 0
+  dialogueActivated: 0
   InDialogue: 0
   dialogueCanvas: {fileID: 0}
   actorSO:
@@ -7755,6 +7762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc146c8c17380b47bf11141fef1128b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  advancedDialogueManager: {fileID: 0}
 --- !u!224 &4480250764519741807
 RectTransform:
   m_ObjectHideFlags: 0

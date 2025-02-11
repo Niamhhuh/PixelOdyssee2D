@@ -28,6 +28,8 @@ public class UiToMouse : MonoBehaviour
 
     private PauseMenu PauseScript;
 
+    public bool InCatScene = false;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -46,6 +48,16 @@ public class UiToMouse : MonoBehaviour
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
     }
 
+    public void SetInCatSceneTrue()
+    {
+        InCatScene = true;
+    }
+
+    public void SetInCatSceneFalse()
+    {
+        InCatScene = false;
+    }
+
     public void DisableInput()
     {
         AllowInput = false;
@@ -53,7 +65,7 @@ public class UiToMouse : MonoBehaviour
 
     public void EnableInput()
     {
-        if(ClipboardActive == false && !InTriggerDialogue)
+        if(ClipboardActive == false && !InTriggerDialogue && !InCatScene)
         {
             AllowInput = true;
         } 
@@ -66,7 +78,7 @@ public class UiToMouse : MonoBehaviour
 
     public void EnableInteract()
     {
-        if (!InTriggerDialogue)
+        if (!InTriggerDialogue && !InCatScene)
         {
             LockInteract = false;
         }
@@ -76,7 +88,7 @@ public class UiToMouse : MonoBehaviour
     {
         PermanentmousePosition = Input.mousePosition;
 
-        if (Input.GetMouseButtonDown(0) && AllowInput && !PauseScript.InPause)
+        if (Input.GetMouseButtonUp(0) && AllowInput && !PauseScript.InPause)
         {
 
             Vector3 mousePosition = Input.mousePosition;

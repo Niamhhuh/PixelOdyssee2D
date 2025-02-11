@@ -375,8 +375,6 @@ public class ObjectScript : MonoBehaviour
 
     public void DialogueInteraction()
     {
-        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-
         DataManager.ToInteract.Add(this);
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 

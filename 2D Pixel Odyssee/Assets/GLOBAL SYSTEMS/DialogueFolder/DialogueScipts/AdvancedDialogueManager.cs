@@ -89,10 +89,6 @@ public class AdvancedDialogueManager : MonoBehaviour
     // Update is called once per frame
     public void ContinueDialogue()
     {
-        foreach (int number in DataManager.ProgressDialogueList)
-        {
-            Debug.Log(number);
-        }
         if (dialogueActivated && canContinueText)
         {
             InDialogue = true;
@@ -103,7 +99,6 @@ public class AdvancedDialogueManager : MonoBehaviour
             {
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null && currentConversation.CallTrigger) 
                 {
                     CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>().CallTriggerActivation(3); // Call Trigger when Dialogue has been concluded
@@ -480,7 +475,6 @@ public class AdvancedDialogueManager : MonoBehaviour
                     DataManager.ProgressDialogueList.Add(currentConversation.DialogueID);                   //if so, save it's ID in the Progress List
                 }
 
-                print("DialogueComplete" + DataManager.ProgressDialogueList[0]);
             }
         }
 

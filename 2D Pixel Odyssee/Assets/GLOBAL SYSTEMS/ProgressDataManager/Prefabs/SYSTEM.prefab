@@ -5943,6 +5943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentConversation: {fileID: 0}
+  stepNum: 0
+  dialogueActivated: 0
   InDialogue: 0
   dialogueCanvas: {fileID: 0}
   actorSO:
@@ -8495,6 +8497,10 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4899836804342728855}
           m_TargetAssemblyTypeName: AdvancedDialogueManager, Assembly-CSharp
@@ -9502,6 +9508,7 @@ MonoBehaviour:
   LockInteract: 0
   InTriggerDialogue: 0
   PermanentmousePosition: {x: 0, y: 0, z: 0}
+  InCatScene: 0
 --- !u!95 &8381888926129671113
 Animator:
   serializedVersion: 5
@@ -13320,6 +13327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc146c8c17380b47bf11141fef1128b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  advancedDialogueManager: {fileID: 0}
 --- !u!1 &8066805532041141721
 GameObject:
   m_ObjectHideFlags: 0
