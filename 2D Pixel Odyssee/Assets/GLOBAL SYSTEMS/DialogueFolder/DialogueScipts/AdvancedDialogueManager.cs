@@ -259,7 +259,7 @@ public class AdvancedDialogueManager : MonoBehaviour
             {
                 if (actorSO[i].actorName == currentConversation.actors[stepNum].ToString())
                 {
-                    currentSpeaker = actorSO[i].actorName;
+                    currentSpeaker = actorSO[i].DisplayedName;
                     currentPortrait = actorSO[i].actorPortrait;
                 }
             }
@@ -505,9 +505,9 @@ public enum DialogueActors
     RosieThinking,
     RosieHappy,
     BebeChill,
+    Branch, 
     BebeNeutral,
     BebeWorry,
     BebeSurprise,
     Random,
-    Branch,
 };

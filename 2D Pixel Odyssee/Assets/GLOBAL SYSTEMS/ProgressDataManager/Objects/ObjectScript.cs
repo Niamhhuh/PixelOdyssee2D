@@ -14,6 +14,8 @@ public class ObjectScript : MonoBehaviour
     public bool TriggeronUnlock;
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
+    public bool ChangeNameonLock;
+    public string LockName;
 
     //public(Dialogue)			                                                    //Dialogue of this object
 
@@ -187,7 +189,23 @@ public class ObjectScript : MonoBehaviour
         if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger && !DMReference.DialogueManager.InDialogue && !PauseScript.InPause)
         {
             DMReference.CursorScript.DeactivateCursorSprite();
-            DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+
+            if (ChangeNameonLock)
+            {
+                if(Lock_State)
+                {
+                    DMReference.DisplayObjectNameScript.ActivateNameDisplay(LockName);
+                }
+                if (!Lock_State)
+                {
+                    DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);
+                }
+            }
+
+            if (!ChangeNameonLock)
+            {
+                DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+            }
         }
 
         if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger && !PauseScript.InPause)
