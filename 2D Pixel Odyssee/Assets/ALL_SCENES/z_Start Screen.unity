@@ -699,6 +699,48 @@ MonoBehaviour:
       Data3: -801345379
       Data4: 1897745755
     Path: event:/Titelscreen Theme
+  <DepotMusic>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <WalkRosie>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <WalkBebe>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <ObjectLense>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <CharacterSwitch>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <InventoryOpen>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1030880668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1601,7 @@ MonoBehaviour:
       Data4: -156358892
     Path: event:/Sfx/UI_Startscreen/ExitHover1
   Event: 
-  EventPlayTrigger: 17
+  EventPlayTrigger: 19
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1678,6 +1720,7 @@ GameObject:
   - component: {fileID: 1635720960}
   - component: {fileID: 1635720959}
   - component: {fileID: 1635720958}
+  - component: {fileID: 1635720961}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -1798,6 +1841,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635720956}
   m_CullTransparentMesh: 1
+--- !u!114 &1635720961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635720956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1740713913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2294,7 @@ GameObject:
   - component: {fileID: 2122683716}
   - component: {fileID: 2122683715}
   - component: {fileID: 2122683714}
+  - component: {fileID: 2122683717}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -2340,6 +2415,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122683712}
   m_CullTransparentMesh: 1
+--- !u!114 &2122683717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122683712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

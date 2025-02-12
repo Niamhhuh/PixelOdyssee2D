@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6841570268030991373}
   - component: {fileID: 1271624689304801450}
   - component: {fileID: 3063444577689511893}
+  - component: {fileID: 8099701891424065828}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -207,6 +208,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8099701891424065828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646577475816724229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -191074038
+      Data2: 1179310523
+      Data3: 419150227
+      Data4: 1463391043
+    Path: event:/Sfx/UI_Game/Click
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1963281633906372860
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +251,7 @@ GameObject:
   - component: {fileID: 4350597956787545322}
   - component: {fileID: 951902729717756347}
   - component: {fileID: 9096156881879833252}
+  - component: {fileID: 7610862547424314997}
   m_Layer: 5
   m_Name: Button_Fortsetzen
   m_TagString: Untagged
@@ -339,6 +372,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7610862547424314997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963281633906372860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -191074038
+      Data2: 1179310523
+      Data3: 419150227
+      Data4: 1463391043
+    Path: event:/Sfx/UI_Game/Click
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3359281992228952085
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +623,7 @@ GameObject:
   - component: {fileID: 2619184452918617862}
   - component: {fileID: 6178110478268592654}
   - component: {fileID: 6149306027186486395}
+  - component: {fileID: 5024899972970516363}
   m_Layer: 5
   m_Name: Button_Spiel beenden
   m_TagString: Untagged
@@ -679,6 +744,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5024899972970516363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630217526180515186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -735792728
+      Data2: 1153526258
+      Data3: 63286690
+      Data4: -2042921524
+    Path: event:/Sfx/UI_Startscreen/ExitHover2
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3893837221725294529
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +787,7 @@ GameObject:
   - component: {fileID: 1057263748620168852}
   - component: {fileID: 2071075576594091304}
   - component: {fileID: 7105925175021780997}
+  - component: {fileID: 7838470903972905984}
   m_Layer: 5
   m_Name: Steuerung
   m_TagString: Untagged
@@ -811,6 +908,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7838470903972905984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893837221725294529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -191074038
+      Data2: 1179310523
+      Data3: 419150227
+      Data4: 1463391043
+    Path: event:/Sfx/UI_Game/Click
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3908523756669427965
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +951,7 @@ GameObject:
   - component: {fileID: 8136337861768016325}
   - component: {fileID: 8804187722434916565}
   - component: {fileID: 7169044469766519301}
+  - component: {fileID: 5975337232255503764}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -943,6 +1072,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5975337232255503764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908523756669427965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -191074038
+      Data2: 1179310523
+      Data3: 419150227
+      Data4: 1463391043
+    Path: event:/Sfx/UI_Game/Click
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3970127649439167588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,12 +1603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: {fileID: 3359281992228952085}
   steuerung: {fileID: 7560216119896282768}
-  allgemein: {fileID: 0}
-  spacewar: {fileID: 0}
-  frogger: {fileID: 0}
-  pong: {fileID: 0}
   pauseScreen: {fileID: 3479110917007307251}
   PointerScript: {fileID: 0}
+  InPause: 0
 --- !u!114 &3133875997405161725
 MonoBehaviour:
   m_ObjectHideFlags: 0
