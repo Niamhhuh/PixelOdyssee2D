@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMOD.Studio;
+using FMODUnity;
 
 public class UiToMouse : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class UiToMouse : MonoBehaviour
     private Animator pointerAnimator; // Animator für MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
 
+    private CharacterScript CScript;
+
     public bool AllowInput;
     public bool LockInteract;
     public bool InTriggerDialogue = false;                      //Input && Interact can't be enabled during triggered dialogue.
@@ -30,9 +34,14 @@ public class UiToMouse : MonoBehaviour
 
     public bool InCatScene = false;
 
+    private EventInstance FootstepsRosie;  //Sound für Footsteps
+    private EventInstance FootstepsBebe;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        CScript = player.GetComponent<CharacterScript>();
 
         rectTransform = GetComponent<RectTransform>();
         targetPosition = player.position;
@@ -46,7 +55,12 @@ public class UiToMouse : MonoBehaviour
         pointerImage = movePointer.GetComponent<Image>();
 
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
+
+        FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie);
+        FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
+
     }
+
 
     public void SetInCatSceneTrue()
     {
@@ -120,23 +134,27 @@ public class UiToMouse : MonoBehaviour
                 lastDirection = 1;
             }
 
-            if (playerAnimator != null)
+            //WAAAAAAAAAAAAAAAAAAAAAAALK ROSIE
+            if (playerAnimator != null && CScript.RosieActive)
             {
                 playerAnimator.SetBool("isWalking", true);
                 playerAnimator.SetInteger("LastDirection", lastDirection);
+                FootstepsRosie.start(); //Sound
             }
 
-            if(playerAnimator2 != null)
+            //WAAAAAAAAAAAAAAAAAAAAAAALK BeBe
+            if (playerAnimator2 != null && !CScript.RosieActive)
             {
             playerAnimator2.SetBool("isWalking", true);
             playerAnimator2.SetInteger("LastDirection", lastDirection);
+                FootstepsBebe.start();
             }
 
             pointerImage.enabled = true;
             pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
         }
 
-        if (movePlayer)
+        if (movePlayer)  //STOOOOOOOOOOOOOOOOOOOOOOOOOOP
         {
             player.position = Vector3.MoveTowards(player.position, targetPosition, playerSpeed * Time.deltaTime);
 
@@ -144,16 +162,20 @@ public class UiToMouse : MonoBehaviour
             {
                 movePlayer = false;
                 
+                //STOP ROSIE 
                 if (playerAnimator != null)
                 {
                     playerAnimator.SetBool("isWalking", false);
                     playerAnimator.SetInteger("LastDirection", lastDirection); //idle
+                    FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
 
-                if (playerAnimator2 != null)
+                // STOP BEBE
+                if (playerAnimator2 != null)    
                 {
                     playerAnimator2.SetBool("isWalking", false);
                     playerAnimator2.SetInteger("LastDirection", lastDirection);
+                    FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 }
 
                 pointerImage.enabled = false;
@@ -230,5 +252,10 @@ public class UiToMouse : MonoBehaviour
         //print("hi");
         yield return new WaitForEndOfFrame();
         EnableInteract();
+    }
+
+    private void UpdateSound()
+    {
+
     }
 }

@@ -3379,6 +3379,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &443689684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443689686}
+  - component: {fileID: 443689685}
+  m_Layer: 0
+  m_Name: Audiomanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &443689685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443689684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc791504de453f348a682b2d3cf7cff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &443689686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443689684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.140054, y: 8.019884, z: -0.049488775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1889864573}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453724900
 GameObject:
   m_ObjectHideFlags: 0
@@ -12214,6 +12259,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1041182771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1889864572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889864573}
+  - component: {fileID: 1889864574}
+  m_Layer: 0
+  m_Name: FmodEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889864573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889864572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 443689686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1889864574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889864572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cde4c72a3efab45a7bd09dabd3835e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TitlescreenMusic>k__BackingField:
+    Guid:
+      Data1: 250868438
+      Data2: 1339535541
+      Data3: -801345379
+      Data4: 1897745755
+    Path: event:/Music/Titelscreen Theme
+  <DepotMusic>k__BackingField:
+    Guid:
+      Data1: -1389875791
+      Data2: 1203534326
+      Data3: 825692847
+      Data4: -1145034477
+    Path: event:/Music/Depot Theme
+  <WalkRosie>k__BackingField:
+    Guid:
+      Data1: 1744810601
+      Data2: 1214895494
+      Data3: 953861278
+      Data4: -2069394808
+    Path: event:/Sfx/Rosie/WalkRosie
+  <WalkBebe>k__BackingField:
+    Guid:
+      Data1: 1185754952
+      Data2: 1240037004
+      Data3: -341672533
+      Data4: -208568750
+    Path: event:/Sfx/Bebe/WalkBebe
 --- !u!1 &1927837377
 GameObject:
   m_ObjectHideFlags: 0
@@ -12916,7 +13033,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1995566906488515522, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4520171129759826126, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
@@ -13857,3 +13975,4 @@ SceneRoots:
   - {fileID: 453724902}
   - {fileID: 595294164}
   - {fileID: 2071301232}
+  - {fileID: 443689686}

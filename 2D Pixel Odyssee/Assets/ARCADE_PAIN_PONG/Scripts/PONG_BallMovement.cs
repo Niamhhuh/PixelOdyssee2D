@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
@@ -16,10 +17,28 @@ public class BallMovement : MonoBehaviour
     //HEALTHBAR ICONS   
     [SerializeField] private GameObject RosieIconDefault;
     [SerializeField] private GameObject RosieIconStrafe;
+    [SerializeField] private GameObject SilverIconDefault;
+    [SerializeField] private GameObject SilverIconStrafe;
     [SerializeField] private GameObject RahmenDefault;
     [SerializeField] private GameObject RahmenElektro;
     [SerializeField] private GameObject RahmenFeuer;
     [SerializeField] private GameObject RahmenPeitsche;
+    [SerializeField] private GameObject HintergrundElektro;
+    [SerializeField] private GameObject HintergrundFeuer;
+    [SerializeField] private GameObject HintergrundPeitsche;
+    [SerializeField] private GameObject HintergrundElektroAI;
+    [SerializeField] private GameObject HintergrundFeuerAI;
+    [SerializeField] private GameObject HintergrundPeitscheAI;
+    [SerializeField] private GameObject HealthSquare1;
+    [SerializeField] private GameObject HealthSquare2;
+    [SerializeField] private GameObject HealthSquare3;
+    [SerializeField] private GameObject HealthSquare1Silver;
+    [SerializeField] private GameObject HealthSquare2Silver;
+    [SerializeField] private GameObject HealthSquare3Silver;
+    [SerializeField] private GameObject RahmenElektroAI;
+    [SerializeField] private GameObject RahmenFeuerAI;
+    [SerializeField] private GameObject RahmenPeitscheAI;
+    [SerializeField] private GameObject RahmenDefaultAI;
 
     [SerializeField] private Pong_PlayerMovement playerMovement;
 
@@ -31,6 +50,13 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private int hitCounter;
+
+    private bool Scored = false;
+
+    //White Screen for Elektro Strafe
+    /*private GameObject whitescreen_big;
+    private Image whitescreen;
+    private float fadeDuration;*/
     
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
@@ -46,11 +72,35 @@ public class BallMovement : MonoBehaviour
 
         RosieIconDefault.SetActive(true);
         RosieIconStrafe.SetActive(false);
+        SilverIconDefault.SetActive(true);
+        SilverIconStrafe.SetActive(false);
+
         RahmenDefault.SetActive(true);
         RahmenElektro.SetActive(false);
         RahmenFeuer.SetActive(false);
         RahmenPeitsche.SetActive(false);
+        RahmenDefaultAI.SetActive(true);
+        RahmenElektroAI.SetActive(false);
+        RahmenFeuerAI.SetActive(false);
+        RahmenPeitscheAI.SetActive(false);
+
+        HintergrundElektro.SetActive(false);
+        HintergrundFeuer.SetActive(false);
+        Debug.Log("test");
+        HintergrundPeitsche.SetActive(false);
+
+        HealthSquare1.SetActive(true);
+        HealthSquare2.SetActive(true);
+        HealthSquare3.SetActive(true);
+        HealthSquare1Silver.SetActive(true);
+        HealthSquare2Silver.SetActive(true);
+        HealthSquare3Silver.SetActive(true);
+
         Riss1.SetActive(false);
+
+        /*whitescreen_big = GameObject.Find("C_whitescreen");             //fade out stuff
+        whitescreen = whitescreen_big.GetComponent<Image>();            //fade out stuff
+        whitescreen_big.SetActive(false);*/
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
@@ -64,6 +114,8 @@ public class BallMovement : MonoBehaviour
     }
 
     private void ResetBall() {          //resets ball to position 0,0 and invokes StartBall()
+
+        Scored = false;
         rb.velocity = new Vector2(0,0);
         transform.position = new Vector2(0.73f,-0.03f);
         hitCounter = 0;
@@ -110,6 +162,10 @@ public class BallMovement : MonoBehaviour
         {
             Debug.Log("StrafboxElektro is hit.");
 
+            HintergrundElektro.SetActive(true);
+            HintergrundFeuer.SetActive(false);
+            HintergrundPeitsche.SetActive(false);
+
             RahmenElektro.SetActive(true);
             RahmenFeuer.SetActive(false);
             RahmenPeitsche.SetActive(false);
@@ -123,9 +179,29 @@ public class BallMovement : MonoBehaviour
             }
 
         }
-        else if (col.gameObject.CompareTag("StrafboxFeuer"))
+
+        if (col.gameObject.CompareTag("StrafboxElektroAI"))
+        {
+            Debug.Log("You Hit AI StrafboxElektro.");
+
+            RahmenElektroAI.SetActive(true);
+            RahmenFeuerAI.SetActive(false);
+            RahmenPeitscheAI.SetActive(false);
+            RahmenDefaultAI.SetActive(false);
+
+            HintergrundFeuerAI.SetActive(true);
+            HintergrundElektroAI.SetActive(false);
+            HintergrundPeitscheAI.SetActive(false);
+        }
+
+        if (col.gameObject.CompareTag("StrafboxFeuer"))
         {
             Debug.Log("StrafboxFeuer is hit.");
+
+            HintergrundFeuer.SetActive(true);
+            HintergrundElektro.SetActive(false);
+            HintergrundPeitsche.SetActive(false);
+
             RahmenFeuer.SetActive(true);
             RahmenElektro.SetActive(false);
             RahmenPeitsche.SetActive(false);
@@ -138,9 +214,24 @@ public class BallMovement : MonoBehaviour
                 playerMovement.IncreaseSpeed(2.0f); // 200% increase
             }
         }
-        else if (col.gameObject.CompareTag("StrafboxPeitsche"))
+
+        if (col.gameObject.CompareTag("StrafboxFeuerAI"))
+        {
+            Debug.Log("You Hit AI StrafboxFeuer.");
+            RahmenFeuerAI.SetActive(true);
+            RahmenElektroAI.SetActive(false);
+            RahmenPeitscheAI.SetActive(false);
+            RahmenDefaultAI.SetActive(false);
+        }
+
+        if (col.gameObject.CompareTag("StrafboxPeitsche"))
         {
             Debug.Log("StrafboxPeitsche is hit.");
+
+            HintergrundPeitsche.SetActive(true);
+            HintergrundElektro.SetActive(false);
+            HintergrundFeuer.SetActive(false); 
+
             RahmenPeitsche.SetActive(true);
             RahmenElektro.SetActive(false);
             RahmenFeuer.SetActive(false);
@@ -148,28 +239,79 @@ public class BallMovement : MonoBehaviour
             ActivateStrafeIcon();
 
             Riss1.SetActive(true);
+            //whitescreen_big.SetActive(true);
+            //StartCoroutine(FadeInCoroutine());
+        }
+
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI"))
+        {
+            Debug.Log("You Hit AI StrafboxPeitsche.");
+
+            HintergrundPeitscheAI.SetActive(true); 
+            HintergrundElektroAI.SetActive(false);
+            HintergrundFeuerAI.SetActive(false);
+
+            RahmenPeitscheAI.SetActive(true);
+            RahmenElektroAI.SetActive(false);
+            RahmenFeuerAI.SetActive(false);
+            RahmenDefaultAI.SetActive(false);
         }
 
 
-        if (transform.position.x > 0) 
+        if (transform.position.x > 0 && !Scored) 
         {
+            Scored = true;
             playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
             plScore++;
 
+
+            //Adjust Silver Health Bar
+            if (plScore == 1)
+            {
+                HealthSquare1Silver.SetActive(false);
+            }
+
+            if(plScore == 2)
+            {
+                HealthSquare2Silver.SetActive(false);
+            }
+
+            if (plScore == 3)
+            {
+                HealthSquare3Silver.SetActive(false);
+            }
+
             
         }
-        else if (transform.position.x < 0) 
+        else if (transform.position.x < 0 && !Scored) 
         {
+            Scored = true;
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
             aiScore++;
-            
+
+
+            //Adjust player's Health Bar
+            if (aiScore == 1)
+            {
+                HealthSquare3.SetActive(false);
+            }
+            if (aiScore == 2)
+            {
+                HealthSquare2.SetActive(false);
+            }
+            if (aiScore == 3)
+            {
+                HealthSquare1.SetActive(false);
+            }
+
         }
         
         if (aiScore == 3 || plScore == 3) //checks whether the game is finished
         {
+            Scored = false;
             Destroy(gameObject);
             
-
+          
             if(plScore == 3) 
             {
                 winPanel.SetActive(true);
@@ -199,4 +341,22 @@ public class BallMovement : MonoBehaviour
         RosieIconStrafe.SetActive(false);
         RosieIconDefault.SetActive(true);
     }
+
+    /*private IEnumerator FadeInCoroutine()               //fade out stuff white screen
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+
+            whitescreen.color = new Color(255, 255, 255, alpha);
+            yield return null;
+        }
+
+        whitescreen.color = new Color(255, 255, 255, 1);
+        yield return new WaitForSeconds(1f);
+
+    }*/
 }
