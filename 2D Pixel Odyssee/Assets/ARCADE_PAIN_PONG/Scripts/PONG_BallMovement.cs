@@ -13,6 +13,19 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject steuerung;
 
+    //HEALTHBAR ICONS   
+    [SerializeField] private GameObject RosieIconDefault;
+    [SerializeField] private GameObject RosieIconStrafe;
+    [SerializeField] private GameObject RahmenDefault;
+    [SerializeField] private GameObject RahmenElektro;
+    [SerializeField] private GameObject RahmenFeuer;
+    [SerializeField] private GameObject RahmenPeitsche;
+
+    [SerializeField] private Pong_PlayerMovement playerMovement;
+
+    [SerializeField] private GameObject Riss1;
+
+
     private int aiScore;
     private int plScore;
 
@@ -22,13 +35,22 @@ public class BallMovement : MonoBehaviour
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
 
-    void Start() {
+    void Start() 
+    {
         rb = GetComponent<Rigidbody2D>();
         if (steuerung == null) {
             Invoke("StartBall", 2.0f);
         }
         aiScore = 0;
         plScore = 0;
+
+        RosieIconDefault.SetActive(true);
+        RosieIconStrafe.SetActive(false);
+        RahmenDefault.SetActive(true);
+        RahmenElektro.SetActive(false);
+        RahmenFeuer.SetActive(false);
+        RahmenPeitsche.SetActive(false);
+        Riss1.SetActive(false);
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
@@ -81,14 +103,63 @@ public class BallMovement : MonoBehaviour
 
     //--------------------enter deathzone---------------------------------------------------
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if (transform.position.x > 0) {
+    void OnTriggerEnter2D(Collider2D col) 
+    {
+        //STRAFEN
+        if (col.gameObject.CompareTag("StrafboxElektro"))
+        {
+            Debug.Log("StrafboxElektro is hit.");
+
+            RahmenElektro.SetActive(true);
+            RahmenFeuer.SetActive(false);
+            RahmenPeitsche.SetActive(false);
+            RahmenDefault.SetActive(false);
+            ActivateStrafeIcon();
+
+            // Toggle reversed controls
+            if (playerMovement != null)
+            {
+                playerMovement.ToggleReverseControls();
+            }
+
+        }
+        else if (col.gameObject.CompareTag("StrafboxFeuer"))
+        {
+            Debug.Log("StrafboxFeuer is hit.");
+            RahmenFeuer.SetActive(true);
+            RahmenElektro.SetActive(false);
+            RahmenPeitsche.SetActive(false);
+            RahmenDefault.SetActive(false);
+            ActivateStrafeIcon();
+
+            // Increase player speed
+            if (playerMovement != null)
+            {
+                playerMovement.IncreaseSpeed(2.0f); // 200% increase
+            }
+        }
+        else if (col.gameObject.CompareTag("StrafboxPeitsche"))
+        {
+            Debug.Log("StrafboxPeitsche is hit.");
+            RahmenPeitsche.SetActive(true);
+            RahmenElektro.SetActive(false);
+            RahmenFeuer.SetActive(false);
+            RahmenDefault.SetActive(false);
+            ActivateStrafeIcon();
+
+            Riss1.SetActive(true);
+        }
+
+
+        if (transform.position.x > 0) 
+        {
             playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
             plScore++;
 
             
         }
-        else if (transform.position.x < 0) {
+        else if (transform.position.x < 0) 
+        {
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
             aiScore++;
             
@@ -99,7 +170,8 @@ public class BallMovement : MonoBehaviour
             Destroy(gameObject);
             
 
-            if(plScore == 3) {
+            if(plScore == 3) 
+            {
                 winPanel.SetActive(true);
                 
             }
@@ -108,8 +180,23 @@ public class BallMovement : MonoBehaviour
                 
             }
         }
-        else{
+        else
+        {
             ResetBall();
         }
+    }
+
+    private void ActivateStrafeIcon()
+    {
+        RosieIconDefault.SetActive(false);
+        RosieIconStrafe.SetActive(true);
+
+        Invoke("ResetStrafeIcon", 2f);
+    }
+
+    private void ResetStrafeIcon()
+    {
+        RosieIconStrafe.SetActive(false);
+        RosieIconDefault.SetActive(true);
     }
 }

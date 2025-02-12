@@ -7,21 +7,18 @@ public class Pong_PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private bool isAI;
     [SerializeField] private GameObject ball;
-    [SerializeField] private GameObject p_warmth;
-    [SerializeField] private GameObject p_whip;
-    [SerializeField] private GameObject p_electro;
-
     private Rigidbody2D rb;
     private Vector2 playerMove;
     [SerializeField] private float speed = 4;
 
-//-------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------During Play
-//-------------------------------------------------------------------------------------------------------------------------
+    private bool isReversed = false; // Tracks whether controls are reversed
+
+    //-------------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------During Play
+    //-------------------------------------------------------------------------------------------------------------------------
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()
@@ -36,29 +33,36 @@ public class Pong_PlayerMovement : MonoBehaviour
         }
     }
 
-//-------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------Functions - Player/Ai Movement
-//-------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------Functions - Player/Ai Movement
+    //-------------------------------------------------------------------------------------------------------------------------
 
     private void PlayerControl()
     {
-        playerMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
-        rb.velocity = new Vector2(0, Input.GetAxisRaw("Vertical") * speed); //this doesn´t work
+        float input = Input.GetAxisRaw("Vertical");
+
+        if (isReversed)
+        {
+            input *= -1; // Reverse movement input
+        }
+
+        playerMove = new Vector2(0, input);
+        rb.velocity = new Vector2(0, input * speed);
     }
 
     private void AIControl()
     {
-        if(ball != null && ball.transform.position.y > transform.position.y + 1.25f)
+        if (ball != null && ball.transform.position.y > transform.position.y + 1.25f)
         {
-            playerMove =new Vector2(0,1);
+            playerMove = new Vector2(0, 1);
         }
-        else if(ball != null &&  ball.transform.position.y < transform.position.y - 1.25f)
+        else if (ball != null && ball.transform.position.y < transform.position.y - 1.25f)
         {
             playerMove = new Vector2(0, -1);
         }
         else
         {
-            playerMove = new Vector2(0,0);
+            playerMove = new Vector2(0, 0);
         }
     }
 
@@ -67,9 +71,19 @@ public class Pong_PlayerMovement : MonoBehaviour
         rb.velocity = playerMove * movementSpeed;
     }
 
-//-------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------Functions - Pain Effects
-//-------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------Punishments
+    //-------------------------------------------------------------------------------------------------------------------------
+    public void ToggleReverseControls()
+    {
+        isReversed = !isReversed; // Toggle between normal and reversed controls
+        Debug.Log("Controls Reversed: " + isReversed);
+    }
 
 
+    public void IncreaseSpeed(float multiplier) //Increases Speed 
+    {
+        movementSpeed *= multiplier;
+        Debug.Log("Player speed increased! New speed: " + movementSpeed);
+    }
 }
