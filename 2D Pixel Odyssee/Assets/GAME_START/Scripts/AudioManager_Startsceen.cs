@@ -5,13 +5,16 @@ using FMODUnity;
 using FMOD.Studio;
 using System.Dynamic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class AudioManager_Startscreen : MonoBehaviour
 {
     public static AudioManager_Startscreen instance {  get; private set; }
+    Scene currentScene;
 
     //Referenz von allen Dingen die abgespielt werden sollen
     private EventInstance TitlescreenMusicInstance;
+    private EventInstance DepotMusic;
     
     //---------------------------------------------------------------------------------------------------------
     
@@ -30,14 +33,16 @@ public class AudioManager_Startscreen : MonoBehaviour
     //Referenz zu anderen Scripts
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         InitializeTitlescreenMusic(Fmod_Events.instance.TitlescreenMusic);
+
     }
 
     //Abspielen von Musik
     private void InitializeTitlescreenMusic(EventReference TitlescreenMusikEventReference)
     {
         TitlescreenMusicInstance = CreateEventInstance(TitlescreenMusikEventReference);
-        TitlescreenMusicInstance.start();       
+        TitlescreenMusicInstance.start();
     }
 
 

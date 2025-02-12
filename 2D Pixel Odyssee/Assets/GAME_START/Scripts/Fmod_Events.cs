@@ -17,8 +17,13 @@ public class Fmod_Events : MonoBehaviour
     }
 
     //all music 
-    [field: Header ("Titlescreen Musix")]
+    [field: Header ("Titlescreen Music")]
     [field: SerializeField] public EventReference TitlescreenMusic {  get; private set; }
+    [field: SerializeField] public EventReference DepotMusic { get; private set; }
 
     //all Sfx
+
+    [field: Header("Player Sfx")]
+    [field: SerializeField] public EventReference WalkRosie { get; private set; }
+    [field: SerializeField] public EventReference WalkBebe { get; private set; }
 }

@@ -1,46 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9219235734982276202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Depot Musik.bank
-  m_EditorClassIdentifier: 
-  Path: Pixel Odyssee 3.0/Build/Desktop/Depot Musik.bank
-  Name: Depot Musik
-  StudioPath: bank:/Depot Musik
-  lastModified: 638693579548272629
-  FileSizes:
-  - Name: Desktop
-    Value: 4327840
-  Exists: 1
---- !u!114 &-7050858495493391865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Titelscreen Musik.bank
-  m_EditorClassIdentifier: 
-  Path: Pixel Odyssee 3.0/Build/Desktop/Titelscreen Musik.bank
-  Name: Titelscreen Musik
-  StudioPath: bank:/Titelscreen Musik
-  lastModified: 638693579548313359
-  FileSizes:
-  - Name: Desktop
-    Value: 833792
-  Exists: 1
---- !u!114 &-873731072308343550
+--- !u!114 &-7222475062798517283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,16 +10,178 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Titelscreen Theme
+  m_Name: event:/Sfx/UI_Startscreen/Click2
   m_EditorClassIdentifier: 
-  Path: event:/Titelscreen Theme
+  Path: event:/Sfx/UI_Startscreen/Click2
+  Guid:
+    Data1: 485106806
+    Data2: 1095336796
+    Data3: 369283760
+    Data4: -1837599751
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6924069937845586452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Rosie/WalkRosie
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Rosie/WalkRosie
+  Guid:
+    Data1: 1744810601
+    Data2: 1214895494
+    Data3: 953861278
+    Data4: -2069394808
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 420
+--- !u!114 &-6773128757505299684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Startscreen/ExitHover1
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Startscreen/ExitHover1
+  Guid:
+    Data1: -1309907
+    Data2: 1171801660
+    Data3: 103486632
+    Data4: -156358892
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6223643690833555937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Bebe/WalkBebe
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Bebe/WalkBebe
+  Guid:
+    Data1: 1185754952
+    Data2: 1240037004
+    Data3: -341672533
+    Data4: -208568750
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7416
+--- !u!114 &-5359844310900385688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Game/ObjectLense
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Game/ObjectLense
+  Guid:
+    Data1: -705765296
+    Data2: 1164930154
+    Data3: -1929007445
+    Data4: -451746280
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4748859684954306063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Startscreen/Click1
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Startscreen/Click1
+  Guid:
+    Data1: 667122394
+    Data2: 1276766621
+    Data3: 78638483
+    Data4: 954114788
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4032747795921222752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Titelscreen Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Titelscreen Theme
   Guid:
     Data1: 250868438
     Data2: 1339535541
     Data3: -801345379
     Data4: 1897745755
   Banks:
-  - {fileID: -7050858495493391865}
+  - {fileID: 4356266270816618076}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -67,7 +189,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
---- !u!114 &-660761500153780807
+--- !u!114 &-2023749897372746690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Game/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Game/DoorOpen
+  Guid:
+    Data1: -725602340
+    Data2: 1264231195
+    Data3: -1741458556
+    Data4: -349269989
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1736158110737498758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Startscreen/ExitHover2
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Startscreen/ExitHover2
+  Guid:
+    Data1: -735792728
+    Data2: 1153526258
+    Data3: 63286690
+    Data4: -2042921524
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-465165264197200761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,13 +255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Pixel Odyssee 3.0/Build/Desktop/Master.strings.bank
+  Path: ../Pixel Odyssee 3.0/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638693579548282627
+  lastModified: 638749719771326603
   FileSizes:
   - Name: Desktop
-    Value: 922
+    Value: 1340
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -100,21 +276,29 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -660761500153780807}
-  - {fileID: -9219235734982276202}
-  - {fileID: 8884127884155276018}
-  - {fileID: -7050858495493391865}
+  - {fileID: -465165264197200761}
+  - {fileID: 4314734598496280493}
+  - {fileID: 4356266270816618076}
+  - {fileID: 7882187717638575268}
   EditorEvents:
-  - {fileID: 2511025817240810612}
-  - {fileID: -873731072308343550}
+  - {fileID: 234662002750600971}
+  - {fileID: -4032747795921222752}
+  - {fileID: -6773128757505299684}
+  - {fileID: -5359844310900385688}
+  - {fileID: -7222475062798517283}
+  - {fileID: -1736158110737498758}
+  - {fileID: -4748859684954306063}
+  - {fileID: -2023749897372746690}
+  - {fileID: -6924069937845586452}
+  - {fileID: -6223643690833555937}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8884127884155276018}
+  - {fileID: 4314734598496280493}
   StringsBanks:
-  - {fileID: -660761500153780807}
-  cacheTime: 638693579548313359
+  - {fileID: -465165264197200761}
+  cacheTime: 638749719773121176
   cacheVersion: 131620
---- !u!114 &2511025817240810612
+--- !u!114 &234662002750600971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,16 +308,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Depot Theme
+  m_Name: event:/Music/Depot Theme
   m_EditorClassIdentifier: 
-  Path: event:/Depot Theme
+  Path: event:/Music/Depot Theme
   Guid:
     Data1: -1389875791
     Data2: 1203534326
     Data3: 825692847
     Data4: -1145034477
   Banks:
-  - {fileID: -9219235734982276202}
+  - {fileID: 4356266270816618076}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -141,7 +325,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 316238
---- !u!114 &8884127884155276018
+--- !u!114 &4314734598496280493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,11 +337,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Pixel Odyssee 3.0/Build/Desktop/Master.bank
+  Path: ../Pixel Odyssee 3.0/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638693579548282627
+  lastModified: 638749719771295063
   FileSizes:
   - Name: Desktop
     Value: 1036
+  Exists: 1
+--- !u!114 &4356266270816618076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../Pixel Odyssee 3.0/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638742890658872089
+  FileSizes:
+  - Name: Desktop
+    Value: 5160928
+  Exists: 1
+--- !u!114 &7882187717638575268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Sfx.bank
+  m_EditorClassIdentifier: 
+  Path: ../Pixel Odyssee 3.0/Build/Desktop/Sfx.bank
+  Name: Sfx
+  StudioPath: bank:/Sfx
+  lastModified: 638749719773121176
+  FileSizes:
+  - Name: Desktop
+    Value: 136480
   Exists: 1
