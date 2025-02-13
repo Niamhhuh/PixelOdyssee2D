@@ -510,4 +510,5 @@ public enum DialogueActors
     BebeWorry,
     BebeSurprise,
     Random,
+    BebeQuestion,
 };
