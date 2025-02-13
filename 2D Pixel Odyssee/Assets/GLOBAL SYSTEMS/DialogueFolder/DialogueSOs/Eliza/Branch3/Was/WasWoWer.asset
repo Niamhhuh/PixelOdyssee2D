@@ -12,12 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: WasWoWer
   m_EditorClassIdentifier: 
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
   actors: 0000000007000000
   randomActorName: 
   randomActorPortait: {fileID: 0}
   dialogue:
-  - "Du bist nicht ich. \r\nViel mehr wei\xDF ich nicht.\r\nF\xFCr mich bist du Text,
-    Gr\xFCn auf Schwarz.\r\nWer du wirklich bist, dass liegt an dir.\r\n"
+  - "Du erinnerst dich also nicht?\r\nIn der Vergangenheit warst du ein aktiver Teil
+    von diesem Zuhause.\r\nDu hast jeden willkommen gehei\xDFen.\r\nDas liegt nun
+    hinter dir.\r\nWer du jetzt bist, das musst du bestimmen.\r"
   optionText:
   - Warum bin ich?
   option0: {fileID: 11400000, guid: 8b5a20a50d985804591fa04d174339be, type: 2}
