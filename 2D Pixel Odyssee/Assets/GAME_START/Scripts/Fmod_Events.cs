@@ -26,4 +26,7 @@ public class Fmod_Events : MonoBehaviour
     [field: Header("Player Sfx")]
     [field: SerializeField] public EventReference WalkRosie { get; private set; }
     [field: SerializeField] public EventReference WalkBebe { get; private set; }
+
+    [field: Header("Sfx HubWorld")]
+    [field: SerializeField] public EventReference InventoryItem { get; private set; }
 }
