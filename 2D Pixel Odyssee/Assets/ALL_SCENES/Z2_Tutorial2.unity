@@ -453,7 +453,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a981748ad3aba6e489651ac87b45b889, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6913,7 +6913,7 @@ MonoBehaviour:
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
-  LoadScene_ID: 3
+  LoadScene_ID: 10
   SpawnPointID: 0
 --- !u!61 &1311026773
 BoxCollider2D:
@@ -7094,8 +7094,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1208452552}
-  - {fileID: 451164449}
   - {fileID: 1163252360}
+  - {fileID: 451164449}
   - {fileID: 1008654509}
   m_Father: {fileID: 1290882546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8018,8 +8018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 7f92ee81bc702b34bbd4e1eb9c975266, type: 2}
-  - {fileID: 11400000, guid: c894fd4e221877f46bb2a4a671d4c4af, type: 2}
+  - {fileID: 11400000, guid: 379f9e9ea77db974b8dd2173f3e3f3f4, type: 2}
+  - {fileID: 11400000, guid: 586150a0be7900840bea7f455a512b02, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
