@@ -267,7 +267,15 @@ public class ObjectScript : MonoBehaviour
             Lock_State = false;
             UpdateAllData();
             if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
-            DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
+            
+            foreach(Draggable Item in DataManager.Item_List)
+            {
+                if(DMReference.InventoryRef.DraggedItemID == Item.ID)
+                {
+                    Item.RemoveOnUse();
+                }
+            }
+            //DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
                                                                                              // Delete Item from Draggable List
 
 
