@@ -237,7 +237,7 @@ public class ObjectScript : MonoBehaviour
 
         // Call InteractButtons
         //----------------------------------------------------------------------------------------------------------------------------------------------------
-        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
+        if (PointerScript.ClipboardActive == false && PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
             if (DataManager.ToShove.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {

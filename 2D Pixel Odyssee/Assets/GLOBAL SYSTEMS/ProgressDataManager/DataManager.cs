@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
     public static List<SwitchStateObj> SwitchState_List = new List<SwitchStateObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 4
     public static List<EventObj> EventSource_List = new List<EventObj>();                   //Create a List to store all relevant Variables of EventSources                 //List_ID 5
     public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();       //Create a List to store all relevant Variables of Triggers                     //List_ID 6
-    //public static List<TriggerableObj> Triggerable_List = new List<TriggerableObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 7
+    public static List<DancePadObj> DancePad_List = new List<DancePadObj>();       //Create a List to store all relevant Variables of Switches                     //List_ID 7
 
     public static List<DraggableObj> Draggable_List = new List<DraggableObj>();             //Create a List to store all relevant Variables of Inventory Items              //ID... doesnt matter
     public static List<Draggable> Item_List;                                                //Create a List to store all Items                                              //Intialized on Awake, the List Object are Sorted by ID
@@ -26,6 +26,7 @@ public class DataManager : MonoBehaviour
     public static List<ObjectScript> ToInteract = new List<ObjectScript>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
 
     public static List<Shovable> ToShove = new List<Shovable>();                            //Create a List to store the Object that is being shoved            //should probably be an array
+    public static List<DancePad> ToDance = new List<DancePad>();                            //Create a List to store the DancePad being accessed                //should probably be an array
 
     public static SlotScript[] Slot_Array = new SlotScript[11];
 
@@ -329,6 +330,11 @@ public class DataManager : MonoBehaviour
         Triggerable_List.Add(new TriggerableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Trigger_Passed = newTrigger_Passed, Stored_Trigger = newTrigger });
     }
 
+    public void AddDancePadObj(int newID, bool newLock_State, bool newAlreadyTalked)
+    {
+        DancePad_List.Add(new DancePadObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked});
+    }
+
 
     public void AddDraggableObj(int newID, int newSlot)
     {
@@ -393,6 +399,11 @@ public class DataManager : MonoBehaviour
         Triggerable_List[ObjectIndex].Stored_Trigger_Passed = newTrigger_Passed;
         Triggerable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
+    public void EditDancePadObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked)
+    {
+        Triggerable_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        Triggerable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
+    }
 
     public void EditDraggableObj(int ObjectIndex, int newSlot)
     {
@@ -448,6 +459,10 @@ public class DataManager : MonoBehaviour
         {
             SequenceSearchTriggerable(Object_ID);
         }
+        if (List_ID == 7)
+        {
+            SequenceSearchDancePad(Object_ID);
+        }
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -494,6 +509,14 @@ public class DataManager : MonoBehaviour
     private void SequenceSearchTriggerable(int Object_ID)                         // Search through Portal List and Unlock an Object
     {
         foreach (TriggerableObj StoredObj in Triggerable_List)
+        {
+            ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
+        }
+    }
+
+    private void SequenceSearchDancePad(int Object_ID)                         // Search through Portal List and Unlock an Object
+    {
+        foreach (DancePadObj StoredObj in DancePad_List)
         {
             ChangeLockState(StoredObj, Object_ID);                           // Call Method to compare Current Object ID with Target ID and then edit Lock_State
         }
@@ -603,6 +626,9 @@ public class DataManager : MonoBehaviour
             case 6:
                 Triggerable_List[UnlockObject_Index].Stored_Lock_State = false;
                 break;
+            case 7:
+                DancePad_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
             default:
                 break;
         }
@@ -631,6 +657,9 @@ public class DataManager : MonoBehaviour
                 break;
             case 6:
                 Triggerable_List[UnlockObject_Index].Stored_Lock_State = true;
+                break;
+            case 7:
+                DancePad_List[UnlockObject_Index].Stored_Lock_State = true;
                 break;
             default:
                 break;
@@ -766,6 +795,10 @@ public class DataManager : MonoBehaviour
         public GameObject Stored_Trigger;
     }
 
+    public class DancePadObj : Obj
+    {
+        
+    }
 
     public class ActiveGoal
     {
