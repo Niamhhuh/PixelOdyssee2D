@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: RosieSpeicherkarte
+  m_Name: BebeUntersuchen
   m_EditorClassIdentifier: 
-  ProgressDialogue: 1
-  DialogueID: 11
+  ProgressDialogue: 0
+  DialogueID: 0
   UnlockableOptions: 0
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 0500000004000000
+  actors: 010000000100000009000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 8a5bd9627857e514693d01d404ece6a8, type: 3}
   dialogue:
-  - "Es ist so klein, aber h\xE4lt so viel!"
-  - "W\xE4ren meine Reinigungsmittel nur genau so effizient."
+  - Hallo Freund! ...
+  - ...
+  - Warum antwortest du nicht?
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

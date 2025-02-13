@@ -5676,6 +5676,7 @@ GameObject:
   - component: {fileID: 726444202}
   - component: {fileID: 726444201}
   - component: {fileID: 726444205}
+  - component: {fileID: 726444206}
   m_Layer: 0
   m_Name: Speicherkarte
   m_TagString: Untagged
@@ -5869,6 +5870,20 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+--- !u!114 &726444206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 585b4811ddfb0d54da19a8e6c87ad8bd, type: 2}
+  BeBeLockDialogue: {fileID: 0}
 --- !u!1 &742752270
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,6 +8067,7 @@ GameObject:
   - component: {fileID: 1314770201}
   - component: {fileID: 1314770204}
   - component: {fileID: 1314770205}
+  - component: {fileID: 1314770206}
   m_Layer: 0
   m_Name: "T\xFCr"
   m_TagString: Untagged
@@ -8243,10 +8259,25 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: c68d76defdf967f4f999509cb8848d53, type: 2}
   - {fileID: 11400000, guid: 00fbb54e1b24f244db2bd1699825c97d, type: 2}
+  - {fileID: 11400000, guid: c564623804aace44195c867e4ce3c541, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &1314770206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314770200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: c564623804aace44195c867e4ce3c541, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 00fbb54e1b24f244db2bd1699825c97d, type: 2}
 --- !u!1 &1341721845
 GameObject:
   m_ObjectHideFlags: 0
