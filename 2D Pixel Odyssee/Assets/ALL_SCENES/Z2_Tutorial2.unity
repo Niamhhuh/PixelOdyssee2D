@@ -647,7 +647,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.57, y: 6.68}
+    oldSize: {x: 3.54, y: 6.61}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -697,7 +697,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 50f591f86c16e184f87376d14ab530d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbdf9700eff43004ab08c48902e444c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1754,7 +1754,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 827571322f008ad4997860d50d24f1b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 259fcb1c62e6d1c4c879643e65dbc1aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3961,7 +3961,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 827571322f008ad4997860d50d24f1b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 259fcb1c62e6d1c4c879643e65dbc1aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4672,6 +4672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversation:
   - {fileID: 11400000, guid: 7f92ee81bc702b34bbd4e1eb9c975266, type: 2}
+  - {fileID: 11400000, guid: c894fd4e221877f46bb2a4a671d4c4af, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4837,7 +4838,7 @@ Transform:
   m_GameObject: {fileID: 972280114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1752347, w: 0.9845267}
-  m_LocalPosition: {x: 4.7, y: -0.31, z: 0}
+  m_LocalPosition: {x: -2.69, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5834,7 +5835,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.32, y: 7.38}
+    oldSize: {x: 5.19, y: 7.29}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5940,7 +5941,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 273f2f927210f0a488c970bb1d1ec8e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28cd14d37724911489292b40ce4c2dea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8242,17 +8243,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3479110917007307251, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Name
       value: PAUSESCREEN
-      objectReference: {fileID: 0}
-    - target: {fileID: 7560216119896282768, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8716,7 +8709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
   - {fileID: 11400000, guid: e579575d9d9269c4096f1615d8123a0a, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
@@ -9777,7 +9770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
   - {fileID: 11400000, guid: 63329c10548108544b4a65e143196bb7, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
@@ -9901,7 +9894,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: bbf5b0d9e9cfbc04ea37e6e16b72e0b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccc4f976dca700047adfaf7a95c883de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10206,7 +10199,7 @@ GameObject:
   - component: {fileID: 1944748003}
   - component: {fileID: 1944748002}
   m_Layer: 0
-  m_Name: Pong
+  m_Name: SegaRally BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10780,7 +10773,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee4c40aa0b7f6b940a1c5cc6a69d6682, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11062,7 +11055,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.57, y: 6.68}
+    oldSize: {x: 3.54, y: 6.61}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11112,7 +11105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 50f591f86c16e184f87376d14ab530d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbdf9700eff43004ab08c48902e444c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

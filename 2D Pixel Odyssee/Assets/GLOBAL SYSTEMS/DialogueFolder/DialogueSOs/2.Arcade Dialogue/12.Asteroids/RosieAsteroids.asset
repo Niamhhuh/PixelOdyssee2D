@@ -12,14 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: RosieAsteroids
   m_EditorClassIdentifier: 
-  actors: 0000000006000000
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 000000000a00000005000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 8a5bd9627857e514693d01d404ece6a8, type: 3}
   dialogue:
-  - "Ja, ich wei\xDF \u2013 Asteroids hat den Weg f\xFCr die modernen Spiele geebnet,
-    die wir jetzt haben.\r\n"
-  - "Aber wo ist das Upgrade-System? Die Zwischensequenzen? Sogar eine Rangliste
-    mit meinem Profilbild h\xE4tte es cooler gemacht."
+  - "Die M\xFCnze ist tats\xE4chlich in dieser Maschine drin. Und ich komme einfach
+    nicht ran. "
+  - Fragen wir einfach nach!
+  - Nachfragen? Ist das ein Scherz? Tut mir leid BeBe, ich kann gerade nicht mit
+    dir spielen. Aber du machst das schon!
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
