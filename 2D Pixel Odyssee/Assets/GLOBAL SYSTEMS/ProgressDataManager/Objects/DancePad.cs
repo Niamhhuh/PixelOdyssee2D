@@ -10,7 +10,10 @@ public class DancePad : ObjectScript
     public int Shove_Position = 0;                                                            //relevant to remember the position in the room
     public int Max_Shove;
     public GameObject PadController;
-    public GameObject ShoveBox;
+    public DanceScript DanceScriptRef = null;
+
+    public int TargetList_ID;
+    public int TargetObject_ID;
 
     public int[] TargetInput;
 
@@ -27,6 +30,7 @@ public class DancePad : ObjectScript
 
 
         PadController = GameObject.FindGameObjectWithTag("DanceControl");
+        //DanceScriptRef = GameObject.FindGameObjectWithTag("DanceControl").GetComponent<DanceScript>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -73,9 +77,10 @@ public class DancePad : ObjectScript
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public void Call_Interact()                                                                                                                 
+    public void Call_Interact()
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
+
         FetchData(DataManager.DancePad_List[ObjectIndex].Stored_Lock_State, DataManager.DancePad_List[ObjectIndex].Stored_AlreadyTalked);      //Fetch new State from DataManager
         PointerScript.StartCoroutine(PointerScript.CallEnableInput());
         PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
@@ -105,6 +110,8 @@ public class DancePad : ObjectScript
 
             if (InteractionController != null)                                                                      //If the Interaction Buttons are available
             {
+                DMReference.MoveScript.EnableInput();
+                DMReference.MoveScript.EnableInteract();
                 InteractionController.SetActive(false);                                                             //Disable them 
             }
         }
@@ -112,13 +119,13 @@ public class DancePad : ObjectScript
         if (other.CompareTag("Player"))                                                                     //This Part handles the toggle of the DancePad Buttons
         {
             ClearHighlight();                                                                               //Clear Highlight when moving away
-            if(DataManager.ToDance.Count > 0)                                                               //If the Object is in the ToShove List
+            if (DataManager.ToDance.Count > 0)                                                               //If the Object is in the ToShove List
             {
                 DataManager.ToDance.RemoveAt(0);                                                            //Remove it
             }
-            if(PadController != null)                                                                     //If the ShoveButtons are available
+            if (PadController != null && DanceScriptRef != null)                                            //If the DanceButtons are available
             {
-                PadController.SetActive(false);                                                           //Disable them
+                DanceScriptRef.EndDance();                                     //Disable them
             }
         }
     }
@@ -126,36 +133,16 @@ public class DancePad : ObjectScript
     private void InitiateDance()
     {
         DataManager.ToDance.Add(this);                                                                      //add this object to the ToShove List, to make it accessible for the Shove Buttons
-        PadController.SetActive(true);                                                                    //Activate ShoveButtons 
+        PadController.SetActive(true);                                                                    //Activate DanceButtons 
 
-        PadController.GetComponent<DanceScript>().ControlButtons();                                       //Control which Buttons appear
-
-        //Activate the required Arrows 
-        PadController.transform.position = this.transform.position;
+        DanceScriptRef.ControlButtons();                                       //Control which Buttons appear
+        PadController.transform.position = gameObject.transform.position;
     }
 
 
-    public void StartMove(Vector3 StartPosition, Vector3 TargetPosition)//, int Direction)
+    public void DanceUnlock()
     {
-        StartCoroutine(Movex(StartPosition, TargetPosition));
-    }
-
-    private IEnumerator Movex(Vector3 StartPosition, Vector3 TargetPosition)
-    {
-        float new_x = 0;
-        while (Mathf.Abs(transform.position.x - TargetPosition.x) > 0.01f)
-        {
-            new_x += Time.deltaTime;
-            transform.position = Vector3.Lerp(StartPosition, TargetPosition, Mathf.SmoothStep(0f,30f,new_x/3));
-            
-            yield return null;
-        }
-        
-        transform.position = TargetPosition;                                                                        //ensure the Object is at the right position in the end
-        PassTriggerActivate(1);
-        //add Animation transform.scale animation, requires another coroutine which playe
-
-        DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input
+        DMReference.UnlockbySequence(TargetList_ID, TargetObject_ID);
     }
 
 }

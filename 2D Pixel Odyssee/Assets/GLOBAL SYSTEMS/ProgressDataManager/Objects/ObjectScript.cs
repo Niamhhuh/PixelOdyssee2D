@@ -69,7 +69,7 @@ public class ObjectScript : MonoBehaviour
      public int ObjectList_ID;                                //ID which marks the List this Object is stored in          //used for UnlockMethods
      public int ObjectIndex;                                  //Index of this Object in its list                          //used for UnlockMethods
 
-    [HideInInspector] public DataManager DMReference = null;                   //Store the DataManager
+    public DataManager DMReference = null;                   //Store the DataManager
     [HideInInspector] public SequenceUnlock SeqUReference = null;              //Store the Sequence Unlock
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
@@ -239,7 +239,7 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (PointerScript.ClipboardActive == false && PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
-            if (DataManager.ToShove.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
+            if (DataManager.ToShove.Count < 1 && DataManager.ToDance.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
@@ -451,6 +451,7 @@ public class ObjectScript : MonoBehaviour
                 DMReference.MoveScript.EnableInput();
                 DMReference.MoveScript.EnableInteract();
                 InteractionController.SetActive(false);
+                print("Heeeey1");
             }
         }
     }
@@ -704,6 +705,18 @@ public class ObjectScript : MonoBehaviour
                 EventObjectRef = (EventSource)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 EventObjectRef.FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);       //Fetch new State from DataManager
                 break;
+            case 6:
+                ObjReference.ToggleSprites();
+                Triggerable TriggerObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                TriggerObjectRef = (Triggerable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                TriggerObjectRef.FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);       //Fetch new State from DataManager
+                break;
+            case 7:
+                ObjReference.ToggleSprites();
+                DancePad DancePadObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                DancePadObjectRef = (DancePad)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                DancePadObjectRef.FetchData(DataManager.DancePad_List[ObjectIndex].Stored_Lock_State, DataManager.DancePad_List[ObjectIndex].Stored_AlreadyTalked);       //Fetch new State from DataManager
+                break;
             default:
                 break;
         }
@@ -742,6 +755,18 @@ public class ObjectScript : MonoBehaviour
                 EventSource EventObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 EventObjectRef = (EventSource)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 EventObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 6:
+                ObjReference.ToggleSprites();
+                Triggerable TriggerObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                TriggerObjectRef = (Triggerable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                TriggerObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 7:
+                ObjReference.ToggleSprites();
+                DancePad DancePadObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                DancePadObjectRef = (DancePad)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                DancePadObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             default:
                 break;

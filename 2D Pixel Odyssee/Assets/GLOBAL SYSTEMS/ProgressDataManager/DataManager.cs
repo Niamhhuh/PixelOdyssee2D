@@ -627,7 +627,7 @@ public class DataManager : MonoBehaviour
                 Triggerable_List[UnlockObject_Index].Stored_Lock_State = false;
                 break;
             case 7:
-                DancePad_List[UnlockObject_Index].Stored_Lock_State = true;
+                DancePad_List[UnlockObject_Index].Stored_Lock_State = false;
                 break;
             default:
                 break;
