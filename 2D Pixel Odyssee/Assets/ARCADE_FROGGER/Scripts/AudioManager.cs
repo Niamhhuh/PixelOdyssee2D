@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private EventReference titelScreenTheme;
     [SerializeField] private EventReference gameSceneTheme;
     [SerializeField] private EventReference AstreoidsTheme;
+    [SerializeField] private EventReference FroggerTheme;
+    [SerializeField] private EventReference PainStationTheme;
+    [SerializeField] private EventReference StreetfighterTheme;
 
     private EventInstance currentThemeInstance;
 
@@ -29,7 +32,7 @@ public class AudioManager : MonoBehaviour
     {
         EventReference themeToPlay = default; // Default initialisierung
 
-        if (SceneManager.GetActiveScene().name == "z_Start Screen" || SceneManager.GetActiveScene().name == "ARC_Frogger" || SceneManager.GetActiveScene().name == "ARC_Painstation") 
+        if (SceneManager.GetActiveScene().name == "z_Start Screen")
         {
             themeToPlay = titelScreenTheme;
         }
@@ -41,6 +44,21 @@ public class AudioManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "ARC_Asteroids")
         {
             themeToPlay = AstreoidsTheme;
+        }
+
+        else if (SceneManager.GetActiveScene().name == "ARC_Frogger")
+        {
+            themeToPlay = FroggerTheme;
+        }
+
+        else if (SceneManager.GetActiveScene().name == "ARC_Painstation")
+        {
+            themeToPlay = PainStationTheme;
+        }
+
+        else if (SceneManager.GetActiveScene().name == "ARC_Streetfighter")
+        {
+            themeToPlay = StreetfighterTheme;
         }
 
         // Überprüfe, ob ein gültiges Theme gefunden wurde

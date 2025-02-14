@@ -1346,6 +1346,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304217111}
   m_CullTransparentMesh: 1
+--- !u!1 &348613957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348613960}
+  - component: {fileID: 348613959}
+  - component: {fileID: 348613958}
+  m_Layer: 0
+  m_Name: AudioManagerMusic
+  m_TagString: AudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &348613958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348613957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!114 &348613959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348613957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f78888d15a6a460993f087bc45e3e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titelScreenTheme:
+    Guid:
+      Data1: 250868438
+      Data2: 1339535541
+      Data3: -801345379
+      Data4: 1897745755
+    Path: event:/Music/Titelscreen Theme
+  gameSceneTheme:
+    Guid:
+      Data1: -1389875791
+      Data2: 1203534326
+      Data3: 825692847
+      Data4: -1145034477
+    Path: event:/Music/Depot Theme
+  AstreoidsTheme:
+    Guid:
+      Data1: 1146255690
+      Data2: 1222994704
+      Data3: 1904045990
+      Data4: 1284308782
+    Path: event:/Music/Astreoids
+  FroggerTheme:
+    Guid:
+      Data1: -1439314991
+      Data2: 1196627466
+      Data3: -1474377031
+      Data4: 1506244095
+    Path: event:/Music/FroggerThemeTest
+  PainStationTheme:
+    Guid:
+      Data1: -1489781801
+      Data2: 1222298555
+      Data3: 1880981634
+      Data4: 2114397857
+    Path: event:/Music/PainStationTheme
+  StreetfighterTheme:
+    Guid:
+      Data1: 2067936824
+      Data2: 1096135029
+      Data3: 94727817
+      Data4: -717476708
+    Path: event:/Music/StreetfighterTheme
+--- !u!4 &348613960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348613957}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.140054, y: 8.019884, z: -0.049488775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &365911354
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,45 +7518,465 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Path
-      value: event:/Depot Theme
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF1>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SF1
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Path
-      value: event:/Titelscreen Theme
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF2>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SF2
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data1
-      value: -1389875791
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF3>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SF3
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data2
-      value: 1203534326
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWin>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFWin
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data3
-      value: 825692847
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFFight>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFFight
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data4
-      value: -1145034477
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoose>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFLoose
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data1
-      value: 250868438
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound1>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFRound1
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data2
-      value: 1339535541
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound2>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFRound2
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data3
-      value: -801345379
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound3>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFRound3
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data4
-      value: 1897745755
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF1>k__BackingField.Guid.Data1
+      value: 2039961421
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF1>k__BackingField.Guid.Data2
+      value: 1174803239
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF1>k__BackingField.Guid.Data3
+      value: -1522128758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF1>k__BackingField.Guid.Data4
+      value: -336469229
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF2>k__BackingField.Guid.Data1
+      value: -727991493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF2>k__BackingField.Guid.Data2
+      value: 1173323910
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF2>k__BackingField.Guid.Data3
+      value: -1618887783
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF2>k__BackingField.Guid.Data4
+      value: 209314145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF3>k__BackingField.Guid.Data1
+      value: 2050563150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF3>k__BackingField.Guid.Data2
+      value: 1218736295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF3>k__BackingField.Guid.Data3
+      value: -1867579508
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SF3>k__BackingField.Guid.Data4
+      value: 254621837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer1>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFPlayer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer2>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowFail>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFArrowFail
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlow>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFArrowSlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFCountdown>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFCountdown
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWin>k__BackingField.Guid.Data1
+      value: 640391821
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWin>k__BackingField.Guid.Data2
+      value: 1208317312
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWin>k__BackingField.Guid.Data3
+      value: -514993230
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWin>k__BackingField.Guid.Data4
+      value: 1296462179
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRoundFinal>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFRoundFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer1>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFWinPlayer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer2>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFWinPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSwitch>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFArrowSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFFight>k__BackingField.Guid.Data1
+      value: -1052859436
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFFight>k__BackingField.Guid.Data2
+      value: 1182934320
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFFight>k__BackingField.Guid.Data3
+      value: -85035091
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFFight>k__BackingField.Guid.Data4
+      value: 422525083
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoose>k__BackingField.Guid.Data1
+      value: 1291865797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoose>k__BackingField.Guid.Data2
+      value: 1305557540
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoose>k__BackingField.Guid.Data3
+      value: -303912562
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoose>k__BackingField.Guid.Data4
+      value: 1395975777
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSuccess>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFArrowSuccess
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer1>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFLoosePlayer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer2>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFLoosePlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound1>k__BackingField.Guid.Data1
+      value: -1164323780
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound1>k__BackingField.Guid.Data2
+      value: 1308398843
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound1>k__BackingField.Guid.Data3
+      value: 959486645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound1>k__BackingField.Guid.Data4
+      value: 607202134
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound2>k__BackingField.Guid.Data1
+      value: 520066465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound2>k__BackingField.Guid.Data2
+      value: 1274581448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound2>k__BackingField.Guid.Data3
+      value: -1876186463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound2>k__BackingField.Guid.Data4
+      value: -1657998545
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound3>k__BackingField.Guid.Data1
+      value: -1266703283
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound3>k__BackingField.Guid.Data2
+      value: 1323361420
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound3>k__BackingField.Guid.Data3
+      value: 1871064485
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRound3>k__BackingField.Guid.Data4
+      value: 885247993
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer1>k__BackingField.Guid.Data1
+      value: -713745461
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer1>k__BackingField.Guid.Data2
+      value: 1224736453
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer1>k__BackingField.Guid.Data3
+      value: -1589688437
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer1>k__BackingField.Guid.Data4
+      value: -258153981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer2>k__BackingField.Guid.Data1
+      value: -1007938147
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer2>k__BackingField.Guid.Data2
+      value: 1125661840
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer2>k__BackingField.Guid.Data3
+      value: 202287535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPlayer2>k__BackingField.Guid.Data4
+      value: 2031615535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowFail>k__BackingField.Guid.Data1
+      value: 944510039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowFail>k__BackingField.Guid.Data2
+      value: 1307318963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowFail>k__BackingField.Guid.Data3
+      value: 1602925473
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowFail>k__BackingField.Guid.Data4
+      value: -1974872932
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlow>k__BackingField.Guid.Data1
+      value: -545983944
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlow>k__BackingField.Guid.Data2
+      value: 1311040916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlow>k__BackingField.Guid.Data3
+      value: 1842984371
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlow>k__BackingField.Guid.Data4
+      value: -2050737160
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFCountdown>k__BackingField.Guid.Data1
+      value: -1601635741
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFCountdown>k__BackingField.Guid.Data2
+      value: 1141529822
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFCountdown>k__BackingField.Guid.Data3
+      value: -1449735798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFCountdown>k__BackingField.Guid.Data4
+      value: -650104687
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPrepareYourself>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFPrepareYourself
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlowReverse>k__BackingField.Path
+      value: event:/Sfx/Streetfighter/SFArrowSlowReverse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRoundFinal>k__BackingField.Guid.Data1
+      value: -824807215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRoundFinal>k__BackingField.Guid.Data2
+      value: 1083107881
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRoundFinal>k__BackingField.Guid.Data3
+      value: -1425597031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFRoundFinal>k__BackingField.Guid.Data4
+      value: 1210233401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer1>k__BackingField.Guid.Data1
+      value: 951157661
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer1>k__BackingField.Guid.Data2
+      value: 1209765666
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer1>k__BackingField.Guid.Data3
+      value: 2138691234
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer1>k__BackingField.Guid.Data4
+      value: 448278107
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer2>k__BackingField.Guid.Data1
+      value: 1525571387
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer2>k__BackingField.Guid.Data2
+      value: 1218681264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer2>k__BackingField.Guid.Data3
+      value: 1676635829
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFWinPlayer2>k__BackingField.Guid.Data4
+      value: 1956921291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSwitch>k__BackingField.Guid.Data1
+      value: 1806606379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSwitch>k__BackingField.Guid.Data2
+      value: 1259386379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSwitch>k__BackingField.Guid.Data3
+      value: -1203765605
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSwitch>k__BackingField.Guid.Data4
+      value: 1335410001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSuccess>k__BackingField.Guid.Data1
+      value: 1955044005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSuccess>k__BackingField.Guid.Data2
+      value: 1163528709
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSuccess>k__BackingField.Guid.Data3
+      value: 946971058
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSuccess>k__BackingField.Guid.Data4
+      value: -53766184
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer1>k__BackingField.Guid.Data1
+      value: -732404423
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer1>k__BackingField.Guid.Data2
+      value: 1114600010
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer1>k__BackingField.Guid.Data3
+      value: 886828430
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer1>k__BackingField.Guid.Data4
+      value: -1836945124
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer2>k__BackingField.Guid.Data1
+      value: -1012397157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer2>k__BackingField.Guid.Data2
+      value: 1186770435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer2>k__BackingField.Guid.Data3
+      value: 1205689502
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFLoosePlayer2>k__BackingField.Guid.Data4
+      value: 824198936
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPrepareYourself>k__BackingField.Guid.Data1
+      value: 20777846
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPrepareYourself>k__BackingField.Guid.Data2
+      value: 1311036825
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPrepareYourself>k__BackingField.Guid.Data3
+      value: -1369978189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFPrepareYourself>k__BackingField.Guid.Data4
+      value: 16223563
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlowReverse>k__BackingField.Guid.Data1
+      value: 302062315
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlowReverse>k__BackingField.Guid.Data2
+      value: 1298696653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlowReverse>k__BackingField.Guid.Data3
+      value: 526626464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <SFArrowSlowReverse>k__BackingField.Guid.Data4
+      value: -2002146210
       objectReference: {fileID: 0}
     - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8603,3 +9124,4 @@ SceneRoots:
   - {fileID: 562655741}
   - {fileID: 1491044419}
   - {fileID: 1270958630}
+  - {fileID: 348613960}
