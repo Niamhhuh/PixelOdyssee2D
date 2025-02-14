@@ -401,8 +401,8 @@ public class DataManager : MonoBehaviour
     }
     public void EditDancePadObj(int ObjectIndex, bool newLock_State, bool newAlreadyTalked)
     {
-        Triggerable_List[ObjectIndex].Stored_Lock_State = newLock_State;
-        Triggerable_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
+        DancePad_List[ObjectIndex].Stored_Lock_State = newLock_State;
+        DancePad_List[ObjectIndex].Stored_AlreadyTalked = newAlreadyTalked;
     }
 
     public void EditDraggableObj(int ObjectIndex, int newSlot)

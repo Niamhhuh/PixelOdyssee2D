@@ -30,7 +30,7 @@ public class DancePad : ObjectScript
 
 
         PadController = GameObject.FindGameObjectWithTag("DanceControl");
-        //DanceScriptRef = GameObject.FindGameObjectWithTag("DanceControl").GetComponent<DanceScript>();
+        DanceScriptRef = GameObject.FindGameObjectWithTag("DanceControl").GetComponent<DanceScript>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -137,12 +137,21 @@ public class DancePad : ObjectScript
 
         DanceScriptRef.ControlButtons();                                       //Control which Buttons appear
         PadController.transform.position = gameObject.transform.position;
+        DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1, PadController.transform.position.y + 2, PadController.transform.position.z);
     }
 
 
     public void DanceUnlock()
     {
-        DMReference.UnlockbySequence(TargetList_ID, TargetObject_ID);
+        if (TargetList_ID > 1)
+        {
+            DMReference.UnlockbySequence(TargetList_ID, TargetObject_ID);
+        }
+
+        if(TargetList_ID == 1)
+        {
+            DMReference.ActivateReward(TargetObject_ID);
+        }
     }
 
 }

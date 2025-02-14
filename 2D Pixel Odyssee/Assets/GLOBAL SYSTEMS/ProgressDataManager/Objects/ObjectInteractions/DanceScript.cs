@@ -11,7 +11,7 @@ public class DanceScript : MonoBehaviour
 
     GameObject DanceController;
 
-    GameObject DanceDisplay;
+    public GameObject DanceDisplay;
 
     GameObject DisplayArrow1;
     GameObject DisplayArrow2;
@@ -19,12 +19,16 @@ public class DanceScript : MonoBehaviour
     GameObject DisplayArrow4;
     GameObject DisplayArrow5;
 
+    DataManager DMReference;
+
 
     public List<int> DanceQueue = new List<int>();
     public GameObject[] DisplayArrows = new GameObject[5];
 
     private void Start()
     {
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
+
         TopButton = GameObject.FindGameObjectWithTag("DanceButtonTop");
         BottomButton = GameObject.FindGameObjectWithTag("DanceButtonBottom");
         LeftButton = GameObject.FindGameObjectWithTag("DanceButtonLeft");
@@ -55,6 +59,8 @@ public class DanceScript : MonoBehaviour
         TopButton.SetActive(true);
         BottomButton.SetActive(true);
         DanceDisplay.SetActive(true);
+
+        //DanceDisplay.transform.position = new Vector3(DanceController.transform.position.x, DanceController.transform.position.y, DanceController.transform.position.z);
 
         foreach (GameObject Arrow in DisplayArrows)
         {
@@ -133,10 +139,13 @@ public class DanceScript : MonoBehaviour
     public void CheckCompletedInput()           //Go through ConditionList of DancePad 
     {
         bool mismatch = false;
+        int i = 0;
 
         foreach (int Input in DataManager.ToDance[0].TargetInput)
         {
-            int i = 0;
+            print(DataManager.ToDance[0]);
+            print("Target:" + Input + "Input:" + DanceQueue[i] + "i:" + i);
+            
             if (Input != DanceQueue[i])
             {
                 mismatch = true;
@@ -149,12 +158,14 @@ public class DanceScript : MonoBehaviour
         {
             //CORRECT INPUT
             DataManager.ToDance[0].DanceUnlock();
+            print("Matched");
             StartCoroutine(TrueInput());
         }
 
         if (mismatch)
         {
             //WRONG INPUT
+            print("Mismatched");
             StartCoroutine(WrongInput());
         }
     }
@@ -179,6 +190,8 @@ public class DanceScript : MonoBehaviour
             DataManager.ToDance.RemoveAt(0);                                                            //Remove it
         }
 
+        DMReference.MoveScript.EnableInput();
+        DMReference.MoveScript.EnableInteract();
         DanceController.SetActive(false);                          //Deactivate the Dance Arrows
     }
 
