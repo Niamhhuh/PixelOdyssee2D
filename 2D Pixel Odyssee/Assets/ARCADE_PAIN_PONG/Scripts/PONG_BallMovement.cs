@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using FMOD.Studio;
-using FMODUnity;
 
 public class BallMovement : MonoBehaviour
 {
@@ -55,20 +53,11 @@ public class BallMovement : MonoBehaviour
 
     private bool Scored = false;
 
-    private EventInstance PSBallBounce; //ganz viele Sounds kommen jetzt hier her
-    private EventInstance PSElectric;
-    private EventInstance PSFire;
-    private EventInstance PSWhip;
-    private EventInstance PSWin;
-    private EventInstance PSLoose;
-
-    private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
-
     //White Screen for Elektro Strafe
     /*private GameObject whitescreen_big;
     private Image whitescreen;
     private float fadeDuration;*/
-
+    
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
 
@@ -108,15 +97,6 @@ public class BallMovement : MonoBehaviour
         HealthSquare3Silver.SetActive(true);
 
         Riss1.SetActive(false);
-
-        PSBallBounce = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSBallBounce); //Sound
-        PSElectric = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSElectric);
-        PSFire = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSFire);
-        PSWhip = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWhip);
-        PSWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWin);
-        PSLoose = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSLoose);
-
-        script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
 
         /*whitescreen_big = GameObject.Find("C_whitescreen");             //fade out stuff
         whitescreen = whitescreen_big.GetComponent<Image>();            //fade out stuff
@@ -169,7 +149,6 @@ public class BallMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "AI") {
             PlayerBounce(collision.transform);
-            PSBallBounce.start(); //Sound
 
         }
     }
@@ -193,8 +172,6 @@ public class BallMovement : MonoBehaviour
             RahmenDefault.SetActive(false);
             ActivateStrafeIcon();
 
-            PSElectric.start(); //Sound
-
             // Toggle reversed controls
             if (playerMovement != null)
             {
@@ -215,8 +192,6 @@ public class BallMovement : MonoBehaviour
             HintergrundFeuerAI.SetActive(true);
             HintergrundElektroAI.SetActive(false);
             HintergrundPeitscheAI.SetActive(false);
-
-            PSElectric.start(); //Sound
         }
 
         if (col.gameObject.CompareTag("StrafboxFeuer"))
@@ -233,8 +208,6 @@ public class BallMovement : MonoBehaviour
             RahmenDefault.SetActive(false);
             ActivateStrafeIcon();
 
-            PSFire.start(); //Sound
-
             // Increase player speed
             if (playerMovement != null)
             {
@@ -249,8 +222,6 @@ public class BallMovement : MonoBehaviour
             RahmenElektroAI.SetActive(false);
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
-
-            PSFire.start(); //Sound
         }
 
         if (col.gameObject.CompareTag("StrafboxPeitsche"))
@@ -266,8 +237,6 @@ public class BallMovement : MonoBehaviour
             RahmenFeuer.SetActive(false);
             RahmenDefault.SetActive(false);
             ActivateStrafeIcon();
-
-            PSWhip.start(); //Sound
 
             Riss1.SetActive(true);
             //whitescreen_big.SetActive(true);
@@ -286,8 +255,6 @@ public class BallMovement : MonoBehaviour
             RahmenElektroAI.SetActive(false);
             RahmenFeuerAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
-
-            PSWhip.start(); //Sound
         }
 
 
@@ -348,16 +315,10 @@ public class BallMovement : MonoBehaviour
             if(plScore == 3) 
             {
                 winPanel.SetActive(true);
-
-                script_AudioManager.StopCurrentTheme(); //Musik stoppen
-                PSWin.start(); //Sound
                 
             }
             else if(aiScore == 3) {
                 losePanel.SetActive(true);
-
-                script_AudioManager.StopCurrentTheme(); //Musik stoppen
-                PSLoose.start(); //Sound
                 
             }
         }

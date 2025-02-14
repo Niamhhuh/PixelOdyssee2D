@@ -34,7 +34,7 @@ public class AudioManager_Startscreen : MonoBehaviour
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-        //InitializeTitlescreenMusic(Fmod_Events.instance.TitlescreenMusic);
+        InitializeTitlescreenMusic(Fmod_Events.instance.TitlescreenMusic);
 
     }
 
