@@ -359,6 +359,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -796,6 +798,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1775,6 +1779,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1949,6 +1955,7 @@ GameObject:
   - component: {fileID: 965315038}
   - component: {fileID: 965315037}
   - component: {fileID: 965315039}
+  - component: {fileID: 965315040}
   m_Layer: 0
   m_Name: Erstes Video Spiel
   m_TagString: Untagged
@@ -2043,6 +2050,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2080,6 +2089,51 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!61 &965315040
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965315036}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.52, y: 6.4}
+    newSize: {x: 7.52, y: 6.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.52, y: 6.4}
+  m_EdgeRadius: 0
 --- !u!1 &1006281333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,6 +2632,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3012,6 +3068,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3186,6 +3244,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4188,6 +4248,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4601,6 +4663,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4965,6 +5029,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5458,6 +5524,8 @@ MonoBehaviour:
   TriggeronUnlock: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 21300000, guid: 1150eb97edb17a74cbdbef33b1985354, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 1c6edac75022dc84a85b413e9c625b53, type: 3}
   ObjectSprite: {fileID: 0}

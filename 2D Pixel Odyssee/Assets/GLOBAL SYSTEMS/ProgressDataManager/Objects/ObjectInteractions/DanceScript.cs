@@ -147,9 +147,6 @@ public class DanceScript : MonoBehaviour
 
         foreach (int Input in DataManager.ToDance[0].TargetInput)
         {
-            print(DataManager.ToDance[0]);
-            print("Target:" + Input + "Input:" + DanceQueue[i] + "i:" + i);
-            
             if (Input != DanceQueue[i])
             {
                 mismatch = true;
@@ -162,7 +159,7 @@ public class DanceScript : MonoBehaviour
         {
             //CORRECT INPUT
             DataManager.ToDance[0].DanceUnlock();
-            print("Matched");
+
             StartCoroutine(TrueInput());
             StartCoroutine(ExpandAndContract());
         }
@@ -170,14 +167,13 @@ public class DanceScript : MonoBehaviour
         if (mismatch)
         {
             //WRONG INPUT
-            print("Mismatched");
+
             StartCoroutine(WrongInput());
         }
     }
 
     public void EndDance()
     {
-        print("Stop!!!!");
         foreach (GameObject Arrow in DisplayArrows)
         {
             Arrow.transform.rotation = Quaternion.Euler(0, 0, 90);

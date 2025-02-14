@@ -14,7 +14,6 @@ public class GoalListScript : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         ScrollScript = GameObject.FindGameObjectWithTag("ScrollControll").GetComponent<GoalScroll>();
         ScrollScript.GoalListContainer = GameObject.FindGameObjectWithTag("GoalListContainer");                          //Find the List of Goals in Scroll Script -> this is set here, to prevent load error!
-        print(ScrollScript);
         GoalListObj.SetActive(false);
     }
 

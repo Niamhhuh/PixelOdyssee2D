@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class ObjectScript : MonoBehaviour
 {
     //Generic Object Variables ------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public string Object_Sound;
+
+    public FMOD.Studio.EventInstance soundInstance;
+
+
     public int ID;				                                                    //ID of the Object, required to find it in the list
     public bool AlreadyTalked;
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
@@ -16,6 +23,8 @@ public class ObjectScript : MonoBehaviour
     public int Item_Key_ID;                                                         //ID of the Key
     public bool ChangeNameonLock;
     public string LockName;
+
+    
 
     //public(Dialogue)			                                                    //Dialogue of this object
 
@@ -451,7 +460,6 @@ public class ObjectScript : MonoBehaviour
                 DMReference.MoveScript.EnableInput();
                 DMReference.MoveScript.EnableInteract();
                 InteractionController.SetActive(false);
-                print("Heeeey1");
             }
         }
     }
@@ -467,7 +475,6 @@ public class ObjectScript : MonoBehaviour
     {
         if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use SwitchUnlock
         {
-            print("11111111");
             //print("I'm called2");
             SwitchStateUnlock IUReference = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
             IUReference = (SwitchStateUnlock)UnSReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
@@ -475,7 +482,6 @@ public class ObjectScript : MonoBehaviour
         }
         if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
         {
-            print("222222");
             ShovableUnlock IUReference = null;                                                          //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
             IUReference = (ShovableUnlock)UnSReference;                                                 //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
             IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Call Shovable Unlock Initiator in Shovable Unlock Script, pass this Object's List and Index
