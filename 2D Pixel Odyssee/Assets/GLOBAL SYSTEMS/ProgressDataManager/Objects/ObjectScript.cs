@@ -122,6 +122,11 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Awake()
     {
+        if(Object_Sound != null)
+        {
+            soundInstance = FMODUnity.RuntimeManager.CreateInstance(Object_Sound);
+        }
+        
         ObjectSize = gameObject.transform.localScale;
         CoreObject = this.gameObject;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
