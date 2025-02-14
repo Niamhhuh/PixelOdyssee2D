@@ -1,4 +1,3 @@
-using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +20,6 @@ public class NoteObject : MonoBehaviour
 
     public bool round2;
 
-    private EventInstance SFArrowSwitch; //Sound
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +28,6 @@ public class NoteObject : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         canBePressed = false;
         hasBeenHit = false;
-
-        SFArrowSwitch = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFArrowSwitch); //Sound
     }
     // Update is called once per frame
     void Update()
@@ -76,9 +71,6 @@ public class NoteObject : MonoBehaviour
     }
 
     void RandomizeArrow(){
-        
-        SFArrowSwitch.start(); //Sound
-
         silverAnimator.SetTrigger("SnappingFingers");
         int randomIndex = Random.Range(0, arrowSprites.Count);
         spriteRenderer.sprite = arrowSprites[randomIndex];

@@ -59,11 +59,6 @@ public class AudioManager : MonoBehaviour
             themeToPlay = PainStationTheme;
         }
 
-        else if (SceneManager.GetActiveScene().name == "ARC_Streetfighter")
-        {
-            themeToPlay = StreetfighterTheme;
-        }
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         // Überprüfe, ob ein gültiges Theme gefunden wurde

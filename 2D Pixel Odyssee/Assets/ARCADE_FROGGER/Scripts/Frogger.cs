@@ -2,8 +2,6 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
-using FMOD.Studio;
-using FMODUnity;
 
 public class Frogger : MonoBehaviour
 
@@ -16,19 +14,12 @@ public class Frogger : MonoBehaviour
     private float farthestRow;
     public bool noMove;
     SoundManager soundManager;
-
-    private EventInstance FrJump; //ganz viele Sounds kommen jetzt hier her
-    private EventInstance FrDeath;
-
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-        noMove = false;
-
-        FrJump = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrJump); //Sound
-        FrDeath = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrDeath);
+        noMove = false; 
     }
     public float scrollSpeed = 3.0f;
     private void Update()
@@ -108,8 +99,6 @@ public class Frogger : MonoBehaviour
 
     private IEnumerator Leap(Vector3 destination)
     {
-        FrJump.start(); //Sound
-
         Vector3 StartPosition = transform.position;
         
         float elapsed = 0f;
@@ -142,9 +131,6 @@ public class Frogger : MonoBehaviour
         //Invoke(nameof(Respawn), 1f);
         
         FindAnyObjectByType<GameManager1>().Died();
-
-        FrDeath.start(); //Sound
-
     }
 
     public void Respawn()

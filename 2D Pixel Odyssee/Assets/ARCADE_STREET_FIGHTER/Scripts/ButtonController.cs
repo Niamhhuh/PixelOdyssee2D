@@ -1,4 +1,3 @@
-using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,15 +9,11 @@ public class ButtonController : MonoBehaviour
 	public Sprite defaultImage;
 	public Sprite pressedImage;
 
-    private EventInstance ButtonClick; //ganz viele Sounds kommen jetzt hier her
-
     // Start is called before the first frame update
     void Start()
     {
     	theSR = GetComponent<SpriteRenderer>();
-
-        ButtonClick = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFButtonClick); //Sound
-
+        
     }
 
     // Update is called once per frame
@@ -26,8 +21,6 @@ public class ButtonController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)){
         	theSR.sprite = pressedImage;
-
-            ButtonClick.start(); //Sound
         }
 
         if(Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)){

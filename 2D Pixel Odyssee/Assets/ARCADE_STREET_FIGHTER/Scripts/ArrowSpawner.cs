@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using FMOD.Studio;
 
 public class ArrowSpawner : MonoBehaviour
 {
@@ -40,13 +39,9 @@ public class ArrowSpawner : MonoBehaviour
     //public GameObject SilverHp1;
     //public GameObject SilverHp2;
 
-    private EventInstance SFCountdown; //Sound
-
 
     void Awake(){
         animator = GameObject.Find("Round1").GetComponent<TriggerAnimation>();
-
-        SFCountdown = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFCountdown); //Sound
     }
     void Update()
     {
@@ -134,9 +129,6 @@ public class ArrowSpawner : MonoBehaviour
 
     private IEnumerator ShowRoundPopup(){
     	animator.PlayScaleAnimationRound2();
-
-        SFCountdown.start(); //Sound
-
     	yield return new WaitForSeconds(2f);
     }
 }
