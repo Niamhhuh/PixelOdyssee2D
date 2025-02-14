@@ -157,8 +157,6 @@ public class Asteroid_GameManager : MonoBehaviour
         winCanvas.SetActive(false);
         loseCanvas.SetActive(false);
         scoreCanvas.SetActive(true);
-
-        script_AudioManager.PlayThemeForCurrentScene(); //Musik wieder starten
     }
 
     public void QuitGame()

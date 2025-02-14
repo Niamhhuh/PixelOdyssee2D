@@ -3504,6 +3504,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897095678}
   m_CullTransparentMesh: 1
+--- !u!1 &1001886645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001886648}
+  - component: {fileID: 1001886647}
+  - component: {fileID: 1001886646}
+  m_Layer: 0
+  m_Name: AudioManagerMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1001886646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001886645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!114 &1001886647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001886645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f78888d15a6a460993f087bc45e3e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titelScreenTheme:
+    Guid:
+      Data1: 250868438
+      Data2: 1339535541
+      Data3: -801345379
+      Data4: 1897745755
+    Path: event:/Music/Titelscreen Theme
+  gameSceneTheme:
+    Guid:
+      Data1: -1389875791
+      Data2: 1203534326
+      Data3: 825692847
+      Data4: -1145034477
+    Path: event:/Music/Depot Theme
+  AstreoidsTheme:
+    Guid:
+      Data1: 1146255690
+      Data2: 1222994704
+      Data3: 1904045990
+      Data4: 1284308782
+    Path: event:/Music/Astreoids
+  FroggerTheme:
+    Guid:
+      Data1: 2036235818
+      Data2: 1334686043
+      Data3: -1821111882
+      Data4: -761539355
+    Path: event:/Music/FroggerThemePlaceholder
+  PainStationTheme:
+    Guid:
+      Data1: 1146255690
+      Data2: 1222994704
+      Data3: 1904045990
+      Data4: 1284308782
+    Path: event:/Music/Astreoids
+  StreetfighterTheme:
+    Guid:
+      Data1: -75514013
+      Data2: 1122193652
+      Data3: -1961847125
+      Data4: -1122212595
+    Path: event:/Music/StreetfighterTheme
+--- !u!4 &1001886648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001886645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.140054, y: 8.019884, z: -0.049488775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004436202
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,6 +7518,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSFire>k__BackingField.Path
+      value: event:/Sfx/PainStation/PSFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSElectric>k__BackingField.Path
+      value: event:/Sfx/PainStation/PSElectric
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSBallBounce>k__BackingField.Path
+      value: event:/Sfx/PainStation/PSBallBounce
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSFire>k__BackingField.Guid.Data1
+      value: -591447604
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSFire>k__BackingField.Guid.Data2
+      value: 1325720733
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSFire>k__BackingField.Guid.Data3
+      value: 1688170660
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSFire>k__BackingField.Guid.Data4
+      value: 1158937982
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSElectric>k__BackingField.Guid.Data1
+      value: -1385525297
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSElectric>k__BackingField.Guid.Data2
+      value: 1147094975
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSElectric>k__BackingField.Guid.Data3
+      value: -1171719294
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSElectric>k__BackingField.Guid.Data4
+      value: 296943256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSBallBounce>k__BackingField.Guid.Data1
+      value: 1261862144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSBallBounce>k__BackingField.Guid.Data2
+      value: 1280025624
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSBallBounce>k__BackingField.Guid.Data3
+      value: 488601224
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920062696815191937, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: <PSBallBounce>k__BackingField.Guid.Data4
+      value: 663658680
+      objectReference: {fileID: 0}
     - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
       propertyPath: gameSceneTheme.Path
       value: event:/Depot Theme
@@ -8603,3 +8764,4 @@ SceneRoots:
   - {fileID: 562655741}
   - {fileID: 1491044419}
   - {fileID: 1270958630}
+  - {fileID: 1001886648}
