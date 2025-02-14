@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DanceScript : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DanceScript : MonoBehaviour
 
     DataManager DMReference;
 
+    Vector3 ArrowSize;
 
     public List<int> DanceQueue = new List<int>();
     public GameObject[] DisplayArrows = new GameObject[5];
@@ -64,7 +66,9 @@ public class DanceScript : MonoBehaviour
 
         foreach (GameObject Arrow in DisplayArrows)
         {
+            Arrow.GetComponent<Image>().color = Color.white;
             Arrow.SetActive(false);
+            ArrowSize = Arrow.transform.localScale;
         }
     }
 
@@ -160,6 +164,7 @@ public class DanceScript : MonoBehaviour
             DataManager.ToDance[0].DanceUnlock();
             print("Matched");
             StartCoroutine(TrueInput());
+            StartCoroutine(ExpandAndContract());
         }
 
         if (mismatch)
@@ -170,13 +175,9 @@ public class DanceScript : MonoBehaviour
         }
     }
 
-    public void Test()
-    {
-        print("12345");
-    }
-
     public void EndDance()
     {
+        print("Stop!!!!");
         foreach (GameObject Arrow in DisplayArrows)
         {
             Arrow.transform.rotation = Quaternion.Euler(0, 0, 90);
@@ -200,32 +201,92 @@ public class DanceScript : MonoBehaviour
     //Flash Red for Drag Unlock Fail
     public IEnumerator WrongInput()
     {
+
         float elapsedTime = 0f;
         while (elapsedTime < 1)
         {
-            //ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
-            //HighlightObjectSprite.color = Color.Lerp(Color.red, originalHighlightColor, elapsedTime / 1);
+            foreach (GameObject Arrow in DisplayArrows)
+            {
+                Arrow.GetComponent<Image>().color = Color.Lerp(Color.red, Color.white, elapsedTime / 1);
+                //Arrow.SetActive(false);
+            }
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         EndDance();
-        //ObjectSprite.color = originalColor;
-        //HighlightObjectSprite.color = originalHighlightColor;
     }
-
 
     public IEnumerator TrueInput()
     {
         float elapsedTime = 0f;
+
+
         while (elapsedTime < 1)
         {
-            //ObjectSprite.color = Color.Lerp(Color.red, originalColor, elapsedTime / 1);
-            //HighlightObjectSprite.color = Color.Lerp(Color.red, originalHighlightColor, elapsedTime / 1);
+            foreach (GameObject Arrow in DisplayArrows)
+            {
+                Arrow.GetComponent<Image>().color = Color.Lerp(Color.blue, Color.white, elapsedTime / 1);
+                //Arrow.SetActive(false);
+            }
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         EndDance();
-        //ObjectSprite.color = originalColor;
-        //HighlightObjectSprite.color = originalHighlightColor;
     }
+
+
+    private IEnumerator ExpandAndContract()
+    {
+
+        float ExpandDuration = 0.08f; // Duration for the expansion and contraction
+        float ContractDuration = 0.15f; // Duration for the expansion and contraction
+
+        Vector3 ExpandSize = ArrowSize * 1.3f;
+
+        float timeElapsed = 0f;
+
+        while (timeElapsed < ExpandDuration)
+        {
+            foreach (GameObject Arrow in DisplayArrows)
+            {
+                Arrow.transform.localScale = Vector3.Lerp(ArrowSize, ExpandSize, timeElapsed / ExpandDuration);
+            }
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        foreach (GameObject Arrow in DisplayArrows)
+        {
+            Arrow.transform.localScale = ExpandSize; // Ensure it reaches the exact target scale
+        }
+        timeElapsed = 0f;
+        while (timeElapsed < ContractDuration)
+        {
+            foreach (GameObject Arrow in DisplayArrows)
+            {
+                Arrow.transform.localScale = Vector3.Lerp(ExpandSize, ArrowSize, timeElapsed / ContractDuration);
+            }
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        foreach (GameObject Arrow in DisplayArrows)
+        {
+            Arrow.transform.localScale = ArrowSize;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
