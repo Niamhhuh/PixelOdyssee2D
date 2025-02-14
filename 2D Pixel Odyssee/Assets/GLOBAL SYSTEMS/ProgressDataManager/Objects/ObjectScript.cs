@@ -1,19 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMOD.Studio;
-using FMODUnity;
 
 public class ObjectScript : MonoBehaviour
 {
     //Generic Object Variables ------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public string Object_Sound;
-
-    public FMOD.Studio.EventInstance soundInstance;
-
-
     public int ID;				                                                    //ID of the Object, required to find it in the list
     public bool AlreadyTalked;
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
@@ -122,11 +115,6 @@ public class ObjectScript : MonoBehaviour
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     private void Awake()
     {
-        if(Object_Sound != null)
-        {
-            soundInstance = FMODUnity.RuntimeManager.CreateInstance(Object_Sound);
-        }
-        
         ObjectSize = gameObject.transform.localScale;
         CoreObject = this.gameObject;
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager

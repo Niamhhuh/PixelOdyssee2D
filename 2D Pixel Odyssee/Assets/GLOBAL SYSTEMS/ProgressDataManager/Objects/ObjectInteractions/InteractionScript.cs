@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 public class InteractionScript : MonoBehaviour
 {
     private UiToMouse PointerScript;
@@ -55,7 +56,6 @@ public class InteractionScript : MonoBehaviour
 
         public void TriggerInteraction ()
     {
-        DataManager.ToInteract[0].soundInstance.start();
         animator.SetTrigger("interact");
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
