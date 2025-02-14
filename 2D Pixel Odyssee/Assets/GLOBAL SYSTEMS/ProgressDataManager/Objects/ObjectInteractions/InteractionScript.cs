@@ -10,6 +10,7 @@ public class InteractionScript : MonoBehaviour
     [HideInInspector] public AdvancedDialogueManager advancedDialogueManager;
 
     GameObject TempObject;
+    public Animator animator;
 
     private void Start()
     {
@@ -54,6 +55,7 @@ public class InteractionScript : MonoBehaviour
 
         public void TriggerInteraction ()
     {
+        animator.SetTrigger("interact");
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
@@ -95,6 +97,6 @@ public class InteractionScript : MonoBehaviour
                 DancePadReference = (DancePad)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
                 DancePadReference.Call_Interact();                                                      //Call EventSource.Call_Interact
                 break;
-        }
+        }   
     }
 }

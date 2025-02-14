@@ -1598,6 +1598,7 @@ GameObject:
   - component: {fileID: 840757994}
   - component: {fileID: 840757996}
   - component: {fileID: 840757995}
+  - component: {fileID: 840757997}
   m_Layer: 5
   m_Name: VS Screen
   m_TagString: Untagged
@@ -1612,7 +1613,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840757993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1662,6 +1663,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840757993}
   m_CullTransparentMesh: 1
+--- !u!225 &840757997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840757993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &919214207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3285,8 @@ MonoBehaviour:
   SilverHp2: {fileID: 814614709}
   Miss: {fileID: 201101633}
   Hit: {fileID: 2078274138}
+  canvasGroup: {fileID: 840757997}
+  fadeDuration: 1
   allowInput: 1
 --- !u!4 &1850559475
 Transform:

@@ -15,6 +15,8 @@ public class GameManager_Street : MonoBehaviour
 
 	public BeatScroller theBS;
 
+    //public UIFade UIFade;
+
 	public static GameManager_Street instance;
 
     public Animator rosieAnimator;
@@ -57,6 +59,10 @@ public class GameManager_Street : MonoBehaviour
 
     public GameObject Hit;
 
+    public CanvasGroup canvasGroup;
+
+    public float fadeDuration = 1f;
+
     public bool allowInput = true;
     // Start is called before the first frame update
     void Awake(){
@@ -87,16 +93,37 @@ public class GameManager_Street : MonoBehaviour
     }
     private IEnumerator VS(){
 
-        VSScreen.SetActive(true);
+        
         gameOverMenuStreet.SetActive(false);
         gameStartStreet.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        StartCoroutine(FadeInOut());
+        VSScreen.SetActive(true);
+        yield return new WaitForSeconds(2f); 
         NewGame();
+    }
+
+    IEnumerator FadeInOut()
+    {
+        yield return Fade(0, 1); // Fade In
+        yield return new WaitForSeconds(1f);
+        yield return Fade(1, 0); // Fade Out
+    }
+
+    IEnumerator Fade(float startAlpha, float endAlpha)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / fadeDuration);
+            yield return null;
+        }
+        canvasGroup.alpha = endAlpha;
     }
     private void NewGame()
     {   
         
-        VSScreen.SetActive(false);
+        //VSScreen.SetActive(false);
         restart = false;
         animator.PlayScaleAnimationRound1();
         print(animator);
