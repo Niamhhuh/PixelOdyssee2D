@@ -16,7 +16,7 @@ public class Fmod_Events : MonoBehaviour
         instance = this;
     }
 
-    //all music 
+    //all music --> wird nicht verwendet, weil es ein extra Skript für Musik gibt mit dem Namen "AudioManager"
     [field: Header ("Titlescreen Music")]
     [field: SerializeField] public EventReference TitlescreenMusic {  get; private set; }
     [field: SerializeField] public EventReference DepotMusic { get; private set; }
@@ -29,4 +29,13 @@ public class Fmod_Events : MonoBehaviour
 
     [field: Header("Sfx HubWorld")]
     [field: SerializeField] public EventReference InventoryItem { get; private set; }
+
+    [field: Header("Sfx Asteroids")]
+    [field: SerializeField] public EventReference AstShot { get; private set; }
+    [field: SerializeField] public EventReference AstHitAsteroid { get; private set; }
+    [field: SerializeField] public EventReference AstHitPlayer { get; private set; }
+    [field: SerializeField] public EventReference AstTeleport { get; private set; }
+    [field: SerializeField] public EventReference AstBoost { get; private set; }
+    [field: SerializeField] public EventReference AstWin { get; private set; }
+    [field: SerializeField] public EventReference AstGameOver { get; private set; }
 }

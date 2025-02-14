@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using FMOD.Studio;
+using FMODUnity;
 
 public class Asteroid_Player : MonoBehaviour
 {
@@ -20,6 +22,11 @@ public class Asteroid_Player : MonoBehaviour
     private float panicTeleportCooldown = 20.0f; // Cooldown in seconds
     private float currentCooldownTime = 0.0f; // Time remaining for cooldown
 
+    private EventInstance AstShot; //ganz viele Sounds kommen jetzt hier her
+    private EventInstance AstTeleport;
+    private EventInstance AstBoost;
+    private EventInstance AstHitPlayer;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -32,6 +39,13 @@ public class Asteroid_Player : MonoBehaviour
         boundaryBottom = GameObject.Find("BoundaryBottom").transform;
         boundaryLeft = GameObject.Find("BoundaryLeft").transform;
         boundaryRight = GameObject.Find("BoundaryRight").transform;
+
+        AstShot = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstShot); //Sound
+        AstTeleport = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstTeleport);
+        AstBoost = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstBoost);
+        AstHitPlayer = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstHitPlayer);
+
+
 
         UpdatePanicTeleportText();
     }
@@ -52,6 +66,7 @@ public class Asteroid_Player : MonoBehaviour
         else
         {
             _turnDirection = 0.0f;
+            AstBoost.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //SoundStop
         }
 
         // Handle shooting
@@ -64,6 +79,7 @@ public class Asteroid_Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && currentCooldownTime <= 0.0f)
         {
             PanicTeleport();
+            AstTeleport.start(); //Sound
         }
 
         // Update cooldown timer
@@ -80,6 +96,7 @@ public class Asteroid_Player : MonoBehaviour
         if (_thrusting)
         {
             _rigidbody.AddForce(transform.up * thrustSpeed);
+            AstBoost.start();
         }
 
         // Apply rotation
@@ -93,6 +110,7 @@ public class Asteroid_Player : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         bullet.Project(transform.up);
+        AstShot.start(); //Sound
     }
 
     private void PanicTeleport()
@@ -170,6 +188,8 @@ public class Asteroid_Player : MonoBehaviour
             gameObject.SetActive(false);
 
             FindObjectOfType<Asteroid_GameManager>().PlayerDied();
+            AstHitPlayer.start(); //Sound
+            AstBoost.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //SoundStop
         }
     }
 }
