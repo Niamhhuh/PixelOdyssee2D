@@ -70,6 +70,8 @@ public class Fmod_Events : MonoBehaviour
     [field: SerializeField] public EventReference SFArrowSwitch { get; private set; }
     [field: SerializeField] public EventReference SFPlayer1 { get; private set; }
     [field: SerializeField] public EventReference SFPlayer2 { get; private set; }
+    [field: SerializeField] public EventReference SFLoose { get; private set; }
+    [field: SerializeField] public EventReference SFWin { get; private set; }
     [field: SerializeField] public EventReference SFLoosePlayer1 { get; private set; }
     [field: SerializeField] public EventReference SFLoosePlayer2 { get; private set; }
     [field: SerializeField] public EventReference SFWinPlayer1 { get; private set; }
@@ -78,5 +80,11 @@ public class Fmod_Events : MonoBehaviour
     [field: SerializeField] public EventReference SFRound1 { get; private set; }
     [field: SerializeField] public EventReference SFRound2 { get; private set; }
     [field: SerializeField] public EventReference SFRound3 { get; private set; }
+    [field: SerializeField] public EventReference SF3 { get; private set; }
+    [field: SerializeField] public EventReference SF2 { get; private set; }
+    [field: SerializeField] public EventReference SF1 { get; private set; }
+    [field: SerializeField] public EventReference SFFight { get; private set; }
+    [field: SerializeField] public EventReference SFCountdown { get; private set; }
     [field: SerializeField] public EventReference SFRoundFinal { get; private set; }
+    [field: SerializeField] public EventReference SFButtonClick { get; private set; }
 }
