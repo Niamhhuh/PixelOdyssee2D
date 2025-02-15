@@ -578,7 +578,7 @@ MonoBehaviour:
   TransformDialogue:
   - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
   - {fileID: 11400000, guid: da02ed42330b5914b9243792278d155f, type: 2}
-  - {fileID: 11400000, guid: f5cff7e605f0d294faf25e2c1c95c5a2, type: 2}
+  - {fileID: 11400000, guid: 828d17c1daa1ccb4c91a7160a4a99815, type: 2}
   - {fileID: 11400000, guid: 36df2894ce4829f418b94e9a3cfad866, type: 2}
 --- !u!114 &43062029
 MonoBehaviour:
@@ -4352,6 +4352,90 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!1 &727167045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727167047}
+  - component: {fileID: 727167046}
+  m_Layer: 0
+  m_Name: "BackGroundL\xFCfter"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &727167046
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727167045}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: e1609d4c0a8d1614b81325ee6bf14290, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.55, y: 0.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &727167047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727167045}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.7732, y: -1.5518, z: -3}
+  m_LocalScale: {x: 0.9815697, y: 1.010106, z: 0.9656702}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &728616551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,7 +6782,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 738002ae88d659149b7140b0c8361e09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 251883e7bb28d6e40ac4fd6dcbb82be3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7239,6 +7323,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 0875d6a2aa72081429b88ccc604a0936, type: 2}
   - {fileID: 11400000, guid: 0091f28ef3384244b995792cf269e408, type: 2}
+  - {fileID: 11400000, guid: 499b5e0feefc0c74481eaa1b13201c28, type: 2}
+  - {fileID: 11400000, guid: 6980006e9a33ae14a96bbb06ee5e5807, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -7988,7 +8074,7 @@ GameObject:
   - component: {fileID: 1485404914}
   - component: {fileID: 1485404913}
   m_Layer: 0
-  m_Name: Silver
+  m_Name: "L\xFCftungsschacht"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8006,7 +8092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cdef112f2b4b845bafb171150a8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 17
+  ID: 27
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
@@ -8135,7 +8221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 28558244f2558294782b4ddd08332352, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a33cd678eff0743489ffb8233b9fd8f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8246,8 +8332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 379f9e9ea77db974b8dd2173f3e3f3f4, type: 2}
   - {fileID: 11400000, guid: 586150a0be7900840bea7f455a512b02, type: 2}
+  - {fileID: 11400000, guid: 379f9e9ea77db974b8dd2173f3e3f3f4, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -8920,9 +9006,9 @@ MonoBehaviour:
   - ConditoinArray: 00000000
   - ConditoinArray: 0a000000
   TransformDialogue:
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 7f76dd6e25505744a92135bb06666d53, type: 2}
   - {fileID: 11400000, guid: e579575d9d9269c4096f1615d8123a0a, type: 2}
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: 7f76dd6e25505744a92135bb06666d53, type: 2}
   - {fileID: 11400000, guid: 14f6bfada4db27347887f1c805897faf, type: 2}
 --- !u!114 &1640649159
 MonoBehaviour:
@@ -8937,7 +9023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
+  - {fileID: 11400000, guid: 7f76dd6e25505744a92135bb06666d53, type: 2}
   - {fileID: 11400000, guid: e579575d9d9269c4096f1615d8123a0a, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
@@ -9308,7 +9394,7 @@ MonoBehaviour:
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
   HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 1
+  CannotInteract: 0
   CannotTalk: 0
   NewObject: 1
   IsFullTrigger: 0
@@ -9981,9 +10067,9 @@ MonoBehaviour:
   - ConditoinArray: 00000000
   - ConditoinArray: 07000000
   TransformDialogue:
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
   - {fileID: 11400000, guid: 63329c10548108544b4a65e143196bb7, type: 2}
-  - {fileID: 11400000, guid: 5b5c5f5bdf16c9e408f8422b82d89610, type: 2}
+  - {fileID: 11400000, guid: b4894f060cd1f1942a64e06c08eb1857, type: 2}
   - {fileID: 11400000, guid: 0acd2dece8b2f374aabf9539b725f73c, type: 2}
 --- !u!114 &1798289784
 MonoBehaviour:
@@ -11473,6 +11559,7 @@ SceneRoots:
   - {fileID: 43062033}
   - {fileID: 2123787369}
   - {fileID: 1749132622}
+  - {fileID: 727167047}
   - {fileID: 1485404912}
   - {fileID: 631678531}
   - {fileID: 1581906368}
