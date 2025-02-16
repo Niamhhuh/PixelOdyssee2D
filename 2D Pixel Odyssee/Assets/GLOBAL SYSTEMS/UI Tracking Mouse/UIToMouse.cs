@@ -56,8 +56,8 @@ public class UiToMouse : MonoBehaviour
 
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
-        FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie); //Sound
-        FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
+        //FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie); //Sound
+        //FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
 
     }
 

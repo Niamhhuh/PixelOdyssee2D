@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 5392696259278888707}
   - component: {fileID: 154631187001807796}
   m_Layer: 5
-  m_Name: Odyssee Folie
+  m_Name: Folien Fragment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 2398109937472558726}
   - component: {fileID: 7245781421315076454}
   m_Layer: 5
-  m_Name: Odyssee Folie
+  m_Name: Folien Fragment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1716,6 +1716,113 @@ MonoBehaviour:
   Slot: 0
   ObjectIndex: 0
   CompletedGoal: {fileID: 0}
+--- !u!1 &967500621940893451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8759931910687655793}
+  - component: {fileID: 5055900972834104596}
+  - component: {fileID: 3750757797677910439}
+  - component: {fileID: 3349058139724366588}
+  - component: {fileID: 1209123002191415864}
+  m_Layer: 5
+  m_Name: Odyssee Folie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8759931910687655793
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967500621940893451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 802686292186037741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5055900972834104596
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967500621940893451}
+  m_CullTransparentMesh: 1
+--- !u!114 &3750757797677910439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967500621940893451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: dfc16ccafad663c42961b3403068d7a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3349058139724366588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967500621940893451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 33
+  Slot: 0
+  DraggablePosition: {fileID: 0}
+  CurrentSlot: {fileID: 0}
+  Available: 0
+  ObjectIndex: 0
+--- !u!225 &1209123002191415864
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967500621940893451}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &984284016864199058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +3190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 34
+  ID: 35
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -3921,7 +4028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 35
+  ID: 36
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -6742,7 +6849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116968e33809eea41b75315400d46586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 33
+  ID: 34
   Slot: 0
   DraggablePosition: {fileID: 0}
   CurrentSlot: {fileID: 0}
@@ -11234,6 +11341,7 @@ RectTransform:
   - {fileID: 5359489902431168786}
   - {fileID: 5564361252205978274}
   - {fileID: 5677067979404599425}
+  - {fileID: 8759931910687655793}
   - {fileID: 2500642083779500648}
   - {fileID: 8908697555930855101}
   - {fileID: 5308908681969259572}
