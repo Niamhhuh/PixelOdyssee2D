@@ -231,6 +231,8 @@ public class BallMovement : MonoBehaviour
             {
                 playerMovement.ToggleReverseControls();
             }
+
+            PSElectric.start(); //sound
         }
 
         if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 0)
@@ -242,6 +244,8 @@ public class BallMovement : MonoBehaviour
             HintergrundPeitscheAI.SetActive(false);
 
             ActivateAIStrafeIcon();
+
+            PSElectric.start(); //sound
         }
 
         if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 1)
@@ -313,7 +317,10 @@ public class BallMovement : MonoBehaviour
             HintergrundElektroAI.SetActive(false);
             HintergrundFeuerAI.SetActive(true);
 
-            ActivateStrafeIcon();
+            ActivateAIStrafeIcon();
+
+
+            PSFire.start(); //sound
         }
 
         if (col.gameObject.CompareTag("StrafboxFeuerAI") && aiScore ==1)
@@ -329,7 +336,6 @@ public class BallMovement : MonoBehaviour
 
             PSFire.start(); //sound
 
-            PSFire.start(); //sound
         }
 
         //Peitsche-------------------------------------
@@ -363,9 +369,11 @@ public class BallMovement : MonoBehaviour
             ActivateStrafeIcon();
 
             Riss2.SetActive(true);
+
+            PSWhip.start(); //sound
         }
 
-        if (col.gameObject.CompareTag("StrafboxPeitscheAI")  && aiScore == 0) 
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI")  && plScore == 0) 
         {
             Debug.Log("You Hit AI StrafboxPeitsche.");
 
@@ -374,9 +382,12 @@ public class BallMovement : MonoBehaviour
             HintergrundFeuerAI.SetActive(false);
 
             ActivateAIStrafeIcon();
+
+            PSWhip.start(); //sound
+
         }
 
-        if (col.gameObject.CompareTag("StrafboxPeitscheAI") && aiScore == 1)
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI") && plScore == 1)
         {
             Debug.Log("You Hit AI StrafboxPeitsche again.");
 
@@ -388,10 +399,6 @@ public class BallMovement : MonoBehaviour
             ActivateAIStrafeIcon();
 
             PSWhip.start(); //sound
-
-
-            PSWhip.start(); //sound
-
         }
 
 
@@ -495,8 +502,8 @@ public class BallMovement : MonoBehaviour
 
     private void ResetAIStrafeIcon()
     {
-        SilverIconStrafe.SetActive(true);
-        SilverIconDefault.SetActive(false);
+        SilverIconStrafe.SetActive(false);
+        SilverIconDefault.SetActive(true);
     }
 
     /*private IEnumerator FadeInCoroutine()               //fade out stuff white screen
