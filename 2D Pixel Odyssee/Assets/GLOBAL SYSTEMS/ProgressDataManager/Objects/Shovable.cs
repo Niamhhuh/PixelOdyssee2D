@@ -9,6 +9,10 @@ public class Shovable : ObjectScript
 
     public int Shove_Position = 0;                                                            //relevant to remember the position in the room
     public int Max_Shove;
+
+    public int Max_Shove_Left;
+    public int Max_Shove_Right;
+
     public GameObject ShoveController;
     public GameObject ShoveBox;
 

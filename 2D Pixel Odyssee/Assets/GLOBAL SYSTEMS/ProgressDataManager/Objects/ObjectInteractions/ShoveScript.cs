@@ -22,13 +22,13 @@ public class ShoveScript : MonoBehaviour
         RightButton.SetActive(true);
 
         //Control Left Button
-        if (-DataManager.ToShove[0].Max_Shove >= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/lesser than the negative Max Shove Position
+        if (-DataManager.ToShove[0].Max_Shove >= DataManager.ToShove[0].Shove_Position || -DataManager.ToShove[0].Max_Shove_Left >= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/lesser than the negative Max Shove Position
         {
             LeftButton.SetActive(false);                           //deactivate the Left Shove Button
         }
 
         //Control Right Button
-        if (DataManager.ToShove[0].Max_Shove <= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/greater than the positive Max Shove Position
+        if (DataManager.ToShove[0].Max_Shove <= DataManager.ToShove[0].Shove_Position || DataManager.ToShove[0].Max_Shove_Right <= DataManager.ToShove[0].Shove_Position)                                                                     //if the Current Position is equal/greater than the positive Max Shove Position
         {
             RightButton.SetActive(false);                          //deactivate the Right Shove Button
         }
