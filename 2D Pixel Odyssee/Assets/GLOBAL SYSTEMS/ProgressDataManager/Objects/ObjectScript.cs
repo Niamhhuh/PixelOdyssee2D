@@ -83,6 +83,8 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public LockedDialogue LockedDialogueScript = null;
     [HideInInspector] public GrantRewardScript GrantReward_Script = null;
 
+    [HideInInspector] public AddCodeFragment AddCodeScript = null;
+
     public Comment ObjectComment;
 
     private PauseMenu PauseScript;
@@ -160,6 +162,12 @@ public class ObjectScript : MonoBehaviour
         {
             GrantReward_Script = gameObject.GetComponent<GrantRewardScript>();
         }
+
+        if (gameObject.GetComponent<AddCodeFragment>() != null)                                              //Attach LockedDialogue 
+        {
+            AddCodeScript = GetComponent<AddCodeFragment>();
+        }
+
 
         if (gameObject.GetComponent<TransformativeDialogueScript>() != null)                                //Attach Transform Dialogue
         {
@@ -513,8 +521,9 @@ public class ObjectScript : MonoBehaviour
 
     public void SuccessfulInteract()
     {
-        if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
+        if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }           //Add Code on succesful interaction
         Interact_Trigger_EditGoal();
+        if (AddCodeScript != null) { AddCodeScript.AddCode(); }                         //Add Code on succesful interaction
     }
 
 
@@ -549,6 +558,11 @@ public class ObjectScript : MonoBehaviour
 
     public IEnumerator FlashRed()
     {
+        if (GetComponent<LockedDialogue>() != null)
+        {
+            GetComponent<LockedDialogue>().CollectedItemModifyDeniedInteraction();
+        }
+
         if (GetComponent<NPCDialogue>() != null)
         {
             GetComponent<NPCDialogue>().InLockResponse = true;

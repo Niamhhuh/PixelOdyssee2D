@@ -7,10 +7,6 @@ public class CodeListScript : MonoBehaviour
     public GameObject CodeListObj;
     private DataManager DMReference;
 
-    static bool Code1Acquired;
-    static bool Code2Acquired;
-    static bool Code3Acquired;
-
     private GameObject Code1;
     private GameObject Code2;
     private GameObject Code3;
@@ -49,7 +45,7 @@ public class CodeListScript : MonoBehaviour
 
     public void ControllCodePanel()
     {
-        if (Code1Acquired == true)
+        if (DataManager.Code1Acquired == true)
         {
             Code1.SetActive(true);
         }else
@@ -57,7 +53,7 @@ public class CodeListScript : MonoBehaviour
             Code1.SetActive(false);
         }
 
-        if (Code2Acquired == true)
+        if (DataManager.Code2Acquired == true)
         {
             Code2.SetActive(true);
         }else
@@ -65,7 +61,7 @@ public class CodeListScript : MonoBehaviour
             Code2.SetActive(false);
         }
 
-        if (Code3Acquired == true)
+        if (DataManager.Code3Acquired == true)
         {
             Code3.SetActive(true);
         }else

@@ -147,6 +147,7 @@ public class Shovable : ObjectScript
 
     public void StartMove(Vector3 StartPosition, Vector3 TargetPosition)//, int Direction)
     {
+        SuccessfulInteract();
         StartCoroutine(Movex(StartPosition, TargetPosition));
     }
 

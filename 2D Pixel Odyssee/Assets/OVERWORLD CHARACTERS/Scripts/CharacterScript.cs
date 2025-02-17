@@ -16,6 +16,9 @@ public class CharacterScript : MonoBehaviour
     UiToMouse uitomouse;
     private Transform newPlayer;
 
+    AdvancedDialogueManager DialogueScript;
+    PauseMenu PauseScript;
+
     //public bool AllowInput;
 
     //public static GameObject Character;
@@ -37,6 +40,9 @@ public class CharacterScript : MonoBehaviour
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
 
         uitomouse = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
+
+        DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
+        PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
 
         if (uitomouse != null )
@@ -63,21 +69,25 @@ public class CharacterScript : MonoBehaviour
 
     public void SwitchCharacters()
     {
-        if(RosieObj.activeSelf == true)
+        if (!PauseScript.InPause && !DialogueScript.InDialogue)
         {
-            RosieActive = false;
-            RosieObj.SetActive(false);
-            BeBeObj.SetActive(true);
-            uitomouse.SwitchCharacter();
-        }
-        else
-        {
-            RosieActive = true;
-            RosieObj.SetActive(true);
-            BeBeObj.SetActive(false);
-            uitomouse.SwitchCharacter();
-        }
-        
+
+            if (RosieObj.activeSelf == true)
+            {
+                RosieActive = false;
+                RosieObj.SetActive(false);
+                BeBeObj.SetActive(true);
+                uitomouse.SwitchCharacter();
+            }
+            else
+            {
+                RosieActive = true;
+                RosieObj.SetActive(true);
+                BeBeObj.SetActive(false);
+                uitomouse.SwitchCharacter();
+            }
+
+        }        
     }
 
      /*

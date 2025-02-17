@@ -121,10 +121,11 @@ public class Triggerable : ObjectScript
         ObjectSequenceUnlock();
         UpdateData();
 
+        SuccessfulInteract();
         //If Force_Dialogue -> Trigger Dialogue
         //Remove Trigger when StepNum = Dialogue Length.
         //
-        if(ForceDialogue == true)
+        if (ForceDialogue == true)
         {
             DMReference.MoveScript.DisableInput();                                  //Disable Inpput 
             DMReference.MoveScript.DisableInteract();                               //Disable Interact 

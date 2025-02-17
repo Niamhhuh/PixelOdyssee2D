@@ -5281,6 +5281,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5736366869950914053}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: DisableInteract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 7473731243639272027}
           m_TargetAssemblyTypeName: HighlightClipboardButton, Assembly-CSharp
           m_MethodName: HighlightImage
@@ -5297,6 +5309,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 7473731243639272027}
+          m_TargetAssemblyTypeName: HighlightClipboardButton, Assembly-CSharp
+          m_MethodName: ClearHighlight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 5736366869950914053}
           m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
           m_MethodName: EnableInput
@@ -5309,9 +5333,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 7473731243639272027}
-          m_TargetAssemblyTypeName: HighlightClipboardButton, Assembly-CSharp
-          m_MethodName: ClearHighlight
+        - m_Target: {fileID: 5736366869950914053}
+          m_TargetAssemblyTypeName: UiToMouse, Assembly-CSharp
+          m_MethodName: EnableInteract
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

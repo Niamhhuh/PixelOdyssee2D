@@ -135,6 +135,8 @@ public class DancePad : ObjectScript
         DataManager.ToDance.Add(this);                                                                      //add this object to the ToShove List, to make it accessible for the Shove Buttons
         PadController.SetActive(true);                                                                    //Activate DanceButtons 
 
+        SuccessfulInteract();
+
         DanceScriptRef.ControlButtons();                                       //Control which Buttons appear
         PadController.transform.position = gameObject.transform.position;
         DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1, PadController.transform.position.y + 2, PadController.transform.position.z);

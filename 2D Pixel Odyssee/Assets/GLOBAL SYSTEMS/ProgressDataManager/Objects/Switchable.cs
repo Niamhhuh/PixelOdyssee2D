@@ -110,5 +110,6 @@ public class Switchable : ObjectScript
             SwitchState = false;
         }
         UpdateData();
+        SuccessfulInteract();
     }
 }

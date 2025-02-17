@@ -10,6 +10,7 @@ public class Clipboard : MonoBehaviour
     GoalListScript GoalScript;
     CodeListScript CodeScript;
     PauseMenu PauseScript;
+    AdvancedDialogueManager DialogueScript;
 
     static int CurrentTab = 1;
 
@@ -23,6 +24,7 @@ public class Clipboard : MonoBehaviour
         GoalScript = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<GoalListScript>();
         CodeScript = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<CodeListScript>();
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
+        DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
     }
 
     // Update is called once per frame
@@ -85,7 +87,7 @@ public class Clipboard : MonoBehaviour
 
     public void CallClipboard()                 // this is called via X or the UI Button
     {
-        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause)
+        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause && !DialogueScript.InDialogue)
         {
             switch (CurrentTab)
             {
@@ -110,42 +112,54 @@ public class Clipboard : MonoBehaviour
 
     public void ClipboardInventory()
     {
-        CurrentTab = 1;
-        CodeScript.CloseCodeList();
-        GoalScript.CloseGoalList();
-        MapScript.CloseMap();
+        if (!PauseScript.InPause && !DialogueScript.InDialogue)
+        {
+            CurrentTab = 1;
+            CodeScript.CloseCodeList();
+            GoalScript.CloseGoalList();
+            MapScript.CloseMap();
 
-        InventoryScript.CallInventory();
+            InventoryScript.CallInventory();
+        }
     }
 
     public void ClipboardMap()
     {
-        CurrentTab = 2;
-        CodeScript.CloseCodeList();
-        GoalScript.CloseGoalList();
-        InventoryScript.CloseInventory();
+        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause && !DialogueScript.InDialogue)
+        {
+            CurrentTab = 2;
+            CodeScript.CloseCodeList();
+            GoalScript.CloseGoalList();
+            InventoryScript.CloseInventory();
 
-        MapScript.CallMap();
+            MapScript.CallMap();
+        }
     }
 
     public void ClipboardGoals()
     {
-        CurrentTab = 3;
-        CodeScript.CloseCodeList();
-        MapScript.CloseMap();
-        InventoryScript.CloseInventory();
+        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause && !DialogueScript.InDialogue)
+        {
+            CurrentTab = 3;
+            CodeScript.CloseCodeList();
+            MapScript.CloseMap();
+            InventoryScript.CloseInventory();
 
-        GoalScript.CallGoalList();
+            GoalScript.CallGoalList();
+        }
     }
 
     public void ClipboardCodes()
     {
-        CurrentTab = 4;
-        GoalScript.CloseGoalList();
-        MapScript.CloseMap();
-        InventoryScript.CloseInventory();
+        if (!DMReference.MoveScript.ClipboardActive && !PauseScript.InPause && !DialogueScript.InDialogue)
+        {
+            CurrentTab = 4;
+            GoalScript.CloseGoalList();
+            MapScript.CloseMap();
+            InventoryScript.CloseInventory();
 
-        CodeScript.CallCodeList();
+            CodeScript.CallCodeList();
+        }
     }
 
     public void CloseClipboard()

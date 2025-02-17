@@ -11,6 +11,9 @@ public class HighlightClipboardButton : MonoBehaviour
     public Sprite OriginalSprite;
     public Sprite HighlightSprite;
 
+    AdvancedDialogueManager DialogueScript;
+    PauseMenu PauseScript;
+
     DataManager DMReference;
 
     void Start()
@@ -22,6 +25,8 @@ public class HighlightClipboardButton : MonoBehaviour
         CurrentImage = TargetButton.GetComponent<Image>();
 
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
+        DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
+        PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
         if (CurrentImage != null)
         {
@@ -38,6 +43,9 @@ public class HighlightClipboardButton : MonoBehaviour
     //Call in Inspector on Pointer Enter
     public void HighlightImage()
     {
-        CurrentImage.sprite = HighlightSprite;
+        if(!DialogueScript.InDialogue && !PauseScript.InPause)
+        {
+            CurrentImage.sprite = HighlightSprite;
+        }
     }
 }
