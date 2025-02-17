@@ -64,7 +64,7 @@ public class NPCDialogue : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && WasClicked)
+        if (collision.gameObject.tag == "Player")                                       // I removed "WasClicked" Condition... this could lead to bugs but for now it seems to improve the interaction flow
         {
             //Speech Bubble Off
             //speechBubbleRenderer.enabled = false;
@@ -75,12 +75,5 @@ public class NPCDialogue : MonoBehaviour
 
             WasClicked = false;
         }
-    }
-
-    private void Flip()
-    {
-        Vector3 currentScale = transform.parent.localScale;
-        currentScale.x *= -1;
-        transform.parent.localScale = currentScale;
     }
 }

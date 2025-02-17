@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 public class InteractionScript : MonoBehaviour
 {
     private UiToMouse PointerScript;
@@ -10,6 +11,7 @@ public class InteractionScript : MonoBehaviour
     [HideInInspector] public AdvancedDialogueManager advancedDialogueManager;
 
     GameObject TempObject;
+    public Animator animator;
 
     private void Start()
     {
@@ -54,6 +56,7 @@ public class InteractionScript : MonoBehaviour
 
         public void TriggerInteraction ()
     {
+        animator.SetTrigger("interact");
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
@@ -90,6 +93,11 @@ public class InteractionScript : MonoBehaviour
                 TriggerReference = (Triggerable)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
                 TriggerReference.TriggerInteract();                                                      //Call EventSource.Call_Interact
                 break;
-        }
+            case 7:
+                DancePad DancePadReference = null;                                                   //Create a Reference Variable, which will be used to access the EventSource.Call_Interact Method
+                DancePadReference = (DancePad)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
+                DancePadReference.Call_Interact();                                                      //Call EventSource.Call_Interact
+                break;
+        }   
     }
 }

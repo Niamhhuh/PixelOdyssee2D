@@ -41,15 +41,15 @@ public class AudioManager_Startscreen : MonoBehaviour
     //Abspielen von Musik
     private void InitializeTitlescreenMusic(EventReference TitlescreenMusikEventReference)
     {
-        TitlescreenMusicInstance = CreateEventInstance(TitlescreenMusikEventReference);
-        TitlescreenMusicInstance.start();
+        //TitlescreenMusicInstance = CreateEventInstance(TitlescreenMusikEventReference);
+        //TitlescreenMusicInstance.start();
     }
 
 
 
     //---------------------------------------------------------------------------------------------------------
 
-    //Funktion, um in anderen Skripts Sound abspielen zu können
+    //Funktion, um in anderen Skripts Sound abspielen zu kï¿½nnen
     public void PlayOneShot (EventReference Sound, Vector3 worldpos)
     {
         RuntimeManager.PlayOneShot (Sound, worldpos);

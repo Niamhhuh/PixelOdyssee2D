@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private Pong_PlayerMovement playerMovement;
 
     [SerializeField] private GameObject Riss1;
+    [SerializeField] private GameObject Riss2;
 
 
     private int aiScore;
@@ -53,11 +55,20 @@ public class BallMovement : MonoBehaviour
 
     private bool Scored = false;
 
+    private EventInstance PSBallBounce; //ganz viele Sounds kommen jetzt hier her
+    private EventInstance PSElectric;
+    private EventInstance PSFire;
+    private EventInstance PSWhip;
+    private EventInstance PSWin;
+    private EventInstance PSLoose;
+
+    private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
+
     //White Screen for Elektro Strafe
     /*private GameObject whitescreen_big;
     private Image whitescreen;
     private float fadeDuration;*/
-    
+
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
 
@@ -86,8 +97,10 @@ public class BallMovement : MonoBehaviour
 
         HintergrundElektro.SetActive(false);
         HintergrundFeuer.SetActive(false);
-        Debug.Log("test");
         HintergrundPeitsche.SetActive(false);
+        HintergrundElektroAI.SetActive(false);
+        HintergrundFeuerAI.SetActive(false);
+        HintergrundPeitscheAI.SetActive(false);
 
         HealthSquare1.SetActive(true);
         HealthSquare2.SetActive(true);
@@ -97,6 +110,16 @@ public class BallMovement : MonoBehaviour
         HealthSquare3Silver.SetActive(true);
 
         Riss1.SetActive(false);
+        Riss2.SetActive(false);
+
+        PSBallBounce = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSBallBounce); //Sound
+        PSElectric = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSElectric);
+        PSFire = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSFire);
+        PSWhip = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWhip);
+        PSWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWin);
+        PSLoose = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSLoose);
+
+        script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
 
         /*whitescreen_big = GameObject.Find("C_whitescreen");             //fade out stuff
         whitescreen = whitescreen_big.GetComponent<Image>();            //fade out stuff
@@ -150,6 +173,8 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "AI") {
             PlayerBounce(collision.transform);
 
+            PSBallBounce.start(); //sound
+
         }
     }
 
@@ -157,8 +182,10 @@ public class BallMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) 
     {
-        //STRAFEN
-        if (col.gameObject.CompareTag("StrafboxElektro"))
+        //STRAFEN---------------------------------------------------------------------------
+
+        //ELEKTRO-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxElektro") && aiScore == 0)
         {
             Debug.Log("StrafboxElektro is hit.");
 
@@ -166,11 +193,10 @@ public class BallMovement : MonoBehaviour
             HintergrundFeuer.SetActive(false);
             HintergrundPeitsche.SetActive(false);
 
-            RahmenElektro.SetActive(true);
-            RahmenFeuer.SetActive(false);
-            RahmenPeitsche.SetActive(false);
-            RahmenDefault.SetActive(false);
+
             ActivateStrafeIcon();
+
+            PSElectric.start(); //sound
 
             // Toggle reversed controls
             if (playerMovement != null)
@@ -180,21 +206,58 @@ public class BallMovement : MonoBehaviour
 
         }
 
-        if (col.gameObject.CompareTag("StrafboxElektroAI"))
+        if (col.gameObject.CompareTag("StrafboxElektro") && aiScore == 1)
+        {
+            Debug.Log("StrafboxElektro is hit again.");
+
+            RahmenElektro.SetActive(true);
+            RahmenFeuer.SetActive(false);
+            RahmenPeitsche.SetActive(false);
+            RahmenDefault.SetActive(false);
+
+            ActivateStrafeIcon();
+
+            // Toggle reversed controls
+            if (playerMovement != null)
+            {
+                playerMovement.ToggleReverseControls();
+            }
+        }
+
+        if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 0)
         {
             Debug.Log("You Hit AI StrafboxElektro.");
+
+            HintergrundFeuerAI.SetActive(false);
+            HintergrundElektroAI.SetActive(true);
+            HintergrundPeitscheAI.SetActive(false);
+
+            ActivateAIStrafeIcon();
+        }
+
+        if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 1)
+        {
+            Debug.Log("You Hit AI StrafboxElektro again.");
 
             RahmenElektroAI.SetActive(true);
             RahmenFeuerAI.SetActive(false);
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
 
+<<<<<<< HEAD
+            ActivateAIStrafeIcon();
+=======
             HintergrundFeuerAI.SetActive(true);
             HintergrundElektroAI.SetActive(false);
             HintergrundPeitscheAI.SetActive(false);
+
+            PSElectric.start(); //sound
+>>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
         }
 
-        if (col.gameObject.CompareTag("StrafboxFeuer"))
+            //FEUER-------------------------------------
+
+        if (col.gameObject.CompareTag("StrafboxFeuer") && aiScore == 0)
         {
             Debug.Log("StrafboxFeuer is hit.");
 
@@ -202,10 +265,28 @@ public class BallMovement : MonoBehaviour
             HintergrundElektro.SetActive(false);
             HintergrundPeitsche.SetActive(false);
 
+            
+            ActivateStrafeIcon();
+
+            PSFire.start(); //sound
+
+            // Increase player speed
+            if (playerMovement != null)
+            {
+                playerMovement.IncreaseSpeed(2.0f); // 200% increase
+            }
+        }
+
+
+        if (col.gameObject.CompareTag("StrafboxFeuer") && aiScore == 1)
+        {
+            Debug.Log("StrafboxFeuer is hit again.");
+
             RahmenFeuer.SetActive(true);
             RahmenElektro.SetActive(false);
             RahmenPeitsche.SetActive(false);
             RahmenDefault.SetActive(false);
+
             ActivateStrafeIcon();
 
             // Increase player speed
@@ -215,16 +296,36 @@ public class BallMovement : MonoBehaviour
             }
         }
 
-        if (col.gameObject.CompareTag("StrafboxFeuerAI"))
+        if (col.gameObject.CompareTag("StrafboxFeuerAI") && aiScore == 0)
         {
             Debug.Log("You Hit AI StrafboxFeuer.");
+
+            HintergrundPeitscheAI.SetActive(false);
+            HintergrundElektroAI.SetActive(false);
+            HintergrundFeuerAI.SetActive(true);
+
+            ActivateStrafeIcon();
+        }
+
+        if (col.gameObject.CompareTag("StrafboxFeuerAI") && aiScore ==1)
+        {
+            Debug.Log("You Hit AI StrafboxFeuer again.");
+
             RahmenFeuerAI.SetActive(true);
             RahmenElektroAI.SetActive(false);
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
+
+<<<<<<< HEAD
+            ActivateAIStrafeIcon();
+=======
+            PSFire.start(); //sound
+>>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
         }
 
-        if (col.gameObject.CompareTag("StrafboxPeitsche"))
+        //Peitsche-------------------------------------
+
+        if (col.gameObject.CompareTag("StrafboxPeitsche") && aiScore == 0)
         {
             Debug.Log("StrafboxPeitsche is hit.");
 
@@ -232,29 +333,54 @@ public class BallMovement : MonoBehaviour
             HintergrundElektro.SetActive(false);
             HintergrundFeuer.SetActive(false); 
 
-            RahmenPeitsche.SetActive(true);
-            RahmenElektro.SetActive(false);
-            RahmenFeuer.SetActive(false);
-            RahmenDefault.SetActive(false);
             ActivateStrafeIcon();
+
+            PSWhip.start(); //sound
 
             Riss1.SetActive(true);
             //whitescreen_big.SetActive(true);
             //StartCoroutine(FadeInCoroutine());
         }
 
-        if (col.gameObject.CompareTag("StrafboxPeitscheAI"))
+        if (col.gameObject.CompareTag("StrafboxPeitsche") && aiScore == 1)
+        {
+            Debug.Log("StrafboxPeitsche is hit again.");
+
+            RahmenPeitsche.SetActive(true);
+            RahmenElektro.SetActive(false);
+            RahmenFeuer.SetActive(false);
+            RahmenDefault.SetActive(false);
+
+            ActivateStrafeIcon();
+
+            Riss2.SetActive(true);
+        }
+
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI")  && aiScore == 0) 
         {
             Debug.Log("You Hit AI StrafboxPeitsche.");
 
-            HintergrundPeitscheAI.SetActive(true); 
+            HintergrundPeitscheAI.SetActive(true);
             HintergrundElektroAI.SetActive(false);
             HintergrundFeuerAI.SetActive(false);
+
+            ActivateAIStrafeIcon();
+        }
+
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI") && aiScore == 1)
+        {
+            Debug.Log("You Hit AI StrafboxPeitsche again.");
 
             RahmenPeitscheAI.SetActive(true);
             RahmenElektroAI.SetActive(false);
             RahmenFeuerAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
+
+<<<<<<< HEAD
+            ActivateAIStrafeIcon();
+=======
+            PSWhip.start(); //sound
+>>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
         }
 
 
@@ -315,10 +441,16 @@ public class BallMovement : MonoBehaviour
             if(plScore == 3) 
             {
                 winPanel.SetActive(true);
+
+                script_AudioManager.StopCurrentTheme(); //Musik anhalten
+                PSWin.start(); //Sound
                 
             }
             else if(aiScore == 3) {
                 losePanel.SetActive(true);
+
+                script_AudioManager.StopCurrentTheme(); //Musik anhalten
+                PSLoose.start(); //Sound
                 
             }
         }
@@ -340,6 +472,20 @@ public class BallMovement : MonoBehaviour
     {
         RosieIconStrafe.SetActive(false);
         RosieIconDefault.SetActive(true);
+    }
+
+    private void ActivateAIStrafeIcon()
+    {
+        SilverIconDefault.SetActive(false);
+        SilverIconStrafe.SetActive(true);
+
+        Invoke("ResetAIStrafeIcon", 2f);
+    }
+
+    private void ResetAIStrafeIcon()
+    {
+        SilverIconStrafe.SetActive(true);
+        SilverIconDefault.SetActive(false);
     }
 
     /*private IEnumerator FadeInCoroutine()               //fade out stuff white screen

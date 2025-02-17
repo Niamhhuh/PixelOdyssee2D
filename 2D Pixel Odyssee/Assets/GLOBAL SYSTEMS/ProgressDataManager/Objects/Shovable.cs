@@ -109,6 +109,8 @@ public class Shovable : ObjectScript
 
             if (InteractionController != null)                                                                      //If the Interaction Buttons are available
             {
+                DMReference.MoveScript.EnableInput();
+                DMReference.MoveScript.EnableInteract();
                 InteractionController.SetActive(false);                                                             //Disable them 
             }
         }

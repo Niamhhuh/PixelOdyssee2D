@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class GameManager1 : MonoBehaviour
 {
@@ -30,6 +31,13 @@ public class GameManager1 : MonoBehaviour
 
     SoundManager soundManager;
 
+    private EventInstance FrScore; //ganz viele Sounds kommen jetzt hier her
+    private EventInstance FrWin;
+    private EventInstance FrDeath;
+    private EventInstance FrLoose;
+
+    private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
+
     private void Awake()
     {
         
@@ -44,6 +52,13 @@ public class GameManager1 : MonoBehaviour
         //NewGame();
         soundManager.PlayMusic(soundManager.background);
 
+        FrScore = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrScore); //Sound
+        FrWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrWin);
+        FrDeath = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrDeath);
+        FrLoose = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrGameOver);
+
+        script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
+
     }
 
     private void NewGame()
@@ -52,6 +67,9 @@ public class GameManager1 : MonoBehaviour
         frogger.gameObject.SetActive(true);
         gameStart.SetActive(false);
         soundManager.PlayMusic(soundManager.background);
+
+        script_AudioManager.StopCurrentTheme(); //Musik anhalten
+
         SetScore(0);
         SetLives(3);
         for (int i = 0; i < homes.Length; i++)
@@ -87,6 +105,9 @@ public class GameManager1 : MonoBehaviour
     {
         frogger.noMove = false; 
         frogger.Respawn();
+
+        script_AudioManager.PlayThemeForCurrentScene(); //Musik abspielen
+
         StopAllCoroutines();
         StartCoroutine(Timer(30));
     }
@@ -111,6 +132,9 @@ public class GameManager1 : MonoBehaviour
 
         if (lives > 0)
         {
+            FrDeath.start(); //Sound
+            script_AudioManager.StopCurrentTheme(); //Musik anhalten
+
             soundManager.PlaySfx(soundManager.death);
             Invoke(nameof(Respawn), 1f);
         }
@@ -126,6 +150,9 @@ public class GameManager1 : MonoBehaviour
         gameOverMenu.gameObject.SetActive(true);
         soundManager.StopMusic(soundManager.background);
         soundManager.PlaySfx(soundManager.gameOver);
+
+        script_AudioManager.StopCurrentTheme(); //Musik anhalten
+        FrLoose.start(); //Sound
 
         StopAllCoroutines();
         StartCoroutine(PlayAgain());
@@ -199,6 +226,9 @@ public class GameManager1 : MonoBehaviour
         SetScore(score + bonusPoints + 50);
         soundManager.PlaySfx(soundManager.score);
 
+        script_AudioManager.StopCurrentTheme(); //Musik anhalten
+        FrScore.start(); //Sound
+
         if (Cleared())
         {
             SetScore(score + 1000);
@@ -206,6 +236,9 @@ public class GameManager1 : MonoBehaviour
             Invoke (nameof(NewLevel), 1f);
             soundManager.StopMusic(soundManager.background);
             soundManager.PlaySfx(soundManager.win);
+
+            script_AudioManager.StopCurrentTheme(); //Musik anhalten
+            FrWin.start(); //Sound
         }
         else
         {

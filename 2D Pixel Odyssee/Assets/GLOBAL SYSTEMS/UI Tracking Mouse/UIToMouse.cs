@@ -18,7 +18,7 @@ public class UiToMouse : MonoBehaviour
     public Animator playerAnimator;
     public Animator playerAnimator2;
 
-    private Animator pointerAnimator; // Animator für MovePointer
+    private Animator pointerAnimator; // Animator fï¿½r MovePointer
     private Image pointerImage; // Image-Komponente des MovePointers
 
     private CharacterScript CScript;
@@ -34,7 +34,7 @@ public class UiToMouse : MonoBehaviour
 
     public bool InCatScene = false;
 
-    private EventInstance FootstepsRosie;  //Sound für Footsteps
+    private EventInstance FootstepsRosie;  //Sound fï¿½r Footsteps
     private EventInstance FootstepsBebe;
 
     void Start()
@@ -56,8 +56,8 @@ public class UiToMouse : MonoBehaviour
 
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
-        FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie);
-        FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
+        //FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie); //Sound
+        //FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
 
     }
 
@@ -147,7 +147,7 @@ public class UiToMouse : MonoBehaviour
             {
             playerAnimator2.SetBool("isWalking", true);
             playerAnimator2.SetInteger("LastDirection", lastDirection);
-                FootstepsBebe.start();
+                FootstepsBebe.start(); //Sound
             }
 
             pointerImage.enabled = true;
@@ -167,7 +167,7 @@ public class UiToMouse : MonoBehaviour
                 {
                     playerAnimator.SetBool("isWalking", false);
                     playerAnimator.SetInteger("LastDirection", lastDirection); //idle
-                    FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
                 }
 
                 // STOP BEBE
@@ -175,7 +175,7 @@ public class UiToMouse : MonoBehaviour
                 {
                     playerAnimator2.SetBool("isWalking", false);
                     playerAnimator2.SetInteger("LastDirection", lastDirection);
-                    FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
                 }
 
                 pointerImage.enabled = false;

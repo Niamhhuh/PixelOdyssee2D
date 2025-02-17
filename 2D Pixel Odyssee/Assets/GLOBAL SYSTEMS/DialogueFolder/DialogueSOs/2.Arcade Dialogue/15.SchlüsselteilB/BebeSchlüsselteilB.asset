@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: "BebeSchl\xFCsselteilB"
   m_EditorClassIdentifier: 
-  actors: 01000000
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 0a0000000800000005000000
   randomActorName: 
   randomActorPortait: {fileID: 0}
   dialogue:
-  - "Rosie sagt, man wirft M\xFCnzen in euch rein, nicht andersherum."
+  - "Damit \xF6ffnet man also verschlossene T\xFCren?"
+  - Sieht nicht aus wie ein sicheres Passwort.
+  - "Nicht alle verschlossenen T\xFCren brauchen ein Passwort!"
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

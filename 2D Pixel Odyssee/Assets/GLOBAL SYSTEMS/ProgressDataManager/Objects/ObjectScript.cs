@@ -14,6 +14,10 @@ public class ObjectScript : MonoBehaviour
     public bool TriggeronUnlock;
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
+    public bool ChangeNameonLock;
+    public string LockName;
+
+    
 
     //public(Dialogue)			                                                    //Dialogue of this object
 
@@ -67,7 +71,7 @@ public class ObjectScript : MonoBehaviour
      public int ObjectList_ID;                                //ID which marks the List this Object is stored in          //used for UnlockMethods
      public int ObjectIndex;                                  //Index of this Object in its list                          //used for UnlockMethods
 
-    [HideInInspector] public DataManager DMReference = null;                   //Store the DataManager
+    public DataManager DMReference = null;                   //Store the DataManager
     [HideInInspector] public SequenceUnlock SeqUReference = null;              //Store the Sequence Unlock
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
@@ -187,7 +191,23 @@ public class ObjectScript : MonoBehaviour
         if (PointerScript.ClipboardActive == false && !isBackground && !IsFullTrigger && !DMReference.DialogueManager.InDialogue && !PauseScript.InPause)
         {
             DMReference.CursorScript.DeactivateCursorSprite();
-            DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+
+            if (ChangeNameonLock)
+            {
+                if(Lock_State)
+                {
+                    DMReference.DisplayObjectNameScript.ActivateNameDisplay(LockName);
+                }
+                if (!Lock_State)
+                {
+                    DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);
+                }
+            }
+
+            if (!ChangeNameonLock)
+            {
+                DMReference.DisplayObjectNameScript.ActivateNameDisplay(gameObject.name);                                   //Activate ObjectNamePanel
+            }
         }
 
         if (PointerScript.ClipboardActive == false && !isBackground && !AlreadyActive && !IsFullTrigger && !PauseScript.InPause)
@@ -219,9 +239,9 @@ public class ObjectScript : MonoBehaviour
 
         // Call InteractButtons
         //----------------------------------------------------------------------------------------------------------------------------------------------------
-        if (PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
+        if (PointerScript.ClipboardActive == false && PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
-            if (DataManager.ToShove.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
+            if (DataManager.ToShove.Count < 1 && DataManager.ToDance.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = true;
@@ -249,7 +269,15 @@ public class ObjectScript : MonoBehaviour
             Lock_State = false;
             UpdateAllData();
             if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
-            DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
+            
+            foreach(Draggable Item in DataManager.Item_List)
+            {
+                if(DMReference.InventoryRef.DraggedItemID == Item.ID)
+                {
+                    Item.RemoveOnUse();
+                }
+            }
+            //DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
                                                                                              // Delete Item from Draggable List
 
 
@@ -440,7 +468,6 @@ public class ObjectScript : MonoBehaviour
     {
         if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use SwitchUnlock
         {
-            print("11111111");
             //print("I'm called2");
             SwitchStateUnlock IUReference = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
             IUReference = (SwitchStateUnlock)UnSReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
@@ -448,7 +475,6 @@ public class ObjectScript : MonoBehaviour
         }
         if (UnlockMethod == 2)                                                                          //If the Unlock Method is 2 use ShovableUnlock
         {
-            print("222222");
             ShovableUnlock IUReference = null;                                                          //Create a ItemUnlock Variable, which will be used to access the CallItemUnlock Method
             IUReference = (ShovableUnlock)UnSReference;                                                 //Convert the Parent UnlockScript Type(UnSReference) into the ItemUnlock Type 
             IUReference.CallShovableUnlock(ObjectList_ID, ObjectIndex);                                 //Call Shovable Unlock Initiator in Shovable Unlock Script, pass this Object's List and Index
@@ -678,6 +704,18 @@ public class ObjectScript : MonoBehaviour
                 EventObjectRef = (EventSource)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 EventObjectRef.FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);       //Fetch new State from DataManager
                 break;
+            case 6:
+                ObjReference.ToggleSprites();
+                Triggerable TriggerObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                TriggerObjectRef = (Triggerable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                TriggerObjectRef.FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);       //Fetch new State from DataManager
+                break;
+            case 7:
+                ObjReference.ToggleSprites();
+                DancePad DancePadObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                DancePadObjectRef = (DancePad)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                DancePadObjectRef.FetchData(DataManager.DancePad_List[ObjectIndex].Stored_Lock_State, DataManager.DancePad_List[ObjectIndex].Stored_AlreadyTalked);       //Fetch new State from DataManager
+                break;
             default:
                 break;
         }
@@ -716,6 +754,18 @@ public class ObjectScript : MonoBehaviour
                 EventSource EventObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 EventObjectRef = (EventSource)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 EventObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 6:
+                ObjReference.ToggleSprites();
+                Triggerable TriggerObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                TriggerObjectRef = (Triggerable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                TriggerObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                break;
+            case 7:
+                ObjReference.ToggleSprites();
+                DancePad DancePadObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
+                DancePadObjectRef = (DancePad)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
+                DancePadObjectRef.UpdateData();                                                                                                                                                                                                //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
                 break;
             default:
                 break;

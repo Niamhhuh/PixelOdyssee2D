@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
+  m_Name: BebeSpacewarLocked
+  m_EditorClassIdentifier: 
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 1
+  KeyOption1: 31
+  KeyOption2: 31
+  KeyOption3: 31
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 050000000b0000000c00000007000000
+  randomActorName: Rosie
+  randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
+  dialogue:
+  - Pong nervt.
+  - "Du verstehst ihn einfach nur nicht! Ich gebe dir einen Hinweis darauf, was er
+    braucht, wenn du herausfindest, was seine Lieblings Voltzahl ist! \r\n"
+  - ...
+  optionText:
+  - 110V - 120V
+  - '220V - 240V '
+  - 250V - 300V
+  option0: {fileID: 11400000, guid: 4df2b67ff4edac94aa5dcdb395192275, type: 2}
+  option1: {fileID: 11400000, guid: 73bc8a3fa67b9d7478a60460d5bd74e1, type: 2}
+  option2: {fileID: 11400000, guid: 3a269d7c62aea4840bc6a8728168658e, type: 2}
+  option3: {fileID: 0}

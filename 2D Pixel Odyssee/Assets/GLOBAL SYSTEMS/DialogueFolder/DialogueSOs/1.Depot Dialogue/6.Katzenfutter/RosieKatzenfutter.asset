@@ -12,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
   m_Name: RosieKatzenfutter
   m_EditorClassIdentifier: 
-  actors: 0600000000000000
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 0300000000000000
   randomActorName: Rosie
   randomActorPortait: {fileID: 21300000, guid: 74e3ffb1e67fc994a949443967a4e6c4, type: 3}
   dialogue:
-  - "Der Kater hat es besser als ich! Premium-Lachs? Gourmet-H\xE4hnchen?"
-  - Unglaublich.
+  - "Premium-Lachs? Gourmet-H\xE4hnchen? "
+  - "Ob unser Rendevous heute Abend auch so luxuri\xF6s wird? "
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
