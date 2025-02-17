@@ -252,10 +252,11 @@ public class BallMovement : MonoBehaviour
             RahmenFeuerAI.SetActive(false);
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
+
             ActivateAIStrafeIcon();
 
-            HintergrundFeuerAI.SetActive(true);
-            HintergrundElektroAI.SetActive(false);
+            HintergrundFeuerAI.SetActive(false);
+            HintergrundElektroAI.SetActive(true);
             HintergrundPeitscheAI.SetActive(false);
 
             PSElectric.start(); //sound
