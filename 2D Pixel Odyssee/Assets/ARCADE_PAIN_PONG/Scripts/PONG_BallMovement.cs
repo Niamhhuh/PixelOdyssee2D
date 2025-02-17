@@ -121,6 +121,15 @@ public class BallMovement : MonoBehaviour
 
         script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
 
+        PSBallBounce = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSBallBounce); //Sound
+        PSElectric = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSElectric);
+        PSFire = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSFire);
+        PSWhip = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWhip);
+        PSWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSWin);
+        PSLoose = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.PSLoose);
+
+        script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
+
         /*whitescreen_big = GameObject.Find("C_whitescreen");             //fade out stuff
         whitescreen = whitescreen_big.GetComponent<Image>();            //fade out stuff
         whitescreen_big.SetActive(false);*/
@@ -243,16 +252,13 @@ public class BallMovement : MonoBehaviour
             RahmenFeuerAI.SetActive(false);
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
-
-<<<<<<< HEAD
             ActivateAIStrafeIcon();
-=======
+
             HintergrundFeuerAI.SetActive(true);
             HintergrundElektroAI.SetActive(false);
             HintergrundPeitscheAI.SetActive(false);
 
             PSElectric.start(); //sound
->>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
         }
 
             //FEUER-------------------------------------
@@ -289,6 +295,8 @@ public class BallMovement : MonoBehaviour
 
             ActivateStrafeIcon();
 
+            PSFire.start(); //sound
+
             // Increase player speed
             if (playerMovement != null)
             {
@@ -316,11 +324,11 @@ public class BallMovement : MonoBehaviour
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
 
-<<<<<<< HEAD
             ActivateAIStrafeIcon();
-=======
+
             PSFire.start(); //sound
->>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
+
+            PSFire.start(); //sound
         }
 
         //Peitsche-------------------------------------
@@ -376,11 +384,13 @@ public class BallMovement : MonoBehaviour
             RahmenFeuerAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
 
-<<<<<<< HEAD
             ActivateAIStrafeIcon();
-=======
+
             PSWhip.start(); //sound
->>>>>>> 99dfca73c5e76f2212964e4e5639c36185635160
+
+
+            PSWhip.start(); //sound
+
         }
 
 
