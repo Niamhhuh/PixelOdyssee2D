@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 
 public class GameManager_Street : MonoBehaviour
@@ -65,6 +66,17 @@ public class GameManager_Street : MonoBehaviour
 
     public bool allowInput = true;
     // Start is called before the first frame update
+
+    private EventInstance SFArrowSuccess; //ganz viele Sounds kommen jetzt hier her
+    private EventInstance SFArrowFail;
+    private EventInstance SFWin;
+    private EventInstance SFLoose;
+    private EventInstance SFCountdown;
+    private EventInstance SFRound1;
+    private EventInstance SFPrepareYourself;
+
+
+
     void Awake(){
         animator = GameObject.Find("Round1").GetComponent<TriggerAnimation>();
     }
@@ -78,6 +90,14 @@ public class GameManager_Street : MonoBehaviour
         silverAnimator = Silver.GetComponent<Animator>();
         gameStartStreet.SetActive(true);
         restart = true;
+
+        SFArrowSuccess = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFArrowSuccess); //Sound
+        SFArrowFail = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFArrowFail);
+        SFWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFWin);
+        SFLoose = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFLoose);
+        SFCountdown = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFCountdown);
+        SFRound1 = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFRound1);
+        SFPrepareYourself = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFPrepareYourself);
     }
 
     // Update is called once per frame
@@ -105,6 +125,7 @@ public class GameManager_Street : MonoBehaviour
     IEnumerator FadeInOut()
     {
         yield return Fade(0, 1); // Fade In
+        SFPrepareYourself.start(); //Sound
         yield return new WaitForSeconds(1f);
         yield return Fade(1, 0); // Fade Out
     }
@@ -126,6 +147,7 @@ public class GameManager_Street : MonoBehaviour
         //VSScreen.SetActive(false);
         restart = false;
         animator.PlayScaleAnimationRound1();
+        SFCountdown.start(); //Sound
         print(animator);
         startPlaying = true;
         theBS.hasStarted = true;
@@ -145,6 +167,9 @@ public class GameManager_Street : MonoBehaviour
             startPlaying = false;
             theBS.hasStarted = false;
             gameOverMenuStreet.SetActive(true);
+
+            SFLoose.start(); //Sound
+
             StopAllCoroutines();
             StartCoroutine(PlayAgain());
     }
@@ -187,6 +212,9 @@ public class GameManager_Street : MonoBehaviour
         StopAllCoroutines();
         startPlaying = false;
         theBS.hasStarted = false;
+
+        SFWin.start(); //Sound
+
         StopAllCoroutines();
         //StartCoroutine(BackToHub());
     }
@@ -209,6 +237,9 @@ public class GameManager_Street : MonoBehaviour
     	Debug.Log("NoteHit");
         HitAnim.SetTrigger("HitAnim");
         rosieAnimator.SetTrigger("RosieHit");
+
+        SFArrowSuccess.start(); //Sound
+
         if(allowInput){
             SetLivesEnemy(livesEnemy - 1);
         }
@@ -238,6 +269,9 @@ public class GameManager_Street : MonoBehaviour
         Hp.SetActive(false);
         MissAnim.SetTrigger("MissAnim");
         rosieAnimator.SetTrigger("RosieMiss");
+
+        SFArrowFail.start(); //Sound
+
         SetLives(lives - 1);
         if(lives == 0){
             startPlaying = false;
