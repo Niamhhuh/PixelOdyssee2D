@@ -64,10 +64,10 @@ public class BallMovement : MonoBehaviour
 
     private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
 
-    //White Screen for Elektro Strafe
-    /*private GameObject whitescreen_big;
-    private Image whitescreen;
-    private float fadeDuration;*/
+    //-----------------White Screen for peitsche Strafe
+    public  GameObject whitescreen_object;
+    public Image whitescreen_image;
+    private float fadeDuration = 0.5f;
 
     //_____________________________________________________________________________________
     //-----------------------Set-up below--------------------------------------------------
@@ -130,9 +130,11 @@ public class BallMovement : MonoBehaviour
 
         script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
 
-        /*whitescreen_big = GameObject.Find("C_whitescreen");             //fade out stuff
-        whitescreen = whitescreen_big.GetComponent<Image>();            //fade out stuff
-        whitescreen_big.SetActive(false);*/
+        //----------------------------white fade out in peitsche below 
+        whitescreen_object = GameObject.Find("C_whitescreen");                //get the gameobject Whitescreen, where another image object should be
+        whitescreen_image = whitescreen_object.GetComponent<Image>();       //get the component: image
+        whitescreen_image.color = new Color(0, 0, 0, 0);
+        whitescreen_object.SetActive(false);                                 //Set it to false, since it only activates during the electro
     }
 
     private void FixedUpdate() {        //set velocity of ball throughout the game
@@ -149,7 +151,7 @@ public class BallMovement : MonoBehaviour
 
         Scored = false;
         rb.velocity = new Vector2(0,0);
-        transform.position = new Vector2(0.73f,-0.03f);
+        transform.position = new Vector2(-0.9f,-0.5f);
         hitCounter = 0;
         Invoke("StartBall", 2f);
     }
@@ -259,10 +261,6 @@ public class BallMovement : MonoBehaviour
 
             ActivateAIStrafeIcon();
 
-            HintergrundFeuerAI.SetActive(false);
-            HintergrundElektroAI.SetActive(true);
-            HintergrundPeitscheAI.SetActive(false);
-
             PSElectric.start(); //sound
         }
 
@@ -309,7 +307,7 @@ public class BallMovement : MonoBehaviour
             }
         }
 
-        if (col.gameObject.CompareTag("StrafboxFeuerAI") && aiScore == 0)
+        if (col.gameObject.CompareTag("StrafboxFeuerAI") && plScore == 0)
         {
             Debug.Log("You Hit AI StrafboxFeuer.");
 
@@ -323,12 +321,12 @@ public class BallMovement : MonoBehaviour
             PSFire.start(); //sound
         }
 
-        if (col.gameObject.CompareTag("StrafboxFeuerAI") && aiScore ==1)
+        if (col.gameObject.CompareTag("StrafboxFeuerAI") && plScore == 1)
         {
             Debug.Log("You Hit AI StrafboxFeuer again.");
 
-            RahmenFeuerAI.SetActive(true);
             RahmenElektroAI.SetActive(false);
+            RahmenFeuerAI.SetActive(true);                  //this
             RahmenPeitscheAI.SetActive(false);
             RahmenDefaultAI.SetActive(false);
 
@@ -353,8 +351,10 @@ public class BallMovement : MonoBehaviour
             PSWhip.start(); //sound
 
             Riss1.SetActive(true);
-            //whitescreen_big.SetActive(true);
-            //StartCoroutine(FadeInCoroutine());
+
+            //--------white screen
+            whitescreen_object.SetActive(true);
+            StartCoroutine(FadeOutCoroutine());                                 //then start the fade-out coroutine forthe whitescreen
         }
 
         if (col.gameObject.CompareTag("StrafboxPeitsche") && aiScore == 1)
@@ -371,6 +371,10 @@ public class BallMovement : MonoBehaviour
             Riss2.SetActive(true);
 
             PSWhip.start(); //sound
+
+            //--------white screen
+            whitescreen_object.SetActive(true);
+            StartCoroutine(FadeOutCoroutine());                                 //then start the fade-out coroutine forthe whitescreen
         }
 
         if (col.gameObject.CompareTag("StrafboxPeitscheAI")  && plScore == 0) 
@@ -391,9 +395,9 @@ public class BallMovement : MonoBehaviour
         {
             Debug.Log("You Hit AI StrafboxPeitsche again.");
 
-            RahmenPeitscheAI.SetActive(true);
             RahmenElektroAI.SetActive(false);
-            RahmenFeuerAI.SetActive(false);
+            RahmenFeuerAI.SetActive(false);                  
+            RahmenPeitscheAI.SetActive(true);               //this
             RahmenDefaultAI.SetActive(false);
 
             ActivateAIStrafeIcon();
@@ -506,21 +510,21 @@ public class BallMovement : MonoBehaviour
         SilverIconDefault.SetActive(true);
     }
 
-    /*private IEnumerator FadeInCoroutine()               //fade out stuff white screen
+    //------------------------------------------FADE OUT WHITESCREEN
+    private IEnumerator FadeOutCoroutine()               
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < fadeDuration)
-        {
+        while (elapsedTime < fadeDuration) {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            float alpha = Mathf.Clamp01(1- elapsedTime / fadeDuration);
 
-            whitescreen.color = new Color(255, 255, 255, alpha);
+            whitescreen_image.color = new Color(255, 255, 255, alpha);
             yield return null;
         }
 
-        whitescreen.color = new Color(255, 255, 255, 1);
-        yield return new WaitForSeconds(1f);
-
-    }*/
+        whitescreen_image.color = new Color(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.5f);
+        whitescreen_object.SetActive(false);
+    }
 }
