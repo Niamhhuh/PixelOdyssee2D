@@ -705,6 +705,13 @@ public class DataManager : MonoBehaviour
                     TriggerObj.GetComponent<Triggerable>().UpdateData();
                     TriggerObj.GetComponent<Triggerable>().TriggerInteract();               //Immediatly Activate Trigger
                 }
+
+                if (TriggerObj.GetComponent<Triggerable>().ForcedInteraction)
+                {
+                    TriggerObj.GetComponent<Triggerable>().Lock_State = false;
+                    TriggerObj.GetComponent<Triggerable>().UpdateData();
+                    TriggerObj.GetComponent<Triggerable>().TriggerInteract();               //Immediatly Activate Trigger
+                }
             }
         }
     }

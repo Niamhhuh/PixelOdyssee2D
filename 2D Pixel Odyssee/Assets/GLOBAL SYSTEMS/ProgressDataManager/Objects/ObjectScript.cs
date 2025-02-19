@@ -129,7 +129,7 @@ public class ObjectScript : MonoBehaviour
         if (!Unlock_by_Item)
         {
             Item_Key_ID = -10;                                                                              //if the Object is not Unlocked by an Item, set the KeyID to an unused ID
-            UnlockMethod = 0;
+            //UnlockMethod = 0;
         }
 
         //CurrentCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterScript>();
@@ -474,9 +474,9 @@ public class ObjectScript : MonoBehaviour
 
     public void Unlock_Object()                                                                         //Call on Object Interaction to check for Unlock
     {
+        //print("UnlockMethod" + UnlockMethod);
         if (UnlockMethod == 1)                                                                          //If the Unlock Method is 1 use SwitchUnlock
         {
-            //print("I'm called2");
             SwitchStateUnlock IUReference = null;                                                       //Create an Unlock Variable, which will be used to access the CallSwitchState Method
             IUReference = (SwitchStateUnlock)UnSReference;                                              //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
             IUReference.CallSwitchStateUnlock(ObjectList_ID, ObjectIndex);                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
@@ -684,58 +684,58 @@ public class ObjectScript : MonoBehaviour
 
 
 
-    private void FetchAllData()
+    public void FetchAllData()
     {
         switch (ObjReference.ObjectList_ID)
         {
             case 1:
-                ObjReference.ToggleSprites();
                 Collectable CollectableObjectRef = null;                                                                                                                                                                                    //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 CollectableObjectRef = (Collectable)ObjReference;                                                                                                                                                                           //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 CollectableObjectRef.FetchData(DataManager.Collectable_List[ObjectIndex].Stored_Lock_State, DataManager.Collectable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Collectable_List[ObjectIndex].Stored_Collected);    //Fetch new State from DataManager;                              //Call Switch Unlock Initiator in SwitchUnlock Script, pass this Object's List and Index
+                ObjReference.ToggleSprites();
                 break;
             case 2:
-                ObjReference.ToggleSprites();
                 Shovable ShovableObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 ShovableObjectRef = (Shovable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 ShovableObjectRef.FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);           //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             case 3:
-                ObjReference.ToggleSprites();
                 Portal PortalObjectRef = null;                                                                                                                                                                                              //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 PortalObjectRef = (Portal)ObjReference;                                                                                                                                                                                     //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 PortalObjectRef.FetchData(DataManager.Portal_List[ObjectIndex].Stored_Lock_State, DataManager.Portal_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Portal_List[ObjectIndex].Stored_Traversed);                        //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             case 4:
-                ObjReference.ToggleSprites();
                 Switchable SwitchObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 SwitchObjectRef = (Switchable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 SwitchObjectRef.FetchData(DataManager.SwitchState_List[ObjectIndex].Stored_Lock_State, DataManager.SwitchState_List[ObjectIndex].Stored_AlreadyTalked, DataManager.SwitchState_List[ObjectIndex].Stored_SwitchState);       //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             case 5:
-                ObjReference.ToggleSprites();
                 EventSource EventObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 EventObjectRef = (EventSource)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 EventObjectRef.FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);       //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             case 6:
-                ObjReference.ToggleSprites();
                 Triggerable TriggerObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 TriggerObjectRef = (Triggerable)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 TriggerObjectRef.FetchData(DataManager.Triggerable_List[ObjectIndex].Stored_Lock_State, DataManager.Triggerable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Triggerable_List[ObjectIndex].Stored_Trigger_Passed);       //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             case 7:
-                ObjReference.ToggleSprites();
                 DancePad DancePadObjectRef = null;                                                                                                                                                                                          //Create an Unlock Variable, which will be used to access the CallSwitchState Method
                 DancePadObjectRef = (DancePad)ObjReference;                                                                                                                                                                                 //Convert the Parent UnlockScript Type(UnSReference) into the SwitchStateUnlock Type 
                 DancePadObjectRef.FetchData(DataManager.DancePad_List[ObjectIndex].Stored_Lock_State, DataManager.DancePad_List[ObjectIndex].Stored_AlreadyTalked);       //Fetch new State from DataManager
+                ObjReference.ToggleSprites();
                 break;
             default:
                 break;
         }
     }
 
-    private void UpdateAllData()
+    public void UpdateAllData()
     {
         switch (ObjReference.ObjectList_ID)
         {

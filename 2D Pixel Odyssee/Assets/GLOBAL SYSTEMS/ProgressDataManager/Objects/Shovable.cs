@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Shovable : ObjectScript
 {
@@ -15,6 +17,12 @@ public class Shovable : ObjectScript
 
     public GameObject ShoveController;
     public GameObject ShoveBox;
+
+    //Active Unlock
+
+    public bool Active_Unlock;
+    public GameObject [] TargetObject;
+
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -167,6 +175,31 @@ public class Shovable : ObjectScript
         //add Animation transform.scale animation, requires another coroutine which playe
 
         DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input
+        if(Active_Unlock)
+        {
+
+            foreach(GameObject Target in TargetObject)
+            {
+                if(Target.activeInHierarchy == true && Target != null)
+                {
+                    Target.GetComponent<ShovableUnlock>().CallShovableUnlock(Target.GetComponent<ShovableUnlock>().ObjReference.ObjectList_ID, Target.GetComponent<ShovableUnlock>().ObjReference.ObjectIndex);
+                    Target.GetComponent<ObjectScript>().FetchAllData();
+
+                    if (Target.GetComponent<ObjectScript>().TriggeronUnlock)
+                    {
+                        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                        DataManager.ToInteract.Add(Target.GetComponent<ObjectScript>());
+
+                        //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+                        InteractionController.SetActive(true);
+                        InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+                        InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+                        InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+                    }
+                }
+            }
+        }
     }
 
 }
