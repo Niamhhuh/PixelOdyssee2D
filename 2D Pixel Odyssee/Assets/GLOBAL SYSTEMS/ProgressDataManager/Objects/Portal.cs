@@ -44,6 +44,7 @@ public class Portal : ObjectScript
         }
 
         ToggleSprites();
+        CallColliderToggle();
     }
 
 
@@ -76,7 +77,7 @@ public class Portal : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false)
+        if (Lock_State == false && AlwaysDenyInteraction == false)
         {
             ClearHighlight();
             ObjectSequenceUnlock();

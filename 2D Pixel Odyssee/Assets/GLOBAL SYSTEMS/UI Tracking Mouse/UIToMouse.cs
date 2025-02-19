@@ -37,8 +37,11 @@ public class UiToMouse : MonoBehaviour
     private EventInstance FootstepsRosie;  //Sound f�r Footsteps
     private EventInstance FootstepsBebe;
 
+    private DataManager DMReference;
+
     void Start()
     {
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         CScript = player.GetComponent<CharacterScript>();
@@ -104,7 +107,6 @@ public class UiToMouse : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && AllowInput && !PauseScript.InPause)
         {
-
             Vector3 mousePosition = Input.mousePosition;
 
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));

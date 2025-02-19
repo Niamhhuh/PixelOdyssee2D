@@ -47,6 +47,7 @@ public class Collectable : ObjectScript
         }
 
         ToggleSprites();
+        CallColliderToggle();
         RemoveItem();                                                                                       //Remove Items if they have been collected already
 
 
@@ -96,7 +97,7 @@ public class Collectable : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false)
+        if (Lock_State == false && AlwaysDenyInteraction == false)
         {
             ClearHighlight();
             PassTriggerActivate(1);

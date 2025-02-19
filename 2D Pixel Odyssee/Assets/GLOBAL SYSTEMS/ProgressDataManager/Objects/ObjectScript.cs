@@ -12,6 +12,7 @@ public class ObjectScript : MonoBehaviour
     public bool Lock_State;                                                         //check if this Object is Interaction_Locked/Limited
     public bool ForcedInteraction;
     public bool TriggeronUnlock;
+    public bool AlwaysDenyInteraction;
     public bool Unlock_by_Item;                                                     //check if this Object is Unlocked by an Item
     public int Item_Key_ID;                                                         //ID of the Key
     public bool ChangeNameonLock;
@@ -85,9 +86,13 @@ public class ObjectScript : MonoBehaviour
 
     [HideInInspector] public AddCodeFragment AddCodeScript = null;
 
+
+    [HideInInspector] public ColliderController ColliderScript = null;
     public Comment ObjectComment;
 
     private PauseMenu PauseScript;
+
+    
 
     //Connect Transformative Dialogue System
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -302,6 +307,11 @@ public class ObjectScript : MonoBehaviour
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
                 InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
             }
+
+            DMReference.MoveScript.DisableInput();
+            DMReference.MoveScript.DisableInteract();
+            DMReference.MoveScript.Activate_CallEnableInput();
+            DMReference.MoveScript.Activate_CallEnableInteract();
         }
 
 
@@ -309,7 +319,7 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
         {
-            if(!isBackground && !IsFullTrigger)
+            if (!isBackground && !IsFullTrigger)
             {
                 StartCoroutine(UnlockFlashRed());
             }
@@ -334,6 +344,25 @@ public class ObjectScript : MonoBehaviour
                     StartCoroutine(ControlCommentBebe());
                 }
             }
+
+            if (ForcedInteraction)                                                                          //Force Interaction Denied response when Item doesnt work
+            {
+                StartCoroutine(UnlockFlashRed());
+
+                DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                DataManager.ToInteract.Add(this);
+
+                //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+                InteractionController.SetActive(true);
+                InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+                InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+                InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+            }
+            DMReference.MoveScript.DisableInput();
+            DMReference.MoveScript.DisableInteract();
+            DMReference.MoveScript.Activate_CallEnableInput();
+            DMReference.MoveScript.Activate_CallEnableInteract();
         }
 
     }
@@ -584,6 +613,12 @@ public class ObjectScript : MonoBehaviour
         {
             GetComponent<NPCDialogue>().InLockResponse = false;
         }
+
+        if (AlwaysDenyInteraction)
+        {
+            DMReference.MoveScript.EnableInput();
+            DMReference.MoveScript.EnableInteract();
+        }
     }
 
 
@@ -600,6 +635,12 @@ public class ObjectScript : MonoBehaviour
         }
         ObjectSprite.color = originalColor;
         HighlightObjectSprite.color = originalHighlightColor;
+
+        if (AlwaysDenyInteraction)
+        {
+            DMReference.MoveScript.EnableInput();
+            DMReference.MoveScript.EnableInteract();
+        }
     }
 
 
@@ -682,6 +723,13 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+    public void CallColliderToggle()
+    {
+        if (ColliderScript != null)
+        {
+            ColliderScript.ToggleCollider();
+        }
+    }
 
 
     public void FetchAllData()
@@ -733,6 +781,7 @@ public class ObjectScript : MonoBehaviour
             default:
                 break;
         }
+        ObjReference.CallColliderToggle();
     }
 
     public void UpdateAllData()

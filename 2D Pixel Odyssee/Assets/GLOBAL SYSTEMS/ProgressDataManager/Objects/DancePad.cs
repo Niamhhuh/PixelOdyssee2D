@@ -12,10 +12,15 @@ public class DancePad : ObjectScript
     public GameObject PadController;
     public DanceScript DanceScriptRef = null;
 
+
     public int TargetList_ID;
     public int TargetObject_ID;
 
     public int[] TargetInput;
+
+
+    public bool Active_Unlock;
+    public GameObject[] TargetObject; 
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,6 +57,7 @@ public class DancePad : ObjectScript
         }
 
         ToggleSprites();
+        CallColliderToggle();
     }
 
 
@@ -88,7 +94,7 @@ public class DancePad : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false && DMReference.CurrentCharacter.RosieActive == true)
+        if (Lock_State == false && AlwaysDenyInteraction == false)
         {
             ObjectSequenceUnlock();
             //PassTriggerActivate(1); This was moved to line 155 (Movex) to execute after the shove is completed
@@ -153,6 +159,33 @@ public class DancePad : ObjectScript
         if(TargetList_ID == 1)
         {
             DMReference.ActivateReward(TargetObject_ID);
+        }
+
+        PassTriggerActivate(1);
+
+        if (Active_Unlock)
+        {
+
+            foreach (GameObject Target in TargetObject)
+            {
+                if (Target != null && Target.activeInHierarchy == true && Target != null)
+                {
+                    Target.GetComponent<ObjectScript>().FetchAllData();
+
+                    if (Target.GetComponent<ObjectScript>().TriggeronUnlock)
+                    {
+                        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                        DataManager.ToInteract.Add(Target.GetComponent<ObjectScript>());
+
+                        //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+
+                        InteractionController.SetActive(true);
+                        InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+                        InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+                        InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+                    }
+                }
+            }
         }
     }
 

@@ -41,6 +41,7 @@ public class Switchable : ObjectScript
         }
         FlipSwitch();
         ToggleSprites();
+        CallColliderToggle();
     }
 
 
@@ -73,7 +74,7 @@ public class Switchable : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false)
+        if (Lock_State == false && AlwaysDenyInteraction == false)
         {
             ClearHighlight();
             PassTriggerActivate(1);                                                                     //Call Activate Trigger -> checks if ActivateTrigger is attached, then continues (1 = Trigger acitvated by interaction)

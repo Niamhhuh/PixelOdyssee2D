@@ -45,6 +45,7 @@ public class EventSource : ObjectScript
         }
 
         ToggleSprites();
+        CallColliderToggle();
         RemoveEvent();                                                                                       //Remove Event if it has been interacted with already
     }
 
@@ -96,7 +97,7 @@ public class EventSource : ObjectScript
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
 
-        if (Lock_State == false)
+        if (Lock_State == false && AlwaysDenyInteraction == false)
         {
             gameObject.GetComponent<Collider2D>().enabled = false;                                     //disable Collider to Trigger TurnOffDialogue in AdvancedDialogueManager early -> would otherwise remove Forced Dialogue from line 99!!!!
             ClearHighlight();

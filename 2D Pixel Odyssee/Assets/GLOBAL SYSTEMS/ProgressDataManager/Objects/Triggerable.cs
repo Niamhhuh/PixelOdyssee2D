@@ -48,6 +48,7 @@ public class Triggerable : ObjectScript
             gameObject.SetActive(false);
         }
         ToggleSprites();
+        CallColliderToggle();
         RemoveTrigger();                                                                                       //Remove Event if it has been interacted with already
     }
 

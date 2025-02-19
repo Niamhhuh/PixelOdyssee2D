@@ -60,6 +60,7 @@ public class Shovable : ObjectScript
 
         PlaceShovable();                                                                                       //Place Shovable at the right position on load
         ToggleSprites();
+        CallColliderToggle();
     }
 
 
@@ -99,7 +100,7 @@ public class Shovable : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false && DMReference.CurrentCharacter.RosieActive == true)
+        if (Lock_State == false && DMReference.CurrentCharacter.RosieActive == true && AlwaysDenyInteraction == false)
         {
             ObjectSequenceUnlock();
             //PassTriggerActivate(1); This was moved to line 155 (Movex) to execute after the shove is completed
@@ -180,7 +181,7 @@ public class Shovable : ObjectScript
 
             foreach(GameObject Target in TargetObject)
             {
-                if(Target.activeInHierarchy == true && Target != null)
+                if(Target != null && Target.activeInHierarchy == true && Target != null)
                 {
                     Target.GetComponent<ShovableUnlock>().CallShovableUnlock(Target.GetComponent<ShovableUnlock>().ObjReference.ObjectList_ID, Target.GetComponent<ShovableUnlock>().ObjReference.ObjectIndex);
                     Target.GetComponent<ObjectScript>().FetchAllData();
