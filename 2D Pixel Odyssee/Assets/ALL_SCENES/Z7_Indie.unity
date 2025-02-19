@@ -122,6 +122,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12385710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12385712}
+  - component: {fileID: 12385711}
+  m_Layer: 0
+  m_Name: Seifendose Tisch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &12385711
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12385710}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 21300000, guid: 32fcfe1e6e6ff7b48be36e284a478345, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.61, y: 3.74}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &12385712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12385710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.302, y: -2.2815, z: 0}
+  m_LocalScale: {x: 0.7934, y: 0.7934, z: 0.7934}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117220702
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +285,90 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.64, y: 4.31}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &127527631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127527632}
+  - component: {fileID: 127527633}
+  m_Layer: 0
+  m_Name: Seifendosen einzeln (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127527632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127527631}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1622096636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &127527633
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127527631}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 33e218f3db2d2c04086da50b0e41bde4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.43, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -326,6 +494,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 1
   TriggeronUnlock: 1
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 1
   Item_Key_ID: 35
   ChangeNameonLock: 0
@@ -359,6 +528,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -687,6 +857,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 1
   TriggeronUnlock: 1
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 1
@@ -720,6 +891,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -878,6 +1050,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -911,6 +1084,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1081,6 +1255,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8839999180897112802, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d42cdf5d5f17c4f4bbc545120e6eb3e8, type: 3}
+    - target: {fileID: 9064442640667630459, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: Recipe
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f3b6b9870571bc48a6fcdd213414f07, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1405,6 +1587,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &630666834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630666835}
+  - component: {fileID: 630666836}
+  m_Layer: 0
+  m_Name: Seifendosen Box (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &630666835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630666834}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1541788164}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &630666836
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630666834}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 43843b6973200ee48b466d388381315d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.58, y: 1.33}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &758706101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1944,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1711,6 +1978,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1721,6 +1989,8 @@ MonoBehaviour:
   Max_Shove_Right: 1
   ShoveController: {fileID: 0}
   ShoveBox: {fileID: 0}
+  Active_Unlock: 0
+  TargetObject: []
 --- !u!61 &879700134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1890,6 +2160,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1923,6 +2194,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1933,6 +2205,8 @@ MonoBehaviour:
   Max_Shove_Right: 0
   ShoveController: {fileID: 0}
   ShoveBox: {fileID: 0}
+  Active_Unlock: 0
+  TargetObject: []
 --- !u!61 &917787536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2174,6 +2448,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -2207,6 +2482,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -2398,6 +2674,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -2431,6 +2708,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -2588,6 +2866,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 1
   TriggeronUnlock: 1
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -2621,6 +2900,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -2979,6 +3259,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -3012,6 +3293,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3206,6 +3488,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -3239,6 +3522,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3455,6 +3739,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -3488,6 +3773,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3963,6 +4249,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1541788162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541788164}
+  - component: {fileID: 1541788163}
+  m_Layer: 0
+  m_Name: Seifendosen Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1541788163
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541788162}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 3531ed3c02c70044e93fb9067ed3a66d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.58, y: 1.33}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1541788164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541788162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.825, y: -0.585, z: 0}
+  m_LocalScale: {x: 0.845, y: 0.845, z: 0.845}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 630666835}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553135559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,6 +4370,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -4032,6 +4404,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -4323,6 +4696,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1622096633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622096636}
+  - component: {fileID: 1622096635}
+  - component: {fileID: 1622096634}
+  m_Layer: 0
+  m_Name: Seifendosen einzeln
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1622096634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cdef112f2b4b845bafb171150a8fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 71
+  AlreadyTalked: 0
+  Lock_State: 1
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
+  Unlock_by_Item: 1
+  Item_Key_ID: 52
+  ChangeNameonLock: 0
+  LockName: 
+  LockSprite: {fileID: 21300000, guid: fb528fcf0d56c9a4ebd68a4cf6788dd4, type: 3}
+  LockHighlightSprite: {fileID: 21300000, guid: 6895907967e68d44ab84bd597bd5e6c5, type: 3}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 0
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Collected: 0
+  RewardPosition: 0
+--- !u!212 &1622096635
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096633}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 4228ec8523c801347a111800084614cf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.43, y: 0.75}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1622096636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.234, y: -1.041, z: 0}
+  m_LocalScale: {x: 0.79707503, y: 0.79707503, z: 0.79707503}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 127527632}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1713589213
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,7 +5029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1763784550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4598,6 +5115,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 1
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 1
   Item_Key_ID: 52
   ChangeNameonLock: 0
@@ -4631,6 +5149,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -4918,6 +5437,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -4951,6 +5471,7 @@ MonoBehaviour:
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
   AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -5227,6 +5748,7 @@ SceneRoots:
   - {fileID: 879700132}
   - {fileID: 917787534}
   - {fileID: 948697772}
+  - {fileID: 1622096636}
   - {fileID: 401830446}
   - {fileID: 505983929}
   - {fileID: 1241583124}
@@ -5236,3 +5758,5 @@ SceneRoots:
   - {fileID: 470417408}
   - {fileID: 1021617307}
   - {fileID: 1299603690}
+  - {fileID: 1541788164}
+  - {fileID: 12385712}
