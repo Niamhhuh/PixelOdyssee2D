@@ -12,6 +12,7 @@ public class InteractionScript : MonoBehaviour
 
     GameObject TempObject;
     public Animator animator;
+    public Animator animatorBebe;
 
     private void Start()
     {
@@ -57,6 +58,7 @@ public class InteractionScript : MonoBehaviour
         public void TriggerInteraction ()
     {
         animator.SetTrigger("interact");
+        animatorBebe.SetTrigger("interact");
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
