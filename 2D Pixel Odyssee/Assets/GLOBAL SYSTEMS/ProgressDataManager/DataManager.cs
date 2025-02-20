@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.ComponentModel;
+
+[System.Serializable]
+
 public class DataManager : MonoBehaviour
 {
     public static List<CollectableObj> Collectable_List = new List<CollectableObj>();       //Create a List to store all relevant Variables of Collectable Items            //List_ID 1
@@ -32,8 +35,6 @@ public class DataManager : MonoBehaviour
 
     public List<GameObject> TriggeredObjects_List = new List<GameObject>();          //Create a List to store all Triggers
 
-    public static bool[] Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
-
     public UiToMouse MoveScript = null;                                                     //provide easy access to Movescript
 
 
@@ -60,8 +61,6 @@ public class DataManager : MonoBehaviour
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    public static bool FroggerCleared = false;
 
     public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
     public List<GameObject> RewardObjects = new List<GameObject>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
@@ -185,17 +184,6 @@ public class DataManager : MonoBehaviour
             CursorScript = GameObject.FindGameObjectWithTag("DataManager").GetComponent<CursorImageScript>();
             DialogueManager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         }
-
-        Rooms_Loaded[0] = false;                                                        //Archive 
-        Rooms_Loaded[1] = false;                                                        //RaceArcade
-        Rooms_Loaded[2] = false;                                                        //Exit
-        Rooms_Loaded[3] = false;                                                        //SpaceWar 
-        Rooms_Loaded[4] = false;                                                        //Hub 
-        Rooms_Loaded[5] = false;                                                        //OldArcade 
-        Rooms_Loaded[6] = false;                                                        //Adventure
-        Rooms_Loaded[7] = false;                                                        //SensationInteraction
-        Rooms_Loaded[8] = false;                                                        //Indie
-        Rooms_Loaded[9] = false;                                                        //BossRoom
 
         RosieComment = GameObject.FindGameObjectWithTag("CommentSpriteRosie");
         BebeComment = GameObject.FindGameObjectWithTag("CommentSpriteBebe");
@@ -770,7 +758,7 @@ public class DataManager : MonoBehaviour
     //Classes for Object DataTypes
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    [System.Serializable]
     public class Obj
     {
         public int Stored_ID;
@@ -779,45 +767,56 @@ public class DataManager : MonoBehaviour
         // public int Dialogue_Progress;
     }
 
+    [System.Serializable]
     public class CollectableObj : Obj
     {
         public bool Stored_Collected;
     }
 
+    [System.Serializable]
     public class SwitchStateObj : Obj
     {
         public bool Stored_SwitchState;
     }
 
+    [System.Serializable]
     public class DraggableObj : Obj
     {
         public int Stored_Slot;
     }
 
+    [System.Serializable]
     public class ShovableObj : Obj
     {
         public int Stored_Shove_Position;
     }
 
+    [System.Serializable]
     public class PortalObj : Obj
     {
         public bool Stored_Traversed;
     }
+
+    [System.Serializable]
     public class EventObj : Obj
     {
         public bool Stored_Event_Passed;
     }
+
+    [System.Serializable]
     public class TriggerableObj : Obj
     {
         public bool Stored_Trigger_Passed;
         public GameObject Stored_Trigger;
     }
 
+    [System.Serializable]
     public class DancePadObj : Obj
     {
         
     }
 
+    [System.Serializable]
     public class ActiveGoal
     {
         public int Stored_ID;

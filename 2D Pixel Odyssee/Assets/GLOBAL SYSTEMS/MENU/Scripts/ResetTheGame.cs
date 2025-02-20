@@ -36,7 +36,6 @@ public class ResetTheGame : MonoBehaviour
 
         //DataManager.TriggeredObjects_List.Clear();
 
-        DataManager.Rooms_Loaded = new bool[10];                                       //Array which remembers if rooms have been loaded before.
 
         DMReference.MoveScript = null;                                                 //provide easy access to Movescript
         DMReference.InventoryRef = null;
@@ -46,8 +45,6 @@ public class ResetTheGame : MonoBehaviour
 
         DataManager.DisableCharacterSwap = true;
         DataManager.DisableClipboard = true;
-
-        DataManager.FroggerCleared = false;
 
     }
 }

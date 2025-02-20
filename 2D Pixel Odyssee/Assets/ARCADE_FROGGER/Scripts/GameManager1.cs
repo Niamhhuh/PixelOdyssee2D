@@ -90,7 +90,6 @@ public class GameManager1 : MonoBehaviour
         NewRound();*/
         frogger.gameObject.SetActive(false);
         gameWonMenu.gameObject.SetActive(true);
-        DataManager.FroggerCleared = true;
 
         StopAllCoroutines();
         StartCoroutine(BackToHub());

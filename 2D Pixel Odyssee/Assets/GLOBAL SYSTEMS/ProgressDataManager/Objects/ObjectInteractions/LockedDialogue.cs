@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class LockedDialogue : MonoBehaviour
 {
