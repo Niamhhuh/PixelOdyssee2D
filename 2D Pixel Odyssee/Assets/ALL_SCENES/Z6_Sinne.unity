@@ -2865,8 +2865,8 @@ GameObject:
   - component: {fileID: 903697900}
   - component: {fileID: 903697899}
   - component: {fileID: 903697901}
-  - component: {fileID: 903697902}
   - component: {fileID: 903697903}
+  - component: {fileID: 903697904}
   m_Layer: 0
   m_Name: Fake DDR
   m_TagString: Untagged
@@ -3048,7 +3048,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.18, y: 2.1}
   m_EdgeRadius: 0
---- !u!114 &903697902
+--- !u!114 &903697903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbf79db9409b2441b2e206cc65dd89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OffwhenLocked: 1
+--- !u!114 &903697904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3064,19 +3077,6 @@ MonoBehaviour:
   Unlock_Position: -1
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
---- !u!114 &903697903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903697897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fbf79db9409b2441b2e206cc65dd89b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OffwhenLocked: 1
 --- !u!1 &910244521
 GameObject:
   m_ObjectHideFlags: 0

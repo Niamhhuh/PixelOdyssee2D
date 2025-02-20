@@ -9,7 +9,7 @@ public class ColliderController : MonoBehaviour
     
     public bool OffwhenLocked;
 
-    private void Start()
+    private void Awake()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         ThisObject = gameObject.GetComponent<ObjectScript>();
