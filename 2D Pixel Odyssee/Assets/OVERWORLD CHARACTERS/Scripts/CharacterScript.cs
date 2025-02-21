@@ -9,7 +9,6 @@ public class CharacterScript : MonoBehaviour
 {
     public GameObject RosieObj;
     public GameObject BeBeObj;
-    public bool RosieActive;
 
     [HideInInspector] public GameObject RosieComment = null;
     [HideInInspector] public GameObject BebeComment = null;
@@ -44,6 +43,8 @@ public class CharacterScript : MonoBehaviour
         DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
+        RosieComment.SetActive(false);
+        BebeComment.SetActive(false);
 
         if (uitomouse != null )
         {
@@ -51,37 +52,40 @@ public class CharacterScript : MonoBehaviour
             uitomouse.playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();
         }
 
-
-        RosieComment.SetActive(false);
-        BebeComment.SetActive(false);
-        //Chaanimation = GetComponent<Animation>();
-        //TargetPosition = transform.position;
-        BeBeObj.SetActive(false);
-        RosieActive = true;
-        //AllowInput = true;
-
         var cinemachine = FindObjectOfType<CinemachineVirtualCamera>();
         if (cinemachine != null)
         {
             cinemachine.Follow = this.transform;
         }
+
+        SetCharacter();
+    }
+
+    public void SetStandardCase()
+    {
+        RosieComment.SetActive(false);
+        BebeComment.SetActive(false);
+        //Chaanimation = GetComponent<Animation>();
+        //TargetPosition = transform.position;
+        BeBeObj.SetActive(false);
+        DataManager.RosieActive = true;
+        //AllowInput = true;
     }
 
     public void SwitchCharacters()
     {
         if (!PauseScript.InPause && !DialogueScript.InDialogue)
-        {
-
-            if (RosieObj.activeSelf == true)
+        { 
+            DataManager.RosieActive = !DataManager.RosieActive; 
+            
+            if (DataManager.RosieActive == false)
             {
-                RosieActive = false;
                 RosieObj.SetActive(false);
                 BeBeObj.SetActive(true);
                 uitomouse.SwitchCharacter();
             }
             else
             {
-                RosieActive = true;
                 RosieObj.SetActive(true);
                 BeBeObj.SetActive(false);
                 uitomouse.SwitchCharacter();
@@ -90,40 +94,57 @@ public class CharacterScript : MonoBehaviour
         }        
     }
 
-     /*
-    public void DisableInput ()
+    private void SetCharacter()
     {
-        AllowInput = false;
-    }
-
-    public void EnableInput()
-    {
-        AllowInput = true;
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && AllowInput)
-        {
-            TargetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            TargetPosition.z = transform.position.z;
-            TargetPosition.y = transform.position.y;
-
-            MoveToPoint = true; ////Tom and ChatGBT team up to make more trash
-            //Chaanimator.SetFloat("Speed", Movespeed); //Tom effing around
-        }
-
-        if (MoveToPoint)      //Tom and ChatGBT team up to make more trash
-        {
-            transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Movespeed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, TargetPosition) <= DestinationMargin)//Tom and ChatGBT team up to make more trash
+            if (DataManager.RosieActive == false)
             {
-                MoveToPoint = false;//Tom and ChatGBT team up to make more trash
-                //Chaanimator.SetFloat("Speed", 0); ; //Tom and ChatGBT team up to make more trash
+                RosieObj.SetActive(false);
+                BeBeObj.SetActive(true);
+                uitomouse.SwitchCharacter();
             }
-        }
+            else
+            {
+                RosieObj.SetActive(true);
+                BeBeObj.SetActive(false);
+                uitomouse.SwitchCharacter();
+            }
     }
-    */
+
+
+    /*
+   public void DisableInput ()
+   {
+       AllowInput = false;
+   }
+
+   public void EnableInput()
+   {
+       AllowInput = true;
+   }
+
+   void Update()
+   {
+       if (Input.GetMouseButtonDown(0) && AllowInput)
+       {
+           TargetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+           TargetPosition.z = transform.position.z;
+           TargetPosition.y = transform.position.y;
+
+           MoveToPoint = true; ////Tom and ChatGBT team up to make more trash
+           //Chaanimator.SetFloat("Speed", Movespeed); //Tom effing around
+       }
+
+       if (MoveToPoint)      //Tom and ChatGBT team up to make more trash
+       {
+           transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Movespeed * Time.deltaTime);
+
+           if (Vector3.Distance(transform.position, TargetPosition) <= DestinationMargin)//Tom and ChatGBT team up to make more trash
+           {
+               MoveToPoint = false;//Tom and ChatGBT team up to make more trash
+               //Chaanimator.SetFloat("Speed", 0); ; //Tom and ChatGBT team up to make more trash
+           }
+       }
+   }
+   */
 }
 

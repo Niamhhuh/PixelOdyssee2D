@@ -368,7 +368,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     private void SetStandardDialogue(NPCDialogue npcDialogue)
     {
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
+        if (DataManager.RosieActive == true && npcDialogue.conversation.Length > 0 && npcDialogue.conversation[0] != null)
         {
             currentConversation = npcDialogue.conversation[0];
         }
@@ -398,7 +398,7 @@ public class AdvancedDialogueManager : MonoBehaviour
         }
        
         //the array we are currently stepping through
-        if (DMReference.CurrentCharacter.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
+        if (DataManager.RosieActive == true && npcDialogue.conversation.Length > 2 && npcDialogue.conversation[2] != null)
         {
             currentConversation = npcDialogue.conversation[2];
             if(currentConversation == null)

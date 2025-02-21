@@ -100,7 +100,7 @@ public class Shovable : ObjectScript
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
 
-        if (Lock_State == false && DMReference.CurrentCharacter.RosieActive == true && AlwaysDenyInteraction == false)
+        if (Lock_State == false && DataManager.RosieActive == true && AlwaysDenyInteraction == false)
         {
             ObjectSequenceUnlock();
             //PassTriggerActivate(1); This was moved to line 155 (Movex) to execute after the shove is completed

@@ -326,7 +326,7 @@ public class ObjectScript : MonoBehaviour
             {
                 StartCoroutine(UnlockFlashRed());
             }
-            if (DMReference.CurrentCharacter.RosieActive == true)
+            if (DataManager.RosieActive == true)
             {
                 if(DMReference.RosieComment != null && ObjectComment != null)
                 {
@@ -337,7 +337,7 @@ public class ObjectScript : MonoBehaviour
                 }  
             }
 
-            if (DMReference.CurrentCharacter.RosieActive == false)
+            if (DataManager.RosieActive == false)
             {
                 if(DMReference.BebeComment != null && ObjectComment != null)
                 {

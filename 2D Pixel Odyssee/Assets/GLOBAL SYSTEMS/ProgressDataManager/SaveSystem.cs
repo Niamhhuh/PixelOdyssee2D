@@ -118,6 +118,7 @@ public class SaveSystem : MonoBehaviour
 
         DStorage.Slot_Array_State = (SlotScript[])DataManager.Slot_Array.Clone();
         DStorage.Inventory_Fillstate_State = DataManager.Inventory_Fillstate;
+        DStorage.RosieActive_State = DataManager.RosieActive;
 
         // Other variables (Primitive types don't need deep copying)
         DStorage.DisableClipboard_State = DataManager.DisableClipboard;
@@ -169,6 +170,7 @@ public class SaveSystem : MonoBehaviour
 
         DataManager.Slot_Array = (SlotScript[])DStorage.Slot_Array_State.Clone();
         DataManager.Inventory_Fillstate = DStorage.Inventory_Fillstate_State;
+        DataManager.RosieActive = DStorage.RosieActive_State;
 
         //    public static bool DisableClipboard = true;
         //    public static bool DisableCharacterSwap = true;

@@ -137,7 +137,7 @@ public class UiToMouse : MonoBehaviour
             }
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK ROSIE
-            if (playerAnimator != null && CScript.RosieActive)
+            if (playerAnimator != null && DataManager.RosieActive)
             {
                 playerAnimator.SetBool("isWalking", true);
                 playerAnimator.SetInteger("LastDirection", lastDirection);
@@ -145,7 +145,7 @@ public class UiToMouse : MonoBehaviour
             }
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK BeBe
-            if (playerAnimator2 != null && !CScript.RosieActive)
+            if (playerAnimator2 != null && !DataManager.RosieActive)
             {
             playerAnimator2.SetBool("isWalking", true);
             playerAnimator2.SetInteger("LastDirection", lastDirection);

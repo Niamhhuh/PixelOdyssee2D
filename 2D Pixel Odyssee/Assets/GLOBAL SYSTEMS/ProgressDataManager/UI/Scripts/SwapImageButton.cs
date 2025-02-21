@@ -26,12 +26,12 @@ public class SwapImageButton : MonoBehaviour
         DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
-        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == true && RosieImage != null)
+        if (CurrentImage != null && DataManager.RosieActive == true && RosieImage != null)
         {
             CurrentImage.sprite = BebeImage;
         }
 
-        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == false && BebeImage != null)
+        if (CurrentImage != null && DataManager.RosieActive == false && BebeImage != null)
         {
             CurrentImage.sprite = RosieImage;
         }
@@ -41,12 +41,12 @@ public class SwapImageButton : MonoBehaviour
     // Method to swap the image on button click or Hover Exit(Clear Highlight)
     public void SwapImage()
     {
-        if (DMReference.CurrentCharacter.RosieActive == true && BebeImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
+        if (DataManager.RosieActive == true && BebeImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
         {
             CurrentImage.sprite = RosieImage;
         }
 
-        if (DMReference.CurrentCharacter.RosieActive == false && BebeImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
+        if (DataManager.RosieActive == false && BebeImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
         {
             CurrentImage.sprite = BebeImage;
         }
@@ -57,12 +57,12 @@ public class SwapImageButton : MonoBehaviour
     //Call in Inspector on Pointer Enter
     public void HighlightImage()
     {
-        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == true && RosieImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
+        if (CurrentImage != null && DataManager.RosieActive == true && RosieImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
         {
             CurrentImage.sprite = HighlightSwapButtonRosie;
         }
 
-        if (CurrentImage != null && DMReference.CurrentCharacter.RosieActive == false && RosieImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
+        if (CurrentImage != null && DataManager.RosieActive == false && RosieImage != null && !PauseScript.InPause && !DialogueScript.InDialogue)
         {
             CurrentImage.sprite = HighlightSwapButtonBebe;
         }

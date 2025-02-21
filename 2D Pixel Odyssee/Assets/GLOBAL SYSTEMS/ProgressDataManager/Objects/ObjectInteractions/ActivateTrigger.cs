@@ -29,12 +29,12 @@ public class ActivateTrigger : MonoBehaviour
     {
         if (CharacterBound)
         {
-            if (Rosie && DMReference.CurrentCharacter.RosieActive)
+            if (Rosie && DataManager.RosieActive)
             {
                 PassTriggerActivation(TriggerType);
             }
 
-            if (Bebe && !DMReference.CurrentCharacter.RosieActive)
+            if (Bebe && !DataManager.RosieActive)
             {
                 PassTriggerActivation(TriggerType);
             }

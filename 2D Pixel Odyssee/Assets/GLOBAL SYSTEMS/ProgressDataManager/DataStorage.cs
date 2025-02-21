@@ -59,6 +59,8 @@ public class DataStorage
     public SlotScript[] Slot_Array_State;
     public int Inventory_Fillstate_State;
 
+    public bool RosieActive_State;
+
     //    public static bool DisableClipboard = true;
     //    public static bool DisableCharacterSwap = true;
     public bool DisableClipboard_State;
