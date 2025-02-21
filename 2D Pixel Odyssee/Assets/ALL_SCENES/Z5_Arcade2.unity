@@ -376,6 +376,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -408,6 +409,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -566,6 +569,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -598,6 +602,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -884,6 +890,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -916,6 +923,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1090,6 +1099,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1122,6 +1132,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1280,6 +1292,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1312,6 +1325,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1572,6 +1587,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1604,6 +1620,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1651,7 +1669,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37353df3abc3a8640b0b4ed10a847ef6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fabf298d99f2d4448e7403e3f0a8fb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1671,7 +1689,7 @@ Transform:
   m_GameObject: {fileID: 405818244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.47, y: -0.66142505, z: 0}
+  m_LocalPosition: {x: 19.47, y: -0.536, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1714,7 +1732,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.82, y: 0.86}
+    oldSize: {x: 0.67, y: 0.92}
     newSize: {x: 0.82, y: 0.86}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1873,6 +1891,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -1905,6 +1924,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1915,6 +1936,8 @@ MonoBehaviour:
   Max_Shove_Right: 1
   ShoveController: {fileID: 0}
   ShoveBox: {fileID: 0}
+  Active_Unlock: 0
+  TargetObject: []
 --- !u!114 &506269869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,6 +2482,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -2491,6 +2515,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3072,6 +3098,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -3104,6 +3131,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3525,6 +3554,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -3557,6 +3587,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -3729,7 +3761,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8f38f6b15b85d0147bae1a1270c86157, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22c88fc050187ac479a4d1abf957c79b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4075,6 +4107,7 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 1
   Item_Key_ID: 34
   ChangeNameonLock: 0
@@ -4107,6 +4140,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -4269,6 +4304,7 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
@@ -4301,6 +4337,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0

@@ -13653,7 +13653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RosieObj: {fileID: 7031242695563879073}
   BeBeObj: {fileID: 1730469805451481761}
-  RosieActive: 0
   RosieComment: {fileID: 0}
   BebeComment: {fileID: 0}
 --- !u!1 &6492482501577216744
@@ -13748,6 +13747,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DMReference: {fileID: 0}
+  DStorage:
+    Collectable_State: []
+    ShovableObj_State: []
+    PortalObj_State: []
+    SwitchStateObj_State: []
+    EventObj_State: []
+    TriggerableObj_State: []
+    DancePadObj_State: []
+    Draggable_State: []
+    ActiveGoal_State: []
+    TriggerObject_State: []
+    Slot_Array_State: []
+    Inventory_Fillstate_State: 0
+    RosieActive_State: 0
+    DisableClipboard_State: 0
+    DisableCharacterSwap_State: 0
+    Reward_List_State: []
+    SpawnID_State: 0
+    LastRoom_State: 0
+    NewGame_State: 0
+    CurrentScroll_State: 0
+    MaxScroll_State: 0
+    ContainerStartPosition_State: {x: 0, y: 0}
+    Code1Acquired_State: 0
+    Code2Acquired_State: 0
+    Code3Acquired_State: 0
+    ProgressDialogueList_State: 
 --- !u!1 &6576325417162425969
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,7 +17709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9cdcb09b4987ed1438da042d2427d26d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44e5e1c28ffd2e746b1d946779fc1506, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
