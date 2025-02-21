@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using static DataManager;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -109,11 +110,11 @@ public class SaveSystem : MonoBehaviour
 
         // Inventory Lists
         DStorage.Draggable_State = new List<DataManager.DraggableObj>(DataManager.Draggable_List);
-        DStorage.Item_State = new List<Draggable>(DataManager.Item_List);  //Unnecessary but deep copy
-        DStorage.Recipe_State = new List<CraftRecipe>(DataManager.Recipe_List);  //Unnecessary but deep copy
+        //DStorage.Item_State = new List<Draggable>(DataManager.Item_List);  //Unnecessary but deep copy
+        //DStorage.Recipe_State = new List<CraftRecipe>(DataManager.Recipe_List);  //Unnecessary but deep copy
 
         DStorage.ActiveGoal_State = new List<DataManager.ActiveGoal>(DataManager.ActiveGoal_List);
-        DStorage.Goal_State = new List<GoalObject>(DataManager.GoalObject_List);
+        //DStorage.Goal_State = new List<GoalObject>(DataManager.GoalObject_List);
 
         DStorage.Slot_Array_State = (SlotScript[])DataManager.Slot_Array.Clone();
         DStorage.Inventory_Fillstate_State = DataManager.Inventory_Fillstate;
@@ -123,7 +124,7 @@ public class SaveSystem : MonoBehaviour
         DStorage.DisableCharacterSwap_State = DataManager.DisableCharacterSwap;
 
         // Reward List
-        DStorage.Reward_List_State = new List<Collectable>(DataManager.RewardList);
+        DStorage.Reward_List_State = new List<CollectableObj>(DataManager.RewardList);                                 //REQUIRES MAKOVER
 
         // MiniMap + SpawnSystem
         DStorage.SpawnID_State = DataManager.SpawnID;
@@ -160,11 +161,11 @@ public class SaveSystem : MonoBehaviour
         //Inventory Lists
 
         DataManager.Draggable_List = new List<DataManager.DraggableObj>(DStorage.Draggable_State);
-        DataManager.Item_List = new List<Draggable>(DStorage.Item_State);                      //Unnecessary 
-        DataManager.Recipe_List = new List<CraftRecipe>(DStorage.Recipe_State);                  //Unnecessary 
+        //DataManager.Item_List = new List<Draggable>(DStorage.Item_State);                      //Unnecessary 
+        //DataManager.Recipe_List = new List<CraftRecipe>(DStorage.Recipe_State);                  //Unnecessary 
 
         DataManager.ActiveGoal_List = new List<DataManager.ActiveGoal>(DStorage.ActiveGoal_State);
-        DataManager.GoalObject_List = new List<GoalObject>(DStorage.Goal_State);
+        //DataManager.GoalObject_List = new List<GoalObject>(DStorage.Goal_State);
 
         DataManager.Slot_Array = (SlotScript[])DStorage.Slot_Array_State.Clone();
         DataManager.Inventory_Fillstate = DStorage.Inventory_Fillstate_State;
@@ -175,7 +176,7 @@ public class SaveSystem : MonoBehaviour
         DataManager.DisableCharacterSwap = DStorage.DisableCharacterSwap_State;
 
         //    public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
-        DataManager.RewardList = new List<Collectable>(DStorage.Reward_List_State);
+        DataManager.RewardList = new List<CollectableObj>(DStorage.Reward_List_State);
 
         //MiniMap + SpawnSystem
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

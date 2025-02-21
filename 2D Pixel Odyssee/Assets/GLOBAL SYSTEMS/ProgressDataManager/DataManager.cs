@@ -62,7 +62,7 @@ public class DataManager : MonoBehaviour
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
+    public static List<CollectableObj> RewardList = new List<CollectableObj>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
     public List<GameObject> RewardObjects = new List<GameObject>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
 
 
@@ -299,6 +299,11 @@ public class DataManager : MonoBehaviour
         //Debug.Log(Collectable_List.Count);
     }
 
+    public void AddReward(int newID, bool newLock_State, bool newAlreadyTalked, bool newCollected)
+    {
+        RewardList.Add(new CollectableObj { Stored_ID = newID, Stored_Lock_State = newLock_State, Stored_AlreadyTalked = newAlreadyTalked, Stored_Collected = newCollected });
+        //Debug.Log(Collectable_List.Count);
+    }
 
     public void AddShovableObj(int newID, bool newLock_State, bool newAlreadyTalked, int newShove_Position)
     {
@@ -724,12 +729,12 @@ public class DataManager : MonoBehaviour
     public void ActivateReward(int Reward_ID) 
     {
         GrantInRoomReward(Reward_ID);
-        foreach (Collectable StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
+        foreach (CollectableObj StoredObjScript in RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
-            if (StoredObjScript.ID == Reward_ID)                      //Find the Collectable in the Reward List
+            if (StoredObjScript.Stored_ID == Reward_ID)                      //Find the Collectable in the Reward List
             {
-                StoredObjScript.Lock_State = false;                   //Unlock the Collectable
-                StoredObjScript.UpdateData();                         //Update the CollectableData   
+                StoredObjScript.Stored_Lock_State = false;                   //Unlock the Collectable
+                //StoredObjScript.UpdateData();                         //Update the CollectableData   
             }
         }
     }                                

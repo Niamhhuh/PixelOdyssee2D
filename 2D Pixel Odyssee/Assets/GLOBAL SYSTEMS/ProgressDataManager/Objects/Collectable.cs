@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static DataManager;
 
 public class Collectable : ObjectScript
 {
@@ -135,9 +137,10 @@ public class Collectable : ObjectScript
     private void TryAddReward()
     {
         DMReference.RewardObjects.Add(gameObject);
-        foreach (Collectable StoredObjScript in DataManager.RewardList)                      //Go through the Collectable_List and check CollectableObj.
+        if (DataManager.RewardList.Count > 0) { print(DataManager.RewardList[0]); }
+        foreach (CollectableObj StoredObjScript in DataManager.RewardList)                      //Go through the Collectable_List and check CollectableObj.
         {
-            if (StoredObjScript.ID == ID)
+            if (StoredObjScript.Stored_ID == ID)
             {
                 alreadyAdded = true;
                 break;
@@ -146,7 +149,7 @@ public class Collectable : ObjectScript
 
         if (!alreadyAdded)
         {
-            DataManager.RewardList.Add(CoreObject.GetComponent<Collectable>());
+            DMReference.AddReward(ID, Lock_State, AlreadyTalked, Collected);
         }
         gameObject.SetActive(false);
     }
