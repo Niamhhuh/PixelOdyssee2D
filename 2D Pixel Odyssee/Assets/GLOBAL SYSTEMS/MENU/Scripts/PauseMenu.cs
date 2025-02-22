@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Fades;                                //enables the usage of functions from the script "Fades"
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,11 +15,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject credits = null;
 
-    public GameObject steuerung;        //dieser Block sind die Objekte zur Steuerung UI
-                                        // public GameObject allgemein;        //.
-                                        //public GameObject spacewar;         //.
-                                        //   public GameObject frogger;          //.
-                                        //    public GameObject pong;             //.
+    public GameObject steuerung = null;  
 
     //public GameObject sceneloader;
     //public SpriteRenderer spriteRenderer;
@@ -30,16 +27,27 @@ public class PauseMenu : MonoBehaviour
 
     Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
 
-    //________________________________________________s_______________________________
+
+    //----------------------SPIEL BEENDEN VAR------------------------------------------------------------------------
+    private GameObject spielBeenden_Fenster;    //sucht nach dem Canvas in jeder Szene --> jedes Canvas heisst gleich
+
+    //_______________________________________________________________________________
     //_______Pausescreen Activator below_____________________________________________
 
     private void Start()
     {
+        Class_Fades.instance.StartFadeOut();        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
+        
         if (GameObject.FindGameObjectWithTag("Pointer") != null)
         {
             PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
+
+        spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
+        spielBeenden_Fenster.SetActive(false);
+
+        
     }
 
     void Update() {  
@@ -50,13 +58,6 @@ public class PauseMenu : MonoBehaviour
             CallPause();
 
         } 
-
-        /*if(current_scene.name == "Z_SteuerungPONG" && Input.GetKeyDown(KeyCode.Return)) {
-            SceneManager.LoadScene("ARC_Painstation");
-        }
-        if(current_scene.name == "Z_SteuerungSW" && Input.GetKeyDown(KeyCode.Return)) {
-            SceneManager.LoadScene("ARC_Spacewar-MiniGame");
-        }*/
     }
 
     public void CallPause()
@@ -86,23 +87,49 @@ public class PauseMenu : MonoBehaviour
 
 
 //_______________________________________________________________________________
-//_______Buttons for menu to load scene below____________________________________
+//_______Buttons below for menu to load scene____________________________________
 
-    public void StartGame() {           //STARTSCREEN --> beginnt im Moment immer beim Tutorial
-        if (DataManager.LastRoom == 0) {     //NEUUUUUUU -> 06.12.2024 -> stellt sicher, dass nach reset erste Szene geladen wird
+    public void StartGame() {                       //STARTSCREEN --> beginnt im Moment immer beim Tutorial
+        StartCoroutine(StartGameCoroutine());
+    }
+
+    private IEnumerator StartGameCoroutine() {
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
+
+        if (DataManager.LastRoom == 0) {
             SceneManager.LoadScene("Z1_Tutorial1");
-        }
-        else{
+        } 
+        else {
             SceneManager.LoadScene(DataManager.LastRoom);
         }
     }
+
+    //----------------------------------------------------------------
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
     	SceneManager.LoadScene("Z2_Tutorial2");
     }
 
-    public void QuitGame() {            //STARTSCREEN -->Beendet das Spiel komplett
-    	Application.Quit();
+    public void GameQuit() {            //STARTSCREEN --> Beendet das Spiel komplett
+    	Class_Fades.instance.StartFadeIn();        //Starts the FadeIn Coroutine from the script "Fades" ----------------------NEU---------------------
+                                            
+        Application.Quit();
+    }
+
+    public void GameQuitAsk() {         //SPIEL BEENDEN ? --> Oeffnet ein Fenster, was nochmals nachfragt, ob der Spieler das Game beenden moechte  ----------------------NEU---------------------
+        if (pauseScreen != null){
+            pauseScreen.SetActive(false);
+        }
+
+        spielBeenden_Fenster.SetActive(true);
+    }
+
+    public void GameResume() {          //SPIEL BEENDEN ? --> Schliesst das zuvor geoeffnete Fenster wieder ----------------------NEU---------------------
+        spielBeenden_Fenster.SetActive(false);
+        
+        if (pauseScreen != null){
+            pauseScreen.SetActive(true);
+        }
     }
 
     public void OpenCredits() {         //STARTSCREEN --> Oeffnet Credits als UI Panel
@@ -114,12 +141,8 @@ public class PauseMenu : MonoBehaviour
         if (pauseScreen != null){
             pauseScreen.SetActive(false);
         }
-        
-    	steuerung.SetActive(!steuerung.activeSelf);
-        //allgemein.SetActive(true);
-        //spacewar.SetActive(false);
-        //frogger.SetActive(false);
-        //pong.SetActive(false);   
+
+        steuerung.SetActive(true);
     }
 
     public void Return() {              //CREDITS --> schliesst UI
@@ -129,33 +152,6 @@ public class PauseMenu : MonoBehaviour
         steuerung.SetActive(false);
         credits.SetActive(false);
        }
-
-    //------------steuerung button below------------------------------------
-    public void AllgemeinButton() {
-        //allgemein.SetActive(true);
-        //spacewar.SetActive(false);
-        //frogger.SetActive(false);
-        //pong.SetActive(false);
-    }
-    public void SpacewarButton() {
-        //allgemein.SetActive(false);
-        //spacewar.SetActive(true);
-        //frogger.SetActive(false);
-        //pong.SetActive(false);
-    }
-    public void FroggerButton() {
-        // allgemein.SetActive(false);
-        // spacewar.SetActive(false);
-        // frogger.SetActive(true);
-        //   pong.SetActive(false);
-    }
-    public void PongButton() {
-        //  allgemein.SetActive(false);
-        //  spacewar.SetActive(false);
-        //  frogger.SetActive(false);
-        //  pong.SetActive(true);
-    }
-    //------------steuerung button above------------------------------------
 
     public void Fortsetzen()
     {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
@@ -182,45 +178,4 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(current_scene.name);
     }
-
-    /*
-//____________________________________________________________________________
-//______________________Function interact with scene loader___________________
-//-----------------------Doors below------------------------------------------
-
-    private void OnMouseOver(){
-        this.spriteRenderer.enabled = true;
-
-        if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial1"){
-            SceneManager.LoadScene("Z_Tutorial2");
-        }
-        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial2"){
-            SceneManager.LoadScene("Z_Tutorial1");
-        }
-        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "door_tutorial3"){
-            SceneManager.LoadScene("Z_DemoEnd");
-        }
-
-//-----------------------ArcadeGames below------------------------------------
-
-        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Space_War"){
-            SceneManager.LoadScene("Z_SteuerungSW");
-        }
-        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Frogger"){
-            SceneManager.LoadScene("ARC_Frogger");
-        }
-        else if (Input.GetMouseButtonDown(0) && sceneloader.name == "Mini Pong"){
-            SceneManager.LoadScene("Z_SteuerungPONG");
-        }
-    }
-
-    private void OnMouseExit(){
-        //arcade games
-        this.spriteRenderer.enabled = false;     
-
-        if (this.CompareTag("door")) {
-            this.spriteRenderer.enabled = false;
-        } 
-    }
-    */
 }

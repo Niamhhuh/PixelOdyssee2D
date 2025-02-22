@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Fades;
 
 public class ToggleStartScreen : MonoBehaviour
 {
-    private void Start()
+    public void Update ()                      
     {
-        Time.timeScale = 0f;
-    }
+        if (Class_Fades.instance.fadeObject.activeInHierarchy == false && gameObject.activeInHierarchy == true) {       //first condition checks if there is not fade active
+            Time.timeScale = 0f;
+        }
 
-    public void Update ()
-    {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Time.timeScale = 1f;

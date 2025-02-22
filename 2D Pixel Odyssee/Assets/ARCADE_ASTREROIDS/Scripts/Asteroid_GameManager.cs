@@ -146,7 +146,7 @@ public class Asteroid_GameManager : MonoBehaviour
     }
 
     // Optionally, create methods to restart the game or quit after winning
-    public void RestartGame()
+    public void RestartGame()                   //DOES NOT WORK CORRECTLY------------------------------!!!!!!!!!!!!!!!!!
     {
         Time.timeScale = 1; // Unpause the game
         // Reset the game state, scores, lives, etc.
@@ -159,10 +159,5 @@ public class Asteroid_GameManager : MonoBehaviour
         scoreCanvas.SetActive(true);
 
         script_AudioManager.PlayThemeForCurrentScene(); //Musik wieder starten
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit(); // Quit the application (works in build)
     }
 }
