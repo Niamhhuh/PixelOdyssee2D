@@ -9,12 +9,12 @@ using UnityEngine.UI;
 
 
 //WHERE IS THIS SCRIPT PLACED?
-// --> always where the PauseMenu Script is located --> GameManager in Startscreen and EventManager ind Hubworld
+// --> always where the PauseMenu Script is located --> GameManager in Startscreen and EventManager in Hubworld
 
 
 
 
-namespace Fades
+namespace Fades                                     // wirte "using Fades;" atop every script to make usage of following functions easir (I think?)
 {
     public class Class_Fades : MonoBehaviour
     {
@@ -68,10 +68,10 @@ namespace Fades
             }
         }
 
-        public void StartFadeOut() {                                    // this is the function that starts the fade out coroutine
+        public IEnumerator StartFadeOut() {                                    // this is the function that starts the fade out coroutine
             FindFadeObject();
             if (fadeObject != null) {
-                StartCoroutine(FadeOutCoroutine());
+                yield return StartCoroutine(FadeOutCoroutine());
             }
         }
 
