@@ -14,7 +14,7 @@ using UnityEngine.UI;
 
 
 
-namespace Fades                                     // wirte "using Fades;" atop every script to make usage of following functions easir (I think?)
+namespace Fades                                     // write "using Fades;" atop every script to make usage of following functions easir (I think?)
 {
     public class Class_Fades : MonoBehaviour
     {

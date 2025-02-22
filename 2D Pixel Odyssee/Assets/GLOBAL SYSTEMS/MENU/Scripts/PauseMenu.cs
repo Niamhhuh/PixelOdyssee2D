@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        Class_Fades.instance.StartFadeOut();        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
+        StartCoroutine(Class_Fades.instance.StartFadeOut());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
         
         if (GameObject.FindGameObjectWithTag("Pointer") != null)
         {
@@ -45,9 +45,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
-        spielBeenden_Fenster.SetActive(false);
-
-        
+        spielBeenden_Fenster.SetActive(false);        
     }
 
     void Update() {  
