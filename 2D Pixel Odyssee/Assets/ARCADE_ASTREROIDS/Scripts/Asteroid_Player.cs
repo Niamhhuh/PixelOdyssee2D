@@ -27,6 +27,8 @@ public class Asteroid_Player : MonoBehaviour
     private EventInstance AstBoost;
     private EventInstance AstHitPlayer;
 
+    public bool winLooseOn;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -45,13 +47,18 @@ public class Asteroid_Player : MonoBehaviour
         AstBoost = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstBoost);
         AstHitPlayer = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstHitPlayer);
 
-
+        winLooseOn = false;
 
         UpdatePanicTeleportText();
     }
 
-    private void Update()
-    {
+    private void Update() {
+        if (winLooseOn == false) {
+            Movement();
+        }
+    }
+
+    public void Movement() {                // Moved from Update() to over here so that we can disable it --> scuffed fix but fast
         // Handle thrust and rotation input
         _thrusting = Input.GetKey(KeyCode.W);
 

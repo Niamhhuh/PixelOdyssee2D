@@ -32,6 +32,8 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
 
+    private Asteroid_Player script_asteroidplayer; // NEW Reference the script for the bool related to winloose screen
+ 
     private void Start()
     {
         UpdateScoreText();
@@ -39,6 +41,8 @@ public class Asteroid_GameManager : MonoBehaviour
         loseCanvas.SetActive(false);
         winCanvas.SetActive(false); 
         scoreCanvas.SetActive(true);
+
+        script_asteroidplayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Asteroid_Player>();
 
         AstHitAsteroid = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstHitAsteroid); //Sound
         AstWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstWin);
@@ -119,6 +123,7 @@ public class Asteroid_GameManager : MonoBehaviour
     {
         loseCanvas.SetActive(true);
         scoreCanvas.SetActive(false);
+        script_asteroidplayer.winLooseOn = true;
         AstGameOver.start(); //Sound
 
         script_AudioManager.StopCurrentTheme(); //Musik stoppen
@@ -136,17 +141,20 @@ public class Asteroid_GameManager : MonoBehaviour
     // Method to trigger the win state
     private void WinGame()
     {
+        script_asteroidplayer.winLooseOn = true;
         winCanvas.SetActive(true);  // Show the win screen
         scoreCanvas.SetActive(false); // Hide the score screen
         Time.timeScale = 0; // Optionally stop the game or pause
         // You can add more functionality here, such as stopping asteroids, animations, etc.
         AstWin.start(); //Sound
 
+
+
         script_AudioManager.StopCurrentTheme(); //Musik stoppen
     }
 
     // Optionally, create methods to restart the game or quit after winning
-    public void RestartGame()                   //DOES NOT WORK CORRECTLY------------------------------!!!!!!!!!!!!!!!!!
+    /*public void RestartGame()                                              //DOES NOT WORK CORRECTLY------------------------------!!!!!!!!!!!!!!!!!
     {
         Time.timeScale = 1; // Unpause the game
         // Reset the game state, scores, lives, etc.
@@ -159,5 +167,5 @@ public class Asteroid_GameManager : MonoBehaviour
         scoreCanvas.SetActive(true);
 
         script_AudioManager.PlayThemeForCurrentScene(); //Musik wieder starten
-    }
+    }*/
 }

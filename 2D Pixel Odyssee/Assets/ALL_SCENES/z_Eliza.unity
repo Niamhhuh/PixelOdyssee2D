@@ -552,8 +552,11 @@ MonoBehaviour:
   Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -582,6 +585,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -1044,8 +1049,11 @@ MonoBehaviour:
   Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1074,6 +1082,8 @@ MonoBehaviour:
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
   GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
   ObjectComment: {fileID: 0}
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
@@ -6755,7 +6765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RosieObj: {fileID: 4590512988754839810}
   BeBeObj: {fileID: 5054419601032493314}
-  RosieActive: 0
   RosieComment: {fileID: 0}
   BebeComment: {fileID: 0}
 --- !u!114 &3735476365783645872
@@ -7101,6 +7110,34 @@ MonoBehaviour:
       Data3: 825692847
       Data4: -1145034477
     Path: event:/Music/Depot Theme
+  AstreoidsTheme:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  FroggerTheme:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  PainStationTheme:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  StreetfighterTheme:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!225 &4098707016891588987
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7696,7 +7733,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 15
@@ -7763,6 +7800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   advancedDialogueManager: {fileID: 0}
+  animator: {fileID: 0}
+  animatorBebe: {fileID: 0}
 --- !u!224 &4480250764519741807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9141,7 +9180,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 15
@@ -9890,7 +9929,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 15
@@ -10528,7 +10567,7 @@ RectTransform:
   m_GameObject: {fileID: 4157130023537070685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7532054415133295617}
@@ -10539,8 +10578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -376.67346, y: -271}
-  m_SizeDelta: {x: -12.9939, y: -784.1685}
+  m_AnchoredPosition: {x: -130.22058, y: -271}
+  m_SizeDelta: {x: -505.8997, y: -784.1685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6394476870885672598
 MonoBehaviour:
@@ -13041,7 +13080,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 15

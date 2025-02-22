@@ -6785,7 +6785,7 @@ GameObject:
   - component: {fileID: 784022137}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6806,6 +6806,7 @@ MonoBehaviour:
   panicTeleportText: {fileID: 1280294800}
   thrustSpeed: 1
   turnSpeed: 0.1
+  winLooseOn: 0
 --- !u!50 &784022134
 Rigidbody2D:
   serializedVersion: 4
