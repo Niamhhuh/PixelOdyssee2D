@@ -36,7 +36,7 @@ public class TransformativeDialogueScript : MonoBehaviour
 
     public void TransformeDialogue()                                            //Step through ConditionList
     {
-        for (int i = 0; i < StepArray.Length; i++)                              //
+        for (int i = 0; i < StepArray.Length; ++i)                              //
         {
             if(!ConditionNotFound)
             {
@@ -76,7 +76,11 @@ public class TransformativeDialogueScript : MonoBehaviour
 
     private void FetchNewDialogue()
     {
-        if(StepArray[StepPosition].ConditoinArray.Length == CondtionsMet)
+        print("-------------------------------------------");
+        print("Conditions:" + CondtionsMet);
+        print("StepPosition:" + StepPosition);
+        print("-------------------------------------------");
+        if (StepArray[StepPosition].ConditoinArray.Length == CondtionsMet)
         {
             if(TransformDialogue.Length > StepPosition*2)
             {
@@ -85,7 +89,11 @@ public class TransformativeDialogueScript : MonoBehaviour
                 StepPosition = 0;
                 CondtionsMet = 0;
                 ConditionNotFound = false;
-
+                print("Dialogue1:" + StoredObjectDialogue.conversation[0]);
+                print("Dialogue2:" + StoredObjectDialogue.conversation[1]);
+                print("-------------------------------------------");
+                print("-------------------------------------------");
+                print("-------------------------------------------");
             }
         }
         StepPosition = 0;
