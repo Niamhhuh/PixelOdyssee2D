@@ -257,6 +257,8 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (PointerScript.ClipboardActive == false && PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
+            PointerScript.DisableWallTrigger();
+
             if (DataManager.ToShove.Count < 1 && DataManager.ToDance.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;
