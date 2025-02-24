@@ -1858,6 +1858,8 @@ GameObject:
   - component: {fileID: 879700134}
   - component: {fileID: 879700133}
   - component: {fileID: 879700135}
+  - component: {fileID: 879700137}
+  - component: {fileID: 879700136}
   m_Layer: 0
   m_Name: Poly Play
   m_TagString: Untagged
@@ -2061,6 +2063,43 @@ MonoBehaviour:
   InteractionTriggered: 0
   LockTriggered: 0
   DialogueTriggered: 1
+--- !u!114 &879700136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879700130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: 8d414ba1b0c53fe458dde5c00beec485, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 2be26c17513285b4ba47ccc1d32629f9, type: 2}
+--- !u!114 &879700137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879700130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: fd8647d546cd6c043b49b7106a5d3a2f, type: 2}
+  - {fileID: 11400000, guid: 2dcb5f88c166fb44c991be6d246c19dd, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &917787532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2807,8 @@ GameObject:
   - component: {fileID: 1070583403}
   - component: {fileID: 1070583402}
   - component: {fileID: 1070583401}
+  - component: {fileID: 1070583407}
+  - component: {fileID: 1070583406}
   m_Layer: 0
   m_Name: Sicherungskasten Dreckig
   m_TagString: Untagged
@@ -2965,6 +3006,43 @@ Transform:
   - {fileID: 982674701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070583406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070583400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &1070583407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070583400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 0}
+  - {fileID: 0}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1130592718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,8 +3489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6e3b8f02a3c662a4d9191a743b5c0219, type: 2}
-  - {fileID: 11400000, guid: 2d552d273a669f04e8d96914a5af00ce, type: 2}
+  - {fileID: 11400000, guid: 2f215c17d9b4d2d48a36138652bbff6d, type: 2}
+  - {fileID: 11400000, guid: 165ebded12e628849b020e28d76dda0d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0

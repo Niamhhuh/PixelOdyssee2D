@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 135094149}
   - component: {fileID: 135094148}
   - component: {fileID: 135094151}
+  - component: {fileID: 135094152}
   m_Layer: 0
   m_Name: Arcade Chip
   m_TagString: Untagged
@@ -723,6 +724,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82, y: 0.86}
   m_EdgeRadius: 0
+--- !u!114 &135094152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135094147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 8e46bb53b65ce1d4681c6af9f06c15f6, type: 2}
+  - {fileID: 11400000, guid: cc015803a262a47488783a859c3518e8, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &147319509
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +967,7 @@ GameObject:
   - component: {fileID: 277837511}
   - component: {fileID: 277837513}
   - component: {fileID: 277837512}
+  - component: {fileID: 277837514}
   m_Layer: 0
   m_Name: Space Invaders
   m_TagString: Untagged
@@ -1079,7 +1100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: []
+  conversation:
+  - {fileID: 11400000, guid: c4ad9f377d16d154eb7a607f586dc951, type: 2}
+  - {fileID: 11400000, guid: b240b1d1df6e884479f1d6ea1962eb98, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -1145,6 +1168,24 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &277837514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277837508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: c4ad9f377d16d154eb7a607f586dc951, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 7d9156bf8fa3e2a4ab9024a597e61725, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!1 &282808835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,6 +2305,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &659388455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 659388456}
+  - component: {fileID: 659388457}
+  m_Layer: 0
+  m_Name: Ventilator Highlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &659388456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659388455}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 952923562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &659388457
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659388455}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d25b549d37ec7b64e975f70825418e2f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.98, y: 1.94}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &670756656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,6 +3156,219 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+--- !u!1 &952923557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952923562}
+  - component: {fileID: 952923561}
+  - component: {fileID: 952923560}
+  - component: {fileID: 952923559}
+  - component: {fileID: 952923558}
+  m_Layer: 0
+  m_Name: Ventilator (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &952923558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952923557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
+  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
+--- !u!114 &952923559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952923557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908a1766a66ab3b4d9e6e60f88432b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 56
+  AlreadyTalked: 0
+  Lock_State: 1
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 1
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Event_Passed: 0
+  Talk_Event: 0
+  isEvent_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
+--- !u!61 &952923560
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952923557}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.98, y: 1.94}
+    newSize: {x: 5.98, y: 1.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.98, y: 1.94}
+  m_EdgeRadius: 0
+--- !u!212 &952923561
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952923557}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4e681b273658bb7469c20c340d5e845f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.98, y: 1.94}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &952923562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952923557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.48, y: 3.18, z: 0}
+  m_LocalScale: {x: 0.7329275, y: 0.7329275, z: 0.7329275}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 659388456}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993398315
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,8 +4585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: eb7e4f78cf9bc6b49a588dda364ef212, type: 2}
-  - {fileID: 11400000, guid: 8bbc546d62f855b4aa842e2b7f8797c9, type: 2}
+  - {fileID: 11400000, guid: cd1fd91bba1cf8948922508fd8e63c78, type: 2}
+  - {fileID: 11400000, guid: 1b3fc4b904974974fbc7660b3adb624b, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4326,8 +4664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
+  RosieLockDialogue: {fileID: 11400000, guid: eb7e4f78cf9bc6b49a588dda364ef212, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 8bbc546d62f855b4aa842e2b7f8797c9, type: 2}
   ModifyDeniedInteraction: 0
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 0}
@@ -4765,6 +5103,7 @@ SceneRoots:
   - {fileID: 897017965}
   - {fileID: 1751100403}
   - {fileID: 1637325031}
+  - {fileID: 952923562}
   - {fileID: 1107816432}
   - {fileID: 277837510}
   - {fileID: 993398317}

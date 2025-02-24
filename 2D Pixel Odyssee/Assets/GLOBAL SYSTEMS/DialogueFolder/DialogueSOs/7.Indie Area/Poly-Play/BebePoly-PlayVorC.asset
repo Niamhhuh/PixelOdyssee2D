@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
+  m_Name: BebePoly-PlayVorC
+  m_EditorClassIdentifier: 
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 010000000b0000000a0000000b00000007000000
+  randomActorName: Poly-Play
+  randomActorPortait: {fileID: 21300000, guid: 10cd9b69893f84246a3e60068d9e7a4e, type: 3}
+  dialogue:
+  - Hallo, Freund!
+  - "Wir sind uns gerade erst begegnet, also lass ma\xB4 die Freundschaft beiseite!
+    Wenn du wirklich kameradschaftliche Beziehungen aufbauen und mich in Bewegung
+    setzen willst, dann deck\xB4 die L\xFCgen des Parteibonzen Rom Check Fail auf!\r\n"
+  - Was willst du wissen?
+  - Welche Aussage von Rom Check Fail ist falsch?
+  optionText:
+  - "Mario l\xFCgt! "
+  - "Link l\xFCgt!"
+  - "Pac-Man l\xFCgt!"
+  - "Space Invaders l\xFCgt!"
+  option0: {fileID: 11400000, guid: 4fbad0da71ed6ee449a2d3969f11624d, type: 2}
+  option1: {fileID: 11400000, guid: 24b9f101844d2534293e2ed5f2398545, type: 2}
+  option2: {fileID: 11400000, guid: 0f7b409af7374594a97eed370b0d7c45, type: 2}
+  option3: {fileID: 11400000, guid: 929c76ce905401448b39f0239663555c, type: 2}

@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 108573860}
   - component: {fileID: 108573863}
   - component: {fileID: 108573862}
+  - component: {fileID: 108573865}
+  - component: {fileID: 108573864}
   m_Layer: 0
   m_Name: "Warnhinwei\xDF"
   m_TagString: Untagged
@@ -399,6 +401,43 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &108573864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108573859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 6dfc7bfe4f717d244a5707946eda406b, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 4751aed80691306448591f696f6a443a, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &108573865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108573859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 0c44c4e9af283ff4098152b1f09d9bbe, type: 2}
+  - {fileID: 11400000, guid: d1e3f15c17370ed40bc9d69a7aa60cce, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &143894947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,8 +2692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6e3b8f02a3c662a4d9191a743b5c0219, type: 2}
-  - {fileID: 11400000, guid: 2d552d273a669f04e8d96914a5af00ce, type: 2}
+  - {fileID: 11400000, guid: f707bf194f3c0074e9751bf09bb6cf19, type: 2}
+  - {fileID: 11400000, guid: 2e22b6135169ef14b9d22fbf5d2aa7f9, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3231,6 +3270,8 @@ GameObject:
   - component: {fileID: 903697901}
   - component: {fileID: 903697903}
   - component: {fileID: 903697904}
+  - component: {fileID: 903697906}
+  - component: {fileID: 903697905}
   m_Layer: 0
   m_Name: Fake DDR
   m_TagString: Untagged
@@ -3441,6 +3482,35 @@ MonoBehaviour:
   Unlock_Position: -1
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+--- !u!114 &903697905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: []
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
+--- !u!114 &903697906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40cbe19c7e1f6242b1f0d75f2c4114c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910244521
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,8 +4345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: d760f4374d0814f488774f92449c5b18, type: 2}
-  - {fileID: 11400000, guid: 7918e5ce8909e314dbb5444c6f8fcd33, type: 2}
+  - {fileID: 11400000, guid: 0623ba71ad8f79949af0565132b8e64d, type: 2}
+  - {fileID: 11400000, guid: 538ea842ae0463f4d97fe48facb1d6f7, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -9087,7 +9157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2047421372
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: BebeDDRSleep
+  m_Name: RosieTetrisVorVerschieben
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
@@ -20,12 +20,16 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 010000000b000000
-  randomActorName: Dance Dance Revolution
-  randomActorPortait: {fileID: 21300000, guid: 9146dac6bd85f5b46837744819185a43, type: 3}
+  actors: 050000000a0000000500000009000000
+  randomActorName: 
+  randomActorPortait: {fileID: 0}
   dialogue:
-  - Hallo, Freund!
-  - "Zzz\u2026"
+  - "Als diese Maschine geliefert wurde, kam sie mir so unglaublich schwer vor, ich
+    dachte, ich w\xFCrde zu Tode gepl\xE4ttet werden."
+  - Ist das Spiel so schwierig?
+  - "Nicht schwierig, sondern schwer bez\xFCglich Gewicht. Es k\xF6nnte sogar dich
+    zu Pfannkuchen verarbeiten.\r\n"
+  - "\u2026"
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

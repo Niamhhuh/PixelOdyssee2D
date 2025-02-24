@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: BebeDDRSleep
+  m_Name: BebeDDR
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
@@ -20,14 +20,16 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 010000000b000000
+  actors: 0b00000007000000
   randomActorName: Dance Dance Revolution
-  randomActorPortait: {fileID: 21300000, guid: 9146dac6bd85f5b46837744819185a43, type: 3}
+  randomActorPortait: {fileID: 21300000, guid: 7c41f85c68e1dc044985213ed6f60e15, type: 3}
   dialogue:
-  - Hallo, Freund!
-  - "Zzz\u2026"
-  optionText: []
-  option0: {fileID: 0}
-  option1: {fileID: 0}
-  option2: {fileID: 0}
+  - Guten Morgen, Amigo!
+  optionText:
+  - 'Guten Morgen, Freund! '
+  - Kannst du uns helfen?
+  - 'Wie geht es Pac-Man? '
+  option0: {fileID: 11400000, guid: 7e053e17e8b82d441a014af1b02368a5, type: 2}
+  option1: {fileID: 11400000, guid: fa7a4c7349d217a44bfb44ec265b85eb, type: 2}
+  option2: {fileID: 11400000, guid: e11f7f68754ccba4bba4a8ff257d672e, type: 2}
   option3: {fileID: 0}

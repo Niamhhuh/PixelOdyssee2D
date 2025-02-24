@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: BebeSpaceInvaders
+  m_Name: BebeRomCheckFail
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
@@ -21,10 +21,15 @@ MonoBehaviour:
   KeyOption4: 0
   CallTrigger: 0
   actors: 
-  randomActorName: 
+  randomActorName: Rom Check Fail
   randomActorPortait: {fileID: 0}
-  dialogue: []
-  optionText: []
+  dialogue:
+  - Du hast 5 Sekunden!
+  optionText:
+  - Wer bist du?
+  - Wer bist du??
+  - Wer bist du???
+  - Wer bist du?!
   option0: {fileID: 0}
   option1: {fileID: 0}
   option2: {fileID: 0}
