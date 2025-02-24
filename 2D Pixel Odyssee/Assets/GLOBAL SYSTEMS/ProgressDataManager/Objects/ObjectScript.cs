@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -119,7 +120,6 @@ public class ObjectScript : MonoBehaviour
 
 
 
-
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -182,6 +182,8 @@ public class ObjectScript : MonoBehaviour
             TransformDialogueScript = gameObject.GetComponent<TransformativeDialogueScript>();
         }
     }
+
+  
 
     public void ToggleSprites()
     {
@@ -257,6 +259,8 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (PointerScript.ClipboardActive == false && PointerScript.LockInteract == false && Input.GetMouseButtonDown(0))
         {
+            PointerScript.DisableWallTrigger();
+
             if (DataManager.ToShove.Count < 1 && DataManager.ToDance.Count < 1)                                                  //Flicker Character Collider -> Make the Collider always "enter" the ObjectCollider on Click
             {
                 DMReference.CurrentCharacter.GetComponent<Collider2D>().enabled = false;

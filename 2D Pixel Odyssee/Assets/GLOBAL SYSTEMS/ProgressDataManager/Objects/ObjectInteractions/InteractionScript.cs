@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 
 public class InteractionScript : MonoBehaviour
@@ -14,11 +16,22 @@ public class InteractionScript : MonoBehaviour
     public Animator animator;
     public Animator animatorBebe;
 
+    private EventInstance ObjectPickUp;//Sound for Interaction
+    private EventInstance DoorOpen;
+    private EventInstance ObjectSlideRosie;
+    private EventInstance DDRArrow;
+
     private void Start()
     {
         PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         advancedDialogueManager = GameObject.Find("DialogueManager").GetComponent<AdvancedDialogueManager>();
+
+
+        ObjectPickUp = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectPickUp); //Sound
+        DoorOpen = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.DoorOpen);
+        ObjectSlideRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectSlideRosie);
+        DDRArrow = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.DDRArrow);
     }
     //Call Dialouge
     public void TriggerDialogue()
@@ -66,16 +79,19 @@ public class InteractionScript : MonoBehaviour
             //Turn ObjectScript into Specific Object
             case 1:
                 //print("I'm called2");
+                ObjectPickUp.start(); //Sound
                 Collectable ColReference = null;                                                    //Create a Reference Variable, which will be used to access the Collectable.Call_Interact Method
                 ColReference = (Collectable)DataManager.ToInteract[0].ObjReference;                 //Convert the Parent ObjectScript Type(ObjReference) into the Collectable Type 
                 ColReference.Call_Interact();                                                       //Call Collectable.Call_Interact
                 break;
             case 2:
+                ObjectSlideRosie.start(); //Sound
                 Shovable ShovReference = null;                                                      //Create a Reference Variable, which will be used to access the Shovable.Call_Interact Method
                 ShovReference = (Shovable)DataManager.ToInteract[0].ObjReference;                   //Convert the Parent ObjectScript Type(ObjReference) into the Shovable Type 
                 ShovReference.Call_Interact();                                                      //Call Shovable.Call_Interact
                 break;
             case 3:
+                DoorOpen.start(); //Sound
                 Portal PortReference = null;                                                        //Create a Reference Variable, which will be used to access the Portal.Call_Interact Method
                 PortReference = (Portal)DataManager.ToInteract[0].ObjReference;                     //Convert the Parent ObjectScript Type(ObjReference) into the Portal Type 
                 PortReference.Call_Interact();                                                      //Call Portal.Call_Interact
@@ -96,6 +112,7 @@ public class InteractionScript : MonoBehaviour
                 TriggerReference.TriggerInteract();                                                      //Call EventSource.Call_Interact
                 break;
             case 7:
+                DDRArrow.start(); //Sound
                 DancePad DancePadReference = null;                                                   //Create a Reference Variable, which will be used to access the EventSource.Call_Interact Method
                 DancePadReference = (DancePad)DataManager.ToInteract[0].ObjReference;                //Convert the Parent ObjectScript Type(ObjReference) into the EventSource Type 
                 DancePadReference.Call_Interact();                                                      //Call EventSource.Call_Interact

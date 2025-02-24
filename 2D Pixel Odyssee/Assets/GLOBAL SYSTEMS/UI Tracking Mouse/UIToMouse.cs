@@ -39,6 +39,8 @@ public class UiToMouse : MonoBehaviour
 
     private DataManager DMReference;
 
+    public WALL WallScript;
+
     void Start()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
@@ -59,8 +61,8 @@ public class UiToMouse : MonoBehaviour
 
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
-        //FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie); //Sound
-        //FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
+        FootstepsRosie = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkRosie); //Sound
+        FootstepsBebe = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.WalkBebe);
 
     }
 
@@ -154,6 +156,9 @@ public class UiToMouse : MonoBehaviour
 
             pointerImage.enabled = true;
             pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
+           
+            //-----------------------------------------------------------------------------------------------------------
+
         }
 
         if (movePlayer)  //STOOOOOOOOOOOOOOOOOOOOOOOOOOP
@@ -188,6 +193,17 @@ public class UiToMouse : MonoBehaviour
         }
 
     }
+
+
+    public void DisableWallTrigger()
+    {
+        if (WallScript != null)
+        {
+            WallScript.WallTrigger.SetActive(false);
+            WallScript.WallClicked = false;
+        }
+    }
+
 
     public void SwitchCharacter()
     {

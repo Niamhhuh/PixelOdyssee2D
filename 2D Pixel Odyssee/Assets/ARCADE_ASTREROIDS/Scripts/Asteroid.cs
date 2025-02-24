@@ -41,10 +41,6 @@ public class Asteroid : MonoBehaviour
     public void SetTrajectory(Vector2 direction)
     {
         _rigidbody.AddForce(direction * this.speed);
-        
-        //-------------------------------------------------------------------------------------------------------------------
-        // Destroy the asteroid after its lifetime expires  --------->> Kimi set this to comment 'cause asteroids kept disappearing
-        //Destroy(this.gameObject, this.maxLifetime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
