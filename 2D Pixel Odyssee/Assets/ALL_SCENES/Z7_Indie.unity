@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 401830445}
   - component: {fileID: 401830444}
   - component: {fileID: 401830447}
+  - component: {fileID: 401830448}
   m_Layer: 0
   m_Name: "Pf\xFCtze "
   m_TagString: Untagged
@@ -564,6 +565,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.2, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &401830448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401830443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: feda821687f24ef428919311747ccfa8, type: 2}
+  - {fileID: 11400000, guid: a3b2afdde0ee17749807e4e25a1868a9, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &462378062
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +894,7 @@ GameObject:
   - component: {fileID: 505983928}
   - component: {fileID: 505983931}
   - component: {fileID: 505983930}
+  - component: {fileID: 505983932}
   m_Layer: 0
   m_Name: Concept Art
   m_TagString: Untagged
@@ -1055,6 +1076,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.21, y: 8.1}
   m_EdgeRadius: 0
+--- !u!114 &505983932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505983927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: a60da5f0def05b844b9e094eabbfaf29, type: 2}
+  - {fileID: 11400000, guid: b384e3a6552bc1b4096202578028f061, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1001 &550284496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1818,6 +1858,8 @@ GameObject:
   - component: {fileID: 879700134}
   - component: {fileID: 879700133}
   - component: {fileID: 879700135}
+  - component: {fileID: 879700137}
+  - component: {fileID: 879700136}
   m_Layer: 0
   m_Name: Poly Play
   m_TagString: Untagged
@@ -2021,6 +2063,43 @@ MonoBehaviour:
   InteractionTriggered: 0
   LockTriggered: 0
   DialogueTriggered: 1
+--- !u!114 &879700136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879700130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: 8d414ba1b0c53fe458dde5c00beec485, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 2be26c17513285b4ba47ccc1d32629f9, type: 2}
+--- !u!114 &879700137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879700130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: fd8647d546cd6c043b49b7106a5d3a2f, type: 2}
+  - {fileID: 11400000, guid: 2dcb5f88c166fb44c991be6d246c19dd, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &917787532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2112,7 @@ GameObject:
   - component: {fileID: 917787533}
   - component: {fileID: 917787536}
   - component: {fileID: 917787535}
+  - component: {fileID: 917787537}
   m_Layer: 0
   m_Name: Half-Life Statue
   m_TagString: Untagged
@@ -2218,6 +2298,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.75, y: 8.8}
   m_EdgeRadius: 0
+--- !u!114 &917787537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917787532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 37513e99576c6344a86dd586d6c7e17d, type: 2}
+  - {fileID: 11400000, guid: 651fdf95874a6e74bb98cfb742be612e, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &926238788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2807,8 @@ GameObject:
   - component: {fileID: 1070583403}
   - component: {fileID: 1070583402}
   - component: {fileID: 1070583401}
+  - component: {fileID: 1070583407}
+  - component: {fileID: 1070583406}
   m_Layer: 0
   m_Name: Sicherungskasten Dreckig
   m_TagString: Untagged
@@ -2905,6 +3006,43 @@ Transform:
   - {fileID: 982674701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070583406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070583400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &1070583407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070583400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 0}
+  - {fileID: 0}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1130592718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,6 +3171,7 @@ GameObject:
   - component: {fileID: 1241583123}
   - component: {fileID: 1241583126}
   - component: {fileID: 1241583125}
+  - component: {fileID: 1241583127}
   m_Layer: 0
   m_Name: Rom Check Fail
   m_TagString: Untagged
@@ -3214,6 +3353,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.64, y: 4.31}
   m_EdgeRadius: 0
+--- !u!114 &1241583127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241583122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: b32cc620439743d41b2eab5eeaaf69d7, type: 2}
+  - {fileID: 0}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1277383877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,8 +3489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6e3b8f02a3c662a4d9191a743b5c0219, type: 2}
-  - {fileID: 11400000, guid: 2d552d273a669f04e8d96914a5af00ce, type: 2}
+  - {fileID: 11400000, guid: 2f215c17d9b4d2d48a36138652bbff6d, type: 2}
+  - {fileID: 11400000, guid: 165ebded12e628849b020e28d76dda0d, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4452,6 +4610,7 @@ GameObject:
   - component: {fileID: 1553135562}
   - component: {fileID: 1553135561}
   - component: {fileID: 1553135564}
+  - component: {fileID: 1553135565}
   m_Layer: 0
   m_Name: Virtual Boy Brille
   m_TagString: Untagged
@@ -4630,6 +4789,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.42, y: 0.62}
   m_EdgeRadius: 0
+--- !u!114 &1553135565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553135559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 5965a0c48bd3d7f44bc7d02d7dd41705, type: 2}
+  - {fileID: 11400000, guid: 1c41f2708f861734da144b3d4bd19819, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1553680296
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,6 +5630,7 @@ GameObject:
   - component: {fileID: 1883772420}
   - component: {fileID: 1883772423}
   - component: {fileID: 1883772422}
+  - component: {fileID: 1883772424}
   m_Layer: 0
   m_Name: Indie Dev Infos
   m_TagString: Untagged
@@ -5633,6 +5812,25 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &1883772424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883772419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 75b9b36eae85b6d4a810c478b6da6ee4, type: 2}
+  - {fileID: 11400000, guid: 25bdd9b1da63ac84b98c26f860f10ea3, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1885826239
 GameObject:
   m_ObjectHideFlags: 0

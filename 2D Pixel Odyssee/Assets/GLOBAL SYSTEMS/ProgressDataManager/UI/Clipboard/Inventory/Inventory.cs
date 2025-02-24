@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,9 @@ public class Inventory : MonoBehaviour
     public int InputKey1;
     public int InputKey2;
 
+    private EventInstance InventoryItemCombSuccess; //Sound
+    private EventInstance InventoryItemCombFailed; //Sound;
+
     void Start()
     {
         TryDragUnlock = false;
@@ -40,6 +44,10 @@ public class Inventory : MonoBehaviour
         ItemCollection = GameObject.FindGameObjectWithTag("ItemCollection");
         ItemCollection.SetActive(false);
         InventoryObj.SetActive(false);
+
+        InventoryItemCombSuccess = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ItemCombSuccess); //Sound
+        InventoryItemCombFailed = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ItemCombFailed);
+
     }
 
     public void ControllInventory ()
@@ -165,7 +173,8 @@ public class Inventory : MonoBehaviour
             {
                 //Craft the Item
                 DMReference.AddDraggableObj(Recipe.Crafted_Item_ID, 11);                                    //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
-                
+
+                InventoryItemCombSuccess.start(); //Sound
 
                 foreach (Draggable Item in DataManager.Item_List)                                           //Remove Part_Items 
                 {
@@ -211,6 +220,8 @@ public class Inventory : MonoBehaviour
 
         if(Craft_Success == false)                                                                          //If no item was crafted
         {
+
+            InventoryItemCombFailed.start(); //Sound
 
             foreach (Draggable Item in DataManager.Item_List)                                           //Remove Part_Items 
             {

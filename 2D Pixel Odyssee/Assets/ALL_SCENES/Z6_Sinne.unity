@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 108573860}
   - component: {fileID: 108573863}
   - component: {fileID: 108573862}
+  - component: {fileID: 108573865}
+  - component: {fileID: 108573864}
   m_Layer: 0
   m_Name: "Warnhinwei\xDF"
   m_TagString: Untagged
@@ -399,6 +401,43 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &108573864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108573859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 6dfc7bfe4f717d244a5707946eda406b, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 4751aed80691306448591f696f6a443a, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &108573865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108573859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 0c44c4e9af283ff4098152b1f09d9bbe, type: 2}
+  - {fileID: 11400000, guid: d1e3f15c17370ed40bc9d69a7aa60cce, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &143894947
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +680,8 @@ GameObject:
   - component: {fileID: 255266720}
   - component: {fileID: 255266719}
   - component: {fileID: 255266718}
+  - component: {fileID: 255266724}
+  - component: {fileID: 255266723}
   m_Layer: 0
   m_Name: Knopf
   m_TagString: Untagged
@@ -841,6 +882,43 @@ Transform:
   - {fileID: 1938129533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255266723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255266717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: ff398a62bce97dd4cbb0dd1d8a5340ba, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 608b262726e734746b9b8ad7842eee6b, type: 2}
+--- !u!114 &255266724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255266717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: aa538715ed2f33642b47bcf26c61b387, type: 2}
+  - {fileID: 11400000, guid: b0bed3d4683ac0546acdadeb45038e47, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &261780996
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +931,7 @@ GameObject:
   - component: {fileID: 261780999}
   - component: {fileID: 261780998}
   - component: {fileID: 261780997}
+  - component: {fileID: 261781001}
   m_Layer: 0
   m_Name: Handeln Schild
   m_TagString: Untagged
@@ -1034,6 +1113,25 @@ Transform:
   - {fileID: 1386595410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261781001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261780996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 31183de676360af4b9cb2dfffbfdb9a5, type: 2}
+  - {fileID: 11400000, guid: 80196fc16f4deda499edc6c70a6f1beb, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &337817708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1145,8 @@ GameObject:
   - component: {fileID: 337817711}
   - component: {fileID: 337817712}
   - component: {fileID: 337817713}
+  - component: {fileID: 337817715}
+  - component: {fileID: 337817714}
   m_Layer: 0
   m_Name: Knopf
   m_TagString: Untagged
@@ -1247,6 +1347,43 @@ MonoBehaviour:
   InteractionTriggered: 0
   LockTriggered: 0
   DialogueTriggered: 0
+--- !u!114 &337817714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337817708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 0d0abfbbe1d3d1644a2561963a20dac1, type: 2}
+  - {fileID: 11400000, guid: 2c9e1f56d72ee2a4bb79d1bb3bef5b00, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
+--- !u!114 &337817715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337817708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: ff398a62bce97dd4cbb0dd1d8a5340ba, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 401157f668943bf4e88102d5657edf17, type: 2}
 --- !u!1 &358449853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,8 +2692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 6e3b8f02a3c662a4d9191a743b5c0219, type: 2}
-  - {fileID: 11400000, guid: 2d552d273a669f04e8d96914a5af00ce, type: 2}
+  - {fileID: 11400000, guid: f707bf194f3c0074e9751bf09bb6cf19, type: 2}
+  - {fileID: 11400000, guid: 2e22b6135169ef14b9d22fbf5d2aa7f9, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3133,6 +3270,8 @@ GameObject:
   - component: {fileID: 903697901}
   - component: {fileID: 903697903}
   - component: {fileID: 903697904}
+  - component: {fileID: 903697906}
+  - component: {fileID: 903697905}
   m_Layer: 0
   m_Name: Fake DDR
   m_TagString: Untagged
@@ -3343,6 +3482,35 @@ MonoBehaviour:
   Unlock_Position: -1
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+--- !u!114 &903697905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: []
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
+--- !u!114 &903697906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40cbe19c7e1f6242b1f0d75f2c4114c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910244521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +4027,7 @@ GameObject:
   - component: {fileID: 970321814}
   - component: {fileID: 970321813}
   - component: {fileID: 970321812}
+  - component: {fileID: 970321816}
   m_Layer: 0
   m_Name: Vitrine3
   m_TagString: Untagged
@@ -4040,6 +4209,25 @@ Transform:
   - {fileID: 1186757043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970321816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970321811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: fa14c1330df805140b76acdcfced0256, type: 2}
+  - {fileID: 11400000, guid: d958043ac65c6ec4bbcb59cc76a34a43, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &991538943
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,8 +4345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: d760f4374d0814f488774f92449c5b18, type: 2}
-  - {fileID: 11400000, guid: 7918e5ce8909e314dbb5444c6f8fcd33, type: 2}
+  - {fileID: 11400000, guid: 0623ba71ad8f79949af0565132b8e64d, type: 2}
+  - {fileID: 11400000, guid: 538ea842ae0463f4d97fe48facb1d6f7, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4347,6 +4535,8 @@ GameObject:
   - component: {fileID: 1035769245}
   - component: {fileID: 1035769248}
   - component: {fileID: 1035769247}
+  - component: {fileID: 1035769250}
+  - component: {fileID: 1035769249}
   m_Layer: 0
   m_Name: Virtual Boy Stand
   m_TagString: Untagged
@@ -4525,6 +4715,43 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+--- !u!114 &1035769249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035769244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: f1858ec7db8c9c44d8663fa2ca1a0445, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: ba85bff829d49974fa63b342735af95c, type: 2}
+--- !u!114 &1035769250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035769244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 7f9faa27cbbfa51438ce2ba63de3e75e, type: 2}
+  - {fileID: 11400000, guid: 19154ccf70a661a49aa435cfb5bec207, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1042836739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,6 +5204,8 @@ GameObject:
   - component: {fileID: 1262821533}
   - component: {fileID: 1262821532}
   - component: {fileID: 1262821531}
+  - component: {fileID: 1262821535}
+  - component: {fileID: 1262821534}
   m_Layer: 0
   m_Name: Fahrrad
   m_TagString: Untagged
@@ -5163,6 +5392,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1262821534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262821529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: fc5444c48a1b50a4391501de29b827e6, type: 2}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &1262821535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262821529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: d68ab59334579314fb70e79293dae674, type: 2}
+  - {fileID: 11400000, guid: 85ddb43112b4e0640b824e70a12f66dd, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1282494962
 GameObject:
   m_ObjectHideFlags: 0
@@ -6149,6 +6415,7 @@ GameObject:
   - component: {fileID: 1515522304}
   - component: {fileID: 1515522303}
   - component: {fileID: 1515522302}
+  - component: {fileID: 1515522305}
   m_Layer: 0
   m_Name: Kabel
   m_TagString: Untagged
@@ -6375,6 +6642,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.331677, y: 0.54357004}
   m_EdgeRadius: 0
+--- !u!114 &1515522305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515522299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 233c78bf37cb92849b0866b9d9170b96, type: 2}
+  - {fileID: 11400000, guid: 0f440a152e4ef7e4989b81d29fca7395, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1593772024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,6 +7364,7 @@ GameObject:
   - component: {fileID: 1793617634}
   - component: {fileID: 1793617636}
   - component: {fileID: 1793617637}
+  - component: {fileID: 1793617638}
   m_Layer: 0
   m_Name: Vitrine2
   m_TagString: Untagged
@@ -7259,6 +7546,25 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &1793617638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793617633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 62b3e7002f774504d8943a19a8f5bf29, type: 2}
+  - {fileID: 11400000, guid: 290ba28ee2650da4f9f6a49ee02ca772, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1832214512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,6 +7661,8 @@ GameObject:
   - component: {fileID: 1859360658}
   - component: {fileID: 1859360661}
   - component: {fileID: 1859360660}
+  - component: {fileID: 1859360663}
+  - component: {fileID: 1859360662}
   m_Layer: 0
   m_Name: Rasseln
   m_TagString: Untagged
@@ -7533,6 +7841,43 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+--- !u!114 &1859360662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859360657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: 4670c48c2e34f604294c7893280965df, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 3b4edb4d6cc06724cb05d20585fc6188, type: 2}
+--- !u!114 &1859360663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859360657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: e72e7ae1b6c2b0746a41c7a2df94f9b1, type: 2}
+  - {fileID: 11400000, guid: 564de69e3e81d54499f6e1d47278a288, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1879692994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7768,6 +8113,7 @@ GameObject:
   - component: {fileID: 1905940189}
   - component: {fileID: 1905940190}
   - component: {fileID: 1905940191}
+  - component: {fileID: 1905940192}
   m_Layer: 0
   m_Name: Vitrine1
   m_TagString: Untagged
@@ -7978,6 +8324,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffwhenLocked: 0
+--- !u!114 &1905940192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905940185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 5e3c834f8776240439f790fce5db380d, type: 2}
+  - {fileID: 11400000, guid: 57bcfbc7f004cd74ab987f0ef25d5acf, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1911468490
 GameObject:
   m_ObjectHideFlags: 0
@@ -8158,6 +8523,8 @@ GameObject:
   - component: {fileID: 1999637039}
   - component: {fileID: 1999637042}
   - component: {fileID: 1999637041}
+  - component: {fileID: 1999637044}
+  - component: {fileID: 1999637043}
   m_Layer: 0
   m_Name: Lightgun
   m_TagString: Untagged
@@ -8336,6 +8703,43 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+--- !u!114 &1999637043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999637038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 11400000, guid: 47273978ae8800243b52a4ff9cd2b65e, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 2e14c5ade6678a940a59af4f6f34266e, type: 2}
+--- !u!114 &1999637044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999637038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 4240806cc1fc97e43b179cf901b12241, type: 2}
+  - {fileID: 11400000, guid: c991464043e9bb94898e9fb2b67706d9, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1999703082
 GameObject:
   m_ObjectHideFlags: 0
@@ -8535,6 +8939,7 @@ GameObject:
   - component: {fileID: 2000564585}
   - component: {fileID: 2000564584}
   - component: {fileID: 2000564583}
+  - component: {fileID: 2000564587}
   m_Layer: 0
   m_Name: "H\xF6ren Schild"
   m_TagString: Untagged
@@ -8716,6 +9121,25 @@ Transform:
   - {fileID: 1282494963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000564587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000564582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 2860e6fa337c4114daee974fc0398532, type: 2}
+  - {fileID: 11400000, guid: da7c9ad74d4909e4fbfd7c806c8ed814, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &2047421371
 GameObject:
   m_ObjectHideFlags: 0
@@ -8733,7 +9157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2047421372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8905,6 +9329,10 @@ PrefabInstance:
     - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Name
       value: PAUSESCREEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

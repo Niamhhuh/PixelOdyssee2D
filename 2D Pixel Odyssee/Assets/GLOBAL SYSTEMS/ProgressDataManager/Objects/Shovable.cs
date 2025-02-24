@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -23,6 +24,8 @@ public class Shovable : ObjectScript
     public bool Active_Unlock;
     public GameObject [] TargetObject;
 
+    private EventInstance ObjectLocked;  //Sound
+
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,6 +43,8 @@ public class Shovable : ObjectScript
         ShoveBox = gameObject;
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
+
+        ObjectLocked = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectLocked); //Sound
 
         foreach (DataManager.ShovableObj StoredObj in DataManager.Shovable_List)                            //Go through the Shovable_List and compare ShovableObj.
         {
@@ -110,6 +115,7 @@ public class Shovable : ObjectScript
         {
             ClearHighlight();
             //PassTriggerActivate(2);
+            ObjectLocked.start(); //Sound
             StartCoroutine(FlashRed());
         }
     }

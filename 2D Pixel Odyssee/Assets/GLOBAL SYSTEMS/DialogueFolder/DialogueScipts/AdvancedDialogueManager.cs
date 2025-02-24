@@ -516,4 +516,6 @@ public enum DialogueActors
     BebeSurprise,
     Random,
     BebeQuestion,
+    SilverSmug,
+    SilverHappy,
 };

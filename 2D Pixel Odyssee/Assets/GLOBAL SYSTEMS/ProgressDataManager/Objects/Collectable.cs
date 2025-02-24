@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ public class Collectable : ObjectScript
 
     public int RewardPosition;
 
+    private EventInstance ObjectLocked;  //Sound
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,7 +34,9 @@ public class Collectable : ObjectScript
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
-        
+        ObjectLocked = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectLocked); //Sound
+
+
         foreach (DataManager.CollectableObj StoredObj in DataManager.Collectable_List)                      //Go through the Collectable_List and check CollectableObj.
         {
             if (ID == StoredObj.Stored_ID)
@@ -110,6 +115,7 @@ public class Collectable : ObjectScript
         else
         {
             ClearHighlight();
+            ObjectLocked.start(); //Sound
             StartCoroutine(FlashRed());
         }
     }
