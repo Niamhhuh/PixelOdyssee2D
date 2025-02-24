@@ -868,7 +868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: []
+  conversation:
+  - {fileID: 11400000, guid: 2f61eb171cebcb54fa7dafb5f1f3d626, type: 2}
+  - {fileID: 11400000, guid: b6da79c09a8e6db4fbd67e128802e998, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -1563,6 +1565,7 @@ GameObject:
   - component: {fileID: 405818246}
   - component: {fileID: 405818245}
   - component: {fileID: 405818248}
+  - component: {fileID: 405818249}
   m_Layer: 0
   m_Name: Schere
   m_TagString: Untagged
@@ -1741,6 +1744,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82, y: 0.86}
   m_EdgeRadius: 0
+--- !u!114 &405818249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405818244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 96ee678824363f148808c6a3fce52587, type: 2}
+  - {fileID: 11400000, guid: bd4e605970bfe32428dd83560355c832, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &506269864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +2480,7 @@ GameObject:
   - component: {fileID: 763495086}
   - component: {fileID: 763495085}
   - component: {fileID: 763495088}
+  - component: {fileID: 763495089}
   m_Layer: 0
   m_Name: "Platte Froschm\xFCnze"
   m_TagString: Untagged
@@ -2636,6 +2659,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82, y: 0.86}
   m_EdgeRadius: 0
+--- !u!114 &763495089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763495084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 598c0e3c8e2d20f45b86e94ae8116ca3, type: 2}
+  - {fileID: 11400000, guid: 2a6c4e3d33aba6047b6350e2a788b1fa, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &814356520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,11 +3556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
+  RosieLockDialogue: {fileID: 11400000, guid: c5f57f3b0d493384d85af503d8fc9ed9, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 6a0b6fa8c5a884a4489bc55f4d862283, type: 2}
   ModifyDeniedInteraction: 0
   TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 0}
+  RosieDeniedInteraction: {fileID: 11400000, guid: 1465e2b0fe7324d40b96ceeff9049abc, type: 2}
   BeBeDeniedInteraction: {fileID: 0}
 --- !u!114 &1107816435
 MonoBehaviour:
@@ -3532,7 +3574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: []
+  conversation:
+  - {fileID: 11400000, guid: 421e479ad1fa7f845a4a89dbaaa95363, type: 2}
+  - {fileID: 11400000, guid: cc3d51342375c3f479b506aa21bda7ee, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3953,6 +3997,7 @@ GameObject:
   - component: {fileID: 1637325032}
   - component: {fileID: 1637325034}
   - component: {fileID: 1637325033}
+  - component: {fileID: 1637325035}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -4085,7 +4130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: []
+  conversation:
+  - {fileID: 11400000, guid: eb7e4f78cf9bc6b49a588dda364ef212, type: 2}
+  - {fileID: 11400000, guid: 8bbc546d62f855b4aa842e2b7f8797c9, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4151,6 +4198,24 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &1637325035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637325029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 0}
+  BeBeLockDialogue: {fileID: 0}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!1001 &1751100403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4202,6 +4267,10 @@ PrefabInstance:
     - target: {fileID: 5040493347216127502, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Name
       value: PAUSESCREEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249247893907463040, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
