@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class EventSource : ObjectScript
     public int EventScene_ID = 0;                                                       //Set Target Scene
     public int SpawnPointID;                                                            //Set Spawnpoint
 
+    private EventInstance ObjectLocked;  //Sound
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -24,6 +27,8 @@ public class EventSource : ObjectScript
         SeqUReference = this.GetComponent<SequenceUnlock>();
         UnSReference = this.GetComponent<UnlockScript>();
         ObjReference = this.GetComponent<EventSource>();
+
+        ObjectLocked = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectLocked); //Sound
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
 
@@ -112,6 +117,7 @@ public class EventSource : ObjectScript
         }
         else
         {
+            ObjectLocked.start(); //Sound
             ClearHighlight();
             //PassTriggerActivate(2);
             StartCoroutine(FlashRed());

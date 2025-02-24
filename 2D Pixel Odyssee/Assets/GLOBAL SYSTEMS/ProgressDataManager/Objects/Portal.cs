@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Portal : ObjectScript
     public int LoadScene_ID;
     public int SpawnPointID;
 
+    private EventInstance ObjectLocked;  //Sound
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -25,6 +28,8 @@ public class Portal : ObjectScript
         ObjReference = this.GetComponent<Portal>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
+
+        ObjectLocked = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectLocked); //Sound
 
         foreach (DataManager.PortalObj StoredObj in DataManager.Portal_List)                                //Go through the Portal_List and cech PortalObj.
         {
@@ -88,6 +93,7 @@ public class Portal : ObjectScript
         {
             ClearHighlight();
             //PassTriggerActivate(2);
+            ObjectLocked.start(); //Sound
             StartCoroutine(FlashRed());
         }
     }

@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -119,7 +120,6 @@ public class ObjectScript : MonoBehaviour
 
 
 
-
     //Set Data
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -182,6 +182,8 @@ public class ObjectScript : MonoBehaviour
             TransformDialogueScript = gameObject.GetComponent<TransformativeDialogueScript>();
         }
     }
+
+  
 
     public void ToggleSprites()
     {

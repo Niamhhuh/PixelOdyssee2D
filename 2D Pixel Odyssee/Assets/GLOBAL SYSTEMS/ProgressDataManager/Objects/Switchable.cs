@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Switchable : ObjectScript
     
     public GameObject SwitchObject;
 
+    private EventInstance ObjectLocked;  //Sound
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,6 +25,8 @@ public class Switchable : ObjectScript
         ObjReference = this.GetComponent<Switchable>();
 
         int currentIndex = 0;                                                                               //remember the currently inspected Index
+
+        ObjectLocked = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ObjectLocked); //Sound
 
         foreach (DataManager.SwitchStateObj StoredObj in DataManager.SwitchState_List)                      //Go through the SwitchState_List and Fetch SwitchStateObj.
         {
@@ -83,6 +88,7 @@ public class Switchable : ObjectScript
         } else
         {
             ClearHighlight();
+            ObjectLocked.start(); //Sound
             PassTriggerActivate(2);                                                                     //Call Activate Trigger -> checks if ActivateTrigger is attached, then continues (2 = Trigger acitvated by Object locked)
             StartCoroutine(FlashRed());
         }
