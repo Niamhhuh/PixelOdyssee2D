@@ -116,7 +116,8 @@ public class ObjectScript : MonoBehaviour
 
 
 
-
+    private EventInstance ItemSuccess; //Sound
+    private EventInstance ItemFailed;
 
 
 
@@ -183,8 +184,12 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
-  
 
+    private void Start()
+    {
+        ItemSuccess = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ItemSuccess); //Sound
+        ItemFailed = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.ItemFailed); //Sound
+    }
     public void ToggleSprites()
     {
         if (Lock_State == true)
@@ -285,12 +290,14 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID == Item_Key_ID)
         {
+
             FetchAllData();
             Lock_State = false;
             UpdateAllData();
             if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
             
-            foreach(Draggable Item in DataManager.Item_List)
+            
+            foreach (Draggable Item in DataManager.Item_List)
             {
                 if(DMReference.InventoryRef.DraggedItemID == Item.ID)
                 {
@@ -326,6 +333,7 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
         {
+
             if (!isBackground && !IsFullTrigger)
             {
                 StartCoroutine(UnlockFlashRed());

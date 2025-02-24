@@ -7439,46 +7439,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Path
-      value: event:/Depot Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Path
-      value: event:/Titelscreen Theme
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data1
-      value: -1389875791
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data2
-      value: 1203534326
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data3
-      value: 825692847
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: gameSceneTheme.Guid.Data4
-      value: -1145034477
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data1
-      value: 250868438
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data2
-      value: 1339535541
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data3
-      value: -801345379
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101633162761365739, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
-      propertyPath: titelScreenTheme.Guid.Data4
-      value: 1897745755
-      objectReference: {fileID: 0}
     - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.140054
@@ -14788,6 +14748,7 @@ GameObject:
   - component: {fileID: 1967505607}
   - component: {fileID: 1967505612}
   - component: {fileID: 1967505613}
+  - component: {fileID: 1967505614}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -15000,6 +14961,37 @@ MonoBehaviour:
       Data3: -1569153123
       Data4: 98326780
     Path: event:/Sfx/UI_Game/Click
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1967505614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967505605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 318446897
+      Data2: 1119329170
+      Data3: -804681293
+      Data4: 1922398594
+    Path: event:/Sfx/Depot/Alarm
   Event: 
   EventPlayTrigger: 19
   EventStopTrigger: 0
