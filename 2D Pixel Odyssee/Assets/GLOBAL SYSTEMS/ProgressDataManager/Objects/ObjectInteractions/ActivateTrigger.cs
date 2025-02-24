@@ -19,6 +19,8 @@ public class ActivateTrigger : MonoBehaviour
     public bool LockTriggered;
     public bool DialogueTriggered;
 
+    public bool TriggerTutorialPanel;
+
     private EventInstance TutorialPopUp; //Sound
 
     private void Start()
@@ -31,7 +33,11 @@ public class ActivateTrigger : MonoBehaviour
 
     public void CallTriggerActivation(int TriggerType)      //Call this from Object Script Call_Interaction or from AdvanceDialogue -> object must check if it has ActivateTrigger Attached
     {
-        TutorialPopUp.start(); //Sound
+        if(TriggerTutorialPanel)
+        {
+            TutorialPopUp.start(); //Sound
+        }
+        
         if (CharacterBound)
         {
             if (Rosie && DataManager.RosieActive)

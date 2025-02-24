@@ -2683,7 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cdef112f2b4b845bafb171150a8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 52
+  ID: 53
   AlreadyTalked: 0
   Lock_State: 0
   ForcedInteraction: 0
@@ -2955,6 +2955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875151012}
   - component: {fileID: 875151013}
+  - component: {fileID: 875151014}
   m_Layer: 0
   m_Name: Ventilator Highlight
   m_TagString: Untagged
@@ -3029,6 +3030,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &875151014
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875151011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13173bd364e04a64caa79ff9d3f5847e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &897017965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4452,6 +4474,7 @@ GameObject:
   - component: {fileID: 1637325034}
   - component: {fileID: 1637325033}
   - component: {fileID: 1637325035}
+  - component: {fileID: 1637325036}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -4610,7 +4633,7 @@ MonoBehaviour:
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
   Unlock_by_Item: 1
-  Item_Key_ID: 34
+  Item_Key_ID: 33
   ChangeNameonLock: 0
   LockName: 
   LockSprite: {fileID: 0}
@@ -4670,6 +4693,27 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 0}
   BeBeDeniedInteraction: {fileID: 0}
+--- !u!95 &1637325036
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637325029}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b516e5529c6234458f61f5ffd613454, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1751100403
 PrefabInstance:
   m_ObjectHideFlags: 0
