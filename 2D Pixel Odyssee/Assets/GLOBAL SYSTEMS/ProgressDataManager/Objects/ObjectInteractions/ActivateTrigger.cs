@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,15 +19,19 @@ public class ActivateTrigger : MonoBehaviour
     public bool LockTriggered;
     public bool DialogueTriggered;
 
+    private EventInstance TutorialPopUp; //Sound
+
     private void Start()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         ThisObject = gameObject.GetComponent<ObjectScript>();
         ThisObject.TriggerScript = this;
+        TutorialPopUp = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.TutorialPopUp); //Sound
     }
 
     public void CallTriggerActivation(int TriggerType)      //Call this from Object Script Call_Interaction or from AdvanceDialogue -> object must check if it has ActivateTrigger Attached
     {
+        TutorialPopUp.start(); //Sound
         if (CharacterBound)
         {
             if (Rosie && DataManager.RosieActive)

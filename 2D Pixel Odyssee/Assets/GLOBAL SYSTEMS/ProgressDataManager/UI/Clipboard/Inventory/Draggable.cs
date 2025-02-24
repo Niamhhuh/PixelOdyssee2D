@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
     private DataManager DMReference;
 
+    private EventInstance InventoryItem;  //Sound
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     void Start()
+    void Start()
     {
         DraggablePosition = GetComponent<RectTransform>();
         canvasStats = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<Canvas>();                  
@@ -36,6 +39,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
 
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManage
 
+        InventoryItem = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.InventoryItem); //Sound
     }
 
 
@@ -129,7 +133,9 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     {
         DMReference.InventoryRef.ItemDragged = true;                                                                //Mark that an Item is being dragged (required for drag Item from inventory)
         DMReference.InventoryRef.DraggedItemID = ID;                                                                //Remember the ID of the dragged Item (required for DragUnlock)
-        
+
+        InventoryItem.start(); //Sound
+
         transform.SetParent(GameObject.FindGameObjectWithTag("DragItem").GetComponent<Transform>());                //Change parent of Dragged Item to keep it active when inventory is closed for DragUnlock
         ControlInteract.blocksRaycasts = false;                                                                     //Item doesn't Block Raycast on Drag -> allows interaction with Objects and Slots
         if (CurrentSlot != null)
@@ -151,7 +157,10 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     {
         DMReference.InventoryRef.ItemDragged = false;                                                               //Mark that an Item is no longer dragged
         transform.SetParent(ParentObj);                                                                             //Parent Item back to the Item Collection
-        if(CurrentSlot != null)                                                                             
+
+        InventoryItem.start(); //Sound
+
+        if (CurrentSlot != null)                                                                             
         {
             DraggablePosition.anchoredPosition = CurrentSlot.SlotPosition.anchoredPosition;                         //Move DraggableItem to center of SelectedSlot
             CurrentSlot.SetOccupied();                                                                              //Set new Slot as occupied

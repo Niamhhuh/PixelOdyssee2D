@@ -51,6 +51,7 @@ public class Fmod_Events : MonoBehaviour
     [field: Header("Sfx Depot")]
     [field: SerializeField] public EventReference ChainDrop { get; private set; }
     [field: SerializeField] public EventReference InsertDisk { get; private set; }
+    [field: SerializeField] public EventReference Alarm { get; private set; }
 
     [field: Header("Sfx Arcade")]
     [field: SerializeField] public EventReference RipSignOff { get; private set; }
