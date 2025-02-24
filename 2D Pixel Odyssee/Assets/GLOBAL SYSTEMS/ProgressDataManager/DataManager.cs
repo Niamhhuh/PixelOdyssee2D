@@ -133,6 +133,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
+        bool DialogueIDFound = false;
         currentRoom = SceneManager.GetActiveScene().buildIndex;
 
         if(SpawnID == 0) { SpawnID = 1; }                                                                                           //Set Spawn to 1 if no Spawner has been set previously
@@ -141,7 +142,20 @@ public class DataManager : MonoBehaviour
             SpawnList.Add(Obj);                                                                                                     //Remember Spawners for this load
         }
         SpawnPlayer();                                                                                                              //Position the Player
-        ProgressDialogueList.Add(0);                                //Add 0 as "standard ID"
+        
+        foreach(int ID in ProgressDialogueList)
+        {
+            if(ID == 0)
+            {
+                DialogueIDFound = true;
+                break;
+            }
+        }
+
+        if(!DialogueIDFound)
+        {
+            ProgressDialogueList.Add(0);                                //Add 0 as "standard ID"
+        }
     }
 
     private void Awake()

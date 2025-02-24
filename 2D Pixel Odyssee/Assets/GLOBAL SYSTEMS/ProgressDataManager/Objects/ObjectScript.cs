@@ -458,7 +458,8 @@ public class ObjectScript : MonoBehaviour
         DataManager.ToInteract.Add(this);
 
         if (TransformDialogueScript != null) 
-        { 
+        {
+            print("GameObject that called:" + gameObject + "" + "Name:" + gameObject.name);
             TransformDialogueScript.TransformeDialogue(); 
         }
 

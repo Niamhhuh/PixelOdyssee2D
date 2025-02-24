@@ -167,6 +167,9 @@ public class AdvancedDialogueManager : MonoBehaviour
         //If there is a branch...
         if (currentConversation.actors[stepNum] == DialogueActors.Branch)
         {
+            for (int i = 0; i < optionButtonText.Length; i++)
+                optionButton[i].SetActive(false);
+
             ContinueButton.SetActive(false);                                                            //Deactivate the Continue Dialogue Button when an Option Branch is triggered
 
             InBranch = true;
@@ -444,6 +447,8 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void TurnOffDialogue()
     {
+        DialogueID_found = false;
+
         if (typeWriterRoutine != null)
         {
             StopCoroutine(typeWriterRoutine);
@@ -459,12 +464,12 @@ public class AdvancedDialogueManager : MonoBehaviour
         }
 
         if(currentConversation != null && currentConversation.actors.Length <= stepNum)                                                //if the Dialogue was progressed through                                     //PART OF DIALOGUE ENHANCMENT
-        {  
-            if(currentConversation.ProgressDialogue)                                                    //check if it is "ProgressDialogue"
+        {
+            if (currentConversation.ProgressDialogue)                                                    //check if it is "ProgressDialogue"
             {
                 foreach(int DialogueID in DataManager.ProgressDialogueList)
                 {
-                    if(DialogueID == currentConversation.DialogueID)
+                    if (DialogueID == currentConversation.DialogueID)
                     {
                         DialogueID_found = true;
                         break;

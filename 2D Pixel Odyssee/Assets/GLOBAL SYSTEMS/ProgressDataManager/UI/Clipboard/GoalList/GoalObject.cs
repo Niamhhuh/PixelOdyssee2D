@@ -17,16 +17,44 @@ public class GoalObject : MonoBehaviour
     private RectTransform GoalPosition;
     private GameObject GoalListStart;
 
+    private DataManager DMReference;
+
     // Start is called before the first frame update
     void Awake()
     {
+        bool AlreadyAdded = false;
+
         CurrentImage = gameObject.GetComponent<Image>();
         GoalPosition = gameObject.GetComponent<RectTransform>();
         GoalListStart = GameObject.FindGameObjectWithTag("GoalListStart");
+
+
+        //!TEST WITHOUT LATER
+        //------------------------------------------------------------------------------
+        DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
+
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if(Goal.Stored_ID == ID)
+            {
+                AlreadyAdded = true;
+                break;
+            }
+        }
+        if (!AlreadyAdded)
+        {
+            if (Available)
+            {
+                DMReference.AddGoalObj(ID, Completed);
+            }
+        }
+        //------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------
     }
 
     public void FetchData()
     {
+
         //Fetch Data From DataManager
         int currentIndex = 0;
         foreach (DataManager.ActiveGoal StoredObj in DataManager.ActiveGoal_List)                           //Go through the Draggable_List and check DraggableObj.
