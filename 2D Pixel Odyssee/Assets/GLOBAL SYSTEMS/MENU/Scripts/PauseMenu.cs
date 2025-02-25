@@ -48,8 +48,15 @@ public class PauseMenu : MonoBehaviour
             DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
 
-        spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
-        spielBeenden_Fenster.SetActive(false);        
+        if (spielBeenden_Fenster == null) {
+            spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
+            if (spielBeenden_Fenster == null) {
+                Debug.LogError("Script Pause, Line 56: SpielBeendenFenster not found. In Credits ok, uebrall anders nicht");
+                return;  // Stop execution if spiel beenden can't be found
+            }   
+            spielBeenden_Fenster.SetActive(false);               
+        }
+        
     }
 
     void Update() {  
@@ -173,6 +180,7 @@ public class PauseMenu : MonoBehaviour
             pauseScreen.SetActive(false);
         }
         Time.timeScale = 1f;
+        Class_Fades.instance.StartFadeIn();        //Starts the FadeIn Coroutine from the script "Fades" ----------------------NEU---------------------
         SceneManager.LoadScene("Z_Start Screen");
     }
 
