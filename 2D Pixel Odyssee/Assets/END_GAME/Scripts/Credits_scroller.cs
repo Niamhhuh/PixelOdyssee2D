@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Fades;
 
 public class CreditsScrollWithImages : MonoBehaviour
 {
