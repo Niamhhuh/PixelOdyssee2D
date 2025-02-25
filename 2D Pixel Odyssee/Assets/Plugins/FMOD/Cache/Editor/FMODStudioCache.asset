@@ -68,10 +68,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FrWin
   Guid:
-    Data1: -1619904035
-    Data2: 1255198535
-    Data3: 1844405173
-    Data4: 2094389947
+    Data1: 1529454555
+    Data2: 1248943084
+    Data3: 469694376
+    Data4: -1945401350
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8482192670081322783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Streetfighter/SFArrowSuccess3
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Streetfighter/SFArrowSuccess3
+  Guid:
+    Data1: 841709683
+    Data2: 1296492135
+    Data3: -1071600207
+    Data4: 1209794229
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -95,10 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFWinPlayer1
   Guid:
-    Data1: 951157661
-    Data2: 1209765666
-    Data3: 2138691234
-    Data4: 448278107
+    Data1: -526817963
+    Data2: 1287820020
+    Data3: 432629127
+    Data4: 1946573508
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -122,10 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFRoundFinal
   Guid:
-    Data1: -824807215
-    Data2: 1083107881
-    Data3: -1425597031
-    Data4: 1210233401
+    Data1: 1874874566
+    Data2: 1125483814
+    Data3: -10717525
+    Data4: 1515151575
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -176,10 +203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/CoinSquish
   Guid:
-    Data1: 238328541
-    Data2: 1306173711
-    Data3: 870175925
-    Data4: -581688451
+    Data1: -1526500003
+    Data2: 1283151844
+    Data3: 595940268
+    Data4: 909890984
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -257,37 +284,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FrScore
   Guid:
-    Data1: 487284068
-    Data2: 1150666069
-    Data3: 263912121
-    Data4: -903181852
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7254900763377709428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/DDRArrow
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/DDRArrow
-  Guid:
-    Data1: 1276014087
-    Data2: 1148833114
-    Data3: -703126602
-    Data4: 607375460
+    Data1: 811156100
+    Data2: 1281791596
+    Data3: -1689278567
+    Data4: 937337087
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -351,6 +351,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7019703836124829041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/DDRActive
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/DDRActive
+  Guid:
+    Data1: -1068701964
+    Data2: 1118636814
+    Data3: -753634140
+    Data4: 555471979
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6924069937845586452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +405,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 420
+--- !u!114 &-6790572040692768575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Depot/Alarm
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Depot/Alarm
+  Guid:
+    Data1: 318446897
+    Data2: 1119329170
+    Data3: -804681293
+    Data4: 1922398594
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6773128757505299684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,37 +473,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFCountdown
   Guid:
-    Data1: -1601635741
-    Data2: 1141529822
-    Data3: -1449735798
-    Data4: -650104687
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6243642025939554893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSFire
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSFire
-  Guid:
-    Data1: -591447604
-    Data2: 1325720733
-    Data3: 1688170660
-    Data4: 1158937982
+    Data1: 1512384722
+    Data2: 1303147324
+    Data3: 662957498
+    Data4: -1786622398
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -504,33 +531,6 @@ MonoBehaviour:
     Data2: 1341486094
     Data3: 1894770345
     Data4: 859599080
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5938650886840470457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/DDRActive
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/DDRActive
-  Guid:
-    Data1: 1388457317
-    Data2: 1100034393
-    Data3: -1043984194
-    Data4: 1611227152
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -608,10 +608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFArrowSlow
   Guid:
-    Data1: -545983944
-    Data2: 1311040916
-    Data3: 1842984371
-    Data4: -2050737160
+    Data1: -108288300
+    Data2: 1119517147
+    Data3: -29370434
+    Data4: 1141337145
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -689,10 +689,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFRound2
   Guid:
-    Data1: 520066465
-    Data2: 1274581448
-    Data3: -1876186463
-    Data4: -1657998545
+    Data1: -1160555715
+    Data2: 1201147810
+    Data3: 1117629118
+    Data4: -663638253
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4971859559852825029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/PSFire
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/PSFire
+  Guid:
+    Data1: -780459094
+    Data2: 1303990684
+    Data3: -382685301
+    Data4: 34296268
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -756,6 +783,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4472753402321048651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/Shaker
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/Shaker
+  Guid:
+    Data1: 386537275
+    Data2: 1338840332
+    Data3: 1076386966
+    Data4: 603781683
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4032747795921222752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +836,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8000
+  Length: 69875
 --- !u!114 &-3988942300143528753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,10 +851,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFArrowSuccess
   Guid:
-    Data1: 1955044005
-    Data2: 1163528709
-    Data3: 946971058
-    Data4: -53766184
+    Data1: 1882240012
+    Data2: 1169756654
+    Data3: -41278035
+    Data4: -1625256019
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -810,7 +864,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3258346077177955359
+--- !u!114 &-3732620290424712551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -820,41 +874,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSElectric
+  m_Name: event:/Sfx/Streetfighter/SFArrowSuccess5
   m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSElectric
+  Path: event:/Sfx/Streetfighter/SFArrowSuccess5
   Guid:
-    Data1: -1385525297
-    Data2: 1147094975
-    Data3: -1171719294
-    Data4: 296943256
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3248268627039757858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSWhip
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSWhip
-  Guid:
-    Data1: 401043179
-    Data2: 1290826984
-    Data3: -2027886179
-    Data4: -1117230069
+    Data1: 1147133766
+    Data2: 1125257592
+    Data3: 1728306818
+    Data4: -1282291960
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -878,10 +905,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFPrepareYourself
   Guid:
-    Data1: 20777846
-    Data2: 1311036825
-    Data3: -1369978189
-    Data4: 16223563
+    Data1: 496471882
+    Data2: 1183637990
+    Data3: -2055708496
+    Data4: -50028520
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -905,10 +932,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFWin
   Guid:
-    Data1: 640391821
-    Data2: 1208317312
-    Data3: -514993230
-    Data4: 1296462179
+    Data1: 1347693238
+    Data2: 1313575999
+    Data3: -757217636
+    Data4: 942732058
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -917,7 +944,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1000
+  Length: 950
 --- !u!114 &-2820967556871879262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,33 +990,6 @@ MonoBehaviour:
     Data2: 1199501917
     Data3: 364332712
     Data4: -396307512
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2553136288488122630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/FakeHandActivate
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/FakeHandActivate
-  Guid:
-    Data1: -179778870
-    Data2: 1280106887
-    Data3: 1189780662
-    Data4: -1384640898
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1080,33 +1080,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1710251961577104825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/DDRSnorring
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/DDRSnorring
-  Guid:
-    Data1: 1065310483
-    Data2: 1261998054
-    Data3: -308749674
-    Data4: 738663043
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-1703500450247138972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +1134,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2500
+--- !u!114 &-1229184805772213692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/PSBallBounce
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/PSBallBounce
+  Guid:
+    Data1: -171876082
+    Data2: 1160900074
+    Data3: 767760535
+    Data4: -343440617
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1149599241628464691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1076637550537086382
+--- !u!114 &-1149077521379518368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1198,14 +1198,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/Shaker
+  m_Name: event:/Sfx/Painstation/CantReachButton
   m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/Shaker
+  Path: event:/Sfx/Painstation/CantReachButton
   Guid:
-    Data1: 328043630
-    Data2: 1154409320
-    Data3: -1685133659
-    Data4: -1177169950
+    Data1: 871253899
+    Data2: 1237437024
+    Data3: 1999416980
+    Data4: 1996513493
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1338,38 +1338,11 @@ MonoBehaviour:
   Path: ../Pixel Odyssee 3.0/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638754039437690493
+  lastModified: 638760147071011332
   FileSizes:
   - Name: Desktop
-    Value: 4990
+    Value: 5210
   Exists: 1
---- !u!114 &-38545628886239940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSLoose
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSLoose
-  Guid:
-    Data1: 1494667424
-    Data2: 1151882503
-    Data3: 2013242532
-    Data4: 137841270
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,11 +1375,8 @@ MonoBehaviour:
   - {fileID: 6673641765764452732}
   - {fileID: 5944990285686580711}
   - {fileID: 5938879134695337564}
-  - {fileID: 3720915360668361422}
   - {fileID: -1703500450247138972}
-  - {fileID: -7254900763377709428}
   - {fileID: 1725178924391904288}
-  - {fileID: -1710251961577104825}
   - {fileID: 6395260121704996666}
   - {fileID: 6101161485456638276}
   - {fileID: -2728330818674560051}
@@ -1433,8 +1403,6 @@ MonoBehaviour:
   - {fileID: 1300357937982550745}
   - {fileID: -6426583276024130908}
   - {fileID: -7332564332581182228}
-  - {fileID: -5938650886840470457}
-  - {fileID: -1076637550537086382}
   - {fileID: -3005023849789607526}
   - {fileID: -959867881005600265}
   - {fileID: -4727908342783224649}
@@ -1444,22 +1412,16 @@ MonoBehaviour:
   - {fileID: 7033634818878265714}
   - {fileID: 1481785872472617463}
   - {fileID: -8334375027996079597}
-  - {fileID: -38545628886239940}
   - {fileID: -5051378975297429827}
   - {fileID: -3988942300143528753}
   - {fileID: 6006901319223600043}
-  - {fileID: 498260561027717758}
   - {fileID: 2928574840051040848}
-  - {fileID: 4326639803803008287}
   - {fileID: 7955248856204194987}
   - {fileID: 819185848918815495}
   - {fileID: -2414859479104468389}
   - {fileID: -5178573215141732576}
   - {fileID: 6623816027376421060}
-  - {fileID: -2553136288488122630}
   - {fileID: 1615589315833014520}
-  - {fileID: -6243642025939554893}
-  - {fileID: -3258346077177955359}
   - {fileID: 7520294184831485265}
   - {fileID: -8072236874226410651}
   - {fileID: 9064767134399484781}
@@ -1471,21 +1433,38 @@ MonoBehaviour:
   - {fileID: -8905880810201269950}
   - {fileID: 7716059887037937192}
   - {fileID: 5654404023483360694}
-  - {fileID: 2885048345753676156}
   - {fileID: 5444004102219960301}
   - {fileID: 5615057407860429740}
-  - {fileID: -3248268627039757858}
   - {fileID: 7537444494907059219}
   - {fileID: -797685497231061215}
   - {fileID: -1068041453651921343}
   - {fileID: -675025450785737195}
   - {fileID: -7819669055903525047}
+  - {fileID: -1229184805772213692}
+  - {fileID: 2336129016498434009}
+  - {fileID: 4168534983379139995}
+  - {fileID: 8302608728883072234}
+  - {fileID: -6790572040692768575}
+  - {fileID: 9194472036900147352}
+  - {fileID: -4472753402321048651}
+  - {fileID: -3732620290424712551}
+  - {fileID: 5551924389526577713}
+  - {fileID: 1269573339437397961}
+  - {fileID: -8482192670081322783}
+  - {fileID: -1149077521379518368}
+  - {fileID: 8719307774635594919}
+  - {fileID: -4971859559852825029}
+  - {fileID: 3318671927932728014}
+  - {fileID: -7019703836124829041}
+  - {fileID: 1598672790623290109}
+  - {fileID: 7777933593778543524}
+  - {fileID: 5273801043059694632}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4314734598496280493}
   StringsBanks:
   - {fileID: -465165264197200761}
-  cacheTime: 638754039438137331
+  cacheTime: 638760147071687177
   cacheVersion: 131620
 --- !u!114 &234662002750600971
 MonoBehaviour:
@@ -1514,33 +1493,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 316238
---- !u!114 &498260561027717758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/CantReachButton
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/CantReachButton
-  Guid:
-    Data1: -1114355798
-    Data2: 1149942074
-    Data3: -887589699
-    Data4: 675230460
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &592878078792581827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1555,10 +1507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFArrowSwitch
   Guid:
-    Data1: 1806606379
-    Data2: 1259386379
-    Data3: -1203765605
-    Data4: 1335410001
+    Data1: 1698793986
+    Data2: 1285910110
+    Data3: -2032535375
+    Data4: -522850809
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1567,7 +1519,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1300
+  Length: 0
 --- !u!114 &819185848918815495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1547,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1269573339437397961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Streetfighter/SFArrowSuccess2
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Streetfighter/SFArrowSuccess2
+  Guid:
+    Data1: -1856324006
+    Data2: 1329767102
+    Data3: 91512980
+    Data4: 230653826
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1300357937982550745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,10 +1588,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFArrowFail
   Guid:
-    Data1: 944510039
-    Data2: 1307318963
-    Data3: 1602925473
-    Data4: -1974872932
+    Data1: -1947713345
+    Data2: 1102232332
+    Data3: -888469843
+    Data4: -139352491
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1636,10 +1615,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFRound1
   Guid:
-    Data1: -1164323780
-    Data2: 1308398843
-    Data3: 959486645
-    Data4: 607202134
+    Data1: 377976242
+    Data2: 1247536110
+    Data3: -574066295
+    Data4: 793720522
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1663,10 +1642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFPlayer2
   Guid:
-    Data1: -1007938147
-    Data2: 1125661840
-    Data3: 202287535
-    Data4: 2031615535
+    Data1: 430890221
+    Data2: 1242333084
+    Data3: 1793573520
+    Data4: 1439987301
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1703,6 +1682,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 269473
+--- !u!114 &1598672790623290109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/Lasergun
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/Lasergun
+  Guid:
+    Data1: -1200835337
+    Data2: 1306773628
+    Data3: -306245466
+    Data4: -1290862568
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1615589315833014520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,10 +1723,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFPlayer1
   Guid:
-    Data1: -713745461
-    Data2: 1224736453
-    Data3: -1589688437
-    Data4: -258153981
+    Data1: 1804638461
+    Data2: 1260165638
+    Data3: -1164022597
+    Data4: -1601057710
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1784,7 +1790,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
---- !u!114 &2885048345753676156
+--- !u!114 &2336129016498434009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1794,14 +1800,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSWin
+  m_Name: event:/Sfx/Painstation/FakeHandActivate
   m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSWin
+  Path: event:/Sfx/Painstation/FakeHandActivate
   Guid:
-    Data1: -1590895640
-    Data2: 1206704913
-    Data3: -1204733796
-    Data4: 1610058885
+    Data1: 1543510551
+    Data2: 1098090036
+    Data3: 453466276
+    Data4: 224793729
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1852,10 +1858,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFRound3
   Guid:
-    Data1: -1266703283
-    Data2: 1323361420
-    Data3: 1871064485
-    Data4: 885247993
+    Data1: -817603743
+    Data2: 1103004106
+    Data3: 883321224
+    Data4: 2101572311
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1879,10 +1885,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FrGameOver
   Guid:
-    Data1: -367821525
-    Data2: 1175518452
-    Data3: 380167859
-    Data4: 1940437887
+    Data1: 1848521708
+    Data2: 1093240587
+    Data3: 1860123326
+    Data4: 983031273
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1919,7 +1925,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3720915360668361422
+--- !u!114 &3318671927932728014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1929,14 +1935,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/PSBallBounce
+  m_Name: event:/Sfx/Painstation/PSWin
   m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/PSBallBounce
+  Path: event:/Sfx/Painstation/PSWin
   Guid:
-    Data1: 1261862144
-    Data2: 1280025624
-    Data3: 488601224
-    Data4: 663658680
+    Data1: -1397578042
+    Data2: 1289749895
+    Data3: 1013203868
+    Data4: 1587315630
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1960,10 +1966,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SF2
   Guid:
-    Data1: -727991493
-    Data2: 1173323910
-    Data3: -1618887783
-    Data4: 209314145
+    Data1: 1631757771
+    Data2: 1087760485
+    Data3: 1207688110
+    Data4: 867637378
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -1987,10 +1993,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFLoosePlayer1
   Guid:
-    Data1: -732404423
-    Data2: 1114600010
-    Data3: 886828430
-    Data4: -1836945124
+    Data1: 1056975779
+    Data2: 1110142291
+    Data3: 356846729
+    Data4: -2006482612
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4168534983379139995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/DDRSnorring
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/DDRSnorring
+  Guid:
+    Data1: -877992157
+    Data2: 1100958140
+    Data3: 1325438377
+    Data4: -1048330412
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2014,10 +2047,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SF3
   Guid:
-    Data1: 2050563150
-    Data2: 1218736295
-    Data3: -1867579508
-    Data4: 254621837
+    Data1: 920252215
+    Data2: 1303223891
+    Data3: -1097225323
+    Data4: -546919383
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2042,38 +2075,11 @@ MonoBehaviour:
   Path: ../Pixel Odyssee 3.0/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638749669776638051
+  lastModified: 638757455418438828
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
---- !u!114 &4326639803803008287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx/PainStation/LaserGun
-  m_EditorClassIdentifier: 
-  Path: event:/Sfx/PainStation/LaserGun
-  Guid:
-    Data1: 2042187440
-    Data2: 1319257503
-    Data3: 456121512
-    Data4: 1380564339
-  Banks:
-  - {fileID: 7882187717638575268}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &4356266270816618076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,10 +2095,10 @@ MonoBehaviour:
   Path: ../Pixel Odyssee 3.0/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638754039438072014
+  lastModified: 638760147071541462
   FileSizes:
   - Name: Desktop
-    Value: 12149216
+    Value: 12091488
   Exists: 1
 --- !u!114 &4791496255825968946
 MonoBehaviour:
@@ -2121,6 +2127,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5273801043059694632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Streetfighter/SFArrowSuccess4
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Streetfighter/SFArrowSuccess4
+  Guid:
+    Data1: -1021532165
+    Data2: 1167981681
+    Data3: 456683685
+    Data4: -1628624026
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5444004102219960301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,10 +2168,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FrDeath
   Guid:
-    Data1: 16978155
-    Data2: 1125887119
-    Data3: 1049821859
-    Data4: 1721159183
+    Data1: -842666051
+    Data2: 1263881830
+    Data3: -1882922595
+    Data4: 2139540018
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5551924389526577713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/DDRArrow
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/DDRArrow
+  Guid:
+    Data1: -341886122
+    Data2: 1339973292
+    Data3: -1921816403
+    Data4: -395921288
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2162,10 +2222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFArrowSlowReverse
   Guid:
-    Data1: 302062315
-    Data2: 1298696653
-    Data3: 526626464
-    Data4: -2002146210
+    Data1: -648951084
+    Data2: 1256956068
+    Data3: -703256185
+    Data4: 1681769880
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2297,10 +2357,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/BlindsOpen
   Guid:
-    Data1: 992350505
-    Data2: 1297171556
-    Data3: 1211388305
-    Data4: 2056719517
+    Data1: -1482418994
+    Data2: 1233529916
+    Data3: -416264312
+    Data4: -457228390
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2324,10 +2384,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SF1
   Guid:
-    Data1: 2039961421
-    Data2: 1174803239
-    Data3: -1522128758
-    Data4: -336469229
+    Data1: -828922962
+    Data2: 1262220103
+    Data3: 1742077585
+    Data4: -500491047
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2405,10 +2465,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFLoose
   Guid:
-    Data1: 1291865797
-    Data2: 1305557540
-    Data3: -303912562
-    Data4: 1395975777
+    Data1: -390397385
+    Data2: 1188154001
+    Data3: 65826480
+    Data4: 858724065
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2459,10 +2519,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFWinPlayer2
   Guid:
-    Data1: 1525571387
-    Data2: 1218681264
-    Data3: 1676635829
-    Data4: 1956921291
+    Data1: 667951119
+    Data2: 1198650074
+    Data3: 814939831
+    Data4: 1486737359
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2486,10 +2546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFLoosePlayer2
   Guid:
-    Data1: -1012397157
-    Data2: 1186770435
-    Data3: 1205689502
-    Data4: 824198936
+    Data1: 1239760348
+    Data2: 1101111359
+    Data3: 1540819628
+    Data4: 790604484
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2513,10 +2573,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FrJump
   Guid:
-    Data1: -1029882928
-    Data2: 1317179714
-    Data3: -1659491906
-    Data4: -793796776
+    Data1: -1963334737
+    Data2: 1080273407
+    Data3: 1957433520
+    Data4: 892669727
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2540,10 +2600,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Frogger/FanSpinning
   Guid:
-    Data1: -1025775889
-    Data2: 1184253622
-    Data3: -1444609605
-    Data4: 1533870065
+    Data1: 1334053737
+    Data2: 1221967652
+    Data3: -80309867
+    Data4: -846961029
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
@@ -2580,6 +2640,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7777933593778543524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI_Startscreen/JoystickClick
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI_Startscreen/JoystickClick
+  Guid:
+    Data1: -750050312
+    Data2: 1320447410
+    Data3: 482372261
+    Data4: 1823434707
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7882187717638575268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2595,10 +2682,10 @@ MonoBehaviour:
   Path: ../Pixel Odyssee 3.0/Build/Desktop/Sfx.bank
   Name: Sfx
   StudioPath: bank:/Sfx
-  lastModified: 638754039438137331
+  lastModified: 638760147071687177
   FileSizes:
   - Name: Desktop
-    Value: 1556576
+    Value: 1620384
   Exists: 1
 --- !u!114 &7955248856204194987
 MonoBehaviour:
@@ -2654,6 +2741,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5625
+--- !u!114 &8302608728883072234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/PSElectric
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/PSElectric
+  Guid:
+    Data1: -869733589
+    Data2: 1235261683
+    Data3: -1957329762
+    Data4: -1566833908
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8719307774635594919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/PSWhip
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/PSWhip
+  Guid:
+    Data1: -1188988254
+    Data2: 1313374850
+    Data3: 1133740680
+    Data4: 521229608
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &9064767134399484781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,10 +2809,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Streetfighter/SFFight
   Guid:
-    Data1: -1052859436
-    Data2: 1182934320
-    Data3: -85035091
-    Data4: 422525083
+    Data1: -1865492477
+    Data2: 1199030419
+    Data3: -1821934705
+    Data4: 1718584461
+  Banks:
+  - {fileID: 7882187717638575268}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9194472036900147352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Painstation/PSLoose
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Painstation/PSLoose
+  Guid:
+    Data1: 329183282
+    Data2: 1257590483
+    Data3: -810777462
+    Data4: -2095468869
   Banks:
   - {fileID: 7882187717638575268}
   IsStream: 0
