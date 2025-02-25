@@ -71,13 +71,15 @@ public class CreditsScrollWithImages : MonoBehaviour
 
     IEnumerator FadeIn(Image img) {
         yield return new WaitForSeconds(2f);       
+
         img.gameObject.SetActive(true);
-        CanvasGroup cg = img.GetComponent<CanvasGroup>();
-        if (cg == null) cg = img.gameObject.AddComponent<CanvasGroup>();
+        CanvasGroup cg = img.GetComponent<CanvasGroup>();               //this feels better than the Fades script... didn't you could ust adjust Alpha settings
+        if (cg == null) {
+            cg = img.gameObject.AddComponent<CanvasGroup>();
+        }
 
         float alpha = 0f;
-        while (alpha < 1f)
-        {
+        while (alpha < 1f) {
             alpha += Time.deltaTime;
             cg.alpha = alpha;
             yield return null;
