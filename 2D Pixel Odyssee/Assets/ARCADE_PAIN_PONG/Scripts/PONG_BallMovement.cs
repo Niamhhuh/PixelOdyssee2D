@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
+    public GameObject ActivateTriggerScript;
+
     [SerializeField] private float initialSpeed = 10;
     [SerializeField] private float speedIncrease = 0.25f;
     [SerializeField] private Text playerScore;
@@ -463,6 +465,11 @@ public class BallMovement : MonoBehaviour
             if(plScore == 3) 
             {
                 winPanel.SetActive(true);
+
+                if(ActivateTriggerScript.GetComponent<SimpleActivateTrigger>() != null)
+                {
+                    ActivateTriggerScript.GetComponent<SimpleActivateTrigger>().CallTriggerActivation();
+                }
 
                 script_AudioManager.StopCurrentTheme(); //Musik anhalten
                 PSWin.start(); //Sound

@@ -6300,6 +6300,7 @@ GameObject:
   - component: {fileID: 1504483135}
   - component: {fileID: 1504483138}
   - component: {fileID: 1504483139}
+  - component: {fileID: 1504483140}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6369,6 +6370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa536e28ace547afb0d80e3911a8d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReturntoScene: 6
   credits: {fileID: 0}
   steuerung: {fileID: 715832123}
   pauseScreen: {fileID: 1889593274}
@@ -6387,6 +6389,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeObject: {fileID: 0}
+--- !u!114 &1504483140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504483134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da560986d4407d4e8693376b799b650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger_ID: 65
 --- !u!1 &1507232875
 GameObject:
   m_ObjectHideFlags: 0
@@ -8822,6 +8837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae59a01539ca5ac46a2cc4f80d147ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActivateTriggerScript: {fileID: 1504483134}
   initialSpeed: 10
   speedIncrease: 0.25
   playerScore: {fileID: 413540972}

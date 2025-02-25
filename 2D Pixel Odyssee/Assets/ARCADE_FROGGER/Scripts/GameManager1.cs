@@ -91,6 +91,7 @@ public class GameManager1 : MonoBehaviour
         frogger.gameObject.SetActive(false);
         gameWonMenu.gameObject.SetActive(true);
 
+
         StopAllCoroutines();
         StartCoroutine(BackToHub());
     }
@@ -209,7 +210,7 @@ public class GameManager1 : MonoBehaviour
 
             yield return null;
         }
-        SceneManager.LoadScene("TutorialRoom");
+        SceneManager.LoadScene(5);
     }
 
     public void AdvanceRow()

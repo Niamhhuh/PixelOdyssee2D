@@ -3337,6 +3337,7 @@ GameObject:
   - component: {fileID: 1118060101}
   - component: {fileID: 1118060103}
   - component: {fileID: 1118060104}
+  - component: {fileID: 1118060105}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3401,6 +3402,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Reward_ID: 22
+--- !u!114 &1118060105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118060100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da560986d4407d4e8693376b799b650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger_ID: 0
 --- !u!1 &1123488653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,6 +5006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa536e28ace547afb0d80e3911a8d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReturntoScene: 5
   credits: {fileID: 0}
   steuerung: {fileID: 1454934899}
   pauseScreen: {fileID: 2072004071}

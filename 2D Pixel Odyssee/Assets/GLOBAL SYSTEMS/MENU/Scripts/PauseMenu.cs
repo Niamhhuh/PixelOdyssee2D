@@ -11,6 +11,10 @@ public class PauseMenu : MonoBehaviour
     //______________This Manager is existent in every scene__________________________
     //_______________________________________________________________________________
 
+
+    public int ReturntoScene;
+
+
     private DataManager DMReference;
 
     public GameObject credits = null;
@@ -105,7 +109,7 @@ public class PauseMenu : MonoBehaviour
     //----------------------------------------------------------------
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
-    	SceneManager.LoadScene("Z2_Tutorial2");
+    	SceneManager.LoadScene(ReturntoScene);
     }
 
     public void GameQuit() {            //STARTSCREEN --> Beendet das Spiel komplett
