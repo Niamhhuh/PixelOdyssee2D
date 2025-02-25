@@ -2063,6 +2063,7 @@ MonoBehaviour:
   InteractionTriggered: 0
   LockTriggered: 0
   DialogueTriggered: 1
+  TriggerTutorialPanel: 0
 --- !u!114 &879700136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2619,6 +2620,7 @@ MonoBehaviour:
   InteractionTriggered: 1
   LockTriggered: 0
   DialogueTriggered: 0
+  TriggerTutorialPanel: 0
 --- !u!1 &982674700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,7 +3369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversation:
   - {fileID: 11400000, guid: b32cc620439743d41b2eab5eeaaf69d7, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0ae11463c5701a945a49dfe9fd5b331c, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
