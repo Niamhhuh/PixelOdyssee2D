@@ -201,6 +201,8 @@ public class UiToMouse : MonoBehaviour
         {
             WallScript.WallTrigger.SetActive(false);
             WallScript.WallClicked = false;
+            EnableInput();
+            WallScript = null;
         }
     }
 
