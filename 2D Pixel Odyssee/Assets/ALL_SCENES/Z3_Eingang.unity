@@ -1267,7 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 32
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
-  LoadScene_ID: 0
+  LoadScene_ID: 15
   SpawnPointID: 0
 --- !u!61 &421657361
 BoxCollider2D:
@@ -1378,6 +1378,63 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!1001 &464319333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3076828759694516893, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.140054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.019884
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.049488775
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023382581338002216, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c42da745501fac48ac8d7bc1ac7e694, type: 3}
 --- !u!1 &477067614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3618,7 @@ Transform:
   m_GameObject: {fileID: 1223223856}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4471,7 +4528,7 @@ Transform:
   m_GameObject: {fileID: 1376693644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.85, y: 0.1, z: -2}
+  m_LocalPosition: {x: -18.85, y: 0.1, z: -3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4523,7 +4580,7 @@ Transform:
   m_GameObject: {fileID: 1437286751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5212,7 +5269,7 @@ Transform:
   m_GameObject: {fileID: 1582524895}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.24, y: 0.1, z: -2}
+  m_LocalPosition: {x: 39.24, y: 0.1, z: -3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6660,6 +6717,7 @@ GameObject:
   - component: {fileID: 1772311283}
   - component: {fileID: 1772311282}
   - component: {fileID: 1772311285}
+  - component: {fileID: 1772311286}
   m_Layer: 0
   m_Name: Hand Scanner
   m_TagString: Untagged
@@ -6768,9 +6826,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 35
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
-  TriggeronUnlock: 0
+  TriggeronUnlock: 1
   AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
@@ -6877,6 +6935,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.05, y: 1.36}
   m_EdgeRadius: 0
+--- !u!114 &1772311286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772311279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OtherUnlockList_ID: 0
+  OtherUnlockObject_ID: 0
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
 --- !u!1 &1852501182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,8 +6977,8 @@ Transform:
   m_GameObject: {fileID: 1852501182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0109289, y: 1.0109289, z: 1.0109289}
+  m_LocalPosition: {x: 0, y: 0.0469, z: 0}
+  m_LocalScale: {x: 1.0109289, y: 1.0039535, z: 1.0109289}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 229041361}
@@ -7895,3 +7969,4 @@ SceneRoots:
   - {fileID: 1903922353}
   - {fileID: 1582524899}
   - {fileID: 55686172}
+  - {fileID: 464319333}
