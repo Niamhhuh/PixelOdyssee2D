@@ -6,73 +6,71 @@ using Fades;
 
 public class CreditsScrollWithImages : MonoBehaviour
 {
-    private float startSpeed = 50f;  // Initial scrolling speed
-    private float endSpeed = 5f;     // Slowest speed at the end
-    private float slowdownStartY = 1750; // When the slowdown begins
-    private float slowdownDistance = 300f; // Over how much distance it slows
-    private float stopY = 2039f;     // Final Y position where it stops
+    private float startSpeed = 50f;                                     // Initial scrolling speed
+    private float endSpeed = 5f;                                        // Slowest speed at the end
+    private float slowdownStartY = 1750;                                // When the slowdown begins
+    private float slowdownDistance = 300f;                              // Over how much distance it slows
+    private float stopY = 2039f;                                        // Final Y position where it stops
 
-    private RectTransform textRect;  // Assign the credits text RectTransform
+    private RectTransform creditsRect;                                  // This is for the credits
+
+    //_______________________________________________________________________________
+    //_______Stuff for the polaroid images___________________________________________
 
     [System.Serializable]
-    public class ImageTrigger
-    {
-        public Image image;    // The image to show
-        public float triggerY; // Y position at which it appears
+    public class ImageTrigger {
+        public Image image;                                             // The image to show
+        public float triggerY;                                          // Y position at which it appears
     }
 
     public List<ImageTrigger> imageTriggers = new List<ImageTrigger>(); // List of images & positions
-    private HashSet<Image> activatedImages = new HashSet<Image>();  // Track shown images
+    private HashSet<Image> activatedImages = new HashSet<Image>();      // Track shown images
 
-    void Start()
-    {
-        textRect = GetComponent<RectTransform>();
-        // Hide all images at the start
-        foreach (var trigger in imageTriggers)
-        {
-            trigger.image.gameObject.SetActive(false);
+    //_______________________________________________________________________________
+    //_______Basic functions below___________________________________________________
+
+    void Start() {
+        creditsRect = GetComponent<RectTransform>();
+
+        foreach (var trigger in imageTriggers) {
+            trigger.image.gameObject.SetActive(false);                  // Hide all images at the start
         }
 
         StartCoroutine(ScrollCredits());
     }
 
-    IEnumerator ScrollCredits()
-    {
+    //_______________________________________________________________________________
+    //_______Enumerator below________________________________________________________
+
+    IEnumerator ScrollCredits() {
         float currentSpeed = startSpeed;
 
-        while (textRect.anchoredPosition.y < stopY)
-        {
-            float yPos = textRect.anchoredPosition.y;
-
-            // Start slowing down when reaching slowdownStartY
-            if (yPos >= slowdownStartY)
-            {
+        while (creditsRect.anchoredPosition.y < stopY) {
+            float yPos = creditsRect.anchoredPosition.y;
+            
+            if (yPos >= slowdownStartY) {                               // Start slowing down when reaching slowdownStartY
                 float t = Mathf.Clamp01((yPos - slowdownStartY) / slowdownDistance);
                 currentSpeed = Mathf.Lerp(startSpeed, endSpeed, t);
             }
-
-            // Move the text upwards
-            textRect.anchoredPosition += Vector2.up * currentSpeed * Time.deltaTime;
-
-            // Show images at the correct positions
-            foreach (var trigger in imageTriggers)
-            {
-                if (yPos >= trigger.triggerY && !activatedImages.Contains(trigger.image))
-                {
+            
+            creditsRect.anchoredPosition += Vector2.up * currentSpeed * Time.deltaTime; // Move the text upwards
+            
+            foreach (var trigger in imageTriggers) {                    // Show images at the correct positions
+                if (yPos >= trigger.triggerY && !activatedImages.Contains(trigger.image)) {
                     StartCoroutine(FadeIn(trigger.image));
                     activatedImages.Add(trigger.image);
                 }
             }
 
-            yield return null; // Wait for the next frame
+            yield return null;                                          // Wait for the next frame
         }
 
-        // Stop the text exactly at stopY
-        textRect.anchoredPosition = new Vector2(textRect.anchoredPosition.x, stopY);
+        creditsRect.anchoredPosition = new Vector2(creditsRect.anchoredPosition.x, stopY);  // Stop the text exactly at stopY
     }
 
-    IEnumerator FadeIn(Image img)
-    {
+    //----------------------------------------------------------------
+
+    IEnumerator FadeIn(Image img) {
         yield return new WaitForSeconds(2f);       
         img.gameObject.SetActive(true);
         CanvasGroup cg = img.GetComponent<CanvasGroup>();
