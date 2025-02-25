@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
+  m_Name: BebePac-ManVortTetrisRanSchieben
+  m_EditorClassIdentifier: 
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 0b00000007000000
+  randomActorName: Pac-Man
+  randomActorPortait: {fileID: 21300000, guid: 627a1fa499212134d8dcd43b9b10a007, type: 3}
+  dialogue:
+  - Schnapp, schnapp!
+  optionText:
+  - Hallo, Freund!
+  - Warum hast du keine Augen?
+  - Warum hast du keine Beine?
+  - "Warum hast du einen so gro\xDFen Mund?"
+  option0: {fileID: 11400000, guid: 1f4371ab45ce34247859b2d3fae98352, type: 2}
+  option1: {fileID: 11400000, guid: 5b3ebe5c4c0b8b64cb61a160c00bbb8c, type: 2}
+  option2: {fileID: 11400000, guid: cb24699103fe2f34a98ef9f2f7289ee7, type: 2}
+  option3: {fileID: 11400000, guid: cc13002454eabfc49acde7aa42fb79ff, type: 2}

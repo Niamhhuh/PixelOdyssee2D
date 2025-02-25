@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: RosiePac-ManVorTetrisRanSchieben
+  m_Name: BebeFroggerVorQuackwort
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
@@ -20,16 +20,13 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 050000000a00000000000000
-  randomActorName: 
-  randomActorPortait: {fileID: 0}
+  actors: 01000000
+  randomActorName: Frogger
+  randomActorPortait: {fileID: 21300000, guid: fd36fe18c4b50284997f94a2df72d80b, type: 3}
   dialogue:
-  - "Ich wusste so lange nicht, dass die kleinen Geister in Pac-Man eigene Namen
-    haben. \r\n"
-  - "Pac-Man ist rund und gelb. Wie eine Goldm\xFCnze. Steht dieses Spiel auch f\xFCr
-    Geld?\r\n"
-  - "Wie gesagt, alle Arcade Spiele standen urspr\xFCnglich f\xFCr Geld. Aber ohne
-    sie h\xE4tten Videospiele sich nicht so drastisch weiterentwickelt."
+  - QUACKWORT!
+  - Quack?
+  - Wie hast du mich gerade genannt? So lasse ich nicht mit mir reden.
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
