@@ -9,8 +9,8 @@ public class Triggerable : ObjectScript
 
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
     public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
-                                                                                                                                                                         //HERE
-    
+    public bool GhostTrigger;                                                                                                                                                                     //HERE
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,10 +43,18 @@ public class Triggerable : ObjectScript
 
         DMReference.TriggeredObjects_List.Add(gameObject);      //Always add a fresh GameObject on Scene Load
 
-        if (Lock_State == true)
+        if (Lock_State == true && !GhostTrigger)
         {
+            print(gameObject);
             gameObject.SetActive(false);
         }
+        if (Lock_State == false && GhostTrigger && !Trigger_Passed)
+        {
+            print("Ghost");
+            TriggerInteract();
+            //gameObject.SetActive(false);
+        }
+
         ToggleSprites();
         CallColliderToggle();
         RemoveTrigger();                                                                                       //Remove Event if it has been interacted with already

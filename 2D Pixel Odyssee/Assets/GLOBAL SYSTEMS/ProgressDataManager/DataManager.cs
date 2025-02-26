@@ -693,6 +693,14 @@ public class DataManager : MonoBehaviour
 
     public void TriggerActivate(int Target_ID)                               //Activate the Trigger
     {
+        foreach (TriggerableObj Trigger in Triggerable_List)
+        {
+            if(Target_ID == Trigger.Stored_ID)
+            {
+                Trigger.Stored_Lock_State = false;
+            }            
+        }
+
         foreach (GameObject TriggerObj in TriggeredObjects_List)             //Search through List of Trigger Objects
         {
             TriggerActivateFunction(TriggerObj, Target_ID);                 //Call the Function of this Loop
