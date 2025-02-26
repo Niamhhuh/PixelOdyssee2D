@@ -45,7 +45,6 @@ public class Triggerable : ObjectScript
 
         if (Lock_State == true && !GhostTrigger)
         {
-            print(gameObject);
             gameObject.SetActive(false);
         }
         if (Lock_State == false && GhostTrigger && !Trigger_Passed)

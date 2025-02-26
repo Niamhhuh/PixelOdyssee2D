@@ -90,7 +90,15 @@ public class GameManager1 : MonoBehaviour
         NewRound();*/
         frogger.gameObject.SetActive(false);
         gameWonMenu.gameObject.SetActive(true);
-
+        
+        foreach( DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
+        {
+            if(Trigger.Stored_ID == 44)
+            {
+                Trigger.Stored_Lock_State = false;
+                break;
+            }
+        }
 
         StopAllCoroutines();
         StartCoroutine(BackToHub());

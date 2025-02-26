@@ -128,7 +128,6 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (CurrentNPC.DialogueHolder.GetComponent<Triggerable>() != null && CurrentNPC.DialogueHolder.GetComponent<Triggerable>().ForceDialogue == true)
         {
             DMReference.MoveScript.InTriggerDialogue = false;
-            print("End");
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
             DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again
             CurrentNPC.DialogueHolder.GetComponent<Triggerable>().RemoveTrigger();
