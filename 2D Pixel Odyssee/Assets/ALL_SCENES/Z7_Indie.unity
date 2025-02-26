@@ -500,6 +500,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -593,6 +594,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -975,6 +977,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -1169,6 +1172,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -1918,6 +1922,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -2191,6 +2196,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -2504,6 +2510,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -2723,6 +2730,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -3043,6 +3051,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -3199,8 +3208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
+  RosieLockDialogue: {fileID: 11400000, guid: 9412acf47d5f741478d09f0d8af4e5fa, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 0b4af3a1e2e71f14aa350e2da6461828, type: 2}
   ModifyDeniedInteraction: 0
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 0}
@@ -3218,8 +3227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f2c042229d046f144b680444f86d8ed3, type: 2}
+  - {fileID: 11400000, guid: d99aebcbef6289340aae21de6c9b0aaf, type: 2}
+  - {fileID: 11400000, guid: b40b3315a3d3a2446a6940ae7b05a735, type: 2}
+  - {fileID: 11400000, guid: ff3ca3469ef356d43a954a123076c9de, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3474,6 +3485,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -3722,6 +3734,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -3973,6 +3986,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -4591,6 +4605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1541788164}
   - component: {fileID: 1541788163}
+  - component: {fileID: 1541788165}
   m_Layer: 0
   m_Name: Seifendosen Box
   m_TagString: Untagged
@@ -4666,6 +4681,25 @@ Transform:
   - {fileID: 630666835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1541788165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541788162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 0}
+  - {fileID: 0}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1553135559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,6 +4766,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -5114,6 +5149,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -5263,6 +5299,8 @@ GameObject:
   - component: {fileID: 1622096635}
   - component: {fileID: 1622096634}
   - component: {fileID: 1622096637}
+  - component: {fileID: 1622096639}
+  - component: {fileID: 1622096638}
   m_Layer: 0
   m_Name: Seifendosen einzeln
   m_TagString: Untagged
@@ -5316,6 +5354,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -5441,6 +5480,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.43, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1622096638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 4aea03555762e734fbefc14040e6ab65, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 236b68be3be4fb14b9ca8e8862b50991, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &1622096639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 6cdfec6f9d6faa544b5fbd7df57644c5, type: 2}
+  - {fileID: 11400000, guid: 84136b04ba7daa74da2989dd813b4a8e, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1628306561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,6 +5736,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -5901,6 +5978,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -6224,6 +6302,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}

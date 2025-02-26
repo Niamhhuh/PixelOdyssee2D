@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: BebeSeifenDoseHeil
+  m_Name: BebeDDRInteractionDenied
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
@@ -20,15 +20,10 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 0a0000000500000001000000
+  actors: 
   randomActorName: 
   randomActorPortait: {fileID: 0}
-  dialogue:
-  - "Damit waschen Menschen sich doch die H\xE4nde! "
-  - "Auch! Aber Handwerksmeister nutzten die Seifendosen geschickt als Eingabeger\xE4t
-    f\xFCr Pong."
-  - Damit hat man also Pong gespielt. Im Eingangsbereich sah er noch ganz anders
-    aus.
+  dialogue: []
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
