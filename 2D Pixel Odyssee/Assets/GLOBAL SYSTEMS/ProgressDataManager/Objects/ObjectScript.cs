@@ -81,6 +81,7 @@ public class ObjectScript : MonoBehaviour
     [HideInInspector] public UnlockScript UnSReference = null;                 //Store the Unlock Script
 
     [HideInInspector] public ActivateTrigger TriggerScript = null;
+    [HideInInspector] public AddDialogueOnInteract InteractTransformDialogue = null;
     [HideInInspector] public DialogueTriggeredInteraction DialogueInteractionScript = null;
 
     public bool IsReward;
@@ -312,6 +313,7 @@ public class ObjectScript : MonoBehaviour
             if (!isBackground && TriggeronUnlock)
             {
                 DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                DataManager.ToInteract.Clear();
                 DataManager.ToInteract.Add(this);
 
                 //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
@@ -464,12 +466,12 @@ public class ObjectScript : MonoBehaviour
 
     public void CallInteractionButtons()
     {
+        FetchAllData();
         DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
         DataManager.ToInteract.Add(this);
 
         if (TransformDialogueScript != null) 
         {
-            print("GameObject that called:" + gameObject + "" + "Name:" + gameObject.name);
             TransformDialogueScript.TransformeDialogue(); 
         }
 
@@ -569,6 +571,7 @@ public class ObjectScript : MonoBehaviour
         if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }           //Add Code on succesful interaction
         Interact_Trigger_EditGoal();
         if (AddCodeScript != null) { AddCodeScript.AddCode(); }                         //Add Code on succesful interaction
+        if(InteractTransformDialogue != null) { InteractTransformDialogue.AddTransformDialogue(); }
     }
 
 

@@ -10,6 +10,13 @@ public class LockedDialogue : MonoBehaviour
     public AdvancedDialogueSO RosieLockDialogue;
     public AdvancedDialogueSO BeBeLockDialogue;
 
+    private AdvancedDialogueSO OriginalRosie;
+    private AdvancedDialogueSO OriginalBebe;
+
+    private AdvancedDialogueSO OriginalRosieDenied;
+    private AdvancedDialogueSO OriginalBebeDenied;
+
+
     NPCDialogue ObjectDialogue = null;
     ObjectScript AccessObjectScript = null;
 
@@ -26,7 +33,17 @@ public class LockedDialogue : MonoBehaviour
 
         AccessObjectScript = gameObject.GetComponent<ObjectScript>();
         ObjectDialogue = gameObject.GetComponent<NPCDialogue>();
-        
+
+        OriginalRosie = ObjectDialogue.conversation[0];
+        OriginalBebe = ObjectDialogue.conversation[1];
+
+        if(ObjectDialogue.conversation.Length > 2)
+        {
+            OriginalRosieDenied = ObjectDialogue.conversation[2];
+            OriginalBebeDenied = ObjectDialogue.conversation[3];
+
+        }
+
     } 
 
     public void ModifyDialogue () 
@@ -34,8 +51,15 @@ public class LockedDialogue : MonoBehaviour
 
         if(AccessObjectScript.Lock_State == true) 
         {
-            if(RosieLockDialogue != null) {ObjectDialogue.conversation[0] = RosieLockDialogue;}
+
+            if (RosieLockDialogue != null) {ObjectDialogue.conversation[0] = RosieLockDialogue;}
             if(BeBeLockDialogue != null) {ObjectDialogue.conversation[1] = BeBeLockDialogue;}
+        }
+
+        if (AccessObjectScript.Lock_State == false)
+        {
+            if (RosieLockDialogue != null) { ObjectDialogue.conversation[0] = OriginalRosie; }
+            if (BeBeLockDialogue != null) { ObjectDialogue.conversation[1] = OriginalBebe; }
         }
 
     }
@@ -51,8 +75,15 @@ public class LockedDialogue : MonoBehaviour
                 {
                     if (AccessObjectScript.Lock_State == true)
                     {
+
                         if (RosieLockDialogue != null) { ObjectDialogue.conversation[2] = RosieDeniedInteraction; }
                         if (BeBeLockDialogue != null) { ObjectDialogue.conversation[3] = BeBeDeniedInteraction; }
+                    }
+
+                    if (AccessObjectScript.Lock_State == false)
+                    {
+                        if (RosieLockDialogue != null) { ObjectDialogue.conversation[2] = OriginalRosieDenied; }
+                        if (BeBeLockDialogue != null) { ObjectDialogue.conversation[3] = OriginalBebeDenied; }
                     }
                 }
             }
