@@ -847,6 +847,7 @@ GameObject:
   - component: {fileID: 470417409}
   - component: {fileID: 470417410}
   - component: {fileID: 470417411}
+  - component: {fileID: 470417412}
   m_Layer: 0
   m_Name: "Pf\xFCtze Shove Triggered"
   m_TagString: Untagged
@@ -1047,6 +1048,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.692275, y: 0.7233124}
   m_EdgeRadius: 0
+--- !u!114 &470417412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470417406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: feda821687f24ef428919311747ccfa8, type: 2}
+  - {fileID: 11400000, guid: a3b2afdde0ee17749807e4e25a1868a9, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &505983927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,7 +2909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active_Unlock: 0
   OtherUnlockList_ID: 6
-  OtherUnlockObject_ID: 3d0000004400000045000000
+  OtherUnlockObject_ID: 3d00000044000000
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
   TargetObject: {fileID: 0}
