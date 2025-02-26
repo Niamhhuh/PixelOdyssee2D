@@ -958,6 +958,8 @@ MonoBehaviour:
   Item_Key_ID: 23
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 404c96be5b13b97408d9898734e8a864, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 0c5ebf220c476194e99a0d58d03bcd17, type: 3}
   ObjectSprite: {fileID: 0}
@@ -1075,6 +1077,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1112,6 +1116,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &143894949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1265,6 +1270,147 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &198912434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 198912437}
+  - component: {fileID: 198912436}
+  - component: {fileID: 198912435}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &198912435
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198912434}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 10.334473}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.29015732}
+  m_EdgeRadius: 0
+--- !u!114 &198912436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198912434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 68
+  AlreadyTalked: 0
+  Lock_State: 1
+  ForcedInteraction: 0
+  TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 0
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Trigger_Passed: 0
+  ForceDialogue: 0
+  GhostTrigger: 0
+--- !u!4 &198912437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198912434}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.550001, y: -2.28, z: 0}
+  m_LocalScale: {x: 0.9090254, y: 0.8749882, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1450232446}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255266717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1520,8 @@ MonoBehaviour:
   Item_Key_ID: 63
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1561,6 +1709,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1986,6 +2136,8 @@ MonoBehaviour:
   Item_Key_ID: 63
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2229,6 +2381,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3262,6 +3416,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3299,6 +3455,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &553222183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3981,7 +4138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &692828219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4068,6 +4225,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4105,6 +4264,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!4 &692828222
 Transform:
   m_ObjectHideFlags: 0
@@ -4181,6 +4341,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5156,6 +5318,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5193,6 +5357,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &840054419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5651,6 +5816,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -6438,6 +6605,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6515,6 +6684,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6832,6 +7003,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7139,6 +7312,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: e59b295d4d215024ba1ca5a8038e0521, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: e59b295d4d215024ba1ca5a8038e0521, type: 3}
   ObjectSprite: {fileID: 0}
@@ -7432,6 +7607,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7469,6 +7646,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!114 &1042836743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7810,10 +7988,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Active_Unlock: 0
   OtherUnlockList_ID: 2
-  OtherUnlockObject_ID: 61
+  OtherUnlockObject_ID: 00000000
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
 --- !u!114 &1152760942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7836,6 +8016,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7873,6 +8055,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!4 &1152760943
 Transform:
   m_ObjectHideFlags: 0
@@ -7928,6 +8111,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7965,6 +8150,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &1172377262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8488,6 +8674,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -8582,6 +8770,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -9653,6 +9843,8 @@ MonoBehaviour:
   Item_Key_ID: 41
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: e8e579ebdc0ad6845b319261ec888194, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 93dff2acfbee15e4e9b919b1c1f463b1, type: 3}
   ObjectSprite: {fileID: 0}
@@ -10582,6 +10774,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 628c334cb6752054fa577a601bc31d17, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -10700,11 +10894,11 @@ Transform:
   m_GameObject: {fileID: 1450232445}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.550001, y: -2.28, z: 0}
-  m_LocalScale: {x: 0.9090254, y: 0.8749882, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 198912437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1450232447
 BoxCollider2D:
@@ -10763,9 +10957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 68
+  ID: 69
   AlreadyTalked: 0
-  Lock_State: 1
+  Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -10773,6 +10967,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -10810,6 +11006,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!114 &1450232449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11029,6 +11226,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -11223,6 +11422,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -11474,6 +11675,8 @@ MonoBehaviour:
   Item_Key_ID: 61
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 628c334cb6752054fa577a601bc31d17, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -12674,6 +12877,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13214,6 +13419,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13251,6 +13458,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &1845043722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13502,6 +13710,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   ObjectSprite: {fileID: 0}
@@ -13677,6 +13887,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13714,6 +13926,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!1 &1892379071
 GameObject:
   m_ObjectHideFlags: 0
@@ -13955,6 +14168,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 7b35fcbbe7c86824fa72f0d2dcbcc37d, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 8ce33678fdc70df4fa0bd59d41af45eb, type: 3}
   ObjectSprite: {fileID: 0}
@@ -14285,6 +14500,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -14322,6 +14539,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &1919152042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14775,6 +14993,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -14950,6 +15170,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15124,6 +15346,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15292,6 +15516,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15329,6 +15555,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &2032702877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15421,14 +15648,13 @@ GameObject:
   - component: {fileID: 2047421374}
   - component: {fileID: 2047421373}
   - component: {fileID: 2047421372}
-  - component: {fileID: 2047421375}
   m_Layer: 0
   m_Name: Darkness Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2047421372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15488,14 +15714,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 61
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 1
-  TriggeronUnlock: 0
+  TriggeronUnlock: 1
   AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15533,6 +15761,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 1
 --- !u!4 &2047421374
 Transform:
   m_ObjectHideFlags: 0
@@ -15550,26 +15779,6 @@ Transform:
   - {fileID: 1999703083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2047421375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047421371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 68
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 1
-  LockTriggered: 0
-  DialogueTriggered: 0
-  TriggerTutorialPanel: 0
 --- !u!1001 &2102698274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15670,9 +15879,9 @@ SceneRoots:
   - {fileID: 1919152046}
   - {fileID: 1845043726}
   - {fileID: 840054423}
-  - {fileID: 1450232446}
   - {fileID: 1042836740}
   - {fileID: 2032702878}
   - {fileID: 692828222}
   - {fileID: 900883516}
   - {fileID: 1152760943}
+  - {fileID: 198912437}

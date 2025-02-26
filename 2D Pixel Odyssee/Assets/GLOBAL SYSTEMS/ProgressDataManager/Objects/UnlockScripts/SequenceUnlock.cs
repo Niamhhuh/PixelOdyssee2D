@@ -6,7 +6,7 @@ public class SequenceUnlock : MonoBehaviour
 {
     public bool Active_Unlock;
     public int OtherUnlockList_ID;
-    public int OtherUnlockObject_ID;
+    public int [] OtherUnlockObject_ID;
     public DataManager DMReference = null;
     public ObjectScript ObjReference = null;
 
@@ -21,7 +21,11 @@ public class SequenceUnlock : MonoBehaviour
 
     public void CallSequenceUnlock()                                                                        //Method is called in ObjectMainScript, takes Object_ID and Object_List
     {
-        DMReference.UnlockbySequence(OtherUnlockList_ID, OtherUnlockObject_ID);                             //Call UnlockbyItem in DataManager, add required Key Item ID
+        foreach (int UnlockObject_ID in OtherUnlockObject_ID)
+        {
+            DMReference.UnlockbySequence(OtherUnlockList_ID, UnlockObject_ID);                             //Call UnlockbyItem in DataManager, add required Key Item ID
+        }
+        
 
         if (Active_Unlock && TargetObject != null && TargetObject.activeInHierarchy == true)
         {
