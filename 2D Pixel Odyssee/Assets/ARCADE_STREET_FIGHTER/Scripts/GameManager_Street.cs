@@ -75,6 +75,20 @@ public class GameManager_Street : MonoBehaviour
     private EventInstance SFRound1;
     private EventInstance SFPrepareYourself;
 
+    private bool winActive = false;                     //NEU --> to prevent both from appearing 
+    private bool looseActive = false;
+
+//__________________________________________________________
+//________________________Konami Code_______________________
+    private List<KeyCode> konamiCode = new List<KeyCode> {
+        KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow,
+        KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow,
+        KeyCode.B, KeyCode.A
+    };
+    private int konamiIndex = 0;
+    private bool konamiActive = false;
+//________________________Konami Code_______________________
+//__________________________________________________________
 
 
     void Awake(){
@@ -98,6 +112,9 @@ public class GameManager_Street : MonoBehaviour
         SFCountdown = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFCountdown);
         SFRound1 = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFRound1);
         SFPrepareYourself = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFPrepareYourself);
+    
+        //___________Konami Code_____________
+        konamiActive = false;                                   //set to false at beginning
     }
 
     // Update is called once per frame
@@ -105,12 +122,17 @@ public class GameManager_Street : MonoBehaviour
     {
         if(!startPlaying){
         	if(Input.GetKeyDown(KeyCode.Return)){
-                if(restart == true){
+                if(restart == true) {
                     StartCoroutine(VS());
-                }
+
+                    //___________Konami Code_____________
+                    StartCoroutine(ListenForKonamiCode());      //activate continous coroutine (at the bottom of script) 
+                }                                               //--> starting it here ensures it cannot be done when steuerung is still open
         	}
         }
     }
+
+    
     private IEnumerator VS(){
 
         
@@ -118,7 +140,8 @@ public class GameManager_Street : MonoBehaviour
         gameStartStreet.SetActive(false);
         StartCoroutine(FadeInOut());
         VSScreen.SetActive(true);
-        yield return new WaitForSeconds(2f); 
+        yield return new WaitForSeconds(3f); 
+        VSScreen.SetActive(false);
         NewGame();
     }
 
@@ -171,7 +194,6 @@ public class GameManager_Street : MonoBehaviour
             SFLoose.start(); //Sound
 
             StopAllCoroutines();
-            StartCoroutine(PlayAgain());
     }
 
     private IEnumerator PlayAgain()
@@ -216,22 +238,9 @@ public class GameManager_Street : MonoBehaviour
         SFWin.start(); //Sound
 
         StopAllCoroutines();
-        //StartCoroutine(BackToHub());
     }
 
-    /*private IEnumerator BackToHub(){
 
-        bool BackToHub = false;
-        while (!BackToHub)
-        {
-            if (Input.GetKeyDown(KeyCode.Return)){
-                BackToHub = true;
-            }
-
-            yield return null;
-        }
-        SceneManager.LoadScene("Z_TutorialRoom2");
-    }*/
 
     public void NoteHit(){
     	Debug.Log("NoteHit");
@@ -254,11 +263,12 @@ public class GameManager_Street : MonoBehaviour
             silverAnimator.SetBool("Stage2", true);
 
         }
-        else if (livesEnemy == 0 && theNO.round2){
+        else if (livesEnemy == 0 && theNO.round2 && gameOverMenuStreet.activeInHierarchy == false){
             startPlaying = false;
             SilverHp2.SetActive(false);
             rosieAnimator.Play("Rosie_Win_Animation");
             silverAnimator.Play("Silver_Losing_Animation");
+            winActive = true;
             Invoke(nameof(StreetWon), 3f);
         }
 
@@ -273,11 +283,12 @@ public class GameManager_Street : MonoBehaviour
         SFArrowFail.start(); //Sound
 
         SetLives(lives - 1);
-        if(lives == 0){
+        if(lives == 0 && winActive == false && looseActive == false){
             startPlaying = false;
             Hp2.SetActive(false);
             rosieAnimator.SetTrigger("Rosie_Lose_Animation");
             silverAnimator.Play("Silver_Winning_Animation");
+            looseActive = true;
             Invoke(nameof(StreetDeath), 2f);
         }
     }
@@ -293,9 +304,54 @@ public class GameManager_Street : MonoBehaviour
         this.lives = lives;
         livesTextEnemyStreet.text = lives.ToString();
     }
+
     private void SetLivesEnemy(int livesEnemy)
     {
         this.livesEnemy = livesEnemy;
         livesTextStreet.text = livesEnemy.ToString();
     }
+
+
+//______________________________________________________________________
+//________________________Konami Code___________________________________
+
+    private IEnumerator ListenForKonamiCode() {             //continously checks if when we press a key, it activates the kontami code
+        while (true) {             
+            yield return null;
+            if (Input.anyKeyDown) {
+                CheckKonamiCode();
+            }
+            if (konamiActive == true) {                     //this stops the while loop once the code is acticated
+                break;
+            }
+        }
+    }
+
+    private void CheckKonamiCode() {                        //checks if we press the right keys in the right order at the right time
+        if (konamiIndex < konamiCode.Count && Input.GetKeyDown(konamiCode[konamiIndex])) {
+            Debug.Log("current kontami Index:" + konamiIndex);
+            konamiIndex++;
+            if (konamiIndex == konamiCode.Count && winActive == false && looseActive == false) {
+                ActivateKonamiEffect();                     //activate if we did it correctly
+                konamiIndex = 0;
+            }
+        }
+        else if (konamiIndex > 0 ) {                        //reset if we miss a key
+            konamiIndex = 0;
+        }
+    }
+
+    private void ActivateKonamiEffect() {                   //basically activates the win
+        Debug.Log("Konami Code Activated!");
+
+        konamiActive = true;
+        startPlaying = false;
+        SilverHp2.SetActive(false);
+        rosieAnimator.Play("Rosie_Win_Animation");
+        silverAnimator.Play("Silver_Losing_Animation");
+        winActive = true;
+        Invoke(nameof(StreetWon), 1f);
+    }
+
 }
+

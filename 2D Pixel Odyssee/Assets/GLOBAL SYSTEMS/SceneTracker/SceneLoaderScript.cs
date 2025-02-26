@@ -13,13 +13,13 @@ public class SceneLoaderScript : MonoBehaviour
 
     public void LoadStreet(){
         Time.timeScale = 1;
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene("ARC_Streetfighter");
     }
     
     public void LoadFrogger()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("ARC_Frogger");
     }
 
     public void LoadAstroid()
