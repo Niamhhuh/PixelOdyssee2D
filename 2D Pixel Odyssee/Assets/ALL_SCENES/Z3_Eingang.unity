@@ -183,6 +183,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -456,6 +458,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -625,6 +629,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -855,6 +861,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1302,6 +1310,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1716,6 +1726,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1783,8 +1795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 44790da689ded754e8734fc6ca42c2a6, type: 2}
+  - {fileID: 11400000, guid: 44790da689ded754e8734fc6ca42c2a6, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -1848,7 +1860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 33
   AlreadyTalked: 0
-  Lock_State: 1
+  Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -1856,6 +1868,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1903,7 +1917,7 @@ Transform:
   m_GameObject: {fileID: 511306205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.550001, y: -2.28, z: -1}
+  m_LocalPosition: {x: 20.550001, y: -2.28, z: -3.1}
   m_LocalScale: {x: 0.9090254, y: 0.8749882, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2336,6 +2350,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2587,6 +2603,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2882,6 +2900,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3489,6 +3509,8 @@ MonoBehaviour:
   Item_Key_ID: 14
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3977,6 +3999,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4178,6 +4202,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4578,6 +4604,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4917,6 +4945,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5323,6 +5353,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5769,6 +5801,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6094,6 +6128,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6230,6 +6266,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6633,6 +6671,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6819,6 +6859,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7037,6 +7079,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7151,10 +7195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OtherUnlockList_ID: 0
-  OtherUnlockObject_ID: 0
+  Active_Unlock: 0
+  OtherUnlockList_ID: 3
+  OtherUnlockObject_ID: 20000000
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
 --- !u!1 &1852501182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7439,6 +7485,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -8011,6 +8059,8 @@ MonoBehaviour:
   Item_Key_ID: 36
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 1150eb97edb17a74cbdbef33b1985354, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 1c6edac75022dc84a85b413e9c625b53, type: 3}
   ObjectSprite: {fileID: 0}

@@ -2447,6 +2447,7 @@ GameObject:
   - component: {fileID: 521091552}
   - component: {fileID: 521091553}
   - component: {fileID: 521091554}
+  - component: {fileID: 521091555}
   m_Layer: 0
   m_Name: PowerGlove Vitrine
   m_TagString: Untagged
@@ -5395,7 +5396,6 @@ GameObject:
   - component: {fileID: 1786404005}
   - component: {fileID: 1786404004}
   - component: {fileID: 1786404009}
-  - component: {fileID: 1786404010}
   m_Layer: 0
   m_Name: Zur Arcade
   m_TagString: Untagged
@@ -5617,24 +5617,6 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 11400000, guid: ae3b5387839dd1e44aa9204e583c771f, type: 2}
   BeBeDeniedInteraction: {fileID: 11400000, guid: e22aa8697acca2e40b1f20ca2115b0c4, type: 2}
---- !u!114 &1786404010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786404003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active_Unlock: 0
-  OtherUnlockList_ID: 0
-  OtherUnlockObject_ID: 0
-  DMReference: {fileID: 0}
-  ObjReference: {fileID: 0}
-  TargetObject: {fileID: 0}
 --- !u!1 &1875732422
 GameObject:
   m_ObjectHideFlags: 0
