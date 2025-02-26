@@ -22,6 +22,8 @@ public class TransformativeDialogueScript : MonoBehaviour
     int CondtionsMet = 0;
     bool ConditionNotFound = false;
 
+    int TotalConditions = 0;
+
     public ConditionArray[] StepArray;
     public AdvancedDialogueSO[] TransformDialogue;                              
     
@@ -38,10 +40,9 @@ public class TransformativeDialogueScript : MonoBehaviour
     {
         for (int i = 0; i < StepArray.Length; ++i)                              //
         {
-            if(!ConditionNotFound)
+            CondtionsMet = 0;
+            if (!ConditionNotFound)
             {
-                CondtionsMet = 0;
-                StepPosition = i;                                               //Remember the last Step, where Conditions where met.
                 CycleDialogueConditions(i);
             }
         }
@@ -52,9 +53,13 @@ public class TransformativeDialogueScript : MonoBehaviour
 
     private void CycleDialogueConditions(int i)                                 //Step through Conditions
     {
-        for (int o = 0; o < StepArray[i].ConditoinArray.Length; o++)
+        for (int o = 0; o < StepArray[i].ConditoinArray.Length; ++o)
         {
             CompareIDtoConditions(i, o);
+        }
+        if(!ConditionNotFound)
+        {
+            TotalConditions = CondtionsMet;
         }
     }
 
@@ -62,21 +67,27 @@ public class TransformativeDialogueScript : MonoBehaviour
 
     private void CompareIDtoConditions(int i, int o)                            //Check Conditions
     {
+        bool MatchedID = false;
         foreach (int DialogueID in DataManager.ProgressDialogueList)
         {
             if (DialogueID == StepArray[i].ConditoinArray[o])                   //compare to ProgressDialogue List in DataManager
             {
+                StepPosition = i;                                               //Remember the last Step, where Conditions where met.
+                MatchedID = true;
                 CondtionsMet++;                                                 //Advance the Condition Counter
                 break;
             }
+        }
+        if (!MatchedID)
+        {
             ConditionNotFound = true;
         }
     }
 
 
     private void FetchNewDialogue()
-    {   
-        if (StepArray[StepPosition].ConditoinArray.Length == CondtionsMet)
+    {
+        if (StepArray[StepPosition].ConditoinArray.Length == TotalConditions)
         {
             if(TransformDialogue.Length > StepPosition*2)
             {

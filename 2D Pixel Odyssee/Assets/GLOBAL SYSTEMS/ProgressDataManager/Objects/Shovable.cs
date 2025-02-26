@@ -195,6 +195,7 @@ public class Shovable : ObjectScript
                     if (Target.GetComponent<ObjectScript>().TriggeronUnlock)
                     {
                         DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                        DataManager.ToInteract.Clear();
                         DataManager.ToInteract.Add(Target.GetComponent<ObjectScript>());
 
                         //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available

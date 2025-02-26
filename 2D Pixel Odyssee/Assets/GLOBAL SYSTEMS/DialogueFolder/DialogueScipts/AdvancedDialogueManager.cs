@@ -503,19 +503,20 @@ public class AdvancedDialogueManager : MonoBehaviour
 
 public enum DialogueActors
 {
-    Rosie,
-    Bebe,
-    Silver,
-    RosieShocked,
-    RosieThinking,
-    RosieHappy,
-    BebeChill,
-    Branch, 
-    BebeNeutral,
-    BebeWorry,
-    BebeSurprise,
-    Random,
-    BebeQuestion,
-    SilverSmug,
-    SilverHappy,
+    Rosie,              //0
+    Bebe,               //1
+    Silver,             //2
+    RosieShocked,       //3
+    RosieThinking,      //4
+    RosieHappy,         //5
+    BebeChill,          //6
+    Branch,             //7
+    BebeNeutral,        //8
+    BebeWorry,          //9
+    BebeSurprise,       //10
+    Random,             //11
+    BebeQuestion,       //12
+    SilverSmug,         //13
+    SilverHappy,        //14
+    Tetris,
 };
