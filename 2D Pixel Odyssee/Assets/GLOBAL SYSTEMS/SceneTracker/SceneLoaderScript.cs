@@ -2,46 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fades;
 
 public class SceneLoaderScript : MonoBehaviour
 {
-    public void LoadPong()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(3);
+    private string sceneName;
+
+    //-----------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------Enumerator Stuff------------------------------------------------------------------------
+ 
+    private IEnumerator LoadNewScene(string name) {
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
+        SceneManager.LoadScene(name);
+    }
+ 
+    //-----------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------Buttons Stuff---------------------------------------------------------------------------
+ 
+    public void LoadPong() {
+        sceneName = "ARC_Painstation";
+        StartCoroutine(LoadNewScene(sceneName));
     }
 
-    public void LoadStreet(){
-        Time.timeScale = 1;
-        SceneManager.LoadScene("ARC_Streetfighter");
+    public void LoadStreet() {
+        sceneName = "ARC_Streetfighter";
+        StartCoroutine(LoadNewScene(sceneName));
     }
     
-    public void LoadFrogger()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("ARC_Frogger");
+    public void LoadFrogger() {
+        sceneName = "ARC_Frogger";
+        StartCoroutine(LoadNewScene(sceneName));
     }
 
-    public void LoadAstroid()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(6);
+    public void LoadAstroid() {
+        sceneName = "ARC_Asteroids";
+        StartCoroutine(LoadNewScene(sceneName));
     }
 
     public void LoadMenu()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        sceneName = "z_Start Screen";
+        StartCoroutine(LoadNewScene(sceneName));
     }
+
     public void LoadDepot()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        sceneName = "Z1_Tutorial1";
+        StartCoroutine(LoadNewScene(sceneName));
     }
 
     public void LoadArcade()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(2);
+        sceneName = "Z2_Tutorial2";
+        StartCoroutine(LoadNewScene(sceneName));
     }
 }
