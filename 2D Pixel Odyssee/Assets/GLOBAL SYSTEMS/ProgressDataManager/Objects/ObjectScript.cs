@@ -22,6 +22,9 @@ public class ObjectScript : MonoBehaviour
     public bool ChangeNameonLock;
     public string LockName;
 
+    public bool DialogueUnlock;
+    public int DialogueKey_ID;
+
     
 
     //public(Dialogue)			                                                    //Dialogue of this object
@@ -751,8 +754,27 @@ public class ObjectScript : MonoBehaviour
     }
 
 
+    private void DialogueIDUnlock()
+    {
+        if(DialogueUnlock)
+        {
+            foreach(int D_ID in DataManager.ProgressDialogueList)
+            {
+                if(D_ID == DialogueKey_ID)
+                {
+                    Lock_State = false;
+                    UpdateAllData();
+                    break;
+                }
+            }
+        }
+    }
+
+
     public void FetchAllData()
     {
+        DialogueIDUnlock();
+
         switch (ObjReference.ObjectList_ID)
         {
             case 1:
