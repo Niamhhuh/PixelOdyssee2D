@@ -30,9 +30,13 @@ public class PauseMenu : MonoBehaviour
     public bool InPause = false;
 
     Scene current_scene;    //used in Update() & Neuversuch() --> vergleicht current scene name
+    
+    //----------------------STARTSCREEN STUFF---------
+    public GameObject c_main;
+    public GameObject c_start;
+    public GameObject c_neuesspiel;
 
-
-    //----------------------SPIEL BEENDEN VAR------------------------------------------------------------------------
+    //----------------------SPIEL BEENDEN VAR---------
     private GameObject spielBeenden_Fenster;    //sucht nach dem Canvas in jeder Szene --> jedes Canvas heisst gleich
 
     //_______________________________________________________________________________
@@ -40,6 +44,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        if (current_scene.name == "Z_Startscreen") {
+           c_main.SetActive(true);                                     //make sure everything is set up correctly
+            c_start.SetActive(false);
+            c_neuesspiel.SetActive(false); 
+        } 
+
         StartCoroutine(Class_Fades.instance.StartFadeOut());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
         
         if (GameObject.FindGameObjectWithTag("Pointer") != null)
@@ -98,7 +108,7 @@ public class PauseMenu : MonoBehaviour
 //_______________________________________________________________________________
 //_______Buttons below for menu to load scene____________________________________
 
-    public void StartGame() {                       //STARTSCREEN --> beginnt im Moment immer beim Tutorial
+    public void StartGame() {                                           //STARTSCREEN
         StartCoroutine(StartGameCoroutine());
     }
 
@@ -113,7 +123,34 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    //----------------------------------------------------------------
+    //----------------------STARTSCREEN STUFF---------
+
+    public void MainStart() {
+        c_main.SetActive(false);
+        c_start.SetActive(true);
+        c_neuesspiel.SetActive(false);
+    }
+
+    public void MainNeuesSpiel() {
+        c_main.SetActive(false);
+        c_start.SetActive(false);
+        c_neuesspiel.SetActive(true);
+    }
+
+    public void MainReturn() {
+        if (c_neuesspiel.activeInHierarchy == true) {
+            c_main.SetActive(false);
+            c_start.SetActive(true);
+            c_neuesspiel.SetActive(false);
+        }
+        else if (c_start.activeInHierarchy == true) {
+            c_main.SetActive(true);
+            c_start.SetActive(false);
+            c_neuesspiel.SetActive(false);
+        }
+    }
+
+    //----------------------ANDERER STUFF-------------
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
     	SceneManager.LoadScene(ReturntoScene);

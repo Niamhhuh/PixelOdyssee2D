@@ -24,7 +24,7 @@ public class Eliza_start : MonoBehaviour
 
     void Start() {
         loadingSprite = GameObject.Find("LoadingSprite").GetComponent<Image>();
-        loadingCanvas =GameObject.Find("Canvas_Start");
+        loadingCanvas = GameObject.Find("Canvas_Start");
 
         loadingSprite.sprite = bebe_sleep;                          //make sure everything starts well...
         textLoading.text = "System wird  hochgefahren...";
