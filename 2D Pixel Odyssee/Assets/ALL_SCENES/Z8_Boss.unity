@@ -778,6 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698654480}
   - component: {fileID: 698654479}
+  - component: {fileID: 698654481}
   m_Layer: 0
   m_Name: PointBlank
   m_TagString: Untagged
@@ -853,6 +854,25 @@ Transform:
   - {fileID: 2077880604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698654481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698654478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 81cf0007d2e08f24b8437bb6293c89f1, type: 2}
+  - {fileID: 11400000, guid: 1b571730b46105042b4df70f14b12d7d, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &741752431
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741752433}
   - component: {fileID: 741752432}
+  - component: {fileID: 741752434}
   m_Layer: 0
   m_Name: PaperBoy
   m_TagString: Untagged
@@ -938,6 +959,25 @@ Transform:
   - {fileID: 416502748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741752434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741752431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: 7be98d9226143e8498052badcbffb044, type: 2}
+  - {fileID: 11400000, guid: 187f7bd898421f24cb85890761135c04, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &891118688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1124573685}
   - component: {fileID: 1124573684}
+  - component: {fileID: 1124573686}
   m_Layer: 0
   m_Name: StreetFighter
   m_TagString: Untagged
@@ -1454,6 +1495,25 @@ Transform:
   - {fileID: 568822195}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124573686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124573683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: c16fe6a674233e544a3011765bb98455, type: 2}
+  - {fileID: 11400000, guid: bde7bf753737da3438189508a2d09189, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1380658597
 GameObject:
   m_ObjectHideFlags: 0

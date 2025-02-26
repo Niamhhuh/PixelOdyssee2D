@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
+  m_Name: AfterAsteroids
+  m_EditorClassIdentifier: 
+  ProgressDialogue: 0
+  DialogueID: 0
+  UnlockableOptions: 0
+  KeyOption1: 0
+  KeyOption2: 0
+  KeyOption3: 0
+  KeyOption4: 0
+  CallTrigger: 0
+  actors: 0b000000010000000b000000040000000b00000007000000
+  randomActorName: ELIZA
+  randomActorPortait: {fileID: 21300000, guid: 85a5602d91dc6264b901671c7b565737, type: 3}
+  dialogue:
+  - "Wor\xFCber m\xF6chten Sie sprechen?"
+  - "Wir haben den Asteroids Highscore \xFCbertroffen. "
+  - "Hervorragend! Dadurch kann ich die T\xFCren zur Arcade 2 entriegeln."
+  - Was sollen wir dort machen?
+  - "H\xFCpfen Sie hinein und spielen Sie Frogger einmal durch. Achten Sie auf Autos
+    und Wasser! Wenn Sie Hilfe brauchen, stehe ich immer zu Ihren Diensten.\r\n"
+  optionText:
+  - "Der Kater l\xE4sst uns nicht an die Arcade Chips."
+  - "Der Automat nimmt keine M\xFCnzen an."
+  - Der Chip passt nicht in den Automaten.
+  option0: {fileID: 11400000, guid: 008eb1c8a05ec1746ac88167313f8620, type: 2}
+  option1: {fileID: 11400000, guid: e4ca1ba1edfa0574593b6db70b6be920, type: 2}
+  option2: {fileID: 11400000, guid: 8b980de246d987c4fbd52cb9c1800516, type: 2}
+  option3: {fileID: 0}
