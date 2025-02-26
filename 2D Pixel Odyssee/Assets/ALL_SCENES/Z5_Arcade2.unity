@@ -3717,8 +3717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
-  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
+  - {fileID: 11400000, guid: 1b3fc4b904974974fbc7660b3adb624b, type: 2}
+  - {fileID: 11400000, guid: cd1fd91bba1cf8948922508fd8e63c78, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4818,6 +4818,7 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 421e479ad1fa7f845a4a89dbaaa95363, type: 2}
   - {fileID: 11400000, guid: cc3d51342375c3f479b506aa21bda7ee, type: 2}
+  - {fileID: 11400000, guid: 1465e2b0fe7324d40b96ceeff9049abc, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -6251,11 +6252,11 @@ GameObject:
   - component: {fileID: 1637325032}
   - component: {fileID: 1637325034}
   - component: {fileID: 1637325033}
-  - component: {fileID: 1637325035}
   - component: {fileID: 1637325036}
   - component: {fileID: 1637325038}
   - component: {fileID: 1637325037}
   - component: {fileID: 1637325039}
+  - component: {fileID: 1637325040}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -6389,8 +6390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: cd1fd91bba1cf8948922508fd8e63c78, type: 2}
-  - {fileID: 11400000, guid: 1b3fc4b904974974fbc7660b3adb624b, type: 2}
+  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
+  - {fileID: 11400000, guid: 85b82a77f71563f4db176106ce74054a, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -6457,24 +6458,6 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
---- !u!114 &1637325035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637325029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 11400000, guid: eb7e4f78cf9bc6b49a588dda364ef212, type: 2}
-  BeBeLockDialogue: {fileID: 11400000, guid: 8bbc546d62f855b4aa842e2b7f8797c9, type: 2}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 0}
-  BeBeDeniedInteraction: {fileID: 0}
 --- !u!95 &1637325036
 Animator:
   serializedVersion: 5
@@ -6545,6 +6528,24 @@ MonoBehaviour:
   OtherUnlockObject_ID: 53
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+--- !u!114 &1637325040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637325029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: eb7e4f78cf9bc6b49a588dda364ef212, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 8bbc546d62f855b4aa842e2b7f8797c9, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!1001 &1751100403
 PrefabInstance:
   m_ObjectHideFlags: 0

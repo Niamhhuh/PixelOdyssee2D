@@ -2297,8 +2297,8 @@ MonoBehaviour:
   BeBeLockDialogue: {fileID: 11400000, guid: 2be26c17513285b4ba47ccc1d32629f9, type: 2}
   ModifyDeniedInteraction: 0
   TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: 8d414ba1b0c53fe458dde5c00beec485, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 2be26c17513285b4ba47ccc1d32629f9, type: 2}
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!114 &879700137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,6 +2314,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: fd8647d546cd6c043b49b7106a5d3a2f, type: 2}
   - {fileID: 11400000, guid: 2dcb5f88c166fb44c991be6d246c19dd, type: 2}
+  - {fileID: 11400000, guid: 8d414ba1b0c53fe458dde5c00beec485, type: 2}
+  - {fileID: 11400000, guid: 2be26c17513285b4ba47ccc1d32629f9, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
