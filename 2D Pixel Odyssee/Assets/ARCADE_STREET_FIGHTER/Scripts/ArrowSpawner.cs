@@ -40,6 +40,9 @@ public class ArrowSpawner : MonoBehaviour
     //public GameObject SilverHp1;
     //public GameObject SilverHp2;
 
+    public GameObject Sprechblase;
+    public bool StopRound2Trigger = false;
+
     private EventInstance SFCountdown; //Sound
 
 
@@ -54,6 +57,7 @@ public class ArrowSpawner : MonoBehaviour
     void Update()
     {
     	if (theBS.hasStarted && !isSpawning){
+
     		StartCoroutine(SpawnWaves());
     	}
         
@@ -72,7 +76,7 @@ public class ArrowSpawner : MonoBehaviour
 
     private IEnumerator SpawnWaves(){
     	isSpawning = true;
-
+        yield return new WaitForSeconds(3f);
     	while(currentWave < totalWaves){
     		currentWave++;
     		arrowsSpawnedInWave = 0;
@@ -90,9 +94,13 @@ public class ArrowSpawner : MonoBehaviour
     		yield return new WaitForSeconds(5f);   //previously 9 with 120BPM
     		
     		if (currentWave == totalWaves && theNO.round2){
+                if (!StopRound2Trigger){
+                    yield return StartCoroutine(ShowRoundPopup());
+                    StopRound2Trigger = true;
+                }
+                //yield return new WaitForSeconds(3f);
     			currentWave = 0;
     			theGM.allowInput = true;	
-    			yield return StartCoroutine(ShowRoundPopup());	
     		}
     		
     		
@@ -136,6 +144,10 @@ public class ArrowSpawner : MonoBehaviour
     }
 
     private IEnumerator ShowRoundPopup(){
+
+        Sprechblase.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        Sprechblase.SetActive(false);
     	animator.PlayScaleAnimationRound2();
 
         SFCountdown.start(); //Sound
