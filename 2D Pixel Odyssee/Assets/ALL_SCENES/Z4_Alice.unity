@@ -936,7 +936,6 @@ GameObject:
   - component: {fileID: 209642746}
   - component: {fileID: 209642745}
   - component: {fileID: 209642744}
-  - component: {fileID: 209642749}
   m_Layer: 0
   m_Name: Zum Sinnes-Bereich
   m_TagString: Untagged
@@ -959,6 +958,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: e3ffc138dfc3f0b43af19dd6f79915dd, type: 2}
   - {fileID: 11400000, guid: 83906471d8d20b84ca5288a58ee15925, type: 2}
+  - {fileID: 11400000, guid: 13b0d16de56c9a24f8111f859956db8b, type: 2}
+  - {fileID: 11400000, guid: 378bbd8cf806f174e9dd13893331af29, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -1136,24 +1137,6 @@ Transform:
   - {fileID: 1191534490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &209642749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209642743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: 13b0d16de56c9a24f8111f859956db8b, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 378bbd8cf806f174e9dd13893331af29, type: 2}
 --- !u!1 &223752881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,7 +1589,6 @@ GameObject:
   - component: {fileID: 521091550}
   - component: {fileID: 521091552}
   - component: {fileID: 521091553}
-  - component: {fileID: 521091555}
   - component: {fileID: 521091554}
   m_Layer: 0
   m_Name: PowerGlove Vitrine
@@ -1802,28 +1784,12 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 2b5adb461dd17094c8e38e4a855ccf83, type: 2}
   - {fileID: 11400000, guid: f8994dd1b8668c445876e6cba802aa27, type: 2}
+  - {fileID: 11400000, guid: 649aee8ce27dfe44aa9b69de044f0068, type: 2}
+  - {fileID: 11400000, guid: 6b5eb9ce1e9e97b4ea59e1bc697cb7b4, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
---- !u!114 &521091555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521091549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: 649aee8ce27dfe44aa9b69de044f0068, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 6b5eb9ce1e9e97b4ea59e1bc697cb7b4, type: 2}
 --- !u!1001 &776410912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3195,7 +3161,6 @@ GameObject:
   - component: {fileID: 1786404006}
   - component: {fileID: 1786404005}
   - component: {fileID: 1786404004}
-  - component: {fileID: 1786404009}
   m_Layer: 0
   m_Name: Zur Arcade
   m_TagString: Untagged
@@ -3218,6 +3183,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 39aaacf3555bd8e4696b3e9a73a5c073, type: 2}
   - {fileID: 11400000, guid: 98dc5d99a6b2249408acae4b606a81c7, type: 2}
+  - {fileID: 11400000, guid: ae3b5387839dd1e44aa9204e583c771f, type: 2}
+  - {fileID: 11400000, guid: e22aa8697acca2e40b1f20ca2115b0c4, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3395,24 +3362,6 @@ Transform:
   - {fileID: 1598163996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1786404009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786404003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: ae3b5387839dd1e44aa9204e583c771f, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: e22aa8697acca2e40b1f20ca2115b0c4, type: 2}
 --- !u!1 &1875732422
 GameObject:
   m_ObjectHideFlags: 0
