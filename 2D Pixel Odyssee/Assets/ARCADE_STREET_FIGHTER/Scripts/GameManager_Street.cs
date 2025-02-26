@@ -65,7 +65,6 @@ public class GameManager_Street : MonoBehaviour
     public float fadeDuration = 1f;
 
     public bool allowInput = true;
-    // Start is called before the first frame update
 
     private EventInstance SFArrowSuccess; //ganz viele Sounds kommen jetzt hier her
     private EventInstance SFArrowFail;
@@ -77,6 +76,8 @@ public class GameManager_Street : MonoBehaviour
 
     private bool winActive = false;                     //NEU --> to prevent both from appearing 
     private bool looseActive = false;
+    
+    private GameObject fist;   //NEU --> to deactivate the button controller when it's not supposed to be (because of the sound)
 
 //__________________________________________________________
 //________________________Konami Code_______________________
@@ -102,6 +103,10 @@ public class GameManager_Street : MonoBehaviour
         rosieAnimator = Rosie.GetComponent<Animator>();
         GameObject Silver = GameObject.Find("Silver");
         silverAnimator = Silver.GetComponent<Animator>();
+
+        fist = GameObject.Find("Fist");
+        fist.SetActive(false);
+
         gameStartStreet.SetActive(true);
         restart = true;
 
@@ -120,15 +125,11 @@ public class GameManager_Street : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!startPlaying){
-        	if(Input.GetKeyDown(KeyCode.Return)){
-                if(restart == true) {
-                    StartCoroutine(VS());
+        if(!startPlaying && restart == true & Input.GetKeyDown(KeyCode.Return )) {
+            StartCoroutine(VS());
 
-                    //___________Konami Code_____________
-                    StartCoroutine(ListenForKonamiCode());      //activate continous coroutine (at the bottom of script) 
-                }                                               //--> starting it here ensures it cannot be done when steuerung is still open
-        	}
+            //___________Konami Code_____________
+            StartCoroutine(ListenForKonamiCode());      //activate continous coroutine (at the bottom of script)                                         //--> starting it here ensures it cannot be done when steuerung is still open	
         }
     }
 
@@ -139,17 +140,17 @@ public class GameManager_Street : MonoBehaviour
         gameOverMenuStreet.SetActive(false);
         gameStartStreet.SetActive(false);
         StartCoroutine(FadeInOut());
-        VSScreen.SetActive(true);
         yield return new WaitForSeconds(3f); 
         VSScreen.SetActive(false);
+        fist.SetActive(true);
         NewGame();
     }
 
     IEnumerator FadeInOut()
     {
-        yield return Fade(0, 1); // Fade In
+        //yield return Fade(0, 1); // Fade In
         SFPrepareYourself.start(); //Sound
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         yield return Fade(1, 0); // Fade Out
     }
 
@@ -166,8 +167,6 @@ public class GameManager_Street : MonoBehaviour
     }
     private void NewGame()
     {   
-        
-        //VSScreen.SetActive(false);
         restart = false;
         animator.PlayScaleAnimationRound1();
         SFCountdown.start(); //Sound
@@ -178,15 +177,10 @@ public class GameManager_Street : MonoBehaviour
         SetLivesEnemy(27);
         rosieAnimator.Play("Rosie_Idle_Street");
         theMusic.Play();
-        
-        
-
-        
-        //StartScreen();
-        
     }
 
     public void StreetDeath(){
+            fist.SetActive(false);
             startPlaying = false;
             theBS.hasStarted = false;
             gameOverMenuStreet.SetActive(true);
@@ -229,7 +223,7 @@ public class GameManager_Street : MonoBehaviour
     }
 
     private void StreetWon(){
-
+        fist.SetActive(false);
         gameWonMenuStreet.gameObject.SetActive(true);
         StopAllCoroutines();
         startPlaying = false;
@@ -244,8 +238,12 @@ public class GameManager_Street : MonoBehaviour
 
     public void NoteHit(){
     	Debug.Log("NoteHit");
-        HitAnim.SetTrigger("HitAnim");
-        rosieAnimator.SetTrigger("RosieHit");
+
+        if (startPlaying) {
+            HitAnim.SetTrigger("HitAnim");
+            rosieAnimator.SetTrigger("RosieHit");
+        }
+        
 
         SFArrowSuccess.start(); //Sound
 
@@ -277,9 +275,11 @@ public class GameManager_Street : MonoBehaviour
     public void NoteMissed(){
     	Debug.Log("NoteMissed");
         Hp.SetActive(false);
-        MissAnim.SetTrigger("MissAnim");
-        rosieAnimator.SetTrigger("RosieMiss");
-
+        if (startPlaying) {
+            MissAnim.SetTrigger("MissAnim");
+            rosieAnimator.SetTrigger("RosieMiss");
+        }
+        
         SFArrowFail.start(); //Sound
 
         SetLives(lives - 1);
@@ -289,7 +289,7 @@ public class GameManager_Street : MonoBehaviour
             rosieAnimator.SetTrigger("Rosie_Lose_Animation");
             silverAnimator.Play("Silver_Winning_Animation");
             looseActive = true;
-            Invoke(nameof(StreetDeath), 2f);
+            Invoke(nameof(StreetDeath), 3f);
         }
     }
 
@@ -346,11 +346,12 @@ public class GameManager_Street : MonoBehaviour
 
         konamiActive = true;
         startPlaying = false;
+        SilverHp1.SetActive(false);
         SilverHp2.SetActive(false);
         rosieAnimator.Play("Rosie_Win_Animation");
         silverAnimator.Play("Silver_Losing_Animation");
         winActive = true;
-        Invoke(nameof(StreetWon), 1f);
+        Invoke(nameof(StreetWon), 3f);
     }
 
 }
