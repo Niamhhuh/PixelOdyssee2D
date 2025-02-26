@@ -63,9 +63,7 @@ public class Asteroid : MonoBehaviour
         }
         //-------------------------------------------------------------------------------------------------------------------
         // Check if collided with deathzone  ------>> added by Kimi as a replacement for the asteroids disappearing
-        if (collision.gameObject.tag == "deathzone")
-        {
-            // Notify the game manager and destroy this asteroid
+        if (collision.gameObject.tag == "deathzone") {
             Destroy(this.gameObject);
         }
     }

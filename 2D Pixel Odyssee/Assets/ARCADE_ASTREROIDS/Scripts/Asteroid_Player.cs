@@ -26,6 +26,7 @@ public class Asteroid_Player : MonoBehaviour
     private EventInstance AstTeleport;
     private EventInstance AstBoost;
     private EventInstance AstHitPlayer;
+    private ToggleStartScreen script_toggleStart;
 
     public bool winLooseOn;
 
@@ -47,13 +48,14 @@ public class Asteroid_Player : MonoBehaviour
         AstBoost = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstBoost);
         AstHitPlayer = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstHitPlayer);
 
+        script_toggleStart = GameObject.Find("Steuerung Panel").GetComponent<ToggleStartScreen>();
         winLooseOn = false;
 
         UpdatePanicTeleportText();
     }
 
     private void Update() {
-        if (winLooseOn == false) {
+        if (winLooseOn == false && script_toggleStart.steuerungOff == true) {
             Movement();
         }
     }

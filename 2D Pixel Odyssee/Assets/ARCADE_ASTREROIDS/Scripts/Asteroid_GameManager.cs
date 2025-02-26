@@ -32,7 +32,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
 
-    private Asteroid_Player script_asteroidplayer; // NEW Reference the script for the bool related to winloose screen
+    private GameObject spawner;                    // NEW Reference the spawner so that we can turn it off when win/loos
  
     private void Start()
     {
@@ -42,7 +42,7 @@ public class Asteroid_GameManager : MonoBehaviour
         winCanvas.SetActive(false); 
         scoreCanvas.SetActive(true);
 
-        script_asteroidplayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Asteroid_Player>();
+        spawner = GameObject.Find("Spawner");
 
         AstHitAsteroid = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstHitAsteroid); //Sound
         AstWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.AstWin);
@@ -121,9 +121,10 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        spawner.SetActive(false);
         loseCanvas.SetActive(true);
         scoreCanvas.SetActive(false);
-        script_asteroidplayer.winLooseOn = true;
+        player.winLooseOn = true;
         AstGameOver.start(); //Sound
 
         script_AudioManager.StopCurrentTheme(); //Musik stoppen
@@ -141,10 +142,10 @@ public class Asteroid_GameManager : MonoBehaviour
     // Method to trigger the win state
     private void WinGame()
     {
-        script_asteroidplayer.winLooseOn = true;
+        spawner.SetActive(false);
+        player.winLooseOn = true;
         winCanvas.SetActive(true);  // Show the win screen
         scoreCanvas.SetActive(false); // Hide the score screen
-        Time.timeScale = 0; // Optionally stop the game or pause
         // You can add more functionality here, such as stopping asteroids, animations, etc.
         AstWin.start(); //Sound
 

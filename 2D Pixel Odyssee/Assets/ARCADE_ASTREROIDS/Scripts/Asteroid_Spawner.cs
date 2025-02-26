@@ -12,6 +12,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     public int spawnAmount = 2;
     public float spawnDistance = 10.0f;
+    
     private void Start()
     {
         InvokeRepeating(nameof(Spawn), this.spawnRate, this.spawnRate);

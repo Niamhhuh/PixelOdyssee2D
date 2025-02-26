@@ -192,12 +192,12 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Return() {              //CREDITS --> schliesst UI
-        if(pauseScreen != null) {
-            pauseScreen.SetActive(true);
+        if(pauseScreen != null && credits != null) {
+            credits.SetActive(false);
         }
+        pauseScreen.SetActive(true);
         steuerung.SetActive(false);
-        credits.SetActive(false);
-       }
+    }
 
     public void Fortsetzen()
     {          //PAUSESCREEN --> Schliesst den Pausescreen, vll ersetzen durch nochmal esc druecken?
