@@ -50,7 +50,7 @@ public class Triggerable : ObjectScript
         }
         if (Lock_State == false && GhostTrigger && !Trigger_Passed)
         {
-            print("Ghost");
+
             TriggerInteract();
             //gameObject.SetActive(false);
         }
