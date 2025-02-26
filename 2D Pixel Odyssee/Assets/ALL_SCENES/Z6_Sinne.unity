@@ -958,6 +958,8 @@ MonoBehaviour:
   Item_Key_ID: 23
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 404c96be5b13b97408d9898734e8a864, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 0c5ebf220c476194e99a0d58d03bcd17, type: 3}
   ObjectSprite: {fileID: 0}
@@ -1075,6 +1077,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1112,6 +1116,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &143894949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1374,6 +1379,8 @@ MonoBehaviour:
   Item_Key_ID: 63
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1561,6 +1568,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1986,6 +1995,8 @@ MonoBehaviour:
   Item_Key_ID: 63
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -2106,6 +2117,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 0d0abfbbe1d3d1644a2561963a20dac1, type: 2}
   - {fileID: 11400000, guid: 2c9e1f56d72ee2a4bb79d1bb3bef5b00, type: 2}
+  - {fileID: 11400000, guid: 2c9e1f56d72ee2a4bb79d1bb3bef5b00, type: 2}
+  - {fileID: 11400000, guid: 2c9e1f56d72ee2a4bb79d1bb3bef5b00, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -2127,7 +2140,7 @@ MonoBehaviour:
   ModifyDeniedInteraction: 0
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 11400000, guid: ff398a62bce97dd4cbb0dd1d8a5340ba, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 401157f668943bf4e88102d5657edf17, type: 2}
+  BeBeDeniedInteraction: {fileID: 11400000, guid: 608b262726e734746b9b8ad7842eee6b, type: 2}
 --- !u!1 &358449853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2242,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3262,6 +3277,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -3299,6 +3316,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &553222183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4068,6 +4086,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -4105,6 +4125,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!4 &692828222
 Transform:
   m_ObjectHideFlags: 0
@@ -4155,6 +4176,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: f707bf194f3c0074e9751bf09bb6cf19, type: 2}
   - {fileID: 11400000, guid: 2e22b6135169ef14b9d22fbf5d2aa7f9, type: 2}
+  - {fileID: 11400000, guid: fe59b8ebcb005484a871940958c49c69, type: 2}
+  - {fileID: 11400000, guid: c766d3af83511c448b521c9667380a41, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -4181,6 +4204,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5156,6 +5181,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5193,6 +5220,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &840054419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5651,6 +5679,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -6438,6 +6468,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6515,6 +6547,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6806,6 +6840,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 0623ba71ad8f79949af0565132b8e64d, type: 2}
   - {fileID: 11400000, guid: 538ea842ae0463f4d97fe48facb1d6f7, type: 2}
+  - {fileID: 11400000, guid: 7781948b9c6ff8048a72f34903624ed0, type: 2}
+  - {fileID: 11400000, guid: 058266724a2232248a692039b6df3f59, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -6832,6 +6868,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -6996,7 +7034,6 @@ GameObject:
   - component: {fileID: 1035769248}
   - component: {fileID: 1035769247}
   - component: {fileID: 1035769250}
-  - component: {fileID: 1035769249}
   m_Layer: 0
   m_Name: Virtual Boy Stand
   m_TagString: Untagged
@@ -7139,6 +7176,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: e59b295d4d215024ba1ca5a8038e0521, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: e59b295d4d215024ba1ca5a8038e0521, type: 3}
   ObjectSprite: {fileID: 0}
@@ -7176,24 +7215,6 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
---- !u!114 &1035769249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035769244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: f1858ec7db8c9c44d8663fa2ca1a0445, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: ba85bff829d49974fa63b342735af95c, type: 2}
 --- !u!114 &1035769250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7209,6 +7230,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 7f9faa27cbbfa51438ce2ba63de3e75e, type: 2}
   - {fileID: 11400000, guid: 19154ccf70a661a49aa435cfb5bec207, type: 2}
+  - {fileID: 11400000, guid: f1858ec7db8c9c44d8663fa2ca1a0445, type: 2}
+  - {fileID: 11400000, guid: ba85bff829d49974fa63b342735af95c, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -7432,6 +7455,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7469,6 +7494,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!114 &1042836743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7810,10 +7836,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Active_Unlock: 0
   OtherUnlockList_ID: 2
   OtherUnlockObject_ID: 61
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
 --- !u!114 &1152760942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7836,6 +7864,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7873,6 +7903,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!4 &1152760943
 Transform:
   m_ObjectHideFlags: 0
@@ -7928,6 +7959,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -7965,6 +7998,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &1172377262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8488,6 +8522,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -8536,7 +8572,6 @@ GameObject:
   - component: {fileID: 1262821532}
   - component: {fileID: 1262821531}
   - component: {fileID: 1262821535}
-  - component: {fileID: 1262821534}
   m_Layer: 0
   m_Name: Fahrrad
   m_TagString: Untagged
@@ -8582,6 +8617,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -8724,24 +8761,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1262821534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262821529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: fc5444c48a1b50a4391501de29b827e6, type: 2}
-  BeBeDeniedInteraction: {fileID: 0}
 --- !u!114 &1262821535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8757,6 +8776,7 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: d68ab59334579314fb70e79293dae674, type: 2}
   - {fileID: 11400000, guid: 85ddb43112b4e0640b824e70a12f66dd, type: 2}
+  - {fileID: 11400000, guid: fc5444c48a1b50a4391501de29b827e6, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -9653,6 +9673,8 @@ MonoBehaviour:
   Item_Key_ID: 41
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: e8e579ebdc0ad6845b319261ec888194, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 93dff2acfbee15e4e9b919b1c1f463b1, type: 3}
   ObjectSprite: {fileID: 0}
@@ -10582,6 +10604,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 628c334cb6752054fa577a601bc31d17, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -10773,6 +10797,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -10810,6 +10836,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
 --- !u!114 &1450232449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11029,6 +11056,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -11223,6 +11252,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -11474,6 +11505,8 @@ MonoBehaviour:
   Item_Key_ID: 61
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 628c334cb6752054fa577a601bc31d17, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 9462a6a2412700f46a940f0c1b01b569, type: 3}
   ObjectSprite: {fileID: 0}
@@ -12674,6 +12707,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13214,6 +13249,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13251,6 +13288,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &1845043722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13359,7 +13397,6 @@ GameObject:
   - component: {fileID: 1859360661}
   - component: {fileID: 1859360660}
   - component: {fileID: 1859360663}
-  - component: {fileID: 1859360662}
   m_Layer: 0
   m_Name: Rasseln
   m_TagString: Untagged
@@ -13502,6 +13539,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: af9143ac55b182444b9bdc1dcaed54ff, type: 3}
   ObjectSprite: {fileID: 0}
@@ -13539,24 +13578,6 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
---- !u!114 &1859360662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859360657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: 4670c48c2e34f604294c7893280965df, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 3b4edb4d6cc06724cb05d20585fc6188, type: 2}
 --- !u!114 &1859360663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13572,6 +13593,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: e72e7ae1b6c2b0746a41c7a2df94f9b1, type: 2}
   - {fileID: 11400000, guid: 564de69e3e81d54499f6e1d47278a288, type: 2}
+  - {fileID: 11400000, guid: 4670c48c2e34f604294c7893280965df, type: 2}
+  - {fileID: 11400000, guid: 3b4edb4d6cc06724cb05d20585fc6188, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -13677,6 +13700,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -13714,6 +13739,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!1 &1892379071
 GameObject:
   m_ObjectHideFlags: 0
@@ -13955,6 +13981,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 7b35fcbbe7c86824fa72f0d2dcbcc37d, type: 3}
   LockHighlightSprite: {fileID: 21300000, guid: 8ce33678fdc70df4fa0bd59d41af45eb, type: 3}
   ObjectSprite: {fileID: 0}
@@ -14285,6 +14313,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -14322,6 +14352,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!222 &1919152042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14632,7 +14663,6 @@ GameObject:
   - component: {fileID: 1999637042}
   - component: {fileID: 1999637041}
   - component: {fileID: 1999637044}
-  - component: {fileID: 1999637043}
   m_Layer: 0
   m_Name: Lightgun
   m_TagString: Untagged
@@ -14775,6 +14805,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -14812,24 +14844,6 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
---- !u!114 &1999637043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999637038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RosieLockDialogue: {fileID: 0}
-  BeBeLockDialogue: {fileID: 0}
-  ModifyDeniedInteraction: 0
-  TargetItemID: 0
-  RosieDeniedInteraction: {fileID: 11400000, guid: 47273978ae8800243b52a4ff9cd2b65e, type: 2}
-  BeBeDeniedInteraction: {fileID: 11400000, guid: 2e14c5ade6678a940a59af4f6f34266e, type: 2}
 --- !u!114 &1999637044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14845,6 +14859,8 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 4240806cc1fc97e43b179cf901b12241, type: 2}
   - {fileID: 11400000, guid: c991464043e9bb94898e9fb2b67706d9, type: 2}
+  - {fileID: 11400000, guid: 47273978ae8800243b52a4ff9cd2b65e, type: 2}
+  - {fileID: 11400000, guid: 2e14c5ade6678a940a59af4f6f34266e, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -14950,6 +14966,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15124,6 +15142,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15292,6 +15312,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15329,6 +15351,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!61 &2032702877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15496,6 +15519,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -15533,6 +15558,7 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
 --- !u!4 &2047421374
 Transform:
   m_ObjectHideFlags: 0
