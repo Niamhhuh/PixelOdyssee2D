@@ -425,13 +425,17 @@ public class BallMovement : MonoBehaviour
             Destroy(gameObject);
             winPanel.SetActive(true);
 
-            if(ActivateTriggerScript.GetComponent<SimpleActivateTrigger>() != null)
+            //--------------------------------------------------------------------------------------------------------------------------------
+            //--------Adjust Goals and Triggers---------------------------------------------------------------------------------------------------
+
+            if (ActivateTriggerScript.GetComponent<SimpleActivateTrigger>() != null)
             {
                 ActivateTriggerScript.GetComponent<SimpleActivateTrigger>().CallTriggerActivation();
             }
 
             int i = 0;
-
+            
+            
             foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Pain
             {
                 if (Trigger.Stored_ID == 69 || Trigger.Stored_ID == 63 || Trigger.Stored_ID == 45)
@@ -445,6 +449,20 @@ public class BallMovement : MonoBehaviour
                     }
                 }
             }
+
+            foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)                                        //clear goal
+            {
+                if(Goal.Stored_ID == 12)
+                {
+                    Goal.Stored_Completed = true;
+                }
+            }
+
+            DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 15, Stored_Completed = false });      //add Goal
+
+            //--------------------------------------------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------------------------------------------
+
             script_AudioManager.StopCurrentTheme(); //Musik anhalten
             PSWin.start(); //Sound          
         }

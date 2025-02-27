@@ -147,16 +147,16 @@ public class DancePad : ObjectScript
         DataManager.ToDance.Add(this);                                                                      //add this object to the ToShove List, to make it accessible for the Shove Buttons
         PadController.SetActive(true);                                                                    //Activate DanceButtons 
 
-        SuccessfulInteract();
-
         DanceScriptRef.ControlButtons();                                       //Control which Buttons appear
         PadController.transform.position = gameObject.transform.position;
-        DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1, PadController.transform.position.y + 4, PadController.transform.position.z);
+        PadController.transform.position = new Vector3(PadController.transform.position.x, PadController.transform.position.y + 1.8f, PadController.transform.position.z);
+        DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1, PadController.transform.position.y + 2.5f, PadController.transform.position.z);
     }
 
 
     public void DanceUnlock()
     {
+        SuccessfulInteract();
         if (TargetList_ID > 1)
         {
             DMReference.UnlockbySequence(TargetList_ID, TargetObject_ID);

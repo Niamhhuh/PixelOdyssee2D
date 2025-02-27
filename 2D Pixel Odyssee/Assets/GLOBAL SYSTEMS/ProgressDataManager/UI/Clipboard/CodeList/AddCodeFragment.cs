@@ -7,29 +7,33 @@ public class AddCodeFragment : MonoBehaviour
     //private DataManager DMReference;
     //private ObjectScript AccessObjectScript;
 
-    public int AddCodeID;
+    public int [] AddCodeID;
 
     private void Start()
     {
         //AccessObjectScript = gameObject.GetComponent<ObjectScript>();
 
-                
+
         //CodeList = GameObject.FindGameObjectWithTag("UiCanvas").GetComponent<CodeListScript>();
     }
 
     public void AddCode()
     {
-        switch (AddCodeID)
+        foreach(int Code in AddCodeID)
         {
-            case 1:
-                DataManager.Code1Acquired = true;
-                break;
-            case 2:
-                DataManager.Code2Acquired = true;
-                break;
-            case 3:
-                DataManager.Code3Acquired = true;
-                break;
+            switch (Code)
+            {
+                case 1:
+                    DataManager.Code1Acquired = true;
+                    break;
+                case 2:
+                    DataManager.Code2Acquired = true;
+                    break;
+                case 3:
+                    DataManager.Code3Acquired = true;
+                    break;
+            }
+
         }
     }
 }

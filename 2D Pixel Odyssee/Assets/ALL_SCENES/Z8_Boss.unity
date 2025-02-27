@@ -2279,6 +2279,7 @@ GameObject:
   - component: {fileID: 961237483}
   - component: {fileID: 961237488}
   - component: {fileID: 961237489}
+  - component: {fileID: 961237490}
   m_Layer: 0
   m_Name: On ENter
   m_TagString: Untagged
@@ -2502,6 +2503,25 @@ MonoBehaviour:
   LockTriggered: 0
   DialogueTriggered: 1
   TriggerTutorialPanel: 0
+--- !u!114 &961237490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961237482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 20
+  Add_Goal: 1
+  Complete_Goal_ID: 19
+  Complete_Goal: 1
 --- !u!1 &1049057106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,6 +4370,7 @@ GameObject:
   - component: {fileID: 1795019656}
   - component: {fileID: 1795019655}
   - component: {fileID: 1795019654}
+  - component: {fileID: 1795019658}
   m_Layer: 0
   m_Name: On Win (1)
   m_TagString: Untagged
@@ -4553,6 +4574,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1795019658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795019652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 21
+  Add_Goal: 1
+  Complete_Goal_ID: 20
+  Complete_Goal: 1
 --- !u!1 &1855922165
 GameObject:
   m_ObjectHideFlags: 0

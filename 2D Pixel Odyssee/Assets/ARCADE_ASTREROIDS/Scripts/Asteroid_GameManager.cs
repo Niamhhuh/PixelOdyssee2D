@@ -142,6 +142,9 @@ public class Asteroid_GameManager : MonoBehaviour
     // Method to trigger the win state
     private void WinGame()
     {
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //---------Adjust Triggers and Goals----------------------------------------------------------------------------------------------------
+
         foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
         {
             if (Trigger.Stored_ID == 43)
@@ -150,6 +153,20 @@ public class Asteroid_GameManager : MonoBehaviour
                 break;
             }
         }
+
+
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if (Goal.Stored_ID == 5)
+            {
+                Goal.Stored_Completed = true;
+            }
+        }
+
+        DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 7, Stored_Completed = false });      //add Goal
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
 
         spawner.SetActive(false);
         player.winLooseOn = true;

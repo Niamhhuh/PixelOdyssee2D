@@ -2978,6 +2978,7 @@ GameObject:
   - component: {fileID: 798486153}
   - component: {fileID: 798486157}
   - component: {fileID: 798486158}
+  - component: {fileID: 798486160}
   m_Layer: 0
   m_Name: "Dicke Froschm\xFCnze"
   m_TagString: Untagged
@@ -3210,6 +3211,24 @@ MonoBehaviour:
   isEvent_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &798486160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798486151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 11
+  Complete_Goal: 1
 --- !u!1 &814356520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,6 +3441,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005953336841362815, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: Available
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3936147526621032354, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
@@ -5126,6 +5149,7 @@ GameObject:
   - component: {fileID: 1209335755}
   - component: {fileID: 1209335754}
   - component: {fileID: 1209335753}
+  - component: {fileID: 1209335757}
   m_Layer: 0
   m_Name: Enter Dialogue Trigger
   m_TagString: Untagged
@@ -5277,6 +5301,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209335757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209335752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 9
+  Add_Goal: 1
+  Complete_Goal_ID: 0
+  Complete_Goal: 0
 --- !u!1 &1226106541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,6 +5507,7 @@ GameObject:
   - component: {fileID: 1324846437}
   - component: {fileID: 1324846436}
   - component: {fileID: 1324846435}
+  - component: {fileID: 1324846439}
   m_Layer: 0
   m_Name: "Platte Froschm\xFCnze"
   m_TagString: Untagged
@@ -5665,6 +5708,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1324846439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324846433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 10
+  Complete_Goal: 1
 --- !u!1 &1362884328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,6 +6380,7 @@ GameObject:
   - component: {fileID: 1637325037}
   - component: {fileID: 1637325039}
   - component: {fileID: 1637325040}
+  - component: {fileID: 1637325041}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -6612,6 +6674,24 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 0}
   BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &1637325041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637325029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 9
+  Complete_Goal: 1
 --- !u!1001 &1751100403
 PrefabInstance:
   m_ObjectHideFlags: 0

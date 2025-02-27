@@ -309,9 +309,11 @@ public class ObjectScript : MonoBehaviour
                 }
             }
             //DataManager.Item_List[DMReference.InventoryRef.DraggedItemID - 1].RemoveOnUse(); //Error: Dragged_Item_Index does not Equal Index in Item_list, but in Draggable List!!!!!!!!!!!!!!!!!!!!!!!
-                                                                                             // Delete Item from Draggable List
+            // Delete Item from Draggable List
 
 
+            ItemUnlock_Trigger_EditGoal();
+            if (AddCodeScript != null) { AddCodeScript.AddCode(); }                         //Add Code on succesful interaction
 
             if (!isBackground && TriggeronUnlock)
             {
@@ -602,7 +604,16 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
-
+    public void ItemUnlock_Trigger_EditGoal()
+    {
+        if (TriggerGoal)
+        {
+            if (ControlGoalScript.ItemUnlock_Triggered == true)
+            {
+                ControlGoalScript.EditGoal();
+            }
+        }
+    }
 
 
 

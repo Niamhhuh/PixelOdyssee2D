@@ -369,7 +369,21 @@ public class DataManager : MonoBehaviour
 
     public void AddGoalObj(int newID, bool newCompleted)
     {
-        ActiveGoal_List.Add(new ActiveGoal { Stored_ID = newID, Stored_Completed = newCompleted });
+        bool FoundGoal = false;
+        
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if (Goal.Stored_ID == newID)
+            {
+                FoundGoal = true;
+                break;
+            }
+        }
+        
+        if (!FoundGoal)
+        {
+            ActiveGoal_List.Add(new ActiveGoal { Stored_ID = newID, Stored_Completed = newCompleted });
+        }        
     }
 
 

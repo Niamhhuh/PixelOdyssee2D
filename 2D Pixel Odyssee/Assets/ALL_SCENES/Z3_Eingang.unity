@@ -223,6 +223,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &55686171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1908,6 +1911,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &511306209
 Transform:
   m_ObjectHideFlags: 0
@@ -4877,7 +4883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1491826111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4985,6 +4991,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 1
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1491826113
 Transform:
   m_ObjectHideFlags: 0
@@ -5206,6 +5215,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221274977324542770, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: Available
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3936147526621032354, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
@@ -6963,6 +6976,7 @@ GameObject:
   - component: {fileID: 1772311282}
   - component: {fileID: 1772311285}
   - component: {fileID: 1772311286}
+  - component: {fileID: 1772311287}
   m_Layer: 0
   m_Name: Hand Scanner
   m_TagString: Untagged
@@ -7075,8 +7089,8 @@ MonoBehaviour:
   ForcedInteraction: 0
   TriggeronUnlock: 1
   AlwaysDenyInteraction: 0
-  Unlock_by_Item: 0
-  Item_Key_ID: 0
+  Unlock_by_Item: 1
+  Item_Key_ID: 81
   ChangeNameonLock: 0
   LockName: 
   DialogueUnlock: 0
@@ -7201,6 +7215,25 @@ MonoBehaviour:
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
   TargetObject: {fileID: 0}
+--- !u!114 &1772311287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772311279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 0
+  ItemUnlock_Triggered: 1
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 21
+  Complete_Goal: 1
 --- !u!1 &1852501182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7962,6 +7995,7 @@ GameObject:
   - component: {fileID: 2089292577}
   - component: {fileID: 2089292579}
   - component: {fileID: 2089292578}
+  - component: {fileID: 2089292580}
   m_Layer: 0
   m_Name: Pong
   m_TagString: Untagged
@@ -8188,6 +8222,25 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &2089292580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089292573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 6
+  Complete_Goal: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

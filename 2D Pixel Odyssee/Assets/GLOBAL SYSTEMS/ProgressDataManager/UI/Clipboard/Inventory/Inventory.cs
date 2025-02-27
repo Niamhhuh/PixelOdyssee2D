@@ -171,6 +171,10 @@ public class Inventory : MonoBehaviour
             //InputKeys.SetEquals(RequiredKeys) == true
             if ((InputKey1 == Recipe.KeyID_A && InputKey2 == Recipe.KeyID_B) || (InputKey1 == Recipe.KeyID_B && InputKey2 == Recipe.KeyID_A))
             {
+                if(Recipe.Crafted_Item_ID == 53)                                    //Add Goal when it is the 1st FrogCoin
+                {
+                    DMReference.AddGoalObj(11, false);
+                }
                 //Craft the Item
                 DMReference.AddDraggableObj(Recipe.Crafted_Item_ID, 11);                                    //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
 

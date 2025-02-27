@@ -9,10 +9,13 @@ public class ControlGoal : MonoBehaviour
 
     public bool Dialogue_Triggered;
     public bool Interaction_Triggered;
+    public bool ItemUnlock_Triggered;
+
 
     public int Goal_ID;
     public bool Add_Goal;
 
+    public int Complete_Goal_ID;
     public bool Complete_Goal;
 
     void Start()
@@ -21,6 +24,11 @@ public class ControlGoal : MonoBehaviour
         ThisObject = gameObject.GetComponent<ObjectScript>();                                               //
         ThisObject.TriggerGoal = true;                                                                      //
         ThisObject.ControlGoalScript = this;                                                                //Set GoalScript in ObjectScript
+
+        if(Complete_Goal_ID == 0)
+        {
+            Complete_Goal_ID = Goal_ID;
+        }
     }
 
 
@@ -42,7 +50,7 @@ public class ControlGoal : MonoBehaviour
     {
         foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
         {
-            if (Goal.Stored_ID == Goal_ID)                                                      //Compare List_Goal_ID with TargetGoal_ID
+            if (Goal.Stored_ID == Complete_Goal_ID)                                                      //Compare List_Goal_ID with TargetGoal_ID
             {
                 Goal.Stored_Completed = true;                                                   //On Match, set Stored Goal as completed
                 break;

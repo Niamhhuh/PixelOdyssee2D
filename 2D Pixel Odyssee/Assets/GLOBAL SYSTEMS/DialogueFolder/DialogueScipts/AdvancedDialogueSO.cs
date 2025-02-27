@@ -20,6 +20,7 @@ public class AdvancedDialogueSO : ScriptableObject
     public bool DialogueAdd_Goal;
     public bool Complete_Goal;
     public int Goal_ID;
+    public int Complete_Goal_ID;
 
 
     public DialogueActors[] actors;
@@ -55,13 +56,32 @@ public class AdvancedDialogueSO : ScriptableObject
             KeyOption3 = 0;
             KeyOption4 = 0;
         }
+
+        if (Complete_Goal_ID == 0)
+        {
+            Complete_Goal_ID = Goal_ID;
+        }
     }
 
     public void ControlGoalonDialogue()
     {
+        bool FoundGoal = false;
+
         if (DialogueAdd_Goal)
         {
-            DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = Goal_ID, Stored_Completed = false});                                                          //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
+            foreach(DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+            {
+                if(Goal.Stored_ID == Goal_ID)
+                {
+                    FoundGoal = true;
+                    break;
+                }
+            }
+            if(!FoundGoal)
+            {
+                DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = Goal_ID, Stored_Completed = false });                                                          //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
+            }
+            
         }
 
         if (Complete_Goal)
@@ -74,7 +94,7 @@ public class AdvancedDialogueSO : ScriptableObject
     {
         foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
         {
-            if (Goal.Stored_ID == Goal_ID)                                                      //Compare List_Goal_ID with TargetGoal_ID
+            if (Goal.Stored_ID == Complete_Goal_ID)                                                      //Compare List_Goal_ID with TargetGoal_ID
             {
                 Goal.Stored_Completed = true;                                                   //On Match, set Stored Goal as completed
                 break;

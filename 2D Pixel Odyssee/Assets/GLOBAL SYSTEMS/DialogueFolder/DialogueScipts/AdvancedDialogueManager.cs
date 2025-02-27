@@ -92,6 +92,11 @@ public class AdvancedDialogueManager : MonoBehaviour
         if (dialogueActivated && canContinueText)
         {
             InDialogue = true;
+
+            if (currentConversation.Dialogue_Goal)
+            {
+                currentConversation.ControlGoalonDialogue();
+            }
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //Cancel dialogue if there are no lines of dialogue remaining
@@ -100,11 +105,6 @@ public class AdvancedDialogueManager : MonoBehaviour
                 if (currentConversation.CallTrigger)
                 {
                     CurrentNPC.DialogueHolder.GetComponent<ObjectScript>().Dialogue_Trigger_EditGoal();
-                }
-
-                if (currentConversation.Dialogue_Goal)
-                {
-                    currentConversation.ControlGoalonDialogue();
                 }
                 
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

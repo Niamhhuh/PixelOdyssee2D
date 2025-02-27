@@ -615,7 +615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &98755250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1908,7 +1908,7 @@ GameObject:
   - component: {fileID: 459076685}
   - component: {fileID: 459076684}
   m_Layer: 0
-  m_Name: ELIZA NACH ARCADE
+  m_Name: ELIZA NACH FROGGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2313,6 +2313,7 @@ GameObject:
   - component: {fileID: 521091553}
   - component: {fileID: 521091554}
   - component: {fileID: 521091555}
+  - component: {fileID: 521091556}
   m_Layer: 0
   m_Name: PowerGlove Vitrine
   m_TagString: Untagged
@@ -2533,6 +2534,25 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 11400000, guid: 649aee8ce27dfe44aa9b69de044f0068, type: 2}
   BeBeDeniedInteraction: {fileID: 11400000, guid: 6b5eb9ce1e9e97b4ea59e1bc697cb7b4, type: 2}
+--- !u!114 &521091556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521091549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 5
+  Add_Goal: 1
+  Complete_Goal_ID: 4
+  Complete_Goal: 1
 --- !u!1 &606507533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,7 +2628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 44
+  ID: 45
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
@@ -2691,6 +2711,7 @@ GameObject:
   - component: {fileID: 699980343}
   - component: {fileID: 699980342}
   - component: {fileID: 699980346}
+  - component: {fileID: 699980347}
   m_Layer: 0
   m_Name: Eliza
   m_TagString: Untagged
@@ -2915,6 +2936,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdf363508da3d3d40b4972ad608ccaee, type: 2}
   - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
   - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
+--- !u!114 &699980347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699980340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 1
+  Interaction_Triggered: 0
+  ItemUnlock_Triggered: 0
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 22
+  Complete_Goal: 1
 --- !u!1 &702330224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,6 +3529,7 @@ GameObject:
   - component: {fileID: 1199306744}
   - component: {fileID: 1199306743}
   - component: {fileID: 1199306748}
+  - component: {fileID: 1199306749}
   m_Layer: 0
   m_Name: Eliza
   m_TagString: Untagged
@@ -3713,6 +3754,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8dabdcab04abf6341b714c0d66cdde23, type: 2}
   - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
   - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
+--- !u!114 &1199306749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199306741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 1
+  Interaction_Triggered: 0
+  ItemUnlock_Triggered: 0
+  Goal_ID: 8
+  Add_Goal: 1
+  Complete_Goal_ID: 0
+  Complete_Goal: 0
 --- !u!1 &1242979645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,6 +3787,7 @@ GameObject:
   - component: {fileID: 1242979649}
   - component: {fileID: 1242979651}
   - component: {fileID: 1242979650}
+  - component: {fileID: 1242979652}
   m_Layer: 0
   m_Name: VB Vitrine mit VB
   m_TagString: Untagged
@@ -3948,6 +4009,19 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &1242979652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242979645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cc7662ed23b0e46859f47db10d81f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AddCodeID: 0200000003000000
 --- !u!1 &1257484149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,7 +5820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 45
+  ID: 46
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
@@ -6460,7 +6534,6 @@ SceneRoots:
   - {fileID: 521091551}
   - {fileID: 2134499519}
   - {fileID: 1242979647}
-  - {fileID: 98755251}
   - {fileID: 71597820}
   - {fileID: 479274432}
   - {fileID: 223752884}
@@ -6468,6 +6541,7 @@ SceneRoots:
   - {fileID: 1154488605}
   - {fileID: 1875732426}
   - {fileID: 2132950603}
+  - {fileID: 98755251}
   - {fileID: 1703124297}
   - {fileID: 459076686}
   - {fileID: 606507536}
