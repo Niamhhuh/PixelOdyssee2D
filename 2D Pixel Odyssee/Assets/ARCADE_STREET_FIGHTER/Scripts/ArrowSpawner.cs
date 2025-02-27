@@ -146,7 +146,7 @@ public class ArrowSpawner : MonoBehaviour
     private IEnumerator ShowRoundPopup(){
 
         Sprechblase.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         Sprechblase.SetActive(false);
     	animator.PlayScaleAnimationRound2();
 

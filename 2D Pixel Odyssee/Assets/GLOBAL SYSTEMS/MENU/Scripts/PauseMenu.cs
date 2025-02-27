@@ -42,9 +42,19 @@ public class PauseMenu : MonoBehaviour
     //_______________________________________________________________________________
     //_______Pausescreen Activator below_____________________________________________
 
+    private void Awake() {
+        if (spielBeenden_Fenster == null) {
+            spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
+            if (spielBeenden_Fenster == null) {
+                Debug.LogError("Script Pause, Line 56: SpielBeendenFenster not found. In Credits ok, uebrall anders nicht");
+                return;  // Stop execution if spiel beenden can't be found
+            }   
+            spielBeenden_Fenster.SetActive(false);               
+        }
+    }
     private void Start()
     {
-        if (current_scene.name == "Z_Startscreen") {
+        if (c_main) {
            c_main.SetActive(true);                                     //make sure everything is set up correctly
             c_start.SetActive(false);
             c_neuesspiel.SetActive(false); 
@@ -58,14 +68,7 @@ public class PauseMenu : MonoBehaviour
             DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
 
-        if (spielBeenden_Fenster == null) {
-            spielBeenden_Fenster = GameObject.FindGameObjectWithTag("FensterQuitGame");         //Spiel beenden Fenster
-            if (spielBeenden_Fenster == null) {
-                Debug.LogError("Script Pause, Line 56: SpielBeendenFenster not found. In Credits ok, uebrall anders nicht");
-                return;  // Stop execution if spiel beenden can't be found
-            }   
-            spielBeenden_Fenster.SetActive(false);               
-        }
+
         
     }
 
@@ -192,10 +195,12 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Return() {              //CREDITS --> schliesst UI
-        if(pauseScreen != null && credits != null) {
+        if(pauseScreen) {   
+            pauseScreen.SetActive(true);
+        }
+        if (credits) {
             credits.SetActive(false);
         }
-        pauseScreen.SetActive(true);
         steuerung.SetActive(false);
     }
 

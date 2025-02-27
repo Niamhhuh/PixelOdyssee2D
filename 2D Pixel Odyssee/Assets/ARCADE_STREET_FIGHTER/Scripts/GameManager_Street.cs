@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using Fades;
 
 
 public class GameManager_Street : MonoBehaviour
 {
-	public AudioSource theMusic;
+	//public AudioSource theMusic;
 
 	public bool startPlaying;
 
@@ -77,7 +78,8 @@ public class GameManager_Street : MonoBehaviour
     private bool winActive = false;                     //NEU --> to prevent both from appearing 
     private bool looseActive = false;
     
-    private GameObject fist;   //NEU --> to deactivate the button controller when it's not supposed to be (because of the sound)
+    private GameObject fist;                            //NEU --> to deactivate the button controller when it's not supposed to be (because of the sound)
+    public PauseMenu script_pause;                      //NEU --> to deacivate the pause menu before the fade ins completed
 
 //__________________________________________________________
 //________________________Konami Code_______________________
@@ -117,7 +119,10 @@ public class GameManager_Street : MonoBehaviour
         SFCountdown = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFCountdown);
         SFRound1 = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFRound1);
         SFPrepareYourself = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFPrepareYourself);
-    
+
+        StartCoroutine(Class_Fades.instance.StartFadeOut());    //since pause is disabled, activate fade in here
+        script_pause.enabled = false;                           //disable pause script in the beginning 
+
         //___________Konami Code_____________
         konamiActive = false;                                   //set to false at beginning
     }
@@ -134,15 +139,15 @@ public class GameManager_Street : MonoBehaviour
     }
 
     
-    private IEnumerator VS(){
-
-        
+    private IEnumerator VS()
+    {        
         gameOverMenuStreet.SetActive(false);
         gameStartStreet.SetActive(false);
         StartCoroutine(FadeInOut());
         yield return new WaitForSeconds(3f); 
         VSScreen.SetActive(false);
         fist.SetActive(true);
+        script_pause.enabled = true;                   //enable pause script
         NewGame();
     }
 
@@ -176,7 +181,7 @@ public class GameManager_Street : MonoBehaviour
         SetLives(2);
         SetLivesEnemy(27);
         rosieAnimator.Play("Rosie_Idle_Street");
-        theMusic.Play();
+        //theMusic.Play();
     }
 
     public void StreetDeath(){

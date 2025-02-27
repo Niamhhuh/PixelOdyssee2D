@@ -190,25 +190,30 @@ public class BallMovement : MonoBehaviour
 
         }
     }
-
+    //_____________________________________________________________________________________
     //--------------------enter deathzone---------------------------------------------------
-
     void OnTriggerEnter2D(Collider2D col) 
     {
         //STRAFEN---------------------------------------------------------------------------
 
-        //ELEKTRO-------------------------------------
-        if (col.gameObject.CompareTag("StrafboxElektro") && aiScore == 0)
+        //ELEKTRO PLAYER-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxElektro"))
         {
-            Debug.Log("StrafboxElektro is hit.");
+            if (aiScore == 0) {
+                Debug.Log("StrafboxElektro is hit.");
+                HintergrundElektro.SetActive(true);
+                HintergrundFeuer.SetActive(false);
+                HintergrundPeitsche.SetActive(false);
+            }
 
-            HintergrundElektro.SetActive(true);
-            HintergrundFeuer.SetActive(false);
-            HintergrundPeitsche.SetActive(false);
-
-
+            else if (aiScore == 1) {
+                Debug.Log("StrafboxElektro is hit again.");
+                RahmenElektro.SetActive(true);
+                RahmenFeuer.SetActive(false);
+                RahmenPeitsche.SetActive(false);
+                RahmenDefault.SetActive(false);
+            }
             ActivateStrafeIcon();
-
             PSElectric.start(); //sound
 
             // Toggle reversed controls
@@ -216,69 +221,45 @@ public class BallMovement : MonoBehaviour
             {
                 playerMovement.ToggleReverseControls();
             }
-
         }
 
-        if (col.gameObject.CompareTag("StrafboxElektro") && aiScore == 1)
+        //ELEKTRO AI-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxElektroAI"))
         {
-            Debug.Log("StrafboxElektro is hit again.");
-
-            RahmenElektro.SetActive(true);
-            RahmenFeuer.SetActive(false);
-            RahmenPeitsche.SetActive(false);
-            RahmenDefault.SetActive(false);
-
-            ActivateStrafeIcon();
-
-            // Toggle reversed controls
-            if (playerMovement != null)
-            {
-                playerMovement.ToggleReverseControls();
+            if (plScore == 0) {
+                Debug.Log("You Hit AI StrafboxElektro.");
+                HintergrundFeuerAI.SetActive(false);
+                HintergrundElektroAI.SetActive(true);
+                HintergrundPeitscheAI.SetActive(false);
             }
-
-            PSElectric.start(); //sound
-        }
-
-        if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 0)
-        {
-            Debug.Log("You Hit AI StrafboxElektro.");
-
-            HintergrundFeuerAI.SetActive(false);
-            HintergrundElektroAI.SetActive(true);
-            HintergrundPeitscheAI.SetActive(false);
-
+            else if (plScore == 1) {
+                Debug.Log("You Hit AI StrafboxElektro again.");
+                RahmenElektroAI.SetActive(true);
+                RahmenFeuerAI.SetActive(false);
+                RahmenPeitscheAI.SetActive(false);
+                RahmenDefaultAI.SetActive(false);
+            }
             ActivateAIStrafeIcon();
-
             PSElectric.start(); //sound
         }
 
-        if (col.gameObject.CompareTag("StrafboxElektroAI") && plScore == 1)
+        //FEUER PLAYER-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxFeuer"))
         {
-            Debug.Log("You Hit AI StrafboxElektro again.");
-
-            RahmenElektroAI.SetActive(true);
-            RahmenFeuerAI.SetActive(false);
-            RahmenPeitscheAI.SetActive(false);
-            RahmenDefaultAI.SetActive(false);
-
-            ActivateAIStrafeIcon();
-
-            PSElectric.start(); //sound
-        }
-
-            //FEUER-------------------------------------
-
-        if (col.gameObject.CompareTag("StrafboxFeuer") && aiScore == 0)
-        {
-            Debug.Log("StrafboxFeuer is hit.");
-
-            HintergrundFeuer.SetActive(true);
-            HintergrundElektro.SetActive(false);
-            HintergrundPeitsche.SetActive(false);
-
-            
+            if (aiScore == 0) {
+                Debug.Log("StrafboxFeuer is hit.");
+                HintergrundFeuer.SetActive(true);
+                HintergrundElektro.SetActive(false);
+                HintergrundPeitsche.SetActive(false);
+            }
+            else if (aiScore == 1) {
+                Debug.Log("StrafboxFeuer is hit again.");
+                RahmenFeuer.SetActive(true);
+                RahmenElektro.SetActive(false);
+                RahmenPeitsche.SetActive(false);
+                RahmenDefault.SetActive(false);
+            }
             ActivateStrafeIcon();
-
             PSFire.start(); //sound
 
             // Increase player speed
@@ -288,90 +269,45 @@ public class BallMovement : MonoBehaviour
             }
         }
 
-
-        if (col.gameObject.CompareTag("StrafboxFeuer") && aiScore == 1)
+        //FEUER AI-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxFeuerAI"))
         {
-            Debug.Log("StrafboxFeuer is hit again.");
-
-            RahmenFeuer.SetActive(true);
-            RahmenElektro.SetActive(false);
-            RahmenPeitsche.SetActive(false);
-            RahmenDefault.SetActive(false);
-
-            ActivateStrafeIcon();
-
-            PSFire.start(); //sound
-
-            // Increase player speed
-            if (playerMovement != null)
-            {
-                playerMovement.IncreaseSpeed(2.0f); // 200% increase
+            if (plScore == 0) {
+                Debug.Log("You Hit AI StrafboxFeuer.");
+                HintergrundPeitscheAI.SetActive(false);
+                HintergrundElektroAI.SetActive(false);
+                HintergrundFeuerAI.SetActive(true);
             }
-        }
-
-        if (col.gameObject.CompareTag("StrafboxFeuerAI") && plScore == 0)
-        {
-            Debug.Log("You Hit AI StrafboxFeuer.");
-
-            HintergrundPeitscheAI.SetActive(false);
-            HintergrundElektroAI.SetActive(false);
-            HintergrundFeuerAI.SetActive(true);
-
+            else if (plScore == 1) {
+                Debug.Log("You Hit AI StrafboxFeuer again.");
+                RahmenElektroAI.SetActive(false);
+                RahmenFeuerAI.SetActive(true);                  
+                RahmenPeitscheAI.SetActive(false);
+                RahmenDefaultAI.SetActive(false);
+            }
             ActivateAIStrafeIcon();
-
-
             PSFire.start(); //sound
         }
 
-        if (col.gameObject.CompareTag("StrafboxFeuerAI") && plScore == 1)
+        //Peitsche PLAYER-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxPeitsche"))
         {
-            Debug.Log("You Hit AI StrafboxFeuer again.");
-
-            RahmenElektroAI.SetActive(false);
-            RahmenFeuerAI.SetActive(true);                  //this
-            RahmenPeitscheAI.SetActive(false);
-            RahmenDefaultAI.SetActive(false);
-
-            ActivateAIStrafeIcon();
-
-            PSFire.start(); //sound
-
-        }
-
-        //Peitsche-------------------------------------
-
-        if (col.gameObject.CompareTag("StrafboxPeitsche") && aiScore == 0)
-        {
-            Debug.Log("StrafboxPeitsche is hit.");
-
-            HintergrundPeitsche.SetActive(true);
-            HintergrundElektro.SetActive(false);
-            HintergrundFeuer.SetActive(false); 
-
+            if (aiScore == 0) {
+                Debug.Log("StrafboxPeitsche is hit.");
+                HintergrundPeitsche.SetActive(true);
+                HintergrundElektro.SetActive(false);
+                HintergrundFeuer.SetActive(false); 
+                Riss1.SetActive(true);
+            }
+            else if (aiScore == 1) {
+                Debug.Log("StrafboxPeitsche is hit again.");
+                RahmenPeitsche.SetActive(true);
+                RahmenElektro.SetActive(false);
+                RahmenFeuer.SetActive(false);
+                RahmenDefault.SetActive(false);
+                Riss2.SetActive(true);
+            }
             ActivateStrafeIcon();
-
-            PSWhip.start(); //sound
-
-            Riss1.SetActive(true);
-
-            //--------white screen
-            whitescreen_object.SetActive(true);
-            StartCoroutine(FadeOutCoroutine());                                 //then start the fade-out coroutine forthe whitescreen
-        }
-
-        if (col.gameObject.CompareTag("StrafboxPeitsche") && aiScore == 1)
-        {
-            Debug.Log("StrafboxPeitsche is hit again.");
-
-            RahmenPeitsche.SetActive(true);
-            RahmenElektro.SetActive(false);
-            RahmenFeuer.SetActive(false);
-            RahmenDefault.SetActive(false);
-
-            ActivateStrafeIcon();
-
-            Riss2.SetActive(true);
-
             PSWhip.start(); //sound
 
             //--------white screen
@@ -379,41 +315,39 @@ public class BallMovement : MonoBehaviour
             StartCoroutine(FadeOutCoroutine());                                 //then start the fade-out coroutine forthe whitescreen
         }
 
-        if (col.gameObject.CompareTag("StrafboxPeitscheAI")  && plScore == 0) 
+        //Peitsche AI-------------------------------------
+        if (col.gameObject.CompareTag("StrafboxPeitscheAI")) 
         {
-            Debug.Log("You Hit AI StrafboxPeitsche.");
-
-            HintergrundPeitscheAI.SetActive(true);
-            HintergrundElektroAI.SetActive(false);
-            HintergrundFeuerAI.SetActive(false);
-
+            if (plScore == 0) {
+                Debug.Log("You Hit AI StrafboxPeitsche.");
+                HintergrundPeitscheAI.SetActive(true);
+                HintergrundElektroAI.SetActive(false);
+                HintergrundFeuerAI.SetActive(false);
+            }
+            else if (plScore == 1) {
+                Debug.Log("You Hit AI StrafboxPeitsche again.");
+                RahmenElektroAI.SetActive(false);
+                RahmenFeuerAI.SetActive(false);                  
+                RahmenPeitscheAI.SetActive(true);              
+                RahmenDefaultAI.SetActive(false);
+            }
             ActivateAIStrafeIcon();
-
-            PSWhip.start(); //sound
-
-        }
-
-        if (col.gameObject.CompareTag("StrafboxPeitscheAI") && plScore == 1)
-        {
-            Debug.Log("You Hit AI StrafboxPeitsche again.");
-
-            RahmenElektroAI.SetActive(false);
-            RahmenFeuerAI.SetActive(false);                  
-            RahmenPeitscheAI.SetActive(true);               //this
-            RahmenDefaultAI.SetActive(false);
-
-            ActivateAIStrafeIcon();
-
             PSWhip.start(); //sound
         }
 
+        //AFTER the strafbox has hit, adjust health and score and check for WIN
+        adjustHealth();
+        checkFini();
+    }
 
+    //_____________________________________________________________________________________
+    //--------------------Sprite / Health functions----------------------------------------
+    private void adjustHealth() {
         if (transform.position.x > 0 && !Scored) 
         {
             Scored = true;
             playerScore.text = (int.Parse(playerScore.text) + 1).ToString();
             plScore++;
-
 
             //Adjust Silver Health Bar
             if (plScore == 1)
@@ -429,16 +363,14 @@ public class BallMovement : MonoBehaviour
             if (plScore == 3)
             {
                 HealthSquare3Silver.SetActive(false);
-            }
-
-            
+            }            
         }
+
         else if (transform.position.x < 0 && !Scored) 
         {
             Scored = true;
             AIScore.text = (int.Parse(AIScore.text) + 1).ToString();
             aiScore++;
-
 
             //Adjust player's Health Bar
             if (aiScore == 1)
@@ -453,58 +385,6 @@ public class BallMovement : MonoBehaviour
             {
                 HealthSquare1.SetActive(false);
             }
-
-        }
-        
-        if (aiScore == 3 || plScore == 3) //checks whether the game is finished
-        {
-            Scored = false;
-            Destroy(gameObject);
-            
-          
-            if(plScore == 3) 
-            {
-                winPanel.SetActive(true);
-
-                if(ActivateTriggerScript.GetComponent<SimpleActivateTrigger>() != null)
-                {
-                    ActivateTriggerScript.GetComponent<SimpleActivateTrigger>().CallTriggerActivation();
-                }
-
-                int i = 0;
-
-                foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Pain
-                {
-                    if (Trigger.Stored_ID == 69 || Trigger.Stored_ID == 63 || Trigger.Stored_ID == 45)
-                    {
-                        i++;
-                        Trigger.Stored_Lock_State = false;
-
-                        if(i >= 3)
-                        {
-                            break;
-                        }
-                    }
-                }
-
-
-                script_AudioManager.StopCurrentTheme(); //Musik anhalten
-                PSWin.start(); //Sound
-
-
-                
-            }
-            else if(aiScore == 3) {
-                losePanel.SetActive(true);
-
-                script_AudioManager.StopCurrentTheme(); //Musik anhalten
-                PSLoose.start(); //Sound
-                
-            }
-        }
-        else
-        {
-            ResetBall();
         }
     }
 
@@ -535,8 +415,57 @@ public class BallMovement : MonoBehaviour
         SilverIconStrafe.SetActive(false);
         SilverIconDefault.SetActive(true);
     }
+    //_____________________________________________________________________________________
+    //--------------------Win state functions----------------------------------------------
+    private void checkFini() {  //checks whether the game is finished          
+        if(plScore == 3) 
+        {
+            Scored = false;
+            whitescreen_object.SetActive(false);
+            Destroy(gameObject);
+            winPanel.SetActive(true);
 
-    //------------------------------------------FADE OUT WHITESCREEN
+            if(ActivateTriggerScript.GetComponent<SimpleActivateTrigger>() != null)
+            {
+                ActivateTriggerScript.GetComponent<SimpleActivateTrigger>().CallTriggerActivation();
+            }
+
+            int i = 0;
+
+            foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Pain
+            {
+                if (Trigger.Stored_ID == 69 || Trigger.Stored_ID == 63 || Trigger.Stored_ID == 45)
+                {
+                    i++;
+                    Trigger.Stored_Lock_State = false;
+
+                    if(i >= 3)
+                    {
+                        break;
+                    }
+                }
+            }
+            script_AudioManager.StopCurrentTheme(); //Musik anhalten
+            PSWin.start(); //Sound          
+        }
+        else if(aiScore == 3) {
+            Scored = false;
+            Destroy(gameObject);    
+            losePanel.SetActive(true);
+
+            script_AudioManager.StopCurrentTheme(); //Musik anhalten
+            PSLoose.start(); //Sound    
+        }
+    
+        else {
+            ResetBall();
+        }
+    }
+
+
+
+    //_____________________________________________________________________________________
+    //--------------------White screen-----------------------------------------------------
     private IEnumerator FadeOutCoroutine()               
     {
         float elapsedTime = 0f;

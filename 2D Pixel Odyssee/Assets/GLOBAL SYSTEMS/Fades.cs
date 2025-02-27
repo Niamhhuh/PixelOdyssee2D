@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 //WHERE IS THE SCRIPT USED?
 // --> PauseMenu, in functions: Start(), StartGameCoroutine(), GameQuit()
-// --> ToggleStartScreen, in functions: Update()
+// --> ToggleStartScreen, in functions: Start(), Update()
 
 
 //WHERE IS THIS SCRIPT PLACED?
