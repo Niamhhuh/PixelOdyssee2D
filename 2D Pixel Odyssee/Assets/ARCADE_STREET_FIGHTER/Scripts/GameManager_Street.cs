@@ -180,8 +180,7 @@ public class GameManager_Street : MonoBehaviour
         theBS.hasStarted = true;
         SetLives(2);
         SetLivesEnemy(27);
-        rosieAnimator.Play("Rosie_Idle_Street");
-        //theMusic.Play();
+        //rosieAnimator.Play("Rosie_Idle_Street");                      //PUT THIS BACK IN IF THERE ARE ANY ERROR IT MIGHT BE BECAUSE OF THIS
     }
 
     public void StreetDeath(){
