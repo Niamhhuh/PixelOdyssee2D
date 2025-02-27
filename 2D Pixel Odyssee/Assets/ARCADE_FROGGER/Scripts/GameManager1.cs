@@ -85,8 +85,12 @@ public class GameManager1 : MonoBehaviour
     private void NewLevel() {                       //-------------------WIN
         frogger.gameObject.SetActive(false);
         gameWonMenu.gameObject.SetActive(true);
-        
-        foreach( DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
+
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        foreach ( DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
         {
             if(Trigger.Stored_ID == 44)
             {
@@ -94,6 +98,21 @@ public class GameManager1 : MonoBehaviour
                 break;
             }
         }
+
+
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if (Goal.Stored_ID == 8)
+            {
+                Goal.Stored_Completed = true;
+            }
+        }
+
+        DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 22, Stored_Completed = false });      //add Goal
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
+
 
         StopAllCoroutines();
     }
