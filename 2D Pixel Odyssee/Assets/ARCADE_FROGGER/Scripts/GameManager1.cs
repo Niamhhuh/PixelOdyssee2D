@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using Fades;
 
 public class GameManager1 : MonoBehaviour
 {
-    private Frogger frogger;
+    public Frogger frogger;
     
     private Home[] homes;
-    
-    private int score;
 
     private int lives;
 
@@ -38,19 +37,19 @@ public class GameManager1 : MonoBehaviour
 
     private AudioManager script_AudioManager; //Referenz zu "Audiomanager", um Musik anzuhalten
 
-    private void Awake()
-    {
-        
+    public PauseMenu script_pause;              //NEU --> to turn off pause when steuerung is active
+    
+//___________________________________________________________________________________________________
+//------------------------Standard functions---------------------------------------------------------
+    private void Awake() {    
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
-        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
 
-    private void Start()
-    {
-        Play();
-        //NewGame();
-        soundManager.PlayMusic(soundManager.background);
+    private void Start() {
+        frogger.gameObject.SetActive(false);
+        gameStart.SetActive(true);
+        StartCoroutine(StartSteuerung());
 
         FrScore = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrScore); //Sound
         FrWin = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrWin);
@@ -59,35 +58,31 @@ public class GameManager1 : MonoBehaviour
 
         script_AudioManager = GameObject.Find("AudioManagerMusic").GetComponent<AudioManager>(); //Referenz zu AusiomanagerMusik Component mit "AudioManager" Skript
 
+        StartCoroutine(Class_Fades.instance.StartFadeOut());        //makes sure the fade in happens because below, we turn off the pause script
+        script_pause.enabled = false;                               //turn off pause script so it does not overlap with the beginning steuerung
     }
 
-    private void NewGame()
-    {
+//___________________________________________________________________________________________________
+//------------------------Start Game------------------------------------------------------
+    private void NewGame() {               
         gameOverMenu.SetActive(false);
         frogger.gameObject.SetActive(true);
         gameStart.SetActive(false);
-        soundManager.PlayMusic(soundManager.background);
+        script_pause.enabled = true;  
 
-        script_AudioManager.StopCurrentTheme(); //Musik anhalten
+        script_AudioManager.StopCurrentTheme();     //Musik anhalten
 
-        SetScore(0);
         SetLives(3);
         for (int i = 0; i < homes.Length; i++)
         {
             homes[i].enabled = false;
         }
-        //StartScreen();
-        NewRound();
-        
+        Respawn(); 
     }
 
-    private void NewLevel()
-    {
-        /*for (int i = 0; i < homes.Length; i++)
-        {
-            homes[i].enabled = false;
-        }
-        NewRound();*/
+//___________________________________________________________________________________________________
+//------------------------WIN LOOSE SCREEN-----------------------------------------------------------
+    private void NewLevel() {                       //-------------------WIN
         frogger.gameObject.SetActive(false);
         gameWonMenu.gameObject.SetActive(true);
         
@@ -101,180 +96,101 @@ public class GameManager1 : MonoBehaviour
         }
 
         StopAllCoroutines();
-        StartCoroutine(BackToHub());
     }
 
-    private void NewRound() 
-    {  
-        Respawn();
+    private void GameOver() {                       //--------------------LOOSE
+        frogger.gameObject.SetActive(false);
+        gameOverMenu.gameObject.SetActive(true);
+
+        script_AudioManager.StopCurrentTheme();     //Musik anhalten
+        FrLoose.start();                            //Sound
+
+        StopAllCoroutines();
+    }
+//___________________________________________________________________________________________________
+//------------------------Die, death or respawn------------------------------------------------------
+    public void Died() {                            //gets called by script Frogger
+        Debug.Log("died");
+        if (frogger.gameObject.activeInHierarchy == true) {
+            SetLives(lives - 1);    
+
+            if (lives > 0) {
+                FrDeath.start(); //Sound
+                script_AudioManager.StopCurrentTheme(); //Musik anhalten
+
+                Invoke(nameof(Respawn), 1f);            //respawn if we have lives left
+            }
+            else {
+                Invoke(nameof(GameOver), 1f);           //game over if we have no lives left
+            }
+        }
     }
 
-    private void Respawn()
-    {
+    private void Respawn() {
         frogger.noMove = false; 
         frogger.Respawn();
-
-        script_AudioManager.PlayThemeForCurrentScene(); //Musik abspielen
+        Debug.Log("Respawn");
 
         StopAllCoroutines();
         StartCoroutine(Timer(30));
     }
 
-    private IEnumerator Timer(int duration)
-    {
+//___________________________________________________________________________________________________
+//------------------------etc stuff------------------------------------------------------------------
+    private IEnumerator Timer(int duration) {       //controls the timer
         time = duration;
-
-        while (time > 0) 
-        { 
+        script_AudioManager.PlayThemeForCurrentScene(); //Musik abspielen
+        while (time > 0) { 
             yield return new WaitForSeconds(1);
             timerText.text = time.ToString();
             time --;
         }
-
-        frogger.Death();
-    }
-
-    public void Died()
-    {
-        SetLives(lives - 1);    
-
-        if (lives > 0)
-        {
-            FrDeath.start(); //Sound
-            script_AudioManager.StopCurrentTheme(); //Musik anhalten
-
-            soundManager.PlaySfx(soundManager.death);
-            Invoke(nameof(Respawn), 1f);
-        }
-        else
-        {
-            Invoke(nameof(GameOver), 1f);   
+        if (!Cleared() && lives > 0) {
+            frogger.Death();
         }
     }
 
-    private void GameOver()
-    {
-        frogger.gameObject.SetActive(false);
-        gameOverMenu.gameObject.SetActive(true);
-        soundManager.StopMusic(soundManager.background);
-        soundManager.PlaySfx(soundManager.gameOver);
-
-        script_AudioManager.StopCurrentTheme(); //Musik anhalten
-        FrLoose.start(); //Sound
-
-        StopAllCoroutines();
-        StartCoroutine(PlayAgain());
-
-    }
-
-    private void Play()
-    {
-        frogger.gameObject.SetActive(false);
-        gameStart.SetActive(true);
-
-        StopAllCoroutines();
-        StartCoroutine(StartScreen());
-    }
-    private IEnumerator StartScreen()
-    {
+    private IEnumerator StartSteuerung() {          //controls the steuerung panel at the beginning
         bool startScreen = false;  
-        while (!startScreen) 
-        { 
-            if (Input.GetKeyDown(KeyCode.Return)) 
-            
-            { 
+        while (!startScreen) { 
+            if (Input.GetKeyDown(KeyCode.Return)) { 
                 startScreen = true;
             }
-
             yield return null;  
         }
         NewGame();  
-        
     }
 
-    private IEnumerator PlayAgain()
-    {
-        bool playAgain = false;
-        while (!playAgain)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                playAgain = true;
-            }
 
-            yield return null;
-        }
-        NewGame();
-    }
-
-    private IEnumerator BackToHub(){
-
-        bool BackToHub = false;
-        while (!BackToHub)
-        {
-            if (Input.GetKeyDown(KeyCode.Return)){
-                BackToHub = true;
-            }
-
-            yield return null;
-        }
-        SceneManager.LoadScene(5);
-    }
-
-    public void AdvanceRow()
-    {
-        SetScore(score + 10);
-    }
-
-    public void HomeOccupied()
-    {
+//___________________________________________________________________________________________________
+//------------------------Frogger home stuff---------------------------------------------------------
+    public void HomeOccupied() {
         frogger.gameObject.SetActive(false);
 
-        int bonusPoints = time * 20;
-        SetScore(score + bonusPoints + 50);
-        soundManager.PlaySfx(soundManager.score);
+        script_AudioManager.StopCurrentTheme();     //Musik anhalten
+        FrScore.start();                            //Sound
 
-        script_AudioManager.StopCurrentTheme(); //Musik anhalten
-        FrScore.start(); //Sound
-
-        if (Cleared())
-        {
-            SetScore(score + 1000);
-            SetLives(lives + 1);
-            Invoke (nameof(NewLevel), 1f);
-            soundManager.StopMusic(soundManager.background);
-            soundManager.PlaySfx(soundManager.win);
-
+        if (Cleared()) {
+            StopAllCoroutines();
+            Invoke (nameof(NewLevel), 1f);          //invoke WIN
             script_AudioManager.StopCurrentTheme(); //Musik anhalten
-            FrWin.start(); //Sound
+            FrWin.start();                          //Sound
         }
-        else
-        {
-            Invoke (nameof(NewRound), 1f);
+        else {
+            Invoke (nameof(Respawn), 1f);           //invoke RESPAWN
         }
     }
 
-    private bool Cleared()
-    {
-
-        for (int i = 0; i<homes.Length; i++)
-        {
-            if (!homes[i].enabled)
-            {
+    private bool Cleared() {
+        for (int i = 0; i<homes.Length; i++) {
+            if (!homes[i].enabled) {
                 return false;
             }
-
         }
         return true;
-
     }
 
-    private void SetScore(int score)
-    {
-        this.score = score; 
-    }
-    private void SetLives(int lives)
-    {
+    private void SetLives(int lives) {
         this.lives = lives;
         livesText.text = lives.ToString();
     }
