@@ -674,6 +674,7 @@ GameObject:
   - component: {fileID: 416522457}
   - component: {fileID: 416522456}
   - component: {fileID: 416522455}
+  - component: {fileID: 416522458}
   m_Layer: 5
   m_Name: B_neuversuchen
   m_TagString: Untagged
@@ -794,6 +795,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416522453}
   m_CullTransparentMesh: 1
+--- !u!114 &416522458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416522453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &433511223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1327,7 @@ GameObject:
   - component: {fileID: 662766793}
   - component: {fileID: 662766792}
   - component: {fileID: 662766791}
+  - component: {fileID: 662766794}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -1415,6 +1448,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662766789}
   m_CullTransparentMesh: 1
+--- !u!114 &662766794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662766789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &707758406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,6 +2180,7 @@ GameObject:
   - component: {fileID: 930549858}
   - component: {fileID: 930549857}
   - component: {fileID: 930549856}
+  - component: {fileID: 930549859}
   m_Layer: 5
   m_Name: Button_beenden
   m_TagString: Untagged
@@ -2248,6 +2313,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930549854}
   m_CullTransparentMesh: 1
+--- !u!114 &930549859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930549854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &945296778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2599,7 @@ GameObject:
   - component: {fileID: 972183373}
   - component: {fileID: 972183372}
   - component: {fileID: 972183371}
+  - component: {fileID: 972183374}
   m_Layer: 5
   m_Name: B_Weiterspielen
   m_TagString: Untagged
@@ -2623,6 +2720,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972183369}
   m_CullTransparentMesh: 1
+--- !u!114 &972183374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972183369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &989178270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,6 +2933,7 @@ GameObject:
   - component: {fileID: 1019806832}
   - component: {fileID: 1019806831}
   - component: {fileID: 1019806830}
+  - component: {fileID: 1019806833}
   m_Layer: 5
   m_Name: B_ZumMuseum
   m_TagString: Untagged
@@ -2925,6 +3054,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019806828}
   m_CullTransparentMesh: 1
+--- !u!114 &1019806833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019806828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1021332996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,6 +3862,7 @@ GameObject:
   - component: {fileID: 1312381221}
   - component: {fileID: 1312381220}
   - component: {fileID: 1312381219}
+  - component: {fileID: 1312381222}
   m_Layer: 5
   m_Name: B_Spiel beenden
   m_TagString: Untagged
@@ -3822,6 +3983,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312381217}
   m_CullTransparentMesh: 1
+--- !u!114 &1312381222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312381217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1319723761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,6 +5255,7 @@ GameObject:
   - component: {fileID: 1693755371}
   - component: {fileID: 1693755370}
   - component: {fileID: 1693755369}
+  - component: {fileID: 1693755372}
   m_Layer: 5
   m_Name: B_Fortsetzen
   m_TagString: Untagged
@@ -5183,6 +5376,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693755367}
   m_CullTransparentMesh: 1
+--- !u!114 &1693755372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693755367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1698651272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,6 +5636,7 @@ GameObject:
   - component: {fileID: 1811873239}
   - component: {fileID: 1811873238}
   - component: {fileID: 1811873237}
+  - component: {fileID: 1811873240}
   m_Layer: 5
   m_Name: Button Quit
   m_TagString: Untagged
@@ -5532,6 +5757,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811873235}
   m_CullTransparentMesh: 1
+--- !u!114 &1811873240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811873235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1819990529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6034,6 +6290,7 @@ GameObject:
   - component: {fileID: 1949729602}
   - component: {fileID: 1949729601}
   - component: {fileID: 1949729600}
+  - component: {fileID: 1949729603}
   m_Layer: 5
   m_Name: B_Steuerung
   m_TagString: Untagged
@@ -6154,6 +6411,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949729598}
   m_CullTransparentMesh: 1
+--- !u!114 &1949729603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949729598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1993607629
 PrefabInstance:
   m_ObjectHideFlags: 0

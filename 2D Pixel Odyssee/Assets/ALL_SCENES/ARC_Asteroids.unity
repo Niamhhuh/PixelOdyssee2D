@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 138772670}
   - component: {fileID: 138772669}
   - component: {fileID: 138772668}
+  - component: {fileID: 138772671}
   m_Layer: 5
   m_Name: B_Spiel beenden
   m_TagString: Untagged
@@ -421,6 +422,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138772666}
   m_CullTransparentMesh: 1
+--- !u!114 &138772671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138772666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &177154013
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +465,7 @@ GameObject:
   - component: {fileID: 177154017}
   - component: {fileID: 177154016}
   - component: {fileID: 177154015}
+  - component: {fileID: 177154018}
   m_Layer: 5
   m_Name: B_ZumMuseum
   m_TagString: Untagged
@@ -553,6 +586,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177154013}
   m_CullTransparentMesh: 1
+--- !u!114 &177154018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177154013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &184722664
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +1001,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1002,6 +1066,7 @@ GameObject:
   - component: {fileID: 308204614}
   - component: {fileID: 308204613}
   - component: {fileID: 308204612}
+  - component: {fileID: 308204615}
   m_Layer: 5
   m_Name: B_Fortsetzen
   m_TagString: Untagged
@@ -1122,6 +1187,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308204610}
   m_CullTransparentMesh: 1
+--- !u!114 &308204615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308204610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &309720988
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,6 +6645,7 @@ GameObject:
   - component: {fileID: 759844261}
   - component: {fileID: 759844260}
   - component: {fileID: 759844259}
+  - component: {fileID: 759844262}
   m_Layer: 5
   m_Name: B_zumMuseum
   m_TagString: Untagged
@@ -6669,6 +6766,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759844257}
   m_CullTransparentMesh: 1
+--- !u!114 &759844262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759844257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &781984910
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,6 +7734,7 @@ GameObject:
   - component: {fileID: 1055387124}
   - component: {fileID: 1055387123}
   - component: {fileID: 1055387122}
+  - component: {fileID: 1055387125}
   m_Layer: 5
   m_Name: B_Weiterspielen
   m_TagString: Untagged
@@ -7726,6 +7855,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055387120}
   m_CullTransparentMesh: 1
+--- !u!114 &1055387125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055387120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1130136872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7959,6 +8119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8184c114f7cf6342af840fa4fec78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script_pause: {fileID: 1423343529}
   steuerungOff: 0
 --- !u!1 &1181413494
 GameObject:
@@ -7972,6 +8133,7 @@ GameObject:
   - component: {fileID: 1181413498}
   - component: {fileID: 1181413497}
   - component: {fileID: 1181413496}
+  - component: {fileID: 1181413499}
   m_Layer: 5
   m_Name: B_ZumMuseum
   m_TagString: Untagged
@@ -8092,6 +8254,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181413494}
   m_CullTransparentMesh: 1
+--- !u!114 &1181413499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181413494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1202633017
 GameObject:
   m_ObjectHideFlags: 0
@@ -8104,6 +8297,7 @@ GameObject:
   - component: {fileID: 1202633021}
   - component: {fileID: 1202633020}
   - component: {fileID: 1202633019}
+  - component: {fileID: 1202633022}
   m_Layer: 5
   m_Name: Return
   m_TagString: Untagged
@@ -8224,6 +8418,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202633017}
   m_CullTransparentMesh: 1
+--- !u!114 &1202633022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202633017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1227014261
 GameObject:
   m_ObjectHideFlags: 0
@@ -8528,7 +8753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -85.1, y: -60.8}
+  m_AnchoredPosition: {x: -386, y: -149}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1280294800
@@ -8551,17 +8776,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Teleport: READY'
+  m_text: Teleport READY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1dfbcbb073398f9479426221eb4cb350, type: 2}
-  m_sharedMaterial: {fileID: 5696430030436251059, guid: 1dfbcbb073398f9479426221eb4cb350, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
+  m_sharedMaterial: {fileID: -1355317053577365187, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255384
+  m_fontColor: {r: 0.09573352, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8578,15 +8803,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8614,7 +8839,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -207.04468, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9031,8 +9256,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'LIVES: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 67b0b8ebcacac3f4a8ea5720292cdd92, type: 2}
-  m_sharedMaterial: {fileID: 4927339783212759391, guid: 67b0b8ebcacac3f4a8ea5720292cdd92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
+  m_sharedMaterial: {fileID: -1355317053577365187, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9056,15 +9281,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9122,7 +9347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.12, y: -27.26}
+  m_AnchoredPosition: {x: -389, y: -85}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1719887152
@@ -9351,7 +9576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163, y: -27.26}
+  m_AnchoredPosition: {x: 388, y: -61}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1752556645
@@ -9376,8 +9601,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'SCORE: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 67b0b8ebcacac3f4a8ea5720292cdd92, type: 2}
-  m_sharedMaterial: {fileID: 4927339783212759391, guid: 67b0b8ebcacac3f4a8ea5720292cdd92, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
+  m_sharedMaterial: {fileID: -1355317053577365187, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9401,15 +9626,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9437,7 +9662,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.060155198, z: 0, w: 0.015196323}
+  m_margin: {x: 0, y: 0.060155198, z: -264.515, w: 0.015196323}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9617,6 +9842,7 @@ GameObject:
   - component: {fileID: 1972559467}
   - component: {fileID: 1972559466}
   - component: {fileID: 1972559465}
+  - component: {fileID: 1972559468}
   m_Layer: 5
   m_Name: B_Steuerung
   m_TagString: Untagged
@@ -9737,6 +9963,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972559463}
   m_CullTransparentMesh: 1
+--- !u!114 &1972559468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972559463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2029932183
 GameObject:
   m_ObjectHideFlags: 0
@@ -9784,6 +10041,7 @@ GameObject:
   - component: {fileID: 2055998849}
   - component: {fileID: 2055998848}
   - component: {fileID: 2055998847}
+  - component: {fileID: 2055998850}
   m_Layer: 5
   m_Name: B_neuversuchen
   m_TagString: Untagged
@@ -9904,6 +10162,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055998845}
   m_CullTransparentMesh: 1
+--- !u!114 &2055998850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055998845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 667122394
+      Data2: 1276766621
+      Data3: 78638483
+      Data4: 954114788
+    Path: event:/Sfx/UI_Startscreen/Click1
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
