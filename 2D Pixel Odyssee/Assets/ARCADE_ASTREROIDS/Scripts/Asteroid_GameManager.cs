@@ -142,6 +142,15 @@ public class Asteroid_GameManager : MonoBehaviour
     // Method to trigger the win state
     private void WinGame()
     {
+        foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
+        {
+            if (Trigger.Stored_ID == 43)
+            {
+                Trigger.Stored_Lock_State = false;
+                break;
+            }
+        }
+
         spawner.SetActive(false);
         player.winLooseOn = true;
         winCanvas.SetActive(true);  // Show the win screen

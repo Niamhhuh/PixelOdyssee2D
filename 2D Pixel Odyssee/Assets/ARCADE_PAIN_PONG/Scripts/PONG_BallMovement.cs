@@ -471,8 +471,27 @@ public class BallMovement : MonoBehaviour
                     ActivateTriggerScript.GetComponent<SimpleActivateTrigger>().CallTriggerActivation();
                 }
 
+                int i = 0;
+
+                foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Pain
+                {
+                    if (Trigger.Stored_ID == 69 || Trigger.Stored_ID == 63 || Trigger.Stored_ID == 45)
+                    {
+                        i++;
+                        Trigger.Stored_Lock_State = false;
+
+                        if(i >= 3)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+
                 script_AudioManager.StopCurrentTheme(); //Musik anhalten
                 PSWin.start(); //Sound
+
+
                 
             }
             else if(aiScore == 3) {

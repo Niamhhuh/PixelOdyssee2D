@@ -4871,6 +4871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8184c114f7cf6342af840fa4fec78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steuerungOff: 0
 --- !u!114 &1274208924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,7 +6301,6 @@ GameObject:
   - component: {fileID: 1504483135}
   - component: {fileID: 1504483138}
   - component: {fileID: 1504483139}
-  - component: {fileID: 1504483140}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6392,19 +6392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeObject: {fileID: 0}
---- !u!114 &1504483140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504483134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da560986d4407d4e8693376b799b650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 69
 --- !u!1 &1507232875
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,6 +8071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8184c114f7cf6342af840fa4fec78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steuerungOff: 0
 --- !u!1 &1878446209
 GameObject:
   m_ObjectHideFlags: 0
