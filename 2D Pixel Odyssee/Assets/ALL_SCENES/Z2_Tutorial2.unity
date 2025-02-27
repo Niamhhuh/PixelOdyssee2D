@@ -756,8 +756,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue_Triggered: 0
   Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
   Goal_ID: 3
   Add_Goal: 0
+  Complete_Goal_ID: 0
   Complete_Goal: 1
 --- !u!1 &49402291
 GameObject:
@@ -10023,7 +10025,7 @@ GameObject:
   - component: {fileID: 1749132619}
   - component: {fileID: 1749132623}
   m_Layer: 0
-  m_Name: ????
+  m_Name: StreetFighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10069,7 +10071,7 @@ MonoBehaviour:
   Unlock_by_Item: 0
   Item_Key_ID: 0
   ChangeNameonLock: 0
-  LockName: 
+  LockName: ????
   DialogueUnlock: 0
   DialogueKey_ID: 0
   LockSprite: {fileID: 0}
@@ -10108,8 +10110,8 @@ MonoBehaviour:
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
   Traversed: 0
-  LoadScene_ID: 4
-  SpawnPointID: 0
+  LoadScene_ID: 8
+  SpawnPointID: 1
 --- !u!212 &1749132621
 SpriteRenderer:
   m_ObjectHideFlags: 0
