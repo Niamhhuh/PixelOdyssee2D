@@ -1678,6 +1678,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &159842719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,6 +2713,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &229766354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3843,6 +3849,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!222 &437719281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4287,6 +4296,7 @@ GameObject:
   - component: {fileID: 460389316}
   - component: {fileID: 460389315}
   - component: {fileID: 460389319}
+  - component: {fileID: 460389320}
   m_Layer: 0
   m_Name: BeBeWach
   m_TagString: Untagged
@@ -4410,6 +4420,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &460389318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4473,6 +4486,23 @@ MonoBehaviour:
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
   TargetObject: {fileID: 0}
+--- !u!114 &460389320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460389313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 2
+  Add_Goal: 1
+  Complete_Goal: 0
 --- !u!1 &483434424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5404,6 +5434,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &568056972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6473,6 +6506,7 @@ GameObject:
   - component: {fileID: 726444201}
   - component: {fileID: 726444205}
   - component: {fileID: 726444206}
+  - component: {fileID: 726444207}
   m_Layer: 0
   m_Name: Speicherkarte
   m_TagString: Untagged
@@ -6690,6 +6724,23 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 0}
   BeBeDeniedInteraction: {fileID: 0}
+--- !u!114 &726444207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726444200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 1
+  Add_Goal: 0
+  Complete_Goal: 1
 --- !u!1 &742752270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7832,6 +7883,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!222 &969682071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10554,6 +10608,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1448417330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11201,6 +11258,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1548022565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11472,6 +11532,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1548107778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11929,6 +11992,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1594835735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12302,6 +12368,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &1620534621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12398,6 +12467,7 @@ GameObject:
   - component: {fileID: 1623835574}
   - component: {fileID: 1623835575}
   - component: {fileID: 1623835581}
+  - component: {fileID: 1623835582}
   m_Layer: 5
   m_Name: Cutscene Panel1
   m_TagString: Untagged
@@ -12491,6 +12561,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1623835575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12675,6 +12748,23 @@ MonoBehaviour:
   LockTriggered: 0
   DialogueTriggered: 0
   TriggerTutorialPanel: 0
+--- !u!114 &1623835582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623835572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 1
+  Add_Goal: 1
+  Complete_Goal: 0
 --- !u!1 &1626378687
 GameObject:
   m_ObjectHideFlags: 0

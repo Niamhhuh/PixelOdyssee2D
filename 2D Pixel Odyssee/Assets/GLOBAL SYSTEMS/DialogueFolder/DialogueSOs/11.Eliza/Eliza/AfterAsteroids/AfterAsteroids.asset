@@ -14,22 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
-  KeyOption1: 0
-  KeyOption2: 0
-  KeyOption3: 0
+  UnlockableOptions: 1
+  KeyOption1: 511
+  KeyOption2: 512
+  KeyOption3: 513
   KeyOption4: 0
-  CallTrigger: 0
-  actors: 0b000000010000000b000000040000000b00000007000000
+  CallTrigger: 1
+  actors: 0b000000010000000b00000007000000
   randomActorName: ELIZA
   randomActorPortait: {fileID: 21300000, guid: 85a5602d91dc6264b901671c7b565737, type: 3}
   dialogue:
   - "Wor\xFCber m\xF6chten Sie sprechen?"
-  - "Wir haben den Asteroids Highscore \xFCbertroffen. "
-  - "Hervorragend! Dadurch kann ich die T\xFCren zur Arcade 2 entriegeln."
-  - Was sollen wir dort machen?
-  - "H\xFCpfen Sie hinein und spielen Sie Frogger einmal durch. Achten Sie auf Autos
-    und Wasser! Wenn Sie Hilfe brauchen, stehe ich immer zu Ihren Diensten.\r\n"
+  - Wir brauchen Hilfe in der Arcade 2.
+  - Nennen Sie mir Ihr Problem.
   optionText:
   - "Der Kater l\xE4sst uns nicht an die Arcade Chips."
   - "Der Automat nimmt keine M\xFCnzen an."

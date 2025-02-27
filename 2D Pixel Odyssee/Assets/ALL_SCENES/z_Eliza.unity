@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 617044323}
   - component: {fileID: 617044326}
   - component: {fileID: 617044327}
+  - component: {fileID: 617044328}
   m_Layer: 5
   m_Name: RETURN
   m_TagString: Untagged
@@ -780,6 +781,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -804,6 +807,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -816,6 +820,10 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 0
+  GhostTrigger: 0
+  isTrigger_Portal: 1
+  EventScene_ID: 1
+  SpawnPointID: 1
 --- !u!114 &617044327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +837,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadScene_ID: 1
+--- !u!114 &617044328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617044322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger_ID: 7
+  CharacterBound: 0
+  Rosie: 0
+  Bebe: 0
+  InteractionTriggered: 1
+  LockTriggered: 0
+  DialogueTriggered: 0
+  TriggerTutorialPanel: 0
 --- !u!1 &697473313
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,9 +940,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 617044327}
-        m_TargetAssemblyTypeName: GenericSceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 617044326}
+        m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
+        m_MethodName: TriggerInteract
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1277,6 +1305,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1301,6 +1331,7 @@ MonoBehaviour:
   SeqUReference: {fileID: 0}
   UnSReference: {fileID: 0}
   TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
   DialogueInteractionScript: {fileID: 0}
   IsReward: 0
   LockedDialogueScript: {fileID: 0}
@@ -1313,6 +1344,10 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Trigger_Passed: 0
   ForceDialogue: 1
+  GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &829623748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,10 +1380,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Active_Unlock: 0
   OtherUnlockList_ID: 6
-  OtherUnlockObject_ID: 7
+  OtherUnlockObject_ID: 
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
 --- !u!1 &904531303
 GameObject:
   m_ObjectHideFlags: 0

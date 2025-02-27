@@ -37,11 +37,13 @@ public class LockedDialogue : MonoBehaviour
         OriginalRosie = ObjectDialogue.conversation[0];
         OriginalBebe = ObjectDialogue.conversation[1];
 
-        if(ObjectDialogue.conversation.Length > 2)
+        if (ObjectDialogue.conversation.Length > 2)
         {
             OriginalRosieDenied = ObjectDialogue.conversation[2];
+        }
+        if (ObjectDialogue.conversation.Length > 3)
+        {
             OriginalBebeDenied = ObjectDialogue.conversation[3];
-
         }
 
     } 

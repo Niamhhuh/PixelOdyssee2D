@@ -97,6 +97,16 @@ public class AdvancedDialogueManager : MonoBehaviour
             //Cancel dialogue if there are no lines of dialogue remaining
             if (currentConversation != null && stepNum >= currentConversation.actors.Length)
             {
+                if (currentConversation.CallTrigger)
+                {
+                    CurrentNPC.DialogueHolder.GetComponent<ObjectScript>().Dialogue_Trigger_EditGoal();
+                }
+
+                if (currentConversation.Dialogue_Goal)
+                {
+                    currentConversation.ControlGoalonDialogue();
+                }
+                
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 if (CurrentNPC.DialogueHolder.GetComponent<ActivateTrigger>() != null && currentConversation.CallTrigger) 
@@ -447,6 +457,7 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     public void TurnOffDialogue()
     {
+        
         DialogueID_found = false;
 
         if (typeWriterRoutine != null)

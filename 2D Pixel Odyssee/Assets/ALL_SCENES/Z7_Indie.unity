@@ -518,6 +518,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &319775661
 Transform:
   m_ObjectHideFlags: 0
@@ -2649,7 +2652,6 @@ GameObject:
   - component: {fileID: 948697771}
   - component: {fileID: 948697774}
   - component: {fileID: 948697773}
-  - component: {fileID: 948697775}
   - component: {fileID: 948697777}
   - component: {fileID: 948697776}
   - component: {fileID: 948697778}
@@ -2744,7 +2746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 71
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -2836,26 +2838,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.28, y: 0.91}
   m_EdgeRadius: 0
---- !u!114 &948697775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948697770}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 61
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 1
-  LockTriggered: 0
-  DialogueTriggered: 0
-  TriggerTutorialPanel: 0
 --- !u!114 &948697776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5871,6 +5853,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1723198418
 Transform:
   m_ObjectHideFlags: 0

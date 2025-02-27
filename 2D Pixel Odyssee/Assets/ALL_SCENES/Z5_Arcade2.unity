@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 135094148}
   - component: {fileID: 135094151}
   - component: {fileID: 135094152}
+  - component: {fileID: 135094153}
   m_Layer: 0
   m_Name: Arcade Chip
   m_TagString: Untagged
@@ -762,6 +763,19 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &135094153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135094147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c68da7870b0c7848af7539d8aa1317b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_ID: 513
 --- !u!1 &147319509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,6 +3625,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &925729016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5242,6 +5259,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1209335756
 Transform:
   m_ObjectHideFlags: 0
@@ -6125,6 +6145,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &1605402314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7317,6 +7340,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1952457114
 Transform:
   m_ObjectHideFlags: 0
@@ -7734,6 +7760,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1975894202
 Transform:
   m_ObjectHideFlags: 0

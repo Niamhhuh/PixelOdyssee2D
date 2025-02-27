@@ -677,7 +677,7 @@ Transform:
   m_GameObject: {fileID: 98755249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.8445, y: 0.1276, z: 0}
+  m_LocalPosition: {x: 5.8445, y: 0.1276, z: -1}
   m_LocalScale: {x: 0.9110779, y: 0.8520652, z: 0.89614034}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -995,147 +995,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &198521670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198521673}
-  - component: {fileID: 198521672}
-  - component: {fileID: 198521671}
-  m_Layer: 0
-  m_Name: ACTIVATE ARCADE DOOR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &198521671
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198521670}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 10.20248}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.3395319}
-  m_EdgeRadius: 0
---- !u!114 &198521672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198521670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 46
-  AlreadyTalked: 0
-  Lock_State: 1
-  ForcedInteraction: 0
-  TriggeronUnlock: 0
-  AlwaysDenyInteraction: 0
-  Unlock_by_Item: 0
-  Item_Key_ID: 0
-  ChangeNameonLock: 0
-  LockName: 
-  DialogueUnlock: 0
-  DialogueKey_ID: 0
-  LockSprite: {fileID: 0}
-  LockHighlightSprite: {fileID: 0}
-  ObjectSprite: {fileID: 0}
-  HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 0
-  CannotTalk: 0
-  NewObject: 1
-  IsFullTrigger: 0
-  HighlightonHover: {fileID: 0}
-  CoreObject: {fileID: 0}
-  PointerScript: {fileID: 0}
-  RequestInteract: 0
-  AlreadyActive: 0
-  isBackground: 0
-  InteractionController: {fileID: 0}
-  ObjReference: {fileID: 0}
-  UnlockMethod: 0
-  CanSequenceUnlock: 0
-  ObjectList_ID: 0
-  ObjectIndex: 0
-  DMReference: {fileID: 0}
-  SeqUReference: {fileID: 0}
-  UnSReference: {fileID: 0}
-  TriggerScript: {fileID: 0}
-  InteractTransformDialogue: {fileID: 0}
-  DialogueInteractionScript: {fileID: 0}
-  IsReward: 0
-  LockedDialogueScript: {fileID: 0}
-  GrantReward_Script: {fileID: 0}
-  AddCodeScript: {fileID: 0}
-  ColliderScript: {fileID: 0}
-  ObjectComment: {fileID: 0}
-  TransformDialogueScript: {fileID: 0}
-  TriggerGoal: 0
-  ControlGoalScript: {fileID: 0}
-  Trigger_Passed: 0
-  ForceDialogue: 0
-  GhostTrigger: 0
---- !u!4 &198521673
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198521670}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.550001, y: -2.28, z: 0}
-  m_LocalScale: {x: 0.9090254, y: 0.8749882, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1786404008}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200981463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 43
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -1371,8 +1230,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
-  DialogueUnlock: 0
-  DialogueKey_ID: 0
+  DialogueUnlock: 1
+  DialogueKey_ID: 47
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -1517,12 +1376,12 @@ Transform:
   m_GameObject: {fileID: 209642743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2991638, y: 2.7200363, z: -1}
-  m_LocalScale: {x: 1.650119, y: 1.7143087, z: 1}
+  m_LocalPosition: {x: 22.64, y: 0.099999666, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.4999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1191534490}
-  m_Father: {fileID: 1631487881}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223752881
 GameObject:
@@ -1935,6 +1794,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &381635339
 Transform:
   m_ObjectHideFlags: 0
@@ -2159,6 +2021,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &459076686
 Transform:
   m_ObjectHideFlags: 0
@@ -2793,6 +2658,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &606507536
 Transform:
   m_ObjectHideFlags: 0
@@ -2839,7 +2707,7 @@ Transform:
   m_GameObject: {fileID: 699980340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.177217, y: 2.7515793, z: 0}
+  m_LocalPosition: {x: -16.177217, y: 2.7515793, z: -1.6}
   m_LocalScale: {x: 1.0022602, y: 0.9738073, z: 0.89614}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2859,8 +2727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
-  - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
+  - {fileID: 11400000, guid: fdf363508da3d3d40b4972ad608ccaee, type: 2}
+  - {fileID: 11400000, guid: fdf363508da3d3d40b4972ad608ccaee, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3035,17 +2903,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 699980340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
+  m_Script: {fileID: 11500000, guid: 969295ae5a7204944a63a2da4c75c941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trigger_ID: 47
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 0
-  LockTriggered: 0
-  DialogueTriggered: 1
-  TriggerTutorialPanel: 0
+  StoredObjectDialogue: {fileID: 0}
+  StepArray:
+  - ConditoinArray: 00000000
+  - ConditoinArray: 2f000000
+  TransformDialogue:
+  - {fileID: 11400000, guid: fdf363508da3d3d40b4972ad608ccaee, type: 2}
+  - {fileID: 11400000, guid: fdf363508da3d3d40b4972ad608ccaee, type: 2}
+  - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
+  - {fileID: 11400000, guid: 475c74afee6afb747bc10b822239bbfc, type: 2}
 --- !u!1 &702330224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +2945,7 @@ Transform:
   m_GameObject: {fileID: 702330224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.177217, y: 2.751579, z: 0}
+  m_LocalPosition: {x: -16.177217, y: 2.751579, z: -1.8}
   m_LocalScale: {x: 1.0022602, y: 0.9738073, z: 0.89614}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3619,7 +3488,7 @@ GameObject:
   - component: {fileID: 1199306745}
   - component: {fileID: 1199306744}
   - component: {fileID: 1199306743}
-  - component: {fileID: 1199306747}
+  - component: {fileID: 1199306748}
   m_Layer: 0
   m_Name: Eliza
   m_TagString: Untagged
@@ -3636,7 +3505,7 @@ Transform:
   m_GameObject: {fileID: 1199306741}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.177217, y: 2.7515795, z: 0}
+  m_LocalPosition: {x: -16.177217, y: 2.7515795, z: -1.4}
   m_LocalScale: {x: 1.002258, y: 0.97380185, z: 0.89614034}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3656,8 +3525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
-  - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
+  - {fileID: 11400000, guid: 8dabdcab04abf6341b714c0d66cdde23, type: 2}
+  - {fileID: 11400000, guid: 8dabdcab04abf6341b714c0d66cdde23, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3823,7 +3692,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1199306747
+--- !u!114 &1199306748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3832,17 +3701,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199306741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
+  m_Script: {fileID: 11500000, guid: 969295ae5a7204944a63a2da4c75c941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trigger_ID: 46
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 0
-  LockTriggered: 0
-  DialogueTriggered: 1
-  TriggerTutorialPanel: 0
+  StoredObjectDialogue: {fileID: 0}
+  StepArray:
+  - ConditoinArray: 00000000
+  - ConditoinArray: 2e000000
+  TransformDialogue:
+  - {fileID: 11400000, guid: 8dabdcab04abf6341b714c0d66cdde23, type: 2}
+  - {fileID: 11400000, guid: 8dabdcab04abf6341b714c0d66cdde23, type: 2}
+  - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
+  - {fileID: 11400000, guid: 1784bcd21331fdf42898f54ccc4ae065, type: 2}
 --- !u!1 &1242979645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4796,147 +4666,6 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
---- !u!1 &1631487878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1631487881}
-  - component: {fileID: 1631487880}
-  - component: {fileID: 1631487879}
-  m_Layer: 0
-  m_Name: ACTIVATE PAINDOOR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1631487879
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631487878}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 10.20248}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.3395319}
-  m_EdgeRadius: 0
---- !u!114 &1631487880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631487878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 47
-  AlreadyTalked: 0
-  Lock_State: 1
-  ForcedInteraction: 0
-  TriggeronUnlock: 0
-  AlwaysDenyInteraction: 0
-  Unlock_by_Item: 0
-  Item_Key_ID: 0
-  ChangeNameonLock: 0
-  LockName: 
-  DialogueUnlock: 0
-  DialogueKey_ID: 0
-  LockSprite: {fileID: 0}
-  LockHighlightSprite: {fileID: 0}
-  ObjectSprite: {fileID: 0}
-  HighlightObjectSprite: {fileID: 0}
-  CannotInteract: 0
-  CannotTalk: 0
-  NewObject: 1
-  IsFullTrigger: 0
-  HighlightonHover: {fileID: 0}
-  CoreObject: {fileID: 0}
-  PointerScript: {fileID: 0}
-  RequestInteract: 0
-  AlreadyActive: 0
-  isBackground: 0
-  InteractionController: {fileID: 0}
-  ObjReference: {fileID: 0}
-  UnlockMethod: 0
-  CanSequenceUnlock: 0
-  ObjectList_ID: 0
-  ObjectIndex: 0
-  DMReference: {fileID: 0}
-  SeqUReference: {fileID: 0}
-  UnSReference: {fileID: 0}
-  TriggerScript: {fileID: 0}
-  InteractTransformDialogue: {fileID: 0}
-  DialogueInteractionScript: {fileID: 0}
-  IsReward: 0
-  LockedDialogueScript: {fileID: 0}
-  GrantReward_Script: {fileID: 0}
-  AddCodeScript: {fileID: 0}
-  ColliderScript: {fileID: 0}
-  ObjectComment: {fileID: 0}
-  TransformDialogueScript: {fileID: 0}
-  TriggerGoal: 0
-  ControlGoalScript: {fileID: 0}
-  Trigger_Passed: 0
-  ForceDialogue: 0
-  GhostTrigger: 0
---- !u!4 &1631487881
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631487878}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.550001, y: -2.28, z: 0}
-  m_LocalScale: {x: 0.9090254, y: 0.8749882, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 209642748}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1703124294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,6 +4791,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1703124297
 Transform:
   m_ObjectHideFlags: 0
@@ -5195,7 +4927,7 @@ Transform:
   m_GameObject: {fileID: 1773517809}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.177217, y: 2.751579, z: 0}
+  m_LocalPosition: {x: -16.177217, y: 2.751579, z: -2}
   m_LocalScale: {x: 1.0022602, y: 0.9738073, z: 0.89614}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5438,7 +5170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 42
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -5446,8 +5178,8 @@ MonoBehaviour:
   Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
-  DialogueUnlock: 0
-  DialogueKey_ID: 0
+  DialogueUnlock: 1
+  DialogueKey_ID: 46
   LockSprite: {fileID: 0}
   LockHighlightSprite: {fileID: 0}
   ObjectSprite: {fileID: 0}
@@ -5592,12 +5324,12 @@ Transform:
   m_GameObject: {fileID: 1786404003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0692222, y: 2.7200363, z: -1}
-  m_LocalScale: {x: 1.650119, y: 1.7143087, z: 1}
+  m_LocalPosition: {x: 17.76, y: 0.099999666, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.4999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1598163996}
-  m_Father: {fileID: 198521673}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1786404009
 MonoBehaviour:
@@ -5762,6 +5494,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1875732426
 Transform:
   m_ObjectHideFlags: 0
@@ -6061,6 +5796,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &1977204933
 Transform:
   m_ObjectHideFlags: 0
@@ -6412,6 +6150,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!4 &2132950603
 Transform:
   m_ObjectHideFlags: 0
@@ -6732,6 +6473,6 @@ SceneRoots:
   - {fileID: 606507536}
   - {fileID: 1977204933}
   - {fileID: 776410912}
-  - {fileID: 198521673}
-  - {fileID: 1631487881}
+  - {fileID: 1786404008}
+  - {fileID: 209642748}
   - {fileID: 381635339}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Triggerable : ObjectScript
 {
@@ -10,6 +11,10 @@ public class Triggerable : ObjectScript
     public bool Trigger_Passed;			                                                //relevant to control Item Spawn
     public bool ForceDialogue;			                                            //relevant to Trigger Dialogue on Interact
     public bool GhostTrigger;                                                                                                                                                                     //HERE
+
+    public bool isTrigger_Portal;
+    public int EventScene_ID = 0;                                                       //Set Target Scene
+    public int SpawnPointID;                                                            //Set Spawnpoint
 
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -121,6 +126,15 @@ public class Triggerable : ObjectScript
     //Object Specific Functionality
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    private void SwitchScene()                                                                              //Pick up the Item by adding it to the Draggable List.
+    {
+        if (EventScene_ID >= 0 && EventScene_ID < SceneManager.sceneCountInBuildSettings)
+        {
+            DataManager.SpawnID = SpawnPointID;
+            DataManager.LastRoom = EventScene_ID;
+            SceneManager.LoadScene(EventScene_ID);
+        }
+    }
 
     public void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
     {
@@ -147,10 +161,17 @@ public class Triggerable : ObjectScript
                 DMReference.DialogueManager.dialogueCanvas.SetActive(true);
             }
             */
+            print("Called");
         }
-        else 
+        if (isTrigger_Portal)
+        {
+            SwitchScene();
+        }
+
+        if (!ForceDialogue && !isTrigger_Portal)
         {
             RemoveTrigger();
         }
+
     }
 }

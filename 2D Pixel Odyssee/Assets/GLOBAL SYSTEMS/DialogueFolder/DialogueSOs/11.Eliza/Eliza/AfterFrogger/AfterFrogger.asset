@@ -14,23 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
-  KeyOption1: 0
-  KeyOption2: 0
+  UnlockableOptions: 1
+  KeyOption1: 711
+  KeyOption2: 712
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 0b000000050000000b00000007000000
+  actors: 0b000000040000000b00000007000000
   randomActorName: ELIZA
   randomActorPortait: {fileID: 21300000, guid: 85a5602d91dc6264b901671c7b565737, type: 3}
   dialogue:
   - Hallo, wie geht es Ihnen heute?
-  - Gut! Wir haben endlich Frogger durchgespielt.
-  - "Das verdient einen Applaus. Leider scheint keiner von uns Maschinen die Gunst
-    gew\xE4hrt zu sein, H\xE4nde zu besitzen. Eine Hand werden Sie jedoch brauchen,
-    um das n\xE4chste Spiel zu schaffen. Begeben Sie sich zur Painstation und spielen
-    Sie bitte mit Vorsicht und Verantwortung. Wenn Sie Hilfe brauchen, stehe ich
-    immer zu Ihren Diensten."
+  - Wir kommen bei der PainStation nicht weiter...
+  - Schildern Sie mir Ihr Problem.
   optionText:
   - Der Strom ist aus.
   - "Wir kriegen den Sicherungskasten nicht ges\xE4ubert."

@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f988f52c7d5c2794381e4507363b59eb, type: 3}
-  m_Name: BebeSicherungskastenDreckig
+  m_Name: TRIGGERAfterAsteroids
   m_EditorClassIdentifier: 
   ProgressDialogue: 1
-  DialogueID: 712
+  DialogueID: 46
   UnlockableOptions: 0
   KeyOption1: 0
   KeyOption2: 0
   KeyOption3: 0
   KeyOption4: 0
-  CallTrigger: 0
-  actors: 09000000
-  randomActorName: 
-  randomActorPortait: {fileID: 0}
+  CallTrigger: 1
+  actors: 0b000000010000000b000000040000000b000000
+  randomActorName: ELIZA
+  randomActorPortait: {fileID: 21300000, guid: 85a5602d91dc6264b901671c7b565737, type: 3}
   dialogue:
-  - "Warum ist diese Oberfl\xE4che mit... Unregelm\xE4\xDFigkeiten bedeckt? Ist das
-    ein Upgrade?"
+  - "Wor\xFCber m\xF6chten Sie sprechen?"
+  - "Wir haben den Asteroids Highscore \xFCbertroffen. "
+  - "Hervorragend! Dadurch kann ich die T\xFCren zur Arcade 2 entriegeln."
+  - Was sollen wir dort machen?
+  - "H\xFCpfen Sie hinein und spielen Sie Frogger einmal durch. Achten Sie auf Autos
+    und Wasser! Wenn Sie Hilfe brauchen, stehe ich immer zu Ihren Diensten.\r\n"
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

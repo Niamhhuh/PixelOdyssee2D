@@ -16,6 +16,12 @@ public class AdvancedDialogueSO : ScriptableObject
 
     public bool CallTrigger;
 
+    public bool Dialogue_Goal;
+    public bool DialogueAdd_Goal;
+    public bool Complete_Goal;
+    public int Goal_ID;
+
+
     public DialogueActors[] actors;
 
     [Tooltip("Only needed if Random is selected as the actor name")]
@@ -51,4 +57,28 @@ public class AdvancedDialogueSO : ScriptableObject
         }
     }
 
+    public void ControlGoalonDialogue()
+    {
+        if (DialogueAdd_Goal)
+        {
+            DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = Goal_ID, Stored_Completed = false});                                                          //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
+        }
+
+        if (Complete_Goal)
+        {
+            Complete_The_Goal();
+        }
+    }
+
+    private void Complete_The_Goal()                                                            //Search through the Goal List to set the correct Goal to Completed
+    {
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if (Goal.Stored_ID == Goal_ID)                                                      //Compare List_Goal_ID with TargetGoal_ID
+            {
+                Goal.Stored_Completed = true;                                                   //On Match, set Stored Goal as completed
+                break;
+            }
+        }
+    }
 }

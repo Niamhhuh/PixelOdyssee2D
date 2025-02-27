@@ -257,6 +257,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &6865542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -489,6 +492,7 @@ GameObject:
   - component: {fileID: 43062028}
   - component: {fileID: 43062027}
   - component: {fileID: 43062026}
+  - component: {fileID: 43062034}
   m_Layer: 0
   m_Name: HangOn
   m_TagString: Untagged
@@ -738,6 +742,23 @@ Transform:
   - {fileID: 619788528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43062034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43062025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  Goal_ID: 3
+  Add_Goal: 0
+  Complete_Goal: 1
 --- !u!1 &49402291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1161,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &57847915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1426,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 1
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!61 &75412645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3781,6 +3808,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &471593905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5613,6 +5643,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &978511629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8041,6 +8074,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1358256491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9276,6 +9312,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1637344979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10425,6 +10464,9 @@ MonoBehaviour:
   Trigger_Passed: 0
   ForceDialogue: 0
   GhostTrigger: 0
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!114 &1765036444
 MonoBehaviour:
   m_ObjectHideFlags: 0

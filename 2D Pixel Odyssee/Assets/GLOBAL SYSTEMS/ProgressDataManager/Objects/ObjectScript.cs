@@ -562,7 +562,6 @@ public class ObjectScript : MonoBehaviour
             FetchAllData();
             AlreadyTalked = true;
 
-            Dialogue_Trigger_EditGoal();
 
             UpdateAllData();
         }
