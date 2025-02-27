@@ -234,6 +234,21 @@ public class GameManager_Street : MonoBehaviour
         startPlaying = false;
         theBS.hasStarted = false;
 
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
+
+        foreach (DataManager.TriggerableObj Trigger in DataManager.Triggerable_List)            //Activate New Eliza after winning Frogger
+        {
+            if (Trigger.Stored_ID == 84 || Trigger.Stored_ID == 85 || Trigger.Stored_ID == 86)
+            {
+                Trigger.Stored_Lock_State = false;
+                break;
+            }
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------
+
         SFWin.start(); //Sound
 
         StopAllCoroutines();
