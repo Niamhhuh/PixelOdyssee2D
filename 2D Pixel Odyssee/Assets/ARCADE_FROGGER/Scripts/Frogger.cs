@@ -14,65 +14,47 @@ public class Frogger : MonoBehaviour
     public Vector3 spawnPosition;
     private float farthestRow;
     public bool noMove;
+    public bool died;
     SoundManager soundManager;
 
     private EventInstance FrJump; //ganz viele Sounds kommen jetzt hier her
 
-    private void Awake()
-    {
+//___________________________________________________________________________________________________
+//------------------------Standard functions---------------------------------------------------------
+    private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
-        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
         noMove = false;
+        died = false;
     }
 
-    private void Start()
-    {
+    private void Start() {
         FrJump = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.FrJump); //Sound
     }
 
-    public float scrollSpeed = 3.0f;
-    private void Update()
-    {
+    private void Update() {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f , 0f, 0f);
             Move(Vector3.up);
-            soundManager.PlaySfx(soundManager.jump);
         }
 
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             Move(Vector3.down);
-            soundManager.PlaySfx(soundManager.jump);
         } 
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             Move(Vector3.left);
-            soundManager.PlaySfx(soundManager.jump);
         } 
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && noMove == false) {
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
-            soundManager.PlaySfx(soundManager.jump);
         }
-        //else if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            //transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-            //Move(Vector3.right);
-        }
-        //else if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            //transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-            //Move(Vector3.left);
-        }
-        //float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        //Vector3 newPosition = transform.position + Vector3.up * scrollInput;
-        //transform.position = newPosition;
     }
 
-    private void Move(Vector3 direction)
-    {
-
+//___________________________________________________________________________________________________
+//------------------------Movement-------------------------------------------------------------------
+    private void Move(Vector3 direction) {
         Vector3 destination = transform.position + direction;
 
         Collider2D barrier = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
@@ -82,33 +64,30 @@ public class Frogger : MonoBehaviour
         if (barrier != null) {
             return;
         }
-        if (platform != null)
-        {
-            transform.SetParent(platform.transform);}
-            else
-            {
+
+        if (platform != null) {
+        transform.SetParent(platform.transform);
+        }
+        else {
             transform.SetParent(null);
-            }
-        if (obstacle != null && platform == null)
-        {
+        }
+
+        if (obstacle != null && platform == null) {
             
             transform.position = destination;
             Death();
         }
-        else
-        {
-            if (destination.y > farthestRow)
-            {
+        else {
+            if (destination.y > farthestRow) {
                 farthestRow = destination.y;
-                FindAnyObjectByType<GameManager1>().AdvanceRow();
             }
-
             StartCoroutine(Leap(destination));
         }
     }
 
-    private IEnumerator Leap(Vector3 destination)
-    {
+
+    private IEnumerator Leap(Vector3 destination) {
+        Debug.Log(died);
         FrJump.start(); //sound
 
         Vector3 StartPosition = transform.position;
@@ -118,8 +97,7 @@ public class Frogger : MonoBehaviour
 
         spriteRenderer.sprite = leapSprite;
 
-        while (elapsed < duration)
-        {
+        while (elapsed < duration) {
             float t = elapsed / duration;
             transform.position = Vector3.Lerp(StartPosition, destination, t);
             elapsed += Time.deltaTime;
@@ -132,21 +110,29 @@ public class Frogger : MonoBehaviour
         spriteRenderer.sprite = idleSprite;
     }
 
-    public void Death()
-    {
-        StopAllCoroutines();    
+//___________________________________________________________________________________________________
+//------------------------Death stuff----------------------------------------------------------------
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (enabled && other.gameObject.layer == LayerMask.NameToLayer("Obstacle") && transform.parent == null) {
+            Death();    
+        }
+    }
+    
+    public void Death() {
+        if (FindAnyObjectByType<GameManager1>().frogger.gameObject.activeInHierarchy == true) {
+            died = true;
+            StopAllCoroutines();    
 
-        transform.rotation = Quaternion.identity;
-        spriteRenderer.sprite = deadSprite;
-        enabled = false;
+            transform.rotation = Quaternion.identity;
+            spriteRenderer.sprite = deadSprite;
+            enabled = false;
         
-        //Invoke(nameof(Respawn), 1f);
-        
-        FindAnyObjectByType<GameManager1>().Died();
+            FindAnyObjectByType<GameManager1>().Died();
+        }
     }
 
-    public void Respawn()
-    {
+    public void Respawn() {
+        died = false;
         StopAllCoroutines();
 
         transform.SetParent(null);
@@ -156,16 +142,5 @@ public class Frogger : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = spawnPosition;
         enabled = true; 
-
-
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (enabled && other.gameObject.layer == LayerMask.NameToLayer("Obstacle") && transform.parent == null)
-        {
-            Death();    
-        }
     }
 }
