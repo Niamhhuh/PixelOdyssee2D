@@ -48,6 +48,12 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     private bool DialogueID_found = false;
 
+    private GameObject FillPanel;
+
+    private void Awake()
+    {
+        FillPanel = GameObject.FindGameObjectWithTag("FillSkipPanel");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +163,8 @@ public class AdvancedDialogueManager : MonoBehaviour
 
     void PlayDialogue()
     {
+        if(FillPanel == null && GameObject.FindGameObjectWithTag("FillSkipPanel") != null) { FillPanel = GameObject.FindGameObjectWithTag("FillSkipPanel"); }
+        if (FillPanel != null) { FillPanel.SetActive(false); }
         Debug.Assert(currentConversation.actors.Length > stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
         
         //If it's a random NPC
@@ -180,11 +188,15 @@ public class AdvancedDialogueManager : MonoBehaviour
             for (int i = 0; i < optionButtonText.Length; i++)
                 optionButton[i].SetActive(false);
 
+            if (FillPanel == null) { FillPanel = GameObject.FindGameObjectWithTag("FillSkipPanel"); }
+            if (FillPanel != null) { FillPanel.SetActive(true); }
             ContinueButton.SetActive(false);                                                            //Deactivate the Continue Dialogue Button when an Option Branch is triggered
 
+            //
+
+
+
             InBranch = true;
-            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInput());            //Enable Inpput Again
-            DMReference.MoveScript.StartCoroutine(DMReference.MoveScript.CallEnableInteract());         //Enable Interact Again                                                                               //Thist looks weird look out for it latr
             
             for (int i = 0;i < currentConversation.optionText.Length; i++)
             {

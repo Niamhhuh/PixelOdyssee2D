@@ -144,6 +144,9 @@ public class SaveSystem : MonoBehaviour
 
         // ProgressDialogue List
         DStorage.ProgressDialogueList_State = new List<int>(DataManager.ProgressDialogueList);
+
+        DStorage.CallGlove_State = GloveScript.CallGlove;
+        DStorage.GloveProgress_State = GloveScript.GloveProgress;
     }
 
 
@@ -213,5 +216,8 @@ public class SaveSystem : MonoBehaviour
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //    public static List<int> ProgressDialogueList = new List<int>();
         DataManager.ProgressDialogueList = new List<int>(DStorage.ProgressDialogueList_State);
+
+        GloveScript.CallGlove = DStorage.CallGlove_State;
+        GloveScript.GloveProgress = DStorage.GloveProgress_State;
     }
 }

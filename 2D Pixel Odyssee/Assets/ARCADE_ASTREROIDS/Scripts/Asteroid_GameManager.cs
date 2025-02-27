@@ -165,6 +165,9 @@ public class Asteroid_GameManager : MonoBehaviour
 
         DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 7, Stored_Completed = false });      //add Goal
 
+        GloveScript.CallGlove = true;
+        GloveScript.GloveProgress = 1;
+
         //--------------------------------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------------------------------
 

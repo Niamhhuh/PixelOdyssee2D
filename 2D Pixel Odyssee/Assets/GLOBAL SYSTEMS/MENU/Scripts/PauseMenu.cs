@@ -60,16 +60,15 @@ public class PauseMenu : MonoBehaviour
             c_neuesspiel.SetActive(false); 
         } 
 
-        StartCoroutine(Class_Fades.instance.StartFadeOut());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
-        
         if (GameObject.FindGameObjectWithTag("Pointer") != null)
         {
             PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
 
+        StartCoroutine(Class_Fades.instance.StartFadeOut());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
 
-        
+
     }
 
     void Update() {  
@@ -113,6 +112,7 @@ public class PauseMenu : MonoBehaviour
 
     public void StartGame() {                                           //STARTSCREEN
         StartCoroutine(StartGameCoroutine());
+
     }
 
     private IEnumerator StartGameCoroutine() {

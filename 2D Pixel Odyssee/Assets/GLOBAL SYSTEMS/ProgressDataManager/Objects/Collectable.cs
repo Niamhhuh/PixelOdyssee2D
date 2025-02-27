@@ -19,6 +19,9 @@ public class Collectable : ObjectScript
 
     private EventInstance ObjectLocked;  //Sound
 
+    public bool TriggerGlove;
+    public int TriggerGloveProgress;
+
     //Object Data Management
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -135,6 +138,14 @@ public class Collectable : ObjectScript
             Collected = true;
             UpdateData();
             DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
+
+            if (TriggerGlove)
+            {
+                GloveScript.CallGlove = true;
+                GloveScript.GloveProgress = TriggerGloveProgress;
+                DMReference.GloveConnection.ActivateGlove();
+            }
+
             RemoveItem();
         }
     }

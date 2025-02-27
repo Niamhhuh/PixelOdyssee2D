@@ -257,7 +257,7 @@ public class UiToMouse : MonoBehaviour
     public IEnumerator CallEnableInput()
     {
         //print("hi");
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.2f);
         EnableInput();
     }
 
@@ -270,7 +270,7 @@ public class UiToMouse : MonoBehaviour
     public IEnumerator CallEnableInteract()
     {
         //print("hi");
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.2f);
         EnableInteract();
     }
 

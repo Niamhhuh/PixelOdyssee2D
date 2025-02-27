@@ -27,6 +27,10 @@ namespace Fades                                     // write "using Fades;" atop
         private float fadeDuration = 1f;
         public static Class_Fades instance;
 
+        private UiToMouse MoveScript;                                                                      //CONNECT MOVE SCRIPT
+        private GloveScript GloveConnect;
+
+
         //-----------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------Public functions-------------------------------------------------------------------------
 
@@ -39,6 +43,16 @@ namespace Fades                                     // write "using Fades;" atop
             else {
                 Debug.LogWarning("Fades already there - deleting other...");
                 Destroy(gameObject);
+            }
+
+            if (GameObject.FindGameObjectWithTag("Pointer") != null)
+            {
+                MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();             //CONNECT MOVE SCRIPT
+            }
+            
+            if(GameObject.FindGameObjectWithTag("GloveOfPower")!= null)
+            {
+                GloveConnect = GameObject.FindGameObjectWithTag("GloveOfPower").GetComponent<GloveScript>();
             }
         }
         
@@ -79,6 +93,13 @@ namespace Fades                                     // write "using Fades;" atop
         //-------------------------------------------Enumerator Stuff------------------------------------------------------------------------
  
         private IEnumerator FadeOutCoroutine() {                        //fade out = black screen goes clear
+
+            if (MoveScript != null)
+            {
+                MoveScript.InCatScene = true;
+                MoveScript.DisableInput();
+                MoveScript.DisableInteract();
+            }
             yield return new WaitForSeconds(0.5f);                      //for the fade out, we wait a bit in the beginning before it starts
             float elapsedTime = 0f;
 
@@ -90,14 +111,41 @@ namespace Fades                                     // write "using Fades;" atop
                 yield return null; 
             }
 
+            if (MoveScript != null)
+            {
+                MoveScript.InCatScene = false;
+                MoveScript.Activate_CallEnableInput();
+                MoveScript.Activate_CallEnableInteract();
+            }
+
+            if(GloveConnect == null && GameObject.FindGameObjectWithTag("GloveOfPower") != null)
+            {
+                GloveConnect = GameObject.FindGameObjectWithTag("GloveOfPower").GetComponent<GloveScript>();
+            }
+            if (GloveConnect != null && GloveScript.CallGlove)
+            {
+                MoveScript.DisableInput();
+                MoveScript.DisableInteract();
+                GloveScript.CallGlove = false;
+                GloveConnect.ActivateGlove();
+            }
+
             fadeImage.color = new Color(0, 0, 0, 0);
             fadeObject.SetActive(false);
+
         }
         //-------------------------------------------
 
         private IEnumerator FadeInCoroutine() {                         //fade in = screen goes black
             fadeObject.SetActive(true);
             float elapsedTime = 0f;
+
+            if (MoveScript != null)
+            {
+                MoveScript.InCatScene = true;
+                MoveScript.DisableInput();
+                MoveScript.DisableInteract();
+            }
 
             while (elapsedTime < fadeDuration) {
                 elapsedTime += Time.deltaTime;
@@ -107,7 +155,15 @@ namespace Fades                                     // write "using Fades;" atop
                 yield return null; 
             }
 
+            if (MoveScript != null)
+            {
+                MoveScript.InCatScene = false;
+                MoveScript.Activate_CallEnableInput();
+                MoveScript.Activate_CallEnableInteract();
+            }
+
             fadeImage.color = new Color(0, 0, 0, 1);
+            
             yield return new WaitForSeconds(1f);                        //for the fade in, we wait a bit in the end before it ends
         }
     }

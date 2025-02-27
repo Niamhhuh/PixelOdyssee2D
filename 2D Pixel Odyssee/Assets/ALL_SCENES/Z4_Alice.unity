@@ -615,7 +615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &98755250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2450,6 +2450,8 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+  TriggerGlove: 1
+  TriggerGloveProgress: 0
 --- !u!61 &521091553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4239,6 +4241,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PAUSESCREEN
       objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1976097025}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallSaveGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4317,8 +4327,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1318b638f36acf14bbec044b2d9b6aa1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: b99e326ca61beee46a129b1652b65a3c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5198,10 +5208,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1786404008}
   - component: {fileID: 1786404007}
-  - component: {fileID: 1786404006}
   - component: {fileID: 1786404005}
   - component: {fileID: 1786404004}
   - component: {fileID: 1786404009}
+  - component: {fileID: 1786404010}
   m_Layer: 0
   m_Name: Zur Arcade
   m_TagString: Untagged
@@ -5292,51 +5302,6 @@ MonoBehaviour:
   Traversed: 0
   LoadScene_ID: 5
   SpawnPointID: 1
---- !u!61 &1786404006
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786404003}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.19097924, y: 0.7936181}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.68, y: 1.28}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.3179803, y: 3.5144823}
-  m_EdgeRadius: 0
 --- !u!212 &1786404007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5378,8 +5343,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a4f6c26217ab59489eaecb5e62a037f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 8ba89997ffbff6f4db05ccde0215b8f7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5398,8 +5363,8 @@ Transform:
   m_GameObject: {fileID: 1786404003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.76, y: 0.099999666, z: -1}
-  m_LocalScale: {x: 1.5, y: 1.4999999, z: 1}
+  m_LocalPosition: {x: 18.07, y: 0.653, z: -1}
+  m_LocalScale: {x: 0.87075865, y: 0.8707586, z: 0.58050585}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1598163996}
@@ -5423,6 +5388,51 @@ MonoBehaviour:
   TargetItemID: 0
   RosieDeniedInteraction: {fileID: 11400000, guid: ae3b5387839dd1e44aa9204e583c771f, type: 2}
   BeBeDeniedInteraction: {fileID: 11400000, guid: e22aa8697acca2e40b1f20ca2115b0c4, type: 2}
+--- !u!61 &1786404010
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786404003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.25, y: 4.61}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.25, y: 4.61}
+  m_EdgeRadius: 0
 --- !u!1 &1875732422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,6 +5755,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+--- !u!114 &1976097025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5775840474738838680, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 1976097024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d8fda0162c5b4ab582bad7c201778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977204930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,6 +6427,8 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+  TriggerGlove: 0
+  TriggerGloveProgress: 0
 --- !u!212 &2134499518
 SpriteRenderer:
   m_ObjectHideFlags: 0

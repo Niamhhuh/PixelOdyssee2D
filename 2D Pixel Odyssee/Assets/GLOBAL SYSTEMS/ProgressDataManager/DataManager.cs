@@ -128,7 +128,7 @@ public class DataManager : MonoBehaviour
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+    public GloveScript GloveConnection;
 
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
@@ -160,6 +160,11 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        if(GameObject.FindGameObjectWithTag("GloveOfPower") != null)
+        {
+            GloveConnection = GameObject.FindGameObjectWithTag("GloveOfPower").GetComponent<GloveScript>();
+        }
+
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             NewGame = false;

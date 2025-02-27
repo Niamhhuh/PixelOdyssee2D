@@ -107,4 +107,7 @@ public class DataStorage
     //    public static List<int> ProgressDialogueList = new List<int>();
     public List<int> ProgressDialogueList_State;
 
+    public bool CallGlove_State;
+    public int GloveProgress_State;
+
 }
