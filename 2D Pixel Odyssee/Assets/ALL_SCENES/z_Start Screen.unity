@@ -3114,13 +3114,6 @@ MonoBehaviour:
       Data3: 825692847
       Data4: -1145034477
     Path: event:/Music/Depot Theme
-  AliceAmbience:
-    Guid:
-      Data1: -1218711455
-      Data2: 1278537619
-      Data3: -1134801244
-      Data4: -1421383
-    Path: event:/Music/AliceAmbience
   AstreoidsTheme:
     Guid:
       Data1: 1146255690
@@ -3149,13 +3142,6 @@ MonoBehaviour:
       Data3: 94727817
       Data4: -717476708
     Path: event:/Music/StreetfighterTheme
-  Credits:
-    Guid:
-      Data1: -793244318
-      Data2: 1241003927
-      Data3: -863593834
-      Data4: -1199293610
-    Path: event:/Music/Credits
 --- !u!4 &1263021989
 Transform:
   m_ObjectHideFlags: 0
@@ -3183,7 +3169,6 @@ GameObject:
   - component: {fileID: 1311362999}
   - component: {fileID: 1311362998}
   - component: {fileID: 1311363000}
-  - component: {fileID: 1311363001}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -3296,37 +3281,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 16ebe912166e143ea81d8e20038b0cad, type: 3}
   - {fileID: 21300000, guid: a40ec2694a3fc45b8952b38f8d4a5426, type: 3}
   frameRate: 0.1
---- !u!114 &1311363001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311362996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -750050312
-      Data2: 1320447410
-      Data3: 482372261
-      Data4: 1823434707
-    Path: event:/Sfx/UI_Startscreen/JoystickClick
-  Event: 
-  EventPlayTrigger: 17
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1396466741
 GameObject:
   m_ObjectHideFlags: 0
