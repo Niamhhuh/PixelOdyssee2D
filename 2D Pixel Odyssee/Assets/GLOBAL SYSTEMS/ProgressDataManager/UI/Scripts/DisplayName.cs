@@ -13,6 +13,10 @@ public class DisplayName : MonoBehaviour
 
     //This Section Lists the variables used to adjust the panel size
     GameObject PanelPlate;
+    GameObject PanelBoarderL;
+    GameObject PanelBoarderR;
+
+
     int NameLegth;
 
     private void Start()
@@ -21,6 +25,8 @@ public class DisplayName : MonoBehaviour
         Display_Position = GetComponent<RectTransform>();
         MouseScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
         PanelPlate = GameObject.FindGameObjectWithTag("NamePanelPlate");
+        PanelBoarderL = GameObject.FindGameObjectWithTag("PanelBoarderLeft");
+        PanelBoarderR = GameObject.FindGameObjectWithTag("PanelBoarderRight");
 
         gameObject.SetActive(false);
     }
@@ -39,6 +45,8 @@ public class DisplayName : MonoBehaviour
         //Adjust the Panel Scale based on the Characters
         NameLegth = Object_Name.Length;
         PanelPlate.transform.localScale = new Vector3(0.4f, PanelPlate.transform.localScale.y, PanelPlate.transform.localScale.z);
+        PanelBoarderL.transform.position = Display_Position.transform.position;
+        PanelBoarderR.transform.position = Display_Position.transform.position;
 
         for (int i = 0; i < NameLegth; i++) 
         {
@@ -56,6 +64,8 @@ public class DisplayName : MonoBehaviour
         {
             PanelPlate.transform.localScale = new Vector3(PanelPlate.transform.localScale.x - 0.25f, PanelPlate.transform.localScale.y, PanelPlate.transform.localScale.z);
         }
+        PanelBoarderL.transform.position = new Vector3(PanelBoarderL.transform.position.x - PanelPlate.transform.localScale.x * 140, PanelBoarderL.transform.position.y + 14f, PanelBoarderL.transform.position.z);
+        PanelBoarderR.transform.position = new Vector3(PanelBoarderR.transform.position.x + PanelPlate.transform.localScale.x * 140, PanelBoarderR.transform.position.y - 14f, PanelBoarderR.transform.position.z);
     }
 
 

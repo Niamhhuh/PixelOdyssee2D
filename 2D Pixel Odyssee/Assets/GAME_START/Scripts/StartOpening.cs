@@ -11,6 +11,8 @@ public class StartOpening : MonoBehaviour
     private Image openings;
     private GameObject openingFull;
 
+    static bool LogoPassed = false;
+
     //_______________________________________________________________________________
     //_______Basic functions below___________________________________________________
 
@@ -19,11 +21,14 @@ public class StartOpening : MonoBehaviour
         openingFull = GameObject.Find("Canvas_Opening");
 
         openings.sprite = opening1;                          //make sure everything starts well...
+        openingFull.SetActive(false);
+        if (!LogoPassed)
+        {
+            openingFull.SetActive(true);
+            openings.gameObject.SetActive(true);
 
-        openingFull.SetActive(true);
-        openings.gameObject.SetActive(true);
-
-        StartCoroutine(updateLoading());
+            StartCoroutine(updateLoading());
+        }
     }
 
     //_______________________________________________________________________________
@@ -70,7 +75,7 @@ public class StartOpening : MonoBehaviour
             cg.alpha = alpha;
             yield return null;
         }
-
+        LogoPassed = true;
         yield return new WaitForSeconds(1f);
         openingFull.SetActive(false);                               //set it all inactive
     }

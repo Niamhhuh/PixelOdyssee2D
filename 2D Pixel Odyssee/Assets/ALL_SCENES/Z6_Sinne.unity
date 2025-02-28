@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 63
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -5964,8 +5964,9 @@ GameObject:
   - component: {fileID: 903697904}
   - component: {fileID: 903697905}
   - component: {fileID: 903697907}
+  - component: {fileID: 903697908}
   m_Layer: 0
-  m_Name: Fake DDR
+  m_Name: Dance Dance Revolution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5980,7 +5981,7 @@ Transform:
   m_GameObject: {fileID: 903697897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.61, y: -3.83, z: -1}
+  m_LocalPosition: {x: 10.72, y: -1.28, z: -1}
   m_LocalScale: {x: 0.7124173, y: 0.7124173, z: 0.7124173}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6135,18 +6136,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -3.6054862}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.13, y: 2.1}
+    oldSize: {x: 5.12, y: 9.36}
     newSize: {x: 5.18, y: 2.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.18, y: 2.1}
+  m_Size: {x: 5.18, y: 1.9855399}
   m_EdgeRadius: 0
 --- !u!114 &903697903
 MonoBehaviour:
@@ -6217,6 +6218,51 @@ MonoBehaviour:
   Add_Goal: 0
   Complete_Goal_ID: 16
   Complete_Goal: 1
+--- !u!61 &903697908
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903697897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06660801, y: 3.5468588}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 9.36}
+    newSize: {x: 5.18, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4556932, y: 2.2662811}
+  m_EdgeRadius: 0
 --- !u!1 &910244521
 GameObject:
   m_ObjectHideFlags: 0
@@ -6507,7 +6553,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -7
-  m_Sprite: {fileID: 21300000, guid: 8526e22b89d0d6b498ee64a833956e18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8454e9fe7c5da134f8a9f0079b2663b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6856,7 +6902,7 @@ GameObject:
   - component: {fileID: 970321812}
   - component: {fileID: 970321816}
   m_Layer: 0
-  m_Name: Vitrine3
+  m_Name: Vitrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7012,7 +7058,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: 21300000, guid: 6ee0fcd2f1c101d4ea8e08f6becdd8a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dda3bb9f1ceffdb428522b0d3fd56c28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7552,6 +7598,8 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+  TriggerGlove: 0
+  TriggerGloveProgress: 0
 --- !u!114 &1035769250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8239,7 +8287,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: 21300000, guid: 19f6f88480669704d916c8e034208526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42f9ba42eae27bd4ca37ace73e57998f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8610,7 +8658,7 @@ Transform:
   m_GameObject: {fileID: 1252580035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.75, y: 0.3941, z: 1}
+  m_LocalPosition: {x: -7.23, y: 0.3941, z: 1}
   m_LocalScale: {x: 3.043295, y: 10.535315, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8706,7 +8754,7 @@ Transform:
   m_GameObject: {fileID: 1262821529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.71, y: -1.98, z: -1}
+  m_LocalPosition: {x: -3.71, y: -1.98, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8727,7 +8775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 61
   AlreadyTalked: 0
-  Lock_State: 0
+  Lock_State: 1
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
@@ -10960,8 +11008,9 @@ GameObject:
   - component: {fileID: 1438881130}
   - component: {fileID: 1438881131}
   - component: {fileID: 1438881132}
+  - component: {fileID: 1438881133}
   m_Layer: 0
-  m_Name: True DDR
+  m_Name: Dance Dance Revolution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11028,7 +11077,7 @@ Transform:
   m_GameObject: {fileID: 1438881127}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.61, y: -3.83, z: -0.5}
+  m_LocalPosition: {x: 10.72, y: -1.28, z: -0.5}
   m_LocalScale: {x: 0.7124173, y: 0.7124173, z: 0.7124173}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11136,18 +11185,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -3.5983334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.13, y: 2.1}
+    oldSize: {x: 5.12, y: 9.36}
     newSize: {x: 5.18, y: 2.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.18, y: 2.1}
+  m_Size: {x: 5.18, y: 1.9998486}
   m_EdgeRadius: 0
 --- !u!114 &1438881132
 MonoBehaviour:
@@ -11168,6 +11217,51 @@ MonoBehaviour:
   Add_Goal: 1
   Complete_Goal_ID: 17
   Complete_Goal: 1
+--- !u!61 &1438881133
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438881127}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06660801, y: 3.5468588}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 9.36}
+    newSize: {x: 5.18, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4556932, y: 2.2662811}
+  m_EdgeRadius: 0
 --- !u!1 &1450232445
 GameObject:
   m_ObjectHideFlags: 0
@@ -11913,8 +12007,9 @@ GameObject:
   - component: {fileID: 1593772025}
   - component: {fileID: 1593772031}
   - component: {fileID: 1593772032}
+  - component: {fileID: 1593772033}
   m_Layer: 0
-  m_Name: Fake DDR2
+  m_Name: Dance Dance Revolution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11965,18 +12060,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014307737, y: -3.584025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.13, y: 2.1}
+    oldSize: {x: 5.12, y: 9.36}
     newSize: {x: 5.18, y: 2.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.18, y: 2.1}
+  m_Size: {x: 5.151385, y: 1.9712324}
   m_EdgeRadius: 0
 --- !u!114 &1593772028
 MonoBehaviour:
@@ -12103,7 +12198,7 @@ Transform:
   m_GameObject: {fileID: 1593772024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.61, y: -3.83, z: -0.8}
+  m_LocalPosition: {x: 10.72, y: -1.28, z: -0.8}
   m_LocalScale: {x: 0.7124173, y: 0.7124173, z: 0.7124173}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12151,6 +12246,51 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!61 &1593772033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593772024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06660801, y: 3.5468588}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 9.36}
+    newSize: {x: 5.18, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4556932, y: 2.2662811}
+  m_EdgeRadius: 0
 --- !u!1 &1608756351
 GameObject:
   m_ObjectHideFlags: 0
@@ -13061,7 +13201,7 @@ GameObject:
   - component: {fileID: 1793617637}
   - component: {fileID: 1793617638}
   m_Layer: 0
-  m_Name: Vitrine2
+  m_Name: Vitrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13108,7 +13248,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -7
-  m_Sprite: {fileID: 21300000, guid: 59926ade9f731884187f2dae7b75edc8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd5101a4e12bb244851f949dd18a399, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13171,7 +13311,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.79, y: 8.19}
+    oldSize: {x: 6.82, y: 8.2}
     newSize: {x: 6.82, y: 8.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14077,6 +14217,8 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+  TriggerGlove: 0
+  TriggerGloveProgress: 0
 --- !u!114 &1859360663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14361,7 +14503,7 @@ GameObject:
   - component: {fileID: 1905940191}
   - component: {fileID: 1905940192}
   m_Layer: 0
-  m_Name: Vitrine1
+  m_Name: Vitrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14504,8 +14646,8 @@ MonoBehaviour:
   LockName: 
   DialogueUnlock: 0
   DialogueKey_ID: 0
-  LockSprite: {fileID: 21300000, guid: 7b35fcbbe7c86824fa72f0d2dcbcc37d, type: 3}
-  LockHighlightSprite: {fileID: 21300000, guid: 8ce33678fdc70df4fa0bd59d41af45eb, type: 3}
+  LockSprite: {fileID: 21300000, guid: e8feb14d9b42bc44dafdbc79ed1e6c7b, type: 3}
+  LockHighlightSprite: {fileID: 21300000, guid: 34cc2df636e8c3b48bd37011c9ea1ff5, type: 3}
   ObjectSprite: {fileID: 0}
   HighlightObjectSprite: {fileID: 0}
   CannotInteract: 0
@@ -15369,6 +15511,8 @@ MonoBehaviour:
   ControlGoalScript: {fileID: 0}
   Collected: 0
   RewardPosition: 0
+  TriggerGlove: 0
+  TriggerGloveProgress: 0
 --- !u!114 &1999637044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16198,13 +16342,13 @@ SceneRoots:
   - {fileID: 721432367}
   - {fileID: 2102698274}
   - {fileID: 1438881129}
+  - {fileID: 903697898}
+  - {fileID: 1593772030}
   - {fileID: 1491373184}
   - {fileID: 108573861}
   - {fileID: 261781000}
   - {fileID: 2000564586}
   - {fileID: 1515522301}
-  - {fileID: 903697898}
-  - {fileID: 1593772030}
   - {fileID: 1879692995}
   - {fileID: 1793617635}
   - {fileID: 970321815}

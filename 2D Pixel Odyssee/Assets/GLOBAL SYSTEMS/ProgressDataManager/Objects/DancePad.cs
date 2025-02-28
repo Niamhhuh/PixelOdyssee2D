@@ -149,8 +149,8 @@ public class DancePad : ObjectScript
 
         DanceScriptRef.ControlButtons();                                       //Control which Buttons appear
         PadController.transform.position = gameObject.transform.position;
-        PadController.transform.position = new Vector3(PadController.transform.position.x, PadController.transform.position.y + 1.8f, PadController.transform.position.z);
-        DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1, PadController.transform.position.y + 2.5f, PadController.transform.position.z);
+        PadController.transform.position = new Vector3(PadController.transform.position.x, PadController.transform.position.y + -1f, PadController.transform.position.z);
+        DanceScriptRef.DanceDisplay.transform.position = new Vector3(PadController.transform.position.x - 1f, PadController.transform.position.y + 2.5f, PadController.transform.position.z);
     }
 
 

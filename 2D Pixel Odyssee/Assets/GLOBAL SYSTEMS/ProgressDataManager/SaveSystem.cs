@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using static DataManager;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class SaveSystem : MonoBehaviour
         SaveGame(DStorage);  // Save the current game data
     }
 
-    
+
     public void CallLoadGame()                                                  //Access from Game Start
     {
         DStorage = LoadGame();  // Load the game data and assign it to dataManager
@@ -90,6 +91,29 @@ public class SaveSystem : MonoBehaviour
         {
             return null;
         }
+    }
+
+
+    public void ContinueSaveGame()
+    {
+        CallLoadGame();
+
+        if (LastRoom != 0)
+        {
+            SceneManager.LoadScene(LastRoom);
+        }
+
+        if (LastRoom == 0)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void StartNewGame()
+    {
+        ClearSaveFile();
+        CleanDataManager();
+        ContinueSaveGame();
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------
@@ -156,7 +180,7 @@ public class SaveSystem : MonoBehaviour
         //Object Lists
         DataManager.Collectable_List = new List<DataManager.CollectableObj>(DStorage.Collectable_State);
         DataManager.Shovable_List = new List<DataManager.ShovableObj>(DStorage.ShovableObj_State);
-        DataManager.Portal_List = new List<DataManager.PortalObj> (DStorage.PortalObj_State);
+        DataManager.Portal_List = new List<DataManager.PortalObj>(DStorage.PortalObj_State);
         DataManager.SwitchState_List = new List<DataManager.SwitchStateObj>(DStorage.SwitchStateObj_State);
         DataManager.EventSource_List = new List<DataManager.EventObj>(DStorage.EventObj_State);
         DataManager.Triggerable_List = new List<DataManager.TriggerableObj>(DStorage.TriggerableObj_State);
@@ -220,4 +244,76 @@ public class SaveSystem : MonoBehaviour
         GloveScript.CallGlove = DStorage.CallGlove_State;
         GloveScript.GloveProgress = DStorage.GloveProgress_State;
     }
+
+
+    private void CleanDataManager()
+    {
+        //Object Lists
+        DataManager.Collectable_List = new List<DataManager.CollectableObj>();
+        DataManager.Shovable_List = new List<DataManager.ShovableObj>();
+        DataManager.Portal_List = new List<DataManager.PortalObj>();
+        DataManager.SwitchState_List = new List<DataManager.SwitchStateObj>();
+        DataManager.EventSource_List = new List<DataManager.EventObj>();
+        DataManager.Triggerable_List = new List<DataManager.TriggerableObj>();
+        DataManager.DancePad_List = new List<DataManager.DancePadObj>();
+
+        //Inventory Lists
+
+        DataManager.Draggable_List = new List<DataManager.DraggableObj>();
+        //DataManager.Item_List = new List<Draggable>(DStorage.Item_State);                      //Unnecessary 
+        //DataManager.Recipe_List = new List<CraftRecipe>(DStorage.Recipe_State);                  //Unnecessary 
+
+        DataManager.ActiveGoal_List = new List<DataManager.ActiveGoal>();
+        //DataManager.GoalObject_List = new List<GoalObject>(DStorage.Goal_State);
+
+        DataManager.Slot_Array = new SlotScript[11];
+        DataManager.Inventory_Fillstate = 0;
+        DataManager.RosieActive = true;
+
+        //    public static bool DisableClipboard = true;
+        //    public static bool DisableCharacterSwap = true;
+        DataManager.DisableClipboard = true;
+        DataManager.DisableCharacterSwap = true;
+
+        //    public static List<Collectable> RewardList = new List<Collectable>();                 //Create a List to store the Object which is being interacted with            //should probably be an array
+        DataManager.RewardList = new List<CollectableObj>();
+
+        //MiniMap + SpawnSystem
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //public static int SpawnID;                                              //ID of the selected SpawnPointObject. Set in used Portal 
+        //public static int LastRoom;                                             //ID of the Last Room the Player was in
+        //public static bool NewGame = true;
+        DataManager.SpawnID = 0;
+        DataManager.LastRoom = 0;
+        DataManager.NewGame = true;
+
+
+        //Goal List Scroll Settings
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        DataManager.CurrentScroll = 0;
+        DataManager.MaxScroll = 0;
+        DataManager.ContainerStartPosition = new Vector2(1000, 10);
+
+        //Code List 
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //public static bool Code1Acquired;
+        //public static bool Code2Acquired;
+        //public static bool Code3Acquired;
+        DataManager.Code1Acquired = false;
+        DataManager.Code2Acquired = false;
+        DataManager.Code3Acquired = false;
+
+
+        //ProgressDialogue List
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //    public static List<int> ProgressDialogueList = new List<int>();
+        DataManager.ProgressDialogueList = new List<int>();
+
+        GloveScript.CallGlove = false;
+        GloveScript.GloveProgress = 0;
+    }
+
 }
