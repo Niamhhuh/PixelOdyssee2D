@@ -34,8 +34,8 @@ public class UiToMouse : MonoBehaviour
 
     public bool InCatScene = false;
 
-    private EventInstance FootstepsRosie;  //Sound f�r Footsteps
-    private EventInstance FootstepsBebe;
+    public EventInstance FootstepsRosie;  //Sound f�r Footsteps
+    public EventInstance FootstepsBebe;
 
     private DataManager DMReference;
 
@@ -121,44 +121,32 @@ public class UiToMouse : MonoBehaviour
             targetPosition = new Vector3(worldPosition.x, player.position.y, player.position.z);
 
             movePlayer = true;
-            //playerAnimator.SetBool("isWalking", true);
-            //playerAnimator2.SetBool("isWalking", true);
 
-            if (targetPosition.x < player.position.x)
-            {
-                //playerAnimator.SetInteger("Direction", -1); //left
-                //playerAnimator2.SetInteger("Direction", -1);
+            if (targetPosition.x < player.position.x) {
                 lastDirection = -1;
             }
 
-            else
-            {
-                //playerAnimator.SetInteger("Direction", 1); //right
-                //playerAnimator2.SetInteger("Direction", 1);
+            else {
                 lastDirection = 1;
             }
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK ROSIE
-            if (playerAnimator != null && DataManager.RosieActive)
-            {
+            if (playerAnimator != null && DataManager.RosieActive) {
                 playerAnimator.SetBool("isWalking", true);
                 playerAnimator.SetInteger("LastDirection", lastDirection);
                 FootstepsRosie.start(); //Sound
+                Debug.Log("footstep start");
             }
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK BeBe
-            if (playerAnimator2 != null && !DataManager.RosieActive)
-            {
-            playerAnimator2.SetBool("isWalking", true);
-            playerAnimator2.SetInteger("LastDirection", lastDirection);
+            if (playerAnimator2 != null && !DataManager.RosieActive) {
+                playerAnimator2.SetBool("isWalking", true);
+                playerAnimator2.SetInteger("LastDirection", lastDirection);
                 FootstepsBebe.start(); //Sound
             }
 
             pointerImage.enabled = true;
             pointerAnimator.Play("UI Pfeil Animation"); // spielt die Animation ab
-           
-            //-----------------------------------------------------------------------------------------------------------
-
         }
 
         if (movePlayer)  //STOOOOOOOOOOOOOOOOOOOOOOOOOOP
@@ -174,7 +162,7 @@ public class UiToMouse : MonoBehaviour
                 {
                     playerAnimator.SetBool("isWalking", false);
                     playerAnimator.SetInteger("LastDirection", lastDirection); //idle
-                    FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
+                    stopSound();
                 }
 
                 // STOP BEBE
@@ -182,7 +170,7 @@ public class UiToMouse : MonoBehaviour
                 {
                     playerAnimator2.SetBool("isWalking", false);
                     playerAnimator2.SetInteger("LastDirection", lastDirection);
-                    FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
+                    stopSound();
                 }
 
                 pointerImage.enabled = false;
@@ -274,8 +262,9 @@ public class UiToMouse : MonoBehaviour
         EnableInteract();
     }
 
-    private void UpdateSound()
-    {
-
+    public void stopSound() {
+        Debug.Log("footstep stop");
+        FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
+        FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
     }
 }

@@ -38,9 +38,12 @@ public class PauseMenu : MonoBehaviour
 
     //----------------------SPIEL BEENDEN VAR---------
     private GameObject spielBeenden_Fenster;    //sucht nach dem Canvas in jeder Szene --> jedes Canvas heisst gleich
+    
+    //----------------------FOOTSTEPS STUFF---------
+    private UiToMouse script_uitomouse;         //reference to pointer UI for turning off footsteps when pause is on
 
     //_______________________________________________________________________________
-    //_______Pausescreen Activator below_____________________________________________
+    //_______Basic functions_________________________________________________________
 
     private void Awake() {
         if (spielBeenden_Fenster == null) {
@@ -50,6 +53,17 @@ public class PauseMenu : MonoBehaviour
                 return;  // Stop execution if spiel beenden can't be found
             }   
             spielBeenden_Fenster.SetActive(false);               
+        }
+        
+        //---------------------find script UiMouse in case it is in the scene
+        script_uitomouse = FindObjectOfType<UiToMouse>();
+        if (script_uitomouse == null) {
+            Debug.Log("no Pointer script in this scene");
+            return;
+        }
+        else {
+            Debug.Log("Footsteps stopped");
+            script_uitomouse.stopSound();
         }
     }
     private void Start()
@@ -81,8 +95,9 @@ public class PauseMenu : MonoBehaviour
         } 
     }
 
-    public void CallPause()
-    {
+    //_______________________________________________________________________________
+    //_______Pausescreen Activator below_____________________________________________
+    public void CallPause() {
         if(current_scene.name != "Z_Start Screen" && current_scene.name != "Z_DemoEnd" && pauseScreen != null && steuerung.activeSelf == false)
         {
             InPause = !InPause;
@@ -94,11 +109,24 @@ public class PauseMenu : MonoBehaviour
 
             if (pauseScreen.activeSelf)
             {
+                if (script_uitomouse != null) {
+                    if (script_uitomouse.playerAnimator.GetBool("isWalking")) {
+                        script_uitomouse.FootstepsRosie.start();
+                    }
+                    if (script_uitomouse.playerAnimator2.GetBool("isWalking")) {
+                        script_uitomouse.FootstepsBebe.start();
+                    }
+                }
                 Time.timeScale = 1f;
             }
 
             if (!pauseScreen.activeSelf)
             {
+                if (script_uitomouse != null) {
+                    Debug.Log("Footsteps stopped");
+                    script_uitomouse.stopSound();
+                }
+                
                 Time.timeScale = 0f;
             }
 
