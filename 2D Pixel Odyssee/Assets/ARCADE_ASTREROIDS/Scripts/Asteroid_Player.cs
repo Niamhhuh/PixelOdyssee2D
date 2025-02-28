@@ -12,6 +12,7 @@ public class Asteroid_Player : MonoBehaviour
 
     public float thrustSpeed = 1.0f;
     public float turnSpeed = 1.0f;
+    public bool isDead;
 
     private Rigidbody2D _rigidbody;
     private bool _thrusting;
@@ -33,6 +34,7 @@ public class Asteroid_Player : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        isDead = false;
     }
 
     private void Start()
@@ -61,6 +63,8 @@ public class Asteroid_Player : MonoBehaviour
     }
 
     public void Movement() {                // Moved from Update() to over here so that we can disable it --> scuffed fix but fast
+        isDead = false;
+
         // Handle thrust and rotation input
         _thrusting = Input.GetKey(KeyCode.W);
 
@@ -148,12 +152,12 @@ public class Asteroid_Player : MonoBehaviour
     {
         if (currentCooldownTime > 0.0f)
         {
-            panicTeleportText.text = "Teleport: USED";
+            panicTeleportText.text = "Teleport: AM LADEN";
             panicTeleportText.color = Color.red;
         }
         else
         {
-            panicTeleportText.text = "Teleport: READY";
+            panicTeleportText.text = "Teleport: BEREIT";
             panicTeleportText.color = Color.green;
         }
     }
@@ -189,8 +193,9 @@ public class Asteroid_Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision with asteroids
-        if (collision.gameObject.tag == "Asteroid")
+        if (collision.gameObject.tag == "Asteroid" && isDead == false)
         {
+            isDead = true;
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = 0.0f;
 
