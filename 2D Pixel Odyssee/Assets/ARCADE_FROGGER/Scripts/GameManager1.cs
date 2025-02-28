@@ -162,7 +162,7 @@ public class GameManager1 : MonoBehaviour
     private IEnumerator Timer(int duration) {       //controls the timer
         time = duration;
         script_AudioManager.PlayThemeForCurrentScene(); //Musik abspielen
-        while (time > -1) { 
+        while (time > 0) { 
             yield return new WaitForSeconds(1);
             timerText.text = time.ToString();
             time --;

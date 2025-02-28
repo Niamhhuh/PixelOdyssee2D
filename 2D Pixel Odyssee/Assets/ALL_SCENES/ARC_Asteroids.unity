@@ -536,9 +536,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1423343529}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ArcadeReturn
+      - m_Target: {fileID: 1240200562}
+        m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
+        m_MethodName: LoadArcade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6716,9 +6716,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1423343529}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ArcadeReturn
+      - m_Target: {fileID: 1240200562}
+        m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
+        m_MethodName: LoadArcade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6934,7 +6934,6 @@ MonoBehaviour:
   panicTeleportText: {fileID: 1280294800}
   thrustSpeed: 1
   turnSpeed: 0.1
-  isDead: 0
   winLooseOn: 0
 --- !u!50 &784022134
 Rigidbody2D:
@@ -7808,7 +7807,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1423343529}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ArcadeReturn
+        m_MethodName: GameResume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8777,7 +8776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Teleport BEREIT
+  m_text: Teleport READY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
   m_sharedMaterial: {fileID: -1355317053577365187, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
@@ -9255,7 +9254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LEBEN: 3'
+  m_text: 'LIVES: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}
   m_sharedMaterial: {fileID: -1355317053577365187, guid: f77a7021bd5591c4d942a6aa4616b9b4, type: 2}

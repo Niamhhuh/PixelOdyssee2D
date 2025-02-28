@@ -51,35 +51,9 @@ public class SceneLoaderScript : MonoBehaviour
         StartCoroutine(LoadNewScene(sceneName));
     }
 
-    public void LoadArcade1()
+    public void LoadArcade()
     {
         sceneName = "Z2_Tutorial2";
         StartCoroutine(LoadNewScene(sceneName));
     }
-
-    public void LoadEingang()
-    {
-        sceneName = "Z3_Eingang";
-        StartCoroutine(LoadNewScene(sceneName));
-    }
-
-
-    public void LoadArcade2()
-    {
-        sceneName = "Z5_Arcade2";
-        StartCoroutine(LoadNewScene(sceneName));
-    }
-
-    public void LoadStreetfighter()
-    {
-        sceneName = "Z8_Boss";
-        StartCoroutine(LoadNewScene(sceneName));
-    }
-
-    public void LoadPainstationRoom()
-    {
-        sceneName = "Z6_Sinne";
-        StartCoroutine(LoadNewScene(sceneName));
-    }
-
 }

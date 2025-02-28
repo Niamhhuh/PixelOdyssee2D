@@ -2251,9 +2251,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ArcadeReturn
+      - m_Target: {fileID: 1118060103}
+        m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
+        m_MethodName: LoadArcade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3458,7 +3458,6 @@ MonoBehaviour:
   ObjectCommentBebe: {fileID: 0}
   currentRoom: 0
   SpawnList: []
-  GloveConnection: {fileID: 0}
 --- !u!4 &1123488656
 Transform:
   m_ObjectHideFlags: 0
@@ -5708,9 +5707,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496941633}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ArcadeReturn
+      - m_Target: {fileID: 1118060103}
+        m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
+        m_MethodName: LoadArcade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

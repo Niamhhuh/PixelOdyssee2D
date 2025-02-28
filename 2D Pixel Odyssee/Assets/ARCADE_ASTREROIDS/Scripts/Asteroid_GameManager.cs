@@ -85,7 +85,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void UpdatePlayerLives()
     {
-        playerLives.text = "Leben: " + this.lives;
+        playerLives.text = "Lives: " + this.lives;
     }
 
     public void PlayerDied()
@@ -96,7 +96,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
         if (this.lives <= 0)
         {
-            Invoke(nameof(GameOver), 2f);
+            GameOver();
         }
         else
         {
@@ -135,7 +135,6 @@ public class Asteroid_GameManager : MonoBehaviour
     {
         if (score >= winScoreThreshold)
         {
-            FindObjectOfType<Asteroid_Player>().gameObject.SetActive(false);
             WinGame();
         }
     }
