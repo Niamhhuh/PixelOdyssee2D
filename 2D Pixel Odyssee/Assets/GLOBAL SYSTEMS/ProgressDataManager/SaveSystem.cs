@@ -294,7 +294,7 @@ public class SaveSystem : MonoBehaviour
 
         DataManager.CurrentScroll = 0;
         DataManager.MaxScroll = 0;
-        DataManager.ContainerStartPosition = new Vector2(1000, 10);
+        //DataManager.ContainerStartPosition;
 
         //Code List 
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
