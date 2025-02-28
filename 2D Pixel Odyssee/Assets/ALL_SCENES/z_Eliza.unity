@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 617044326}
   - component: {fileID: 617044327}
   - component: {fileID: 617044328}
+  - component: {fileID: 617044329}
   m_Layer: 5
   m_Name: RETURN
   m_TagString: Untagged
@@ -857,6 +858,24 @@ MonoBehaviour:
   LockTriggered: 0
   DialogueTriggered: 0
   TriggerTutorialPanel: 0
+--- !u!114 &617044329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617044322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active_Unlock: 0
+  OtherUnlockList_ID: 6
+  OtherUnlockObject_ID: 6e000000
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
 --- !u!1 &697473313
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +959,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1094413156522037003}
+        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
+        m_MethodName: Set_ClipboardTutorialReached
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 617044326}
         m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
         m_MethodName: TriggerInteract
@@ -3731,6 +3762,7 @@ MonoBehaviour:
   ObjectCommentBebe: {fileID: 0}
   currentRoom: 0
   SpawnList: []
+  GloveConnection: {fileID: 0}
 --- !u!222 &1100475206881707532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11077,6 +11109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryObj: {fileID: 0}
   calledbyKey: 0
+  StandardInventory: {fileID: 0}
+  TutorialInventory: {fileID: 0}
   ItemDragged: 0
   TryDragUnlock: 0
   DraggedItemID: 0
@@ -13289,8 +13323,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAYER NAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a274f41984ceb94186956d0aaa2e2ac, type: 2}
-  m_sharedMaterial: {fileID: -5472556441844791294, guid: 1a274f41984ceb94186956d0aaa2e2ac, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

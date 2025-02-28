@@ -125,7 +125,7 @@ public class Clipboard : MonoBehaviour
 
     public void ClipboardMap()
     {
-        if (!PauseScript.InPause && !DialogueScript.InDialogue)
+        if (!PauseScript.InPause && !DialogueScript.InDialogue && DataManager.ClipboardTutorialReached)
         {
             CurrentTab = 2;
             CodeScript.CloseCodeList();
@@ -138,7 +138,7 @@ public class Clipboard : MonoBehaviour
 
     public void ClipboardGoals()
     {
-        if (!PauseScript.InPause && !DialogueScript.InDialogue)
+        if (!PauseScript.InPause && !DialogueScript.InDialogue && DataManager.ClipboardTutorialReached)
         {
             CurrentTab = 3;
             CodeScript.CloseCodeList();
@@ -151,7 +151,7 @@ public class Clipboard : MonoBehaviour
 
     public void ClipboardCodes()
     {
-        if (!PauseScript.InPause && !DialogueScript.InDialogue)
+        if (!PauseScript.InPause && !DialogueScript.InDialogue && DataManager.ClipboardTutorialReached)
         {
             CurrentTab = 4;
             GoalScript.CloseGoalList();

@@ -171,6 +171,8 @@ public class SaveSystem : MonoBehaviour
 
         DStorage.CallGlove_State = GloveScript.CallGlove;
         DStorage.GloveProgress_State = GloveScript.GloveProgress;
+
+        DStorage.ClipboardTutorialReached_State = DataManager.ClipboardTutorialReached;
     }
 
 
@@ -243,6 +245,8 @@ public class SaveSystem : MonoBehaviour
 
         GloveScript.CallGlove = DStorage.CallGlove_State;
         GloveScript.GloveProgress = DStorage.GloveProgress_State;
+
+        DataManager.ClipboardTutorialReached = DStorage.ClipboardTutorialReached_State;
     }
 
 
@@ -314,6 +318,8 @@ public class SaveSystem : MonoBehaviour
 
         GloveScript.CallGlove = false;
         GloveScript.GloveProgress = 0;
+
+        DataManager.ClipboardTutorialReached = false;
     }
 
 }

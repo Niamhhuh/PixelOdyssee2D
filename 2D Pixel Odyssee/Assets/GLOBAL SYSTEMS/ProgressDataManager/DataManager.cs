@@ -130,6 +130,7 @@ public class DataManager : MonoBehaviour
 
     public GloveScript GloveConnection;
 
+    public static bool ClipboardTutorialReached = false;
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {
@@ -797,9 +798,9 @@ public class DataManager : MonoBehaviour
 
 
 
-    public void RewardFrogger()                                //Activate the Trigger
+    public void Set_ClipboardTutorialReached()                                //Activate the Trigger
     {
-        //
+        ClipboardTutorialReached = true;
     }
 
 

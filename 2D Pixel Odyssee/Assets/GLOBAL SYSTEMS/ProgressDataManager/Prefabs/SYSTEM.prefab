@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 1940116436624178871}
   m_Layer: 5
   m_Name: InventorySprite
-  m_TagString: Untagged
+  m_TagString: InventorySpriteHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3366,6 +3366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryObj: {fileID: 0}
   calledbyKey: 0
+  StandardInventory: {fileID: 21300000, guid: a3ea27a6078c8c144b3973c43afc5d32, type: 3}
+  TutorialInventory: {fileID: 21300000, guid: 230a1b9ef0d388d4585db5e17f386cfe, type: 3}
   ItemDragged: 0
   TryDragUnlock: 0
   DraggedItemID: 0
@@ -7049,7 +7051,7 @@ GameObject:
   - component: {fileID: 7970426343616291659}
   m_Layer: 5
   m_Name: TasksButton
-  m_TagString: Untagged
+  m_TagString: InvGoalButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7457,7 +7459,7 @@ GameObject:
   - component: {fileID: 3030932769579492324}
   m_Layer: 5
   m_Name: MapButton
-  m_TagString: Untagged
+  m_TagString: InvMapButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14595,7 +14597,7 @@ GameObject:
   - component: {fileID: 7915692777914667448}
   m_Layer: 5
   m_Name: CodesButton
-  m_TagString: Untagged
+  m_TagString: InvCodeButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15166,6 +15168,7 @@ MonoBehaviour:
     ProgressDialogueList_State: 
     CallGlove_State: 0
     GloveProgress_State: 0
+    ClipboardTutorialReached_State: 0
 --- !u!1 &6524409644286623190
 GameObject:
   m_ObjectHideFlags: 0

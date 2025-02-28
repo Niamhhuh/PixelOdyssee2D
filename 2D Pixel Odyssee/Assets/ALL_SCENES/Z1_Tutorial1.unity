@@ -3193,10 +3193,9 @@ GameObject:
   m_Component:
   - component: {fileID: 372535032}
   - component: {fileID: 372535031}
-  - component: {fileID: 372535036}
+  - component: {fileID: 372535040}
   - component: {fileID: 372535035}
   - component: {fileID: 372535033}
-  - component: {fileID: 372535037}
   - component: {fileID: 372535039}
   m_Layer: 0
   m_Name: Bebe
@@ -3266,12 +3265,12 @@ Transform:
   m_GameObject: {fileID: 372535030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.673676, y: -1.6211945, z: 0.5}
-  m_LocalScale: {x: 0.3674868, y: 0.3674868, z: 0.36748683}
+  m_LocalPosition: {x: -13.525175, y: 1.9971359, z: 2.7359784}
+  m_LocalScale: {x: 0.77687174, y: 0.74778295, z: 1.0054361}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439592618}
-  m_Father: {fileID: 1143488354}
+  m_Father: {fileID: 810103188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &372535033
 BoxCollider2D:
@@ -3336,7 +3335,7 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
---- !u!114 &372535036
+--- !u!114 &372535039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3345,10 +3344,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 372535030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908a1766a66ab3b4d9e6e60f88432b85, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 1
+  Active_Unlock: 0
+  OtherUnlockList_ID: 6
+  OtherUnlockObject_ID: 
+  DMReference: {fileID: 0}
+  ObjReference: {fileID: 0}
+  TargetObject: {fileID: 0}
+--- !u!114 &372535040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372535030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ee0b1e0bfccd242b0ae22ccc860196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 110
   AlreadyTalked: 0
   Lock_State: 1
   ForcedInteraction: 0
@@ -3395,49 +3412,9 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
-  Event_Passed: 0
-  Talk_Event: 0
-  isEvent_Portal: 1
-  EventScene_ID: 14
+  Traversed: 0
+  LoadScene_ID: 14
   SpawnPointID: 1
---- !u!114 &372535037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372535030}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 7
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 1
-  LockTriggered: 0
-  DialogueTriggered: 0
-  TriggerTutorialPanel: 0
---- !u!114 &372535039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372535030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df0bf3b35400304fb2b50c7ac914138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active_Unlock: 0
-  OtherUnlockList_ID: 6
-  OtherUnlockObject_ID: 
-  DMReference: {fileID: 0}
-  ObjReference: {fileID: 0}
-  TargetObject: {fileID: 0}
 --- !u!1 &378256516
 GameObject:
   m_ObjectHideFlags: 0
@@ -7223,6 +7200,150 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810034651}
   m_CullTransparentMesh: 1
+--- !u!1 &810103187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810103188}
+  - component: {fileID: 810103190}
+  - component: {fileID: 810103189}
+  m_Layer: 0
+  m_Name: SilverDisappear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810103188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810103187}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.799996, y: -3.0500002, z: -1}
+  m_LocalScale: {x: 0.36549997, y: 0.36549994, z: 0.36549997}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 372535032}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &810103189
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810103187}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.31667018, y: 30.857822}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.433392, y: 1.0703659}
+  m_EdgeRadius: 0
+--- !u!114 &810103190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810103187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d20041702756074f9746b2cb31cf1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 110
+  AlreadyTalked: 0
+  Lock_State: 1
+  ForcedInteraction: 1
+  TriggeronUnlock: 0
+  AlwaysDenyInteraction: 0
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
+  ChangeNameonLock: 0
+  LockName: 
+  DialogueUnlock: 0
+  DialogueKey_ID: 0
+  LockSprite: {fileID: 0}
+  LockHighlightSprite: {fileID: 0}
+  ObjectSprite: {fileID: 0}
+  HighlightObjectSprite: {fileID: 0}
+  CannotInteract: 0
+  CannotTalk: 0
+  NewObject: 1
+  IsFullTrigger: 0
+  HighlightonHover: {fileID: 0}
+  CoreObject: {fileID: 0}
+  PointerScript: {fileID: 0}
+  RequestInteract: 0
+  AlreadyActive: 0
+  isBackground: 0
+  InteractionController: {fileID: 0}
+  ObjReference: {fileID: 0}
+  UnlockMethod: 0
+  CanSequenceUnlock: 0
+  ObjectList_ID: 0
+  ObjectIndex: 0
+  DMReference: {fileID: 0}
+  SeqUReference: {fileID: 0}
+  UnSReference: {fileID: 0}
+  TriggerScript: {fileID: 0}
+  InteractTransformDialogue: {fileID: 0}
+  DialogueInteractionScript: {fileID: 0}
+  IsReward: 0
+  LockedDialogueScript: {fileID: 0}
+  GrantReward_Script: {fileID: 0}
+  AddCodeScript: {fileID: 0}
+  ColliderScript: {fileID: 0}
+  ObjectComment: {fileID: 0}
+  TransformDialogueScript: {fileID: 0}
+  TriggerGoal: 0
+  ControlGoalScript: {fileID: 0}
+  Trigger_Passed: 0
+  ForceDialogue: 0
+  GhostTrigger: 1
+  isTrigger_Portal: 0
+  EventScene_ID: 0
+  SpawnPointID: 0
 --- !u!1 &818280952
 GameObject:
   m_ObjectHideFlags: 0
@@ -8438,7 +8559,6 @@ Transform:
   m_LocalScale: {x: 0.7726716, y: 0.74373996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 372535032}
   - {fileID: 2010492944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15236,6 +15356,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3936147526621032354, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -15649,6 +15785,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -16331,6 +16468,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 30677994}
   - {fileID: 742752274}
+  - {fileID: 810103188}
   - {fileID: 1143488354}
   - {fileID: 1389260244}
   - {fileID: 547006479}

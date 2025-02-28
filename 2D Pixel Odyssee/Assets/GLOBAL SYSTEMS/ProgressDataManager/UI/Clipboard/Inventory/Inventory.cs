@@ -2,7 +2,7 @@ using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
@@ -24,6 +24,15 @@ public class Inventory : MonoBehaviour
     private DataManager DMReference;
     public bool calledbyKey;
 
+
+    private GameObject MapButton;
+    private GameObject GoalButton;
+    private GameObject CodeButton;
+
+    public Sprite StandardInventory;
+    public Sprite TutorialInventory;
+    private Image InventorySprite;//InventorySpriteHolder
+
     public bool ItemDragged;
     
     public bool TryDragUnlock;
@@ -42,6 +51,13 @@ public class Inventory : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         InventoryObj = GameObject.FindGameObjectWithTag("Inventory");
         ItemCollection = GameObject.FindGameObjectWithTag("ItemCollection");
+
+        InventorySprite = GameObject.FindGameObjectWithTag("InventorySpriteHolder").GetComponent<Image>();
+
+        MapButton = GameObject.FindGameObjectWithTag("InvMapButton");
+        GoalButton = GameObject.FindGameObjectWithTag("InvGoalButton");
+        CodeButton = GameObject.FindGameObjectWithTag("InvCodeButton");
+
         ItemCollection.SetActive(false);
         InventoryObj.SetActive(false);
 
@@ -96,6 +112,21 @@ public class Inventory : MonoBehaviour
 
         ItemCollection.SetActive(true);                                                             //Make Items Visible
         InventoryObj.SetActive(true);                                                               //Make Inventory Visible
+
+        if(!DataManager.ClipboardTutorialReached)
+        {
+            MapButton.SetActive(false);
+            GoalButton.SetActive(false);
+            CodeButton.SetActive(false);
+            InventorySprite.sprite = TutorialInventory;
+        }
+        if (DataManager.ClipboardTutorialReached)
+        {
+            MapButton.SetActive(true);
+            GoalButton.SetActive(true);
+            CodeButton.SetActive(true);
+            InventorySprite.sprite = StandardInventory;
+        }
     }
 
     public void CloseInventory()

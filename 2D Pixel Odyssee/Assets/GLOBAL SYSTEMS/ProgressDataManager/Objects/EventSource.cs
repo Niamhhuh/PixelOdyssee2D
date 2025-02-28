@@ -9,6 +9,7 @@ public class EventSource : ObjectScript
     //Variables which are passed onto DataManager
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    public bool ClipboardTutorialTrigger;
     public bool Event_Passed;			                                                //relevant to control Item Spawn
     public bool Talk_Event;
     public bool isEvent_Portal;                                                         //Set true, if this Event triggers a Scene Swap!
@@ -135,6 +136,10 @@ public class EventSource : ObjectScript
         ClearHighlight();
         Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
         UpdateData();
+        if(ClipboardTutorialTrigger)
+        {
+            SetTutorialReach();
+        }
         if(isEvent_Portal) 
         { 
             SwitchScene(); 
@@ -150,5 +155,10 @@ public class EventSource : ObjectScript
             DataManager.LastRoom = EventScene_ID;
             SceneManager.LoadScene(EventScene_ID);
         }
+    }
+
+    private void SetTutorialReach()
+    {
+        DataManager.ClipboardTutorialReached = true;
     }
 }

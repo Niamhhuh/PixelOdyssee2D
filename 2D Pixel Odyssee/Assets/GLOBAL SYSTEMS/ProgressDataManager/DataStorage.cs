@@ -110,4 +110,6 @@ public class DataStorage
     public bool CallGlove_State;
     public int GloveProgress_State;
 
+    public bool ClipboardTutorialReached_State;
+
 }
