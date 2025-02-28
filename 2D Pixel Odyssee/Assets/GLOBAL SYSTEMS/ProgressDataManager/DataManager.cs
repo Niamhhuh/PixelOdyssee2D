@@ -95,7 +95,7 @@ public class DataManager : MonoBehaviour
 
     public static int CurrentScroll = 0;
     public static int MaxScroll = 0;
-    public static Vector2 ContainerStartPosition = new Vector2(1000, 10);
+    public static Vector2 ContainerStartPosition = new Vector2(0,0); //1000 //10
 
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
