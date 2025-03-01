@@ -85,7 +85,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
     private void UpdatePlayerLives()
     {
-        playerLives.text = "Lives: " + this.lives;
+        playerLives.text = "Leben: " + this.lives;
     }
 
     public void PlayerDied()
@@ -96,7 +96,7 @@ public class Asteroid_GameManager : MonoBehaviour
 
         if (this.lives <= 0)
         {
-            GameOver();
+            Invoke(nameof(GameOver), 2f);
         }
         else
         {
@@ -135,6 +135,7 @@ public class Asteroid_GameManager : MonoBehaviour
     {
         if (score >= winScoreThreshold)
         {
+            FindObjectOfType<Asteroid_Player>().gameObject.SetActive(false);
             WinGame();
         }
     }
@@ -177,25 +178,6 @@ public class Asteroid_GameManager : MonoBehaviour
         scoreCanvas.SetActive(false); // Hide the score screen
         // You can add more functionality here, such as stopping asteroids, animations, etc.
         AstWin.start(); //Sound
-
-
-
         script_AudioManager.StopCurrentTheme(); //Musik stoppen
     }
-
-    // Optionally, create methods to restart the game or quit after winning
-    /*public void RestartGame()                                              //DOES NOT WORK CORRECTLY------------------------------!!!!!!!!!!!!!!!!!
-    {
-        Time.timeScale = 1; // Unpause the game
-        // Reset the game state, scores, lives, etc.
-        lives = 3;
-        score = 0;
-        UpdatePlayerLives();
-        UpdateScoreText();
-        winCanvas.SetActive(false);
-        loseCanvas.SetActive(false);
-        scoreCanvas.SetActive(true);
-
-        script_AudioManager.PlayThemeForCurrentScene(); //Musik wieder starten
-    }*/
 }
