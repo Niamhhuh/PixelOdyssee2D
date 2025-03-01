@@ -541,5 +541,5 @@ public enum DialogueActors
     BebeQuestion,       //12
     SilverSmug,         //13
     SilverHappy,        //14
-    Tetris,
+    Tetris,             //15
 };
