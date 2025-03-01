@@ -572,6 +572,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -4291,6 +4292,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -8752,8 +8769,8 @@ MonoBehaviour:
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
-  Unlock_by_Item: 1
-  Item_Key_ID: 14
+  Unlock_by_Item: 0
+  Item_Key_ID: 0
   ChangeNameonLock: 0
   LockName: 
   DialogueUnlock: 0
@@ -8943,7 +8960,6 @@ MonoBehaviour:
   conversation:
   - {fileID: 11400000, guid: 70b5944fbc67ead4c8f614dac3d63b8c, type: 2}
   - {fileID: 11400000, guid: 83a502845e245d644bd6c7502a47c3c4, type: 2}
-  - {fileID: 11400000, guid: 795da8e47fbd536499a22cee0ca40d5c, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -9790,6 +9806,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -10776,6 +10793,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -12152,6 +12170,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
