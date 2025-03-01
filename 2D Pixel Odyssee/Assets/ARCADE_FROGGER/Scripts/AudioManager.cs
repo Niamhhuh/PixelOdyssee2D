@@ -9,10 +9,12 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private EventReference titelScreenTheme;
     [SerializeField] private EventReference gameSceneTheme;
+    [SerializeField] private EventReference AliceAmbience;
     [SerializeField] private EventReference AstreoidsTheme;
     [SerializeField] private EventReference FroggerTheme;
     [SerializeField] private EventReference PainStationTheme;
     [SerializeField] private EventReference StreetfighterTheme;
+    [SerializeField] private EventReference Credits;
 
     private EventInstance currentThemeInstance;
 
@@ -36,9 +38,14 @@ public class AudioManager : MonoBehaviour
         {
             themeToPlay = titelScreenTheme;
         }
-        else if (SceneManager.GetActiveScene().name == "Z1_Tutorial1" || SceneManager.GetActiveScene().name == "Z2_Tutorial2"  || SceneManager.GetActiveScene().name == "Z_DemoEnd" ||  SceneManager.GetActiveScene().name == "z_Eliza")
+        else if (SceneManager.GetActiveScene().name == "Z1_Tutorial1" || SceneManager.GetActiveScene().name == "Z2_Tutorial2"  || SceneManager.GetActiveScene().name == "Z_DemoEnd" ||  SceneManager.GetActiveScene().name == "Z3_Eingang" || SceneManager.GetActiveScene().name == "Z4_Alice" || SceneManager.GetActiveScene().name == "Z5_Arcade2" || SceneManager.GetActiveScene().name == "Z6_Sinne" || SceneManager.GetActiveScene().name == "Z7_Indie" || SceneManager.GetActiveScene().name == "Z8_Boss")
         {
             themeToPlay = gameSceneTheme;
+        }
+
+        else if (SceneManager.GetActiveScene().name == "z_Eliza")
+        {
+            themeToPlay = AliceAmbience;
         }
 
         else if (SceneManager.GetActiveScene().name == "ARC_Asteroids")
@@ -59,6 +66,11 @@ public class AudioManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "ARC_Streetfighter")
         {
             themeToPlay = StreetfighterTheme;
+        }
+
+        else if (SceneManager.GetActiveScene().name == "Z9_Credits")
+        {
+            themeToPlay = Credits;
         }
 
         // Überprüfe, ob ein gültiges Theme gefunden wurde

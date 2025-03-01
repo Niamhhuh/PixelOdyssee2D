@@ -11,6 +11,8 @@ public class CodeListScript : MonoBehaviour
     private GameObject Code2;
     private GameObject Code3;
 
+    private GameObject KONAMI;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class CodeListScript : MonoBehaviour
         Code1 = GameObject.FindGameObjectWithTag("Code1");
         Code2 = GameObject.FindGameObjectWithTag("Code2");
         Code3 = GameObject.FindGameObjectWithTag("Code3");
+        KONAMI = GameObject.FindGameObjectWithTag("Konami");
 
         CodeListObj.SetActive(false);
     }
@@ -67,6 +70,14 @@ public class CodeListScript : MonoBehaviour
         }else
         {
             Code3.SetActive(false);
+        }
+
+        if(DataManager.Code1Acquired && DataManager.Code2Acquired && DataManager.Code3Acquired)
+        {
+            KONAMI.SetActive(true);
+        }else
+        {
+            KONAMI.SetActive(false);
         }
     }
 
