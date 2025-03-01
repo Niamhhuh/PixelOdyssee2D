@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fades;                                //enables the usage of functions from the script "Fades"
+
 
 public class Triggerable : ObjectScript
 {
@@ -132,13 +134,19 @@ public class Triggerable : ObjectScript
         {
             DataManager.SpawnID = SpawnPointID;
             DataManager.LastRoom = EventScene_ID;
-            SceneManager.LoadScene(EventScene_ID);
+            StartCoroutine(switchSceneRoutine());                                                           //NEU --> now leads to coroutine for clean fade-in
         }
     }
 
+    private IEnumerator switchSceneRoutine() {                                                              //NEU --> this is part of the above function
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
+        SceneManager.LoadScene(EventScene_ID);
+    }
+
+
     public void TriggerInteract()                                                                                                                    //Interact with the Event to end it.
     {
-        Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        Trigger_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.     --> Kimi's note: It's called integer, get it right
         PassTriggerActivate(1); //This won't work for dialogue, because the Scene will be reloaded
         ObjectSequenceUnlock();
         UpdateData();

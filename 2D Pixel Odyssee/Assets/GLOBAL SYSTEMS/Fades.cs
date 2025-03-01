@@ -12,8 +12,6 @@ using UnityEngine.UI;
 // --> always where the PauseMenu Script is located --> GameManager in Startscreen and EventManager in Hubworld
 
 
-
-
 namespace Fades                                     // write "using Fades;" atop every script to make usage of following functions easir (I think?)
 {
     public class Class_Fades : MonoBehaviour
@@ -30,12 +28,11 @@ namespace Fades                                     // write "using Fades;" atop
         private UiToMouse MoveScript;                                                                      //CONNECT MOVE SCRIPT
         private GloveScript GloveConnect;
 
+        private UiToMouse script_uitomouse;     	                                                        //reference to script UImouse so we can turn off the footsteps accordingly
 
         //-----------------------------------------------------------------------------------------------------------------------------------
-        //------------------------------------------Public functions-------------------------------------------------------------------------
-
-        private void Awake()
-        {
+        //------------------------------------------Basic functions-------------------------------------------------------------------------
+        private void Awake() {
             if (instance == null) {
                 instance = this;
             }
@@ -45,17 +42,29 @@ namespace Fades                                     // write "using Fades;" atop
                 Destroy(gameObject);
             }
 
-            if (GameObject.FindGameObjectWithTag("Pointer") != null)
-            {
+            //-------------------------------------------------------Felix' stuff
+            if (GameObject.FindGameObjectWithTag("Pointer") != null) {
                 MoveScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();             //CONNECT MOVE SCRIPT
             }
             
-            if(GameObject.FindGameObjectWithTag("GloveOfPower")!= null)
-            {
+            if(GameObject.FindGameObjectWithTag("GloveOfPower")!= null) {
                 GloveConnect = GameObject.FindGameObjectWithTag("GloveOfPower").GetComponent<GloveScript>();
+            }
+
+            //---------------------find script UiMouse in case it is in the scene
+            script_uitomouse = FindObjectOfType<UiToMouse>();
+            if (script_uitomouse == null) {
+                Debug.Log("no Pointer script in this scene");
+                return;
+            }
+            else {
+                Debug.Log("Footsteps stopped");
+                script_uitomouse.stopSound();
             }
         }
         
+        //-----------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------Public functions-------------------------------------------------------------------------
         public void FindFadeObject() {                                  // First find the object where the blackscreen for the fade is located
             if (fadeObject == null) {
                 fadeObject = GameObject.FindGameObjectWithTag("FadeInOut");
@@ -75,18 +84,32 @@ namespace Fades                                     // write "using Fades;" atop
             }        
         }
 
-        public IEnumerator StartFadeIn() {                                     // This is the function that starts the fade in coroutine
+        public IEnumerator StartFadeIn() {                                     // This is the function that starts the fade in coroutine (everytime when we are in a new scene)
             FindFadeObject();
+            
             if (fadeObject != null) {
                 yield return StartCoroutine(FadeInCoroutine());
+            }
+
+            if (script_uitomouse != null) {                                     //turn off footstep sounds before loading new scene
+                Debug.Log("Footsteps stopped");
+                script_uitomouse.stopSound();
             }
         }
 
         public IEnumerator StartFadeOut() {                                    // this is the function that starts the fade out coroutine
             FindFadeObject();
+            
             if (fadeObject != null) {
                 yield return StartCoroutine(FadeOutCoroutine());
             }
+
+            if (script_uitomouse != null) {                                     //turn off footstep sounds before loading new scene
+                Debug.Log("Footsteps stopped");
+                script_uitomouse.stopSound();
+            }
+
+
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------

@@ -59,13 +59,9 @@ public class PauseMenu : MonoBehaviour
         script_uitomouse = FindObjectOfType<UiToMouse>();
         if (script_uitomouse == null) {
             Debug.Log("no Pointer script in this scene");
-            return;
-        }
-        else {
-            Debug.Log("Footsteps stopped");
-            script_uitomouse.stopSound();
         }
     }
+
     private void Start()
     {
         if (c_main) {
@@ -145,7 +141,6 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator StartGameCoroutine() {
         yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
-
         if (DataManager.LastRoom == 0) {
             SceneManager.LoadScene("Z1_Tutorial1");
         } 
@@ -184,7 +179,11 @@ public class PauseMenu : MonoBehaviour
     //----------------------ANDERER STUFF-------------
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
-    	SceneManager.LoadScene(ReturntoScene);
+        StartCoroutine(returnFromArcade());    	
+    }
+    private IEnumerator returnFromArcade() {    //works together with the function above
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
+        SceneManager.LoadScene(ReturntoScene);
     }
 
     public void GameQuit() {            //STARTSCREEN --> Beendet das Spiel komplett
@@ -250,7 +249,11 @@ public class PauseMenu : MonoBehaviour
             pauseScreen.SetActive(false);
         }
         Time.timeScale = 1f;
-        Class_Fades.instance.StartFadeIn();        //Starts the FadeIn Coroutine from the script "Fades" ----------------------NEU---------------------
+        StartCoroutine(returnToStart());    	
+    }
+
+    private IEnumerator returnToStart() {    //works together with the function above
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
         SceneManager.LoadScene("Z_Start Screen");
     }
 

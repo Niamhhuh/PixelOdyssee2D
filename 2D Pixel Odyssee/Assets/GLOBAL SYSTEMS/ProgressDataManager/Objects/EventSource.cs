@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fades;
 
 public class EventSource : ObjectScript
 {
@@ -153,8 +154,13 @@ public class EventSource : ObjectScript
         {
             DataManager.SpawnID = SpawnPointID;
             DataManager.LastRoom = EventScene_ID;
-            SceneManager.LoadScene(EventScene_ID);
+            StartCoroutine(switchSceneRoutine());                                                           //NEU --> now leads to coroutine for clean fade-in
         }
+    }
+
+    private IEnumerator switchSceneRoutine() {                                                              //NEU --> this is part of the above function
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish      ----------------------NEU---------------------
+        SceneManager.LoadScene(EventScene_ID);
     }
 
     private void SetTutorialReach()
