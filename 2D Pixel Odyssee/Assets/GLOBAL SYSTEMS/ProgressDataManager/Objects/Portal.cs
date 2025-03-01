@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fades;
 
 public class Portal : ObjectScript
 {
@@ -111,7 +112,12 @@ public class Portal : ObjectScript
             SuccessfulInteract();
             DataManager.SpawnID = SpawnPointID;
             DataManager.LastRoom = LoadScene_ID;
-            SceneManager.LoadScene(LoadScene_ID);
+            StartCoroutine(switchSceneRoutine());                                                           //NEU --> now leads to coroutine for clean fade-in
         }
+    }
+
+    private IEnumerator switchSceneRoutine() {                                                              //NEU --> this is part of the above function
+        yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish      ----------------------NEU---------------------
+        SceneManager.LoadScene(LoadScene_ID);
     }
 }

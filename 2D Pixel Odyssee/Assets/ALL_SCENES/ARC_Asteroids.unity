@@ -9073,6 +9073,7 @@ GameObject:
   - component: {fileID: 1423343529}
   - component: {fileID: 1423343530}
   - component: {fileID: 1423343532}
+  - component: {fileID: 1423343533}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -9141,6 +9142,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeObject: {fileID: 0}
+--- !u!114 &1423343533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423343528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916c59e16696ed340a3c137db724c1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorTexture: {fileID: 2800000, guid: 6a315ee0ac43a6d4eb358be45e8eb791, type: 3}
+  CursorHighlightTexture: {fileID: 2800000, guid: 2166bb6244342954b83a5260c9cad04a, type: 3}
+  transparentCursor: {fileID: 2800000, guid: 7207a776a36b4b34d8d5ce56a7b577a8, type: 3}
+  CursorPoint: {x: 0, y: 0}
+  Transparent: 0
 --- !u!1 &1618700814
 GameObject:
   m_ObjectHideFlags: 0
