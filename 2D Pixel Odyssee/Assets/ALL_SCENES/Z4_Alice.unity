@@ -3711,7 +3711,7 @@ GameObject:
   - component: {fileID: 1242979650}
   - component: {fileID: 1242979652}
   m_Layer: 0
-  m_Name: VB Vitrine mit VB
+  m_Name: VirtualBoy Vitrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3851,7 +3851,7 @@ MonoBehaviour:
   Unlock_by_Item: 1
   Item_Key_ID: 42
   ChangeNameonLock: 1
-  LockName: VB Vitrine
+  LockName: VirtualBoy Vitrine
   DialogueUnlock: 0
   DialogueKey_ID: 0
   LockSprite: {fileID: 21300000, guid: 73e8ae2d496f394448f8650b85e61899, type: 3}
@@ -5621,6 +5621,14 @@ PrefabInstance:
     - target: {fileID: 4608394381111430612, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893028815148396617, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893028815148396617, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5774828563302901146, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_Name
