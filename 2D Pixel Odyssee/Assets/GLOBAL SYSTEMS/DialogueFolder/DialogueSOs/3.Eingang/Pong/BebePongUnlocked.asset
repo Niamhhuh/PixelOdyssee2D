@@ -20,7 +20,12 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 0
-  actors: 0a0000000700000007000000
+  Dialogue_Goal: 0
+  DialogueAdd_Goal: 0
+  Complete_Goal: 0
+  Goal_ID: 0
+  Complete_Goal_ID: 0
+  actors: 0a0000000b0000000b000000
   randomActorName: Pong
   randomActorPortait: {fileID: 21300000, guid: 62534f6a1728fc44ebb67009053efada, type: 3}
   dialogue:
@@ -30,12 +35,8 @@ MonoBehaviour:
   - "Heh, ich wei\xDF."
   - "Ich f\xFChle mich wieder jung und sportlich. Jetzt bin ich viel cooler als die
     anderen. Mit denen abzuh\xE4ngen ist nur noch Zeitverschwendung. \r\n"
-  optionText:
-  - Weinst du?
-  - "Wir m\xFCssen dich verschieben."
-  - 'Du siehst alt aus. '
-  - 'Was ist deine Lieblingsvolt Zahl? '
-  option0: {fileID: 11400000, guid: c1f76e83acd46874c81d1c0f65374077, type: 2}
-  option1: {fileID: 11400000, guid: 4ecb0901f9e33944c96b1c30ae1b3f18, type: 2}
-  option2: {fileID: 11400000, guid: 1780b09b825ebdd4094167b142848e3f, type: 2}
-  option3: {fileID: 11400000, guid: f647f342ba90c7b49bfb46e6df0b56d2, type: 2}
+  optionText: []
+  option0: {fileID: 0}
+  option1: {fileID: 0}
+  option2: {fileID: 0}
+  option3: {fileID: 0}
