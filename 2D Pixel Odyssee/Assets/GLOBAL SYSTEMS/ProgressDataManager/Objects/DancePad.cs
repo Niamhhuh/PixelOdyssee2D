@@ -120,6 +120,8 @@ public class DancePad : ObjectScript
         {
             DataManager.ToInteract.RemoveAt(0);                                                                     //Clear Object from ToInteract List
 
+            DMReference.MoveScript.SetOtherArrowFalse();
+
             if (InteractionController != null)                                                                      //If the Interaction Buttons are available
             {
                 DMReference.MoveScript.EnableInput();
@@ -156,6 +158,7 @@ public class DancePad : ObjectScript
 
     public void DanceUnlock()
     {
+        DMReference.MoveScript.SetOtherArrowFalse();
         SuccessfulInteract();
         if (TargetList_ID > 1)
         {

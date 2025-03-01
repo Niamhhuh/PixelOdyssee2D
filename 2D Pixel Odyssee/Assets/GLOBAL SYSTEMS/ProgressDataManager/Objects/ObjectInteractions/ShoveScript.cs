@@ -36,7 +36,9 @@ public class ShoveScript : MonoBehaviour
 
     public void ShoveLeft ()
     {
-        if(-DataManager.ToShove[0].Max_Shove < DataManager.ToShove[0].Shove_Position)
+        DataManager.ToShove[0].DMReference.MoveScript.SetOtherArrowFalse();
+
+        if (-DataManager.ToShove[0].Max_Shove < DataManager.ToShove[0].Shove_Position)
         {
             StartPosition = DataManager.ToShove[0].ShoveBox.transform.position;                         //Set Start Position
             TargetPosition = new Vector3(StartPosition.x - 3, StartPosition.y, StartPosition.z);        //Set Target Position
@@ -56,6 +58,8 @@ public class ShoveScript : MonoBehaviour
 
     public void ShoveRight()
     {
+        DataManager.ToShove[0].DMReference.MoveScript.SetOtherArrowFalse();
+
         if (DataManager.ToShove[0].Max_Shove > DataManager.ToShove[0].Shove_Position)
         {
             StartPosition = DataManager.ToShove[0].ShoveBox.transform.position;                         //Set Start Position

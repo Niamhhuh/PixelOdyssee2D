@@ -142,6 +142,7 @@ public class DanceScript : MonoBehaviour
 
     public void CheckCompletedInput()           //Go through ConditionList of DancePad 
     {
+        DataManager.ToDance[0].DMReference.MoveScript.SetOtherArrowFalse();
         bool mismatch = false;
         int i = 0;
 

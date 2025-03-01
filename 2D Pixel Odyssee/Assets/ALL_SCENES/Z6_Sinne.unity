@@ -267,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 23150333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.894, y: 0, z: 0}
+  m_LocalPosition: {x: -0.865, y: 0, z: 0}
   m_LocalScale: {x: 0.9277844, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1086,6 +1086,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -1667,6 +1668,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -1856,6 +1858,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -2285,6 +2288,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -4377,7 +4381,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0550493, y: 0.7694788}
+  m_Offset: {x: -0.2398901, y: 0.7259872}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4388,7 +4392,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.793658, y: 8.422805}
+  m_Size: {x: 2.4239764, y: 8.335819}
   m_EdgeRadius: 0
 --- !u!212 &719197314
 SpriteRenderer:
@@ -4451,7 +4455,7 @@ Transform:
   m_GameObject: {fileID: 719197310}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.68, y: -0.98, z: -3}
+  m_LocalPosition: {x: -5.68, y: -0.98, z: -2}
   m_LocalScale: {x: 1.30515, y: 1.30515, z: 0.8701}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4479,6 +4483,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -4743,8 +4763,8 @@ Transform:
   m_GameObject: {fileID: 737399345}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.47, y: 1.2015713, z: -5}
-  m_LocalScale: {x: 4.445069, y: 12.353794, z: 1.1726078}
+  m_LocalPosition: {x: 10.2924, y: 1.2015713, z: -1}
+  m_LocalScale: {x: 4.7499657, y: 12.353794, z: 1.1726078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 23150334}
@@ -4839,7 +4859,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 2
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6047,6 +6067,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -6967,6 +6988,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -7323,7 +7345,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0550493, y: 0.7694788}
+  m_Offset: {x: 0.13640225, y: 0.7694788}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7334,7 +7356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.793658, y: 8.422805}
+  m_Size: {x: 2.410755, y: 8.422805}
   m_EdgeRadius: 0
 --- !u!212 &1012087797
 SpriteRenderer:
@@ -7397,7 +7419,7 @@ Transform:
   m_GameObject: {fileID: 1012087793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26, y: -0.98, z: -3}
+  m_LocalPosition: {x: 26, y: -0.98, z: -2}
   m_LocalScale: {x: 1.30515, y: 1.30515, z: 0.8701}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9896,6 +9918,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -10082,8 +10105,8 @@ Transform:
   m_GameObject: {fileID: 1365130111}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.46, y: 1.2015713, z: -5}
-  m_LocalScale: {x: 3.5685914, y: 12.353794, z: 1.1726078}
+  m_LocalPosition: {x: -26.3871, y: 1.2015713, z: -1}
+  m_LocalScale: {x: 3.692733, y: 12.353794, z: 1.1726078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1391542933}
@@ -10178,7 +10201,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 2
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -10609,7 +10632,7 @@ Transform:
   m_GameObject: {fileID: 1391542932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.312, y: 0, z: 0}
+  m_LocalPosition: {x: 0.267, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11878,6 +11901,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -12132,6 +12156,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -13379,6 +13404,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -14681,6 +14707,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -15866,6 +15893,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -15991,7 +16019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 613
   AlreadyTalked: 0
-  Lock_State: 1
+  Lock_State: 0
   ForcedInteraction: 0
   TriggeronUnlock: 0
   AlwaysDenyInteraction: 0

@@ -37,6 +37,8 @@ public class UiToMouse : MonoBehaviour
     public EventInstance FootstepsRosie;  //Sound f�r Footsteps
     public EventInstance FootstepsBebe;
 
+    public bool CallOtherArrow;
+
     private DataManager DMReference;
 
     public WALL WallScript;
@@ -132,17 +134,22 @@ public class UiToMouse : MonoBehaviour
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK ROSIE
             if (playerAnimator != null && DataManager.RosieActive) {
+                if (!playerAnimator.GetBool("isWalking")) {
+                    FootstepsRosie.start(); //Sound
+                }
                 playerAnimator.SetBool("isWalking", true);
                 playerAnimator.SetInteger("LastDirection", lastDirection);
-                FootstepsRosie.start(); //Sound
-                Debug.Log("footstep start");
+                
             }
 
             //WAAAAAAAAAAAAAAAAAAAAAAALK BeBe
             if (playerAnimator2 != null && !DataManager.RosieActive) {
+                if(!playerAnimator2.GetBool("isWalking")) {
+                    FootstepsBebe.start(); //Sound
+                }
                 playerAnimator2.SetBool("isWalking", true);
                 playerAnimator2.SetInteger("LastDirection", lastDirection);
-                FootstepsBebe.start(); //Sound
+
             }
 
             pointerImage.enabled = true;
@@ -237,6 +244,16 @@ public class UiToMouse : MonoBehaviour
         }
     }
 
+    public void SetOtherArrowTrue()
+    {
+        CallOtherArrow = true;
+    }
+
+    public void SetOtherArrowFalse()
+    {
+        CallOtherArrow = false;
+    }
+
     public void Activate_CallEnableInput()
     {
         StartCoroutine(CallEnableInput());
@@ -246,7 +263,10 @@ public class UiToMouse : MonoBehaviour
     {
         //print("hi");
         yield return new WaitForSeconds(0.2f);
-        EnableInput();
+        if(!CallOtherArrow)
+        {
+            EnableInput();
+        }
     }
 
     public void Activate_CallEnableInteract()
@@ -259,7 +279,10 @@ public class UiToMouse : MonoBehaviour
     {
         //print("hi");
         yield return new WaitForSeconds(0.2f);
-        EnableInteract();
+        if(!CallOtherArrow)
+        {
+            EnableInteract();
+        }
     }
 
     public void stopSound() {

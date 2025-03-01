@@ -99,8 +99,8 @@ public class Shovable : ObjectScript
     {
         Unlock_Object();                                                                                                                        //Try to Unlock the Object
         FetchData(DataManager.Shovable_List[ObjectIndex].Stored_Lock_State, DataManager.Shovable_List[ObjectIndex].Stored_AlreadyTalked, DataManager.Shovable_List[ObjectIndex].Stored_Shove_Position);      //Fetch new State from DataManager
-        PointerScript.StartCoroutine(PointerScript.CallEnableInput());
-        PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
+        PointerScript.Activate_CallEnableInput();
+        PointerScript.Activate_CallEnableInteract();
 
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
@@ -125,6 +125,8 @@ public class Shovable : ObjectScript
         if (other.CompareTag("Player") && 0 < DataManager.ToInteract.Count && DataManager.ToInteract[0] == this)    //If the player leaves the Collider and ther is an Object in the To InteractList, which is this Object
         {
             DataManager.ToInteract.RemoveAt(0);                                                                     //Clear Object from ToInteract List
+
+            DMReference.MoveScript.SetOtherArrowFalse();
 
             if (InteractionController != null)                                                                      //If the Interaction Buttons are available
             {
@@ -162,6 +164,7 @@ public class Shovable : ObjectScript
 
     public void StartMove(Vector3 StartPosition, Vector3 TargetPosition)//, int Direction)
     {
+        DMReference.MoveScript.SetOtherArrowFalse();
         SuccessfulInteract();
         StartCoroutine(Movex(StartPosition, TargetPosition));
     }
@@ -182,7 +185,9 @@ public class Shovable : ObjectScript
         //add Animation transform.scale animation, requires another coroutine which playe
 
         DMReference.MoveScript.EnableInput();                                                                     //reactivate Mouse Input
-        if(Active_Unlock)
+        DMReference.MoveScript.EnableInteract();                                                                     //reactivate Mouse Input
+
+        if (Active_Unlock)
         {
 
             foreach(GameObject Target in TargetObject)
