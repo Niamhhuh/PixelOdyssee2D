@@ -15,7 +15,10 @@ public class PauseButton : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        PauseController.CallPause();
+        if(!GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>().InCatScene)
+        {
+            PauseController.CallPause();
+        }
     }
 
 }

@@ -576,6 +576,15 @@ public class ObjectScript : MonoBehaviour
         Interact_Trigger_EditGoal();
         if (AddCodeScript != null) { AddCodeScript.AddCode(); }                         //Add Code on succesful interaction
         if(InteractTransformDialogue != null) { InteractTransformDialogue.AddTransformDialogue(); }
+
+        if(InteractionController != null)
+        {
+            if(ObjectIndex == 2)
+            {
+                InteractionController.GetComponent<InteractionScript>().ObjectSlideRosie.start(); //Sound
+            }
+            InteractionController.GetComponent<InteractionScript>().CallAnimation();
+        }
     }
 
 

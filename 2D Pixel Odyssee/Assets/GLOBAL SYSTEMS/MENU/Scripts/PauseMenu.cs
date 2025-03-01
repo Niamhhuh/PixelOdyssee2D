@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     
     //----------------------FOOTSTEPS STUFF---------
     private UiToMouse script_uitomouse;         //reference to pointer UI for turning off footsteps when pause is on
+    private bool pauseActive = false;           //don't allow pause as long as fade is on
 
     //_______________________________________________________________________________
     //_______Basic functions_________________________________________________________
@@ -62,29 +63,30 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
+    private void Start() {
+        pauseActive = false;
         if (c_main) {
            c_main.SetActive(true);                                     //make sure everything is set up correctly
             c_start.SetActive(false);
             c_neuesspiel.SetActive(false); 
         } 
 
-        if (GameObject.FindGameObjectWithTag("Pointer") != null)
-        {
+        if (GameObject.FindGameObjectWithTag("Pointer") != null) {
             PointerScript = GameObject.FindGameObjectWithTag("Pointer").GetComponent<UiToMouse>();
             DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         }
+        StartCoroutine(ActivatePause());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU--------------------
+    }
 
-        StartCoroutine(Class_Fades.instance.StartFadeOut());        //Starts the FadeOut Coroutine from the script "Fades"   ----------------------NEU---------------------
-
-
+    private IEnumerator ActivatePause() {
+        yield return StartCoroutine(Class_Fades.instance.StartFadeOut()); // Wait for fade-out to finish     ----------------------NEU---------------------
+        pauseActive = true;
     }
 
     void Update() {  
         current_scene = SceneManager.GetActiveScene();
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseActive == true)
         {
             CallPause();
 

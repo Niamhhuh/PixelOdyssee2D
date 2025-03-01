@@ -18,7 +18,7 @@ public class InteractionScript : MonoBehaviour
 
     private EventInstance ObjectPickUp;//Sound for Interaction
     private EventInstance DoorOpen;
-    private EventInstance ObjectSlideRosie;
+    public EventInstance ObjectSlideRosie;
     private EventInstance DDRArrow;
 
     private void Start()
@@ -68,10 +68,16 @@ public class InteractionScript : MonoBehaviour
 
         //Call Interaction
 
-        public void TriggerInteraction ()
+    public void CallAnimation()
     {
         animator.SetTrigger("interact");
         animatorBebe.SetTrigger("interact");
+    }
+
+        public void TriggerInteraction ()
+    {
+        //animator.SetTrigger("interact");
+        //animatorBebe.SetTrigger("interact");
         //ToInteract[0].
         DMReference.DisplayObjectNameScript.DeactivateNameDisplay();
         switch (DataManager.ToInteract[0].ObjectList_ID)                  //
@@ -85,7 +91,6 @@ public class InteractionScript : MonoBehaviour
                 ColReference.Call_Interact();                                                       //Call Collectable.Call_Interact
                 break;
             case 2:
-                ObjectSlideRosie.start(); //Sound
                 Shovable ShovReference = null;                                                      //Create a Reference Variable, which will be used to access the Shovable.Call_Interact Method
                 ShovReference = (Shovable)DataManager.ToInteract[0].ObjReference;                   //Convert the Parent ObjectScript Type(ObjReference) into the Shovable Type 
                 ShovReference.Call_Interact();                                                      //Call Shovable.Call_Interact
