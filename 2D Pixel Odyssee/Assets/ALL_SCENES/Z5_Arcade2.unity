@@ -1245,8 +1245,11 @@ MonoBehaviour:
   StoredObjectDialogue: {fileID: 0}
   StepArray:
   - ConditoinArray: 00000000
+  - ConditoinArray: 3b000000
   - ConditoinArray: 35000000
   TransformDialogue:
+  - {fileID: 11400000, guid: c4ad9f377d16d154eb7a607f586dc951, type: 2}
+  - {fileID: 11400000, guid: 7d9156bf8fa3e2a4ab9024a597e61725, type: 2}
   - {fileID: 11400000, guid: c4ad9f377d16d154eb7a607f586dc951, type: 2}
   - {fileID: 11400000, guid: b240b1d1df6e884479f1d6ea1962eb98, type: 2}
   - {fileID: 11400000, guid: c4ad9f377d16d154eb7a607f586dc951, type: 2}
@@ -6394,6 +6397,7 @@ GameObject:
   - component: {fileID: 1637325039}
   - component: {fileID: 1637325040}
   - component: {fileID: 1637325041}
+  - component: {fileID: 1637325042}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -6707,6 +6711,19 @@ MonoBehaviour:
   Add_Goal: 0
   Complete_Goal_ID: 9
   Complete_Goal: 1
+--- !u!114 &1637325042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637325029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c68da7870b0c7848af7539d8aa1317b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_ID: 59
 --- !u!1001 &1751100403
 PrefabInstance:
   m_ObjectHideFlags: 0
