@@ -788,6 +788,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -2776,6 +2777,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -3033,6 +3035,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -3594,6 +3597,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -3885,6 +3889,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -4243,12 +4248,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b99e326ca61beee46a129b1652b65a3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aa23ab8d5ed54a42a238b4e5d9031d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.25, y: 4.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5057,6 +5062,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -5259,12 +5265,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ba89997ffbff6f4db05ccde0215b8f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad549c0f709ef634ab8934923737c18e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.25, y: 4.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5341,7 +5347,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.25, y: 4.61}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 3.25, y: 4.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5565,6 +5571,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

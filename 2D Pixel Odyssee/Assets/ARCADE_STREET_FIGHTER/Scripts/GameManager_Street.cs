@@ -75,11 +75,12 @@ public class GameManager_Street : MonoBehaviour
     private EventInstance SFRound1;
     private EventInstance SFPrepareYourself;
 
-    private bool winActive = false;                     //NEU --> to prevent both from appearing 
-    private bool looseActive = false;
+    public bool winActive = false;                     //NEU --> to prevent both from appearing 
+    public bool looseActive = false;
     
     private GameObject fist;                            //NEU --> to deactivate the button controller when it's not supposed to be (because of the sound)
     public PauseMenu script_pause;                      //NEU --> to deacivate the pause menu before the fade ins completed
+    private bool pressedEnter = false;                  //NEU --> just to track whether we pressed enter at the beginning so it does not trigger VS screen multiple times
 
 //__________________________________________________________
 //________________________Konami Code_______________________
@@ -108,6 +109,7 @@ public class GameManager_Street : MonoBehaviour
 
         fist = GameObject.Find("Fist");
         fist.SetActive(false);
+        pressedEnter = false;                       //make sure it is set to false in the beginning
 
         gameStartStreet.SetActive(true);
         restart = true;
@@ -130,7 +132,8 @@ public class GameManager_Street : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!startPlaying && restart == true & Input.GetKeyDown(KeyCode.Return )) {
+        if(!startPlaying && restart == true & Input.GetKeyDown(KeyCode.Return) && pressedEnter == false) {
+            pressedEnter = true;
             StartCoroutine(VS());
 
             //___________Konami Code_____________
@@ -151,16 +154,13 @@ public class GameManager_Street : MonoBehaviour
         NewGame();
     }
 
-    IEnumerator FadeInOut()
-    {
-        //yield return Fade(0, 1); // Fade In
+    IEnumerator FadeInOut() {
         SFPrepareYourself.start(); //Sound
         yield return new WaitForSeconds(2f);
         yield return Fade(1, 0); // Fade Out
     }
 
-    IEnumerator Fade(float startAlpha, float endAlpha)
-    {
+    IEnumerator Fade(float startAlpha, float endAlpha) {
         float elapsedTime = 0;
         while (elapsedTime < fadeDuration)
         {
@@ -249,27 +249,22 @@ public class GameManager_Street : MonoBehaviour
         //--------------------------------------------------------------------------------------------------------------------------------
 
         SFWin.start(); //Sound
-
         StopAllCoroutines();
     }
 
 
-
     public void NoteHit(){
-    	Debug.Log("NoteHit");
+    	Debug.Log("note hit");
 
-        if (startPlaying) {
+        if (startPlaying) {                                                                                         //Animation
             HitAnim.SetTrigger("HitAnim");
             rosieAnimator.SetTrigger("RosieHit");
         }
-        
-
         SFArrowSuccess.start(); //Sound
-
         if(allowInput){
             SetLivesEnemy(livesEnemy - 1);
         }
-        if(livesEnemy == 0 && !theNO.round2){
+        if(livesEnemy == 0 && !theNO.round2){                                                                       //sets off phase 2
             allowInput = false;
             SetLives(2);
             SetLivesEnemy(27);
@@ -278,9 +273,8 @@ public class GameManager_Street : MonoBehaviour
             SilverHp1.SetActive(false);
             silverAnimator.Play("Silver_Crossing_Arms");
             silverAnimator.SetBool("Stage2", true);
-
         }
-        else if (livesEnemy == 0 && theNO.round2 && gameOverMenuStreet.activeInHierarchy == false){
+        else if (livesEnemy == 0 && theNO.round2 && gameOverMenuStreet.activeInHierarchy == false){                 //invokes win
             startPlaying = false;
             SilverHp2.SetActive(false);
             rosieAnimator.Play("Rosie_Win_Animation");
@@ -288,7 +282,6 @@ public class GameManager_Street : MonoBehaviour
             winActive = true;
             Invoke(nameof(StreetWon), 3f);
         }
-
     }
 
     public void NoteMissed(){
@@ -313,7 +306,6 @@ public class GameManager_Street : MonoBehaviour
     }
 
     public void EndofGame(){
-
         if(lives > 0){
             NoteHit();
         }

@@ -44,6 +44,7 @@ public class ArrowSpawner : MonoBehaviour
     public bool StopRound2Trigger = false;
 
     private EventInstance SFCountdown; //Sound
+    public int counter = 0;
 
 
     void Awake(){
@@ -52,6 +53,7 @@ public class ArrowSpawner : MonoBehaviour
 
     public void Start()
     {
+        counter = 0;
         SFCountdown = AudioManager_Startscreen.instance.CreateEventInstance(Fmod_Events.instance.SFCountdown); //Sound
     }
     void Update()
@@ -63,47 +65,32 @@ public class ArrowSpawner : MonoBehaviour
         
     }
 
-    /*private IEnumerator SpawnArrows()
-    {
-    	isCoroutineRunning = true;
-        while (isSpawning)
-        {
-            SpawnArrow();
-            yield return new WaitForSeconds(spawnInterval);	
-        }
-        isCoroutineRunning = false;
-    }*/
-
     private IEnumerator SpawnWaves(){
     	isSpawning = true;
         yield return new WaitForSeconds(3f);
+
     	while(currentWave < totalWaves){
     		currentWave++;
     		arrowsSpawnedInWave = 0;
-    		//yield return StartCoroutine(ShowWavePopup());
 
     		while (arrowsSpawnedInWave < arrowsPerWave){
     			SpawnArrow();
     			arrowsSpawnedInWave++;
-    			yield return new WaitForSeconds(0.5f);  //previously ...(spawnInterval);
+    			yield return new WaitForSeconds(0.5f);      //previously ...(spawnInterval);
     		}
-    		if(currentWave == totalWaves && arrowsSpawnedInWave == 9){
-
-    			GMref.EndofGame();
+    		if(currentWave == totalWaves && arrowsSpawnedInWave == 9 && counter == 27){
+    			GMref.EndofGame();                         
     		}
-    		yield return new WaitForSeconds(5f);   //previously 9 with 120BPM
+    		yield return new WaitForSeconds(5f);            //previously 9 with 120BPM
     		
-    		if (currentWave == totalWaves && theNO.round2){
+    		if (currentWave == totalWaves && theNO.round2 && GMref.winActive == false && GMref.looseActive == false) {
                 if (!StopRound2Trigger){
                     yield return StartCoroutine(ShowRoundPopup());
                     StopRound2Trigger = true;
                 }
-                //yield return new WaitForSeconds(3f);
     			currentWave = 0;
     			theGM.allowInput = true;	
-    		}
-    		
-    		
+    		}	
     	}
     	isSpawning = false;
     }

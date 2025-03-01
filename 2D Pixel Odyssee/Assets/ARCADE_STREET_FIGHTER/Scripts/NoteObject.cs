@@ -39,6 +39,8 @@ public class NoteObject : MonoBehaviour
     {
         if(Input.GetKeyDown(keyToPress)){
             if(canBePressed && !hasBeenHit){
+                FindObjectOfType<ArrowSpawner>().counter++;
+                Debug.Log(FindObjectOfType<ArrowSpawner>().counter);
                 hasBeenHit = true;
                 GameManager_Street.instance.NoteHit();
                 gameObject.SetActive(false);
