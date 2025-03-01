@@ -179,6 +179,7 @@ public class PauseMenu : MonoBehaviour
     //----------------------ANDERER STUFF-------------
 
     public void ArcadeReturn() {        //ARCADE GAMES --> schickt den Spieler von den Arcades zurueck in die IRL Welt
+        Time.timeScale = 1f;
         StartCoroutine(returnFromArcade());    	
     }
     private IEnumerator returnFromArcade() {    //works together with the function above
@@ -251,7 +252,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         StartCoroutine(returnToStart());    	
     }
-
     private IEnumerator returnToStart() {    //works together with the function above
         yield return StartCoroutine(Class_Fades.instance.StartFadeIn()); // Wait for fade-in to finish     ----------------------NEU---------------------
         SceneManager.LoadScene("Z_Start Screen");
