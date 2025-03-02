@@ -194,6 +194,7 @@ public class Shovable : ObjectScript
             {
                 if(Target != null && Target.activeInHierarchy == true && Target != null)
                 {
+                    print(Target.name);
                     Target.GetComponent<ShovableUnlock>().CallShovableUnlock(Target.GetComponent<ShovableUnlock>().ObjReference.ObjectList_ID, Target.GetComponent<ShovableUnlock>().ObjReference.ObjectIndex);
                     Target.GetComponent<ObjectScript>().FetchAllData();
 

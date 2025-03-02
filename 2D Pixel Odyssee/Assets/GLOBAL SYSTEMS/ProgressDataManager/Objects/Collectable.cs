@@ -61,10 +61,6 @@ public class Collectable : ObjectScript
         if (IsReward == true && Lock_State == true)                                                         //Handle Reward Case
         {
             TryAddReward();
-            foreach (GameObject StoredObj in DMReference.RewardObjects)                      //Go through the Collectable_List and check CollectableObj.
-            {
-                print(StoredObj.name);
-            }
         }
 
         ToggleSprites();

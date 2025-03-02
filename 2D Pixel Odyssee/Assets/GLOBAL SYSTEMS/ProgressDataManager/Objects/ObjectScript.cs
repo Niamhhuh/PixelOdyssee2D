@@ -90,7 +90,7 @@ public class ObjectScript : MonoBehaviour
     public bool IsReward;
 
     [HideInInspector] public LockedDialogue LockedDialogueScript = null;
-    [HideInInspector] public GrantRewardScript GrantReward_Script = null;
+     public GrantRewardScript GrantReward_Script = null;
 
     [HideInInspector] public AddCodeFragment AddCodeScript = null;
 
