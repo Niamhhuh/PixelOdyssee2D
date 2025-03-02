@@ -88,6 +88,10 @@ public class Collectable : ObjectScript
     {
         if (Collected == true)
         {
+            if (IsReward == true )                                                                          //Handle Reward Case
+            {
+                DMReference.RewardObjects.Remove(gameObject);
+            }
             Destroy(gameObject);
         }
     }

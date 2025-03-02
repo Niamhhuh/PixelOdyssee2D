@@ -787,16 +787,11 @@ public class DataManager : MonoBehaviour
     {
         foreach (GameObject StoredObj in RewardObjects)                      //Go through the Collectable_List and check CollectableObj.
         {
-            StoredObj.SetActive(true);
             if (StoredObj.GetComponent<Collectable>().ID == Reward_ID)
             {
                 StoredObj.SetActive(true);
                 StoredObj.GetComponent<Collectable>().Lock_State = false;                   //Unlock the Collectable
                 StoredObj.GetComponent<Collectable>().UpdateData();                         //Update the CollectableData   
-            }
-            if (StoredObj.GetComponent<Collectable>().ID != Reward_ID)
-            {
-                StoredObj.SetActive(false);
             }
         }
     }
