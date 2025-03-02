@@ -458,6 +458,10 @@ public class BallMovement : MonoBehaviour
                 GloveScript.CallGlove = true;
                 GloveScript.GloveProgress = 3;
             }
+            else
+            {
+                GloveScript.CallGlove = false;
+            }
 
             DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 15, Stored_Completed = false });      //add Goal
 

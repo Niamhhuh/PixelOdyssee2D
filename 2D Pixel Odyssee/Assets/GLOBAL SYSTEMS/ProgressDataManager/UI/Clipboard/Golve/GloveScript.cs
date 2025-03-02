@@ -155,6 +155,6 @@ public class GloveScript : MonoBehaviour
         MoveScript.targetPosition = MoveScript.player.position;
         GloveOfPower.SetActive(false);
         CallGlove = false;
-        GloveProgress = 0;
+        //GloveProgress = 0;
     }
 }

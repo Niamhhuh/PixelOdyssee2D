@@ -2263,7 +2263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1118060104}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GrantRewardScript, Assembly-CSharp
         m_MethodName: GrantReward
         m_Mode: 1
@@ -3314,8 +3314,6 @@ GameObject:
   - component: {fileID: 1118060102}
   - component: {fileID: 1118060101}
   - component: {fileID: 1118060103}
-  - component: {fileID: 1118060104}
-  - component: {fileID: 1118060105}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3369,32 +3367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca79895887c222c44975a4807af0e6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1118060104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118060100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93a8ec6174bde8445b3ae22096b79951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Reward_ID: 22
---- !u!114 &1118060105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118060100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da560986d4407d4e8693376b799b650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 0
 --- !u!1 &1123488653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,6 +5888,13 @@ MonoBehaviour:
       Data3: 825692847
       Data4: -1145034477
     Path: event:/Music/Depot Theme
+  AliceAmbience:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   AstreoidsTheme:
     Guid:
       Data1: 1146255690
@@ -5944,6 +5923,13 @@ MonoBehaviour:
       Data3: 94727817
       Data4: -717476708
     Path: event:/Music/StreetfighterTheme
+  Credits:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1862204383
 Transform:
   m_ObjectHideFlags: 0
