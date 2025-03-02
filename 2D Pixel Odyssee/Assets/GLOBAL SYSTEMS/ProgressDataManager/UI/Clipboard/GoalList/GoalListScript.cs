@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GoalListScript : MonoBehaviour
 {
@@ -33,9 +34,8 @@ public class GoalListScript : MonoBehaviour
         PlaceGoals();
         ScrollScript.GoalListContainer.transform.position = DataManager.ContainerStartPosition;
 
-        
-        
-        ScrollScript.GoalListContainer.transform.position = new Vector2(ScrollScript.GoalListContainer.transform.position.x, ScrollScript.GoalListContainer.transform.position.y + DataManager.CurrentScroll * 90);          //adjust by Slot Shift -38 y per Slot
+
+        ScrollScript.GoalListContainer.transform.position = new Vector2(GameObject.FindGameObjectWithTag("ScrollArea").GetComponent<RectTransform>().position.x, GameObject.FindGameObjectWithTag("ScrollArea").GetComponent<RectTransform>().position.y + DataManager.CurrentScroll * 90);          //adjust by Slot Shift -38 y per Slot
         
         //Call Goal Completed Function
         //---------------------------------------------------------------------------------------------------------------------------------------------------
