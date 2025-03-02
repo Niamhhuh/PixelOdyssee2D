@@ -68,7 +68,7 @@ public class ObjectScript : MonoBehaviour
 
 
 
-    [HideInInspector] public GameObject InteractionController = null;          //Store Interaction Buttons
+    public GameObject InteractionController = null;          //Store Interaction Buttons
     [HideInInspector] public ObjectScript ObjReference = null;                 //Store this Object to pass to Interaction Buttons
 
     //Lock/Unlock Variables ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -491,11 +491,7 @@ public class ObjectScript : MonoBehaviour
             LockedDialogueScript.ModifyDialogue(); 
         }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
-
-        if (InteractionController == null)
-        {
-            InteractionController = GameObject.FindGameObjectWithTag("InteractionController");
-        }
+        print(gameObject.name + InteractionController);
 
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
