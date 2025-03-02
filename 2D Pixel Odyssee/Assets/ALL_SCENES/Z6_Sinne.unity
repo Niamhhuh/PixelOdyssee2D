@@ -2497,9 +2497,9 @@ MonoBehaviour:
   Dialogue_Triggered: 0
   Interaction_Triggered: 1
   ItemUnlock_Triggered: 0
-  Goal_ID: 23
+  Goal_ID: 20
   Add_Goal: 1
-  Complete_Goal_ID: 18
+  Complete_Goal_ID: 19
   Complete_Goal: 1
 --- !u!114 &337817717
 MonoBehaviour:
@@ -4624,7 +4624,7 @@ MonoBehaviour:
   Dialogue_Triggered: 0
   Interaction_Triggered: 1
   ItemUnlock_Triggered: 0
-  Goal_ID: 13
+  Goal_ID: 14
   Add_Goal: 1
   Complete_Goal_ID: 0
   Complete_Goal: 0
@@ -5801,6 +5801,7 @@ GameObject:
   - component: {fileID: 840054418}
   - component: {fileID: 840054417}
   - component: {fileID: 840054424}
+  - component: {fileID: 840054425}
   m_Layer: 5
   m_Name: Catscne Trigger 3
   m_TagString: Untagged
@@ -6081,6 +6082,25 @@ MonoBehaviour:
   LockTriggered: 0
   DialogueTriggered: 0
   TriggerTutorialPanel: 0
+--- !u!114 &840054425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840054416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 16
+  Complete_Goal: 1
 --- !u!1 &885630982
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,7 +6606,7 @@ MonoBehaviour:
   ItemUnlock_Triggered: 0
   Goal_ID: 0
   Add_Goal: 0
-  Complete_Goal_ID: 16
+  Complete_Goal_ID: 17
   Complete_Goal: 1
 --- !u!61 &903697908
 BoxCollider2D:
@@ -9551,10 +9571,10 @@ MonoBehaviour:
   Dialogue_Triggered: 0
   Interaction_Triggered: 1
   ItemUnlock_Triggered: 0
-  Goal_ID: 16
+  Goal_ID: 17
   Add_Goal: 1
-  Complete_Goal_ID: 16
-  Complete_Goal: 1
+  Complete_Goal_ID: 0
+  Complete_Goal: 0
 --- !u!1 &1265704041
 GameObject:
   m_ObjectHideFlags: 0
@@ -12055,7 +12075,7 @@ MonoBehaviour:
   AlreadyTalked: 1
   Lock_State: 0
   ForcedInteraction: 0
-  TriggeronUnlock: 1
+  TriggeronUnlock: 0
   AlwaysDenyInteraction: 0
   Unlock_by_Item: 0
   Item_Key_ID: 0
@@ -12170,7 +12190,7 @@ MonoBehaviour:
   ItemUnlock_Triggered: 0
   Goal_ID: 18
   Add_Goal: 1
-  Complete_Goal_ID: 17
+  Complete_Goal_ID: 18
   Complete_Goal: 1
 --- !u!1 &1450232445
 GameObject:
@@ -12919,6 +12939,7 @@ GameObject:
   - component: {fileID: 1593772032}
   - component: {fileID: 1593772034}
   - component: {fileID: 1593772033}
+  - component: {fileID: 1593772035}
   m_Layer: 0
   m_Name: Dance Dance Revolution
   m_TagString: Untagged
@@ -13176,6 +13197,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.18, y: 2.017651}
   m_EdgeRadius: 0
+--- !u!114 &1593772035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593772024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 17
+  Add_Goal: 1
+  Complete_Goal_ID: 17
+  Complete_Goal: 1
 --- !u!1 &1608756351
 GameObject:
   m_ObjectHideFlags: 0
@@ -15071,7 +15111,6 @@ GameObject:
   - component: {fileID: 1859360661}
   - component: {fileID: 1859360660}
   - component: {fileID: 1859360663}
-  - component: {fileID: 1859360664}
   m_Layer: 0
   m_Name: Rasseln
   m_TagString: Untagged
@@ -15276,25 +15315,6 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
---- !u!114 &1859360664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859360657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue_Triggered: 0
-  Interaction_Triggered: 1
-  ItemUnlock_Triggered: 0
-  Goal_ID: 17
-  Add_Goal: 1
-  Complete_Goal_ID: 16
-  Complete_Goal: 1
 --- !u!1 &1879692994
 GameObject:
   m_ObjectHideFlags: 0
@@ -15306,6 +15326,7 @@ GameObject:
   - component: {fileID: 1879692995}
   - component: {fileID: 1879692997}
   - component: {fileID: 1879692996}
+  - component: {fileID: 1879692998}
   m_Layer: 0
   m_Name: RemoveVitrineTrigger
   m_TagString: Untagged
@@ -15439,6 +15460,25 @@ MonoBehaviour:
   isTrigger_Portal: 0
   EventScene_ID: 0
   SpawnPointID: 0
+--- !u!114 &1879692998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879692994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 18
+  Add_Goal: 1
+  Complete_Goal_ID: 0
+  Complete_Goal: 0
 --- !u!1 &1892379071
 GameObject:
   m_ObjectHideFlags: 0
@@ -16367,6 +16407,7 @@ GameObject:
   - component: {fileID: 1999637041}
   - component: {fileID: 1999637044}
   - component: {fileID: 1999637045}
+  - component: {fileID: 1999637046}
   m_Layer: 0
   m_Name: Lightgun
   m_TagString: Untagged
@@ -16589,6 +16630,25 @@ MonoBehaviour:
   DMReference: {fileID: 0}
   ObjReference: {fileID: 0}
   TargetObject: {fileID: 0}
+--- !u!114 &1999637046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999637038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 19
+  Add_Goal: 1
+  Complete_Goal_ID: 0
+  Complete_Goal: 0
 --- !u!1 &1999703082
 GameObject:
   m_ObjectHideFlags: 0

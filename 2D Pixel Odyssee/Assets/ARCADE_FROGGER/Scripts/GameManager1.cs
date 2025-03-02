@@ -108,7 +108,7 @@ public class GameManager1 : MonoBehaviour
             }
         }
 
-        DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 22, Stored_Completed = false });      //add Goal
+        DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 12, Stored_Completed = false });      //add Goal
 
         if(GloveScript.GloveProgress < 2)
         {

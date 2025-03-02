@@ -447,7 +447,7 @@ public class BallMovement : MonoBehaviour
 
             foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)                                        //clear goal
             {
-                if(Goal.Stored_ID == 12)
+                if(Goal.Stored_ID == 13)
                 {
                     Goal.Stored_Completed = true;
                 }
@@ -463,7 +463,7 @@ public class BallMovement : MonoBehaviour
                 GloveScript.CallGlove = false;
             }
 
-            DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 15, Stored_Completed = false });      //add Goal
+            DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 16, Stored_Completed = false });      //add Goal
 
             //--------------------------------------------------------------------------------------------------------------------------------
             //--------------------------------------------------------------------------------------------------------------------------------
