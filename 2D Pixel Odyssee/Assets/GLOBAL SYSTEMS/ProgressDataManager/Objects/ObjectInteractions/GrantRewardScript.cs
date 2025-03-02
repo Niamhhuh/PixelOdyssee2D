@@ -7,7 +7,7 @@ public class GrantRewardScript : MonoBehaviour
     DataManager DMReference;
     ObjectScript ThisObjectScript;
     public int Reward_ID;
-    private void Start()
+    private void Awake()
     {
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         ThisObjectScript = GetComponent<ObjectScript>();

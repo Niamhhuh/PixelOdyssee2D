@@ -57,15 +57,19 @@ public class Collectable : ObjectScript
             ObjectIndex = DataManager.Collectable_List.Count - 1;                                           //When an Object is added, it is added to the end of the list. 
         }
 
-        ToggleSprites();
-        CallColliderToggle();
-        RemoveItem();                                                                                       //Remove Items if they have been collected already
-
 
         if (IsReward == true && Lock_State == true)                                                         //Handle Reward Case
         {
-           TryAddReward();
+            TryAddReward();
+            foreach (GameObject StoredObj in DMReference.RewardObjects)                      //Go through the Collectable_List and check CollectableObj.
+            {
+                print(StoredObj.name);
+            }
         }
+
+        ToggleSprites();
+        CallColliderToggle();
+        RemoveItem();                                                                                       //Remove Items if they have been collected already
     }
 
     public void FetchData(bool Stored_Lock_State, bool Stored_AlreadyTalked, bool Stored_Collected)                                   //Fetch the Variables Lock and Collected from the DataManager
