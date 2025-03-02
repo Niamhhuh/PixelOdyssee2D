@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public class CreditsScrollWithImages : MonoBehaviour
 {
-    private float startSpeed = 50f;                                     // Initial scrolling speed
+    private float startSpeed = 70f;                                     // Initial scrolling speed
     private float endSpeed = 5f;                                        // Slowest speed at the end
-    private float slowdownStartY = 1750;                                // When the slowdown begins
-    private float slowdownDistance = 300f;                              // Over how much distance it slows
-    private float stopY = 2039f;                                        // Final Y position where it stops
+    private float slowdownStartY = 6100;                                // When the slowdown begins
+    private float slowdownDistance = 285f;                              // Over how much distance it slows
+    private float stopY = 6385;                                        // Final Y position where it stops
 
     private RectTransform creditsRect;                                  // This is for the credits
 

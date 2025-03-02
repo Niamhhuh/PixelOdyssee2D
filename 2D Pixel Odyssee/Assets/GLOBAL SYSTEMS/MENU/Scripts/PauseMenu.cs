@@ -189,9 +189,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(ReturntoScene);
     }
 
-    public void GameQuit() {            //STARTSCREEN --> Beendet das Spiel komplett
-    	Class_Fades.instance.StartFadeIn();        //Starts the FadeIn Coroutine from the script "Fades" ----------------------NEU---------------------
-                                            
+    public void GameQuit() {            //STARTSCREEN --> Beendet das Spiel komplett                     
         Application.Quit();
     }
 

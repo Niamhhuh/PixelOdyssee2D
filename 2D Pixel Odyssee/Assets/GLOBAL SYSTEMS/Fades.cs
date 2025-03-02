@@ -92,7 +92,6 @@ namespace Fades                                     // write "using Fades;" atop
             }
 
             if (script_uitomouse != null) {                                     //turn off footstep sounds before loading new scene
-                Debug.Log("Footsteps stopped");
                 script_uitomouse.stopSound();
             }
         }
@@ -105,7 +104,6 @@ namespace Fades                                     // write "using Fades;" atop
             }
 
             if (script_uitomouse != null) {                                     //turn off footstep sounds before loading new scene
-                Debug.Log("Footsteps stopped");
                 script_uitomouse.stopSound();
             }
 

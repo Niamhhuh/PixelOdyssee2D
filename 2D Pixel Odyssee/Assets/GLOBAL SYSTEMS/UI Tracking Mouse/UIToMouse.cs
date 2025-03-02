@@ -277,7 +277,6 @@ public class UiToMouse : MonoBehaviour
 
     public IEnumerator CallEnableInteract()
     {
-        //print("hi");
         yield return new WaitForSeconds(0.2f);
         if(!CallOtherArrow)
         {
@@ -286,7 +285,7 @@ public class UiToMouse : MonoBehaviour
     }
 
     public void stopSound() {
-        Debug.Log("footstep stop");
+        //Debug.Log("footstep stop");
         FootstepsRosie.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
         FootstepsBebe.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Sound
     }
