@@ -247,6 +247,7 @@ public class SaveSystem : MonoBehaviour
         GloveScript.GloveProgress = DStorage.GloveProgress_State;
 
         DataManager.ClipboardTutorialReached = DStorage.ClipboardTutorialReached_State;
+
     }
 
 
