@@ -1828,6 +1828,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -2044,6 +2045,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -2865,12 +2867,44 @@ PrefabInstance:
       value: PAUSESCREEN
       objectReference: {fileID: 0}
     - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1792547379}
     - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1792547379}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearSaveFile
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: CallSaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SaveSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176105490552385739, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3260,6 +3294,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -3965,6 +4000,7 @@ MonoBehaviour:
   TransformDialogueScript: {fileID: 0}
   TriggerGoal: 0
   ControlGoalScript: {fileID: 0}
+  ClipboardTutorialTrigger: 0
   Event_Passed: 0
   Talk_Event: 0
   isEvent_Portal: 0
@@ -4259,6 +4295,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 317775087975633989, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519511368819874999, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

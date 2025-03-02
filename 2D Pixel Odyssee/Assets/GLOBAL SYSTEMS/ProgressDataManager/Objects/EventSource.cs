@@ -99,7 +99,7 @@ public class EventSource : ObjectScript
         FetchData(DataManager.EventSource_List[ObjectIndex].Stored_Lock_State, DataManager.EventSource_List[ObjectIndex].Stored_AlreadyTalked, DataManager.EventSource_List[ObjectIndex].Stored_Event_Passed);  //Fetch new State from DataManager
 
 
-        Lock_State = DataManager.EventSource_List[ObjectIndex].Stored_Lock_State;
+        //Lock_State = DataManager.EventSource_List[ObjectIndex].Stored_Lock_State;
 
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
@@ -133,9 +133,10 @@ public class EventSource : ObjectScript
 
     public void EventInteract()                                                                                                                    //Interact with the Event to end it.
     {
+        Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
         SuccessfulInteract();
         ClearHighlight();
-        Event_Passed = true;    //Perhaps this will be changed into an Interger -> remember event state.
+        
         UpdateData();
         if(ClipboardTutorialTrigger)
         {
