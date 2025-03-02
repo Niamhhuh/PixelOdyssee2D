@@ -61,7 +61,7 @@ public class InteractionScript : MonoBehaviour
         TempObject = DataManager.ToInteract[0].CoreObject;
         DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
         GameObject.FindGameObjectWithTag("InteractionController").SetActive(false);                    //Deactivate the Shove Arrows
-        if(TempObject != null)
+        if(TempObject != null && TempObject.GetComponent<Triggerable>() == null)
         {
             TempObject.GetComponent<ObjectScript>().CallInteractionButtons();
         }
