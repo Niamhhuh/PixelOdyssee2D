@@ -33,7 +33,7 @@ public class GoalListScript : MonoBehaviour
         PlaceGoals();
         ScrollScript.GoalListContainer.transform.position = DataManager.ContainerStartPosition;
         ScrollScript.GoalListContainer.transform.position = new Vector2(ScrollScript.GoalListContainer.transform.position.x, ScrollScript.GoalListContainer.transform.position.y + DataManager.CurrentScroll * 90);          //adjust by Slot Shift -38 y per Slot
-
+        
         //Call Goal Completed Function
         //---------------------------------------------------------------------------------------------------------------------------------------------------
 
