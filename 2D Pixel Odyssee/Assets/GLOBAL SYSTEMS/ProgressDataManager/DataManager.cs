@@ -130,7 +130,7 @@ public class DataManager : MonoBehaviour
 
     public GloveScript GloveConnection;
 
-    public static bool ClipboardTutorialReached = true;
+    public static bool ClipboardTutorialReached = false;
 
     private void Start()                                                                                                            //Disable Inventory and Switch Buttons for the tutorial
     {

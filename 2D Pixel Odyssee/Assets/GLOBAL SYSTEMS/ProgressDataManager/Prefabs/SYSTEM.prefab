@@ -3006,7 +3006,6 @@ GameObject:
   - component: {fileID: 7714293061805055222}
   - component: {fileID: 8118097546941647135}
   - component: {fileID: 2462641306745114065}
-  - component: {fileID: 1449233168844134522}
   m_Layer: 5
   m_Name: ScrollArea
   m_TagString: Untagged
@@ -3086,32 +3085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
---- !u!114 &1449233168844134522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426252365526780985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &1437366420938796414
 GameObject:
   m_ObjectHideFlags: 0
@@ -8197,6 +8170,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97a3c6a27459b2c4cb64f4547fc7d7bd, type: 2}
   - {fileID: 11400000, guid: 97a3c6a27459b2c4cb64f4547fc7d7bd, type: 2}
   - {fileID: 11400000, guid: 8aac024300dab2548b8ba4e83c7065f2, type: 2}
+  - {fileID: 11400000, guid: 432f4fa1de13fc94582bd52188c4f503, type: 2}
   typingSpeed: 0.015
   canContinueText: 1
   StopTypeWriter: 1
@@ -21329,7 +21303,7 @@ GameObject:
   - component: {fileID: 7031950815290130259}
   m_Layer: 5
   m_Name: Title_Konami
-  m_TagString: Untagged
+  m_TagString: Konami
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

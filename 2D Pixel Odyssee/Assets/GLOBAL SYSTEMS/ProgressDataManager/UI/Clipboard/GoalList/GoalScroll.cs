@@ -13,12 +13,12 @@ public class GoalScroll : MonoBehaviour
         DMReference = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();          //Find and Connect to DataManager
         GoalListContainer = GameObject.FindGameObjectWithTag("GoalListContainer");                          //Find the List of Goals
 
-        if(DataManager.ContainerStartPosition.x == 0 && DataManager.ContainerStartPosition.y == 0)
+        if(DataManager.CurrentScroll == 0)
         {
+            print("Set Start");
             DataManager.ContainerStartPosition = GoalListContainer.transform.position;
         }
     }
-
 
     public void Down()
     {

@@ -188,8 +188,9 @@ public class DanceScript : MonoBehaviour
             DataManager.ToDance.RemoveAt(0);                                                            //Remove it
         }
 
-        DMReference.MoveScript.EnableInput();
-        DMReference.MoveScript.EnableInteract();
+        DMReference.MoveScript.InCatScene = false;
+        DMReference.MoveScript.Activate_CallEnableInput();
+        DMReference.MoveScript.Activate_CallEnableInteract();
         DanceController.SetActive(false);                          //Deactivate the Dance Arrows
     }
 
