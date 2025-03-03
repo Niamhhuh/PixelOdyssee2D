@@ -165,6 +165,7 @@ public class AdvancedDialogueManager : MonoBehaviour
     {
         if(FillPanel == null && GameObject.FindGameObjectWithTag("FillSkipPanel") != null) { FillPanel = GameObject.FindGameObjectWithTag("FillSkipPanel"); }
         if (FillPanel != null) { FillPanel.SetActive(false); }
+        
         Debug.Assert(currentConversation.actors.Length > stepNum, "stepNum out of range of actors. Did you forgot to assign it?");
         
         //If it's a random NPC

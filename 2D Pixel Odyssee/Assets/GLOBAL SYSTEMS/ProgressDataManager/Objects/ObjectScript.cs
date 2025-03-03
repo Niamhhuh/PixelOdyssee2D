@@ -491,7 +491,6 @@ public class ObjectScript : MonoBehaviour
             LockedDialogueScript.ModifyDialogue(); 
         }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
-        print(gameObject.name + InteractionController);
 
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
