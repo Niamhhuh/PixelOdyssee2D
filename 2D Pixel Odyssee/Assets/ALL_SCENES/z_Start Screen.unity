@@ -1440,6 +1440,7 @@ RectTransform:
   m_Children:
   - {fileID: 1584129943}
   - {fileID: 737704437}
+  - {fileID: 1575775167}
   - {fileID: 1311362997}
   - {fileID: 1497365786}
   - {fileID: 15119551}
@@ -3826,7 +3827,6 @@ Transform:
   - {fileID: 1194855470}
   - {fileID: 1261485778}
   - {fileID: 1829034139}
-  - {fileID: 1575775167}
   m_Father: {fileID: 857169546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575775166
@@ -3857,15 +3857,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575775166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.131667}
-  m_LocalScale: {x: 0.48619792, y: 0.48619792, z: 0.48619792}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1497365786}
+  m_Father: {fileID: 857169546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.342224, y: -145.99675}
+  m_AnchoredPosition: {x: 192.86108, y: -402.56262}
   m_SizeDelta: {x: 177.6138, y: 115.5019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575775168
@@ -3977,11 +3977,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1309907
-      Data2: 1171801660
-      Data3: 103486632
-      Data4: -156358892
-    Path: event:/Sfx/UI_Startscreen/ExitHover1
+      Data1: 485106806
+      Data2: 1095336796
+      Data3: 369283760
+      Data4: -1837599751
+    Path: event:/Sfx/UI_Startscreen/Click2
   Event: 
   EventPlayTrigger: 19
   EventStopTrigger: 0
