@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProgressDialogue: 0
   DialogueID: 0
-  UnlockableOptions: 0
-  KeyOption1: 0
-  KeyOption2: 0
-  KeyOption3: 0
-  KeyOption4: 0
+  UnlockableOptions: 1
+  KeyOption1: 796
+  KeyOption2: 797
+  KeyOption3: 798
+  KeyOption4: 799
   CallTrigger: 0
+  Dialogue_Goal: 0
+  DialogueAdd_Goal: 0
+  Complete_Goal: 0
+  Goal_ID: 0
+  Complete_Goal_ID: 0
   actors: 010000000b0000000a0000000b00000007000000
   randomActorName: Poly-Play
   randomActorPortait: {fileID: 21300000, guid: 10cd9b69893f84246a3e60068d9e7a4e, type: 3}
@@ -29,7 +34,7 @@ MonoBehaviour:
     Wenn du wirklich kameradschaftliche Beziehungen aufbauen und mich in Bewegung
     setzen willst, dann deck\xB4 die L\xFCgen des Parteibonzen Rom Check Fail auf!\r\n"
   - Was willst du wissen?
-  - Welche Aussage von Rom Check Fail ist falsch?
+  - 'Redet mal mit Rom Check Fail und sagt mir: Welche Aussage ist falsch?'
   optionText:
   - "Mario l\xFCgt! "
   - "Link l\xFCgt!"
