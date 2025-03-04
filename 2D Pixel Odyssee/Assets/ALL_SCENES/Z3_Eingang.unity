@@ -4987,6 +4987,7 @@ GameObject:
   - component: {fileID: 1376693646}
   - component: {fileID: 1376693645}
   - component: {fileID: 1376693649}
+  - component: {fileID: 1376693650}
   m_Layer: 0
   m_Name: Zur Racing-Arcade
   m_TagString: Untagged
@@ -5188,6 +5189,25 @@ MonoBehaviour:
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &1376693650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376693644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3378a711a292574aa160a90c7f85adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue_Triggered: 0
+  Interaction_Triggered: 1
+  ItemUnlock_Triggered: 0
+  Goal_ID: 0
+  Add_Goal: 0
+  Complete_Goal_ID: 21
+  Complete_Goal: 1
 --- !u!1 &1437286751
 GameObject:
   m_ObjectHideFlags: 0
