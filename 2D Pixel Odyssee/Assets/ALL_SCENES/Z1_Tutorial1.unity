@@ -3197,6 +3197,7 @@ GameObject:
   - component: {fileID: 372535035}
   - component: {fileID: 372535033}
   - component: {fileID: 372535039}
+  - component: {fileID: 372535041}
   m_Layer: 0
   m_Name: Bebe
   m_TagString: Untagged
@@ -3330,7 +3331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 5949f1b29d34872479022a04285ea34a, type: 2}
+  - {fileID: 11400000, guid: e0f4255058f5658468585ae7b44563b8, type: 2}
+  - {fileID: 11400000, guid: e0f4255058f5658468585ae7b44563b8, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
@@ -3415,6 +3417,24 @@ MonoBehaviour:
   Traversed: 0
   LoadScene_ID: 14
   SpawnPointID: 1
+--- !u!114 &372535041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372535030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 5949f1b29d34872479022a04285ea34a, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 5949f1b29d34872479022a04285ea34a, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!1 &378256516
 GameObject:
   m_ObjectHideFlags: 0
