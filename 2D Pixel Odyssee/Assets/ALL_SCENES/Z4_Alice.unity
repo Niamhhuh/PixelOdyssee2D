@@ -1660,7 +1660,6 @@ GameObject:
   - component: {fileID: 381635339}
   - component: {fileID: 381635338}
   - component: {fileID: 381635337}
-  - component: {fileID: 381635336}
   m_Layer: 0
   m_Name: ACTIVATE GLOVE
   m_TagString: Untagged
@@ -1668,26 +1667,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &381635336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381635334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger_ID: 32
-  CharacterBound: 0
-  Rosie: 0
-  Bebe: 0
-  InteractionTriggered: 1
-  LockTriggered: 0
-  DialogueTriggered: 0
-  TriggerTutorialPanel: 0
 --- !u!61 &381635337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2231,6 +2210,7 @@ GameObject:
   - component: {fileID: 521091554}
   - component: {fileID: 521091555}
   - component: {fileID: 521091556}
+  - component: {fileID: 521091557}
   m_Layer: 0
   m_Name: PowerGlove Vitrine
   m_TagString: Untagged
@@ -2472,6 +2452,26 @@ MonoBehaviour:
   Add_Goal: 1
   Complete_Goal_ID: 4
   Complete_Goal: 1
+--- !u!114 &521091557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521091549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b36b9653e00d0f43aaf86680936c553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger_ID: 32
+  CharacterBound: 0
+  Rosie: 0
+  Bebe: 0
+  InteractionTriggered: 1
+  LockTriggered: 0
+  DialogueTriggered: 0
+  TriggerTutorialPanel: 0
 --- !u!1 &606507533
 GameObject:
   m_ObjectHideFlags: 0
