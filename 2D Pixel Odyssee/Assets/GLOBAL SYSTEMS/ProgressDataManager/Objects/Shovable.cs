@@ -199,16 +199,19 @@ public class Shovable : ObjectScript
 
                     if (Target.GetComponent<ObjectScript>().TriggeronUnlock)
                     {
-                        DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
-                        DataManager.ToInteract.Clear();
-                        DataManager.ToInteract.Add(Target.GetComponent<ObjectScript>());
+                        if(!Target.GetComponent<ObjectScript>().Lock_State)
+                        {
+                            DMReference.MoveScript.targetPosition = DMReference.MoveScript.player.position;
+                            DataManager.ToInteract.Clear();
+                            DataManager.ToInteract.Add(Target.GetComponent<ObjectScript>());
 
-                        //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
+                            //if (UnlockDialogueScript != null) { UnlockDialogueScript.ModifyDialogue(); }                //Modify the Dialogue if unique Un/LockedObject Dialogue is available
 
-                        InteractionController.SetActive(true);
-                        InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
-                        InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
-                        InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+                            InteractionController.SetActive(true);
+                            InteractionController.transform.GetChild(0).gameObject.SetActive(false);                     //Enable Dialogue Button 
+                            InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
+                            InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
+                        }
                     }
                 }
             }
