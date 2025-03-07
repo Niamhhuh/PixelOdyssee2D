@@ -339,6 +339,10 @@ public class ObjectScript : MonoBehaviour
         //----------------------------------------------------------------------------------------------------------------------------------------------------
         if (Input.GetMouseButtonUp(0) && DMReference.InventoryRef.TryDragUnlock == true && DMReference.InventoryRef.DraggedItemID != Item_Key_ID)    //When the Item does not Unlock.
         {
+            DMReference.MoveScript.DisableInput();
+            DMReference.MoveScript.DisableInteract();
+            DMReference.MoveScript.Activate_CallEnableInput();
+            DMReference.MoveScript.Activate_CallEnableInteract();
 
             if (!isBackground && !IsFullTrigger)
             {
@@ -380,10 +384,6 @@ public class ObjectScript : MonoBehaviour
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
                 InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
             }
-            DMReference.MoveScript.DisableInput();
-            DMReference.MoveScript.DisableInteract();
-            DMReference.MoveScript.Activate_CallEnableInput();
-            DMReference.MoveScript.Activate_CallEnableInteract();
         }
 
     }
