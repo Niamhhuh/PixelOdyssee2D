@@ -78,9 +78,6 @@ public class ArrowSpawner : MonoBehaviour
     			arrowsSpawnedInWave++;
     			yield return new WaitForSeconds(0.5f);      //previously ...(spawnInterval);
     		}
-    		if(currentWave == totalWaves && arrowsSpawnedInWave == 9 && counter == 27){
-    			GMref.EndofGame();                         
-    		}
     		yield return new WaitForSeconds(5f);            //previously 9 with 120BPM
     		
     		if (currentWave == totalWaves && theNO.round2 && GMref.winActive == false && GMref.looseActive == false) {

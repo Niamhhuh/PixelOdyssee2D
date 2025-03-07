@@ -254,8 +254,6 @@ public class GameManager_Street : MonoBehaviour
 
 
     public void NoteHit(){
-    	Debug.Log("note hit");
-
         if (startPlaying) {                                                                                         //Animation
             HitAnim.SetTrigger("HitAnim");
             rosieAnimator.SetTrigger("RosieHit");
@@ -264,7 +262,12 @@ public class GameManager_Street : MonoBehaviour
         if(allowInput){
             SetLivesEnemy(livesEnemy - 1);
         }
-        if(livesEnemy == 0 && !theNO.round2){                                                                       //sets off phase 2
+    }
+
+    public IEnumerator endRound() {
+        yield return new WaitForSeconds(1f);
+        if(!theNO.round2){       
+            FindObjectOfType<ArrowSpawner>().counter = 0;                                                                //sets off phase 2
             allowInput = false;
             SetLives(2);
             SetLivesEnemy(27);
@@ -274,7 +277,7 @@ public class GameManager_Street : MonoBehaviour
             silverAnimator.Play("Silver_Crossing_Arms");
             silverAnimator.SetBool("Stage2", true);
         }
-        else if (livesEnemy == 0 && theNO.round2 && gameOverMenuStreet.activeInHierarchy == false){                 //invokes win
+        else if (theNO.round2 && gameOverMenuStreet.activeInHierarchy == false){                 //invokes win
             startPlaying = false;
             SilverHp2.SetActive(false);
             rosieAnimator.Play("Rosie_Win_Animation");
@@ -282,6 +285,7 @@ public class GameManager_Street : MonoBehaviour
             winActive = true;
             Invoke(nameof(StreetWon), 3f);
         }
+        yield return null;
     }
 
     public void NoteMissed(){
@@ -340,7 +344,6 @@ public class GameManager_Street : MonoBehaviour
 
     private void CheckKonamiCode() {                        //checks if we press the right keys in the right order at the right time
         if (konamiIndex < konamiCode.Count && Input.GetKeyDown(konamiCode[konamiIndex])) {
-            Debug.Log("current kontami Index:" + konamiIndex);
             konamiIndex++;
             if (konamiIndex == konamiCode.Count && winActive == false && looseActive == false) {
                 ActivateKonamiEffect();                     //activate if we did it correctly
@@ -362,8 +365,8 @@ public class GameManager_Street : MonoBehaviour
         rosieAnimator.Play("Rosie_Win_Animation");
         silverAnimator.Play("Silver_Losing_Animation");
         winActive = true;
+        FindObjectOfType<ArrowSpawner>().gameObject.SetActive(false);
         Invoke(nameof(StreetWon), 3f);
     }
-
 }
 

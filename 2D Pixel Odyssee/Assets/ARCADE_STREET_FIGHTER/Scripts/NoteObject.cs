@@ -23,6 +23,7 @@ public class NoteObject : MonoBehaviour
 
     private EventInstance SFArrowSwitch; //Sound
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +40,6 @@ public class NoteObject : MonoBehaviour
     {
         if(Input.GetKeyDown(keyToPress)){
             if(canBePressed && !hasBeenHit){
-                FindObjectOfType<ArrowSpawner>().counter++;
-                Debug.Log(FindObjectOfType<ArrowSpawner>().counter);
                 hasBeenHit = true;
                 GameManager_Street.instance.NoteHit();
                 gameObject.SetActive(false);
@@ -49,15 +48,13 @@ public class NoteObject : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-
-    if(other.tag == "Activator"){
-    	canBePressed = true;
+        if(other.tag == "Activator"){
+    	    canBePressed = true;
+        }
+        else if (other.tag == "RandomizerZone" && !hasBeenRandomized && round2){
+            TryRandomizeArrows();
+        }
     }
-    else if (other.tag == "RandomizerZone" && !hasBeenRandomized && round2){
-
-        TryRandomizeArrows();
-    }
-}
 
     private void OnTriggerExit2D(Collider2D other){
 
