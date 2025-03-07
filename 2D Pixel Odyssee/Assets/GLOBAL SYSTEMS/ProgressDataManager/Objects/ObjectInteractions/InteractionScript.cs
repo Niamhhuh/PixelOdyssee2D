@@ -41,13 +41,14 @@ public class InteractionScript : MonoBehaviour
         //PointerScript.StartCoroutine(PointerScript.CallEnableInteract());
         if (DataManager.ToInteract[0].GetComponent<NPCDialogue>() != null)
         {
-            advancedDialogueManager.InitiateDialogue(DataManager.ToInteract[0].GetComponent<NPCDialogue>());
-
-            //DMReference.DialogueManager.dialogueActivated = true;
             if (DataManager.ToInteract[0].TransformDialogueScript != null)
             {
                 DataManager.ToInteract[0].TransformDialogueScript.TransformeDialogue();
             }
+
+            advancedDialogueManager.InitiateDialogue(DataManager.ToInteract[0].GetComponent<NPCDialogue>());
+
+            //DMReference.DialogueManager.dialogueActivated = true;
 
             if (TempObject != null && DataManager.ToInteract[0].CoreObject == TempObject)
             {
