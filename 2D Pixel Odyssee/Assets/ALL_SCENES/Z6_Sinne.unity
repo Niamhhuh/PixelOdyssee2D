@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.7, y: -4.9}
+  m_AnchoredPosition: {x: 185.7, y: -15}
   m_SizeDelta: {x: 434.2, y: 429.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3937963
@@ -7069,8 +7069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.5085, y: 123.51}
-  m_SizeDelta: {x: 358.4911, y: 218.42}
+  m_AnchoredPosition: {x: -58, y: 123.51}
+  m_SizeDelta: {x: 320, y: 218.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &956175144
 GameObject:
@@ -11984,6 +11984,7 @@ GameObject:
   - component: {fileID: 1438881130}
   - component: {fileID: 1438881131}
   - component: {fileID: 1438881132}
+  - component: {fileID: 1438881133}
   m_Layer: 0
   m_Name: Dance Dance Revolution
   m_TagString: Untagged
@@ -12192,6 +12193,27 @@ MonoBehaviour:
   Add_Goal: 1
   Complete_Goal_ID: 18
   Complete_Goal: 1
+--- !u!114 &1438881133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438881127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e666510465d7a94584043d31e29876d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - {fileID: 11400000, guid: d5229754ceb169b4f9a9b428e7cf6bb7, type: 2}
+  - {fileID: 11400000, guid: b328abc6b6281ff4295ed12824982aa9, type: 2}
+  - {fileID: 11400000, guid: a5e09d04bbaf04e4481d3e31109b8f55, type: 2}
+  - {fileID: 11400000, guid: 02037905271694d42bdbeb5cc9d63e94, type: 2}
+  advancedDialogueManager: {fileID: 0}
+  DialogueHolder: {fileID: 0}
+  InLockResponse: 0
+  WasClicked: 0
 --- !u!1 &1450232445
 GameObject:
   m_ObjectHideFlags: 0
@@ -16409,7 +16431,7 @@ GameObject:
   - component: {fileID: 1999637045}
   - component: {fileID: 1999637046}
   m_Layer: 0
-  m_Name: Lightgun
+  m_Name: Lichtgewehr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17376,6 +17398,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877255446041395420, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1233392172}
+    - target: {fileID: 1877255446041395420, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallSaveGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1889211018484794432, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1168.6057

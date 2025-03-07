@@ -43,10 +43,13 @@ public class CharacterScript : MonoBehaviour
         DialogueScript = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AdvancedDialogueManager>();
         PauseScript = GameObject.FindGameObjectWithTag("PauseController").GetComponent<PauseMenu>();
 
-        RosieComment.SetActive(false);
-        BebeComment.SetActive(false);
+        if(RosieComment != null)
+        {
+            RosieComment.SetActive(false);
+            BebeComment.SetActive(false);
+        }
 
-        if (uitomouse != null )
+        if (uitomouse != null && uitomouse.playerAnimator != null)
         {
             uitomouse.playerAnimator = GameObject.FindGameObjectWithTag("Rosie").GetComponent<Animator>();
             uitomouse.playerAnimator2 = GameObject.FindGameObjectWithTag("Bebe").GetComponent<Animator>();

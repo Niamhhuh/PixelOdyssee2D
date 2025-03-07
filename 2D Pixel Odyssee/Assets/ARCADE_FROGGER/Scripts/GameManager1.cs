@@ -108,6 +108,14 @@ public class GameManager1 : MonoBehaviour
             }
         }
 
+        foreach (DataManager.ActiveGoal Goal in DataManager.ActiveGoal_List)
+        {
+            if (Goal.Stored_ID == 12)
+            {
+                DataManager.ActiveGoal_List.Remove(Goal);
+            }
+        }
+
         DataManager.ActiveGoal_List.Add(new DataManager.ActiveGoal { Stored_ID = 12, Stored_Completed = false });      //add Goal
 
         if(GloveScript.GloveProgress < 2)

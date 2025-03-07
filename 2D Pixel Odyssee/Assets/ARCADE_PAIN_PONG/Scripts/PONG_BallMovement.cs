@@ -192,8 +192,16 @@ public class BallMovement : MonoBehaviour
     }
     //_____________________________________________________________________________________
     //--------------------enter deathzone---------------------------------------------------
-    void OnTriggerEnter2D(Collider2D col) 
+    void OnTriggerEnter2D(Collider2D collision) 
     {
+        strafen(collision);
+        //AFTER the strafbox has hit, adjust health and score and check for WIN
+        adjustHealth();
+        checkFini();
+    }
+
+
+    private void strafen(Collider2D col) {
         //STRAFEN PLAYER ---------------------------------------------------------------------------
 
         //ELEKTRO PLAYER-------------------------------------
@@ -220,6 +228,7 @@ public class BallMovement : MonoBehaviour
             {
                 playerMovement.ToggleReverseControls();
             }
+            return;
         }
 
         //FEUER PLAYER-------------------------------------
@@ -245,6 +254,7 @@ public class BallMovement : MonoBehaviour
             {
                 playerMovement.IncreaseSpeed(2.0f); // 200% increase
             }
+            return;
         }
         
         //Peitsche PLAYER-------------------------------------
@@ -270,6 +280,7 @@ public class BallMovement : MonoBehaviour
             //--------white screen
             whitescreen_object.SetActive(true);
             StartCoroutine(FadeOutCoroutine());                                 //then start the fade-out coroutine forthe whitescreen
+            return;
         }
 
         //STRAFE AI----------------------------------------------
@@ -290,6 +301,7 @@ public class BallMovement : MonoBehaviour
             }
             ActivateAIStrafeIcon();
             PSElectric.start(); //sound
+            return;
         }
 
         //FEUER AI-------------------------------------
@@ -309,6 +321,7 @@ public class BallMovement : MonoBehaviour
             }
             ActivateAIStrafeIcon();
             PSFire.start(); //sound
+            return;
         }
 
         //Peitsche AI-------------------------------------
@@ -328,11 +341,8 @@ public class BallMovement : MonoBehaviour
             }
             ActivateAIStrafeIcon();
             PSWhip.start(); //sound
+            return;
         }
-
-        //AFTER the strafbox has hit, adjust health and score and check for WIN
-        adjustHealth();
-        checkFini();
     }
 
     //_____________________________________________________________________________________

@@ -52,7 +52,10 @@ public class Inventory : MonoBehaviour
         InventoryObj = GameObject.FindGameObjectWithTag("Inventory");
         ItemCollection = GameObject.FindGameObjectWithTag("ItemCollection");
 
-        InventorySprite = GameObject.FindGameObjectWithTag("InventorySpriteHolder").GetComponent<Image>();
+        if(GameObject.FindGameObjectWithTag("InventorySpriteHolder") != null)
+        {
+            InventorySprite = GameObject.FindGameObjectWithTag("InventorySpriteHolder").GetComponent<Image>();
+        }
 
         MapButton = GameObject.FindGameObjectWithTag("InvMapButton");
         GoalButton = GameObject.FindGameObjectWithTag("InvGoalButton");

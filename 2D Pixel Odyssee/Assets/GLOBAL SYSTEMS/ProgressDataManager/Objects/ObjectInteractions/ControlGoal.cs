@@ -37,6 +37,7 @@ public class ControlGoal : MonoBehaviour
     {
         if (Add_Goal)
         {
+
             DMReference.AddGoalObj(Goal_ID, false);                                                             //Call the AddDraggableObj Method in DataManager, to add a new DataContainer.
         }
 

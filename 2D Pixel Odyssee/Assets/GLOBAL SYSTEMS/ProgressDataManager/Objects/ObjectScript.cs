@@ -299,8 +299,12 @@ public class ObjectScript : MonoBehaviour
             Lock_State = false;
             UpdateAllData();
             if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }
-            
-            
+
+            DMReference.MoveScript.DisableInput();
+            DMReference.MoveScript.DisableInteract();
+            DMReference.MoveScript.Activate_CallEnableInput();
+            DMReference.MoveScript.Activate_CallEnableInteract();
+
             foreach (Draggable Item in DataManager.Item_List)
             {
                 if(DMReference.InventoryRef.DraggedItemID == Item.ID)
@@ -328,11 +332,6 @@ public class ObjectScript : MonoBehaviour
                 InteractionController.transform.GetChild(1).gameObject.SetActive(false);                     //Enable Interact Button 
                 InteractionController.GetComponent<InteractionScript>().TriggerInteraction();
             }
-
-            DMReference.MoveScript.DisableInput();
-            DMReference.MoveScript.DisableInteract();
-            DMReference.MoveScript.Activate_CallEnableInput();
-            DMReference.MoveScript.Activate_CallEnableInteract();
         }
 
 
@@ -491,7 +490,6 @@ public class ObjectScript : MonoBehaviour
             LockedDialogueScript.ModifyDialogue(); 
         }                //Modify the Dialogue if unique LockedObject Dialogue is available
 
-        print(gameObject.name + InteractionController);
 
         InteractionController.SetActive(true);
         InteractionController.transform.GetChild(0).gameObject.SetActive(true);                     //Enable Dialogue Button 
