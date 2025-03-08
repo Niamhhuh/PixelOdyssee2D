@@ -7770,6 +7770,7 @@ GameObject:
   - component: {fileID: 1311026773}
   - component: {fileID: 1311026772}
   - component: {fileID: 1311026776}
+  - component: {fileID: 1311026777}
   m_Layer: 0
   m_Name: "Museum T\xFCr"
   m_TagString: Untagged
@@ -7965,14 +7966,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - {fileID: 11400000, guid: 0875d6a2aa72081429b88ccc604a0936, type: 2}
-  - {fileID: 11400000, guid: 0091f28ef3384244b995792cf269e408, type: 2}
+  - {fileID: 11400000, guid: 32f31241f9cff744eb6a799d3c644a8e, type: 2}
+  - {fileID: 11400000, guid: f9ca724e43869fc45921fce37c1d2959, type: 2}
   - {fileID: 11400000, guid: 499b5e0feefc0c74481eaa1b13201c28, type: 2}
   - {fileID: 11400000, guid: 6980006e9a33ae14a96bbb06ee5e5807, type: 2}
   advancedDialogueManager: {fileID: 0}
   DialogueHolder: {fileID: 0}
   InLockResponse: 0
   WasClicked: 0
+--- !u!114 &1311026777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311026771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71eda140362fc5545950e81470950a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RosieLockDialogue: {fileID: 11400000, guid: 0875d6a2aa72081429b88ccc604a0936, type: 2}
+  BeBeLockDialogue: {fileID: 11400000, guid: 0091f28ef3384244b995792cf269e408, type: 2}
+  ModifyDeniedInteraction: 0
+  TargetItemID: 0
+  RosieDeniedInteraction: {fileID: 0}
+  BeBeDeniedInteraction: {fileID: 0}
 --- !u!114 &1320114952 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8283363910267130835, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
