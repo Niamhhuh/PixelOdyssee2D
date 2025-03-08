@@ -78,6 +78,7 @@ public class EventSource : ObjectScript
     {
         if (Event_Passed == true)
         {
+            print("INTERACTED" + gameObject);
             if (DMReference.MoveScript != null)
             {
                 DMReference.MoveScript.StartCoroutine(PointerScript.CallEnableInput());                                                //Enable Input when Trigger is cleared
