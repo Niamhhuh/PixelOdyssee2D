@@ -20,14 +20,20 @@ MonoBehaviour:
   KeyOption3: 0
   KeyOption4: 0
   CallTrigger: 1
-  actors: 0b000000
+  Dialogue_Goal: 0
+  DialogueAdd_Goal: 0
+  Complete_Goal: 0
+  Goal_ID: 0
+  Complete_Goal_ID: 0
+  actors: 0b0000000b000000
   randomActorName: ELIZA
   randomActorPortait: {fileID: 21300000, guid: 85a5602d91dc6264b901671c7b565737, type: 3}
   dialogue:
   - "Das ist echt ein bl\xF6des Problem. Haben Sie den Chip schon mit dem Frosch
     kombiniert? Wenn ja, muss es doch eine Maschine geben, die in der Lage ist, ihn
-    flacher zu machen. Eine Maschine, die darauf spezialisiert ist, Sachen anzuordnen
-    und so stark zu erdr\xFCcken, bis sie verschwinden.\r\n"
+    flacher zu machen."
+  - "Eine Maschine, die darauf spezialisiert ist, Sachen anzuordnen und so stark
+    zu erdr\xFCcken, bis sie verschwinden.\r"
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}
