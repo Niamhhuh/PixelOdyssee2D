@@ -577,7 +577,7 @@ public class ObjectScript : MonoBehaviour
 
 
     public void SuccessfulInteract()
-    {
+    {   
         if (GrantReward_Script != null) { GrantReward_Script.GrantReward(); }           //Add Code on succesful interaction
         Interact_Trigger_EditGoal();
         if (AddCodeScript != null) { AddCodeScript.AddCode(); }                         //Add Code on succesful interaction

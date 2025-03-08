@@ -56,7 +56,6 @@ public class Triggerable : ObjectScript
         }
         if (Lock_State == false && GhostTrigger && !Trigger_Passed)
         {
-
             TriggerInteract();
             //gameObject.SetActive(false);
         }
@@ -93,6 +92,12 @@ public class Triggerable : ObjectScript
                 DMReference.MoveScript.StartCoroutine(PointerScript.CallEnableInput());                                                //Enable Input when Trigger is cleared
                 DMReference.MoveScript.StartCoroutine(PointerScript.CallEnableInteract());                                             //Enable Interact when Trigger is cleared
             }
+
+            if (DataManager.ToInteract.Count > 0 && DataManager.ToInteract[0] == this)
+            {
+                DataManager.ToInteract.RemoveAt(0);                                                            //Remove the Shovable from the ToShove List
+            }
+
             gameObject.SetActive(false);
         }
     }
@@ -152,6 +157,7 @@ public class Triggerable : ObjectScript
         UpdateData();
 
         SuccessfulInteract();
+
         //If Force_Dialogue -> Trigger Dialogue
         //Remove Trigger when StepNum = Dialogue Length.
         //
@@ -180,6 +186,5 @@ public class Triggerable : ObjectScript
         {
             RemoveTrigger();
         }
-
     }
 }

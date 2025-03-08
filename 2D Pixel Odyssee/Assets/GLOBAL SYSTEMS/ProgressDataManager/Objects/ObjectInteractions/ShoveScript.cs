@@ -58,6 +58,7 @@ public class ShoveScript : MonoBehaviour
 
     public void ShoveRight()
     {
+
         DataManager.ToShove[0].DMReference.MoveScript.SetOtherArrowFalse();
 
         if (DataManager.ToShove[0].Max_Shove > DataManager.ToShove[0].Shove_Position)
