@@ -11,6 +11,7 @@ public class ButtonController : MonoBehaviour
 	public Sprite pressedImage;
 
     private EventInstance ArrowClick; //ganz viele Sounds kommen jetzt hier her
+    private HashSet<GameObject> countedArrows = new HashSet<GameObject>(); // Track counted arrows
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,17 @@ public class ButtonController : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)){
         	theSR.sprite = defaultImage;
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Arrow") && !countedArrows.Contains(other.gameObject)) {
+            FindObjectOfType<ArrowSpawner>().counter++;
+            countedArrows.Add(other.gameObject);
+            
+            if (FindObjectOfType<ArrowSpawner>().counter == 27) {
+                StartCoroutine(FindObjectOfType<GameManager_Street>().endRound());
+            }
         }
     }
 }

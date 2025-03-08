@@ -1932,6 +1932,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   Sprechblase: {fileID: 1203064741}
   StopRound2Trigger: 0
+  counter: 0
 --- !u!1 &624763306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,24 +2206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725c47324aa0f42f5be32350bdc0053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &682879228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682879221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b8c47a2bda74ba9997861666f25dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newArrowSprites:
-  - {fileID: 21300000, guid: 4f519922a94be4655bd8a05d1d6adea7, type: 3}
-  - {fileID: 21300000, guid: 5445250e001474ac3936e7c930a584b6, type: 3}
-  - {fileID: 21300000, guid: 747ed4263e50a4ec19a53a76d701e90e, type: 3}
-  - {fileID: 21300000, guid: d0800bbcfe543465ba153f6e86447d90, type: 3}
-  newArrowKeys: 13010000120100001401000011010000
 --- !u!1 &720960611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5367,6 +5350,8 @@ MonoBehaviour:
   canvasGroup: {fileID: 840757997}
   fadeDuration: 1
   allowInput: 1
+  winActive: 0
+  looseActive: 0
   script_pause: {fileID: 1850559477}
 --- !u!4 &1850559475
 Transform:
@@ -5781,6 +5766,13 @@ MonoBehaviour:
       Data3: 825692847
       Data4: -1145034477
     Path: event:/Music/Depot Theme
+  AliceAmbience:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   AstreoidsTheme:
     Guid:
       Data1: 1146255690
@@ -5809,6 +5801,13 @@ MonoBehaviour:
       Data3: 94727817
       Data4: -717476708
     Path: event:/Music/StreetfighterTheme
+  Credits:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &2054030787
 Transform:
   m_ObjectHideFlags: 0
@@ -6148,10 +6147,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2745505423363349819, guid: cbb7e617e0136411188ae916f6da7880, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 682879228}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb7e617e0136411188ae916f6da7880, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
