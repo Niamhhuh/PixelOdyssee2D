@@ -839,7 +839,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ad545a1d0ed059c4c8d78ba6bec6b818, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2530,7 +2530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5d6ee26049f5b7f48be0ff405a276197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3557,6 +3557,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+--- !u!114 &897017966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5775840474738838680, guid: 0b64420b2fff469429a5ac1cb7ef5f0d, type: 3}
+  m_PrefabInstance: {fileID: 897017965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d8fda0162c5b4ab582bad7c201778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925729013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,6 +6727,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877255446041395420, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 897017966}
+    - target: {fileID: 1877255446041395420, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallSaveGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1889211018484794432, guid: dac771e5d1954fd46a615619b5e941f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1168.6057
