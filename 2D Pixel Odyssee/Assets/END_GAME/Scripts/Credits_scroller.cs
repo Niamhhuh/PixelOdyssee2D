@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public class CreditsScrollWithImages : MonoBehaviour
 {
     private float startSpeed = 70f;                                     // Initial scrolling speed
-    private float endSpeed = 5f;                                        // Slowest speed at the end
-    private float slowdownStartY = 6100;                                // When the slowdown begins
-    private float slowdownDistance = 285f;                              // Over how much distance it slows
-    private float stopY = 6385;                                        // Final Y position where it stops
+    private float endSpeed = 5f;                                        // Slowest speed at the end /Just take it out honestly, 
+    private float slowdownStartY = 6400;                                // When the slowdown begins
+    private float slowdownDistance = 185f;                              // Over how much distance it slows
+    private float stopY = 6620;                                        // Final Y position where it stops
 
     private RectTransform creditsRect;                                  // This is for the credits
 
